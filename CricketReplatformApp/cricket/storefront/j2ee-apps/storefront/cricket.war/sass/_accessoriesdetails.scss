@@ -1,0 +1,77 @@
+.section-accessory-details #product-image {
+ img {margin: 0 auto 100px;
+   @include respond-min($small-screen) {margin: 0 auto;}  
+  }
+}
+
+.section-accessory-details #product-details {
+  .final-price {
+    border-top: 1px solid #dbdbdb;
+    padding-top: emCalc(15px);
+  }
+}
+
+#accessory-img-gallery {
+  position:relative;
+  min-height: 500px;
+  @include respond-min($small-screen) {min-height: 0;}
+}
+  
+.section-accessory-details #product-thumbs {
+  position: absolute;
+  left: 0;
+  top: emCalc(320px) !important; 
+  z-index: 1;
+  @include respond-min($small-screen) {position: static;}
+
+  ul {
+    list-style-type: none;  
+    margin-bottom: 0 !important;
+    li {
+      padding: 0.5em 0;
+      display: inline-block;
+      @include respond-min($small-screen) {display: block;}
+    }
+      
+    a {
+      display: block;
+      padding: 5px;
+      border: 1px solid #ffffff;
+      &.active {border: 1px solid #C8E099;}
+      &:hover {border: 1px solid #C8E099;}
+      img {
+        width: 60%;
+        @include respond-min($small-screen) {width: 25%}
+      }
+    } 
+  }
+}
+
+#product-details.accessory-details-product {
+  #product-thumbs ul li a img {width: 60%;}
+}
+
+.section-accessory-details #tab-content {
+  img {padding-top: 1.4375em;}
+  @include respond-min($small-screen) {margin-bottom: 4em;} 
+}
+
+.section-accessory-details #tab-content .section-container #included {
+  ul {
+    li:before { content:"- "; }
+    li {float: none;}
+  }
+  
+  @include respond-min($small-screen) {
+    ul {
+      li:before { content:""; }
+      li {
+        float: left;
+        margin: 3px 10px 3px 0;
+        padding-right: 13px;
+        background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-included-disc.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 100% 50%;
+      }
+      li.last { background: none;}
+    }
+  }
+}

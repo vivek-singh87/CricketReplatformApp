@@ -1,0 +1,219 @@
+<?xml version="1.0"?>
+<project name="deploy" basedir=".">
+	
+	<property environment="env"/>
+	<property name="global.build.dir" value="${basedir}/../build"/>
+	<property file="${global.build.dir}/build.properties" />	
+	<property file="build.properties"/>
+	<property name="standalone" value="${standalone}"/>
+	
+	<!-- check_os -->	
+	<target name="check_os">
+		<condition property="isWindows">
+			<os family="windows" />
+		</condition>
+		<condition property="isUnix">
+			<os family="unix" />
+		</condition>
+	</target>
+	
+	<!-- set_assembler_win -->
+
+	<target name="set_assembler_win" depends="check_os" if="isWindows">
+		<property name="runAssembler" value="runAssembler.bat" />
+	</target>
+	<!-- set_assembler_unix -->
+	<target name="set_assembler_unix" depends="check_os" if="isUnix">
+		<property name="runAssembler" value="runAssembler" />
+	</target>
+	
+	
+	<!-- check -->
+	<target name="check">
+		<condition property="condition.value">
+			<equals arg1="${backup}" arg2="true" casesensitive="true" trim="true" />
+		</condition>
+		<echo message="The process of backup old file is ${condition.value}" />
+	</target>
+	
+	<!-- backupEAR -->
+	<target name="backupEAR" depends="check,set_assembler_win,set_assembler_unix" description="move the old ear to the backup directory" if="condition.value">
+		<!-- Time stamp -->
+		<tstamp>
+			<format property="TODAY" pattern="yyyy-MM-dd-hh-mm" />
+		</tstamp>
+		<echo message="Backup past ${ear.file.name} " />
+		<move file="${ear.location}/${ear.file.name}" tofile="${backup.directory}/${TODAY}/${ear.file.name}" failonerror="no" />
+	</target>
+	
+	
+
+	<!-- store_standalone_exploded -->
+	
+	<target name="store_standalone_exploded" depends="backupEAR" description="create an ear and deploy in jboss with standalone such that it not refer to the ATG directories">
+		<echo message="Modules to assemble ${modules.to.assemble} " />
+		<echo message="atgserver.name =  ${atgserver.name} " />
+		<exec executable="${dynamo.home.bin}/${runAssembler}">
+			<arg value="-standalone" />
+			<arg value="-overwrite" />
+			<arg value="-liveconfig" />
+			<arg value="-server" />
+			<arg value="${atgserver.name}" />			
+			<arg value="${store.standalone.ear.location}/${ear.file.name}" />
+			<arg line="-m ${modules.to.assemble}" />
+		</exec>
+	</target>
+	
+	
+	<!--  pub_standalone_exploded  -->
+	
+	<target name="pub_standalone_exploded" depends="backupEAR" description="create an ear and deploy in jboss with standalone such that it not refer to the ATG directories">
+		<echo message="Modules to assemble ${modules.to.assemble} " />
+		<echo message="atgserver.name =  ${atgserver.name} " />
+		<exec executable="${dynamo.home.bin}/${runAssembler}">
+			<arg value="-standalone" />
+			<arg value="-overwrite" />
+			<arg value="-liveconfig" />
+			<arg value="-server" />
+			<arg value="${atgserver.name}" />			
+			<arg value="${pub.standalone.ear.location}/${ear.file.name}" />
+			<arg value="-layer" />
+			<arg value="Staging" />
+			<arg line="-m ${modules.to.assemble}" />
+		</exec>
+	</target>
+	
+	<!-- dwloader_standalone_exploded -->
+		
+		<target name="dwloader_standalone_exploded" depends="backupEAR" description="DW loader server:create an ear and deploy in jboss with standalone such that it not refer to the ATG directories">
+			<echo message="Modules to assemble ${modules.to.assemble} " />
+			<echo message="atgserver.name =  ${atgserver.name} " />
+			<echo message="ear.file.name =  ${ear.file.name} " />
+			<exec executable="${dynamo.home.bin}/${runAssembler}">
+				<arg value="-standalone" />
+				<arg value="-overwrite" />
+				<arg value="-liveconfig" />
+				<arg value="-server" />
+				<arg value="${atgserver.name}" />			
+				<arg value="${dwloader.standalone.ear.location}/${ear.file.name}" />
+				<arg line="-m ${modules.to.assemble}" />
+			</exec>
+		</target>
+	
+	<!-- stage_standalone_exploded -->
+	
+	<target name="preview_standalone_exploded" depends="backupEAR" description="create an ear and deploy in jboss with standalone such that it not refer to the ATG directories">
+		<echo message="Modules to assemble ${modules.to.assemble} " />
+		<echo message="atgserver.name =  ${atgserver.name} " />
+		<exec executable="${dynamo.home.bin}/${runAssembler}">
+			<arg value="-standalone" />
+			<arg value="-overwrite" />
+			<arg value="-liveconfig" />
+			<arg value="-server" />
+			<arg value="${atgserver.name}" />			
+			<arg value="${preview.standalone.ear.location}/${ear.file.name}" />
+			<arg line="-m ${modules.to.assemble}" />
+		</exec>
+	</target>
+	
+	
+	
+	<!-- store_runinplaceJBOSS_exploded -->
+	
+	<target name="store_runinplaceJBOSS_exploded" depends="backupEAR" description="create an ear and deploy in jboss with runinplace ">
+		<echo message="Modules to assemble ${modules.to.assemble} " />
+		<echo message="atgserver.name =  ${atgserver.name} " />
+		<exec executable="${dynamo.home.bin}/${runAssembler}">
+			<arg value="-overwrite" />
+			<arg value="-liveconfig" />
+			<arg value="-run-in-place" />			
+			<arg value="-server" />
+			<arg value="${atgserver.name}" />
+			<arg value="${store.ear.location}/${ear.file.name}" />
+			<arg line="-m ${modules.to.assemble}" />
+		</exec>
+	</target>
+	
+	<!-- pub_runinplaceJBOSS_exploded -->
+	
+	<target name="pub_runinplaceJBOSS_exploded" depends="backupEAR" description="create an ear and deploy in jboss with runinplace ">
+		<echo message="Modules to assemble ${modules.to.assemble} " />
+		<echo message="atgserver.name =  ${atgserver.name} " />
+		<exec executable="${dynamo.home.bin}/${runAssembler}">
+			<arg value="-overwrite" />
+			<arg value="-liveconfig" />
+			<arg value="-run-in-place" />			
+			<arg value="-server" />
+			<arg value="${atgserver.name}" />
+			<arg value="${pub.ear.location}/${ear.file.name}" />
+			<arg value="-layer" />
+			<arg value="Staging" />
+			<arg line="-m ${modules.to.assemble}" />
+		</exec>
+	</target>
+	<!-- dwloader_runinplaceJBOSS_exploded -->
+		
+		<target name="dwloader_runinplaceJBOSS_exploded" depends="backupEAR" description="DW loader server:create an ear and deploy in jboss with runinplace ">
+			<echo message="Modules to assemble ${modules.to.assemble} " />
+			<echo message="atgserver.name =  ${atgserver.name} " />
+			<echo message="ear.file.name =  ${ear.file.name} " />
+			<exec executable="${dynamo.home.bin}/${runAssembler}">
+				<arg value="-overwrite" />
+				<arg value="-liveconfig" />
+				<arg value="-run-in-place" />			
+				<arg value="-server" />
+				<arg value="${atgserver.name}" />
+				<arg value="${dwloader.ear.location}/${ear.file.name}" />
+				<arg line="-m ${modules.to.assemble}" />
+			</exec>
+		</target>
+	
+	<!-- stage_runinplaceJBOSS_exploded -->
+	
+	<target name="preview_runinplaceJBOSS_exploded" depends="backupEAR" description="create an ear and deploy in jboss with runinplace ">
+		<echo message="Modules to assemble ${modules.to.assemble} " />
+		<echo message="atgserver.name =  ${atgserver.name} " />
+		<exec executable="${dynamo.home.bin}/${runAssembler}">
+			<arg value="-overwrite" />
+			<arg value="-liveconfig" />
+			<arg value="-run-in-place" />			
+			<arg value="-server" />
+			<arg value="${atgserver.name}" />
+			<arg value="${preview.ear.location}/${ear.file.name}" />
+			<arg line="-m ${modules.to.assemble}" />
+		</exec>
+	</target>
+				
+				
+	
+	<!-- exploded-store-ear-standalone -->
+	<target name="exploded-store-ear-standalone" depends="store_standalone_exploded" />
+	
+	<!-- exploded-pub-ear-standalone -->
+	
+	<target name="exploded-pub-ear-standalone" depends="pub_standalone_exploded" />
+	
+	<!-- exploded-dwloader-ear-standalone -->
+		<target name="exploded-dwloader-ear-standalone" depends="dwloader_standalone_exploded" />
+	
+	<!-- exploded-preview-ear-standalone -->
+
+	<target name="exploded-preview-ear-standalone" depends="preview_standalone_exploded" />
+	
+	
+	<!-- exploded-store-ear-runinplaceJBOSS -->
+	<target name="exploded-store-ear-runinplaceJBOSS" depends="store_runinplaceJBOSS_exploded" />
+	
+	<!-- exploded-pub-ear-runinplaceJBOSS -->
+	<target name="exploded-pub-ear-runinplaceJBOSS" depends="pub_runinplaceJBOSS_exploded" />
+	
+	<!-- exploded-dwloader-ear-runinplaceJBOSS -->
+		<target name="exploded-dwloader-ear-runinplaceJBOSS" depends="dwloader_runinplaceJBOSS_exploded" />
+    
+
+	<!-- exploded-preview-ear-runinplaceJBOSS -->
+	
+	<target name="exploded-preview-ear-runinplaceJBOSS" depends="preview_runinplaceJBOSS_exploded" />
+	
+	
+</project>

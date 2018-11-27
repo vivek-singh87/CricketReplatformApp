@@ -1,0 +1,427 @@
+package com.cricket.common.util.formhandler;
+
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.Cookie;
+import javax.transaction.TransactionManager;
+
+import atg.commerce.order.OrderHolder;
+import atg.commerce.pricing.PricingModelHolder;
+import atg.core.util.StringUtils;
+import atg.droplet.DropletException;
+import atg.droplet.GenericFormHandler;
+import atg.dtm.TransactionDemarcation;
+import atg.nucleus.naming.ComponentName;
+import atg.servlet.DynamoHttpServletRequest;
+import atg.servlet.DynamoHttpServletResponse;
+import atg.userprofiling.Profile;
+
+import com.cricket.commerce.order.CricketOrderImpl;
+import com.cricket.commerce.order.CricketOrderManager;
+import com.cricket.common.constants.CricketCommonConstants;
+import com.cricket.common.constants.CricketCookieConstants;
+import com.cricket.integration.maxmind.CitySessionInfoObject;
+import com.cricket.integration.maxmind.CityVO;
+import com.cricket.integration.maxmind.GeoIpLocationManager;
+import com.cricket.myaccount.CricketProfileTools;
+import com.cricket.user.session.UserSessionBean;
+import com.cricket.util.CricketMarketToProfile;
+
+
+	public class ChangeUserLocationBasedOnZipCode extends GenericFormHandler {
+		
+		
+		CitySessionInfoObject cityInfo;
+		Profile profile;
+		String redirectURL;
+		String city;
+		String state;
+		String country;
+		String areaCode;
+		String postalCode;
+		String countryCode;
+		String latitude;
+		String longitude;
+		String timezone;
+		private String defaultIpAddr;
+		boolean noNetworkCoverage;	
+		boolean clearCartItems;
+		
+		private GeoIpLocationManager mGeoIpLocationManager;
+		private CricketOrderManager  mCricketOrderManager;
+		
+		//property : CricketMarketToProfile
+		private CricketMarketToProfile cricketMarketToProfile;
+		
+		private String sharedCookieExpiredVal;
+		
+		private List<String> excludedZipcodes;
+		
+		private String mSessionBeanPath;
+		private ComponentName mSessionBeanComponentName = null;
+		
+		public void handleChangeUserLocation (DynamoHttpServletRequest pReq, DynamoHttpServletResponse pRes) throws IOException {
+			
+			if(mGeoIpLocationManager.isLoggingDebug()) {
+				logDebug("new values are city : " + city + "state" + state + "postalCode" + postalCode);
+			}
+			if(mGeoIpLocationManager.isLoggingDebug()) {
+				logDebug("profile market type before setting:::" + profile.getPropertyValue(CricketCommonConstants.MARKET_TYPE));
+				logDebug("profile market code before setting:::" + profile.getPropertyValue(CricketCommonConstants.MARKET_ID));
+			}
+			
+			try {
+				if (clearCartItems) {
+					UserSessionBean userSessionBean = null;
+					userSessionBean = (UserSessionBean) pReq.resolveName(mSessionBeanComponentName);
+					OrderHolder cart = (OrderHolder) pReq.resolveName("/atg/commerce/ShoppingCart");
+					PricingModelHolder pricingModelHolder = (PricingModelHolder) pReq.resolveName("/atg/commerce/pricing/UserPricingModels");					
+					CricketOrderImpl order = (CricketOrderImpl) cart.getCurrent();					
+					if (null != order && order.getCommerceItemCount() > 0) {
+						userSessionBean.setAutoBillPayment(false);
+						getCricketOrderManager().clearCart(order,profile,pricingModelHolder,pReq.getLocale());
+					}
+				}
+				if(cityInfo.isInquireCoverageTimeOut()){
+					cityInfo.setInquireCoverageTimeOut(false);
+				}
+				CityVO cityVO = cityInfo.getCityVO();
+				String source = null;
+				cityVO.setGeoIpDetecred(false);
+				cityVO.setDefaultLocation(false);
+				cityVO.setManulaEntry(true);
+				if (!StringUtils.isBlank(city)) {
+					cityVO.setCity(this.getCity());
+					profile.setPropertyValue(CricketCommonConstants.USER_LOC_CITY, this.getCity());
+				}
+				if (!StringUtils.isBlank(state)) {
+					cityVO.setState(this.state);
+				}
+				if (!StringUtils.isBlank(country)) {
+					cityVO.setCountryName(this.country);
+				}
+				if (!StringUtils.isBlank(areaCode)) {
+					//int areaCodeInt = Integer.parseInt(this.areaCode);
+					cityVO.setAreaCode(this.areaCode);
+				}
+				if (!StringUtils.isBlank(postalCode)) {
+					cityVO.setPostalCode(this.postalCode);
+					profile.setPropertyValue(CricketCommonConstants.USER_LOC_ZIP_CODE, this.postalCode);
+				}
+				if (!StringUtils.isBlank(longitude)) {
+					double longitudeD = Double.parseDouble(this.longitude);
+					cityVO.setLongitude(longitudeD);
+				}
+				if (!StringUtils.isBlank(latitude)) {
+					double latitudeD = Double.parseDouble(this.latitude);
+					cityVO.setLatitude(latitudeD);
+				}
+				profile.setPropertyValue(CricketCommonConstants.MANUALLY_ENTERED_ZIP, true);
+				profile.setPropertyValue(CricketCommonConstants.IS_DEFAULT_LOCATION, false);
+				cityInfo.setOpenLocationDrawer(false);
+				boolean isZipCodeExcluded = checkForExcludedZipCodes(getPostalCode());
+				if(this.noNetworkCoverage || isZipCodeExcluded) {
+					if(mGeoIpLocationManager.isLoggingDebug()) {
+						logDebug("no network coverage:: " + this.noNetworkCoverage + " isZipCodeExcluded:: " + isZipCodeExcluded + " zipcode:: " + this.postalCode);
+					}
+					cityVO.setDefaultLocation(true);
+					cityVO.setGeoIpDetecred(false);
+					cityVO.setManulaEntry(false);
+					profile.setPropertyValue(CricketCommonConstants.MANUALLY_ENTERED_ZIP, false);
+					profile.setPropertyValue(CricketCommonConstants.IS_DEFAULT_LOCATION, true);	
+					cityInfo.setOpenLocationDrawer(true);	
+					logInfo("Zipcode is not available in cricket market."+ postalCode);
+				} else {
+					source = CricketCommonConstants.CUSTOMER_PROVIDED;									
+				}
+				boolean isNoService = getCricketMarketToProfile().setCoverageToProfile(cityVO, profile);
+				boolean inquireCoverageTimeOut = getCricketMarketToProfile().isInquireCoverageTimeOut();
+				if(inquireCoverageTimeOut) { 
+					if(mGeoIpLocationManager.isLoggingDebug()) {
+						logDebug("XXXXXXXXXXXXXXXXXXXXXXXXX inquireCoverage timeout has occurred XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX :: zipcode :: " + this.postalCode);
+					}
+					cityInfo.setInquireCoverageTimeOut(inquireCoverageTimeOut);
+				} 
+				if(isNoService || inquireCoverageTimeOut) {
+					if(mGeoIpLocationManager.isLoggingDebug()) {
+						logDebug("isNoService:: " + isNoService + " inquireCoverageTimeOut:: " + inquireCoverageTimeOut);
+					}
+					if(mGeoIpLocationManager.isLoggingDebug()) {
+						logDebug("XXXXXXXXXXXXXXXXXXXXXXXXX cricket doesnt provide any service in this area XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX :: zipcode :: " + this.postalCode);
+					}
+					cityVO = getGeoIpLocationManager().fetchCityForIp(getDefaultIpAddr());
+					getCricketMarketToProfile().setCoverageToProfile(cityVO, profile);
+					cityVO.setDefaultLocation(true);
+					cityVO.setGeoIpDetecred(false);
+					cityVO.setManulaEntry(false);
+					profile.setPropertyValue(CricketCommonConstants.MANUALLY_ENTERED_ZIP, false);
+					profile.setPropertyValue(CricketCommonConstants.IS_DEFAULT_LOCATION, true);	
+					cityInfo.setOpenLocationDrawer(true);
+					logInfo("Zipcode is not available in cricket market."+ postalCode);
+				}
+				cityInfo.setCityVO(cityVO);
+				updateSharedCookie(pReq,pRes,cityVO, source);
+				if(mGeoIpLocationManager.isLoggingDebug()) {
+					logDebug("profile market type after setting:::" + profile.getPropertyValue(CricketCommonConstants.MARKET_TYPE));
+					logDebug("profile market code after setting:::" + profile.getPropertyValue(CricketCommonConstants.MARKET_ID));
+				}
+			} catch (NumberFormatException e) {
+				addFormException(new DropletException("Error occured while changing the location:",e));
+				logError(e);
+			}	
+			//pRes.sendRedirect(getRedirectURL(), false);			
+		}
+		
+		private boolean checkForExcludedZipCodes(String pPostalCode) {
+			if(getExcludedZipcodes() != null && !StringUtils.isBlank(pPostalCode) && getExcludedZipcodes().size() > 0 && getExcludedZipcodes().contains(pPostalCode)) {
+				return true;
+			}
+			return false;
+		}
+
+		public CitySessionInfoObject getCityInfo() {
+			return cityInfo;
+		}
+
+		public void setCityInfo(CitySessionInfoObject cityInfo) {
+			this.cityInfo = cityInfo;
+		}
+
+		public String getCity() {
+			return city;
+		}
+
+		public void setCity(String city) {
+			this.city = city;
+		}
+
+		public String getState() {
+			return state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public String getCountry() {
+			return country;
+		}
+
+		public void setCountry(String country) {
+			this.country = country;
+		}
+
+		public String getAreaCode() {
+			return areaCode;
+		}
+
+		public void setAreaCode(String areaCode) {
+			this.areaCode = areaCode;
+		}
+
+		public String getPostalCode() {
+			return postalCode;
+		}
+
+		public void setPostalCode(String postalCode) {
+			this.postalCode = postalCode;
+		}
+
+		public String getCountryCode() {
+			return countryCode;
+		}
+
+		public void setCountryCode(String countryCode) {
+			this.countryCode = countryCode;
+		}
+
+		public String getLatitude() {
+			return latitude;
+		}
+
+		public void setLatitude(String latitude) {
+			this.latitude = latitude;
+		}
+
+		public String getLongitude() {
+			return longitude;
+		}
+
+		public void setLongitude(String longitude) {
+			this.longitude = longitude;
+		}
+
+		public String getTimezone() {
+			return timezone;
+		}
+
+		public void setTimezone(String timezone) {
+			this.timezone = timezone;
+		}
+		
+		public Profile getProfile() {
+			return profile;
+		}
+
+		public void setProfile(Profile profile) {
+			this.profile = profile;
+		}
+
+		public String getRedirectURL() {
+			return redirectURL;
+		}
+
+		public void setRedirectURL(String redirectURL) {
+			this.redirectURL = redirectURL;
+		}
+
+		/**
+		 * @return the cricketMarketToProfile
+		 */
+		public CricketMarketToProfile getCricketMarketToProfile() {
+			return cricketMarketToProfile;
+		}
+		
+		/**
+		 * @param cricketMarketToProfile the cricketMarketToProfile to set
+		 */
+		public void setCricketMarketToProfile(
+				CricketMarketToProfile cricketMarketToProfile) {
+			this.cricketMarketToProfile = cricketMarketToProfile;
+		}
+
+		public boolean isNoNetworkCoverage() {
+			return noNetworkCoverage;
+		}
+
+		public void setNoNetworkCoverage(boolean noNetworkCoverage) {
+			this.noNetworkCoverage = noNetworkCoverage;
+		}
+		
+		private void updateSharedCookie(DynamoHttpServletRequest pRequest, DynamoHttpServletResponse pRes, CityVO cityVO, String Source) throws UnsupportedEncodingException{
+			Cookie[] cookies = pRequest.getCookies();		
+			if(cookies!=null && cookies.length>0){
+				for (Cookie cookie : cookies) {
+					if(CricketCookieConstants.LOCATION_INFO.equalsIgnoreCase(cookie.getName())){						
+						Map<String,String> sharedCookieValueMap = new HashMap<String,String>();
+						sharedCookieValueMap.put(CricketCookieConstants.ZIP, cityVO.getPostalCode());
+						sharedCookieValueMap.put(CricketCookieConstants.CITY, cityVO.getCity());
+						sharedCookieValueMap.put(CricketCookieConstants.STATE, cityVO.getState());
+						sharedCookieValueMap.put(CricketCommonConstants.IS_DEFAULT_LOCATION, String.valueOf(cityVO.isDefaultLocation()));	
+						sharedCookieValueMap.put(CricketCommonConstants.IS_GEO_IP_DETECTED, String.valueOf(cityVO.isGeoIpDetecred()));
+						sharedCookieValueMap.put(CricketCommonConstants.SOURCE2, Source);
+						
+						//CR 30: Location Information Cookie should be updated with the properties 
+						//       Market code, Network Provider Id, and Network provider Name from ATG 
+						Object marketCodeObj = profile.getPropertyValue(CricketCommonConstants.MARKET_ID);
+						if(marketCodeObj != null){
+							sharedCookieValueMap.put(CricketCookieConstants.MARKET_CODE, (String)marketCodeObj);
+						}
+					
+						Object networkProviderObj = profile.getPropertyValue(CricketCommonConstants.NETWORK_PROVIDER);
+						if(networkProviderObj != null){
+							String networkProviderName = (String)networkProviderObj;
+							if(CricketCommonConstants.NETWORKTYPE_CRICKET.equals(networkProviderName)){
+								sharedCookieValueMap.put(CricketCookieConstants.NETWORK_PROVIDER_ID, CricketCookieConstants.NETWORK_PROVIDER_ID_1);			
+							}else if(CricketCommonConstants.NETWORKTYPE_SPRINT.equals(networkProviderName)){
+								sharedCookieValueMap.put(CricketCookieConstants.NETWORK_PROVIDER_ID, CricketCookieConstants.NETWORK_PROVIDER_ID_2);			
+							}		
+							sharedCookieValueMap.put(CricketCookieConstants.NETWORK_PROVIDER_NAME, networkProviderName);
+						}
+						//end of CR 30
+						
+						String encodedCookieValue = URLEncoder.encode(getGeoIpLocationManager().getGeoIpLocationTools().encrypt(sharedCookieValueMap), CricketCookieConstants.UTF_8);
+						cookie.setMaxAge(Integer.valueOf(getSharedCookieExpiredVal()).intValue()*60*60);
+						cookie.setDomain(((CricketProfileTools)getProfile().getProfileTools()).getDomainName());
+						cookie.setPath("/");
+						cookie.setValue(encodedCookieValue);
+						pRes.addCookie(cookie);
+						break;
+					}
+				}
+			}
+		}
+
+		public String getSharedCookieExpiredVal() {
+			return sharedCookieExpiredVal;
+		}
+
+		public void setSharedCookieExpiredVal(String sharedCookieExpiredVal) {
+			this.sharedCookieExpiredVal = sharedCookieExpiredVal;
+		}
+
+		public CricketOrderManager getCricketOrderManager() {
+			return mCricketOrderManager;
+		}
+
+		public void setCricketOrderManager(CricketOrderManager pCricketOrderManager) {
+			mCricketOrderManager = pCricketOrderManager;
+		}
+
+		public boolean isClearCartItems() {
+			return clearCartItems;
+		}
+
+		public void setClearCartItems(boolean pClearCartItems) {
+			clearCartItems = pClearCartItems;
+		}
+
+		/**
+		 * @return the mGeoIpLocationManager
+		 */
+		public GeoIpLocationManager getGeoIpLocationManager() {
+			return mGeoIpLocationManager;
+		}
+
+		/**
+		 * @param mGeoIpLocationManager the mGeoIpLocationManager to set
+		 */
+		public void setGeoIpLocationManager(GeoIpLocationManager mGeoIpLocationManager) {
+			this.mGeoIpLocationManager = mGeoIpLocationManager;
+		}
+
+		public String getDefaultIpAddr() {
+			return defaultIpAddr;
+		}
+
+		public void setDefaultIpAddr(String defaultIpAddr) {
+			this.defaultIpAddr = defaultIpAddr;
+		}
+
+		public List<String> getExcludedZipcodes() {
+			return excludedZipcodes;
+		}
+
+		public void setExcludedZipcodes(List<String> pExcludedZipcodes) {
+			excludedZipcodes = pExcludedZipcodes;
+		}	
+		
+		public String getSessionBeanPath() {
+			return mSessionBeanPath;
+		}
+
+		public void setSessionBeanPath(final String pSessionBeanPath) {
+			mSessionBeanPath = pSessionBeanPath;
+			
+			if (mSessionBeanPath == null) {
+				mSessionBeanComponentName = null;
+			}else{
+				mSessionBeanComponentName = ComponentName
+						.getComponentName(mSessionBeanPath);
+			} 
+		}
+
+		public ComponentName getSessionBeanComponentName() {
+			return mSessionBeanComponentName;
+		}
+
+		public void setSessionBeanComponentName(final ComponentName pSessionBeanComponentName) {
+			mSessionBeanComponentName = pSessionBeanComponentName;
+		}
+		
+	}

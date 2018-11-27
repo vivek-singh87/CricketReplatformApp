@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE gsa-template SYSTEM "dynamosystemresource:/atg/dtds/gsa/gsa_1.0.dtd">
+
+<gsa-template>
+	<item-descriptor name="user" xml-combine="append">
+		<property name="catalog" default="catalog340003" />
+		<property name="userLocationZipCode" data-type="string"/>
+		<property name="manuallyEnteredZipCode" data-type="boolean" default="false" />
+		<property name="isDefaultLocation" data-type="boolean" default="false" />
+		<property name="userLocationCity" data-type="string" />
+		<property name="isLOSExist" data-type="boolean" default="false" />
+		<property name="networkProvider" data-type="string" />
+		<property name="isUserLoggedIn" data-type="boolean" default="false"/>
+		<property name="marketId" data-type="string" default="850"/>
+		<property name="marketType" data-type="string" />
+		<!--<property name="marketSubType" data-type="string"/>
+		<property name="competeType" data-type="string" /> -->
+		<property name="sprintCSA" data-type="string" />
+		<property name="jointVenture" data-type="string" />
+		<property name="rateCenterId" data-type="string" />
+		<property name="accountType" data-type="string" />
+		<property name="customerType" data-type="string" />
+		<property name="customerNumber" data-type="string" />
+ 
+ 		<!-- Setting Auto Login Property -->
+		
+		<table name="dps_user" id-column-name="id" type="primary" shared-table-sequence="1">
+       		<property name="login" required="true" />
+  			<property name="password" required="false" />
+  			<property name="firstName" required="false" />
+  			<property name="lastName" required="false" />
+  			<property name="email" required="false" />
+  			<property name="autoLogin" default="true" />
+		</table>
+		
+		<!-- Extra Properties from account.mycricket.com -->
+		
+		<table name="ckt_user_cookie_info" type="auxiliary" id-column-name="id">
+			<property name="MDN" display-name-resource="mdn" data-type="string"	column-name="MDN" category-resource="cricketcookie" />
+			<property name="PhoneCode" data-type="string" display-name-resource="PhoneCode" column-name="Phone_Code" category-resource="cricketcookie" />
+			<property name="PlaneName" data-type="string" display-name-resource="PlaneName" column-name="Plane_Name" category-resource="cricketcookie" />
+			<property name="PlanCode" data-type="string" display-name-resource="PlanCode" column-name="Rate_Plan_Code"	category-resource="cricketcookie" />
+			<property name="ProductType" data-type="string" display-name-resource="ProductType" column-name="Product_Type" category-resource="cricketcookie" />
+			<property name="CustomerType" data-type="string" display-name-resource="CustomerType" column-name="Customer_Type" category-resource="cricketcookie" />
+			<property name="ABPFlag" data-type="boolean" display-name-resource="ABPFlag" column-name="abp_flag" category-resource="cricketcookie" />
+		</table>
+
+		<table name="ckt_user_cookie_info_los" id-column-name="id" multi-column-name="idx" type="multi">
+			<property category-resource="cricketcookie" display-name-resource="NumberofLines" column-name="Number_of_Lines"	data-type="list" name="NumberOfLines" component-data-type="string" />
+		</table>
+		
+		<!-- <property name="userEnteredZipCode" data-type="string"/> -->		
+	</item-descriptor>
+</gsa-template>

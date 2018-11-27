@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gsa-template SYSTEM "dynamosystemresource:/atg/dtds/gsa/gsa_1.0.dtd">
+<gsa-template>
+	  <header>
+	    <name>Cricket Inventory</name>
+	    <author>Cricket Communications</author>
+	  </header>
+	<item-descriptor name="inventory" xml-combine="append" cache-mode="disabled">
+		<table name="ckt_inventory" id-column-name="inventory_id" type="auxiliary">
+			<property expert="false" readable="true" column-name="PRODUCT_TYPE" data-type="enumerated" hidden="true" writable="true" 
+			name="producttype" required="false" cache-mode="inherit" queryable="true">
+				<attribute name="useCodeForValue" value="false"/>
+	       		<option value="phone-product" code="0"/>
+				<option value="plan-product" code="1"/>
+				<option value="accessory-product" code="2"/>
+				<option value="bundle-product" code="3"/>
+	     	</property>
+	     	<property expert="false" readable="true" column-name="PRODUCT_TYPE_FEED" data-type="string" hidden="true" writable="true" 
+			name="productTypeFeed" required="false" cache-mode="inherit" queryable="true"/>
+	    </table>	
+    </item-descriptor>
+</gsa-template>

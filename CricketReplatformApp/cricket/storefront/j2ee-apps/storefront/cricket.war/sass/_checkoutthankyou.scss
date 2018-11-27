@@ -1,0 +1,349 @@
+/* Checkout Page */ 
+.section-checkout.thankyou{
+  #section-progress{
+    .section-progress-content{
+      min-height: 0;
+      padding-left: 21px;
+      h1{
+        padding-top: emCalc(10px);
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: emCalc(24px);
+        line-height: .95em;
+        @include respond-min($small-screen) {
+          font-size: emCalc(30px);
+          margin-bottom: 0.5em;
+          line-height: 1.4em;
+        }
+      }
+      @include respond-min($small-screen) {
+        padding-left: 0;
+      }
+    }
+  }
+
+  #section-checkout-form{
+    .details-content{
+      padding-top: 0;
+      .row{
+        margin: 0;
+        padding-bottom: 0;
+        &.divider-thankyou{
+          padding: 21px 21px 28px 21px;
+          @include respond-min($small-screen) {
+            padding: 21px 31px 28px 31px;
+          }
+        }
+      } 
+      h2{
+        font-size: emCalc(23px);
+        margin-bottom: emCalc(10px);
+        line-height: 23px;
+        @include respond-min($small-screen) {
+           line-height: 13px;
+           font-size: emCalc(24px);
+        }
+      }
+      &.columns{
+        margin-top: 0;
+        padding-bottom: 0;
+        @include respond-min($small-screen) {
+          margin-top: 16px;
+        }
+      }
+      .divider-bottom{
+        border-bottom: 1px solid #CCCCCC;
+        padding-top: emCalc(98px);
+      }
+      .receipt{
+        padding: 0 emCalc(10px);
+        a.button{
+          width: 147px;
+          float: left;
+          font: emCalc(14px) 'GothamBold';
+          margin-top: 0;
+          margin-bottom: 0.5em;
+          @include respond-min($small-screen) {
+            float: right;
+            margin-top: emCalc(28px);
+            margin-bottom: 1.25em;
+          }
+        }
+        .order-number{
+          p{
+            padding-right: emCalc(8px);
+          }
+        }
+        @include respond-min($small-screen) {
+          padding: 0 emCalc(20px);
+          .order-number{
+            p{
+              padding-right: 0;
+            }
+          }
+        }
+      }
+      .divider{
+        &.thankyou{
+          padding-bottom: 0;
+        }
+      }
+      .form{
+        padding-left: 0;
+        padding-right: 0;
+        border-right: 1px solid #CCC;
+        padding-bottom: 0;
+      
+        form.custom{
+          padding-left: 21px;
+          padding-right: 21px;
+          fieldset{
+            .columns{
+              padding-left: 0;
+              padding-right: 0;
+              @include respond-min($small-screen) {
+                padding-left: 0.625em;
+                padding-right: 0.625em;
+              }
+            }
+            .divider{
+              width: 100%;
+              @include respond-min($small-screen) {
+                width: 95%;
+              }
+            }
+          }
+          @include respond-min($small-screen) {
+            padding-left: 31px;
+          }
+        }
+      }
+      .summary{
+        border-left: none;
+        table{
+          thead{
+            tr{
+              th{
+                h3{
+                  margin: 0;
+                  font-size: 19px;
+                }
+                span{
+                  font: emCalc(13px) 'GothamMedium';
+                }
+              }
+            }
+          }
+        }
+        
+        @include respond-min($small-screen) {
+        }
+      }
+      #tab-content{
+        .active{
+          .content{
+            min-height: inherit;
+            @include respond-min($small-screen) {
+              padding-left: 1.8125em;
+              padding-right: 1.8125em;
+            }
+          }
+        }
+        .section-container{
+          p.title{
+            padding-left: emCalc(12px);
+          }
+        }
+      }
+      #overview-total{
+        padding: 0;
+        padding-bottom: 1.75em;
+        .summary{
+          .small-12{
+            padding-top: 1.55em;
+            @include respond-min($small-screen) {
+              padding-top: 1.8125em;
+            }
+          }
+        }
+      }
+      @include respond-min($small-screen) {
+        padding-top: emCalc(38px);
+      }
+    }
+  }
+
+  #order-list{
+    padding: 0;
+    .row{
+      .columns{
+        padding: 0;
+        &.package-item, &.accessory-item{
+            padding-top: emCalc(26px); 
+            padding-bottom: 0;
+            @include respond-min($small-screen) {
+              padding-bottom: emCalc(13px);
+            }
+        }
+        &.accessory-item{
+          padding-bottom: 0;
+          @include respond-min($small-screen) {
+            padding-bottom: emCalc(27px);
+          }
+        }
+      }
+      &.items{
+        padding: 0 2.5em 0.9375em 1.5em;
+      }
+    }
+    .row:last-child{
+      .title{
+        color: #00a663;
+      }
+    }
+    .title{
+      background: none;
+      border-top: 1px solid #CCC;
+      border-bottom: 1px solid #CCC;
+      font-family: "GothamBold";
+      font-size: 1.2em;
+      letter-spacing: -0.05em;
+      padding-top: emCalc(17px);
+      padding-bottom: emCalc(15px);
+      padding-left: 1.275em;
+      padding: 1.0625em 0 0.9375em 1.275em;
+      color: #8DC63F;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .content{
+      padding-left: emCalc(24px);
+      padding-right: emCalc(40px);
+    }
+    .section-container, .section-container.auto{
+      border-right: none;
+      border-left: none;
+      border-bottom: 0;
+    }
+    section:last-child{
+      .content{
+        padding-top: emCalc(29px);
+        padding-bottom: emCalc(43px);
+        padding-left: emCalc(63px);
+      }
+    }
+    h4{font: 18px 'GothamBold';}
+    h5{
+      font: 12px 'GothamMedium';
+      color: #e63924;
+    }
+    .package-item{
+      p, h4{
+        color: #333;
+      }
+      h4 {
+        margin-bottom: 1.4em;
+        @include respond-min($small-screen) {
+          margin-bottom: emCalc(27px);
+        }
+      }
+
+      p{
+        font: 12px 'GothamMedium';
+        padding-right: 0;
+        &.green-price{
+          color: #8dc63f;
+          font: 54px 'GothamBlack';
+          text-transform: uppercase;
+          padding-bottom: .7em;
+          padding-top: 10px;
+          padding-right: 66px;
+          line-height: 19px;
+          span{
+            font-size: 15px;
+            padding-left: 15px;
+          }
+          sub{
+            font-size:13px;
+          }
+          @include respond-min($small-screen) {
+            padding-right: 30px;
+          }
+        }
+        &.small{
+          font-size: 10px;
+          padding-top: emCalc(10px);
+        }
+        @include respond-min($small-screen) {
+          padding-right: 35px;
+        }
+      }
+      &.phone{
+        img{
+          margin-left: emCalc(28px);
+          margin-bottom: emCalc(21px);
+        }
+        p{padding-right: 4em;}
+      }
+      &.add-ons{
+        p{padding-bottom: 23px;}
+      }
+    }
+    .accessory-item{
+      table{
+        border: none;
+        float: left;
+        padding-right: emCalc(23px);
+        th{font: 10px 'Arial';}
+        td{
+          font: 14px 'GothamBold';
+          text-align: center;
+        }
+        th, td{padding-right: emCalc(39px);}
+        @include respond-min($small-screen) {
+          float: right;
+        }
+      }
+      h4{
+        font: 14px 'GothamBold';
+        margin-bottom: 0;
+      }
+      img{
+        float: left;
+        padding-right: emCalc(24px);
+      }
+    }
+  }
+    
+/* Overrides for Existing Customer Thank You Pages */
+#order-list #phone-upgrade {
+  h4 {padding: 1em 1.5em;}
+  .bold {font: 14px "GothamBold";}
+  .package-item {
+    padding: 0;
+    img {margin: 0;}
+  }
+}
+#order-list #plan-upgrade {
+  h4 {padding-top: 1em;}
+  h4.grey {
+    color: #999999;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  p.title {color: #8DC63F;}
+  .red {color: #e63924;}
+  .green-price {padding-bottom: 0;}
+  .package-item {padding-top: 0;}
+}
+#order-list #addon-change {
+  p.title {color: #8DC63F;}
+}
+#order-list #accessories {
+  img {
+    padding: 0;
+    float: none;
+  }
+}
+
+} //END

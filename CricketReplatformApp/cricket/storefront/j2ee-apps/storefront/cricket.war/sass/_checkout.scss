@@ -1,0 +1,476 @@
+/* Checkout Page */ 
+
+label p.label-text {
+	float: left;
+	margin-left: 25px;
+	margin-top: -15px;
+}
+
+.section-checkout {
+  min-height: 500px;
+  @include respond-min($small-screen) {padding: 0;}
+  span.italic{font-style: italic;}
+}
+
+.section-checkout #section-progress {
+  background-color: #fff;
+  @include respond-min($small-screen) {background-color: #f7f7f7;}
+}
+
+#section-progress .section-progress-content {
+  padding: emCalc(14px) emCalc(20px) emCalc(20px);
+  @include respond-min($small-screen) {
+    padding-top: emCalc(41px);
+    min-height: emCalc(149px);
+    padding: emCalc(14px) 0 0;
+  }
+  .columns{padding: 0;}
+  h1{
+    color: #008752;
+    font-size: 1.875em;
+  }
+  ul {
+    width: 100%;
+    padding-left: emCalc(11px);
+    @include respond-min($small-screen) {padding-left: emCalc(6px);}
+    @include respond-min($medium-screen) {padding-left: emCalc(27px);}
+  }
+  li {
+    list-style-type: none;
+    display: inline-block;
+    float: left;
+    color: #8f8f8f;
+    font-family: 'GothamBold';
+    font-size: emCalc(14px);
+    @include respond-min($small-screen) {
+      width: 33.333%;
+      font-size: 0.87em;
+    }
+    @include respond-min($medium-screen) {
+      font-size: emCalc(16px);
+    }
+  }
+  li.current {color: #fff;}
+  li.step-2{
+    padding-left: emCalc(42px);
+    @include respond-min($small-screen) {padding-left: emCalc(54px);}
+  }
+  li.step-3{
+    padding-left: emCalc(42px);
+    @include respond-min($small-screen) {padding-left: emCalc(65px);}
+  }
+}
+
+#section-progress .progress-bar {
+  padding: emCalc(10px) 0 0 0 !important;
+  background: #f7f7f7 url('../img/checkout/progress-bar-steps.jpg') 0 0 no-repeat;
+  background-size: 100% emCalc(135px);
+  height: 45px;
+  width: 100%;
+  &.step2 {background-position: 0 emCalc(-45px);}
+  &.step3 {background-position: 0 emCalc(-90px);}
+  &.mobile{
+    background: #fff url('../img/checkout/progress-bar-steps-mobile.jpg') 0 0 no-repeat;
+    background-size: 280px emCalc(135px);
+    &.step2 {background-position: 0 emCalc(-45px);}
+    &.step3 {background-position: 0 emCalc(-90px);}
+    @include respond-min($small-screen) {background-color: #f7f7f7;}
+  }
+}
+
+#section-checkout-form {background-color: #f7f7f7;}
+
+#section-checkout-form .details-content {
+  background-color: #fff;
+  width: 100%;
+  padding-top: emCalc(7px);
+  color: #333;
+  
+  @include respond-min($small-screen) {
+    padding-top: emCalc(26px);
+    padding: emCalc(41px) 0 emCalc(75px) 0;
+    border: 1px #ccc solid;
+    margin: emCalc(27px) 0 emCalc(106px) 0;
+  }
+  
+  &.columns{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  p{
+    font-family: 'GothamBook';
+    font-size: emCalc(13px);
+    line-height: 1;
+    margin-bottom: 0;
+    @include respond-min($small-screen) {
+      line-height: 1.6;
+    }
+  }
+  h2, h3{font-family: 'GothamBold';}
+  h2{
+    font-size: emCalc(18px);
+    line-height: 13px;
+    font-weight: 400;
+  }
+  h3{
+    font-size: emCalc(13px);
+    font-weight: 400;
+  }
+  h4{
+    font-family: 'GothamBook';
+    font-size: emCalc(14px);
+  }
+  .divider {
+    border-top: 1px solid #CCC;
+    padding-bottom: emCalc(29px);
+  }
+  .divider.package { padding-bottom: emCalc(15px);}
+  .divider.last {
+    margin-top: emCalc(15px);
+    padding-bottom: emCalc(15px);
+  }
+  a.button {
+    @include btn-cricket($orange-1);
+    width: 100%;
+  }
+  a.button span {
+    font-weight: 700;
+    font-size: 13px;
+  }
+  a.processing{
+    display: block;
+    /* For IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    &.disabled{
+      display: none;
+      &:hover{
+        cursor: default;
+        background-color: #E83B26;
+      }
+    }
+  }
+}
+
+/* Mobile Version of Summary */
+.section-checkout  #section-checkout-form #tab-content .section-container {
+  p {padding: 0 emCalc(20px);}
+  .content{padding: emCalc(31px) emCalc(29px) 0 emCalc(29px);}
+  .active.no-icon .title {
+    background: none;
+    background-color: #FFF;
+  }
+}
+
+/* Mobile version of Overview */
+#overview-total {
+  padding: 0 emCalc(20px) emCalc(20px) emCalc(20px);
+  .summary .small-12 {padding-top: emCalc(29px);}
+  .summary table tr.order-total {padding-bottom: emCalc(19px);}
+}
+
+/* Left Side of Form Desktop */
+#section-checkout-form .details-content .form {
+  padding: 0 emCalc(20px) emCalc(20px);
+  padding-bottom: 0;
+  
+  @include respond-min($small-screen){
+    padding: 0 emCalc(49px) 0 emCalc(30px);
+    padding-bottom: 1.25em;
+  }
+  
+  .row {
+    padding-bottom: emCalc(12px);
+    @include respond-min($small-screen) {padding-bottom: emCalc(20px);}
+  }
+  .row.nopad {padding-bottom: 0;}
+  .row.nopad p {margin-bottom: emCalc(5px);}
+  .row.birthdate {
+    padding-top: emCalc(8px);
+    padding-bottom: emCalc(15px);
+  }
+  form.custom {
+    .row {
+      padding-right: 0.625em;
+      @include respond-min($small-screen){padding-right: .8em;}
+      @include respond-min($medium-screen){padding-right: emCalc(100px);}
+      #different-shipping-address .row{
+        padding-right: 0;
+      }
+    }
+    .row:first-child {padding-right: 0;}
+    .row.no-right-padding {padding-right: 0;}
+    .radio {
+      margin-top: emCalc(-4px);
+      margin-right: emCalc(7px);
+    }
+    .dropdown .current {color: #008752;}
+    .dropdown {
+      margin-bottom: emCalc(20px);
+      @include respond-min($small-screen) {
+        margin-top: emCalc(8px);
+        margin-bottom: 0;
+      }
+    }
+    .checkbox.checked:before {
+      content: "\2713";
+      margin-left: 12px;
+      margin-top: 50%;
+      cursor: default;
+    }
+    input[type="checkbox"] {
+      display: inline;
+      width: auto;
+      margin: 0;
+    }
+    select {
+      padding: 4px 4px 5px 4px; 
+      margin-top: 4px;
+    }
+  }
+  fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    .row.special-pad {
+      padding-bottom: emCalc(11px);
+      @include respond-min($small-screen) {padding-bottom: emCalc(30px);}
+    }
+    .right input[type="text"], .single input[type="text"]{
+      margin-bottom: emCalc(10px);
+      @include respond-min($small-screen) {margin-bottom: 0;}
+    }
+    input[type="text"]{
+      margin-bottom: emCalc(20px);  
+      @include respond-min($small-screen) {margin-bottom: 0;}
+    }
+    .scroll-area {
+      width: 100%;
+      height: emCalc(219px);
+      border: 1px solid #CCC;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      padding: emCalc(23px) emCalc(17px) emCalc(23px) emCalc(19px);
+      &.disabled{overflow-y: hidden;}
+    }
+    .custom.dropdown, .qtip{font-family: emCalc(14px) 'GothamMedium';}
+    p.delivery-info {
+      padding-left: emCalc(32px);
+      line-height: emCalc(24px);
+      font-family: 'GothamMedium';
+      font-size: emCalc(12px);
+      span.italic {
+        font-family: 'GothamBook';
+        font-style: italic;
+      }
+    }
+    label.opt-in {
+      display: block;
+      padding-left: emCalc(25px);
+      text-indent: emCalc(-20px);
+      font-family:'GothamBold';
+      padding-top: emCalc(12px);
+      width: 100%;
+      p{
+        display: inline;
+        padding-left: emCalc(5px);
+        font-family:'GothamBold';
+        line-height: 13px;
+      }
+    }
+    label.terms {
+      width: 100%;
+      text-indent: 0;
+      padding-left: emCalc(8px);
+      font-family:'GothamBold';
+      p {font-size: 1.0em; }
+      @include respond-min($small-screen) {
+        width: 100%; padding-left: 0;
+      }
+    }
+    label.terms input#terms {margin-top: 0.1em; margin-left: emCalc(8px); width: auto; float: left; margin-right: emCalc(8px);}
+    label.terms span {font-size: 0.8em; display: inline;}
+    label.terms span span {font-size: inherit; display: inline;}
+    input{width: 100%; margin-top: 7px;}
+    legend {padding-bottom: emCalc(10px);}
+    legend.shipping-method {padding-top: emCalc(11px);}
+    label {
+      cursor: auto;
+      width: emCalc(216px);
+      font-weight: 400;
+      font-family: 'GothamBook';
+    }
+    label .span {font-face:'GothamBookItalic';}
+    #opt-in{width: 14px;}
+    label.error {width: 100%;}
+    label.address-label, label.autopay-label, label.shipping-method-label {
+      font-family: 'GothamBook';
+      font-size: emCalc(14px);
+      width: 100%;
+      padding: emCalc(7px) 0 emCalc(7px) 0;
+      &.method{margin-bottom: 0; padding: 0;}
+      @include respond-min($small-screen) {font-size: emCalc(16px);}
+    }
+  } /* /fieldset */
+} /* END Left side of Form */ 
+
+/* Different Shipping Address, hidden by default*/
+#different-shipping-address {
+  padding-top: 1em;
+  .row{padding-right: 0;}
+}
+#email-text{margin-bottom: emCalc(10px);}
+
+/* Start Right Column of Form*/
+#section-checkout-form .details-content .summary {
+  padding-left: 0;
+  padding-right: 0;   
+  padding-bottom: emCalc(11px);
+  @include respond-min($small-screen) {
+    border-left: 1px solid #CCCCCC;
+    padding-left: emCalc(35px);
+    padding-right: emCalc(33px);
+    min-height: emCalc(969px);
+  }
+  
+  table {
+    width: 100%;
+    border: none;
+    margin-bottom: emCalc(17px);
+    background: transparent;
+    thead, tfoot, tr.even, tr.alt, tr:nth-of-type(2n) {background: transparent;}
+  }
+  table thead {
+    background-color: #FFF;
+    font-family: 'GothamBold';
+    font-size: emCalc(18px);
+    tr th {
+      padding: 0 0 emCalc(19px) 0;
+      font-size: 1.125em;
+      font-weight: 400;
+    }
+  }
+  table tbody {
+    text-align: left;
+    color: #333;
+    font: normal emCalc(13px) 'Arial';
+    tr th {
+      text-align: left;
+      font-weight: normal;
+      padding: 0;
+    }
+    tr th.title-spacer {padding-top: emCalc(9px);}
+    tr th.package-item-title {color: #000; font-weight: 700;}
+    tr th.package-title {
+      color: #24ae73;
+      font-family: 'GothamBold';
+      font-size: 16px;
+      padding-bottom: emCalc(16px);
+    }
+    tr th.text-center {font-weight: 700;}
+    td {padding: 0; text-align: center;}
+    tr.discount th{color: #24ae73; font-weight: 700;}
+    tr.icon-divider {
+      width: 100%;
+      border-bottom: 1px dotted #bfe1d4;
+      height: emCalc(10px);
+    }
+    tr.package-total, tr.accessory-total, tr.tax-total, tr.shipping-total, tr.estimated-monthly-total, tr.discount{
+      th, td {
+        font-family: 'GothamBold';
+        font-size: emCalc(14px);
+      }
+    }
+    tr.estimated-monthly-total{height: 2.9em; vertical-align: bottom;}
+    tr.package-total, tr.accessory-total{
+      th, td{padding-top: emCalc(19px);}
+    }
+    tr.order-total {
+      th, td {
+        color: #00A663;
+        font-family: 'GothamBlack';
+        font-size: 22px;
+      }
+    }
+  } /* /table /tbody */
+  
+  .incentive p {
+    font-family: 'GothamMedium';
+    font-size: emCalc(12px);
+    margin-bottom: 25px;
+  }
+  
+}
+/* /END Right Column of Form */
+
+/* Error styling is slightly different from header drawer area */
+.section-checkout .error input, input.error, .error textarea, textarea.error, .dropdown.error, span.checkbox.error{
+  background-color: #ffffff;
+  border-width: 2px;
+  border-color: #C60F13;
+}
+
+select.error {outline: 2px solid #C60F13 !important;}
+.error-border {border: 2px solid #C60F13; padding: 1em !important;}
+
+.error-container, .promo-error {
+  color: #C60F13;
+  visibility: hidden;
+  label.error:first-child{padding-top: emCalc(10px);}
+}
+.promo-error p {color: #C60F13;}
+
+
+/* Modal Window */
+.modal {
+  position: fixed;
+  top: 40%;
+  width: 360px;
+  height: 185px;
+  z-index: 2000;
+  background: #FFF;
+  //dropshadow
+  -moz-box-shadow: 3px 3px 4px #333;
+  -webkit-box-shadow: 3px 3px 4px #333;
+  box-shadow: 3px 3px 4px #333;
+   /* For IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#333333')";
+  margin-left:  -130px;
+  margin-top :  -62px;
+  left:  40%;
+  @include respond-min($small-screen) {margin-top: -185px;}
+  @include respond-min($medium-screen) {margin-top: 0;}
+}
+
+.md-overlay {
+  z-index: 1000;
+  -moz-opacity: 0.70;
+  opacity:.70;
+  filter: alpha(opacity=70);
+  background: #000;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.dialog-content {padding: 32px 31px 29px 40px;
+  p{
+    font: 13px 'GothamBook';
+    color: #333;
+    padding-right: emCalc(10px);
+  }
+  h2{font: 18px 'GothamBold'; color: #333;}
+  a.button {
+    width: emCalc(60px);
+    padding-left: emCalc(22px);
+    padding-right: emCalc(22px);
+  }
+  a.button.green {width: 152px; font-size: 10px;}
+  a.button.orange{
+    @include btn-cricket($orange-1);
+    font-size: 10px;
+    width: 7.75em;
+    margin-right: 10px;
+  }
+}

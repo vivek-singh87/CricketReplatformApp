@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+<project name="Cricket Replatform App" basedir="."  xmlns:ac="antlib:net.sf.antcontrib">
+	<property environment="env"/>
+	<property file="build.properties"/>
+	
+	<filelist id="module.files"  files="${modules.build.order}" />
+	<taskdef resource="net/sf/antcontrib/antlib.xml">
+		<classpath>
+			<pathelement location="${ant.home}/lib/antcontrib.jar" />
+		</classpath>
+	</taskdef> 
+	
+<!--  - - 
+    startBuild
+- -  -->
+	
+<target name="-init">
+	 
+	 <echo>Start Build....</echo>
+   	 <echo>$${ant.project.name} = ${ant.project.name}</echo>
+   	 <echo>$${ant.home} = ${ant.home}</echo>
+   	 <echo>$${basedir} = ${basedir}</echo>
+   	 <echo>$${ant.file} = ${ant.file}</echo>
+   	 <echo>$${ant.version} = ${ant.version}</echo>
+   	 <echo>$${env.DYNAMO_HOME} = ${env.DYNAMO_HOME}</echo>
+   	 <echo>CricketApp = ${env.DYNAMO_HOME}/../${cricketapp.name}</echo>
+   	 <echo>$${copy.exclude.dirs} = ${copy.exclude.dirs} </echo>
+ 	 <echo>$${dynamo.home} = ${dynamo.home} </echo>
+	 <echo>$${dynamo.root.dir} = ${dynamo.root.dir} </echo>
+	 <echo>$${modules.build.order} = ${modules.build.order} </echo>
+	 <echo>$${ear.location} = ${ear.location} </echo>
+	 <echo>${cricketapp.location}/${cricketapp.name}</echo>
+	
+</target>
+	
+<!--  - - 
+	    clean
+- -  -->
+	
+	
+<target name="clean" depends="-init">
+	
+		<delete dir="${env.DYNAMO_HOME}/../${cricketapp.name}"/>
+		
+</target>
+
+<!--
+<target name="excludeDirs" >
+ 	  <ac:for list="${copy.exclude.dirs}" param="excludeDir" delimiter=",">
+ 	  <ac:sequential>
+ 	    <echo>excludeDir :  @{excludeDir}</echo>
+ 	  </ac:sequential>
+ 	 </ac:for>	
+</target>
+-->
+	
+<!--  - -    copy-atg-server - -  -->
+
+<target name="copy-atg-server">
+			<copy failonerror="false" includeemptydirs="true" todir="${dynamo.home}/servers">
+				<fileset dir="${dynamo.home}/../${cricketapp.name}/servers/homeServers">
+					<exclude name="**/.svn/*" />
+				</fileset>
+			</copy>
+</target>
+	
+<!--  - -    copy-app-to-atg - -  -->
+		
+
+<target name="copy-app-to-atg" depends="clean">
+	 <mkdir dir="${dynamo.home}/../${cricketapp.name}"/>
+	 <copy todir="${dynamo.home}/../${cricketapp.name}" includeEmptyDirs="yes">
+	    <fileset dir="${cricketapp.location}/${cricketapp.name}">
+	    	<exclude name="**/env/*"/>
+	    	<exclude name="**/build/*"/>
+	    	<exclude name="**/.svn/*"/>
+		</fileset>
+	 </copy>
+		
+</target>
+	
+	<!--  - - 
+		    macro def for call-subant
+	- -  -->
+	
+<macrodef name="call-subant">
+		<attribute name="target" />
+		<sequential>
+			<subant target="@{target}">
+				<filelist refid="module.files" />
+			</subant>
+		</sequential>
+</macrodef>
+	
+
+<!-- dev-store-standalone-exploded -->
+	
+<target name="dev-store-standalone-exploded" depends="copy-app-to-atg,copy-atg-server" >
+	<call-subant target="jar" />
+	
+	<ant antfile="assembler.xml" inheritAll="true" target="exploded-store-ear-standalone">
+			<property name="modules.to.assemble" value="${dev.store.modules.to.assemble}" />
+			<property name="ear.file.name" value="${production.ear.name}.ear"/>
+		    <property name="atgserver.name" value="${store.atgserver.name}"/>
+	</ant>
+	
+</target>
+	
+<!-- dev-store-runInPlaceJBOSS-exploded -->
+			
+		<target name="dev-store-runInPlaceJBOSS-exploded" depends="-init"  >
+			<call-subant target="jar" />
+			
+			<ant antfile="assembler.xml" inheritAll="true" target="exploded-store-ear-runinplaceJBOSS">
+					<property name="modules.to.assemble" value="${dev.store.modules.to.assemble}" />
+					<property name="ear.file.name" value="${project.name}.ear"/>
+				    <property name="atgserver.name" value="${store.atgserver.name}"/>		    
+			</ant>
+			
+		</target>
+	
+	
+<!-- stage-store-standalone-exploded -->
+	
+<target name="stage-store-standalone-exploded" depends="copy-app-to-atg,copy-atg-server" >
+		<call-subant target="jar" />
+		
+		<ant antfile="assembler.xml" inheritAll="true" target="exploded-store-ear-standalone">
+				<property name="modules.to.assemble" value="${dev.store.modules.to.assemble}" />
+				<property name="ear.file.name" value="${production.ear.name}.ear"/>
+				<property name="atgserver.name" value="${store.stage.atgserver.name}"/>
+			
+		</ant>
+		
+</target>
+	
+
+
+<!-- dev-pub-standalone-exploded -->
+	
+ <target name="dev-pub-standalone-exploded" depends="copy-app-to-atg,copy-atg-server" >
+		<call-subant target="jar" />		
+		<ant antfile="assembler.xml" inheritAll="true" target="exploded-pub-ear-standalone">
+				<property name="modules.to.assemble" value="${dev.pub.modules.to.assemble}" />
+				<property name="ear.file.name" value="${publishing.ear.name}.ear"/>
+			    <property name="atgserver.name" value="${pub.atgserver.name}"/>
+		</ant>
+		
+ </target>
+	
+<!-- dev-pub-runInPlaceJBOSS-exploded -->
+		
+	<target name="dev-pub-runInPlaceJBOSS-exploded" depends="-init"  >
+			<call-subant target="jar" />
+			
+			<ant antfile="assembler.xml" inheritAll="true" target="exploded-pub-ear-runinplaceJBOSS">
+					<property name="modules.to.assemble" value="${dev.pub.modules.to.assemble}" />
+					<property name="ear.file.name" value="${project.name}.ear"/>
+				    <property name="atgserver.name" value="${pub.atgserver.name}"/>
+			</ant>
+			
+	</target>
+	
+<!-- stage-pub-standalone-exploded -->
+	
+	 <target name="stage-pub-standalone-exploded" depends="copy-app-to-atg,copy-atg-server" >
+			<call-subant target="jar" />		
+			<ant antfile="assembler.xml" inheritAll="true" target="exploded-pub-ear-standalone">
+					<property name="modules.to.assemble" value="${dev.pub.modules.to.assemble}" />
+					<property name="ear.file.name" value="${publishing.ear.name}.ear"/>
+				    <property name="atgserver.name" value="${pub.stage.atgserver.name}"/>
+			</ant>
+			
+	 </target>
+	<!-- dev-dwloader-runInPlaceJBOSS-exploded -->
+				
+			<target name="dev-dwloader-runInPlaceJBOSS-exploded" depends="-init"  >
+				
+				<ant antfile="assembler.xml" inheritAll="true" target="exploded-dwloader-ear-runinplaceJBOSS">
+						<property name="modules.to.assemble" value="${dev.dwloader.modules.to.assemble}" />
+						<property name="ear.file.name" value="${dwproject.name}.ear"/>
+					    <property name="atgserver.name" value="${dwloader.atgserver.name}"/>		    
+				</ant>
+				
+			</target>
+	<!-- dev-dwloader-standalone-exploded -->
+		
+	<target name="dev-dwloader-standalone-exploded" depends="copy-app-to-atg,copy-atg-server" >
+		
+		<ant antfile="assembler.xml" inheritAll="true" target="exploded-dwloader-ear-standalone">
+				<property name="modules.to.assemble" value="${dev.dwloader.modules.to.assemble}" />
+				<property name="ear.file.name" value="${dwloader.ear.name}.ear"/>
+			    <property name="atgserver.name" value="${dwloader.atgserver.name}"/>
+		</ant>
+		
+	</target>
+	<!-- stage-dwloader-standalone-exploded -->
+	
+<target name="stage-dwloader-standalone-exploded" depends="copy-app-to-atg,copy-atg-server" >
+		
+		<ant antfile="assembler.xml" inheritAll="true" target="exploded-dwloader-ear-standalone">
+				<property name="modules.to.assemble" value="${dev.dwloader.modules.to.assemble}" />
+				<property name="ear.file.name" value="${dwloader.ear.name}.ear"/>
+				<property name="atgserver.name" value="${dwloader.stage.atgserver.name}"/>
+			
+		</ant>
+		
+</target>
+	
+	
+<!-- Target To Create Standalone EAR For Staging Instance For Rackspace Environment -->
+	
+	<target name="stage-preview-standalone-exploded" depends="copy-app-to-atg,copy-atg-server" >
+		<call-subant target="jar" />
+		<ant antfile="assembler.xml" inheritAll="true" target="exploded-preview-ear-standalone">
+				<property name="modules.to.assemble" value="${dev.preview.modules.to.assemble}" />
+				<property name="ear.file.name" value="${preview.ear.name}.ear"/>
+				<property name="atgserver.name" value="${preview.stage.atgserver.name}"/>
+			
+		</ant>
+		
+	</target>
+	
+<!-- Target To Create Standalone EAR For Staging Instance For Development Environment -->
+	
+	<target name="dev-preview-standalone-exploded" depends="copy-app-to-atg,copy-atg-server" >
+	     <call-subant target="jar" />
+		<ant antfile="assembler.xml" inheritAll="true" target="exploded-preview-ear-standalone">
+				<property name="modules.to.assemble" value="${dev.preview.modules.to.assemble}" />
+				<property name="ear.file.name" value="${preview.ear.name}.ear"/>
+			    <property name="atgserver.name" value="${preview.atgserver.name}"/>
+		</ant>
+		
+	</target>
+	
+<!-- Target To Create RunInPlace EAR For Staging Instance For Development Environment -->
+	
+	<target name="dev-preview-runInPlaceJBOSS-exploded" depends="-init"  >
+	      <call-subant target="jar" />
+		<ant antfile="assembler.xml" inheritAll="true" target="exploded-preview-ear-runinplaceJBOSS">
+				<property name="modules.to.assemble" value="${dev.preview.modules.to.assemble}" />
+				<property name="ear.file.name" value="${preview.ear.name}.ear"/>
+			    <property name="atgserver.name" value="${preview.atgserver.name}"/>		    
+		</ant>
+		
+		
+	</target>
+	
+		
+</project>

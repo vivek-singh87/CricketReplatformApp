@@ -1,0 +1,63 @@
+/*
+	This is the main SCSS file for development of the Cricket redesign. 
+	The styles in Foundation components should remain as is, and use this file to override. 
+	Also, look into foundation/_settings.scss for base colours, fonts, etc. You can use that file for global type elements if need be.
+*/
+
+/** Import Fonts **/
+@import "fonts";
+
+/** GLOBAL **/
+
+/* Colours */
+$orange-1: #e83b26;
+$orange-2: #e63924;
+$orange-3: #ff543f; /* Used for hover on orange buttons */
+$grey-1: #f2f2f2;
+$green-button-1: #00ac79;
+
+/* Two selectors used for side drawer in mobile */
+#outer-wrap {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+}
+#inner-wrap {
+	position: relative;
+	width: 100%;
+}
+
+/* Wrapper if needed for content area; everything in between header and footer */
+#constructor {	
+  border-top: 1px solid #ddd;
+  @include respond-min($small-screen) {
+    margin-top: 0;
+  }	
+}
+
+/** HEADER and FOOTER **/
+@import "head"; /* All styles related to the HEAD block and global header are found in _head.scss file */
+@import "footer"; /* All styles related to the global footer are found in _footer.scss file */
+	
+/** BASE CSS Filter - Titles, links, global stuff **/
+@import "base";
+
+/** TEMPLATES **/
+@import "home"; /* All styles related to the Home page */
+@import "phones";
+@import "phonedetails";
+@import "phonecompare";
+@import "accessories";
+@import "accessoriesdetails";
+@import "plans";
+@import "plandetails";
+@import "planaddons";
+@import "planaddonsdetails";
+@import "search";
+@import "checkout";
+@import "checkoutstep2";
+@import "checkoutstep3";
+@import "checkoutthankyou";
+@import "cart";
+@import "killswitch";
+@import "whycricket";

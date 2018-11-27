@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gsa-template SYSTEM "dynamosystemresource:/atg/dtds/gsa/gsa_1.0.dtd">
+<gsa-template>
+<header>
+   <name>Cricket Catalog</name>
+   <author>Cricket Communications</author>
+</header>
+<item-descriptor name="category" xml-combine="append">
+<table name="ckt_category" id-column-name="category_id" type="auxiliary" shared-table-sequence="1">
+	<property expert="false" readable="true" column-name="display_priority" data-type="int" hidden="false" writable="true" display-name-resource="Display Priority" name="displayPriority" required="false" cache-mode="inherit" queryable="true">
+	</property>
+	<property expert="false" readable="true" column-name="seo_string" data-type="string" hidden="false" writable="true" display-name-resource="Seo String" name="seoString" required="false" cache-mode="inherit" queryable="true">
+	</property>
+</table>
+</item-descriptor>
+<item-descriptor name="product" xml-combine="append">
+<table name="dcs_product" id-column-name="product_id" type="primary" shared-table-sequence="1">
+	<property expert="false" readable="true" column-name="product_type" data-type="enumerated" hidden="true" writable="true" name="type" required="false" cache-mode="inherit" queryable="true">
+		<attribute name="useCodeForValue" value="false"/>
+	       <option value="phone-product" code="0"/>
+	       <option value="plan-product" code="1"/>
+	       <option value="accessory-product" code="2"/>
+		   <option value="addOn-product" code="3"/>
+		   <option value="plan-group" code="11"/>
+     </property>
+     <property name="startDate" required="true">
+     	<attribute name="useNowForDefault" value="true"/>
+     </property>
+</table>
+<table name="ckt_product_seo" id-column-name="product_id" type="auxiliary" shared-table-sequence="1">
+	 <property expert="false" readable="true" column-name="SEODescription" display-name-resource="SEODescription" data-type="string" hidden="false" writable="true" name="SEODescription" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+   	 <property expert="false" readable="true" column-name="SEOKeywords" display-name-resource="SEOKeywords" data-type="string" hidden="false" writable="true" name="SEOKeywords" required="false" cache-mode="inherit" queryable="true">
+  	 </property>
+</table>
+<table name="ckt_product_markets" id-column-name="product_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+      <property expert="false" readable="true" component-item-type="market-info" writable="true" cache-mode="inherit" display-name-resource="Markets" column-name="market_id" data-type="list" hidden="false" name="markets" required="false" queryable="true"/>
+</table>
+<table name="ckt_product_key_features" id-column-name="product_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+     <property expert="false" readable="true" component-data-type="string" writable="true" cache-mode="inherit" column-name="key_features" data-type="list" hidden="false" display-name-resource="Key Features" name="keyFeatures" required="false" queryable="true"/>
+</table>
+</item-descriptor>
+<item-descriptor sub-type-value="phone-product" expert="false" id-separator=":" display-name-resource="Phone Product" writable="true" super-type="product" cache-mode="simple" content="false" folder="false" default="false" query-cache-size="1000" hidden="false" name="phone-product" use-id-for-path="false" item-cache-size="1000">
+<table name="ckt_phone" id-column-name="product_id" type="auxiliary" shared-table-sequence="1">
+   	 <property expert="false" readable="true" column-name="sales_tag" display-name-resource="Sales Tag" item-type="media-external" hidden="false" writable="true" name="salesTag" required="false" cache-mode="inherit" queryable="true">
+  	 </property>
+     <property expert="false" readable="true" column-name="phone_style" display-name-resource="Phone Style" data-type="string" hidden="false" writable="true" name="phoneStyle" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+   	 <property expert="false" readable="true" column-name="os" display-name-resource="Operating System" data-type="string" hidden="false" writable="true" name="os" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+   	 <property expert="false" readable="true" column-name="pos_name" display-name-resource="POS Name" data-type="string" hidden="false" writable="true" name="posName" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+   	 <property expert="false" readable="true" column-name="is_financing_available" display-name-resource="Is Financing Available" data-type="boolean" hidden="false" writable="true" name="isFinancingAvailable" required="false" cache-mode="inherit" queryable="true" default="false">
+   	 </property>
+   	 <property expert="false" readable="true" writable="true" cache-mode="inherit" column-name="activation_instructions" item-type="media-external" hidden="false" display-name-resource="Activation Instructions" name="activateInstructions" required="false" queryable="true">
+   	 </property>
+   	 <property expert="false" readable="true" writable="true" cache-mode="inherit" column-name="quick_start" item-type="media-internal-text" hidden="false" display-name-resource="Quick Start Guide" name="quickStart" required="false" queryable="true">
+   	 </property>
+   	 <property expert="false" readable="true" writable="true" cache-mode="inherit" column-name="accessibility_info" item-type="media-internal-text" hidden="false" display-name-resource="Accessibility Information" name="accessibilityInfo" required="false" queryable="true">
+   	 </property>
+   	 <property expert="false" readable="true" writable="true" cache-mode="inherit" column-name="user_manual" item-type="media-external" hidden="false" display-name-resource="User Manual" name="userManual" required="false" queryable="true">
+   	 </property>
+	<property expert="false" readable="true" column-name="display_priority" data-type="int" hidden="false" writable="true" display-name-resource="Display Priority" name="displayPriority" required="false" cache-mode="inherit" queryable="true">
+	</property> 
+   	 <property expert="false" readable="true" column-name="is_oof_phone" display-name-resource="Is OOF Phone" data-type="boolean" hidden="false" writable="true" name="isOOFPhone" required="false" cache-mode="inherit" queryable="true" default="false">
+   	 </property>
+	 <property expert="false" readable="true" column-name="avail_cust_upgrades" default="Y" display-name-resource="Available For Customer Upgrades" data-type="enumerated" hidden="false" writable="true" name="availableForCustomerUpgrades" required="false" cache-mode="inherit" queryable="true">
+	 	<attribute name="useCodeForValue" value="false"/>
+	       <option value="Y" code="0"/>
+	       <option value="N" code="1"/>
+   	 </property>
+</table>
+<table name="ckt_phone_compatible_plans" id-column-name="phone_id" type="multi" shared-table-sequence="2">
+      <property expert="false" readable="true" component-item-type="plan-product" cache-mode="inherit" column-name="plan_id" data-type="set" hidden="false" display-name-resource="Compatible Plans" name="compatiblePlans" required="false" queryable="true" writable="false"/>
+</table>
+<table name="ckt_phone_accessories" id-column-name="product_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+      <property expert="false" readable="true" component-data-type="string" writable="true" cache-mode="inherit" column-name="included_accessory" data-type="list" hidden="false" display-name-resource="Included Accessories" name="includedAccessories" required="false" queryable="true"/>
+</table>
+<table name="ckt_phone_assd_accessories" id-column-name="product_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+      <property expert="false" readable="true" component-item-type="accessory-product" writable="true" cache-mode="inherit" column-name="associated_accessory" data-type="list" hidden="false" display-name-resource="Associated Accessories" name="associatedAccessories" required="false" queryable="true"/>
+</table>
+<table name="ckt_phone_specs" id-column-name="product_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+      <property expert="false" readable="true" component-item-type="spec-info" writable="true" cache-mode="inherit" column-name="spec_info_id" data-type="list" hidden="false" display-name-resource="Specifications" name="phoneSpecifications" required="false" queryable="true"/>
+</table>
+<table name="ckt_phone_specs_compare" id-column-name="product_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+      <property expert="false" readable="true" component-item-type="compare-spec-info" writable="true" cache-mode="inherit" column-name="compare_spec_info_id" data-type="list" hidden="false" display-name-resource="Specifications for Compare Page" name="phoneCompareSpecs" required="false" queryable="true"/>
+</table>
+<table name="ckt_phone_exclude_zips" id-column-name="product_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+     <property expert="false" readable="true" component-data-type="string" writable="true" cache-mode="inherit" column-name="exclusion_zip_code" data-type="list" hidden="false" display-name-resource="Exclusion Zip Codes" name="exclusionZipCodes" required="false" queryable="true"/>
+</table>
+<table name="ckt_phone_overviews" id-column-name="product_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+     <property expert="false" readable="true" component-item-type="overview" writable="true" cache-mode="inherit" column-name="overview_id" data-type="list" hidden="false" display-name-resource="Overviews" name="overviews" required="false" queryable="true"/>
+</table>
+</item-descriptor>
+<item-descriptor name="compare-spec-info" id-separator=":" display-name-resource="CompareSpecInfo" writable="true" cache-mode="simple" content="false" folder="false" default="false" query-cache-size="1000" hidden="false" use-id-for-path="false" item-cache-size="1000" display-property="compareSpecName">
+<table name="ckt_compare_spec_info" id-column-name="compare_spec_info_id" type="primary" shared-table-sequence="1">
+	<property expert="false" readable="true" data-type="String" writable="true" cache-mode="inherit" column-name="compare_spec_info_id" hidden="false" name="id" required="true" queryable="true"/>
+	<property expert="false" readable="true" data-type="String" writable="true" cache-mode="inherit" column-name="compare_spec_name" hidden="false" display-name-resource="Specification Name" name="compareSpecName" required="true" queryable="true"/>
+	<property expert="false" readable="true" data-type="String" writable="true" cache-mode="inherit" column-name="compare_spec_value" hidden="false" display-name-resource="Specification Value" name="compareSpecValue" required="false" queryable="true"/>
+</table>
+</item-descriptor>
+<item-descriptor sub-type-value="accessory-product" expert="false" id-separator=":" display-name-resource="Accessory Product" writable="true" super-type="product" cache-mode="simple" content="false" folder="false" default="false" query-cache-size="1000" hidden="false" name="accessory-product" use-id-for-path="false" item-cache-size="1000">
+<table name="ckt_accessory" id-column-name="product_id" type="auxiliary" shared-table-sequence="1">	
+   	 <property expert="false" readable="true" column-name="sales_tag" display-name-resource="Sales Tag" item-type="media-external" hidden="false" writable="true" name="salesTag" required="false" cache-mode="inherit" queryable="true">
+  	 </property> 
+   	 <property expert="false" readable="true" column-name="accessory_type" display-name-resource="Accessory Type" data-type="string" hidden="false" writable="true" name="accessoryType" required="true" cache-mode="inherit" queryable="true">
+   	 </property>
+   	 <property expert="false" readable="true" column-name="pos_name" display-name-resource="POS Name" data-type="string" hidden="false" writable="true" name="posName" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+</table>
+<table name="ckt_acc_exclude_zips" id-column-name="product_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+     <property expert="false" readable="true" component-data-type="string" writable="true" cache-mode="inherit" column-name="exclusion_zip_code" data-type="list" hidden="false" display-name-resource="Exclusion Zip Codes" name="exclusionZipCodes" required="false" queryable="true"/>
+</table>
+<table name="ckt_acc_compatible_phones" id-column-name="product_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+      <property expert="false" readable="true" component-item-type="phone-product" writable="true" cache-mode="inherit" column-name="phone_id" data-type="list" hidden="false" display-name-resource="Compatible Phones" name="compatiblePhones" required="false" queryable="true"/>
+</table>
+<table name="ckt_acc_overviews" id-column-name="product_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+     <property expert="false" readable="true" component-item-type="overview" writable="true" cache-mode="inherit" column-name="overview_id" data-type="list" hidden="false" display-name-resource="Overviews" name="overviews" required="false" queryable="true"/>
+</table>
+</item-descriptor>
+<item-descriptor sub-type-value="plan-product" expert="false" id-separator=":" display-name-resource="Plan Product" writable="true" super-type="product" cache-mode="simple" content="false" folder="false" default="false" query-cache-size="1000" hidden="false" name="plan-product" use-id-for-path="false" item-cache-size="1000">
+<table name="ckt_plan" id-column-name="product_id" type="auxiliary" shared-table-sequence="1">
+	<property expert="false" readable="true" column-name="plan_type" data-type="enumerated" hidden="false" writable="true" display-name-resource="Plan Type" name="planType" required="false" cache-mode="inherit" queryable="true">
+		<attribute name="useCodeForValue" value="false"/>
+	        <option value="PIA AIM" code="0"/>
+	        <option value="PAYGO" code="1"/>
+	        <option value="BBMM" code="2"/>
+	        <option value="INTERNAL" code="3"/>
+	        <option value="PIA" code="4"/>
+	</property>
+	<property expert="false" readable="true" column-name="rate_plan_type" data-type="enumerated" hidden="false" writable="true" display-name-resource="Rate Plan Type" name="ratePlanType" required="false" cache-mode="inherit" queryable="true">
+		<attribute name="useCodeForValue" value="false"/>
+	        <option value="V" code="0"/>
+	        <option value="D" code="1"/>
+	</property>
+    <property expert="false" readable="true" column-name="parc_plan_name" display-name-resource="PARC Plan Name" data-type="string" hidden="false" writable="true" name="parcPlanName" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+	<property expert="false" readable="true" column-name="life_cycle_phase" data-type="enumerated" hidden="false" writable="true" display-name-resource="Lifecycle Phase" name="lifeCyclePhase" required="false" cache-mode="inherit" queryable="true">
+		<attribute name="useCodeForValue" value="false"/>
+	        <option value="Current" code="1"/>
+	        <option value="Supported" code="2"/>
+	        <option value="Grandfathered" code="3"/>
+	        <option value="Retired" code="4"/>
+	</property>
+    <property expert="false" readable="true" column-name="plan_category" display-name-resource="Plan Category" data-type="string" hidden="false" writable="true" name="planCategory" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+   	 <property expert="false" readable="true" column-name="plan_category_messaging" display-name-resource="Plan Category Messaging" data-type="string" hidden="false" writable="true" name="planCategoryMessaging" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+   	 <property expert="false" readable="true" column-name="web_offers_group_code" display-name-resource="Group Code" data-type="string" hidden="false" writable="true" name="groupCode" required="false" cache-mode="inherit" queryable="true"/>
+	<property expert="false" readable="true" column-name="parc_plan_id" data-type="string" hidden="false" writable="true" display-name-resource="Parc Plan ID" name="parcPlanId" required="false" cache-mode="inherit" queryable="true">
+	</property> 
+      <property expert="false" readable="true" column-name="activation_date" display-name-resource="PARC Activation Date" data-type="timestamp" hidden="false" writable="true" name="actDate" required="false" cache-mode="inherit" queryable="true">
+      </property>
+      <property expert="false" readable="true" column-name="deactivation_date" display-name-resource="PARC De-Activation Date" data-type="timestamp" hidden="false" writable="true" name="deactDate" required="false" cache-mode="inherit" queryable="true">
+      </property>
+</table>
+<table name="ckt_phone_compatible_plans" id-column-name="plan_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+      <property expert="false" readable="true" component-item-type="phone-product" writable="true" cache-mode="inherit" column-name="phone_id" data-type="list" hidden="false" display-name-resource="Compatible Phones" name="compatiblePhones" required="false" queryable="true">      	
+		 <attribute name="prohibitDuplicates" value="true"/>
+      </property>
+</table>
+<table name="ckt_plan_parc_addOns" id-column-name="plan_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+      <property expert="false" readable="true" component-item-type="addOn-product" writable="true" cache-mode="inherit" column-name="addOn_id" data-type="list" hidden="false" display-name-resource="PARC Plan Optional AddOns" name="parcOptionalAddOns" required="false" queryable="true"/>
+</table>
+<table name="ckt_plan_inc_addOns" id-column-name="plan_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+      <property expert="false" readable="true" component-item-type="addOn-product" writable="true" cache-mode="inherit" column-name="addOn_id" data-type="list" hidden="true" display-name-resource="PARC Plan Included AddOns" name="parcIncludedAddOns" required="false" queryable="true"/>
+</table>
+<table name="ckt_plan_mand_addOns" id-column-name="plan_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+      <property expert="false" readable="true" component-item-type="addOn-product" writable="true" cache-mode="inherit" column-name="addOn_id" data-type="list" hidden="true" display-name-resource="PARC Plan Mandatory AddOns" name="parcMandatoryAddOns" required="false" queryable="true"/>
+</table>
+<table name="ckt_plan_opt_codes" id-column-name="product_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+     <property expert="false" readable="true" component-data-type="string" writable="true" cache-mode="inherit" column-name="offer_code" data-type="list" hidden="true" display-name-resource="PARC Optional Offer Codes" name="parcOptionalOfferCodes" required="false" queryable="true"/>
+</table>
+<table name="ckt_plan_inc_codes" id-column-name="product_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+     <property expert="false" readable="true" component-data-type="string" writable="true" cache-mode="inherit" column-name="offer_code" data-type="list" hidden="false" display-name-resource="PARC Included Offer Codes" name="parcIncludedOfferCodes" required="false" queryable="true"/>
+</table>
+<table name="ckt_plan_mand_codes" id-column-name="product_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+     <property expert="false" readable="true" component-data-type="string" writable="true" cache-mode="inherit" column-name="offer_code" data-type="list" hidden="false" display-name-resource="PARC Mandatory Offer Codes" name="parcMandatoryOfferCodes" required="false" queryable="true"/>
+</table>
+<table name="ckt_group_plans" id-column-name="group_plan_id" type="multi" shared-table-sequence="2">
+      <property expert="false" readable="true" component-item-type="plan-group" cache-mode="inherit" column-name="plan_id" data-type="set" hidden="false" display-name-resource="Plan Groups" name="planGroups" required="false" queryable="true" writable="false"/>
+</table>
+</item-descriptor>
+<item-descriptor sub-type-value="plan-group" expert="false" id-separator=":" display-name-resource="Plan Group" writable="true" super-type="product" cache-mode="simple" content="false" folder="false" default="false" query-cache-size="1000" hidden="false" name="plan-group" use-id-for-path="false" item-cache-size="1000">
+<table name="ckt_plan_group" id-column-name="product_id" type="auxiliary" shared-table-sequence="1">
+	<property expert="false" readable="true" column-name="display_priority" data-type="int" hidden="false" writable="true" display-name-resource="Display Priority" name="displayPriority" required="false" cache-mode="inherit" queryable="true">
+	</property>
+    <property expert="false" readable="true" column-name="data_limit" display-name-resource="Data Limit" data-type="string" hidden="false" writable="true" name="dataLimit" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+    <property expert="false" readable="true" column-name="data_message" display-name-resource="Data Message" data-type="string" hidden="false" writable="true" name="dataMessage" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+    <property expert="false" readable="true" column-name="includes_text_cart" display-name-resource="Includes text for Plan In Cart" data-type="string" hidden="false" writable="true" name="includesTextCart" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+	<property expert="false" readable="true" column-name="green_box_content" display-name-resource="Green Box Content" data-type="big string" hidden="false" writable="true" name="greenBoxContent" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+</table>
+<table name="ckt_plan_default_addons" id-column-name="plan_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+      <property expert="false" readable="true" component-item-type="addOn-product" writable="true" cache-mode="inherit" column-name="addOn_id" data-type="list" hidden="false" display-name-resource="Default Plan AddOns" name="defaultPlanAddOns" required="false" queryable="true"/>
+</table>
+<table name="ckt_group_plans" id-column-name="plan_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+      <property expert="false" readable="true" component-item-type="plan-product" writable="true" cache-mode="inherit" column-name="group_plan_id" data-type="list" hidden="false" display-name-resource="Plans in the Group" name="groupPlans" required="false" queryable="true">      	
+		 <attribute name="prohibitDuplicates" value="true"/>
+      </property>
+</table>
+<table name="ckt_grp_compatible_phones" id-column-name="plan_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+      <property expert="false" readable="true" component-item-type="phone-product" writable="true" cache-mode="inherit" column-name="phone_id" data-type="list" hidden="false" display-name-resource="Plan Group Compatible Phones" name="groupCompatiblePhones" required="false" queryable="true"/>
+</table>
+<table name="ckt_plan_specifications" id-column-name="plan_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+      <property expert="false" readable="true" component-item-type="plan-spec" writable="true" cache-mode="inherit" column-name="spec_id" data-type="list" hidden="false" display-name-resource="Plan Group Specifications" name="planSpecs" required="false" queryable="true"/>
+</table>
+<table name="ckt_plan_spec_details" id-column-name="plan_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+     <property expert="false" readable="true" component-item-type="plan-feature" writable="true" cache-mode="inherit" column-name="feature_id" data-type="list" hidden="false" display-name-resource="Plan Group Features For Details Page" name="planFeatures" required="false" queryable="true"/>
+</table>
+</item-descriptor>
+<item-descriptor expert="false" id-separator=":" display-name-resource="Plan Specification" writable="true" cache-mode="simple" content="false" folder="false" default="false" query-cache-size="1000" hidden="false" name="plan-spec" use-id-for-path="false" item-cache-size="1000" display-property="specificationName">
+	<table name="ckt_plan_spec" id-column-name="spec_id" type="primary" shared-table-sequence="1">
+		<property name="specificationName" display-name-resource="Specification Name" column-name="spec_name" data-type="enumerated" writable="true" required="true" cache-mode="inherit" queryable="true">
+			<attribute name="useCodeForValue" value="false"/>
+			<option value="Talk" code="0"/>
+			<option value="Text" code="1"/>
+			<option value="International Text" code="2"/>
+			<option value="International Picture And Video Text" code="3"/>
+			<option value="Full-Speed Data" code="4"/>
+			<option value="4G LTE Speeds" code="5"/>
+			<option value="Muve Music®" code="6"/>
+			<option value="Mobile Hotspot" code="7"/>
+			<option value="411 Directory Assistance" code="8"/>
+			<option value="International Long Distance" code="9"/>
+			<option value="International Long Distance Plus" code="10"/>
+			<option value="Data" code="11"/>
+			<option value="Data Backup" code="12"/>
+		</property>
+		<property name="specValue" required="true" column-name="spec_value" data-type="string" display-name-resource="Specification Value"/>		
+		<property name="specType" required="true" column-name="spec_type" data-type="enumerated" writable="true" cache-mode="inherit" queryable="true">
+			<attribute name="useCodeForValue" value="false"/>
+			<option value="BOOLEAN" code="0"/>
+			<option value="TEXT" code="1"/>
+			<option value="INFOICON" code="2"/>
+		</property>
+		<property name="boolValue" column-name="bool_value" required="false" data-type="enumerated" display-name-resource="Specification Value Boolean">
+			<attribute name="useCodeForValue" value="false"/>
+			<option value="TRUE" code="0"/>
+			<option value="FALSE" code="1"/>
+		</property>
+	</table>
+</item-descriptor>
+<item-descriptor expert="false" id-separator=":" display-name-resource="Plan Feature" writable="true" cache-mode="simple" content="false" folder="false" default="false" query-cache-size="1000" hidden="false" name="plan-feature" use-id-for-path="false" item-cache-size="1000" display-property="featureName">
+<table name="ckt_plan_feature" id-column-name="feature_id" type="primary" shared-table-sequence="1">
+	<property name="featureName" column-name="feature_name" display-name-resource="Plan Feature Name" data-type="string" writable="true" required="true" cache-mode="inherit" queryable="true">
+	</property>		 
+	<property expert="false" readable="true" column-name="feature_image" display-name-resource="Plan Feature Image" item-type="media-external" hidden="false" writable="true" name="featureImage" required="false" cache-mode="inherit" queryable="true"/>
+   	 <property expert="false" readable="true" column-name="feature_add_info" display-name-resource="Plan Feature Additional Information" data-type="string" hidden="false" writable="true" name="featureAdditionalInfo" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+	</table>
+	<table name="ckt_plan_feature_specs" id-column-name="feature_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+     <property expert="false" readable="true" component-item-type="feature-spec" writable="true" cache-mode="inherit" column-name="feature_spec_id" data-type="list" hidden="false" display-name-resource="Plan Feature Specifications For Details Page" name="planFeatureSpecs" required="false" queryable="true"/>
+	</table>
+</item-descriptor>
+<item-descriptor expert="false" id-separator=":" display-name-resource="Feature Specification" writable="true" cache-mode="simple" content="false" folder="false" default="false" query-cache-size="1000" hidden="false" name="feature-spec" use-id-for-path="false" item-cache-size="1000" display-property="featureSpecText">
+<table name="ckt_plan_feature_spec" id-column-name="feature_spec_id" type="primary" shared-table-sequence="1">
+	<property name="featureSpecText" column-name="feature_spec_text" display-name-resource="Plan Feature Specification Text" data-type="string" writable="true" required="true" cache-mode="inherit" queryable="true">
+	</property>		 
+   	 <property expert="false" readable="true" column-name="spec_add_info" display-name-resource="Plan Feature Specification Additional Information" data-type="string" hidden="false" writable="true" name="featureSpecAdditionalInfo" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+	</table>
+</item-descriptor>
+<item-descriptor sub-type-value="addOn-product" expert="false" id-separator=":" display-name-resource="AddOn Product" writable="true" super-type="product" cache-mode="simple" content="false" folder="false" default="false" query-cache-size="1000" hidden="false" name="addOn-product" use-id-for-path="false" item-cache-size="1000">
+<table name="ckt_addon" id-column-name="product_id" type="auxiliary" shared-table-sequence="1">
+	<property expert="false" readable="true" column-name="available_message" display-name-resource="Availability Message" data-type="big string" hidden="false" writable="true" name="availabilityMessage" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+    <property expert="false" readable="true" column-name="parc_group_name" display-name-resource="PARC AddOn Group Name" data-type="string" hidden="false" writable="true" name="parcGroupName" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+    <property expert="false" readable="true" column-name="parc_group_id" display-name-resource="PARC Group ID" data-type="int" hidden="false" writable="true" name="parcGroupId" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+   	 <property expert="false" readable="true" column-name="is_generic_addon" display-name-resource="Is Generic AddOn" data-type="boolean" hidden="false" writable="true" name="isGenericAddOn" required="false" cache-mode="inherit" queryable="true" default="false">
+   	 </property>
+   	 <property expert="false" readable="true" column-name="parc_feature_name" display-name-resource="PARC AddOn Name" data-type="string" hidden="false" writable="true" name="parcAddOnName" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+    <property expert="false" readable="true" column-name="cricket_code" display-name-resource="Cricket Code" data-type="string" hidden="false" writable="true" name="cricketCode" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+   	 <property expert="false" readable="true" column-name="offer_id" display-name-resource="PARC Offer ID" data-type="string" hidden="false" writable="true" name="offerId" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+</table>
+<table name="ckt_addon_compatible_phones" id-column-name="product_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+      <property expert="false" readable="true" component-item-type="phone-product" writable="true" cache-mode="inherit" column-name="phone_id" data-type="list" hidden="false" display-name-resource="Compatible Phones" name="compatiblePhones" required="false" queryable="true"/>
+</table>
+<table name="ckt_addon_compatible_plans" id-column-name="product_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+      <property expert="false" readable="true" component-item-type="plan-product" writable="true" cache-mode="inherit" column-name="plan_id" data-type="list" hidden="false" display-name-resource="Compatible Plans" name="compatiblePlans" required="false" queryable="true"/>
+</table>
+<table name="ckt_addon_overviews" id-column-name="product_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+     <property expert="false" readable="true" component-item-type="overview" writable="true" cache-mode="inherit" column-name="overview_id" data-type="list" hidden="false" display-name-resource="Overviews" name="overviews" required="false" queryable="true"/>
+</table>
+<table name="ckt_addon_depnt_addons" id-column-name="product_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+      <property expert="false" readable="true" component-item-type="addOn-product" writable="true" cache-mode="inherit" column-name="depnt_addon_id" data-type="list" hidden="false" display-name-resource="Add this to cart only if these addons are already added" name="dependantAddons" required="false" queryable="true"/>
+</table>
+<table name="ckt_addon_grp_addons" id-column-name="product_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+      <property expert="false" readable="true" component-item-type="addOn-product" writable="true" cache-mode="inherit" column-name="grp_addon_id" data-type="list" hidden="false" display-name-resource="Add this to cart only if none of these addons are already added" name="otherAddonsInGroup" required="false" queryable="true"/>
+</table>
+</item-descriptor>
+<item-descriptor name="market-info" id-separator=":" display-name-resource="MarketInfo" writable="true" cache-mode="simple" content="false" folder="false" default="false" query-cache-size="1000" hidden="false" use-id-for-path="false" item-cache-size="1000" display-property="city">      
+<table name="ckt_market_info" id-column-name="market_id" type="primary" shared-table-sequence="1">
+	<property expert="false" readable="true" column-name="market_id" data-type="int" hidden="false" writable="true" display-name-resource="Market Id" name="marketId" required="true" cache-mode="inherit" queryable="true"/>
+	<property expert="false" readable="true" column-name="city" data-type="string" hidden="false" writable="true" display-name-resource="Market Name" name="city" required="true" cache-mode="inherit" queryable="true"/>
+	<property expert="false" readable="true" column-name="market_code" data-type="string" hidden="false" writable="true" display-name-resource="Market Code" name="marketCode" required="true" cache-mode="inherit" queryable="true"/>
+</table>	
+<table name="ckt_mkt_type_markets" id-column-name="market_id" type="multi" shared-table-sequence="2">
+      <property expert="false" readable="true" component-item-type="marketType" writable="false" cache-mode="inherit" column-name="market_type_id" data-type="set" hidden="false" display-name-resource="Market Types" name="marketTypes" required="false" queryable="true">      	
+		 <attribute name="prohibitDuplicates" value="true"/>
+      </property>
+</table>
+<table name="ckt_mkt_sub_type_markets" id-column-name="market_id" type="multi" shared-table-sequence="2">
+      <property expert="false" readable="true" component-item-type="marketSubType" writable="false" cache-mode="inherit" column-name="market_sub_type_id" data-type="set" hidden="false" display-name-resource="Market Sub Types" name="marketSubTypes" required="false" queryable="true">      	
+		 <attribute name="prohibitDuplicates" value="true"/>
+      </property>
+</table>
+</item-descriptor>
+<item-descriptor name="marketType" id-separator=":" display-name-resource="Market Type" writable="true" cache-mode="simple" content="false" folder="false" default="false" query-cache-size="1000" hidden="false" use-id-for-path="false" item-cache-size="1000" display-property="marketTypeName">      
+<table name="ckt_market_type" id-column-name="market_type_id" type="primary" shared-table-sequence="1">
+	<property expert="false" readable="true" column-name="market_type_id" data-type="string" hidden="false" writable="true" display-name-resource="Market Type Id" name="marketTypeId" required="true" cache-mode="inherit" queryable="true"/>
+	<property expert="false" readable="true" column-name="market_type_name" data-type="string" hidden="false" writable="true" display-name-resource="Market Type Name" name="marketTypeName" required="true" cache-mode="inherit" queryable="true"/>
+</table>	
+<table name="ckt_mkt_type_markets" id-column-name="market_type_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+      <property expert="false" readable="true" component-item-type="market-info" writable="true" cache-mode="inherit" column-name="market_id" data-type="list" hidden="false" display-name-resource="Markets" name="markets" required="false" queryable="true">      	
+		 <attribute name="prohibitDuplicates" value="true"/>
+      </property>
+</table>
+</item-descriptor>
+<item-descriptor name="marketSubType" id-separator=":" display-name-resource="Market Sub Type" writable="true" cache-mode="simple" content="false" folder="false" default="false" query-cache-size="1000" hidden="false" use-id-for-path="false" item-cache-size="1000" display-property="marketSubTypeName">      
+<table name="ckt_market_sub_type" id-column-name="market_sub_type_id" type="primary" shared-table-sequence="1">
+	<property expert="false" readable="true" column-name="market_sub_type_id" data-type="string" hidden="false" writable="true" display-name-resource="Market Sub Type Id" name="marketSubTypeId" required="true" cache-mode="inherit" queryable="true"/>
+	<property expert="false" readable="true" column-name="market_sub_type_name" data-type="string" hidden="false" writable="true" display-name-resource="Market Sub Type Name" name="marketSubTypeName" required="true" cache-mode="inherit" queryable="true"/>
+</table>	
+<table name="ckt_mkt_sub_type_markets" id-column-name="market_sub_type_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+      <property expert="false" readable="true" component-item-type="market-info" writable="true" cache-mode="inherit" column-name="market_id" data-type="list" hidden="false" display-name-resource="Markets" name="markets" required="false" queryable="true">      	
+		 <attribute name="prohibitDuplicates" value="true"/>
+      </property>
+</table>
+</item-descriptor>
+<item-descriptor name="market-drm-info" id-separator=":" display-name-resource="MarketDRMInfo" writable="true" cache-mode="simple" content="false" folder="false" default="false" query-cache-size="1000" hidden="false" use-id-for-path="false" item-cache-size="1000" display-property="marketName">      
+<table name="ckt_market_drm_info" id-column-name="market_drm_id" type="primary" shared-table-sequence="1">
+	<property expert="false" readable="true" column-name="market_drm_id" data-type="string" hidden="false" writable="true" display-name-resource="Market Id" name="marketId" required="true" cache-mode="inherit" queryable="true"/>
+	<property expert="false" readable="true" column-name="market_code" data-type="string" hidden="false" writable="true" display-name-resource="Market Code" name="marketCode" required="true" cache-mode="inherit" queryable="true"/>
+	<property expert="false" readable="true" column-name="market_name" data-type="string" hidden="false" writable="true" display-name-resource="Market Name" name="marketName" required="false" cache-mode="inherit" queryable="true"/>
+	<property expert="false" readable="true" column-name="zip_code" data-type="string" hidden="false" writable="true" display-name-resource="Zip Code" name="zipCode" required="true" cache-mode="inherit" queryable="true"/>
+	<property expert="false" readable="true" column-name="company_code" data-type="string" hidden="false" writable="true" display-name-resource="Company Code" name="companyCode" required="false" cache-mode="inherit" queryable="true"/>
+	<property expert="false" readable="true" column-name="rate_center_id" data-type="string" hidden="false" writable="true" display-name-resource="Rate Center Id" name="rateCenterId" required="false" cache-mode="inherit" queryable="true"/>
+	<property expert="false" readable="true" column-name="network_provider_id" data-type="int" hidden="false" writable="true" display-name-resource="Network Provider Id" name="networkProviderId" required="false" cache-mode="inherit" queryable="true"/>
+</table>
+</item-descriptor>
+<item-descriptor name="spec-info" id-separator=":" display-name-resource="SpecInfo" writable="true" cache-mode="simple" content="false" folder="false" default="false" query-cache-size="1000" hidden="false" use-id-for-path="false" item-cache-size="1000" display-property="specGroupName">
+<table name="ckt_spec_info" id-column-name="spec_info_id" type="primary" shared-table-sequence="1">
+	<property expert="false" readable="true" data-type="String" writable="true" cache-mode="inherit" column-name="spec_info_id" hidden="false" name="id" required="true" queryable="true"/>
+	<property expert="false" readable="true" data-type="String" writable="true" cache-mode="inherit" column-name="spec_group_name" hidden="false" display-name-resource="Specification Group Name" name="specGroupName" required="true" queryable="true"/>
+</table>	
+<table name="ckt_specifications" id-column-name="spec_info_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+      <property expert="false" readable="true" component-item-type="specification" writable="true" cache-mode="inherit" display-name-resource="Specifications" column-name="spec_id" data-type="list" hidden="false" name="specifications" required="true" queryable="true"/>
+</table>
+</item-descriptor>
+<item-descriptor name="specification" id-separator=":" display-name-resource="Specification" writable="true" cache-mode="simple" content="false" folder="false" default="false" query-cache-size="1000" hidden="false" use-id-for-path="false" item-cache-size="1000" display-property="specName">
+<table name="ckt_specification" id-column-name="spec_id" type="primary" shared-table-sequence="1">
+	<property expert="false" readable="true" data-type="String" writable="true" cache-mode="inherit" column-name="spec_id" hidden="false" name="id" required="true" queryable="true"/>
+	<property expert="false" readable="true" data-type="String" writable="true" cache-mode="inherit" column-name="spec_name" hidden="false" display-name-resource="Specification Name" name="specName" required="true" queryable="true"/>
+	<property expert="false" readable="true" data-type="String" writable="true" cache-mode="inherit" column-name="spec_value" hidden="false" display-name-resource="Specification Value" name="specValue" required="false" queryable="true"/>
+</table>
+</item-descriptor>
+<item-descriptor name="threshold" id-separator=":" display-name-resource="Threshold" writable="true" cache-mode="simple" content="false" folder="false" default="false" query-cache-size="1000" hidden="false" use-id-for-path="false" item-cache-size="1000" display-property="thresholdQuantity">
+<table name="ckt_threshold" id-column-name="threshold_id" type="primary" shared-table-sequence="1">
+	<property expert="false" readable="true" data-type="String" writable="true" cache-mode="inherit" column-name="threshold_id" hidden="false" name="id" required="true" queryable="true"/>
+	<property expert="false" readable="true" data-type="int" writable="true" cache-mode="inherit" column-name="threshold_qty" hidden="false" name="thresholdQuantity" display-name-resource="Threshold Quantity" required="true" queryable="true"/>
+	<property expert="false" readable="true" data-type="String" writable="true" cache-mode="inherit" column-name="threshold_text" hidden="false" display-name-resource="Threshold Text" name="thresholdText" required="false" queryable="true"/>
+</table>
+</item-descriptor>
+<item-descriptor name="overview" id-separator=":" display-name-resource="Overview" writable="true" cache-mode="simple" content="false" folder="false" default="false" query-cache-size="1000" hidden="false" use-id-for-path="false" item-cache-size="1000" display-property="overviewTitle">
+<table name="ckt_overview" id-column-name="overview_id" type="primary" shared-table-sequence="1">
+	<property expert="false" readable="true" data-type="String" writable="true" cache-mode="inherit" column-name="overview_id" hidden="false" name="id" required="true" queryable="true"/>
+	<property expert="false" readable="true" data-type="String" writable="true" cache-mode="inherit" column-name="overview_title" hidden="false" display-name-resource="Overview Title" name="overviewTitle" required="false" queryable="true"/>
+	<property expert="false" readable="true" data-type="big string" writable="true" cache-mode="inherit" column-name="overview_desc" hidden="false" display-name-resource="Overview Description" name="overviewDesc" required="false" queryable="true"/>
+   	 <property expert="false" readable="true" column-name="overview_top_image" display-name-resource="Overview Top Image" item-type="media-external" hidden="false" writable="true" name="overviewTopImage" required="false" cache-mode="inherit" queryable="true"/>
+   	 <property expert="false" readable="true" column-name="overview_bottom_image" display-name-resource="Overview Bottom Image" item-type="media-external" hidden="false" writable="true" name="overviewBottomImage" required="false" cache-mode="inherit" queryable="true"/>
+   	 <property expert="false" readable="true" column-name="overview_image" display-name-resource="Overview Image" item-type="media-external" hidden="false" writable="true" name="overviewImage" required="false" cache-mode="inherit" queryable="true"/>
+   	 <property expert="false" readable="true" column-name="overview_template" display-name-resource="Overview Template" item-type="media-external" hidden="false" writable="true" name="overviewTemplate" required="true" cache-mode="inherit" queryable="true"/>  	 
+</table>
+</item-descriptor>
+<item-descriptor expert="false" sub-type-value="sku" id-separator=":" writable="true" version-property="version" cache-mode="simple" id-space-name="sku" content="false" folder="false" default="false" sub-type-property="type" query-cache-size="1000" hidden="false" name="sku" display-property="displayName" use-id-for-path="false" context-membership-property="siteIds" item-cache-size="1000">
+<table name="dcs_sku" id-column-name="sku_id" type="primary" shared-table-sequence="1">
+	<property expert="false" readable="true" column-name="sku_type" data-type="enumerated" hidden="true" writable="true" name="type" required="false" cache-mode="inherit" queryable="true">
+			<attribute name="uiwritable" value="false"/>
+	        <attribute name="useCodeForValue" value="false"/>
+	        <option value="sku" code="0"/>
+	        <option value="configurableSku" code="4001"/>
+	        <option value="clothing-sku" code="1"/>
+	        <option value="furniture-sku" code="2"/>
+	        <option value="phone-sku" code="3"/>
+	        <option value="plan-sku" code="4"/>
+	        <option value="accessory-sku" code="5"/>   
+	        <option value="addOn-sku" code="6"/> 
+     </property>
+</table>
+<table name="ckt_sku" id-column-name="sku_id" type="auxiliary" shared-table-sequence="1">
+	 <property expert="false" readable="true" column-name="color" display-name-resource="Color" data-type="string" hidden="false" writable="true" name="color" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+   	 <property expert="false" readable="true" column-name="swatch" display-name-resource="Swatch" item-type="media-external" hidden="false" writable="true" name="swatch" required="false" cache-mode="inherit" queryable="true">
+  	 </property>
+</table>
+<table name="ckt_rotating_images" id-column-name="sku_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+     <property expert="false" readable="true" component-item-type="media-external" writable="true" cache-mode="inherit" column-name="rotating_images" data-type="list" hidden="false" display-name-resource="Rotating Images" name="rotatingImages" required="false" queryable="true"/>
+</table>
+</item-descriptor>
+<item-descriptor sub-type-value="plan-sku" expert="false" id-separator=":" display-name-resource="Plan SKU" writable="true" super-type="sku" cache-mode="simple" content="false" folder="false" default="false" query-cache-size="1000" hidden="false" name="plan-sku" use-id-for-path="false" item-cache-size="1000">
+</item-descriptor>
+<item-descriptor sub-type-value="addOn-sku" expert="false" id-separator=":" display-name-resource="AddOn SKU" writable="true" super-type="sku" cache-mode="simple" content="false" folder="false" default="false" query-cache-size="1000" hidden="false" name="addOn-sku" use-id-for-path="false" item-cache-size="1000">
+</item-descriptor>
+<item-descriptor sub-type-value="phone-sku" expert="false" id-separator=":" display-name-resource="Phone SKU" writable="true" super-type="sku" cache-mode="simple" content="false" folder="false" default="false" query-cache-size="1000" hidden="false" name="phone-sku" use-id-for-path="false" item-cache-size="1000">
+<table name="ckt_phone_sku" id-column-name="sku_id" type="auxiliary" shared-table-sequence="1">		 
+   	 <property expert="false" readable="true" column-name="is_end_of_life" display-name-resource="Is End Of Life" data-type="boolean" hidden="false" writable="true" name="isEndOfLife" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+	 <property expert="false" readable="true" column-name="pim_color" display-name-resource="PIM Color" data-type="string" hidden="false" writable="true" name="pimColor" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+	<property expert="false" readable="true" column-name="life_cycle_phase" data-type="string" hidden="false" writable="true" display-name-resource="Lifecycle Phase" name="lifeCyclePhase" required="false" cache-mode="inherit" queryable="true">
+	</property>
+   	 <property expert="false" readable="true" column-name="is_web_sellable" display-name-resource="Is Web Sellable" data-type="boolean" hidden="false" writable="true" name="isWebSellable" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+   	 <property expert="false" readable="true" column-name="is_web_shippable" display-name-resource="Is Web Shippable" data-type="boolean" hidden="false" writable="true" name="isWebShippable" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+   	 <property expert="false" readable="true" column-name="is_store_sellable" display-name-resource="Is Store Sellable" data-type="boolean" hidden="false" writable="true" name="isStoreSellable" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+   	 <property expert="false" readable="true" column-name="is_live_approved" display-name-resource="Is Live Approved" data-type="boolean" hidden="false" writable="true" name="isLiveApproved" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+	 <property expert="false" readable="true" column-name="pim_sellable_flag" display-name-resource="PIM Sellable Flag" data-type="enumerated" hidden="false" writable="true" name="pimSellableFlag" required="false" cache-mode="inherit" queryable="true">
+	 	<attribute name="useCodeForValue" value="false"/>
+	       <option value="Y" code="0"/>
+	       <option value="N" code="1"/>
+   	 </property>
+      <property expert="false" readable="true" column-name="model_number" display-name-resource="Model Number" data-type="string" hidden="false" writable="true" name="modelNumber" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+   	 <property expert="false" readable="true" column-name="default_plan_category" display-name-resource="Default Plan Category" data-type="string" hidden="false" writable="true" name="defaultPlanCategory" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+   	 <property expert="false" readable="true" column-name="device_category" display-name-resource="Device Category" data-type="string" hidden="false" writable="true" name="deviceCategory" required="false" cache-mode="inherit" queryable="true">
+   	 </property> 	 
+   	 <property expert="false" readable="true" column-name="service_type" display-name-resource="Service Type" data-type="string" hidden="false" writable="true" name="serviceType" required="false" cache-mode="inherit" queryable="true">
+   	 </property> 	 
+   	 <property expert="false" readable="true" column-name="manufacturer_code" display-name-resource="Manufacturer Code" data-type="string" hidden="false" writable="true" name="manufacturerCode" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+   	 <property expert="false" readable="true" column-name="override_Inventory_Flag" display-name-resource="Override Inventory Flag" data-type="enumerated" hidden="false" writable="true" default="FALSE" name="overrideInventoryFlag" required="false" cache-mode="inherit" queryable="true">
+	 	<attribute name="useCodeForValue" value="false"/>
+	       <option value="TRUE" code="0"/>
+	       <option value="FALSE" code="1"/>
+   	 </property>
+</table>	
+<table name="ckt_phone_thresholds" id-column-name="sku_id" multi-column-name="sequence_num" type="multi" shared-table-sequence="1">
+      <property expert="false" readable="true" component-item-type="threshold" writable="true" cache-mode="inherit" display-name-resource="Thresholds" column-name="threshold_id" data-type="list" hidden="false" name="thresholds" required="false" queryable="true"/>
+</table>	
+<table name="ckt_phone_bom_contents" id-column-name="sku_id" multi-column-name="sequence_num" type="multi" shared-table-sequence="1">
+      <property expert="false" readable="true" component-item-type="accessory-sku" writable="true" cache-mode="inherit" display-name-resource="PIM BOM Contents" column-name="bom_sku_id" data-type="list" hidden="false" name="bomContents" required="false" queryable="true"/>
+</table>
+</item-descriptor>
+<item-descriptor sub-type-value="accessory-sku" expert="false" id-separator=":" display-name-resource="Accessory SKU" writable="true" super-type="sku" cache-mode="simple" content="false" folder="false" default="false" query-cache-size="1000" hidden="false" name="accessory-sku" use-id-for-path="false" item-cache-size="1000">
+<table name="ckt_accessory_sku" id-column-name="sku_id" type="auxiliary" shared-table-sequence="1">	 
+   	 <property expert="false" readable="true" column-name="accessory_type" display-name-resource="Accessory Type" data-type="string" hidden="false" writable="true" name="accessoryType" required="false" cache-mode="inherit" queryable="true">
+   	 </property> 
+   	 <property expert="false" readable="true" column-name="is_end_of_life" display-name-resource="Is End Of Life" data-type="boolean" hidden="false" writable="true" name="isEndOfLife" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+	<property expert="false" readable="true" column-name="life_cycle_phase" data-type="string" hidden="false" writable="true" display-name-resource="Lifecycle Phase" name="lifeCyclePhase" required="false" cache-mode="inherit" queryable="true">
+	</property>
+   	 <property expert="false" readable="true" column-name="is_web_sellable" display-name-resource="Is Web Sellable" data-type="boolean" hidden="false" writable="true" name="isWebSellable" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+   	 <property expert="false" readable="true" column-name="is_web_shippable" display-name-resource="Is Web Shippable" data-type="boolean" hidden="false" writable="true" name="isWebShippable" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+   	 <property expert="false" readable="true" column-name="is_live_approved" display-name-resource="Is Live Approved" data-type="boolean" hidden="false" writable="true" name="isLiveApproved" required="false" cache-mode="inherit" queryable="true">
+   	 </property>  
+   	 <property expert="false" readable="true" column-name="is_store_sellable" display-name-resource="Is Store Sellable" data-type="boolean" hidden="false" writable="true" name="isStoreSellable" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+      <property expert="false" readable="true" column-name="model_number" display-name-resource="Model Number" data-type="string" hidden="false" writable="true" name="modelNumber" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+	 <property expert="false" readable="true" column-name="avail_cust_upgrades" display-name-resource="Available For Customer Upgrades" data-type="enumerated" hidden="false" writable="true" name="availableForCustomerUpgrades" required="false" cache-mode="inherit" queryable="true">
+	 	<attribute name="useCodeForValue" value="false"/>
+	       <option value="Y" code="0"/>
+	       <option value="N" code="1"/>
+   	 </property>
+	 <property expert="false" readable="true" column-name="pim_sellable_flag" display-name-resource="PIM Sellable Flag" data-type="enumerated" hidden="false" writable="true" name="pimSellableFlag" required="false" cache-mode="inherit" queryable="true">
+	 	<attribute name="useCodeForValue" value="false"/>
+	       <option value="Y" code="0"/>
+	       <option value="N" code="1"/>
+   	 </property>
+   	 <property expert="false" readable="true" column-name="service_type" display-name-resource="Service Type" data-type="string" hidden="false" writable="true" name="serviceType" required="false" cache-mode="inherit" queryable="true">
+   	 </property> 	
+   	 <property expert="false" readable="true" column-name="manufacturer_code" display-name-resource="Manufacturer Code" data-type="string" hidden="false" writable="true" name="manufacturerCode" required="false" cache-mode="inherit" queryable="true">
+   	 </property>
+   	 <property expert="false" readable="true" column-name="override_Inventory_Flag" display-name-resource="Override Inventory Flag" data-type="enumerated" hidden="false" writable="true" default="FALSE" name="overrideInventoryFlag" required="false" cache-mode="inherit" queryable="true">
+	 	<attribute name="useCodeForValue" value="false"/>
+	       <option value="TRUE" code="0"/>
+	       <option value="FALSE" code="1"/>
+   	 </property>
+</table>
+<table name="ckt_acc_thresholds" id-column-name="sku_id" multi-column-name="sequence_num" type="multi" shared-table-sequence="1">
+      <property expert="false" readable="true" component-item-type="threshold" writable="true" cache-mode="inherit" display-name-resource="Thresholds" column-name="threshold_id" data-type="list" hidden="false" name="thresholds" required="false" queryable="true"/>
+</table>
+</item-descriptor>
+<item-descriptor name="media-external">
+	<table name="ckt_media_ext" id-column-name="media_id" type="auxiliary" shared-table-sequence="1">
+		<property expert="false" readable="true" data-type="String" writable="true" cache-mode="inherit" column-name="usr_loc_zip_code" hidden="false" name="userLocationZipCode" display-name-resource="Zip Codes" required="false" queryable="true"/>
+		<property expert="false" readable="true" data-type="int" writable="true" cache-mode="inherit" column-name="promo_id" hidden="false" name="promoId" display-name-resource="Promo Id" required="false" queryable="true"/>
+		<property expert="false" readable="true" data-type="String" writable="true" cache-mode="inherit" column-name="landing_url" hidden="false" name="landingUrl" display-name-resource="Landing URL" required="false" queryable="true"/>
+		<property expert="false" readable="true" data-type="enumerated" writable="true" cache-mode="inherit" column-name="page_loc" hidden="false" name="pageLocation" display-name-resource="Page Location" required="false" queryable="true">
+			<attribute name="useCodeForValue" value="false"/>
+	       <option value="top" code="0"/>
+	       <option value="bottom" code="1"/>
+     	</property>
+     	<property expert="false" readable="true" data-type="int" writable="true" cache-mode="inherit" column-name="display_priority" hidden="false" name="displayPriority" display-name-resource="Display Priority" required="false" queryable="true"/>
+     	<property expert="false" readable="true" data-type="enumerated" writable="true" cache-mode="inherit" column-name="image_type" hidden="false" name="imageType" display-name-resource="Image Type" required="false" queryable="true">
+			<attribute name="useCodeForValue" value="false"/>
+	       <option value="HomePageBanner" code="0"/>
+	       <option value="Phone Listing" code="1"/>
+	       <option value="Plan Listing" code="2"/>
+	       <option value="Accessory Listing" code="3"/>
+	       <option value="Phone Details" code="4"/>
+	       <option value="Plan Details" code="5"/>
+	       <option value="Accessory Details" code="6"/>
+	       <option value="AddOn Listing" code="7"/>
+	       <option value="AddOn Details" code="8"/>
+     	</property>
+	</table>
+	<table name="ckt_media_markets" id-column-name="media_id" type="multi" multi-column-name="sequence_num" shared-table-sequence="1">
+	      <property expert="false" readable="true" component-item-type="market-info" writable="true" cache-mode="inherit" display-name-resource="Markets" column-name="market_id" data-type="list" hidden="false" name="markets" required="false" queryable="true"/>
+	</table>
+</item-descriptor>
+</gsa-template>

@@ -1,0 +1,179 @@
+.section-plan-addons-details #product-details {
+  padding: 0.7em 0.8em 1em 0.8em;
+  .final-price {
+    border-top: 1px solid #dbdbdb;
+    padding-top: emCalc(15px);
+    p.left {font-size: 1.1em;}
+  }
+  h1 {text-align: center;}
+  .full-width-btn {width: 100%;}
+  
+  /* iPad */
+  @include respond-min($small-screen) {
+    background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/plans-addons/power-pixels-addon-details.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 50% 0;
+  }
+  
+  /* Desktop */
+  @include respond-min($medium-screen) {
+    padding: 5em 0 1em;
+    h1 {
+      text-align: left;
+      font-size: emCalc(30px);
+    }
+    .full-width-btn {width: 55%;}
+  }
+}
+
+.section-plan-addons-details #product-image {
+  p {
+    margin: 2.35em 0;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.13em;
+    line-height: 1.3em;
+    padding: 0 1em;
+    font-family: "GothamMedium";
+  }
+}
+
+
+.section-plan-addons-details #product-content {float:right;}
+
+.section-plan-addons-details #tab-content {
+
+  .section-container{
+ @include respond-min($mobile-320-screen) {
+	.active .title { background-image: none; }
+	}
+    border-top: 1px solid #deefe9;
+    .circle-arrow {
+      margin: 2em auto;
+      display: block;
+      width: 50%;
+    }
+    .copy{padding: 0 0.625em 0 0.625em;}
+
+    /* Desktop */
+    @include respond-min($medium-screen) {
+      border-top: none;
+      .circle-arrow {
+        float: right;
+        width: auto;
+        margin: 1.25em 0 0 0;
+      }
+      .copy{
+        margin: 4.75em 0 emCalc(57px) 0;
+        padding: 0 emCalc(81px) 0 4.5em;
+      }
+      .title{
+        padding-left: 0.938em;
+        padding-right: 0.938em;
+      }
+    } /* /Desktop .section-container */
+    
+    #available-phones{
+      h4{
+        font-family: 'GothamBlack';
+        font-size: emCalc(20px);
+        color: #8dc63f;        
+        border-bottom: none;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-weight: normal;
+      }
+      p{
+        font-size: emCalc(13px);
+        color: #333;
+        font-family: 'GothamMedium';
+        margin-top: 8px;
+        margin-bottom: 40px;
+      }
+      
+      /* Desktop overrides for #available-phones */
+      @include respond-min($medium-screen) { 
+        padding: 1.188em 1.875em 1em  4.5em;
+        h4 {
+          color: #008752; 
+          letter-spacing: emCalc(0.25px);   
+        }
+        p {
+          color: #008752;
+          text-transform: uppercase;
+        }
+      } /* /Desktop overrides for #availble-phones */
+    } /* /#available-phones */
+  }
+  
+  /* Desktop overrides for #tab-content */
+  @include respond-min($medium-screen) {margin-bottom: 4em;}  
+} /* /#tab-content */
+
+.section-plan-addons-details #tab-content #included {
+  ul{
+    padding-left: 1em;
+    padding-bottom: emCalc(9px);
+    display: inline-block;
+    width: 100%;
+    li:before{
+      display:inline-block;
+      content:"-";
+      width:1em;
+      margin-left:-1em;
+    }
+    li{margin: .25em 0;}
+  }
+  .asterisk: before{
+    list-style-type: none;
+    content: none;
+  }
+  p{
+    font-size: emCalc(12px);
+    color: #000;
+    font-family: 'GothamMedium';
+    margin-top: 5px;
+  }
+  h4{
+    font-family: 'GothamBlack';
+    font-size: 1.125em;
+    font-weight: normal;
+  }
+  
+  /* Desktop */
+  @include respond-min($medium-screen) {
+    padding: 1.188em 1.875em 1em  4.5em;
+    .title{
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    h4{
+      font-size: emCalc(20px);
+      letter-spacing: emCalc(0.25px);
+    }
+    p{color: #FFF;}
+    
+    ul {
+      padding-left: 0;
+      li.first:before, li:before {
+        content: "";
+      }
+      li { 
+        float: left;
+        font-size: emCalc(13px);
+        margin: 0 10px 0 0;
+        &.first {
+          list-style-type: none;
+          margin: 0;
+        }
+      } /* /li */
+    }
+  } /* /Desktop overrides */
+  
+} /* /#included */
+
+.tabs-legal {
+	padding-top:10px;
+	font-size:11px;
+	font-style:italic;
+	border-top:1px solid #ddd;
+	margin-top:25px;
+}

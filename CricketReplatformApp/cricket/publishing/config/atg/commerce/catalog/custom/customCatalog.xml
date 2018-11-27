@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gsa-template SYSTEM "dynamosystemresource:/atg/dtds/gsa/gsa_1.0.dtd">
+<gsa-template>
+<header>
+   <name>Cricket Catalog</name>
+   <author>Cricket Communications</author>
+</header>
+<item-descriptor name="product" xml-combine="append">
+	<table name="dcs_product" id-column-name="product_id" type="primary" shared-table-sequence="1">
+	     <property name="startDate" required="false">
+	     	<attribute name="useNowForDefault" value="true"/>
+	     </property>
+	</table>
+</item-descriptor>
+</gsa-template>

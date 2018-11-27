@@ -1,0 +1,913 @@
+package com.cricket.integration.maxmind;
+
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.StringTokenizer;
+
+import javax.crypto.BadPaddingException;
+import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.spec.SecretKeySpec;
+import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpSession;
+
+import org.apache.commons.codec.DecoderException;
+import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.codec.binary.Hex;
+
+import atg.commerce.order.OrderHolder;
+import atg.core.util.StringUtils;
+import atg.repository.RepositoryException;
+import atg.repository.RepositoryItem;
+import atg.servlet.DynamoHttpServletRequest;
+import atg.servlet.DynamoHttpServletResponse;
+import atg.servlet.ServletUtil;
+import atg.servlet.pipeline.InsertableServletImpl;
+import atg.userprofiling.Profile;
+import atg.userprofiling.ProfileServices;
+
+import com.cricket.common.constants.CricketCommonConstants;
+import com.cricket.common.constants.CricketCookieConstants;
+import com.cricket.myaccount.CricketProfileTools;
+import com.cricket.util.CricketMarketToProfile;
+import com.cricket.util.CricketUtils;
+import com.cricket.vo.MyCricketCookieLocationInfo;
+
+import de.ailis.pherialize.Mixed;
+import de.ailis.pherialize.Pherialize;
+
+/* 
+ * GeoIpLocationServlet extends  InsertableServletImpl, this class is used to fetch Current User Ip address
+ * 
+ * @author : techM
+ * @version 1.0
+ */
+
+/**
+ * @author ss112157
+ * 
+ */
+public class GeoIpLocationServlet extends InsertableServletImpl {
+
+
+	// property : mGeoIpLocationManager
+	GeoIpLocationManager mGeoIpLocationManager;
+	// property : mDefaultIpAddr
+	String mDefaultIpAddr;
+	// property : mEnabled	
+	boolean mEnabled;
+	String mCitySessionInfoObjectPath;
+	// set this property to false in live environment
+	boolean testingOn;
+
+	private CricketMarketToProfile cricketMarketToProfile;
+
+	private ProfileServices profileService;
+	
+	private CricketUtils cricketUtils;
+	
+	private String sharedCookieExpiredVal;
+
+
+	/**
+	 * The method is used to get the city details by using the ip address of the
+	 * user
+	 * 
+	 * @param pRequest
+	 *            - DynamoHttpServletRequest
+	 * @param pResponse
+	 *            - DynamoHttpServletResponse
+	 * @throws IOException
+	 * @throws ServletException
+	 * */
+
+	@Override
+	public void service(DynamoHttpServletRequest pRequest,
+			DynamoHttpServletResponse pResponse) throws IOException,
+			ServletException {
+
+		if (isLoggingDebug()) {
+			// Getting the Page url
+				String pageURL = CricketCommonConstants.EMPTY_STRING;
+				if(!StringUtils.isBlank(pRequest.getRequestURIWithQueryString())){
+					pageURL = pRequest.getRequestURIWithQueryString();
+				}
+			 						
+	    		logDebug("Entering into GeoIpLocationServlet class of service() method:::" + CricketCommonConstants.SESSION_ID + getSessionId() + CricketCommonConstants.PAGE_URL + pageURL);
+		}
+		if (isEnabled()) {
+			MyCricketCookieLocationInfo loggedInUserLocationInfo = (MyCricketCookieLocationInfo) pRequest.resolveName(CricketCommonConstants.LOCATION_INFO_PATH);
+			Profile profile = profileService.getCurrentProfile();
+			
+			if (isLoggingDebug()) {
+				logDebug("profile.isTransient(): " + profile.isTransient());
+				logDebug("loggedInUserLocationInfo.getZip(): " + loggedInUserLocationInfo.getZip()); 
+			}
+			CitySessionInfoObject citySessionInfoObject = (CitySessionInfoObject) pRequest.resolveName(getCitySessionInfoObjectPath());
+			if(pRequest.getRequestURIWithQueryString().contains(CricketCommonConstants.ZIP_CODE)){
+				citySessionInfoObject.getCityVO().setManulaEntry(true);
+				//fix for defect 7039
+				//citySessionInfoObject.getCityVO().setGeoIpDetecred(false);
+				loggedInUserLocationInfo.setZip(null); 
+			}
+			if ((profile.isTransient() || !profile.isTransient()) && loggedInUserLocationInfo.getZip() != null ) {// Location cookie was found
+				CityVO cityVO = new CityVO();
+				cityVO.setPostalCode(loggedInUserLocationInfo.getZip());
+				cityVO.setState(loggedInUserLocationInfo.getState());
+				cityVO.setCity(loggedInUserLocationInfo.getCity());
+				if(loggedInUserLocationInfo.isGeoIpDetecred()) {
+					cityVO.setGeoIpDetecred(true);
+				} else {
+					cityVO.setGeoIpDetecred(false);
+					if(loggedInUserLocationInfo.isDefaultLocation() == false) {
+						cityVO.setManulaEntry(true);
+					}
+				}
+				if(loggedInUserLocationInfo.isDefaultLocation()) {
+					cityVO.setDefaultLocation(true);
+				} else {
+					cityVO.setDefaultLocation(false);
+				}
+				citySessionInfoObject.setCityVO(cityVO);
+				setLocationToProfile(profile, cityVO);
+				profile.setPropertyValue(CricketCommonConstants.MANUALLY_ENTERED_ZIP, true);			
+				String marketId = (String)profile.getPropertyValue(CricketCommonConstants.PROP_MARKET_ID);
+				String marketType = (String)profile.getPropertyValue(CricketCommonConstants.MARKET_TYPE);
+				if (citySessionInfoObject.getCityVO() != null && citySessionInfoObject.getCityVO().getCity() != null && (marketId == null || marketType == null)) {
+					//This call is for setting the Market Info in the Profile for Both Cricket/Sprint Coverage.
+					setCoverageToProfile(profile, cityVO);	
+				}
+				if (isLoggingDebug()) {
+					logDebug("cityVO: " + cityVO);
+					logDebug("Profile.marketType: " + (String)profile.getPropertyValue(CricketCommonConstants.MARKET_TYPE));
+					logDebug("Profile.marketId: " + (String)profile.getPropertyValue(CricketCommonConstants.PROP_MARKET_ID));				
+				}
+				
+				//Delete Shared Location Cookie for logged-in user
+				//Why? When the user logged-out and hit the test.mycricket.com, we are reading this cookie.
+				//So we need to clear this cookie and show the products for the maxmind detected location or default location when maxmind fails to detect location.
+				deleteSharedLocationCookie(pRequest, pResponse);
+				
+			} else {
+				CityVO cityVO = new CityVO();		
+				String userDevice =  pRequest.getParameter(CricketCommonConstants.USER_DEVICE);
+				if(userDevice == null){
+					userDevice = getUserAgent(pRequest);
+				}
+				if (isLoggingDebug()) {
+					logDebug("userDevice: " + userDevice);	
+					logDebug("Creating the Sharedcation Cookie");	
+				}
+				
+				if (userDevice != null) {
+					if (userDevice.equals(CricketCommonConstants.GEO_DESKTOP)) {
+						cityVO = getCityInfo(CricketCommonConstants.GEO_DESKTOP, pRequest,pResponse, null, null);
+	
+					} else {
+						String latitude = pRequest.getParameter(CricketCommonConstants.GEO_LATITUDE);
+						String longitude = pRequest.getParameter(CricketCommonConstants.GEO_LONGITUDE);						
+						if (isLoggingDebug()) {
+							logDebug("latitude: " + latitude);
+							logDebug("longitude: " + longitude);											
+						}
+						if(latitude != null && longitude != null){
+							cityVO = getCityInfo(CricketCommonConstants.GEO_MOBILE, pRequest,pResponse, latitude, longitude);
+						} else {
+							if(citySessionInfoObject.getCityVO() != null && !citySessionInfoObject.getCityVO().isManulaEntry()) {
+								cityVO.setDefaultLocation(true);
+								cityVO.setGeoIpDetecred(false);
+								cityVO.setManulaEntry(false);
+								cityVO = setDefaultLocation();
+								citySessionInfoObject.setCityVO(cityVO);
+								setLocationToProfile(profile, cityVO);
+								setCoverageToProfile(profile, cityVO);
+							}
+						}
+					}					
+				}
+			}
+		}
+
+		if (isLoggingDebug()) {
+			// Getting the Page url
+				String pageURL = CricketCommonConstants.EMPTY_STRING;
+				if(!StringUtils.isBlank(pRequest.getRequestURIWithQueryString())){
+					pageURL = pRequest.getRequestURIWithQueryString();
+				}						
+	    		logDebug("Exiting from GeoIpLocationServlet class of service() method:::" + CricketCommonConstants.SESSION_ID + getSessionId() + CricketCommonConstants.PAGE_URL + pageURL);
+		}
+		// logInfo("Is Commited: " + pResponse.isCommitted());
+		// logInfo("X-UA-Compatible: " +
+		// pResponse.getHeaders("X-UA-Compatible"));
+		// logInfo("Headers: " + pResponse.getHeaders());
+		if (!pResponse.isCommitted()) {
+			pResponse.setHeader(CricketCommonConstants.X_UA_COMPATIBLE, CricketCommonConstants.IE_EDGE);
+		}
+		if (isLoggingDebug()) {
+			logDebug("X-UA-Compatible: "
+					+ pResponse.getHeaders("X-UA-Compatible").toString());
+		}
+		super.service(pRequest, pResponse);
+	}
+
+	private String getSessionId() {
+		 HttpSession session = ServletUtil.getCurrentRequest().getSession();
+		 String sessionId = CricketCommonConstants.EMPTY_STRING;
+		 if(null != session) {
+			 sessionId = session.getId();
+		 }
+		 return sessionId;
+	}
+	
+	public String getUserAgent(DynamoHttpServletRequest pRequest)
+			throws ServletException, IOException {
+
+		String userType = pRequest.getHeader(CricketCommonConstants.USER_AGENT);
+		if (userType != null) {
+			if (userType.indexOf(CricketCommonConstants.MOBILE) != -1) {
+				return CricketCommonConstants.GEO_MOBILE;
+			} else {
+				return CricketCommonConstants.GEO_DESKTOP;
+			}
+		}
+		return null;
+	}
+	
+	public CityVO setDefaultLocation(){
+		CityVO cityVO = null;
+		Profile profile = profileService.getCurrentProfile();
+		cityVO = getGeoIpLocationManager().fetchCityForIp(getDefaultIpAddr());
+		profile.setPropertyValue(CricketCommonConstants.IS_DEFAULT_LOCATION, true);
+		return cityVO;		
+	}
+	
+	public CityVO getCityInfo(String pUserDevice,
+			DynamoHttpServletRequest pRequest,DynamoHttpServletResponse pResponse, String pLatitude,
+			String pLongitude) throws UnsupportedEncodingException {
+
+		if (isLoggingDebug()) {
+			// Getting the Page url
+				String pageURL = CricketCommonConstants.EMPTY_STRING;
+				if(!StringUtils.isBlank(pRequest.getRequestURIWithQueryString())){
+					pageURL = pRequest.getRequestURIWithQueryString();
+				}						
+	    		logDebug("Entering into GeoIpLocationServlet class of getCityInfo() method:::" + CricketCommonConstants.SESSION_ID + getSessionId() + "Latitude:::" + pLatitude + "Longitude:::" + pLongitude + CricketCommonConstants.PAGE_URL + pageURL);
+		}
+		CityVO cityVO = null;
+		String Source = null;
+		CitySessionInfoObject citySessionInfoObject = (CitySessionInfoObject) pRequest.resolveName(getCitySessionInfoObjectPath());
+				
+		if (isLoggingDebug()) {
+			logDebug("citySessionInfoObject.getCityVO()::"+citySessionInfoObject.getCityVO());			
+		}
+		
+		Profile profile = profileService.getCurrentProfile();
+		if (citySessionInfoObject != null) {
+			if (citySessionInfoObject.getCityVO() != null && citySessionInfoObject.getCityVO().getCity() != null && pUserDevice != null) {
+				citySessionInfoObject.setFirstAccess(false);
+			} else {
+				//Start: Read Location From Shared Cookie (UC001:FR011)
+				cityVO = readLocationFromSharedCookie(pRequest,profile);
+				if (cityVO != null && cityVO.getPostalCode() != null) {
+					citySessionInfoObject.setCityVO(cityVO);
+					setLocationToProfile(profile, cityVO);
+					setCoverageToProfile(profile, cityVO);
+					citySessionInfoObject.setFirstAccess(false);
+				}				
+				//End: Read Location From Shared Cookie (UC001:FR011)
+			}
+
+			if (citySessionInfoObject.isFirstAccess()) {
+				// get current user ip address
+				String ipAddress = fetchCurrentUserIp(pRequest);
+				// send ip address to manager
+				cityVO = getGeoIpLocationManager().fetchCityForIp(ipAddress);		
+				// if postal code is null then set default IP address
+				if(cityVO != null){
+					if(cityVO.getPostalCode() == null){							
+						if(isLoggingDebug()){
+							logDebug("No Postal Code returned by the Maxmind for the IP Detected "
+									+ ipAddress
+									+ ", so seeting the default location IP::"
+									+ getDefaultIpAddr());
+						}							
+						cityVO = setDefaultLocation();
+					}else{
+						profile.setPropertyValue(CricketCommonConstants.IS_DEFAULT_LOCATION, false);
+					}
+				} else{
+					// if cityVO is null then set default IP address
+					cityVO = setDefaultLocation();
+				}							
+				
+				if (isLoggingDebug()) {						
+					logDebug("CityVO:- " + cityVO);
+					logDebug("Profile.isDefaultLocation:- " + profile.getPropertyValue(CricketCommonConstants.IS_DEFAULT_LOCATION));
+				}
+				if (cityVO != null) {
+					citySessionInfoObject.setCityVO(cityVO);
+				}				
+				setLocationToProfile(profile, cityVO);
+				setCoverageToProfile(profile, cityVO);
+				// setPricelistToProfile(profile, cityVO);	
+				if (cityVO != null) {
+					Source=CricketCommonConstants.GEO_IP;
+					createSharedLocationCookie(pRequest, pResponse, cityVO, profile,Source);
+				}
+			}
+			if (pUserDevice != null && pUserDevice.equalsIgnoreCase(CricketCommonConstants.GEO_MOBILE) && !citySessionInfoObject.isTriedMobileLocation()) {
+				// hit zipcode resp to get city info
+				citySessionInfoObject.setTriedMobileLocation(true);
+				String zipCode = pRequest.getParameter(CricketCommonConstants.ZIP_CODE);
+				if(!pLatitude.equalsIgnoreCase(CricketCommonConstants.STRING_ZERO) && !pLongitude.equalsIgnoreCase(CricketCommonConstants.STRING_ZERO)){
+					cityVO = getGeoIpLocationManager().fetchCityForMobileUsers(pLatitude, pLongitude, zipCode);
+				}
+				// citySessionInfoObject.setLocationInRepository(CricketCommonConstants.GEO_MOBILE);
+				if (cityVO != null) {
+				/*	citySessionInfoObject.setFirstAccess(false);*/
+					if(cityVO.getLatitude() == CricketCommonConstants.INTEGER_ZERO && cityVO.getLongitude() == CricketCommonConstants.INTEGER_ZERO ){
+						cityVO = setDefaultLocation();		
+					}else{
+						profile.setPropertyValue(CricketCommonConstants.IS_DEFAULT_LOCATION, false);
+					}
+				} else {
+					/*citySessionInfoObject.setLocationInRepository(CricketCommonConstants.GEO_NOLOCATION);*/
+						cityVO = setDefaultLocation();
+				}
+				setLocationToProfile(profile, cityVO);
+				setCoverageToProfile(profile, cityVO);
+				if (cityVO != null) {
+					Source=CricketCommonConstants.GPS;
+					createSharedLocationCookie(pRequest, pResponse, cityVO, profile,Source);
+				}
+				if(cityVO != null) {
+					citySessionInfoObject.setCityVO(cityVO);
+				}
+			}
+		}
+
+		if (isLoggingDebug()) {
+			// Getting the Page url
+				String pageURL = CricketCommonConstants.EMPTY_STRING;
+				if(!StringUtils.isBlank(pRequest.getRequestURIWithQueryString())){
+					pageURL = pRequest.getRequestURIWithQueryString();
+				}						
+	    		logDebug("Exiting from GeoIpLocationServlet class of getCityInfo() method:::" + CricketCommonConstants.SESSION_ID + getSessionId() + "CityVO:::" + cityVO + CricketCommonConstants.PAGE_URL + pageURL);
+		}
+		return cityVO;
+	}
+
+	/*
+	 * private void setPricelistToProfile(Profile profile, CityVO cityVO) {
+	 * if(isLoggingDebug()) { logDebug("inside setPricelistToProfile"); } String
+	 * coverage = (String) profile.getPropertyValue("networkProvider"); String
+	 * marketId = (String) profile.getPropertyValue("marketId"); RepositoryItem
+	 * priceListItem =
+	 * getPriceListTools().getPriceListFotMarket(cityVO.getCity(), coverage,
+	 * marketId); if(priceListItem != null) {
+	 * profile.setPropertyValue("myPriceList", priceListItem);
+	 * profile.setPropertyValue("priceList", priceListItem); } }
+	 */
+
+	private void setLocationToProfile(Profile profile, CityVO cityVO) {
+		if (isLoggingDebug()) {
+			logDebug("inside setLocationToProfile");
+		}
+		if (cityVO != null) {
+			/*
+			 * locationMap.put("zipCode", cityVO.getPostalCode());
+			 * locationMap.put("city", cityVO.getCity());
+			 * locationMap.put("areaCode", cityVO.getAreaCode());
+			 * locationMap.put("countryCode", cityVO.getAreaCode());
+			 * locationMap.put("countryName", cityVO.getAreaCode());
+			 * locationMap.put("regionCode", cityVO.getAreaCode());
+			 * locationMap.put("regionName", cityVO.getAreaCode());
+			 * locationMap.put("latitude", cityVO.getAreaCode());
+			 * locationMap.put("longitude", cityVO.getAreaCode());
+			 * locationMap.put("metroCode", cityVO.getAreaCode());
+			 * locationMap.put("timeZone", cityVO.getAreaCode());
+			 */
+
+			profile.setPropertyValue(CricketCommonConstants.USER_LOC_ZIP_CODE,
+					cityVO.getPostalCode());
+			profile.setPropertyValue(CricketCommonConstants.USER_LOC_CITY, cityVO.getCity());
+			// profile.setPropertyValue("manuallyEnteredZipCode", true);
+			if (isLoggingDebug()) {
+				logDebug("Profile: " + profile);
+			}
+		}
+
+	}
+
+	/**
+	 * The method is used to get the coverage details based on the city info of
+	 * the current user
+	 * 
+	 * @param pRequest
+	 *            - Profile , CityVO
+	 * */
+	private void setCoverageToProfile(Profile profile, CityVO cityVO) {
+		if (isLoggingDebug()) {
+			logDebug("inside setCoverageToProfile in GeoIpLocationServlet");
+			logDebug("Profile" + profile);
+			logDebug("CityVO" + cityVO);
+		}
+		getCricketMarketToProfile().setCoverageToProfile(cityVO, profile);
+		if (isLoggingDebug()) {
+			logDebug("Exit setCoverageToProfile in GeoIpLocationServlet");
+		}
+	}
+
+	/**
+	 * The method is used to get the ip address of the current user
+	 * 
+	 * @param pRequest
+	 *            - DynamoHttpServletRequest
+	 * @return String
+	 * */
+	String fetchCurrentUserIp(DynamoHttpServletRequest pRequest) {
+		if (isLoggingDebug()) {
+			logDebug("Inside fetchCurrentUserIp");
+		}
+		String ip = null;
+		
+		if (isLoggingDebug()) {
+			logDebug("Printing ips in the header starts XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+			logDebug("IP retuned by RemoteAddr: " + pRequest.getRemoteAddr());
+			logDebug("IP retuned by proxy client ip: " + pRequest.getHeader(CricketCommonConstants.PROXY_CLIENT_IP));
+			logDebug("IP retuned by forwarded for: " + pRequest.getHeader(CricketCommonConstants.X_FORWARDED_FOR));
+			logDebug("IP retuned by wl proxy client ip: " + pRequest.getHeader(CricketCommonConstants.WL_PROXY_CLIENT_IP));
+			logDebug("IP retuned by http x forwarded for: " + pRequest.getHeader(CricketCommonConstants.HTTP_X_FORWARDED_FOR));
+			logDebug("IP retuned by http client ip: " + pRequest.getHeader(CricketCommonConstants.HTTP_CLIENT_IP));
+			logDebug("Printing ips in the header ends XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+			
+			logDebug("Printing the whole header starts ******************************************************************************");
+			Enumeration headerNames = pRequest.getHeaderNames();
+			while(headerNames.hasMoreElements()) {
+			  String headerName = (String)headerNames.nextElement();
+			  logDebug("::::header name:::::::" + headerName);
+			  logDebug("::::header value:::::::" + pRequest.getHeader(headerName));
+			}
+			logDebug("Printing the whole header ends ******************************************************************************");
+		}
+		
+		if (ip == null || ip.length() == 0
+				|| CricketCommonConstants.UNKNOWN.equalsIgnoreCase(ip)) {
+			ip = pRequest.getHeader(CricketCommonConstants.X_FORWARDED_FOR);
+			
+			if (isLoggingDebug()) {
+				logDebug("IP retuned by X_FORWARDED_FOR: " + ip);
+			}
+		}
+		if(ip == null || ip.length() == 0
+				|| CricketCommonConstants.UNKNOWN.equalsIgnoreCase(ip)){
+			ip = pRequest.getRemoteAddr();
+		}
+		if (ip == null || ip.length() == 0
+				|| CricketCommonConstants.UNKNOWN.equalsIgnoreCase(ip)) {
+			ip = pRequest.getHeader(CricketCommonConstants.HTTP_CLIENT_IP);
+			if (isLoggingDebug()) {
+				logDebug("IP retuned by HTTP_CLIENT_IP: " + ip);
+			}
+		}
+		if (ip == null || ip.length() == 0
+				|| CricketCommonConstants.UNKNOWN.equalsIgnoreCase(ip)) {
+			ip = pRequest.getHeader(CricketCommonConstants.PROXY_CLIENT_IP);
+			
+			if (isLoggingDebug()) {
+				logDebug("IP retuned by Proxy-Client-IP: " + ip);
+			}
+		}
+		if (ip == null || ip.length() == 0
+				|| CricketCommonConstants.UNKNOWN.equalsIgnoreCase(ip)) {
+			ip = pRequest.getHeader(CricketCommonConstants.WL_PROXY_CLIENT_IP);
+			if (isLoggingDebug()) {
+				logDebug("IP retuned by WL-Proxy-Client-IP: " + ip);
+			}
+		}
+		
+		if (ip == null || ip.length() == 0
+				|| CricketCommonConstants.UNKNOWN.equalsIgnoreCase(ip)) {
+			ip = pRequest
+					.getHeader(CricketCommonConstants.HTTP_X_FORWARDED_FOR);
+			if (isLoggingDebug()) {
+				logDebug("IP retuned by HTTP_X_FORWARDED_FOR: " + ip);
+			}
+		}
+		/*if (ip == null || ip.length() == 0
+				|| CricketCommonConstants.UNKNOWN.equalsIgnoreCase(ip)) {
+			ip = pRequest.getRemoteAddr();
+			if (isLoggingDebug()) {
+				logDebug("IP retuned by RemoteAddr: " + ip);
+			}
+		}*/
+		if (testingOn) {
+			ip = getDefaultIpAddr();
+			if (isLoggingDebug()) {
+				logDebug("TestingOn is true: " + ip);
+			}
+		}
+		if (isLoggingDebug()) {
+			logDebug("Exit fetchCurrentUserIp::::::" + ip);
+		}
+		return ip;
+	}
+
+	/**
+	 * @return the geoIpLocationManager
+	 */
+	public GeoIpLocationManager getGeoIpLocationManager() {
+		return mGeoIpLocationManager;
+	}
+
+	/**
+	 * @param pGeoIpLocationManager
+	 *            the geoIpLocationManager to set
+	 */
+	public void setGeoIpLocationManager(
+			GeoIpLocationManager pGeoIpLocationManager) {
+		mGeoIpLocationManager = pGeoIpLocationManager;
+	}
+
+	/**
+	 * @return the defaultIpAddr
+	 */
+	public String getDefaultIpAddr() {
+		return mDefaultIpAddr;
+	}
+
+	/**
+	 * @param pDefaultIpAddr
+	 *            the defaultIpAddr to set
+	 */
+	public void setDefaultIpAddr(String pDefaultIpAddr) {
+		mDefaultIpAddr = pDefaultIpAddr;
+	}
+
+	/**
+	 * @return profileService
+	 */
+	public ProfileServices getProfileService() {
+		return profileService;
+	}
+
+	/**
+	 * @param profileService
+	 */
+	public void setProfileService(ProfileServices profileService) {
+		this.profileService = profileService;
+	}
+
+	/**
+	 * @return the enabled
+	 */
+	public boolean isEnabled() {
+		return mEnabled;
+	}
+
+	/**
+	 * @param pEnabled
+	 *            the enabled to set
+	 */
+	public void setEnabled(boolean pEnabled) {
+		mEnabled = pEnabled;
+	}
+
+	/**
+	 * @return the testingOn
+	 */
+	public boolean isTestingOn() {
+		return testingOn;
+	}
+
+	/**
+	 * @param pTestingOn
+	 *            the testingOn to set
+	 */
+	public void setTestingOn(boolean pTestingOn) {
+		testingOn = pTestingOn;
+	}
+
+	/**
+	 * @return the citySessionInfoObjectPath
+	 */
+	public String getCitySessionInfoObjectPath() {
+		return mCitySessionInfoObjectPath;
+	}
+
+	/**
+	 * @param pCitySessionInfoObjectPath
+	 *            the citySessionInfoObjectPath to set
+	 */
+	public void setCitySessionInfoObjectPath(String pCitySessionInfoObjectPath) {
+		mCitySessionInfoObjectPath = pCitySessionInfoObjectPath;
+	}
+
+	/**
+	 * @return the cricketMarketToProfile
+	 */
+	public CricketMarketToProfile getCricketMarketToProfile() {
+		return cricketMarketToProfile;
+	}
+
+	/**
+	 * @param cricketMarketToProfile the cricketMarketToProfile to set
+	 */
+	public void setCricketMarketToProfile(
+			CricketMarketToProfile cricketMarketToProfile) {
+		this.cricketMarketToProfile = cricketMarketToProfile;
+	}
+	
+	/**
+	 * @param pRequest
+	 * @param pResponse
+	 * @param zipCode
+	 * @throws UnsupportedEncodingException 
+	 */
+	private void createSharedLocationCookie(DynamoHttpServletRequest pRequest,
+			DynamoHttpServletResponse pResponse, CityVO cityVO, Profile profile, String Source) throws UnsupportedEncodingException {
+		if (isLoggingDebug()) {
+			// Getting the Page url
+				String pageURL = CricketCommonConstants.EMPTY_STRING;
+				if(!StringUtils.isBlank(pRequest.getRequestURIWithQueryString())){
+					pageURL = pRequest.getRequestURIWithQueryString();
+				}						
+	    		logDebug("Entering into GeoIpLocationServlet:createSharedLocationCookie() method - Create Shared Location Cookie:::" + CricketCommonConstants.SESSION_ID + getSessionId() + "cityVO:::" + cityVO + CricketCommonConstants.PAGE_URL + pageURL);
+		}
+		Map<String,String> sharedCookieValueMap = new HashMap<String,String>(); 
+		sharedCookieValueMap.put(CricketCookieConstants.ZIP, cityVO.getPostalCode()); 
+		sharedCookieValueMap.put(CricketCookieConstants.CITY, cityVO.getCity());
+		sharedCookieValueMap.put(CricketCookieConstants.STATE, cityVO.getState());
+		sharedCookieValueMap.put(CricketCommonConstants.IS_DEFAULT_LOCATION, String.valueOf(profile.getPropertyValue(CricketCommonConstants.IS_DEFAULT_LOCATION)));	
+		sharedCookieValueMap.put(CricketCommonConstants.IS_GEO_IP_DETECTED, String.valueOf(cityVO.isGeoIpDetecred()));
+		sharedCookieValueMap.put(CricketCommonConstants.SOURCE2, Source);
+	
+		//CR 30: Location Information Cookie should be updated with the properties 
+		//       Market code, Network Provider Id, and Network provider Name from ATG 
+		Object marketCodeObj = profile.getPropertyValue(CricketCommonConstants.MARKET_ID);
+		if(marketCodeObj != null){
+			sharedCookieValueMap.put(CricketCookieConstants.MARKET_CODE, (String)marketCodeObj);
+		}
+	
+		Object networkProviderObj = profile.getPropertyValue(CricketCommonConstants.NETWORK_PROVIDER);
+		if(networkProviderObj != null){
+			String networkProviderName = (String)networkProviderObj;
+			if(CricketCommonConstants.NETWORKTYPE_CRICKET.equals(networkProviderName)){
+				sharedCookieValueMap.put(CricketCookieConstants.NETWORK_PROVIDER_ID, CricketCookieConstants.NETWORK_PROVIDER_ID_1);			
+			}else if(CricketCommonConstants.NETWORKTYPE_SPRINT.equals(networkProviderName)){
+				sharedCookieValueMap.put(CricketCookieConstants.NETWORK_PROVIDER_ID, CricketCookieConstants.NETWORK_PROVIDER_ID_2);			
+			}		
+			sharedCookieValueMap.put(CricketCookieConstants.NETWORK_PROVIDER_NAME, networkProviderName);
+		}
+		//end of CR 30
+		
+		String encodedCookieValue =getGeoIpLocationManager().getGeoIpLocationTools().encrypt(sharedCookieValueMap);
+		String encode = URLEncoder.encode(encodedCookieValue, CricketCookieConstants.UTF_8);
+		Cookie sharedLocationCookie = new Cookie(CricketCookieConstants.LOCATION_INFO ,encode);
+		sharedLocationCookie.setDomain(((CricketProfileTools) getProfileService().getProfileTools()).getDomainName()); 
+		sharedLocationCookie.setComment(CricketCookieConstants.SHARED_LOCATION_COOKIE);		
+		sharedLocationCookie.setPath(CricketCommonConstants.FORWARD_SLASH);
+		sharedLocationCookie.setMaxAge(Integer.valueOf(getSharedCookieExpiredVal()).intValue()*60*60);	
+		if (isLoggingDebug()) {
+			// Getting the Page url
+				String pageURL = CricketCommonConstants.EMPTY_STRING;
+				if(!StringUtils.isBlank(pRequest.getRequestURIWithQueryString())){
+					pageURL = pRequest.getRequestURIWithQueryString();
+				}
+			 						
+	    		logDebug("Exiting from GeoIpLocationServlet:createSharedLocationCookie() method - Create Shared Location Cookie:::" + CricketCommonConstants.SESSION_ID + getSessionId() + CricketCommonConstants.PAGE_URL + pageURL);
+	    		logDebug("cookie.getName() = "+sharedLocationCookie.getName());
+		}
+		pResponse.addCookie(sharedLocationCookie);
+	}
+	
+	/**
+	 * @param pRequest
+	 */
+	private CityVO readLocationFromSharedCookie(DynamoHttpServletRequest pRequest, Profile profile){
+
+		// Getting the Page url
+		String pageURL = CricketCommonConstants.EMPTY_STRING;
+		if(!StringUtils.isBlank(pRequest.getRequestURIWithQueryString())){
+			pageURL = pRequest.getRequestURIWithQueryString();
+		}
+	 		
+		if (isLoggingDebug()) {							
+	    		logDebug("Entering into readLocationFromSharedCookie() method :::" + CricketCommonConstants.SESSION_ID + getSessionId() + "Profile:::" + profile + CricketCommonConstants.PAGE_URL + pageURL);
+		}
+		CityVO cityVO = null;
+		Cookie[] cookies = pRequest.getCookies();		
+		if(cookies!=null && cookies.length>0){
+			for (Cookie cookie : cookies) {
+				if(CricketCookieConstants.LOCATION_INFO.equalsIgnoreCase(cookie.getName())){
+					String sharedCookieValue = cookie.getValue();
+					if(sharedCookieValue!=null && sharedCookieValue.length() > 0){
+						Map<String,String> sharedCookieValueMap = decodeCookieInfo(cookie);
+						if(isLoggingDebug()){
+							logDebug("SharedCookieValueMap:::"+sharedCookieValueMap);
+						}
+						try {
+							RepositoryItem[] repsItem = getGeoIpLocationManager()
+									.getGeoIpLocationTools().getZipCodeInfo(
+											(String) sharedCookieValueMap
+													.get(CricketCommonConstants.ZIPCODE));
+							if(repsItem!=null && repsItem.length>0){
+								for (RepositoryItem repositoryItem : repsItem) {	
+									String city = (String)repositoryItem.getPropertyValue(CricketCookieConstants.CITY_ALIAS_MIXED_CASE);
+									if(city.equalsIgnoreCase(sharedCookieValueMap.get(CricketCookieConstants.CITY))){										
+										cityVO = new CityVO();
+										//if user closes the session and opens again we dont have to show zipcode if it was geo ip detected last time
+										if(sharedCookieValueMap.get(CricketCommonConstants.IS_GEO_IP_DETECTED) != null && sharedCookieValueMap.get(CricketCommonConstants.IS_GEO_IP_DETECTED).equalsIgnoreCase(Boolean.TRUE.toString())) {
+											cityVO.setGeoIpDetecred(true);
+										} else {
+											if(sharedCookieValueMap.get(CricketCommonConstants.IS_DEFAULT_LOCATION) != null && sharedCookieValueMap.get(CricketCommonConstants.IS_DEFAULT_LOCATION).equalsIgnoreCase(Boolean.FALSE.toString())) {
+												cityVO.setManulaEntry(true);
+											}
+										}
+										if(sharedCookieValueMap.get(CricketCommonConstants.IS_DEFAULT_LOCATION) != null && sharedCookieValueMap.get(CricketCommonConstants.IS_DEFAULT_LOCATION).equalsIgnoreCase(Boolean.TRUE.toString())) {
+											cityVO.setDefaultLocation(true);
+										}
+										cityVO.setCity(repositoryItem.getPropertyValue(CricketCookieConstants.CITY_ALIAS_MIXED_CASE).toString());
+										cityVO.setState(repositoryItem.getPropertyValue(CricketCookieConstants.STATE).toString());
+										cityVO.setCountryName(repositoryItem.getPropertyValue(CricketCookieConstants.COUNTRY).toString());
+										cityVO.setLongitude(Double.valueOf(repositoryItem.getPropertyValue(CricketCommonConstants.GEO_LONGITUDE).toString()));
+										cityVO.setLatitude(Double.valueOf(repositoryItem.getPropertyValue(CricketCommonConstants.GEO_LATITUDE).toString()));
+										cityVO.setPostalCode(repositoryItem.getPropertyValue(CricketCommonConstants.ZIP_CODE).toString());
+										cityVO.setAreaCode(repositoryItem.getPropertyValue(CricketCommonConstants.AREA_CODE).toString());
+										cityVO.setTimeZone(repositoryItem.getPropertyValue(CricketCommonConstants.TIME_ZONE).toString());
+										//commenting this out because we can never say that it was manually entered in this class
+										//profile.setPropertyValue(CricketCommonConstants.MANUALLY_ENTERED_ZIP, true);
+										break;
+									}									
+								}
+							  profile.setPropertyValue(CricketCommonConstants.IS_DEFAULT_LOCATION, Boolean.valueOf(sharedCookieValueMap.get(CricketCommonConstants.IS_DEFAULT_LOCATION)).booleanValue());
+							}							
+							if(isLoggingDebug()){
+								logDebug("City VO after shared Cookie:::"+cityVO);
+							}
+						} catch (RepositoryException e) {
+					       		 vlogError("Found RepositoryException ---No GEO to Zip Code found ::::" + CricketCommonConstants.SESSION_ID + getSessionId(), e);
+						}								
+					}
+					break;
+				}
+				
+			}
+		}
+		if (isLoggingDebug()) {									
+	    		logDebug("Exiting from into readLocationFromSharedCookie() method :::" + CricketCommonConstants.SESSION_ID + getSessionId() + "cityVO:::" + cityVO + CricketCommonConstants.PAGE_URL + pageURL);
+		}
+		return cityVO;
+	}
+	
+	private Map<String, String> decodeCookieInfo(Cookie cookie) {
+		
+		// Getting the Page url
+		String pageURL = CricketCommonConstants.EMPTY_STRING;
+		if(!StringUtils.isBlank(ServletUtil.getCurrentRequest().getRequestURIWithQueryString())){
+			pageURL = ServletUtil.getCurrentRequest().getRequestURIWithQueryString();
+		}
+		if (isLoggingDebug()) {								
+	    		logDebug("Entering into decodeCookieInfo() method :::" + CricketCommonConstants.SESSION_ID + getSessionId() + CricketCommonConstants.PAGE_URL + pageURL);
+		}
+		
+		Map<String, String> decodedCookieMap = new HashMap<String, String>();
+		String CricketCookieUrlDecoding = null;
+		String decoderCookieValue = null;
+		Mixed unserializedMixed = null;
+		String mapKey = null;
+		String val = null;
+		try {
+			if (!StringUtils.isEmpty(cookie.getValue())) {
+				CricketCookieUrlDecoding = URLDecoder.decode(cookie.getValue(), CricketCookieConstants.UTF_8);
+				decoderCookieValue = CricketCookieUrlDecoding.trim();
+				Cipher cipher = Cipher.getInstance(CricketCookieConstants.RIJNDAEL_256_ECB_NO_PADDING, CricketCookieConstants.IAIK);
+				final SecretKeySpec encryptionkey = new SecretKeySpec(getKey(), CricketCookieConstants.RIJNDAEL_256);
+				cipher.init(Cipher.DECRYPT_MODE, encryptionkey);
+				final String decryptedString = new String(cipher.doFinal(Base64.decodeBase64(decoderCookieValue)));
+				unserializedMixed = Pherialize.unserialize(decryptedString);
+				String arrayVal = null;
+				String decodedArray[] = { unserializedMixed.toString() };
+				for (int i = 0; i < decodedArray.length; i++) {
+					arrayVal = decodedArray[i];
+				}
+				String withOutBrace = arrayVal.substring(1,arrayVal.length() - 1);
+				StringTokenizer stoTokenizer = new StringTokenizer(withOutBrace, CricketCookieConstants.COMMA);
+				if (CricketCookieConstants.LOCATION_INFO.equalsIgnoreCase(cookie.getName())) {
+					while (stoTokenizer.hasMoreElements()) {
+						String aStr = (String) stoTokenizer.nextElement();
+						mapKey = aStr.substring(0, aStr.lastIndexOf(CricketCookieConstants.EQUALS));
+						val = aStr.substring(aStr.lastIndexOf(CricketCookieConstants.EQUALS) + 1, aStr.length());
+						decodedCookieMap.put(mapKey, val);
+					}
+				}
+			}
+		} catch (NoSuchAlgorithmException e) {
+			if(isLoggingError()){
+				vlogError("NoSuchAlgorithmException ::::" + CricketCommonConstants.SESSION_ID + getSessionId(), e);
+			}
+		} catch (NoSuchProviderException e) {
+			if(isLoggingError()){
+				vlogError("NoSuchProviderException ::::" + CricketCommonConstants.SESSION_ID + getSessionId(), e);
+			}
+		} catch (NoSuchPaddingException e) {
+			if(isLoggingError()){
+				vlogError("NoSuchPaddingException ::::" + CricketCommonConstants.SESSION_ID + getSessionId(), e);
+			}
+		} catch (InvalidKeyException e) {
+			if(isLoggingError()){
+				vlogError("InvalidKeyException ::::" + CricketCommonConstants.SESSION_ID + getSessionId(), e);
+			}
+		} catch (IllegalBlockSizeException e) {
+			if(isLoggingError()){
+				vlogError("IllegalBlockSizeException ::::" + CricketCommonConstants.SESSION_ID + getSessionId(), e);
+			}
+		} catch (BadPaddingException e) {
+			if(isLoggingError()){
+				vlogError("BadPaddingException ::::" + CricketCommonConstants.SESSION_ID + getSessionId(), e);
+			}
+		} catch (UnsupportedEncodingException e) {
+			if(isLoggingError()){
+				vlogError("UnsupportedEncodingException ::::" + CricketCommonConstants.SESSION_ID + getSessionId(), e);
+			}
+		}
+		if (isLoggingDebug()) {									
+	    		logDebug("Exiting from decodeCookieInfo() method :::" + CricketCommonConstants.SESSION_ID + getSessionId() + CricketCommonConstants.PAGE_URL + pageURL);
+		}
+		return decodedCookieMap;
+	}
+	
+	private byte[] getKey() {
+		String encryptionkey = "50bc55d6acd622dea04ae46e4653747d36a62a83877edd79d190e5d62e161b93";
+		byte[] bytes;
+		try {
+			bytes = Hex.decodeHex(encryptionkey.toCharArray());
+			return bytes;
+		} catch (DecoderException e) {
+			if(isLoggingError()){
+				logError("DecoderException",e);
+			}
+		} 
+		return null;
+	}
+	/**
+	 * @param pRequest
+	 * @param pResponse
+	 */
+	private void deleteSharedLocationCookie(DynamoHttpServletRequest pRequest,
+			DynamoHttpServletResponse pResponse) {
+		if(isLoggingDebug()){
+			logDebug("Deleate Shared Location Cookie");
+		}
+		Cookie[] cookies = pRequest.getCookies();		
+		if(cookies!=null && cookies.length>0){
+			for (Cookie cookie : cookies) {
+				if(CricketCookieConstants.SHARED_COOKIE_NAME.equalsIgnoreCase(cookie.getName())){
+					if(isLoggingDebug()){
+						logDebug("Create Name"+cookie.getName());
+					}
+					cookie.setPath(CricketCommonConstants.FORWARD_SLASH);
+					cookie.setMaxAge(0);
+					cookie.setValue(null);
+					pResponse.addCookie(cookie);
+					break;
+				}
+			}
+		}
+	}
+
+	/**
+	 * @return
+	 */
+	public CricketUtils getCricketUtils() {
+		return cricketUtils;
+	}
+
+	/**
+	 * @param cricketUtils
+	 */
+	public void setCricketUtils(CricketUtils cricketUtils) {
+		this.cricketUtils = cricketUtils;
+	}
+
+	public String getSharedCookieExpiredVal() {
+		return sharedCookieExpiredVal;
+	}
+
+	public void setSharedCookieExpiredVal(String sharedCookieExpiredVal) {
+		this.sharedCookieExpiredVal = sharedCookieExpiredVal;
+	}
+	
+	
+
+}

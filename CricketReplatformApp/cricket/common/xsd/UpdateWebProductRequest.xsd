@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+	xmlns="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateWebProductRequest.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateWebProductRequest.xsd"
+	elementFormDefault="qualified" attributeFormDefault="qualified"
+	version="1.0.07" xmlns:pref="http://esp.cricket.com/ESP/Namespaces/Types/Public/CricketDataModel.xsd">
+	<!-- History -->
+	<!-- 11/3/2009 Javier Rodiguez - 1.0.00		- Initial relase	-->
+	<!-- 12/3/2009 Javier Rodiguez - 1.0.02		- changed pricing structure to match proposed rdi schema	-->
+	<!-- 12/10/2009 Javier Rodiguez - 1.0.03		- changed pricing structure to match rdi schema	-->
+	<!-- 12/15/2009 Nabina Pradhan - 1.0.04		- removed the instantUpgradeRebate element from Pricing->MarketPrice element                   - made the Pricing element repeating	-->
+	<!-- 12/18/2009 Nabina Pradhan - 1.0.05			- Moved all the elements other than marketId from MarketPrice to under Pricing element	-->
+	<!-- 01/21/2009 Nabina Pradhan - 1.0.06			- Removed enumerations from producttype field under RealTime->Product                            - Removed enumerations from producttype field under Batch->Inventory                            - Modified the cardinality of the RealTime->Pricing->price, startDate, marketId element to Required                            - Commented the transactionPrice, instantWebRebate and webMailinRebate elements	-->
+	<!-- 05/03/2009 Nabina Pradhan - 1.0.07			- Modified startDate to be of type xs:date                           - Modified endDate to be of type xs:date                        	-->
+	<!-- Schema structure -->
+
+
+	<xs:import schemaLocation="CricketDataModel.xsd" namespace="http://esp.cricket.com/ESP/Namespaces/Types/Public/CricketDataModel.xsd"></xs:import>
+	<xs:element name="UpdateWebProductRequest"
+		type="UpdateWebProductRequestInfo" />
+	<xs:complexType name="UpdateWebProductRequestInfo">
+		<xs:sequence>
+			<xs:element name="Context" type="pref:DealerCommissionInfo" />
+			<xs:element name="Request">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element name="RealTime">
+							<xs:annotation>
+								<xs:documentation>
+									this type of request supports real
+									time process flow
+								</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Product">
+										<xs:complexType>
+											<xs:annotation>
+												<xs:documentation>
+													Update inventory
+													service
+												</xs:documentation>
+											</xs:annotation>
+											<xs:sequence>
+												<xs:element
+													name="productSKU" type="pref:SkuInfo">
+													<xs:annotation>
+														<xs:documentation>
+															SKU of product. Can include equipment SKUs, as well as instant rebate SKUs and other virtual SKUs.
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element
+													name="delayedShipmentThresholdQty_1" type="xs:int"
+													minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>
+															The quantity set manually on MyCricket Web Inventory Admin to determine when to generate delayed shipment messaging on a product (~3-5 days).
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element
+													name="delayedShipmentThresholdQty_2" type="xs:int"
+													minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>
+															The quantity
+															set manually
+															on MyCricket
+															web
+															inventory
+															Admin to
+															determine
+															when to
+															generate
+															delayed
+															shipment
+															messaging on
+															a product
+															(~10-15
+															days).
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element
+													name="addToCartThresholdQty" type="xs:int" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>
+															The quantity
+															set manually
+															on MyCricket
+															web
+															inventory to
+															determine
+															when to
+															disable the
+															add to cart
+															button on
+															the web for
+															a certain
+															product.
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element
+													name="productShortDescription" type="xs:string">
+													<xs:annotation>
+														<xs:documentation>
+															Can include
+															product
+															model as
+															well as
+															short
+															description
+															of a virtual
+															product to
+															be assigned
+															by an
+															administrator.
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element
+													name="manufacturerName" type="xs:string">
+													<xs:annotation>
+														<xs:documentation>
+															Name of
+															phone make.
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element
+													name="productType">
+													<xs:annotation>
+														<xs:documentation>
+															The category
+															of product
+															is passed in
+															this field
+														</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction
+															base="xs:string" />
+													</xs:simpleType>
+												</xs:element>
+												<xs:element
+													name="visible" type="xs:boolean" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>
+															Indicates if
+															product
+															Boolean
+															determines
+															when a
+															product
+															should be
+															removed from
+															customer
+															display on
+															MyCricket.com.should
+															be made
+															visible in
+															site
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element
+													name="webSellable" type="xs:boolean" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>
+															Boolean
+															determines,
+															when false,
+															a product
+															should no
+															longer be
+															allowed to
+															add to web
+															cart if item
+															is an
+															exclusive
+															web product.
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element
+													name="webShippable" type="xs:boolean" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>
+															Boolean
+															determines,
+															when false,
+															a product
+															should no
+															longer be
+															shipped out
+															(but can
+															still be
+															added to the
+															cart to
+															check for
+															in-store
+															pick-up).
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element
+													name="storeSellable" type="xs:boolean" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>
+															Boolean
+															determines
+															what
+															products are
+															available to
+															be selected
+															for in-store
+															pick-up.
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element name="msrp"
+													type="pref:CurrencyAmountInfo">
+													<xs:annotation>
+														<xs:documentation>
+															Manufacturers
+															suggested
+															retail
+															price:
+															original
+															price
+															assigned by
+															MDM.
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="Pricing"
+										minOccurs="0" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:sequence><!--	<xs:element name="transactionPrice" type="cdm:CurrencyAmountInfo" minOccurs="0">													<xs:annotation>														<xs:documentation>price driven by transaction type, i.e. Upgrade phone, Add-a-line.</xs:documentation>													</xs:annotation>												</xs:element> -->
+												<xs:element name="price"
+													type="pref:CurrencyAmountInfo">
+													<xs:annotation>
+														<xs:documentation>
+															Price by
+															market.
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element
+													name="startDate" type="xs:date">
+													<xs:annotation>
+														<xs:documentation>
+															start
+															date/time of
+															price
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element
+													name="endDate" type="xs:date" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>
+															end
+															date/time of
+															price
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<!--<xs:element name="instantWebRebate" type="cdm:CurrencyAmountInfo" minOccurs="0">													<xs:annotation>														<xs:documentation>Instant Web rebate for market.</xs:documentation>													</xs:annotation>												</xs:element>												<xs:element name="webMailinRebate" type="cdm:CurrencyAmountInfo" minOccurs="0">													<xs:annotation>														<xs:documentation>Web mail in rebate for market.</xs:documentation>													</xs:annotation>												</xs:element>-->
+												<xs:element
+													name="MarketPrice" maxOccurs="unbounded">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element
+																name="marketID" type="pref:MarketIdInfo">
+																<xs:annotation>
+																	<xs:documentation>
+																		Market
+																		ID
+																	</xs:documentation>
+																</xs:annotation>
+															</xs:element>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Batch">
+							<xs:annotation>
+								<xs:documentation>
+									this type of request supports batch
+									process flow
+								</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Inventory"
+										maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:annotation>
+												<xs:documentation>
+													Update inventory
+													service
+												</xs:documentation>
+											</xs:annotation>
+											<xs:sequence>
+												<xs:element
+													name="productSKU" type="pref:SkuInfo">
+													<xs:annotation>
+														<xs:documentation>
+															SKU of
+															product. Can
+															include
+															equipment
+															SKUs, as
+															well as
+															instant
+															rebate SKUs
+															and other
+															virtual
+															SKUs.
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element
+													name="inventoryQuantity" type="xs:int">
+													<xs:annotation>
+														<xs:documentation>
+															Product
+															inventory
+															quantity
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element
+													name="productType">
+													<xs:annotation>
+														<xs:documentation>
+															The category
+															of product
+															is passed in
+															this field
+														</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction
+															base="xs:string" />
+													</xs:simpleType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

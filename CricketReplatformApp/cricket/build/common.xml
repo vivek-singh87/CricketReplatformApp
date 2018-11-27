@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="common" basedir=".">
+	<property environment="env"/>
+	<property name="global.build.dir" value="${basedir}/../build"/>
+	<property file="${global.build.dir}/build.properties" />	
+	<property file="build.properties"/>	
+
+	<taskdef resource="net/sf/antcontrib/antlib.xml">
+		<classpath>
+		<pathelement location="${ant.home}/lib/antcontrib.jar" />
+		</classpath>
+	</taskdef>
+<!-- The dynamo class path -->
+	<path id="dynamo.classpath">
+	    
+		<fileset dir="${dynamo.root.dir}/DAS/lib">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${dynamo.root.dir}/DAS-UI/lib">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${dynamo.root.dir}/DPS-UI/lib">
+				<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${dynamo.root.dir}/DCS-UI/lib">
+				<include name="**/*.jar" />
+		</fileset>		
+		<fileset dir="${dynamo.root.dir}/DPS/lib">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${dynamo.root.dir}/DCS/lib">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${dynamo.root.dir}/DAF/Endeca/Assembler/lib">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${dynamo.root.dir}/DAF/Search/Index/lib">
+             <include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${dynamo.root.dir}/DAF/Search/Base/lib">
+             <include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${dynamo.root.dir}/DSS/lib">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${dynamo.root.dir}/CommerceReferenceStore/Store/EStore/lib">
+					<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${dynamo.root.dir}/Publishing/base/lib">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${dynamo.home}/lib">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${dynamo.root.dir}/CricketReplatformApp/cricket/common/lib">
+					<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${dynamo.root.dir}/CricketReplatformApp/cricket/webservices/lib">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${dynamo.root.dir}/CommerceReferenceStore/Store/Endeca/Assembler/lib">
+					<include name="**/*.jar" />
+		</fileset>
+	</path>
+    
+<!-- The classpath for the project. -->
+	<path id="lib.classpath">
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar" />
+			<include name="**/*.zip" />
+		</fileset>
+	</path>  
+	
+<!-- compile dependencies -->	
+	
+	<path id="module.compile.dependencies.path">
+	
+	</path>      
+    
+<!--  - - 
+		  -coredirsexist
+- -  -->	
+    
+	<target name="-coredirsexist" description="verifies that certain core directories exist">
+			<available file="${src.dir}" property="srcdirectory.exists" />
+			<available file="${lib.dir}" property="libdir.exists" />
+		    <available file="${classes.dir}" property="classesdir.exists" />
+		    <echo>$${basedir} = ${basedir}</echo>
+		    <echo>$${global.build.dir} = ${global.build.dir}</echo>
+		    <echo>$${module.dir} = ${module.dir} </echo>
+            <if>
+              <available file="${classes.dir}" type="dir" />
+              <then>
+                  <echo>classes dir exists : ${classes.dir} </echo>
+                   <delete includeemptydirs="true">
+                     <fileset dir="${classes.dir}" includes="**/*"/>
+                   </delete>
+              </then>
+              <else>
+                  <mkdir dir="${classes.dir}"/>
+              </else>
+            </if>
+            
+            <if>
+              <available file="${lib.dir}" type="dir" />
+              <then>
+                 <echo>lib dir exists : ${lib.dir} </echo>
+              </then>
+              <else>
+                  <mkdir dir="${lib.dir}"/>
+              </else>
+            </if>   
+                    
+		
+	</target>	
+	
+<!--  - - 
+		    compile
+- -  -->
+	 
+	<target name="compile" if="srcdirectory.exists" depends="-coredirsexist">
+	
+	    <echo>$${src.dir} = ${src.dir}</echo>
+	    <echo>$${lib.dir} = ${lib.dir}</echo>
+	    <echo>$${classes.dir} = ${classes.dir}</echo>
+		<javac includeantruntime="false" srcdir="${src.dir}"
+                destdir="${classes.dir}"
+                debug="true"
+                deprecation="false"
+                optimize="false"
+                source="1.6"
+                target="1.6"
+				verbose="${javac.verbose.bool}">			 
+			<classpath refid="module.compile.dependencies.path" />
+			<classpath refid="lib.classpath" />
+			<classpath refid="dynamo.classpath" />
+			<include name="**/*.java" /> 
+		</javac>	
+		<copy todir="${classes.dir}">
+			    <fileset dir="${src.dir}">
+			       <exclude name="**/*.java"/>
+			    </fileset>
+		</copy>
+	</target>
+	
+<!--  - - 
+		    jar
+- -  -->		
+	
+	<target name="jar" if="srcdirectory.exists" depends="compile">
+	   <jar destfile="${lib.dir}/classes.jar" basedir="${classes.dir}"/>
+	</target>
+	
+	
+</project>
+	

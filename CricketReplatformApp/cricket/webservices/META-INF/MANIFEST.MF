@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+ATG-EAR-Module: j2ee-apps/webservices.ear/
+Ant-Version: Apache Ant 1.7.0
+ATG-Class-Path: lib/classes.jar lib/mycricketESP.jar
+ATG-Client-Class-Path: bin lib/classes.jar lib/axis-1.4.jar lib/commons-discovery-0.2.jar lib/wsdl4j-1.6.2.jar lib/saaj.jar lib/jaxrpc.jar 
+ATG-Config-Path: config/
+Name: lib/classes.jar
+ATG-Client-Update-File: true
+ATG-Client-Update-Version: 4.0

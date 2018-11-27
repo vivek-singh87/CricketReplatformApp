@@ -1,0 +1,138 @@
+// Fixed Width
+// As seen here: http://jakearchibald.github.io/sass-ie/
+
+$fix-mqs: false !default;
+
+@mixin respond-min($width) {
+	@if $fix-mqs {
+		@if $fix-mqs >= $width {
+			@content;
+		}
+	}
+	@else {
+		@media screen and (min-width: $width) {
+			@content;
+		}
+	}
+}
+
+
+// Footer Gradient
+@mixin gradient($from, $to) {
+  background-color: mix($from,$to);
+  background-image: -webkit-linear-gradient(top, $from 0%, $to 100%);
+  background-image: -moz-linear-gradient(top, $from 0%, $to 100%);
+  background-image: -ms-linear-gradient(top, $from 0%, $to 100%);
+  background-image: -o-linear-gradient(top, $from 0%, $to 100%);
+  background-image: linear-gradient(to bottom, $from 0%, $to 100%);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
+}
+
+// Gradients where there is a stripe in the last 90%
+@mixin stripe-gradient($from, $to) {
+  background-image: -webkit-linear-gradient(top, $from 5%, $to 8%, $to 30%);
+  background-image: -moz-linear-gradient(top, $from 5%, $to 8%, $to 30%);
+  background-image: -ms-linear-gradient(top, $from 5%, $to 8%, $to 30%);
+  background-image: -o-linear-gradient(top, $from 5%, $to 8%, $to 30%);
+  background-image: linear-gradient(to bottom, $from 0%, $to 8%, $to 30%);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}'); 
+}
+ 
+/* Buttons */
+@mixin btn-cricket($bg) {
+	$button-font-color: #fff;
+	$padding: false;
+	$radius: false;
+	$full-width: false;
+	$disabled: false;
+	$is-input: false;
+
+	@include button($padding, $bg, $radius, $full-width, $disabled, $is-input);
+	
+	font: normal 13px 'GothamMedium';
+	text-transform: uppercase;
+	
+	&:hover {
+		/*cursor: pointer;*/
+	}
+}
+
+@mixin btn-cricket-disabled($bg) {
+	$button-font-color: #fff;
+	$padding: false;
+	$radius: false;
+	$full-width: false;
+	$disabled: true;
+	$is-input: false;
+
+	@include button($padding, $bg, $radius, $full-width, $disabled, $is-input);
+	
+	font: normal 13px 'GothamMedium';
+	text-transform: uppercase;
+	cursor: default;
+	&:hover {
+		
+	}
+}
+
+/* Misc reusable text styles*/
+@mixin green-price {
+  font-family: "GothamBold";
+  font-size: 2.8em;
+  color: #008752;
+  letter-spacing: -0.03em;
+}
+
+
+@mixin hr {
+	margin: emCalc(10px) 0;
+	border: 0;
+	width: 100%;
+	color: #3d3d3d;
+	background-color: #3d3d3d;
+	height: 1px;
+}
+
+@mixin clearfix {
+  clear: both;
+  content: ".";
+  display: block; 
+  height: 0;
+  visibility: hidden;
+}
+
+@mixin box-shadow($properties){
+  -webkit-box-shadow: $properties;
+  box-shadow: $properties;
+}
+
+@mixin block-center{
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+}
+
+@mixin hide-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 0;
+}
+
+@mixin opacity($opacity) {
+  filter: unquote("progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)})");
+  opacity: $opacity;
+}
+
+@mixin normal-box-sizing{
+  -webkit-box-sizing: content-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: content-box;    /* Firefox, other Gecko */
+  box-sizing: content-box;
+}
+
+@mixin border-radius($radius) {
+-moz-border-radius: $radius;
+-webkit-border-radius: $radius;
+border-radius: $radius;
+}

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+	<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://esp.cricket.com/ESP/Namespaces/Types/Public/CricketDataModel.xsd" xmlns:ns2="http://esp.cricket.com/ESP/Namespaces/Container/Public/ManageSaleItemRequest.xsd" xmlns:ns3="http://esp.cricket.com/ESP/Namespaces/Container/Public/MessageHeader.xsd"> 
+		<SOAP-ENV:Header> 
+			<ns3:MessageHeader> 
+						<ns3:TrackingMessageHeader>
+						<ns1:version>v1</ns1:version> 
+						<ns1:messageId>MYCRICKET-SANS1APWMC-01-mycricket07-31-2013 01:59:38.779228-CSP_SID=+drO42JIx+jBOTGtUqXB+lTlodI9AB6wpScqh2m5VZx8zbkx3EelO1tK6WOSBir8llGviA7TdOl0Dmj4yq1/GPRPolvBSPO6XwwvTsrx5k6K06dgjJ32rjMevyduLmPkUiJ3P7kCRaCn2UkNb4CCXFEu/QNqKdCiHIScOuezJKItEiOb0N2RKKC4hO6uLY2yDJx/BwD7D69ClltYc4P2Qq2PXq68MyEsRGonjWqjcQceYjDLgH3KMswtNyOPMWWuEkILxh8a221wfMZ8cuWoYLAIHE876stmwyOckdIEPgGLM92634tkdVLIqOZPZ4aQVCcGqPoTo9hRs8W99YA/qu6S2lmofWVZzSFNUct/NXeYueiXx9/hxU7rx0tdCd0pI7rFgbgzQ5n9kHN9wRs1vmn/GVGbc+hjVz0bJ9m2XGCKAxWgBSBpFqZyiZLtN4l/XwDvZvfONeGczwlFxZ2IZ8H2B6awcpWRycKIjn01/UU=</ns1:messageId>
+						<ns1:timeToLive>120</ns1:timeToLive> 
+						<ns1:conversationId>myCricket-cbs~CRICKET-ESP~f746565ffbabccb2:-5dfb28ae:1400a25d820:-365f</ns1:conversationId> <ns1:dateTimeStamp>2013-07-31T01:59:38</ns1:dateTimeStamp> 
+					</ns3:TrackingMessageHeader> 
+					<ns3:SecurityMessageHeader> 
+						<ns1:userName>myCricket-cbs</ns1:userName> 
+						<ns1:userPassword>myCricket-cbs(pas$)</ns1:userPassword>
+					</ns3:SecurityMessageHeader> 
+					<ns3:SequenceMessageHeader>
+						<ns1:sequenceNumber>1</ns1:sequenceNumber>
+						<ns1:totalInSequence>1</ns1:totalInSequence>
+					</ns3:SequenceMessageHeader> 
+			</ns3:MessageHeader> 
+			
+			</SOAP-ENV:Header> 
+				<SOAP-ENV:Body> 
+					<ns2:ManageSaleItemRequest> 
+						<ns2:LineItem> 
+							<ns2:SaleLineItem> 
+								 <ns1:saleId>89290522</ns1:saleId>
+								 <ns1:quantity>1</ns1:quantity> 
+								 <ns1:barCode>100540</ns1:barCode> 
+								 <ns1:Pricing> 
+								 <ns1:price>0</ns1:price> 
+								 </ns1:Pricing> 
+								 <ns1:name>UPS_ONE_DAY_PM_RES_SIG</ns1:name> 
+								 <ns1:description>Standard Overnight with Signature</ns1:description>
+							</ns2:SaleLineItem> 
+						</ns2:LineItem> 
+						 <ns2:POSContext>
+							 <ns1:locationId>63</ns1:locationId>
+							 <ns1:salesRepresentative>mycricket</ns1:salesRepresentative>
+						</ns2:POSContext>
+					</ns2:ManageSaleItemRequest>
+				</SOAP-ENV:Body> 
+	</SOAP-ENV:Envelope> 
+--------------------------------------------------------------------------------

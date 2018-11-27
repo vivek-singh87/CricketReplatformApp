@@ -1,0 +1,12 @@
+{
+	"jcr:primaryType": "endeca:unstructured",
+    "host": "172.17.100.41",
+    "port": "15002",
+    "recSpecProp": "common.id",
+    "recAggregationKey": "product.repositoryId",
+    "recFilter": "",
+    "recImgUrlProp" : "product.img_url_thumbnail",
+    "recDisplayProps": ["prodcut.repositoryId","product.displayName"],
+    "textSearchKey": "All",
+    "textSearchMatchMode" : "ALLPARTIAL"
+}

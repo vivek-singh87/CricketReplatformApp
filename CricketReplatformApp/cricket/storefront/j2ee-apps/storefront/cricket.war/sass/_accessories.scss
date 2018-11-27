@@ -1,0 +1,115 @@
+/* Accessories Listing Page */
+.section-accessories-listing #product-image {
+  .swiper-container{
+    min-height: 505px;
+    .swiper-slide{min-height: 505px;}
+  }
+}
+
+.section-accessories-listing .swiper-container {
+  height: 500px;
+  .swiper-wrapper {height: 500px !important;}
+} 
+  
+.section-accessories-listing .pagination {
+  margin: 0 auto 2em auto;
+  width: 80%;
+}
+
+/* Accessories section banner has right aligned content*/
+.section-accessories-listing .static-banner .content {
+  h1 {color: #C1D72E;
+    span {color: #008752;}
+  }
+  
+  @include respond-min($tablet-screen) { /* iPad Overrides */
+    width: 30%;
+    left: 61%;
+  }
+  
+  @include respond-min($medium-screen) { /* Desktop Overrides */
+    top: 14%;
+    width: 25%;
+    left: 58%;
+  }
+}
+
+/* Filter bar - accessories by device - dropdown menu */
+/* Also used on Search Result Page */
+.section-accessories-listing #section-filters {
+  /* Green Filter Dropdown & Inside Contents */
+  nav.top-bar > section > ul > li.has-dropdown {
+    position: relative; 
+    @include respond-min($small-screen) {
+      ul.dropdown {width: 280px;}
+    }
+  }
+  .bydevice {border-bottom: 1px solid #DBDBDB;}
+  .dropdown-selectors {
+    margin-bottom: 0;
+    padding-top: 1em;
+    @include respond-min($small-screen) {
+      padding-top: 0;
+    }
+  }
+  .dropdown-selectors dd {
+    font-family: "GothamBlack";
+    font-size: 0.813em;
+    display: inline-block;
+    padding: 0 0.625em 0 0;
+    background: #FFF url(//images.mycricket.com/cricket?set=imageURL[file:/img/arrow-dropdown-menu.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 93% 36%;
+    overflow: hidden;
+    @include respond-min($small-screen) {
+      padding: 0 0.625em 0 1.875em;
+    }
+    span{padding-right: 0.875em;}
+    select {
+      /* Fix for Both default arrow and custom arrow showing in dropdown*/
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      text-indent: 1px;
+      text-overflow: '';
+      display: inline-block;
+      color: #008752;
+      font-family: "GothamMedium";
+      font-size: 0.813em;
+      border: 1px solid #ccc;
+      padding: 0.75em 0 0 0.625em;
+      height: 3em;
+      width: 17.938em;
+      background: transparent;
+    }
+  }
+} /* /.section-accessories-listing */
+
+
+.vertical-align {
+  position: relative;
+  height: 275px;
+  img{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-height:100%;
+    max-width:100%;
+  }
+}
+
+.section-accessories-listing #section-results {
+  padding-top: 2em;
+  .result-content {min-height: 508px;}
+  h4 {height: 2.250em;}
+  .green-add-cart, .grey-add-cart {
+    width: 52%;
+    @include respond-min($tablet-screen) {width: 70%;}
+    @include respond-min($medium-screen) {width: 52%;} 
+  }
+    
+  @include respond-min($small-screen) { /* Desktop Overrides */
+    padding-top: 0;
+    .result-content h4 {height: 36px;}
+  }
+} /* /#section-results */

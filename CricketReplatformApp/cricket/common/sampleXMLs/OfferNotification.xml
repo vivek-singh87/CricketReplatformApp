@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:OfferNotification xmlns:p="http://esp.cricket.com/ESP/Namespaces/Notifications/Public/ProductNotification.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://esp.cricket.com/ESP/Namespaces/Notifications/Public/ProductNotification.xsd ../xsd/OfferNotification.xsd ">
+  <p:RatePlan>
+    <p:action>Insert</p:action>
+    <p:name>$70 LTE Android Muve Double Data (10GB)-1</p:name>
+    <p:code>LTEMVA11</p:code>
+    <p:price>70.00</p:price>
+    <p:category>PIA AIM</p:category>
+    <p:type>V</p:type>
+    <p:webGroupCode>RETIRED</p:webGroupCode>
+    <p:lifecyclePhase>1</p:lifecyclePhase>
+    <p:activateDtm>2013-07-31T12:00:00</p:activateDtm>
+    <p:deactivateDtm>2014-07-31T12:00:00</p:deactivateDtm>
+    <p:Markets>
+      <p:Market>
+        <p:id>11</p:id>
+        <p:name>Albuquerque</p:name>
+        <p:hoCode>350</p:hoCode>
+      </p:Market>
+      <p:Market>
+        <p:id>12</p:id>
+        <p:name>Boise</p:name>
+        <p:hoCode>420</p:hoCode>
+      </p:Market>
+    </p:Markets>
+    <p:Devices>
+      <p:Device>
+        <p:phoneId>0</p:phoneId>
+        <p:phoneCode>p:phoneCode</p:phoneCode>
+      </p:Device>
+    </p:Devices>
+  </p:RatePlan>
+</p:OfferNotification>

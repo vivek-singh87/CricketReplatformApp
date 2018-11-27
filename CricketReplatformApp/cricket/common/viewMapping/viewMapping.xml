@@ -1,0 +1,92 @@
+<add-item item-descriptor="attributeValue" id="AmAvMediaExternalGenProps">
+  <set-property name="value"><![CDATA[name,description,parentFolder,path,creationDate,url,markets,pageLocation,imageType,landingUrl,displayPriority]]></set-property>
+</add-item>
+
+
+<add-item item-descriptor="itemViewMapping" id="101077">
+  <set-property name="description"><![CDATA[Market Type itemViewMapping]]></set-property>
+  <set-property name="displayName"><![CDATA[General]]></set-property>
+  <set-property name="view"><![CDATA[aMgrIvRep]]></set-property>
+  <set-property name="name"><![CDATA[Market Type itemViewMapping]]></set-property>
+</add-item>
+
+<add-item item-descriptor="itemMapping" id="101075">
+  <set-property name="itemName"><![CDATA[marketType]]></set-property>
+  <set-property name="description"><![CDATA[Market Type itemMapping]]></set-property>
+  <set-property name="mode"><![CDATA[aMgrMmEdit]]></set-property>
+  <set-property name="viewMappings"><![CDATA[101077]]></set-property>
+  <set-property name="isReadOnly"><![CDATA[false]]></set-property>
+  <set-property name="itemPath"><![CDATA[/atg/commerce/catalog/ProductCatalog]]></set-property>
+  <set-property name="name"><![CDATA[AssetManager]]></set-property>
+</add-item>
+
+<add-item item-descriptor="itemMapping" id="101079">
+  <set-property name="itemName"><![CDATA[marketSubType]]></set-property>
+  <set-property name="description"><![CDATA[Market Sub Type itemMapping]]></set-property>
+  <set-property name="mode"><![CDATA[aMgrMmEdit]]></set-property>
+  <set-property name="viewMappings"><![CDATA[101077]]></set-property>
+  <set-property name="isReadOnly"><![CDATA[false]]></set-property>
+  <set-property name="itemPath"><![CDATA[/atg/commerce/catalog/ProductCatalog]]></set-property>
+  <set-property name="name"><![CDATA[AssetManager]]></set-property>
+</add-item>
+
+<add-item item-descriptor="itemMapping" id="101081">
+  <set-property name="itemName"><![CDATA[market-drm-info]]></set-property>
+  <set-property name="description"><![CDATA[Market DRM Info itemMapping]]></set-property>
+  <set-property name="mode"><![CDATA[aMgrMmEdit]]></set-property>
+  <set-property name="viewMappings"><![CDATA[101077]]></set-property>
+  <set-property name="isReadOnly"><![CDATA[false]]></set-property>
+  <set-property name="itemPath"><![CDATA[/atg/commerce/catalog/ProductCatalog]]></set-property>
+  <set-property name="name"><![CDATA[AssetManager]]></set-property>
+</add-item>
+
+<add-item item-descriptor="itemMapping" id="101082">
+  <set-property name="itemName"><![CDATA[market-info]]></set-property>
+  <set-property name="description"><![CDATA[Market Info itemMapping]]></set-property>
+  <set-property name="mode"><![CDATA[aMgrMmEdit]]></set-property>
+  <set-property name="viewMappings"><![CDATA[101077]]></set-property>
+  <set-property name="isReadOnly"><![CDATA[false]]></set-property>
+  <set-property name="itemPath"><![CDATA[/atg/commerce/catalog/ProductCatalog]]></set-property>
+  <set-property name="name"><![CDATA[AssetManager]]></set-property>
+</add-item>
+
+<add-item item-descriptor="itemMapping" id="101075View">
+  <set-property name="itemName"><![CDATA[marketType]]></set-property>
+  <set-property name="description"><![CDATA[Market Type itemMapping Read only]]></set-property>
+  <set-property name="mode"><![CDATA[aMgrMmView]]></set-property>
+  <set-property name="viewMappings"><![CDATA[101077]]></set-property>
+  <set-property name="isReadOnly"><![CDATA[false]]></set-property>
+  <set-property name="itemPath"><![CDATA[/atg/commerce/catalog/ProductCatalog]]></set-property>
+  <set-property name="name"><![CDATA[AssetManager]]></set-property>
+</add-item>
+
+
+<add-item item-descriptor="itemMapping" id="101079View">
+  <set-property name="itemName"><![CDATA[marketSubType]]></set-property>
+  <set-property name="description"><![CDATA[Market Sub Type itemMapping Read only]]></set-property>
+  <set-property name="mode"><![CDATA[aMgrMmView]]></set-property>
+  <set-property name="viewMappings"><![CDATA[101077]]></set-property>
+  <set-property name="isReadOnly"><![CDATA[false]]></set-property>
+  <set-property name="itemPath"><![CDATA[/atg/commerce/catalog/ProductCatalog]]></set-property>
+  <set-property name="name"><![CDATA[AssetManager]]></set-property>
+</add-item>
+
+<add-item item-descriptor="itemMapping" id="101081View">
+  <set-property name="itemName"><![CDATA[market-drm-info]]></set-property>
+  <set-property name="description"><![CDATA[Market DRM Info itemMapping Read only]]></set-property>
+  <set-property name="mode"><![CDATA[aMgrMmView]]></set-property>
+  <set-property name="viewMappings"><![CDATA[101077]]></set-property>
+  <set-property name="isReadOnly"><![CDATA[false]]></set-property>
+  <set-property name="itemPath"><![CDATA[/atg/commerce/catalog/ProductCatalog]]></set-property>
+  <set-property name="name"><![CDATA[AssetManager]]></set-property>
+</add-item>
+
+<add-item item-descriptor="itemMapping" id="101082View">
+  <set-property name="itemName"><![CDATA[market-info]]></set-property>
+  <set-property name="description"><![CDATA[Market Info itemMapping Read only]]></set-property>
+  <set-property name="mode"><![CDATA[aMgrMmView]]></set-property>
+  <set-property name="viewMappings"><![CDATA[101077]]></set-property>
+  <set-property name="isReadOnly"><![CDATA[false]]></set-property>
+  <set-property name="itemPath"><![CDATA[/atg/commerce/catalog/ProductCatalog]]></set-property>
+  <set-property name="name"><![CDATA[AssetManager]]></set-property>
+</add-item>

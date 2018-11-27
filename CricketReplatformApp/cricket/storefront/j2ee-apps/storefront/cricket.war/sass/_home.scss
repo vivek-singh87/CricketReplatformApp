@@ -1,0 +1,224 @@
+/* TEMPLATE: Homepage */
+#section-banner {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/bg-gradient-banner.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) top center repeat-x;
+  height: auto;
+  position: relative;
+  margin-bottom: emCalc(25px);
+  .announcement p {
+    text-transform: uppercase;
+    margin: 1em 0;
+    font-size: 12px;
+    font-family: 'GothamMedium';
+    a {margin-left: 0.5em;}
+  }
+}
+
+#section-banner > div {position: relative;}
+
+.orbit-container {
+  img {margin: 0 auto;}
+  .orbit-prev {
+    background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/home/banner-prev.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 0 0 no-repeat;
+    height: emCalc(64px);
+    width: emCalc(63px);
+    z-index: 2000;
+    left: 0;
+    span {visibility: hidden;}
+  }
+  .orbit-next {
+    background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/home/banner-next.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 0 0 no-repeat;
+    height: emCalc(64px);
+    width: emCalc(63px);
+    z-index: 2000;
+    right: 0;
+    span {visibility: hidden;}
+  }
+}
+
+.orbit-timer, .orbit-slide-number { visibility: hidden; }
+
+.orbit-bullets {
+  left: 50%;
+  right: auto;
+  @include respond-min($small-screen) {
+    position: absolute;
+    right: 25%;
+    top: 80%;
+    left: auto;
+  }
+  li {cursor: pointer;}
+}
+
+/* SECTION: Phones and Plans areas*/
+.three-callouts {
+  padding-bottom: emCalc(25px);
+  h2 {
+    color: #008752;
+    font: normal 25px 'GothamBlack';
+    text-align: center;
+    @include respond-min($small-screen) { font-size: 30px; text-align: left; }
+    span {color: #00a522;}
+  }
+  img {
+    display: block;
+    margin: emCalc(40px) auto emCalc(10px);
+  }
+  .cta p {
+    margin: 0 auto;
+    width: emCalc(200px);
+    text-align: center;
+  }
+  .prev {
+    background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/btn-swiper-prev.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 0 0 no-repeat;
+    height: emCalc(21px);
+    width: emCalc(12px);
+    position: absolute;
+    top: 40%;
+    text-indent: -99999px;
+    left: 2%;
+    z-index: 2;
+    &.disabled {
+      background: none;
+      cursor: pointer;
+      visibility: hidden;
+    }
+  }
+  .next {
+    background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/btn-swiper-next.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 0 0 no-repeat;
+    height: emCalc(21px);
+    width: emCalc(12px);
+    position: absolute;
+    top: 40%;
+    text-indent: -99999px;
+    right: 3%;
+    z-index: 2;
+    &.disabled {
+      background: none;
+      cursor: pointer;
+      visibility: hidden;
+    }
+  }
+}
+
+#section-devices {
+  position: relative;
+  .device-container, .swiper-slide {
+    h3 {
+      color: #333;
+      font: normal 25px 'GothamMedium';
+      text-align: center;
+    }
+    p {text-align: center;}
+    a.button {@include btn-cricket($orange-2);}
+  }
+  .device-container h3 {
+    min-height: 60px;
+  }
+}
+
+#homepage-phones, #homepage-plans {
+  overflow: hidden;
+  height: 37.5em;
+  position: relative;
+}
+
+#homepage-plans {height: emCalc(370px);}
+
+.three-callouts .carousel-prev, .three-callouts .plans-prev {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/home/banner-prev.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 0 0 no-repeat;
+  left: 0;
+  height: 4em;
+  width: 3.9375em;
+}
+.three-callouts .carousel-next, .three-callouts .plans-next {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/home/banner-next.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 0 0 no-repeat;
+  right: 0;
+  height: 4em;
+  width: 3.9375em;
+}
+.lt-ie9 .three-callouts .prev.carousel-prev, .lt-ie9 .three-callouts .next.carousel-next,
+.lt-ie9 .three-callouts .prev.plans-prev, .lt-ie9 .three-callouts .next.plans-next { display: none !important; }
+.lt-ie9 .three-callouts { padding-bottom: 0 !important; }
+
+#section-plans {
+  padding-top: emCalc(20px);
+  position: relative;
+  .prev, .next {top: 50%;}
+  &.three-callouts img {margin-top: 1.3em;}
+}
+
+#section-plans .swiper-container, #section-plans .swiper-slide {
+  height: 350px;
+  @include respond-min($small-screen) { height: 400px; }
+}
+
+/* SECTION: Lifestyle Banner area */
+
+#section-lifestyle {
+  position: relative;
+  .orbit-bullets {
+    right: 45%;
+    top: 90%;
+  }
+}
+
+/* Callout Feature for Why-cricket */
+#why-cricket-callout {
+  margin-bottom: 1em;
+  .wrapper {
+    padding: 2em 0em 2em 1.5em;
+    background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/home/bg-why-cricket.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat top center;
+    background-size: cover;
+    font-family: "GothamMedium";
+  }
+  h1 {
+    color: #c1d72e;
+    font-size: 1.5em;
+    line-height: 0.9em;
+    span {
+      display: block;
+      color: #fff;
+    }
+  }
+  .copy {margin-top: 1em;}
+  p {
+    color: #fff;
+    margin: 0;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    line-height: inherit;
+  }
+  ul {
+    list-style-position: inside;
+    margin-bottom: 0;
+    &:after {
+     @include clearfix;
+    }
+  }
+  ul li {
+    color: #fff;
+    margin: 0;
+    font-size: 0.8em;
+  }
+  .circle-arrow {
+    float: left;
+    margin-top: 1.5em;
+    display: block;
+  }
+  @include respond-min($small-screen) {
+    .copy {
+      margin-top: 0;
+      padding: 0;
+      background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/home/bg-why-cricket-line.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 0 50%;
+    }
+    ul {
+      padding-left: 1em;
+      float: left;
+      padding-right: 1em;
+    }
+    .circle-arrow {
+      margin-left: 1em;
+      margin-top: 0.5em;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="store" default="all" basedir=".">
+
+	<property environment="env" />
+	<!-- set global defaults  -->
+
+	<!-- global.dir is used to resolve dev environment resources such as 
+         checkstyle libraries, custom ant tasks, etc..  Essentially stuff 
+         we don't want to stick directly into our module structure. In this 
+         framework the global directory is the /modules directory. -->
+	<property name="global.dir" value="${basedir}/../../build" />
+<echo>${global.dir}</echo>
+	<!-- Define an if and else task for use in this definition -->
+	<taskdef name="if" classname="ise.antelope.tasks.IfTask" classpath="${global.dir}/../lib/atg-ant.jar" />
+	<taskdef name="else" classname="ise.antelope.tasks.ElseTask" classpath="${global.dir}/../lib/atg-ant.jar" />
+
+	
+	<!-- Common dir identifies the location of the common ant tasks that all 
+         submodules import for use or overriding -->
+	<property name="common.dir" value="${global.dir}" />
+	<if name="env.BUILD_ENV" exists="false">
+		<echo>BUILD_ENV is not defined in Store. Using default ${user.name}.properties</echo>
+		<property file="${common.dir}/${user.name}.properties" />
+		<else>
+			<echo>Building on ${env.BUILD_ENV}. Using property file ${user.name}-${env.BUILD_ENV}.properties</echo>
+			<property file="${common.dir}/${user.name}-${env.BUILD_ENV}.properties" />
+		</else>			
+	</if> 	
+	<property file="${common.dir}/common.properties" />
+	<property file="${user.name}.properties" />
+	<property file="build.properties" />
+	
+  
+
+	<!-- Import common tasks -->
+	<import file="${common.dir}/common.xml" />
+	<import file="${common.dir}/${deploy.definition.file}" />
+	<import file="${common.dir}/sql.xml" />
+
+	<!-- Define the all task.  We do this here because we need to call tasks imported 
+         in both the common.xml and deploy.xml files.  This may seem a bit odd but it
+         feels better to segregate common tasks from j2ee deployment tasks and add 
+         this extra bit of layering than have one massive common task file which has
+         buttloads of targets, making it difficult to read.  You get my point separating
+         the tasks in multiple imports makes this complex environment easier to get 
+         around.  -->
+	<target name="all" depends="clean,build,reports,install,deploy" description="Cleans, builds, checks and installs the project." >
+		<!--<subant buildpath="fulfillment"  target="all">
+			<property name="skip.run.assembler" value="true" />
+		</subant>-->
+	</target>
+
+	<!-- Define the Update task.  Done here for the same reason the All task was.
+	     See above comment. 
+	-->
+	<target name="update" depends="build,install,devdeploy" description="Developer centric task to deploy code and JSP faster" />
+
+
+	<target name="post-assemble" description="Expending for overwriting after assemble" />
+	
+	
+</project>
+

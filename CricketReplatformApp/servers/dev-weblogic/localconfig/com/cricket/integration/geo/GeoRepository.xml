@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE gsa-template
+        PUBLIC "-//Art Technology Group, Inc.//DTD General SQL Adapter//EN"
+        "http://www.atg.com/dtds/gsa/gsa_1.0.dtd">
+
+<gsa-template>
+  <header>
+    <name>ZipcodeRepository</name>
+    <author>Cricket Communications</author>
+    <version>$Id: /cricket/integration/geo/GeoRepository.xml #2 $$Change: 1234 $</version>
+  </header>
+ 	<item-descriptor name="CricketzipCodeItem" > 	
+ 	  <table name="CKT_ZIPCODE_INFO" type="primary" id-column-name="id"> 	
+	      <property category-resource="zipCodeInfo" name="id" data-type="string"  column-name="ID" display-name-resource="id"/>
+	      <property category-resource="zipCodeInfo" name="zipCode" data-type="string"  column-name="ZIP_CODE" display-name-resource="zipCode"/>
+	      <property category-resource="zipCodeInfo" name="city" data-type="string"  column-name="CITY" display-name-resource="city"/>
+	      <property category-resource="zipCodeInfo" name="state" data-type="string"  column-name="STATE" display-name-resource="state"/>
+	      <property category-resource="zipCodeInfo" name="country" data-type="string"  column-name="COUNTRY" display-name-resource="country"/>
+	      <property category-resource="zipCodeInfo" name="citytype" data-type="string"  column-name="CITY_TYPE" display-name-resource="citytype"/>
+	      <property category-resource="zipCodeInfo" name="areacode" data-type="string"  column-name="AREA_CODE" display-name-resource="areacode"/>
+	      <property category-resource="zipCodeInfo" name="latitude" data-type="string"  column-name="LATITUDE" display-name-resource="latitude"/>	
+	      <property category-resource="zipCodeInfo" name="longitude" data-type="string"  column-name="LONGITUDE" display-name-resource="longitude"/>
+	      <property category-resource="zipCodeInfo" name="classificationcode" data-type="string"  column-name="CLASSIFICATION_CODE" display-name-resource="classificationcode"/>
+	      <property category-resource="zipCodeInfo" name="timezone" data-type="string"  column-name="TIME_ZONE" display-name-resource="timezone"/>	      
+      </table>      
+ 	</item-descriptor> 	
+</gsa-template>

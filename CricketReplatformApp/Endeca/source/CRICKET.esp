@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE STUDIO_PROJECT SYSTEM "studio_project.dtd">
+<STUDIO_PROJECT APP_VERSION="6.1" NAME="IFDI Partial Updates Pipeline" VERSION="600">
+
+  <PROJECT_MANAGER_CONFIG PORT="8006" URL="172.17.100.41" APPLICATION="CRICKET" /> 
+
+  <PROJECT_PIPELINE URL="pipeline.epx"/>
+
+  <PROJECT_PIPELINE TYPE="PARTIAL" URL="partial_pipeline.epx"/>
+
+  <PROJECT_FILE TYPE="ANALYTICS_CONFIG" URL="CRICKET.analytics_config.xml"/> 
+
+  <PROJECT_FILE TYPE="CRAWL_PROFILES" URL="CRICKET.crawl_profiles.xml"/> 
+
+  <PROJECT_FILE TYPE="CRAWLER_DEFAULTS" URL="CRICKET.crawler_defaults.properties"/> 
+
+  <PROJECT_FILE TYPE="CRAWLER_GLOBAL_CONFIG" URL="CRICKET.crawler_global_config.xml"/> 
+
+  <PROJECT_FILE TYPE="DERIVED_PROPS" URL="CRICKET.derived_props.xml"/> 
+
+  <PROJECT_FILE TYPE="DIMENSION_GROUPS" URL="CRICKET.dimension_groups.xml"/> 
+
+  <PROJECT_FILE TYPE="DIMENSION_REFS" URL="CRICKET.dimension_refs.xml"/> 
+
+  <PROJECT_FILE TYPE="DIMSEARCH_CONFIG" URL="CRICKET.dimsearch_config.xml"/> 
+
+  <PROJECT_FILE TYPE="DIMSEARCH_INDEX" URL="CRICKET.dimsearch_index.xml"/> 
+
+  <PROJECT_FILE TYPE="DVAL_RANKS" URL="CRICKET.dval_ranks.xml"/> 
+
+  <PROJECT_FILE TYPE="DVAL_REFS" URL="CRICKET.dval_refs.xml"/> 
+
+  <PROJECT_FILE TYPE="KEY_PROPS" URL="CRICKET.key_props.xml"/> 
+
+  <PROJECT_FILE TYPE="KEYWORD_REDIRECT_GROUP" URL="CRICKET.merch_rule_group_default_redirects.xml"/> 
+
+  <PROJECT_FILE TYPE="LANGUAGES" URL="CRICKET.languages.xml"/> 
+
+  <PROJECT_FILE TYPE="MERCH_RULE_GROUP" URL="CRICKET.merch_rule_group_default.xml"/> 
+
+  <PROJECT_FILE TYPE="MERCH_RULES" URL="CRICKET.merch_rules.xml"/> 
+
+  <PROJECT_FILE TYPE="MERCHSTYLES" URL="CRICKET.merchstyles.xml"/> 
+
+  <PROJECT_FILE TYPE="MERCHZONES" URL="CRICKET.merchzones.xml"/> 
+
+  <PROJECT_FILE TYPE="PHRASES" URL="CRICKET.phrases.xml"/> 
+
+  <PROJECT_FILE TYPE="PRECEDENCE_RULES" URL="CRICKET.precedence_rules.xml"/> 
+
+  <PROJECT_FILE TYPE="PROFILES" URL="CRICKET.profiles.xml"/> 
+
+  <PROJECT_FILE TYPE="PROP_REFS" URL="CRICKET.prop_refs.xml"/> 
+
+  <PROJECT_FILE TYPE="RECORD_FILTER" URL="CRICKET.record_filter.xml"/> 
+
+  <PROJECT_FILE TYPE="RECORD_SORT_CONFIG" URL="CRICKET.record_sort_config.xml"/> 
+
+  <PROJECT_FILE TYPE="RECORD_SPEC" URL="CRICKET.record_spec.xml"/> 
+
+  <PROJECT_FILE TYPE="RECSEARCH_CONFIG" URL="CRICKET.recsearch_config.xml"/> 
+
+  <PROJECT_FILE TYPE="RECSEARCH_INDEXES" URL="CRICKET.recsearch_indexes.xml"/> 
+
+  <PROJECT_FILE TYPE="REFINEMENTS_CONFIG" URL="CRICKET.refinement_config.xml"/> 
+
+  <PROJECT_FILE TYPE="RELRANK_STRATEGIES" URL="CRICKET.relrank_strategies.xml"/> 
+
+  <PROJECT_FILE TYPE="RENDER_CONFIG" URL="CRICKET.render_config.xml"/> 
+
+  <PROJECT_FILE TYPE="ROLLUPS" URL="CRICKET.rollups.xml"/> 
+
+  <PROJECT_FILE TYPE="SEARCH_CHARS" URL="CRICKET.search_chars.xml"/> 
+
+  <PROJECT_FILE TYPE="STEMMING" URL="CRICKET.stemming.xml"/> 
+
+  <PROJECT_FILE TYPE="STOP_WORDS" URL="CRICKET.stop_words.xml"/> 
+
+  <PROJECT_FILE TYPE="THESAURUS" URL="CRICKET.thesaurus.xml"/> 
+
+</STUDIO_PROJECT>

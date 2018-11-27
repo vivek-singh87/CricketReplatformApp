@@ -1,0 +1,255 @@
+/** FOOTER **/
+#footer {
+  color: #fff;
+  padding-top: 0;
+  @include gradient(#171717, #333);
+  a.circle-arrow {
+    color: $orange-2;
+    margin-top: emCalc(5px);
+    padding: emCalc(2px) 0 0 emCalc(25px);
+  }
+  h3 {
+    line-height: 12px;
+    margin-top: 0;
+    margin-bottom: emCalc(10px);
+    color: #fff;
+    font: normal 12px Arial;
+    text-transform: uppercase;  
+    &.title {font: normal 14px Arial;}  
+    a {
+      color: #fff;
+      font: normal 14px Arial;
+      text-transform: uppercase;
+	    @include respond-min($small-screen) { cursor: default; }
+    } 
+  }
+  ul {list-style-type: none;}
+  a {
+    color: #ccc;
+    font: normal 14px Arial;
+    @include respond-min($small-screen) { font: normal 12px Arial; }
+  }
+  ul.inline-list li span a { color: $orange-2;} /* This style applies to mobile phones like iphone and samsung so phone numbers look like links */
+  a.button {
+    @include btn-cricket($orange-2);
+    height: 2.5125em;
+  }
+} /* END footer */
+
+#footer-connect {
+  background-color: #212121;
+  padding-top: emCalc(28px);
+  h3 {
+    text-align: left;
+    @include respond-min($small-screen) { text-align: right; }
+    label {
+      color: #fff;
+      font: normal 12px Arial;
+      padding-top: emCalc(10px);
+      text-transform: uppercase;
+      cursor: default;
+      @include respond-min($tablet-screen) {font: normal 14px Arial;}
+      @include respond-min($medium-screen) {font: normal 15px Arial;}
+    }
+  }
+  input {color: #999;}
+  fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    @include respond-min($small-screen) { margin: 0 emCalc(40px) 0 0;}
+  }
+  .social-links {
+    line-height: emCalc(12px);
+    li {
+      @include respond-min($mobile-320-screen) {margin-right: 7%;}
+      display: inline-block;
+      margin-right: 6%;
+      @include respond-min($mobile-480-screen)  {margin-right: 10%;}
+      @include respond-min($small-screen) { margin-right: emCalc(5px); }
+      a {
+        background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/sprite.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 0 -101px no-repeat;
+        display: block;
+        height: 34px;
+        text-indent: -99999px;
+        width: 35px;        
+      }
+      &.last {margin-right: 0;}
+      &#li-facebook a {background-position: 0 -169px;}
+      &#li-youtube a {background-position: 0 -240px;}
+      &#li-instagram a {background-position: 0 -320px;}
+      &#li-flickr a {background-position: 0 -400px;}
+    }
+  }/* /.social-links */
+  .errors-email-signup {
+    display: none;
+    p {
+      border-top: 1px solid $orange-2;
+      color: $orange-2;
+      font: normal 12px Arial;
+      padding: emCalc(10px) 0 0;
+    }
+  }
+} /* END #footer-connect */
+
+#footer-callouts {
+  margin-top: 0;  
+  margin-bottom: 0;
+  border-bottom: 1px solid #3d3d3d;
+  @include respond-min($small-screen) { 
+    margin-top: emCalc(18px); 
+    margin-bottom: emCalc(30px);    
+  }
+  .columns {
+    padding-left: 0;
+    padding-right: 0;
+    @include respond-min($tablet-screen) {
+      padding-left: emCalc(5px);
+      padding-right: emCalc(5px);
+    }
+    @include respond-min($medium-screen) {
+      padding-left: emCalc(15px);
+      padding-right: emCalc(15px);
+    }
+  }
+  .panel {
+    background-color: #282828;  
+    margin-bottom: 0;
+    @include respond-min($small-screen) {margin-bottom: emCalc(20px);}
+    &.callout {
+      box-shadow: none;
+      border-width: 0;
+      border-bottom: 1px solid #333;
+      @include respond-min($small-screen) {border-bottom: 0;}
+    }
+    h3 {
+      color: #ccc;
+      font: normal 16px Arial;
+      text-transform: none; 
+    }
+    p {
+      color: #ccc;
+      font: normal 12px Arial;        
+    }
+    span {
+      color: #ccc;  
+      font-size: 18px;
+      @include respond-min($tablet-screen) {font-size: 14px;}
+      @include respond-min($medium-screen) {font-size: 18px;}
+    }
+  }
+  .inline-list {
+    .find-store {
+      margin-top: emCalc(5px);
+      margin-bottom: emCalc(3px);
+    }
+    #click-chat {
+      margin-top: 1px !important;
+      padding-left: 8px !important;
+    }
+  }
+  .border-link {
+    margin-top: 4px;
+    margin-left: 10px;
+    padding-left: 10px; 
+    /* Do we need these border-left: none;? Don't seem to be set in our stuff? */
+    @include respond-min($mobile-320-screen) { border-left: none;}
+    @include respond-min($small-screen) { border-left: none;}
+    @include respond-min($large-screen) { border-left: none;}
+  }
+} /* END #footer-callouts */
+
+#footer-sitemap {
+  /* Only Shown for Mobile/Tablet - Accordions */
+  &.section-container {
+    border-style: none;
+    .columns {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .title {
+      background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-footer-nav-plus.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 95% 10px no-repeat;
+      border-top: 0;  
+      margin-bottom: 0; 
+      padding-left: emCalc(15px);
+      padding-right: emCalc(15px);
+    }
+    .active .title {
+      background-image: url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-footer-nav-minus.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]);
+    }
+    .content {
+      background-color: #3d3d3d;
+      padding-left: emCalc(25px);
+    }
+  } /* /.section-container */
+  
+  /* Shown for Desktop - no accordions */
+  @include respond-min($tablet-screen) {
+    .title {
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 0;
+      margin-bottom: 0.625em;
+    }
+    .active .title {background-image: none;}
+    .content {
+      background-color: transparent;
+      padding-left: 0;
+    }
+  } 
+} /* END #footer-sitemap */
+
+#footer-text-message {
+  display: none;
+  @include respond-min($small-screen) { display: block; }
+  margin-top: emCalc(5px);
+  hr {
+    @include hr;
+    margin-bottom: emCalc(20px);
+  }
+  h3 {
+    text-align: left;
+    @include respond-min($small-screen) { text-align: right; }
+  }
+  p {line-height: emCalc(12px);}
+} /* END #footer-text-message */
+
+#footer-utility {
+  background: #242424;
+  color: #ccc;
+  padding: emCalc(8px) 0;
+  text-transform: uppercase;
+  ul {
+    line-height: 12px;
+    margin-bottom: 25px;
+    @include respond-min($small-screen) {margin-bottom: 0; }
+  }
+  ul li {
+    border-right: 1px solid #525252;
+    display: inline-block;
+    margin-right: emCalc(12px);
+    padding-right: emCalc(14px);
+  }
+  ul li.last {
+    border-right: 0;
+    margin-right: 0;
+    padding-right: 0;
+  }
+  a {
+    color: #ccc;
+    font-size: 11px;
+  }
+  p {
+    font: normal 11px Arial;
+    margin-bottom: 0;
+  }
+} /* END #footer-utility */
+
+#disclaimer-container {
+  img {
+    display: block;
+    margin-top: 15px;
+    width: 65%;
+  }
+  #verisign-container img {width: 100px;}
+}

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2001, 2012, Oracle and/or its affiliates. All rights reserved.
+  ~ Oracle and Java are registered trademarks of Oracle and/or its
+  ~ affiliates. Other names may be trademarks of their respective owners.
+  ~ UNIX is a registered trademark of The Open Group.
+  ~
+  ~ This software and related documentation are provided under a license
+  ~ agreement containing restrictions on use and disclosure and are
+  ~ protected by intellectual property laws. Except as expressly permitted
+  ~ in your license agreement or allowed by law, you may not use, copy,
+  ~ reproduce, translate, broadcast, modify, license, transmit, distribute,
+  ~ exhibit, perform, publish, or display any part, in any form, or by any
+  ~ means. Reverse engineering, disassembly, or decompilation of this
+  ~ software, unless required by law for interoperability, is prohibited.
+  ~ The information contained herein is subject to change without notice
+  ~ and is not warranted to be error-free. If you find any errors, please
+  ~ report them to us in writing.
+  ~ U.S. GOVERNMENT END USERS: Oracle programs, including any operating
+  ~ system, integrated software, any programs installed on the hardware,
+  ~ and/or documentation, delivered to U.S. Government end users are
+  ~ "commercial computer software" pursuant to the applicable Federal
+  ~ Acquisition Regulation and agency-specific supplemental regulations.
+  ~ As such, use, duplication, disclosure, modification, and adaptation
+  ~ of the programs, including any operating system, integrated software,
+  ~ any programs installed on the hardware, and/or documentation, shall be
+  ~ subject to license terms and license restrictions applicable to the
+  ~ programs. No other rights are granted to the U.S. Government.
+  ~ This software or hardware is developed for general use in a variety
+  ~ of information management applications. It is not developed or
+  ~ intended for use in any inherently dangerous applications, including
+  ~ applications that may create a risk of personal injury. If you use
+  ~ this software or hardware in dangerous applications, then you shall
+  ~ be responsible to take all appropriate fail-safe, backup, redundancy,
+  ~ and other measures to ensure its safe use. Oracle Corporation and its
+  ~ affiliates disclaim any liability for any damages caused by use of this
+  ~ software or hardware in dangerous applications.
+  ~ This software or hardware and documentation may provide access to or
+  ~ information on content, products, and services from third parties.
+  ~ Oracle Corporation and its affiliates are not responsible for and
+  ~ expressly disclaim all warranties of any kind with respect to
+  ~ third-party content, products, and services. Oracle Corporation and
+  ~ its affiliates will not be responsible for any loss, costs, or damages
+  ~ incurred due to your access to or use of third-party content, products,
+  ~ or services.
+  -->
+<!DOCTYPE REFINEMENTS_CONFIG SYSTEM "refinement_config.dtd">
+
+<REFINEMENTS_CONFIG>
+  <REFINEMENTS NAME="product.markets.zipCode" SORT_TYPE="ALPHA" SORT_ORDER="ASC">
+    <STATS NUM_RECORDS="TRUE" NUM_REFINEMENTS_IN_GROUP="FALSE" DVAL_STATIC_RECORD_COUNT="FALSE" DVAL_STATIC_RANK="FALSE" />
+    <DYNAMIC_RANKING COUNT="10" MORE="FALSE" TOP_REFINEMENTS_SORT="DEFAULT" TYPE="FREQUENCY" />
+  </REFINEMENTS>
+  <REFINEMENTS DVAL_COLLAPSE_THRESHOLD="10" NAME="faq.category" SORT_TYPE="ALPHA" SORT_ORDER="ASC">
+    <STATS NUM_RECORDS="TRUE" NUM_REFINEMENTS_IN_GROUP="FALSE" DVAL_STATIC_RECORD_COUNT="FALSE" DVAL_STATIC_RANK="FALSE" />
+    <DYNAMIC_RANKING COUNT="10" MORE="TRUE" TOP_REFINEMENTS_SORT="DEFAULT" TYPE="FREQUENCY" />
+  </REFINEMENTS>
+  <REFINEMENTS DVAL_COLLAPSE_THRESHOLD="10" NAME="faq.SubCategory" SORT_TYPE="ALPHA" SORT_ORDER="ASC">
+    <STATS NUM_RECORDS="TRUE" NUM_REFINEMENTS_IN_GROUP="FALSE" DVAL_STATIC_RECORD_COUNT="FALSE" DVAL_STATIC_RANK="FALSE" />
+    <DYNAMIC_RANKING COUNT="10" MORE="TRUE" TOP_REFINEMENTS_SORT="DEFAULT" TYPE="FREQUENCY" />
+  </REFINEMENTS>
+  <REFINEMENTS DVAL_COLLAPSE_THRESHOLD="" NAME="faq.question" SORT_TYPE="ALPHA" SORT_ORDER="ASC">
+    <STATS NUM_RECORDS="FALSE" NUM_REFINEMENTS_IN_GROUP="FALSE" DVAL_STATIC_RECORD_COUNT="FALSE" DVAL_STATIC_RANK="FALSE" />
+    <DYNAMIC_RANKING COUNT="10" MORE="TRUE" TOP_REFINEMENTS_SORT="DEFAULT" TYPE="FREQUENCY" />
+  </REFINEMENTS>
+  <REFINEMENTS NAME="clothing-sku.color" DVAL_COLLAPSE_THRESHOLD="10" SORT_TYPE="ALPHA">
+    <STATS NUM_RECORDS="TRUE" />
+  </REFINEMENTS>
+  <REFINEMENTS NAME="clothing-sku.size" DVAL_COLLAPSE_THRESHOLD="10" SORT_TYPE="ALPHA">
+    <STATS NUM_RECORDS="TRUE" />
+  </REFINEMENTS>
+  <REFINEMENTS NAME="furniture-sku.woodFinish" DVAL_COLLAPSE_THRESHOLD="10" SORT_TYPE="ALPHA">
+    <STATS NUM_RECORDS="TRUE" />
+  </REFINEMENTS>
+  <REFINEMENTS NAME="market.code" DVAL_COLLAPSE_THRESHOLD="10" SORT_TYPE="ALPHA">
+    <STATS NUM_RECORDS="TRUE" />
+  </REFINEMENTS>
+  <REFINEMENTS NAME="phone.compatiblePlan" DVAL_COLLAPSE_THRESHOLD="10" SORT_TYPE="ALPHA">
+    <STATS NUM_RECORDS="TRUE" />
+  </REFINEMENTS>
+  <REFINEMENTS NAME="phone.planDescription" DVAL_COLLAPSE_THRESHOLD="10" SORT_TYPE="ALPHA">
+    <STATS NUM_RECORDS="TRUE" />
+  </REFINEMENTS>
+  <REFINEMENTS NAME="phone.planDisplayName" DVAL_COLLAPSE_THRESHOLD="10" SORT_TYPE="ALPHA">
+    <STATS NUM_RECORDS="TRUE" />
+  </REFINEMENTS>
+  <REFINEMENTS NAME="plan.compatiblePhone" DVAL_COLLAPSE_THRESHOLD="10" SORT_TYPE="ALPHA">
+    <STATS NUM_RECORDS="TRUE" />
+  </REFINEMENTS>
+  <REFINEMENTS NAME="plan.phoneDescription" DVAL_COLLAPSE_THRESHOLD="10" SORT_TYPE="ALPHA">
+    <STATS NUM_RECORDS="TRUE" />
+  </REFINEMENTS>
+  <REFINEMENTS NAME="plan.phoneDisplayName" DVAL_COLLAPSE_THRESHOLD="10" SORT_TYPE="ALPHA">
+    <STATS NUM_RECORDS="TRUE" />
+  </REFINEMENTS>
+  <REFINEMENTS NAME="product.accessoryType" DVAL_COLLAPSE_THRESHOLD="10" SORT_TYPE="ALPHA">
+    <STATS NUM_RECORDS="TRUE" />
+  </REFINEMENTS>
+  <REFINEMENTS NAME="product.brand" DVAL_COLLAPSE_THRESHOLD="10" SORT_TYPE="ALPHA">
+    <STATS NUM_RECORDS="TRUE" />
+  </REFINEMENTS>
+  <REFINEMENTS NAME="product.calculatedFeatures" DVAL_COLLAPSE_THRESHOLD="10" SORT_TYPE="ALPHA">
+    <STATS NUM_RECORDS="TRUE" />
+  </REFINEMENTS>
+  <REFINEMENTS NAME="product.catalogId" DVAL_COLLAPSE_THRESHOLD="10" SORT_TYPE="ALPHA">
+    <STATS NUM_RECORDS="TRUE" />
+  </REFINEMENTS>
+  <REFINEMENTS NAME="product.disallowAsRecommendation" DVAL_COLLAPSE_THRESHOLD="10" SORT_TYPE="ALPHA">
+    <STATS NUM_RECORDS="TRUE" />
+  </REFINEMENTS>
+  <REFINEMENTS NAME="product.displayName" DVAL_COLLAPSE_THRESHOLD="10" SORT_TYPE="ALPHA">
+    <STATS NUM_RECORDS="TRUE" />
+  </REFINEMENTS>
+  <REFINEMENTS NAME="product.features.displayName" DVAL_COLLAPSE_THRESHOLD="10" SORT_TYPE="ALPHA">
+    <STATS NUM_RECORDS="TRUE" />
+  </REFINEMENTS>
+  <REFINEMENTS NAME="product.keyFeatures" DVAL_COLLAPSE_THRESHOLD="10" SORT_TYPE="ALPHA">
+    <STATS NUM_RECORDS="TRUE" />
+  </REFINEMENTS>
+  <REFINEMENTS NAME="product.language" DVAL_COLLAPSE_THRESHOLD="10" SORT_TYPE="ALPHA">
+    <STATS NUM_RECORDS="TRUE" />
+  </REFINEMENTS>
+  <REFINEMENTS NAME="product.manufacturer.displayName" DVAL_COLLAPSE_THRESHOLD="10" SORT_TYPE="ALPHA">
+    <STATS NUM_RECORDS="TRUE" />
+  </REFINEMENTS>
+  <REFINEMENTS NAME="product.nonreturnable" DVAL_COLLAPSE_THRESHOLD="10" SORT_TYPE="ALPHA">
+    <STATS NUM_RECORDS="TRUE" />
+  </REFINEMENTS>
+  <REFINEMENTS NAME="product.os" DVAL_COLLAPSE_THRESHOLD="10" SORT_TYPE="ALPHA">
+    <STATS NUM_RECORDS="TRUE" />
+  </REFINEMENTS>
+  <REFINEMENTS NAME="product.phoneStyle" DVAL_COLLAPSE_THRESHOLD="10" SORT_TYPE="ALPHA">
+    <STATS NUM_RECORDS="TRUE" />
+  </REFINEMENTS>
+  <REFINEMENTS NAME="product.siteId" DVAL_COLLAPSE_THRESHOLD="10" SORT_TYPE="ALPHA">
+    <STATS NUM_RECORDS="TRUE" />
+  </REFINEMENTS>
+  <REFINEMENTS NAME="product.type" DVAL_COLLAPSE_THRESHOLD="10" SORT_TYPE="ALPHA">
+    <STATS NUM_RECORDS="TRUE" />
+  </REFINEMENTS>
+  <REFINEMENTS NAME="sku.listPrice" DVAL_COLLAPSE_THRESHOLD="10" SORT_TYPE="NUMERIC">
+    <STATS NUM_RECORDS="TRUE" />
+  </REFINEMENTS>
+  <REFINEMENTS NAME="product.category" DVAL_COLLAPSE_THRESHOLD="10" SORT_TYPE="ALPHA">
+    <STATS NUM_RECORDS="TRUE" />
+  </REFINEMENTS>
+  <REFINEMENTS NAME="item.type" DVAL_COLLAPSE_THRESHOLD="10" SORT_TYPE="ALPHA">
+    <STATS NUM_RECORDS="TRUE" />
+  </REFINEMENTS>
+</REFINEMENTS_CONFIG>
+

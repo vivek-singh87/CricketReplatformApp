@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+	xmlns="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateWebProductResponse.xsd"
+	xmlns:cdm="http://esp.cricket.com/ESP/Namespaces/Types/Public/CricketDataModel.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateWebProductResponse.xsd"
+	elementFormDefault="qualified" attributeFormDefault="qualified"
+	version="1.0.00">
+	<!-- History -->
+	<!-- 11/05/2008 Javier Rodriguez - 1.0.00		- Initial relase	-->
+	<!-- Schema structure -->
+	<xs:import schemaLocation="CricketDataModel.xsd" namespace="http://esp.cricket.com/ESP/Namespaces/Types/Public/CricketDataModel.xsd"></xs:import>
+	<xs:element name="UpdateWebProductResponse"
+		type="UpdateWebProductResponseInfo" />
+	<xs:complexType name="UpdateWebProductResponseInfo">
+		<xs:sequence>
+			<xs:element name="Response" type="cdm:ResponseInfo" />
+			<xs:element name="RDIResult" type="cdm:ResponseInfo" />
+			<xs:element name="DBOperationResult" type="cdm:ResponseInfo"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

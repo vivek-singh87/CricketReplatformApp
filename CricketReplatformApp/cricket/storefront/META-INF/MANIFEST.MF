@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+ATG-Required: cricket.common 
+ATG-Web-Module: j2ee-apps/storefront/cricket.war
+
+
+

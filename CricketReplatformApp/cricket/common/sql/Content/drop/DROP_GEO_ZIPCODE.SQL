@@ -1,0 +1,3 @@
+DROP TABLE  CKT_ZIPCODE_INFO;
+
+commit;

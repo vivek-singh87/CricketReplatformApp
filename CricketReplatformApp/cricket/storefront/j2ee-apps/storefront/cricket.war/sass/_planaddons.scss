@@ -1,0 +1,391 @@
+.section-plans-addons-listing #your-plan.static-banner {
+  background-image: url(//images.mycricket.com/cricket?set=imageURL[file:/img/plans-addons/banner-customize-your-plan-mobile.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]);
+  background-position: 0 50%;
+  background-color: #f2f2f2;
+  height: 216px;
+  .content {
+    width: 43%;
+    top: 22%;
+    left: 48%;
+    h1 {
+	    font-size: 1.5em;
+	    margin-left: 8px;
+	    line-height: 0.9em;
+      color: #008752;
+      span {color: #00a663;}
+	    @include respond-min($mobile-480-screen) {
+        font-size: 1.7em;
+        margin-left: 0;
+	    }	
+    }
+    p {
+      color: #008752;
+      text-transform: none;
+      margin-top: 1.5em;
+      line-height: 1.4em;
+    }
+  }/* /.content */
+  
+  /* iPad*/
+  @include respond-min($tablet-screen) {
+    background-image: url(//images.mycricket.com/cricket?set=imageURL[file:/img/plans-addons/banner-customize-your-plan.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]);
+    background-size: auto auto;
+    background-position: 20% 0;
+    background-color: transparent;
+    height: 300px;
+    border-bottom: none;
+    margin-bottom: 3em;
+    .content {
+      left: 40%;
+      width: 55%;
+      top: 15%;
+      h1 {font-size: 3em;}
+      p {font-size: 0.8em;}
+    }
+  }
+  
+  /* Placement needs to be slightly adjusted for inbetween sizes */
+  @include respond-min($medium-screen) {
+    .content {
+      left: 36%;
+      h1 {width: 100%;}
+    }
+  }
+  
+  /* Desktop */
+  @include respond-min($large-screen) {
+    .content {
+      width: 50%;
+      left: 34%;
+      top: 20%;
+      border: none;
+      h1 {
+        font-size: 2.5em;
+        line-height: 0.8em;
+        width: 67%;
+      }
+      p {
+        font-size: emCalc(15px);
+        margin-left: 0.5em;
+      }
+    }
+  }
+  
+}
+
+#plan-callout {
+  .panel {
+    @include panel(#fff, 1em);
+    border-top: 1px solid #d6d6d6;
+    margin-bottom: 0;
+    h2 {
+      color: #8dc63f;
+      font-size: emCalc(15px);
+      letter-spacing: -1px;
+      span {
+        color: #008752;
+        display: block;
+      }
+    }
+    h3 {
+      color: #008752;
+      font-family: "GothamBlack";
+      font-size: 0.85em;
+      font-weight: normal;
+    }
+    h4 {
+      color: #8dc63f;
+      text-transform: uppercase;
+      font-size: 0.85em;
+      font-weight: normal;
+      font-family: "GothamBlack";
+      margin-right: 0.5em;
+    }
+    hr {
+      margin: 1em auto;
+      display: block;
+    }
+    p.included-items {
+      font-size: 0.85em;
+    }
+    p {
+      color: #333;
+      font-family: "GothamBook";
+      font-size: emCalc(13px);
+      margin-bottom: 0;
+    }
+    .plan-item {
+      margin: 2em 0 0 0;
+      text-align: center;
+      float: left;
+      width: 100%;
+
+      /* between 767px & 800px - 2 columns */
+      @include respond-min($small-screen) {width: 30%;}
+
+      /* > 940px - 4 columns */
+  		@include respond-min($medium-screen) {width: 25%;}
+      
+      p {
+        font-family: "GothamMedium";
+        font-size: 1.2em;
+        line-height: 1.2em;
+        width: 70%;
+        margin: 0 auto 0.5em auto;
+      }
+      a {
+        color: #f14530;
+        font-size: 0.85em;
+        text-transform: uppercase;
+      }
+    }
+    .swiper-container, .swiper-wrapper {height: 140px;}
+  }
+  
+  
+  /* iPad & Desktop */
+  @include respond-min($tablet-screen) {
+    margin-top: 2em;
+    .panel {
+      @include panel(#f6f6f6, 2em);
+      border: 1px solid #d6d6d6;
+      h2 {
+        color: #8dc63f;
+        font-size: emCalc(24px);
+        width: auto;
+        span {display: inline;}
+      }
+      p {
+        color: #333;
+        font-size: 1em;
+      }
+      hr {margin: 2em auto;}
+      h3 {color: #008752;}
+      h4 {
+        display: inline;
+        font-size: 1em;
+        color: #8dc63f;
+      }
+      p.included-items {
+        display: inline;
+        font-size: 0.9em;
+      }
+    }
+  }
+}
+
+#accordion-content {
+  .active {
+    .title {
+      background: #fff url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-accordion-active.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 95% 50%;
+      a {
+        border-bottom: 1px solid #d6d6d6;
+      }
+    }
+    .content {
+      background-image: -moz-linear-gradient(top,  #f2f2f2 0%, #ffffff 10%, #ffffff 90%, #f2f2f2 100%); /* FF3.6+ */
+      background-image: -webkit-linear-gradient(top,  #f2f2f2 0%,#ffffff 10%,#ffffff 90%,#f2f2f2 100%); /* Chrome10+,Safari5.1+ */
+      background-image: -o-linear-gradient(top,  #f2f2f2 0%,#ffffff 10%,#ffffff 90%,#f2f2f2 100%); /* Opera 11.10+ */
+      background-image: -ms-linear-gradient(top,  #f2f2f2 0%,#ffffff 10%,#ffffff 90%,#f2f2f2 100%); /* IE10+ */
+      background-image: linear-gradient(to bottom,  #f2f2f2 0%,#ffffff 10%,#ffffff 90%,#f2f2f2 100%); /* W3C */
+    }
+  }
+  .title {
+    background: #fff url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-accordion-inactive.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 95% 50%;
+    color: #8dc63f;
+    font-family: "GothamBlack";
+    font-size: 1em;
+    a {color: #008752;}
+  }
+  .swiper-container, .swiper-wrapper {height: 200px;}
+  
+  /* iPad*/
+  @include respond-min($tablet-screen) {
+    .expand-all {display: none;}
+  }
+  
+  /* Desktop */
+  @include respond-min($medium-screen) {
+    margin-top: 3em;
+    margin-bottom: 4em;
+    .active .content {background-image: none;}
+    .active .title a {border-bottom: none;}
+    .title a {color: #8dc63f;}
+    .expand-all {
+      margin-bottom: 1em;
+      display: block;
+      text-transform: uppercase;
+      font-size: 0.85em;
+    }
+    .title {font-size: 1.5em;}
+  }
+}
+
+#accordion-content {
+  .content {
+    &:after {@include clearfix;}
+  }
+  .plan-item {
+    float: left;
+    width: 100%;
+    margin: 1em 0 2em 0;
+    text-align: center;
+		
+    /* between 767px & 800px - 2 columns */
+    @include respond-min($small-screen) {
+      width: 50%;
+      min-height: 240px;
+    }
+    
+    /* between 800px & 940px - 3 columns */
+    @include respond-min($tablet-landscape) {
+      width: 33%;
+      min-height: 240px;
+      h4 {
+        min-height: 65px;
+        font-size: 1.125em;
+        line-height: 1.2em;
+      }
+    }
+
+    /* > 940px - 4 columns */
+		@include respond-min($medium-screen) {
+      width: 25%;
+      min-height: 240px;
+		}
+    
+    sub {bottom: 0;}
+    h3 {
+      font-family: "GothamBlack";
+      color: #008752;
+      text-transform: uppercase;
+      font-size: 1em;
+      font-weight: normal;
+    }
+    h4 {
+      font-family: "GothamBook";
+      color: #333;
+      width: 95%;
+      margin: 0 auto;
+      a {color: #333;}
+    }
+    .green-price {
+      font-size: 2em;
+      margin-bottom: 0.3em;
+    }
+    .green-add-cart, .grey-add-cart {
+      margin: 0 auto 1.25em auto;
+      display: block;
+      width: 60%;
+    }
+    .included {
+      background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/plans-addons/icon-included.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 50% 50%;
+      display: block;
+      width: 83px;
+      height: 81px;
+      margin: 2em auto 0 auto;
+    }
+  }
+}
+
+/* Bottom CTA */
+#flex-bucket {
+  background-color: #f2f2f2;
+  height: 100%;
+  h1 {
+    text-align: center;
+    margin: 1em auto 0 auto;
+    font-size: 1.3em;
+    color: #0A5641;
+    width: 70%;
+    span {color: #008752;}
+  }
+  .content {
+    position: static;
+    left: auto;
+    right: auto;
+    top: auto;
+    width: auto;
+  }
+  h3 {
+    text-transform: uppercase;
+    font-family: "GothamBlack";
+    font-size: 0.8em;
+    font-weight: normal;
+    margin-top: 0;
+    text-align: center;
+  }
+  p {
+    text-transform: none;
+    font-size: emCalc(13px);
+    line-height: 1.2em;
+    margin-bottom: 1em;
+    font-weight: lighter;
+  }
+  ul {list-style-position: inside;
+    li {
+      padding: 0.1em 0;
+      font-size: 1em;
+      color: #29976b;
+      text-transform: uppercase;
+      font-family: "GothamBold";
+    }
+  }
+  ol {
+    margin: 0 0 0 1em;
+    list-style-position: outside;
+    list-style-type: disc;
+    li {
+      padding: 0.5em 0;
+      text-transform: none;
+      font-size: emCalc(13px);
+      line-height: 1.2em;
+      font-family: "GothamMedium";
+    }
+  }
+  #flex-left {
+    padding: 1em 0;
+    border-bottom: 1px solid #c2c2c2;
+    margin: 0 1em;
+  }
+  #flex-right {padding: 1em 1em;}
+  .button {
+    @include btn-cricket(#dd3a26);
+    margin-bottom: 3em;
+  }
+  
+  /* Desktop Overrides */
+  @include respond-min($medium-screen) {
+    background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/plans-addons/power-pixels-flex-bucket.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 100% 0;
+    background-color: mix(#f2f2f2,#ffffff);
+    height: 430px;
+    h1 {
+      font-size: 2.4em;
+      width: 100%;
+    }
+    h3 {text-align: left;}
+    .content {width: 50%;}
+    p {font-size: emCalc(15px);}
+    .button {
+      margin-top: 2em;
+      margin-bottom: 0;
+      font-size: 15px;
+    }
+    ol li {font-size: emCalc(15px);}
+    ul li {font-size: 0.9em;}
+    #flex-left {
+      padding: 0 3em 0 2em;
+      margin: 2em 0 0 0;
+      border-bottom: none;
+    }
+    #flex-right {
+      border-left: 1px solid #c2c2c2;
+      padding: 0 0 0 2em;
+      margin: 2em 0 0 0;
+    }
+  }
+}
+
+#small-mobile-cta {height: 159px;}
+
+.lt-ie9 .expand-all {display: none !important;}

@@ -1,0 +1,105 @@
+/* Killswitch Page */
+section.killswitch {
+  margin: 0;
+  position: relative;
+  width: 100%;
+}
+
+#killswitch-container {
+  height: 100%;
+  background: #fff url(//images.mycricket.com/cricket?set=imageURL[file:/img/killswitch/killswitch-mobile-bg.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat right 0;
+  @include respond-min($small-screen) { 
+    min-height: 540px;
+    background: #fff url(//images.mycricket.com/cricket?set=imageURL[file:/img/killswitch/killswitch-bg.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 50% 0;
+  }
+}
+
+#killswitch-right-bg {
+  background: #fff url(//images.mycricket.com/cricket?set=imageURL[file:/img/killswitch/killswitch-right-bg.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 0 0;
+  min-height: 164px;
+  position: absolute;
+  right:0;
+  width: 491px;
+}
+
+#killsiwtch-content-container {
+  margin:0 20px;
+  padding-top: 93px;
+  width:100%;
+  min-height: 175px;
+  position: relative;
+  @include respond-min($small-screen) { 
+    margin: 0 auto;
+    padding-top: 230px;
+    width: 815px;
+  }
+}
+
+#killswitch-logo {
+  background: #fff url(//images.mycricket.com/cricket?set=imageURL[file:/img/killswitch/killswitch-mobile-logo.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 0 0;
+  width:85%;
+  @include respond-min($small-screen) { 
+    background: #fff url(//images.mycricket.com/cricket?set=imageURL[file:/img/killswitch/killswitch-logo.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 0 0;
+    float: left;
+    height: auto;
+    margin-left: 10%;
+    width: 355px;
+  }
+}
+
+#top-line {
+  display: inline-block;
+  font: 42px/1px 'GothamBlack';
+  line-height: 42px;
+  margin-top:80px;
+  width:200px;
+  color:#03ca10;
+  text-transform: uppercase;
+  letter-spacing: -3px;
+  span {color:#008752;}
+  @include respond-min($small-screen) { 
+    font: 50px/1px 'GothamBlack';
+    margin-top:80px;
+    width:auto;
+    line-height: 50px;
+  }
+}
+
+#bottom-line {
+  display:block;
+  font: 45px/1px 'GothamBlack';
+  line-height: 45px;
+  margin-top:-12px;
+  width:300px;
+  color:#018111;
+  text-transform: uppercase;
+  letter-spacing: -3px;
+  span {color:#00583d;}
+  @include respond-min($small-screen) { 
+    font: 55px/1px 'GothamBlack';
+    margin-top:-15px;
+    width:auto;
+    line-height: 55px;
+  }
+}
+
+#killswitch-text {
+  width:85%;
+  margin-top:40px;
+  @include respond-min($small-screen) {
+    float:left; 
+    width:370px;
+    margin-top:70px;
+  }
+  span {
+    display: block;
+    font: 16px/24px 'GothamBold';
+    color:#333;
+    text-transform: uppercase;
+  }
+  p {
+    display: block;
+    font: 13px/22px 'GothamMedium';
+    color:#333;
+  }
+}  

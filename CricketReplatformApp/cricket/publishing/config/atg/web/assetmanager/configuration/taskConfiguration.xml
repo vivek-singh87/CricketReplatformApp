@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE task-configuration
+        PUBLIC "-//Art Technology Group, Inc.//DTD Asset Manager Task Configuration//EN"
+        'http://www.atg.com/dtds/web/assetmanager/taskConfiguration_1.0.dtd'>
+
+<task-configuration>
+
+  <!-- ===================================================================== -->
+
+  <activity id="browse.cricketItems" inherit-from="assetManager.defaultBrowse">
+
+    <activity-name>
+      browse.cricketItems
+    </activity-name>
+
+    <!-- Define tabs for the left pane -->
+    <tabs>
+      <tab-order>
+        <tab-id>browse</tab-id>
+      </tab-order>
+      <initial-tab>
+        browse
+      </initial-tab>
+
+      <!-- Configure the Browse tab -->
+      <tab id="browse">
+        <display-name-resource>
+          assetManager.tab.browse
+        </display-name-resource>
+        <page>
+          /browse/browseTab.jsp
+        </page>
+        <views>
+          <view-order>
+            <view-id>browse.cricketItems.items.marketType</view-id>
+            <view-id>browse.cricketItems.items.marketSubType</view-id>
+            <view-id>browse.cricketItems.items.marketInfo</view-id>
+            <view-id>browse.cricketItems.items.marketDRMInfo</view-id>
+            <view-id>browse.cricketItems.items.CricketzipCodeItem</view-id>
+          </view-order>
+          <initial-view>
+            browse.cricketItems.items.marketType
+          </initial-view>
+
+          <view id="browse.cricketItems.items.marketType">
+            <resource-bundle>
+              com.cricket.catalog.CatalogResources
+            </resource-bundle>
+            <display-name-resource>
+              cricketItems.browseTab.view.marketType
+            </display-name-resource>
+            <configuration>
+              /atg/web/assetmanager/configuration/MarketTypeViewConfiguration
+            </configuration>
+            <page>
+              /browse/list.jsp
+            </page>
+          </view>
+          <view id="browse.cricketItems.items.marketSubType">
+            <resource-bundle>
+              com.cricket.catalog.CatalogResources
+            </resource-bundle>
+            <display-name-resource>
+              cricketItems.browseTab.view.marketSubType
+            </display-name-resource>
+            <configuration>
+              /atg/web/assetmanager/configuration/MarketSubTypeViewConfiguration
+            </configuration>
+            <page>
+              /browse/list.jsp
+            </page>
+          </view>
+          <view id="browse.cricketItems.items.marketDRMInfo">
+            <resource-bundle>
+              com.cricket.catalog.CatalogResources
+            </resource-bundle>
+            <display-name-resource>
+              cricketItems.browseTab.view.marketDRMInfo
+            </display-name-resource>
+            <configuration>
+              /atg/web/assetmanager/configuration/MarketDRMViewConfiguration
+            </configuration>
+            <page>
+              /browse/list.jsp
+            </page>
+          </view>
+          <view id="browse.cricketItems.items.marketInfo">
+            <resource-bundle>
+              com.cricket.catalog.CatalogResources
+            </resource-bundle>
+            <display-name-resource>
+              cricketItems.browseTab.view.marketInfo
+            </display-name-resource>
+            <configuration>
+              /atg/web/assetmanager/configuration/MarketInfoViewConfiguration
+            </configuration>
+            <page>
+              /browse/list.jsp
+            </page>
+          </view>
+          <view id="browse.cricketItems.items.CricketzipCodeItem">
+            <resource-bundle>
+              com.cricket.catalog.CatalogResources
+            </resource-bundle>
+            <display-name-resource>
+              cricketItems.browseTab.view.CricketzipCodeItem
+            </display-name-resource>
+            <configuration>
+              /atg/web/assetmanager/configuration/ZipcodeItemViewConfiguration
+            </configuration>
+            <page>
+              /browse/list.jsp
+            </page>
+          </view>
+        </views>
+      </tab>
+      
+      <tab id="search">
+        <views>
+          <view id="form">
+          	<item-types>
+          		<item-type>
+          			/atg/commerce/catalog/ProductCatalog:marketType
+          		</item-type>
+          		<item-type>
+          			/atg/commerce/catalog/ProductCatalog:marketSubType
+          		</item-type>
+          		<item-type>
+          			/atg/commerce/catalog/ProductCatalog:market-drm-Info
+          		</item-type>
+          		<item-type>
+          			/atg/commerce/catalog/ProductCatalog:market-info
+          		</item-type>
+          		<item-type>
+          			/com/cricket/integration/geo/GeoRepository:CricketzipCodeItem
+          		</item-type>
+          	</item-types>
+          </view>
+        </views>
+      </tab>
+    </tabs>
+
+  </activity>
+
+  <!-- ===================================================================== -->
+
+  
+
+  <!-- ===================================================================== -->
+
+  <task id="cricketItems" inherit-from="browse.cricketItems">
+	<workflow-name>
+	 /Common/commonWorkflow.wdl
+	</workflow-name>
+	<activity-name>
+		cricketItems
+	</activity-name>
+    <asset-editor>
+      <page>
+        /assetEditor/editAsset.jsp
+      </page>
+      <configuration>
+      </configuration>
+    </asset-editor>
+
+    <operations>
+      <operation>create</operation>
+      <operation>move</operation>
+      <operation>duplicate</operation>
+      <operation>delete</operation>
+      <operation>addToProject</operation>
+      <operation>link</operation>
+      <operation>unlink</operation>
+    </operations>
+
+    <tabs>
+      <tab-order>
+        <!-- Append the project tab -->
+        <tab-id>project</tab-id>
+      </tab-order>
+
+      <!-- Configure the Project tab -->
+      <tab id="project">
+        <display-name-resource>
+          assetManager.tab.project
+        </display-name-resource>
+        <page>
+          /project/projectTab.jsp
+        </page>
+        <operations>
+          <!-- Disallow addToProject and allow removeFromProject in the project tab -->
+          <operation combine="remove">addToProject</operation>
+          <operation>removeFromProject</operation>
+        </operations>
+      </tab>
+    </tabs>
+
+    <!-- Use read/write view mappings -->
+    <view-mappings>
+      <view-mapping mode="AssetManager.edit" combine="replace">
+        <item-mapping>
+          <item-type>*</item-type>
+          <item-mapping-name>AssetManager</item-mapping-name>
+        </item-mapping>
+      </view-mapping>
+    </view-mappings>
+
+  </task>
+
+</task-configuration>
+
+<!-- @version $Id: //product/DPS-UI/version/10.2/Versioned/src/config/atg/web/assetmanager/configuration/taskConfiguration.xml#1 $$Change: 788278 $-->

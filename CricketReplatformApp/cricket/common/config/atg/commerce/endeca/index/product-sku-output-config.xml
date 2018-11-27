@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<item item-descriptor-name="product">
+	<properties>
+		<property name="displayName" filter="unique" type="string" text-searchable="true" is-dimension="true" multiselect-type="multi-or"/>
+		<property name="keyFeatures" type="string" is-dimension="true" text-searchable="true" multiselect-type="multi-or"/>
+		<property name="type" filter="unique" type="string" text-searchable="true" is-dimension="true" multiselect-type="multi-or"/>
+		<property name="phoneStyle" type="string" is-dimension="true" subtype="phone-product" text-searchable="true" multiselect-type="multi-or"/>
+		<property name="os" type="string" is-dimension="true" subtype="phone-product" text-searchable="true" multiselect-type="multi-or"/>
+		<property name="isOOFPhone" type="boolean" is-dimension="false" subtype="phone-product" text-searchable="false" multiselect-type="multi-or"/>
+		<property name="planType" filter="unique" type="string" subtype="plan-product" text-searchable="true" is-dimension="false" multiselect-type="multi-or" output-name="plan.type"/>
+		<property name="$repositoryId" is-dimension="false" type="string" text-searchable="true"/>
+		<property name="accessoryType" multiselect-type="multi-or" type="string" is-dimension="true" subtype="accessory-product" text-searchable="true"/>
+		<property xml-combine="remove" name="priceListPair" is-dimension="true" type="string" property-accessor="/atg/commerce/endeca/index/accessor/PriceListPairAccessor" output-name="product.priceListPair" is-non-repository-property="true"/>
+		<property multiselect-type="multi-or" subtype="phone-product" name="calculatedFeatures" is-dimension="true" type="string" property-accessor="/com/cricket/commerce/endeca/index/accessor/SelectableFeaturesAccessor" output-name="product.calculatedFeatures" is-non-repository-property="true"/>
+		<property text-searchable="true" subtype="phone-product" name="seoString" type="string" property-accessor="/com/cricket/commerce/endeca/index/accessor/SeoStringAccessor" output-name="product.seoString" is-non-repository-property="true"/>
+		<property multiselect-type="multi-or" name="finalPrice" is-dimension="true" type="string" property-accessor="/com/cricket/commerce/endeca/index/accessor/AppliedPromotionPriceAccessor" output-name="product.finalPrice" is-non-repository-property="true"/>
+		<property multiselect-type="multi-or" name="marketType" is-dimension="true" type="string" property-accessor="/com/cricket/commerce/endeca/index/accessor/MarketTypeAccessor" output-name="product.marketType" is-non-repository-property="true"/>
+	</properties>
+	<item is-multi="true" property-name="markets">
+		<properties>
+			<property name="$itemDescriptor.itemDescriptorName" suppress="true"/>
+      		<property name="$repository.repositoryName" suppress="true"/>
+      		<property name="$repositoryId" type="string"/>
+			<property multiselect-type="multi-or" name="marketCode" is-dimension="true" filter="unique" type="string" output-name="market.code" text-searchable="true"/>
+		</properties>
+	</item>
+	<item is-multi="false" property-name="manufacturer">
+	    <properties>
+			<property name="displayName" is-dimension="true" type="string" text-searchable="true" multiselect-type="multi-or"/>
+		</properties>
+  	</item>
+  	<item is-multi="false" property-name="fullImage">
+	    <properties>
+			<property name="url" type="string" text-searchable="true" filter="unique"/>
+		</properties>
+  	</item>
+  	<item is-multi="true" property-name="childSKUs">
+  		<properties>
+  			<property xml-combine="remove" multiselect-type="multi-or" is-dimension="true" name="price" type="float" property-accessor="/atg/commerce/endeca/index/accessor/ActivePriceAccessor" output-name="sku.activePrice" is-non-repository-property="true"/>      
+  			<property name="listPrice" type="float" is-dimension="true" text-searchable="true" multiselect-type="multi-or" output-name="sku.listPrice"/>
+  		</properties>
+  	</item>
+  	<item is-multi="true" property-name="compatiblePlans" subtype="phone-product">
+  		<item is-multi="true" property-name="planGroups">
+  			<item is-multi="true" property-name="groupPlans">
+  				<properties>
+		  			<property is-dimension="true" multiselect-type="multi-or" filter="unique" name="id" type="string" output-name="phone.compatiblePlan" text-searchable="true"/>
+		  			<property is-dimension="true" multiselect-type="multi-or" filter="unique" name="displayName" type="string" output-name="phone.planDisplayName" text-searchable="true"/>
+		  			<property is-dimension="true" multiselect-type="multi-or" filter="unique" name="description" type="string" output-name="phone.planDescription" text-searchable="true"/>   
+		  		</properties>
+  			</item>
+  		</item>
+  	</item>
+  	<item is-multi="true" property-name="planGroups" subtype="plan-product">
+  		<item is-multi="true" property-name="groupCompatiblePhones">
+  			<properties>
+	  			<property is-dimension="true" multiselect-type="multi-or" filter="unique" name="id" type="string" output-name="plan.compatiblePhone" text-searchable="true"/>
+	  			<property is-dimension="true" multiselect-type="multi-or" filter="unique" name="displayName" type="string" output-name="plan.phoneDisplayName" text-searchable="true"/>
+	  			<property is-dimension="true" multiselect-type="multi-or" filter="unique" name="description" type="string" output-name="plan.phoneDescription" text-searchable="true"/> 
+	  		</properties>
+  		</item>
+  	</item>
+</item>

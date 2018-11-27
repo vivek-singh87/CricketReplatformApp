@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="data" default="importxmldata" basedir=".">
+
+	<property name="global.dir" value="." />
+	<property environment="env" />
+	<taskdef name="foreach" classname="net.sf.antcontrib.logic.ForEach" classpath="${global.dir}/../lib/ant-contrib.jar" />
+	<taskdef name="if" classname="ise.antelope.tasks.IfTask" classpath="${global.dir}/../lib/atg-ant.jar" />
+
+	<target name="startsqlrepository" description="Calls ATG startSQLRepository for import">
+    <echo message="Going to call startsqlrepository with args :" />
+    <echo message="server.for.import : ${server.for.import}" />
+    <echo message="module.for.import : ${module.for.import}" />
+    <echo message="store.for.import : ${store.for.ca.import}" />
+    <echo message="Repository : ${import.repository}" />
+    <echo message="Import data file : ${import.data.file}" />
+
+    <exec executable="${atg.startsqlrepository}"
+      os="Windows 2000,Windows NT,Windows XP" failonerror="yes">
+      <arg value="-s" />
+      <arg value="${server.for.import}" />
+      <arg value="-m" />
+      <arg value="${module.for.import}" />
+      <arg value="-database" />
+      <arg value="oracle" />
+      <arg value="-repository" />
+      <arg value="${import.repository}" />
+      <arg value="-import" />
+      <arg value="${import.data.file}" />
+    </exec>
+    <exec executable="${atg.startsqlrepository.sh}"
+      os="SunOS,Linux,Mac OS X" failonerror="yes">
+      <arg value="-s" />
+      <arg value="${server.for.import}" />
+      <arg value="-m" />
+      <arg value="${module.for.import}" />
+      <arg value="-database" />
+      <arg value="oracle" />
+      <arg value="-repository" />
+      <arg value="${import.repository}" />
+      <arg value="-import" />
+      <arg value="${import.data.file}" />
+    </exec>
+  </target>
+
+  <target name="importxmldata" description="Uses startSQLRepository to import data to Store.">
+    <echo message="Importing product catalog with Args : ${atg.imp.catalog.arg}" />
+    <ant target="startsqlrepository">
+      <property name="import.data.file" value="${data.catalog.file}" />
+      <property name="import.repository" value="/atg/commerce/catalog/ProductCatalog" />
+    </ant>
+    <ant target="startsqlrepository">
+      <property name="import.data.file" value="${data.price.file}" />
+      <property name="import.repository" value="/atg/commerce/pricing/priceLists/PriceLists" />
+    </ant>
+    <ant target="startsqlrepository">
+      <property name="import.data.file" value="${data.storecontent.file}" />
+      <property name="import.repository" value="/synchronoss/store/StoreContentRepository" />
+    </ant>
+    <ant target="startsqlrepository">
+      <property name="import.data.file" value="${data.claimable.file}" />
+      <property name="import.repository" value="/atg/commerce/claimable/ClaimableRepository" />
+    </ant>  	
+    <ant target="startsqlrepository">
+      <property name="import.data.file" value="${data.storeconfig.file}" />
+      <property name="import.repository" value="/synchronoss/store/StoreConfigurationRepository" />
+    </ant>
+	<ant target="startsqlrepository">
+      <property name="import.data.file" value="${data.helpfulhints.file}" />
+      <property name="import.repository" value="/synchronoss/content/HelpfulHintsRepository" />
+    </ant>
+  </target>
+
+	
+  <target name="startsqlrepositoryexp" description="Calls ATG startSQLRepository for export">
+    <echo message="Going to call startsqlrepository with args :" />
+    <echo message="server.for.export : ${server.for.export}" />
+    <echo message="module.for.export : ${module.for.export}" />
+    <echo message="store.for.export : ${store.ca.export}" />
+    <echo message="Repository : ${export.repository}" />
+    <echo message="Import data file : ${export.data.file}" />
+
+    <exec executable="${atg.startsqlrepository}"
+      os="Windows 2000,Windows NT,Windows XP" failonerror="yes">
+      <arg value="-s" />
+      <arg value="${server.for.export}" />
+      <arg value="-m" />
+      <arg value="${module.for.export}" />
+    	<arg value="-skipReferences" />
+      <arg value="-database" />
+      <arg value="oracle" />
+      <arg value="-repository" />
+      <arg value="${export.repository}" />
+      <arg value="-export" />
+      <arg value="all" />
+      <arg value="${export.data.file}" />
+    </exec>
+    <exec executable="${atg.startsqlrepository.sh}"
+      os="SunOS,Linux,Mac OS X" failonerror="yes">
+      <arg value="-s" />
+      <arg value="${server.for.export}" />
+      <arg value="-m" />
+      <arg value="${module.for.export}" />
+    	<arg value="-skipReferences" />
+      <arg value="-database" />
+      <arg value="oracle" />
+      <arg value="-repository" />
+      <arg value="${export.repository}" />
+      <arg value="-export" />
+      <arg value="all" />
+      <arg value="${export.data.file}" />
+    </exec>
+  </target>
+	
+  <target name="startsqlrepositoryexp-user" description="Calls ATG startSQLRepository for export">
+    <echo message="Going to call startsqlrepository with args :" />
+    <echo message="server.for.export : ${server.for.export}" />
+    <echo message="module.for.export : ${module.for.export}" />
+    <echo message="store.for.export : ${store.ca.export}" />
+    <echo message="Repository : ${export.repository}" />
+    <echo message="Export data file : ${export.data.file}" />
+
+    <exec executable="${atg.startsqlrepository}"
+      os="Windows 2000,Windows NT,Windows XP" failonerror="yes">
+      <arg value="-s" />
+      <arg value="${server.for.export}" />
+      <arg value="-m" />
+      <arg value="${module.for.export}" />
+    	<arg value="-skipReferences" />
+      <arg value="-database" />
+      <arg value="oracle" />
+      <arg value="-repository" />
+      <arg value="${export.repository}" />
+      <arg value="-export" />
+      <arg value="user" />
+      <arg value="${export.data.file}" />
+    </exec>
+    <exec executable="${atg.startsqlrepository.sh}"
+      os="SunOS,Linux,Mac OS X" failonerror="yes">
+      <arg value="-s" />
+      <arg value="${server.for.export}" />
+      <arg value="-m" />
+      <arg value="${module.for.export}" />
+    	<arg value="-skipReferences" />
+      <arg value="-database" />
+      <arg value="oracle" />
+      <arg value="-repository" />
+      <arg value="${export.repository}" />
+      <arg value="-export" />
+      <arg value="user,role,roleFolder" />
+      <arg value="${export.data.file}" />
+    </exec>
+  </target>
+	
+  <target name="startsqlrepositoryexp-causers" description="Calls ATG startSQLRepository for export">
+    <echo message="Going to call startsqlrepository with args :" />
+    <echo message="server.for.export : ${server.for.ca.export}" />
+    <echo message="module.for.export : ${module.for.ca.export}" />
+    <echo message="store.for.export : ${store.ca.export}" />
+    <echo message="Repository : ${export.repository}" />
+    <echo message="Export data file : ${export.data.file}" />
+
+    <exec executable="${atg.startsqlrepository}"
+      os="Windows 2000,Windows NT,Windows XP" failonerror="yes">
+      <arg value="-s" />
+      <arg value="${server.for.ca.export}" />
+      <arg value="-m" />
+      <arg value="${module.for.ca.export}" />
+      <arg value="-m" />
+      <arg value="DCS-UI" />
+      <arg value="-skipReferences" />
+      <arg value="-database" />
+      <arg value="oracle" />
+      <arg value="-repository" />
+      <arg value="${export.repository}" />
+      <arg value="-export" />
+      <arg value="user" />
+      <arg value="${export.data.file}" />
+    </exec>
+    <exec executable="${atg.startsqlrepository.sh}"
+      os="SunOS,Linux,Mac OS X" failonerror="yes">
+      <arg value="-s" />
+      <arg value="${server.for.ca.export}" />
+      <arg value="-m" />
+      <arg value="${module.for.ca.export}" />
+      <arg value="-m" />
+      <arg value="DCS-UI" />
+      <arg value="-skipReferences" />
+      <arg value="-database" />
+      <arg value="oracle" />
+      <arg value="-repository" />
+      <arg value="${export.repository}" />
+      <arg value="-export" />
+      <arg value="all" />
+      <arg value="${export.data.file}" />
+    </exec>
+  </target>	
+
+	<target name="startsqlrepositoryexp-prv" description="Calls ATG startSQLRepository for export preview">
+    <echo message="Going to call startsqlrepository-stage with args :" />
+    <echo message="server.for.prv.export : ${server.for.prv.export}" />
+    <echo message="module.for.prv.export : ${module.for.prv.export}" />
+    <echo message="store.for.prv.export : ${store.for.prv.export}" />
+    <echo message="Repository : ${export.repository}" />
+    <echo message="Export data file : ${export.data.file}" />
+
+    <exec executable="${atg.startsqlrepository}"
+      os="Windows 2000,Windows NT,Windows XP" failonerror="yes">
+      <arg value="-s" />
+      <arg value="${server.for.prv.export}" />
+      <arg value="-m" />
+      <arg value="${module.for.prv.export}" />
+    	<arg value="-skipReferences" />
+      <arg value="-database" />
+      <arg value="oracle" />
+      <arg value="-repository" />
+      <arg value="${export.repository}" />
+      <arg value="-export" />
+      <arg value="all" />
+      <arg value="${export.data.file}" />
+    </exec>
+    <exec executable="${atg.startsqlrepository.sh}"
+      os="SunOS,Linux,Mac OS X" failonerror="yes">
+      <arg value="-s" />
+      <arg value="${server.for.prv.export}" />
+      <arg value="-m" />
+      <arg value="${module.for.prv.export}" />
+    	<arg value="-skipReferences" />
+      <arg value="-database" />
+      <arg value="oracle" />
+      <arg value="-repository" />
+      <arg value="${export.repository}" />
+      <arg value="-export" />
+      <arg value="all" />
+      <arg value="${export.data.file}" />
+    </exec>
+  </target>	
+	
+	<target name="exportxmldata" description="Runs a DDL against a sql schema and host">
+	    <ant target="startsqlrepositoryexp">
+	      <property name="export.data.file" value="${data.exp.catalog.file}" />
+	      <property name="export.repository" value="/atg/commerce/catalog/ProductCatalog" />
+	    </ant>
+	    <ant target="startsqlrepositoryexp">
+	      <property name="export.data.file" value="${data.exp.price.file}" />
+	      <property name="export.repository" value="/atg/commerce/pricing/priceLists/PriceLists" />
+	    </ant>
+		<ant target="startsqlrepositoryexp">
+	      <property name="export.data.file" value="${data.exp.claimable.file}" />
+	      <property name="export.repository" value="/atg/commerce/claimable/ClaimableRepository" />
+	    </ant>
+		<ant target="startsqlrepositoryexp-causers">
+	      <property name="export.data.file" value="${data.exp.ca-users.file}" />
+	      <property name="export.repository" value="/atg/userprofiling/InternalProfileRepository" />
+	    </ant>
+		<ant target="startsqlrepositoryexp-user">
+	      <property name="export.data.file" value="${data.exp.profile-users.file}" />
+	      <property name="export.repository" value="/atg/userprofiling/ProfileAdapterRepository" />
+	    </ant>
+      	<ant target="startsqlrepositoryexp">
+  		      <property name="export.data.file" value="${data.exp.storetext.file}" />
+  		      <property name="export.repository" value="/atg/store/stores/SecureStoreTextRepository" />
+      	</ant>
+		 <ant target="startsqlrepositoryexp">
+		      <property name="export.data.file" value="${data.exp.seorepository.file}" />
+		      <property name="export.repository" value="/atg/seo/SecureSEORepository" />
+		</ant>
+		<ant target="startsqlrepositoryexp">
+		      <property name="export.data.file" value="${data.exp.locationrepository.file}" />
+		      <property name="export.repository" value="/atg/commerce/locations/SecureLocationRepository" />
+		</ant>
+		<ant target="startsqlrepositoryexp">
+		      <property name="export.data.file" value="${data.exp.siterepository.file}" />
+		      <property name="export.repository" value="/atg/multisite/SecureSiteRepository" />
+		</ant>
+		<ant target="startsqlrepositoryexp">
+		      <property name="export.data.file" value="${data.exp.personalizationrepository.file}" />
+		      <property name="export.repository" value="/atg/userprofiling/PersonalizationRepository" />
+		</ant>
+
+					
+					
+  		      
+	      	
+		<antcall target="-fixexportedxmls" />
+	</target>
+
+	<target name="exportxmldata-prv" description="Runs a DDL against a sql schema and host">
+	    <ant target="startsqlrepositoryexp-prv">
+	      <property name="export.data.file" value="${data.exp.prv.catalog.file}" />
+	      <property name="export.repository" value="/atg/commerce/catalog/ProductCatalog" />
+	    </ant>
+	    <ant target="startsqlrepositoryexp-prv">
+	      <property name="export.data.file" value="${data.exp.prv.price.file}" />
+	      <property name="export.repository" value="/atg/commerce/pricing/priceLists/PriceLists" />
+	    </ant>
+		<ant target="startsqlrepositoryexp-prv">
+	      <property name="export.data.file" value="${data.exp.prv.storecontent.file}" />
+	      <property name="export.repository" value="/synchronoss/store/StoreContentRepository" />
+	    </ant>
+		<ant target="startsqlrepositorypub">
+	      <property name="import.data.file" value="${data.exp.prv.claimable.file}" />
+	      <property name="import.repository" value="/atg/commerce/claimable/ClaimableRepository" />
+	    </ant>		
+	    <ant target="startsqlrepositoryexp-prv">
+	      <property name="export.data.file" value="${data.exp.prv.storeconfig.file}" />
+	      <property name="export.repository" value="/synchronoss/store/StoreConfigurationRepository" />
+	    </ant>
+	    <ant target="startsqlrepositoryexp-prv">
+	      <property name="export.data.file" value="${data.exp.prv.helpfulhints.file}" />
+	      <property name="export.repository" value="/synchronoss/content/HelpfulHintsRepository" />
+	    </ant>
+		<antcall target="-fixexportedxmls" />
+	</target>
+	
+	<target name="startsqlrepositorypub" description="Calls ATG startSQLRepository for import">
+		<echo message="Going to call startsqlrepository with args :" />
+		<echo message="server.for.ca.import : ${server.for.ca.import}" />
+		<echo message="module.for.ca.import : ${module.for.ca.import}" />
+		<echo message="store.for.ca.import : ${store.for.ca.import}" />
+		<echo message="import.workspace.name : ${import.workspace.name}" />
+		<echo message="Repository : ${import.repository}" />
+		<echo message="Import data file : ${import.data.file}" />
+
+		<exec executable="${atg.startsqlrepository}"
+			os="Windows 2000,Windows NT,Windows XP" failonerror="yes">
+			<arg value="-s" />
+			<arg value="${server.for.ca.import}" />
+			<arg value="-m" />
+			<arg value="${module.for.ca.import}" />
+			<arg value="-m" />
+			<arg value="DCS-UI" />
+			<arg value="-database" />
+			<arg value="oracle" />
+			<arg value="-workspace" />
+			<arg value="${import.workspace.name}" />
+			<arg value="-comment" />
+			<arg value="${import.workspace.name}" />
+			<arg value="-repository" />
+			<arg value="${import.repository}" />
+			<arg value="-import" />
+			<arg value="${import.data.file}" />
+		</exec>
+    <exec executable="${atg.startsqlrepository.sh}"
+      os="SunOS,Linux,Mac OS X" failonerror="yes">
+      <arg value="-s" />
+      <arg value="${server.for.ca.import}" />
+      <arg value="-m" />
+      <arg value="${module.for.ca.import}" />
+      <arg value="-m" />
+      <arg value="DCS-UI" />
+      <arg value="-database" />
+      <arg value="oracle" />
+      <arg value="-workspace" />
+      <arg value="${import.workspace.name}" />
+      <arg value="-comment" />
+      <arg value="${import.workspace.name}" />
+      <arg value="-repository" />
+      <arg value="${import.repository}" />
+      <arg value="-import" />
+      <arg value="${import.data.file}" />
+    </exec>		
+	</target>
+	
+	<target name="startsqlrepositorypubnoworkspace" description="Calls ATG startSQLRepository for import without workspae option">
+		<echo message="Going to call startsqlrepository with args :" />
+		<echo message="server.for.ca.import : ${server.for.ca.import}" />
+		<echo message="module.for.ca.import : ${module.for.ca.import}" />
+		<echo message="store.for.ca.import : ${store.for.ca.import}" />
+		<echo message="Repository : ${import.repository}" />
+		<echo message="Import data file : ${import.data.file}" />
+
+    <exec executable="${atg.startsqlrepository}"
+      os="Windows 2000,Windows NT,Windows XP" failonerror="yes">
+      <arg value="-s" />
+      <arg value="${server.for.ca.import}" />
+      <arg value="-m" />
+      <arg value="${module.for.ca.import}" />
+    	<arg value="-m" />
+      <arg value="DCS-UI" />    	
+      <arg value="-database" />
+      <arg value="oracle" />
+      <arg value="-repository" />
+      <arg value="${import.repository}" />
+      <arg value="-import" />
+      <arg value="${import.data.file}" />
+    </exec>
+    <exec executable="${atg.startsqlrepository.sh}"
+      os="SunOS,Linux,Mac OS X" failonerror="yes">
+      <arg value="-s" />
+      <arg value="${server.for.ca.import}" />
+      <arg value="-m" />
+      <arg value="${module.for.ca.import}" />
+      <arg value="-m" />
+      <arg value="DCS-UI" />    	
+      <arg value="-database" />
+      <arg value="oracle" />
+      <arg value="-repository" />
+      <arg value="${import.repository}" />
+      <arg value="-import" />
+      <arg value="${import.data.file}" />
+    </exec>
+	</target>
+
+	<target name="importpubxmldata" description="uses startSQLRepository to import data">
+  
+		<ant target="startsqlrepositorypubnoworkspace">
+		<property name="import.data.file" value="${data.disable.rte.file}" />
+		<property name="import.repository" value="/atg/web/viewmapping/ViewMappingRepository" />
+	</ant>
+	
+    <ant target="startsqlrepositorypubnoworkspace">
+		<property name="import.data.file" value="${data.ca-users.file}" />
+		<property name="import.repository" value="/atg/userprofiling/InternalProfileRepository" />
+	</ant>
+	<ant target="startsqlrepositorypubnoworkspace">
+		<property name="import.data.file" value="${data.ca-NOC-users.file}" />
+		<property name="import.repository" value="/atg/userprofiling/InternalProfileRepository" />
+	</ant>
+    <ant target="startsqlrepository">
+      <property name="import.data.file" value="${data.profile-users.file}" />
+      <property name="import.repository" value="/atg/userprofiling/ProfileAdapterRepository" />
+    </ant>
+	<ant target="startsqlrepositorypub">
+		<property name="import.data.file" value="${data.catalog.file}" />
+		<property name="import.repository" value="/atg/commerce/catalog/ProductCatalog" />
+		<property name="import.workspace.name" value="PR_ESHOP${import.checkin.tag}_01" />
+	</ant>
+	<ant target="startsqlrepositorypub">
+		<property name="import.data.file" value="${data.price.file}" />
+		<property name="import.repository" value="/atg/commerce/pricing/priceLists/PriceLists" />
+		<property name="import.workspace.name" value="PL_ESHOP${import.checkin.tag}_01" />
+	</ant>
+    <ant target="startsqlrepositorypub">
+      <property name="import.data.file" value="${data.storecontent.file}" />
+      <property name="import.repository" value="/synchronoss/store/StoreContentRepository" />
+      <property name="import.workspace.name" value="STORE_CONTENT${import.checkin.tag}_01" />
+    </ant>
+	<ant target="startsqlrepositorypub">
+      <property name="import.data.file" value="${data.claimable.file}" />
+      <property name="import.repository" value="/atg/commerce/claimable/ClaimableRepository" />
+      <property name="import.workspace.name" value="CLAIMABLE${import.checkin.tag}_01" />
+    </ant>		
+	<ant target="startsqlrepositorypub">
+	  <property name="import.data.file" value="${data.storeconfig.file}" />
+	  <property name="import.repository" value="/synchronoss/store/StoreConfigurationRepository" />
+	  <property name="import.workspace.name" value="STORE_CONFIG${import.checkin.tag}_01" />
+	</ant>
+    <ant target="startsqlrepositorypub">
+      <property name="import.data.file" value="${data.helpfulhints.file}" />
+      <property name="import.repository" value="/synchronoss/content/HelpfulHintsRepository" />
+      <property name="import.workspace.name" value="HELPFUL_HINT${import.checkin.tag}_01" />
+    </ant>		
+	</target>
+
+	<target name="importfileassets" description="imports file assets as project">
+	  <input message="enter hostname for BCC instance " defaultvalue="localhost" addproperty="bcc.host" />
+	  <input message="enter RMI port for BCC instance " defaultvalue="18060" addproperty="bcc.rmiport" />
+	  <input message="enter source parent directory path for file assets" defaultvalue="?" addproperty="bcc.fileasset.path" />
+	  <input message="enter password for admin user" defaultvalue="admin" addproperty="bcc.adminuse.pass" />
+	  <available file="${bcc.fileasset.path}" property="bcc.fileasset.path.present" type="dir" />
+	  <if name="bcc.fileasset.path.present" value="true">
+	  	<ant target="-importfileassetsasproject" />
+	  	<else>
+	  	  <echo message="source directory ${bcc.fileasset.path} is not accessible" />
+	  	</else>
+	  </if>
+	</target>
+
+	<target name="-importfileassetsasproject" description="imports file assets as project" depends="-createmanifest">
+	  <echo message="Importing file assets using manifest file ${twc.rl.manifest.file.path} on host ${bcc.host}:${bcc.rmiport}" />
+	  <input message="Make sure bcc instance is running on ${bcc.host}:${bcc.rmiport}. press return to continue" />
+      <exec executable="${atg.rlclient}"
+	        os="Windows 2000,Windows NT,Windows XP" failonerror="yes">
+      	<arg value="-m" />
+      	<arg value="${twc.rl.manifest.file.path}" />
+      	<arg value="-h" />
+      	<arg value="${bcc.host}" />
+      	<arg value="-r" />
+      	<arg value="${bcc.rmiport}" />
+      	<arg value="-auth" />
+      	<arg value="admin:${bcc.adminuse.pass}" />
+      </exec>
+      <exec executable="${atg.rlclient.sh}"
+	        os="SunOS,Linux,Mac OS X" failonerror="yes">
+      	<arg value="-m" />
+      	<arg value="${twc.rl.manifest.file.path}" />
+      	<arg value="-h" />
+      	<arg value="${bcc.host}" />
+      	<arg value="-r" />
+      	<arg value="${bcc.rmiport}" />
+      	<arg value="-auth" />
+      	<arg value="admin:${bcc.adminuse.pass}" />
+      </exec>
+	</target>
+
+	<target name="-createmanifest" depends="-syncassets">
+	  <echo message="&lt;manifest&gt;${line.separator}" file="${twc.rl.manifest.file.path}" />
+		<foreach param="aDir" target="-traversedirs">
+		  <path>
+		  	<dirset dir="${twc.rl.source.dir.path}" />
+		  </path>
+		</foreach>
+		<foreach param="aFile" target="-traversefiles">
+		  <path>
+		  	<fileset dir="${twc.rl.source.dir.path}" />
+		  </path>
+		</foreach>
+	  <echo message="&lt;/manifest&gt;" file="${twc.rl.manifest.file.path}" append="true" />
+	</target>
+
+	<target name="-syncassets">
+	  <sync todir="${twc.rl.source.dir.path}">
+	  	<fileset dir="${bcc.fileasset.path}" />
+	  </sync>		
+	</target>
+	<target name="-traversedirs">
+	  <echo message="&lt;add&gt;${aDir}&lt;/add&gt;${line.separator}" file="${twc.rl.manifest.file.path}" append="true" />
+	</target>
+	<target name="-traversefiles">
+	  <echo message="&lt;add&gt;${aFile}&lt;/add&gt;${line.separator}" file="${twc.rl.manifest.file.path}" append="true" />
+	</target>
+	
+	<target name="importbackupuserdata" description="Uses startSQLRepository to import data to Store.">
+		<ant target="startsqlrepositorypubnoworkspace">
+		  <property name="import.data.file" value="${tmp.ca-users.file}" />
+		  <property name="import.repository" value="/atg/userprofiling/InternalProfileRepository" />
+		</ant>
+		<ant target="startsqlrepository">
+	      <property name="import.data.file" value="${tmp.profile-users.file}" />
+	      <property name="import.repository" value="/atg/userprofiling/ProfileAdapterRepository" />
+		</ant>
+	</target>
+	
+	<target name="exportbackupuserdata" description="Runs a DDL against a sql schema and host">
+		<delete file="${tmp.ca-users.file}" />
+		<delete file="${tmp.profile-users.file}" />
+		<ant target="startsqlrepositoryexp-causers">
+	      <property name="export.data.file" value="${tmp.ca-users.file}" />
+	      <property name="export.repository" value="/atg/userprofiling/InternalProfileRepository" />
+	    </ant>
+		<ant target="startsqlrepositoryexp-user">
+	      <property name="export.data.file" value="${tmp.profile-users.file}" />
+	      <property name="export.repository" value="/atg/userprofiling/ProfileAdapterRepository" />
+	    </ant>
+	</target>
+</project>

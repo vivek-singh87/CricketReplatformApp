@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+ATG-Config-Path: config/
+ATG-Required: cricket.webservices Store.Endeca.Assembler DCS.AbandonedOrderServices Store.EStore
+ATG-Class-Path: lib/classes.jar lib/GeoIPJava-1.2.9.jar lib/opencsv-2.3.jar lib/inventoryFeed.jar lib/mycricketESP.jar lib/activation-1.1.jar lib/wsdl4j-1.6.2.jar lib/axis-ant.jar lib/axis.jar lib/jaxrpc.jar lib/commons-discovery-0.2.jar lib/org.apache.commons.logging_1.0.4.v201101211617.jar lib/iaik_jce_full.jar lib/commons-codec-1.5.jar lib/com.jcraft.jsch_0.1.31.jar lib/pherialize-1.2.1.jar lib/local_policy.jar lib/US_export_policy.jar lib/pjl-comp-filter-1.8.1.jar lib/cachefilter-2.0.jar
+ATG-Client-Class-Path: lib/classes.jar 
+Name: lib/classes.jar
+ATG-Client-Update-File: true
+ATG-Client-Update-Version: 4.0

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+ <globalConfiguration>
+  <parameter name="adminPassword" value="admin"/>
+  <parameter name="enableNamespacePrefixOptimization" value="false"/>
+  <parameter name="dotNetSoapEncFix" value="true"/>
+  <parameter name="disablePrettyXML" value="true"/>
+  <parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <parameter name="sendXsiTypes" value="true"/>
+  <parameter name="sendMultiRefs" value="true"/>
+  <parameter name="sendXMLDeclaration" value="true"/>
+  <requestFlow>
+   <handler type="java:org.apache.axis.handlers.JWSHandler">
+    <parameter name="scope" value="session"/>
+   </handler>
+   <handler type="java:org.apache.axis.handlers.JWSHandler">
+    <parameter name="scope" value="request"/>
+    <parameter name="extension" value=".jwr"/>
+   </handler>
+  </requestFlow>
+ </globalConfiguration>
+ <handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper"/>
+ <handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
+ <handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+ <service name="InquireOrderDetailsSOAP" provider="java:RPC" style="document" use="literal">
+  <parameter name="allowedMethods" value="*"/>
+  <parameter name="typeMappingVersion" value="1.2"/>
+  <parameter name="wsdlPortType" value="InquireOrderDetails"/>
+  <parameter name="className" value="com.mycricket.webservices.InquireOrderDetails._interface.InquireOrderDetailsSOAPSkeleton"/>
+  <parameter name="wsdlServicePort" value="InquireOrderDetailsSOAP"/>
+  <parameter name="wsdlTargetNamespace" value="http://mycricket.com/webservices/InquireOrderDetails/interface"/>
+  <parameter name="wsdlServiceElement" value="InquireOrderDetails"/>
+  <parameter name="schemaUnqualified" value="http://mycricket.com/webservices/InquireOrderDetails/types"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns1:Items" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.mycricket.webservices.InquireOrderDetails.types.Items" xmlns:ns1="http://mycricket.com/webservices/InquireOrderDetails/types"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns2:Packages" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.mycricket.webservices.InquireOrderDetails.types.Packages" xmlns:ns2="http://mycricket.com/webservices/InquireOrderDetails/types"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns3:TaxSummary" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.mycricket.webservices.InquireOrderDetails.types.TaxSummary" xmlns:ns3="http://mycricket.com/webservices/InquireOrderDetails/types"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns4:InquireOrderDetailsResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.mycricket.webservices.InquireOrderDetails.types.InquireOrderDetailsResponse" xmlns:ns4="http://mycricket.com/webservices/InquireOrderDetails/types"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns5:TelecomTaxImposition" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.mycricket.webservices.InquireOrderDetails.types.TelecomTaxImposition" xmlns:ns5="http://mycricket.com/webservices/InquireOrderDetails/types"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns6:ResponseInfo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.mycricket.webservices.InquireOrderDetails.types.ResponseInfo" xmlns:ns6="http://mycricket.com/webservices/InquireOrderDetails/types"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns7:Address" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.mycricket.webservices.InquireOrderDetails.types.Address" xmlns:ns7="http://mycricket.com/webservices/InquireOrderDetails/types"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns8:&gt;InquireOrderDetailsResponseInfo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.mycricket.webservices.InquireOrderDetails.types.InquireOrderDetailsResponseInfo" xmlns:ns8="http://mycricket.com/webservices/InquireOrderDetails/types"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns9:BOTaxImposition" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.mycricket.webservices.InquireOrderDetails.types.BOTaxImposition" xmlns:ns9="http://mycricket.com/webservices/InquireOrderDetails/types"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns10:ShippingInfo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.mycricket.webservices.InquireOrderDetails.types.ShippingInfo" xmlns:ns10="http://mycricket.com/webservices/InquireOrderDetails/types"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns11:&gt;InquireOrderDetailsRequest" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.mycricket.webservices.InquireOrderDetails.types.InquireOrderDetailsRequest" xmlns:ns11="http://mycricket.com/webservices/InquireOrderDetails/types"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns12:PersonalInfo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.mycricket.webservices.InquireOrderDetails.types.PersonalInfo" xmlns:ns12="http://mycricket.com/webservices/InquireOrderDetails/types"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns13:Attribute" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.mycricket.webservices.InquireOrderDetails.types.Attribute" xmlns:ns13="http://mycricket.com/webservices/InquireOrderDetails/types"/>
+  <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns14:Discount" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.mycricket.webservices.InquireOrderDetails.types.Discount" xmlns:ns14="http://mycricket.com/webservices/InquireOrderDetails/types"/>
+  <arrayMapping innerType="xsd:string" languageSpecificType="java:java.lang.String[]" qname="ns15:CricketPhoneNumbers" xmlns:ns15="http://mycricket.com/webservices/InquireOrderDetails/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <arrayMapping innerType="ns16:Packages" languageSpecificType="java:com.mycricket.webservices.InquireOrderDetails.types.Packages[]" qname="ns16:OrderSummary" xmlns:ns16="http://mycricket.com/webservices/InquireOrderDetails/types"/>
+ </service>
+ <service name="AdminService" provider="java:MSG">
+  <parameter name="allowedMethods" value="AdminService"/>
+  <parameter name="enableRemoteAdmin" value="false"/>
+  <parameter name="className" value="org.apache.axis.utils.Admin"/>
+  <namespace>http://xml.apache.org/axis/wsdd/</namespace>
+ </service>
+ <service name="Version" provider="java:RPC">
+  <parameter name="allowedMethods" value="getVersion"/>
+  <parameter name="className" value="org.apache.axis.Version"/>
+ </service>
+ <transport name="http">
+  <requestFlow>
+   <handler type="URLMapper"/>
+   <handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler"/>
+  </requestFlow>
+  <parameter name="qs:list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <parameter name="qs:wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+  <parameter name="qs:method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+ </transport>
+ <transport name="local">
+  <responseFlow>
+   <handler type="LocalResponder"/>
+  </responseFlow>
+ </transport>
+</deployment>

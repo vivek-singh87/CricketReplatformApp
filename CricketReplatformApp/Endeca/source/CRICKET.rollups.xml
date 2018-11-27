@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2001, 2012, Oracle and/or its affiliates. All rights reserved.
+  ~ Oracle and Java are registered trademarks of Oracle and/or its
+  ~ affiliates. Other names may be trademarks of their respective owners.
+  ~ UNIX is a registered trademark of The Open Group.
+  ~
+  ~ This software and related documentation are provided under a license
+  ~ agreement containing restrictions on use and disclosure and are
+  ~ protected by intellectual property laws. Except as expressly permitted
+  ~ in your license agreement or allowed by law, you may not use, copy,
+  ~ reproduce, translate, broadcast, modify, license, transmit, distribute,
+  ~ exhibit, perform, publish, or display any part, in any form, or by any
+  ~ means. Reverse engineering, disassembly, or decompilation of this
+  ~ software, unless required by law for interoperability, is prohibited.
+  ~ The information contained herein is subject to change without notice
+  ~ and is not warranted to be error-free. If you find any errors, please
+  ~ report them to us in writing.
+  ~ U.S. GOVERNMENT END USERS: Oracle programs, including any operating
+  ~ system, integrated software, any programs installed on the hardware,
+  ~ and/or documentation, delivered to U.S. Government end users are
+  ~ "commercial computer software" pursuant to the applicable Federal
+  ~ Acquisition Regulation and agency-specific supplemental regulations.
+  ~ As such, use, duplication, disclosure, modification, and adaptation
+  ~ of the programs, including any operating system, integrated software,
+  ~ any programs installed on the hardware, and/or documentation, shall be
+  ~ subject to license terms and license restrictions applicable to the
+  ~ programs. No other rights are granted to the U.S. Government.
+  ~ This software or hardware is developed for general use in a variety
+  ~ of information management applications. It is not developed or
+  ~ intended for use in any inherently dangerous applications, including
+  ~ applications that may create a risk of personal injury. If you use
+  ~ this software or hardware in dangerous applications, then you shall
+  ~ be responsible to take all appropriate fail-safe, backup, redundancy,
+  ~ and other measures to ensure its safe use. Oracle Corporation and its
+  ~ affiliates disclaim any liability for any damages caused by use of this
+  ~ software or hardware in dangerous applications.
+  ~ This software or hardware and documentation may provide access to or
+  ~ information on content, products, and services from third parties.
+  ~ Oracle Corporation and its affiliates are not responsible for and
+  ~ expressly disclaim all warranties of any kind with respect to
+  ~ third-party content, products, and services. Oracle Corporation and
+  ~ its affiliates will not be responsible for any loss, costs, or damages
+  ~ incurred due to your access to or use of third-party content, products,
+  ~ or services.
+  -->
+<!DOCTYPE ROLLUPS SYSTEM "rollups.dtd">
+
+<ROLLUPS>
+  <ROLLUP NAME="allAncestors.repositoryId" />
+  <ROLLUP NAME="allAncestors.repositoryName" />
+  <ROLLUP NAME="clothing-sku.color" />
+  <ROLLUP NAME="clothing-sku.size" />
+  <ROLLUP NAME="furniture-sku.woodFinish" />
+  <ROLLUP NAME="market.code" />
+  <ROLLUP NAME="parentCategory.displayName" />
+  <ROLLUP NAME="phone.compatiblePlan" />
+  <ROLLUP NAME="phone.planDescription" />
+  <ROLLUP NAME="phone.planDisplayName" />
+  <ROLLUP NAME="plan.compatiblePhone" />
+  <ROLLUP NAME="plan.phoneDescription" />
+  <ROLLUP NAME="plan.phoneDisplayName" />
+  <ROLLUP NAME="plan.type" />
+  <ROLLUP NAME="product.accessoryType" />
+  <ROLLUP NAME="product.adminDisplayName" />
+  <ROLLUP NAME="product.averageCustomerRating" />
+  <ROLLUP NAME="product.baseUrl" />
+  <ROLLUP NAME="product.brand" />
+  <ROLLUP NAME="product.briefDescription" />
+  <ROLLUP NAME="product.calculatedFeatures" />
+  <ROLLUP NAME="product.catalogId" />
+  <ROLLUP NAME="product.compatiblePhones.repositoryId" />
+  <ROLLUP NAME="product.compatiblePhones.repositoryName" />
+  <ROLLUP NAME="product.compatiblePlans.repositoryId" />
+  <ROLLUP NAME="product.compatiblePlans.repositoryName" />
+  <ROLLUP NAME="product.creationDate" />
+  <ROLLUP NAME="product.dateAvailable" />
+  <ROLLUP NAME="product.daysAvailable" />
+  <ROLLUP NAME="product.description" />
+  <ROLLUP NAME="product.disallowAsRecommendation" />
+  <ROLLUP NAME="product.displayName" />
+  <ROLLUP NAME="product.endDate" />
+  <ROLLUP NAME="product.features.displayName" />
+  <ROLLUP NAME="product.features.repositoryId" />
+  <ROLLUP NAME="product.fullImage.repositoryId" />
+  <ROLLUP NAME="product.fullImage.repositoryName" />
+  <ROLLUP NAME="product.isOOFPhone" />
+  <ROLLUP NAME="product.keyFeatures" />
+  <ROLLUP NAME="product.keywords" />
+  <ROLLUP NAME="product.language" />
+  <ROLLUP NAME="product.largeImage.url" />
+  <ROLLUP NAME="product.longDescription" />
+  <ROLLUP NAME="product.manufacturer.description" />
+  <ROLLUP NAME="product.manufacturer.displayName" />
+  <ROLLUP NAME="product.manufacturer.long_description" />
+  <ROLLUP NAME="product.manufacturer.repositoryId" />
+  <ROLLUP NAME="product.manufacturer.repositoryName" />
+  <ROLLUP NAME="product.markets.repositoryId" />
+  <ROLLUP NAME="product.mediumImage.url" />
+  <ROLLUP NAME="product.nonreturnable" />
+  <ROLLUP NAME="product.os" />
+  <ROLLUP NAME="product.phoneStyle" />
+  <ROLLUP NAME="product.repositoryId" />
+  <ROLLUP NAME="product.repositoryName" />
+  <ROLLUP NAME="product.siteId" />
+  <ROLLUP NAME="product.startDate" />
+  <ROLLUP NAME="product.type" />
+  <ROLLUP NAME="product.url" />
+  <ROLLUP NAME="sku.bundleLinks.description" />
+  <ROLLUP NAME="sku.bundleLinks.displayName" />
+  <ROLLUP NAME="sku.bundleLinks.endDate" />
+  <ROLLUP NAME="sku.bundleLinks.item.repositoryId" />
+  <ROLLUP NAME="sku.bundleLinks.repositoryId" />
+  <ROLLUP NAME="sku.bundleLinks.startDate" />
+  <ROLLUP NAME="sku.configurableProperties.configurationOptions.description" />
+  <ROLLUP NAME="sku.configurableProperties.configurationOptions.displayName" />
+  <ROLLUP NAME="sku.configurableProperties.configurationOptions.price" />
+  <ROLLUP NAME="sku.configurableProperties.configurationOptions.product.repositoryId" />
+  <ROLLUP NAME="sku.configurableProperties.configurationOptions.sku.repositoryId" />
+  <ROLLUP NAME="sku.configurableProperties.description" />
+  <ROLLUP NAME="sku.configurableProperties.displayName" />
+  <ROLLUP NAME="sku.creationDate" />
+  <ROLLUP NAME="sku.description" />
+  <ROLLUP NAME="sku.displayName" />
+  <ROLLUP NAME="sku.endDate" />
+  <ROLLUP NAME="sku.listPrice" />
+  <ROLLUP NAME="sku.manufacturer_part_number" />
+  <ROLLUP NAME="sku.margin" />
+  <ROLLUP NAME="sku.onSaleText" />
+  <ROLLUP NAME="sku.quantity" />
+  <ROLLUP NAME="sku.repositoryId" />
+  <ROLLUP NAME="sku.salePrice" />
+  <ROLLUP NAME="sku.startDate" />
+  <ROLLUP NAME="sku.type" />
+  <ROLLUP NAME="sku.unit_of_measure" />
+  <ROLLUP NAME="sku.wholesalePrice" />
+  <ROLLUP NAME="product.category" />
+  <ROLLUP NAME="item.type" />
+</ROLLUPS>
+

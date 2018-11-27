@@ -1,0 +1,479 @@
+/** Phone Landing Page  - if you need an override class user .section-phones-listing **/
+/* Static Banner - hidden on mobile */
+.static-banner {
+  position: relative; 
+  width: 100%;
+  height: 300px;
+  background-position: 50% 50%;
+  background-size: auto auto;
+  background-repeat: no-repeat;
+  .content {
+    position: absolute;
+    width: 25%;
+    top: 52%;
+    left: 23%;
+    h1 {
+      color: #0a5641;
+      font-size: 2em;
+      margin-bottom: 0.2em;
+      span {color: #008752;}
+    }
+    p {
+      text-transform: uppercase;
+      font-family: "GothamMedium";
+      font-size: 0.9em;
+      line-height: inherit;
+    }
+  } /* /.content */
+  
+  /* iPad Overrides */
+  @include respond-min($tablet-screen) {
+    .content {
+      width: 35%;
+      top: 33%;
+      left: 15%;
+    }
+  }
+  
+  /* Desktop Overrides */
+  @include respond-min($medium-screen) {
+    .content {
+      left: 23%;
+      width: 27%;
+      top: 40%;
+      h1 {font-size: 2.3em;}
+      p {font-size: 0.9em;}
+    }
+  }
+
+} /* /.static-banner */
+
+/* Bottom CTA - No HTML, all images  */
+.static-banner.footer {
+  max-width: 960px;   
+  height: auto;
+  background-position: center top;
+  background-size: cover;
+  margin: 0 auto;
+  a {height: 100%;}
+  .spacer {padding-bottom: percentage(750/960);}
+
+  @include respond-min($small-screen) {
+    max-width: 1400px;
+    .spacer{padding-bottom: percentage(270/1400);}
+  }
+} 
+
+/* /.static-banner.footer */
+
+/* KM - TO DO - this could use some additional cleanup */
+#section-filters {
+	.top-button {margin-bottom: 20px;}
+  /* Mobile version */
+  .top-bar {
+    border-bottom: 1px solid #d6d6d6;
+    .top-bar-section .left {width: 100%;}
+    .top-bar-section ul li > a {
+      color: #008752;
+      text-transform: uppercase;
+      font-weight: bold;
+      background: #fff url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-arrow-green-circle-right.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 95% 50%;
+      &:after {
+        border-width: 0;
+        border-style: none;
+        border-color: transparent transparent transparent rgba(255, 255, 255, 0.0);
+      }
+    }
+  }
+  .dropdown {
+    background: #008752;
+    padding-bottom: 2.5em;
+    /* Back link */
+    li.title h5 a {
+      color: #c1d72e;
+      font-size: emCalc(18px);
+    }
+    form.custom .custom.checkbox.checked:before {
+      margin-top: 0;
+      color: green;
+    }
+    form {height: 100%;}
+    fieldset.current .label-wrapper{
+      display: block;
+      padding: 1em 0.8em;
+    }
+    fieldset {
+      border: 0;
+      padding: 0;
+      margin: 0;
+      .label-wrapper {display: none;}
+      legend {
+        color: #c1d72e;
+        text-transform: uppercase;
+        font-size: 0.8em;
+        border-bottom: 1px solid #48a983;
+        border-top: 1px solid #48a983;
+        width: 100%;
+        padding: 1em;
+      }
+      label {
+        color: #fff;
+        padding: 8px 0 2px 5px;
+        font-weight: normal;
+        font-size: 0.9em;
+        span.checkbox {
+          margin-right: 5px;
+        }
+      }
+    } /* /fieldset */
+    input.white-button {
+      border: 1px solid #77a999;
+      margin-top: 2em;
+    }
+  } /* /.dropdown */
+  
+  .top-bar.expanded {
+    max-height: auto !important;
+    height: auto !important;
+    overflow: visible;
+  }
+  
+  li.has-form {display: none;}
+  .filters {padding: 0;}
+  
+  /* Desktop Version */
+  @include respond-min($small-screen) {
+    .top-bar {
+      border: 1px solid #b2b2b2;
+      height: 55px;
+      line-height: 55px;
+      margin: 0 0 1em 0;
+      background-color: #efefef;
+    }
+    .top-bar-section {
+      ul {background: transparent;}
+      ul > .divider, ul > [role="separator"] {
+        height: 53px;
+        border-color: #b2b2b2;
+        border-width: thin 1px;
+        border-left: none;
+      }
+      li a:not(.button) {line-height: 53px;}
+    } /* /.top-bar-section */
+    
+    /* Green Filter Dropdown & Inside Contents */
+    nav.top-bar > section > ul > li.has-dropdown {
+      position: static;
+      /* Filter Hover Item */
+      a {
+        color: #008752;
+        text-transform: uppercase;
+        font-size: 0.9em;
+        background: #fff url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-arrow-green-circle.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 80% center;
+        padding: 0 21.6667px;
+        margin-right: 10px;
+      }
+      /* Triangle on Hover*/
+      &.hover a:after {
+        background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-green-arrow-up.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 50% 50%;
+        width: 17px;
+        height: 18px;
+        left: 55px;
+        top: 43px;
+      }
+      .dropdown {
+        -moz-box-shadow: inset 0 0 5px 5px #006d42;
+        -webkit-box-shadow: inset 0 0 5px 5px #006d42;
+        box-shadow: inset 0 0 5px 5px #006d42;
+        background: #008752;
+        top: 53px;
+        .row {
+          margin: 0;
+          fieldset {
+            margin: 1.25em 0;
+            .label-wrapper {display: block; padding: 0.5em 0;}
+          }
+          legend {
+            padding: 0 0.1875em;
+            border-top: none;
+            border-bottom: none;
+          }
+        } /* /.row */
+      } /* /.dropdown */
+    } /* /li.has-dropdown */
+    .left li.has-form {
+      display: block;
+      background-color: #efefef;
+      height: 53px;
+      padding: 1em;
+      width: 80%;
+      line-height: 1.3em;
+      label {
+        color: #008752;
+        text-transform: uppercase;
+        font-size: 0.9em;
+        font-weight: bold;
+      }
+      label, span.sort-label {
+        float: left; 
+        margin: 0 0.5em;
+      }
+      .custom.radio.checked:before {background-color: #008752;}
+    } /* .left li.has-form */
+  }/* Desktop Override  */
+
+} /* /#section-filters */ 
+
+
+/* Mobile Accordion for Filters + & - for active/inactive states */
+#section-filters {
+  #phone-filters-dropdown.mobile-accordion {
+    .mobile-trigger {
+      background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-white-accordion-inactive.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 95% 50%;
+    }
+    .current {
+      .mobile-trigger {
+        background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-white-accordion-active.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 95% 50%;
+      }
+    }
+  } /*  /#phone-filters-dropdown.mobile-accordion */
+} /* /#section-filters */
+
+/* Filter Bar */
+#section-filters .filter-bar {
+  display: none;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  a {
+    background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-red-circle-x.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 1px 50%;
+    float: left;
+    color: #e53924;
+    padding: 0.6em 1em 0.6em 1.6em;
+    text-transform: uppercase;
+    font-size: 0.8em;
+  }
+}
+
+/* Phone Compare Bar */
+#compare-bar {
+  visibility: hidden;
+  padding: 0;
+  height: 0;
+  p {
+    text-transform: uppercase;
+    float: left;
+    margin-right: 1em;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    font-size: 0.9em;
+  }
+  img {margin: 0 0.5em;}
+  .button {margin-bottom: 0;}
+  .clear {
+    color: #ea3d28;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    border-right: 1px solid #ddd;
+    padding: 1em;
+    margin-right: 1em;
+  }
+} /* /#compare-bar */
+
+/* We add a class when they have clicked 2 items in JS */
+#compare-bar.shown {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 1em;
+  height: 4em;
+}
+
+/* h1 Title for Mobile */
+#section-filters .subnav {
+  border-bottom: 1px solid #dbdbdb;
+  padding: 1em;
+  h2 {
+    display: block;
+    font-size: 1.3em;
+    margin-bottom: 0;
+    text-align: center;
+    font-family: "GothamBold";
+    color: #008752;
+    letter-spacing: -2px;
+  }
+  @include respond-min($small-screen) {
+    border-bottom: none;
+    padding: 0;
+    h2 {display: none;}
+  }
+}
+
+
+#section-results {
+  .columns {padding: 0;}
+  .loading {min-height: 400px; padding: 3em 0;}
+  .result-item {
+    text-align: center;
+    margin: 0 1%;
+    float: left;
+    width: 100%;
+    @include respond-min($tablet-screen) {width: 31%;}
+		@include respond-min($medium-screen) {width: 31%;}
+	}/* /.results-item */
+
+  .result-item:first-child{
+    margin-top: 2em;
+    @include respond-min($tablet-screen) {margin-top: 0;}
+  }
+  .result-content {
+    display: block;
+    padding: 1.25em;
+    position: relative;
+    min-height: 460px;
+    padding-bottom: 0;
+    padding-top: 0;
+    &:after {@include clearfix;}
+    
+    /* iPad*/
+    @include respond-min($tablet-screen) {padding: 1.00em;}
+    
+    /* Desktop */
+		@include respond-min($medium-screen) {padding: 1.25em;}
+  
+    h4 {
+      font-size: 1.2em;
+      font-family: "GothamMedium";
+      font-weight: normal;
+      margin-bottom: 0;
+	    min-height: emCalc(48px);	
+      line-height: 1.1;
+      a {color: #222;}
+    }
+    p {margin-bottom: 0;}
+    .green-add-cart, .grey-add-cart {
+      margin: 0 auto 1em auto;
+      width: 60%;
+      display: block;
+      
+      /* iPad*/
+      @include respond-min($tablet-screen) {width: 68%;}
+      
+      /* Desktop */
+      @include respond-min($medium-screen) {width: 52%;}
+      
+    } /* /.green-add-cart, /.grey-add-cart */
+    .green-price {
+      font-size: 2em;
+      line-height: 1.4em;
+    }
+    a.button {@include btn-cricket($orange-2);}
+    .financing {
+      display: block;
+      font-size: 11px;
+      color: #e63924;
+      text-transform: uppercase;
+      font-family: Arial;
+      letter-spacing: 0;
+      line-height: 1em;
+    }
+    .discount {
+      position: absolute;
+      right: 24%;
+      background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/phone-listing/icon-red-discount.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat top right;
+      width: 44px;
+      height: 47px;
+      color: #fff;
+      padding: 0.3em;
+      text-align: center;
+      text-transform: uppercase;
+      font-family: "GothamMedium";
+      
+      /* iPad*/
+      @include respond-min($tablet-screen) {right: 11%;}
+      /* Desktop */
+      @include respond-min($medium-screen) {right: 20%;}
+      
+    } /* /.discount */
+      
+    .compare {
+      padding: 0 1em 0 1em;
+      label {
+        text-transform: uppercase;
+        color: #333;
+        font-size: 11px;
+        display: inline;
+        &.has-tip {
+          border-bottom: none;
+          font-weight: normal;
+        }
+      }
+  	 form.custom .custom.checkbox.checked:before {
+  		margin-top:0;
+  		margin-left: -7px;
+  		font-size: 23px;
+  	 }
+    } /* /.compare */
+  } /* /.result-content */
+} /* /#section-results */
+
+/* SEO Block on Phones & Homepage */
+#foot-note-copy {
+  margin-bottom: 1em;
+  .row {
+    padding: 1em 0.5em 0 0.5em;
+  }
+  p {
+    color: #999;
+    font-size: 0.7em;
+    line-height: 1.2em;
+    text-transform: none;
+    margin-bottom: 1.25em;
+  }
+  a {color: $orange-2;}
+}
+
+/* Legal Notification on Phones Pages */
+.phones-legal {
+  margin-bottom: 0.8em;
+  .wrapper {
+    border-top: 1px solid #d9d9d9;
+    padding-top: 0.5em;
+    .columns {padding: 0.5em 1em; }
+  }
+  h4 {
+    font-size: 0.7em;
+    text-transform: uppercase;
+    color: #666;
+  }
+  p {
+    color: #666;
+    font-size: 0.7em;
+    line-height: 1.2em;
+  }
+  @include respond-min($small-screen) {
+    .wrapper .columns {padding: 0;}
+  }
+}
+
+/* Phone Content is a bit shorter without the price being included */
+#section-results.no-zipcode {
+  .result-content {
+    min-height: 410px;
+    padding-bottom: 0;
+    padding-top: 0;
+    .button {margin-top: 1.5em;}
+    .discount {display: none;}
+    .green-price {height: 0;}
+    
+    @include respond-min($small-screen) {
+      min-height: 500px;
+      padding: 1.25em;
+    }
+    
+  } /* /.result-content */
+}/* /#section-results.no-zipcode */
+
+/* Phones Listing Page has financing links */
+.section-phones-listing #section-results {
+  .green-price {height: 2.1em;}
+}

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="InquireOrderDetails" targetNamespace="http://mycricket.com/webservices/InquireOrderDetails/interface" xmlns:bons0="http://mycricket.com/webservices/InquireOrderDetails/types" xmlns:bons1="http://mycricket.com/webservices/common/types" xmlns:bons2="http://mycricket.com/webservices/InquireOrderDetails/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://mycricket.com/webservices/InquireOrderDetails/interface" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://mycricket.com/webservices/InquireOrderDetails/types">
+            
+            <xsd:import namespace="http://mycricket.com/webservices/common/types"/>
+                   	 
+				<xsd:complexType name="ShippingInfo">
+					<xsd:sequence>
+						<xsd:element minOccurs="1" name="shippingMethod" nillable="true" type="xsd:string"/>
+		                <xsd:element minOccurs="1" name="shippingPrice" nillable="true" type="xsd:double"/>
+						<xsd:element minOccurs="1" nillable="true" name="address" type="bons0:Address"/>
+					</xsd:sequence>
+				</xsd:complexType>			 
+						
+						
+				<xsd:complexType name="PersonalInfo">
+					<xsd:sequence>
+						<xsd:element nillable="true"   name="firstName" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+						<xsd:element nillable="true"   name="lastName" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+						<xsd:element nillable="true"   name="email" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			
+				<xsd:complexType name="Discount">
+					<xsd:sequence>
+						<xsd:element name="description" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+						<xsd:element name="amount" type="xsd:double" maxOccurs="1" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+				
+				<xsd:complexType name="Items">
+					<xsd:sequence>
+						<xsd:element nillable="true" name="type" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+						<xsd:element nillable="true" name="name" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+						<xsd:element nillable="true" name="price" type="xsd:double" maxOccurs="1" minOccurs="0"/>
+						<xsd:element nillable="true" name="Discount" type="bons0:Discount" maxOccurs="unbounded" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			
+	          	<xsd:complexType name="Address">
+					<xsd:sequence>
+						<xsd:element nillable="true" minOccurs="0" name="firstName" type="xsd:string" />
+						<xsd:element nillable="true" minOccurs="0" 	name="lastName" type="xsd:string" />
+						<xsd:element nillable="true" minOccurs="0" 	name="addressLine1" type="xsd:string" />
+						<xsd:element nillable="true" minOccurs="0" 	name="addressLine2" type="xsd:string" />
+						<xsd:element nillable="true" minOccurs="0" name="city" type="xsd:string" />
+						<xsd:element nillable="true" minOccurs="0" name="state" type="xsd:string" />
+						<xsd:element nillable="true" minOccurs="0" name="zip" type="xsd:string" />
+						<xsd:element name="contactNumber" type="xsd:string" maxOccurs="1" minOccurs="0">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+				
+				<xsd:complexType name="TelecomTaxImposition">
+	                <xsd:sequence>
+	                    <xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string"/>
+	                    <xsd:element minOccurs="0" name="value" nillable="true" type="xsd:string"/>
+	               </xsd:sequence>
+           		</xsd:complexType>
+           
+	           	<xsd:complexType name="BOTaxImposition">
+	                <xsd:sequence>
+	                    <xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string"/>
+	                    <xsd:element minOccurs="0" name="value" nillable="true" type="xsd:string"/>
+	               </xsd:sequence>
+	           	</xsd:complexType>
+				
+				<xsd:complexType name="TaxSummary">
+					<xsd:sequence>
+						<xsd:element minOccurs="0" name="telecomTaxImposition" nillable="true" type="bons0:TelecomTaxImposition" maxOccurs="unbounded"/>
+						<xsd:element minOccurs="0" name="BOTaxImposition" nillable="true" type="bons0:BOTaxImposition" maxOccurs="unbounded"/>
+	            
+	            	</xsd:sequence>
+				</xsd:complexType>	
+			
+				<xsd:element name="InquireOrderDetailsResponseInfo">
+				 	<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element minOccurs="0" 	name="inquireOrderDetailsResponse" nillable="true"	type="bons0:InquireOrderDetailsResponse" />
+							<xsd:element minOccurs="1" 	name="responseInfo" type="bons0:ResponseInfo" />
+						</xsd:sequence>
+				 	</xsd:complexType>
+				</xsd:element>
+			
+				<xsd:element name="InquireOrderDetailsRequest">
+		 				<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element minOccurs="1" name="orderId" nillable="true" type="xsd:string" maxOccurs="1"/>
+							</xsd:sequence>
+						</xsd:complexType>
+				</xsd:element>
+			
+			 	<xsd:complexType  name="ResponseInfo">
+					<xsd:sequence>
+						 <xsd:element minOccurs="1" name="code"   type="xsd:string"/>
+	                    <xsd:element minOccurs="1" name="description"  type="xsd:string"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			
+			 
+				<xsd:complexType name="InquireOrderDetailsResponse">
+					<xsd:sequence>
+						<xsd:element minOccurs="0" name="personalInfo"
+							nillable="true" type="bons0:PersonalInfo" />
+						<xsd:element name="ShippingInfo" minOccurs="0"
+							nillable="true" type="bons0:ShippingInfo" />
+						<xsd:element minOccurs="0" name="billingAddress"
+							nillable="true" type="bons0:Address" />
+						<xsd:element minOccurs="0" name="mdn" nillable="true" type="xsd:string"/>
+						<xsd:element minOccurs="0" name="new_mdn" nillable="true" type="xsd:string"/>
+						<xsd:element minOccurs="0"
+							name="cricketPhoneNumbers" nillable="true"
+							type="bons0:CricketPhoneNumbers" />
+						<xsd:element minOccurs="0" name="eid"
+							nillable="true" type="xsd:string" />
+						<xsd:element minOccurs="0" name="market_code"
+							nillable="true" type="xsd:string" />
+						<xsd:element minOccurs="0" name="plan_code"
+							nillable="true" type="xsd:string" />
+						<xsd:element minOccurs="0"
+							name="plan_description" nillable="true" type="xsd:string" />
+						<xsd:element minOccurs="0"
+							name="accountHolderAddress" nillable="true" type="bons0:Address" />
+						<xsd:element minOccurs="0" name="packageType"
+							nillable="true" type="xsd:string" />
+						<xsd:element minOccurs="0" name="taxTotal"
+							nillable="true" type="xsd:string" />
+						<xsd:element minOccurs="0" name="total"
+							nillable="true" type="xsd:string" />
+						<xsd:element minOccurs="0" name="refundAmount"
+							nillable="true" type="xsd:double" />
+						<xsd:element minOccurs="0"
+							name="account_balance" nillable="true" type="xsd:string" />
+						<xsd:element name="paymentType"
+							type="xsd:string" maxOccurs="1" minOccurs="0" />
+						<xsd:element minOccurs="0" name="workOrderType"
+							nillable="true" type="xsd:string" />
+						<xsd:element maxOccurs="1" minOccurs="0"
+							nillable="true" name="orderSummary" type="bons0:OrderSummary" />
+						<xsd:element minOccurs="0" name="taxSummary"
+							nillable="true" type="bons0:TaxSummary" />
+						<xsd:element minOccurs="0" name="e911Desc" nillable="true" type="xsd:string"/>
+	                    <xsd:element minOccurs="0" name="e911Amount" nillable="true" type="xsd:double"/>
+	                    <xsd:element minOccurs="0" name="bodesc" nillable="true" type="xsd:string"/>
+	                    <xsd:element minOccurs="0" name="boAmount" nillable="true" type="xsd:double"/>
+						<xsd:element name="removedPlan"
+							type="xsd:string" maxOccurs="1" minOccurs="0" />
+						<xsd:element name="removedAddOn"
+							type="xsd:string" maxOccurs="1" minOccurs="0" />
+						<xsd:element name="additionalAttributes"
+							type="bons0:Attribute" maxOccurs="unbounded" minOccurs="0">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			 
+				<xsd:complexType name="Packages">
+					<xsd:sequence>
+						<xsd:element name="type" type="xsd:string" 	maxOccurs="1" minOccurs="0"/>
+						<xsd:element name="item" type="bons0:Items" maxOccurs="unbounded" minOccurs="1"/>
+						<xsd:element name="subTotal" type="xsd:string" maxOccurs="1" minOccurs="0"/>						
+					</xsd:sequence>
+				</xsd:complexType>
+		
+				<xsd:complexType name="CricketPhoneNumbers">
+					<xsd:sequence>
+						<xsd:element name="mdn" type="xsd:string" maxOccurs="unbounded" minOccurs="0">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+		
+			
+				<xsd:complexType name="Attribute">
+					<xsd:sequence>
+						<xsd:element name="name" type="xsd:string" maxOccurs="1" minOccurs="1">
+						</xsd:element>
+						<xsd:element name="value"
+							type="xsd:string" maxOccurs="1" minOccurs="1">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+		
+        
+				<xsd:complexType name="OrderSummary">
+					<xsd:sequence>
+						<xsd:element name="packages"
+							type="bons0:Packages" maxOccurs="unbounded" minOccurs="1">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+		</xsd:schema>
+         
+    </wsdl:types>
+	<wsdl:message name="sendCricketOrderDetailsRequest">
+		<wsdl:part element="bons0:InquireOrderDetailsRequest" name="inquireOrderDetailsRequest"/>
+	</wsdl:message>
+	<wsdl:message name="sendCricketOrderDetailsResponse">
+		<wsdl:part element="bons0:InquireOrderDetailsResponseInfo" name="response"/>
+	</wsdl:message>
+	 
+	<wsdl:portType name="InquireOrderDetails">
+		<wsdl:operation name="sendCricketOrderDetails">
+			<wsdl:input message="tns:sendCricketOrderDetailsRequest"/>
+			<wsdl:output message="tns:sendCricketOrderDetailsResponse"/>
+			
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="InquireOrderDetailsSOAP" type="tns:InquireOrderDetails">
+
+
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="sendCricketOrderDetails">
+			<soap:operation soapAction="http://mycricket.com/webservices/InquireOrderDetails/sendCricketOrderDetails"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			 
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="InquireOrderDetails">
+		<wsdl:port binding="tns:InquireOrderDetailsSOAP" name="InquireOrderDetailsSOAP">
+			<soap:address location="http://mycricket.com/webservices/services/InquireOrderDetailsSOAP"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

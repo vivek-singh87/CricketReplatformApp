@@ -1,0 +1,240 @@
+**** debug	Wed Jul 10 10:15:24 IST 2013	1373431524170	/atg/epub/DeploymentServer	Forward deploying following active workspaces: [workspace:11100]
+**** debug	Wed Jul 10 10:15:25 IST 2013	1373431525978	/atg/epub/DeploymentServer	Run first apply phase: true
+**** debug	Wed Jul 10 10:15:25 IST 2013	1373431525979	/atg/epub/DeploymentServer	Switch switchable CA datasources:
+**** debug	Wed Jul 10 10:15:25 IST 2013	1373431525979	/atg/epub/DeploymentServer	  isDeploymentRollback(): false
+**** debug	Wed Jul 10 10:15:25 IST 2013	1373431525980	/atg/epub/DeploymentServer	  Current Target live datasource name: DataSourceA
+**** debug	Wed Jul 10 10:15:25 IST 2013	1373431525980	/atg/epub/DeploymentServer	  CA switching datasource: /atg/dynamo/service/jdbc/SwitchingDataSource
+**** debug	Wed Jul 10 10:15:25 IST 2013	1373431525980	/atg/epub/DeploymentServer	    Current live datasource name: DataSourceA
+**** debug	Wed Jul 10 10:15:25 IST 2013	1373431525981	/atg/epub/DeploymentServer	    Current offline datasource name: DataSourceB
+**** debug	Wed Jul 10 10:15:25 IST 2013	1373431525981	/atg/epub/DeploymentServer	    The current CA live datasource is not pointing at the Target offline datasource
+**** debug	Wed Jul 10 10:15:25 IST 2013	1373431525981	/atg/epub/DeploymentServer	    Switching CA datasource : /atg/dynamo/service/jdbc/SwitchingDataSource
+**** debug	Wed Jul 10 10:15:26 IST 2013	1373431526069	/atg/epub/DeploymentServer	    Pop! CA datasource switched.
+**** debug	Wed Jul 10 10:15:26 IST 2013	1373431526069	/atg/epub/DeploymentServer	  CA switching datasource: /atg/dynamo/service/jdbc/SwitchingDataSource
+**** debug	Wed Jul 10 10:15:26 IST 2013	1373431526069	/atg/epub/DeploymentServer	    Current live datasource name: DataSourceB
+**** debug	Wed Jul 10 10:15:26 IST 2013	1373431526070	/atg/epub/DeploymentServer	    Current offline datasource name: DataSourceA
+**** debug	Wed Jul 10 10:15:26 IST 2013	1373431526070	/atg/epub/DeploymentServer	Switchable CA datasources switched.
+**** debug	Wed Jul 10 10:15:26 IST 2013	1373431526096	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Creating standard DeploymentData
+**** debug	Wed Jul 10 10:15:26 IST 2013	1373431526258	/atg/epub/DeploymentServer	Forward deploying following active workspaces: [workspace:11100]
+**** debug	Wed Jul 10 10:15:26 IST 2013	1373431526259	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Deploy Data
+**** debug	Wed Jul 10 10:15:26 IST 2013	1373431526269	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Starting DAF deployment with ID: 700003
+**** debug	Wed Jul 10 10:15:26 IST 2013	1373431526899	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Polling Until Data Appplied
+**** debug	Wed Jul 10 10:15:32 IST 2013	1373431532053	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:found 1 failure messages
+**** debug	Wed Jul 10 10:15:32 IST 2013	1373431532063	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:adding failure message Deployment Failed with severity Error
+**** debug	Wed Jul 10 10:15:34 IST 2013	1373431534300	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:DeploymentListener.deploymentFailed called for deployment with ID: 700003
+**** debug	Wed Jul 10 10:15:34 IST 2013	1373431534300	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:DAFDeploymentID: 700003 matches DeploymentID: 700003
+**** debug	Wed Jul 10 10:15:34 IST 2013	1373431534301	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:DeploymentListener.deploymentFailed
+**** debug	Wed Jul 10 10:15:34 IST 2013	1373431534301	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:found 1 failure messages
+**** debug	Wed Jul 10 10:15:34 IST 2013	1373431534304	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:adding failure message Deployment Failed with severity Error
+**** debug	Wed Jul 10 10:15:34 IST 2013	1373431534306	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    deployment failed
+**** debug	Wed Jul 10 10:15:34 IST 2013	1373431534613	/atg/epub/DeploymentServer	Verify switchable CA datasources:
+**** debug	Wed Jul 10 10:15:34 IST 2013	1373431534636	/atg/epub/DeploymentServer	  Current Target live datasource name: DataSourceA
+**** debug	Wed Jul 10 10:15:34 IST 2013	1373431534636	/atg/epub/DeploymentServer	  CA switching datasource: /atg/dynamo/service/jdbc/SwitchingDataSource
+**** debug	Wed Jul 10 10:15:34 IST 2013	1373431534637	/atg/epub/DeploymentServer	    Current live datasource name: DataSourceB
+**** debug	Wed Jul 10 10:15:34 IST 2013	1373431534637	/atg/epub/DeploymentServer	    Current offline datasource name: DataSourceA
+**** debug	Wed Jul 10 10:15:34 IST 2013	1373431534638	/atg/epub/DeploymentServer	Switchable CA datasources verified.
+**** debug	Wed Jul 10 10:15:34 IST 2013	1373431534638	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Creating rollback DeploymentData:
+**** debug	Wed Jul 10 10:15:34 IST 2013	1373431534639	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:  Adding rollback DeploymentData for a deployment stoppage due to failure in the first apply phase.
+**** debug	Wed Jul 10 10:15:34 IST 2013	1373431534670	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    Adding rollback DeploymentData for: atg.adapter.secure.GenericSecuredMutableVersionContentRepository@4536ce86
+**** debug	Wed Jul 10 10:15:34 IST 2013	1373431534670	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    Adding rollback DeploymentData for: /atg/epub/file/WWWFileSystem, /127.0.0.1:8810
+**** debug	Wed Jul 10 10:15:34 IST 2013	1373431534671	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    Adding rollback DeploymentData for: /atg/epub/file/ConfigFileSystem, /127.0.0.1:8810
+**** debug	Wed Jul 10 10:15:34 IST 2013	1373431534671	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    Adding rollback DeploymentData for: atg.adapter.secure.GenericSecuredMutableVersionContentRepository@6749863b
+**** debug	Wed Jul 10 10:15:34 IST 2013	1373431534672	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    Adding rollback DeploymentData for: atg.adapter.secure.GenericSecuredMutableVersionContentRepository@6eb1371c
+**** debug	Wed Jul 10 10:15:34 IST 2013	1373431534672	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    Adding rollback DeploymentData for: atg.adapter.secure.GenericSecuredMutableVersionContentRepository@4634d911
+**** debug	Wed Jul 10 10:15:34 IST 2013	1373431534673	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    Adding rollback DeploymentData for: atg.adapter.secure.GenericSecuredMutableVersionContentRepository@4ed29682
+**** debug	Wed Jul 10 10:15:34 IST 2013	1373431534673	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Purging deployment data for deployment: 700003
+**** debug	Wed Jul 10 10:15:35 IST 2013	1373431535238	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Starting DAF deployment with ID: 700003-auto_rb
+**** debug	Wed Jul 10 10:15:35 IST 2013	1373431535262	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Polling Until Data Appplied
+**** debug	Wed Jul 10 10:15:40 IST 2013	1373431540329	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:found 1 failure messages
+**** debug	Wed Jul 10 10:15:40 IST 2013	1373431540350	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:adding failure message Deployment Failed with severity Error
+**** debug	Wed Jul 10 10:15:42 IST 2013	1373431542116	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:DeploymentListener.deploymentFailed called for deployment with ID: 700003-auto_rb
+**** debug	Wed Jul 10 10:15:42 IST 2013	1373431542117	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:DAFDeploymentID: 700003-auto_rb matches DeploymentID: 700003-auto_rb
+**** debug	Wed Jul 10 10:15:42 IST 2013	1373431542117	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:DeploymentListener.deploymentFailed
+**** debug	Wed Jul 10 11:02:57 IST 2013	1373434377079	/atg/epub/DeploymentServer	Forward deploying following active workspaces: [workspace:11100]
+**** debug	Wed Jul 10 11:02:57 IST 2013	1373434377208	/atg/epub/DeploymentServer	Run first apply phase: true
+**** debug	Wed Jul 10 11:02:57 IST 2013	1373434377208	/atg/epub/DeploymentServer	Switch switchable CA datasources:
+**** debug	Wed Jul 10 11:02:57 IST 2013	1373434377209	/atg/epub/DeploymentServer	  isDeploymentRollback(): false
+**** debug	Wed Jul 10 11:02:57 IST 2013	1373434377210	/atg/epub/DeploymentServer	  Current Target live datasource name: DataSourceA
+**** debug	Wed Jul 10 11:02:57 IST 2013	1373434377210	/atg/epub/DeploymentServer	  CA switching datasource: /atg/dynamo/service/jdbc/SwitchingDataSource
+**** debug	Wed Jul 10 11:02:57 IST 2013	1373434377210	/atg/epub/DeploymentServer	    Current live datasource name: DataSourceB
+**** debug	Wed Jul 10 11:02:57 IST 2013	1373434377211	/atg/epub/DeploymentServer	    Current offline datasource name: DataSourceA
+**** debug	Wed Jul 10 11:02:57 IST 2013	1373434377211	/atg/epub/DeploymentServer	    The current CA live datasource is pointing at the Target offline datasource. No CA switch necessary.
+**** debug	Wed Jul 10 11:02:57 IST 2013	1373434377211	/atg/epub/DeploymentServer	Switchable CA datasources switched.
+**** debug	Wed Jul 10 11:02:57 IST 2013	1373434377215	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Creating standard DeploymentData
+**** debug	Wed Jul 10 11:02:57 IST 2013	1373434377216	/atg/epub/DeploymentServer	Forward deploying following active workspaces: [workspace:11100]
+**** debug	Wed Jul 10 11:02:57 IST 2013	1373434377216	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Deploy Data
+**** debug	Wed Jul 10 11:02:57 IST 2013	1373434377216	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Starting DAF deployment with ID: 700007
+**** debug	Wed Jul 10 11:02:57 IST 2013	1373434377237	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Polling Until Data Appplied
+**** debug	Wed Jul 10 11:03:02 IST 2013	1373434382249	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:found 1 failure messages
+**** debug	Wed Jul 10 11:03:02 IST 2013	1373434382255	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:adding failure message Deployment Failed with severity Error
+**** debug	Wed Jul 10 11:03:03 IST 2013	1373434383800	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:DeploymentListener.deploymentFailed called for deployment with ID: 700007
+**** debug	Wed Jul 10 11:03:03 IST 2013	1373434383800	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:DAFDeploymentID: 700007 matches DeploymentID: 700007
+**** debug	Wed Jul 10 11:03:03 IST 2013	1373434383801	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:DeploymentListener.deploymentFailed
+**** debug	Wed Jul 10 11:03:03 IST 2013	1373434383802	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:found 1 failure messages
+**** debug	Wed Jul 10 11:03:03 IST 2013	1373434383807	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:adding failure message Deployment Failed with severity Error
+**** debug	Wed Jul 10 11:03:03 IST 2013	1373434383810	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    deployment failed
+**** debug	Wed Jul 10 11:03:03 IST 2013	1373434383881	/atg/epub/DeploymentServer	Verify switchable CA datasources:
+**** debug	Wed Jul 10 11:03:03 IST 2013	1373434383883	/atg/epub/DeploymentServer	  Current Target live datasource name: DataSourceA
+**** debug	Wed Jul 10 11:03:03 IST 2013	1373434383883	/atg/epub/DeploymentServer	  CA switching datasource: /atg/dynamo/service/jdbc/SwitchingDataSource
+**** debug	Wed Jul 10 11:03:03 IST 2013	1373434383884	/atg/epub/DeploymentServer	    Current live datasource name: DataSourceB
+**** debug	Wed Jul 10 11:03:03 IST 2013	1373434383884	/atg/epub/DeploymentServer	    Current offline datasource name: DataSourceA
+**** debug	Wed Jul 10 11:03:03 IST 2013	1373434383884	/atg/epub/DeploymentServer	Switchable CA datasources verified.
+**** debug	Wed Jul 10 11:03:03 IST 2013	1373434383885	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Creating rollback DeploymentData:
+**** debug	Wed Jul 10 11:03:03 IST 2013	1373434383886	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:  Adding rollback DeploymentData for a deployment stoppage due to failure in the first apply phase.
+**** debug	Wed Jul 10 11:03:03 IST 2013	1373434383909	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    Adding rollback DeploymentData for: atg.adapter.secure.GenericSecuredMutableVersionContentRepository@4536ce86
+**** debug	Wed Jul 10 11:03:03 IST 2013	1373434383909	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    Adding rollback DeploymentData for: /atg/epub/file/WWWFileSystem, /127.0.0.1:8810
+**** debug	Wed Jul 10 11:03:03 IST 2013	1373434383909	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    Adding rollback DeploymentData for: /atg/epub/file/ConfigFileSystem, /127.0.0.1:8810
+**** debug	Wed Jul 10 11:03:03 IST 2013	1373434383909	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    Adding rollback DeploymentData for: atg.adapter.secure.GenericSecuredMutableVersionContentRepository@6749863b
+**** debug	Wed Jul 10 11:03:03 IST 2013	1373434383910	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    Adding rollback DeploymentData for: atg.adapter.secure.GenericSecuredMutableVersionContentRepository@6eb1371c
+**** debug	Wed Jul 10 11:03:03 IST 2013	1373434383910	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    Adding rollback DeploymentData for: atg.adapter.secure.GenericSecuredMutableVersionContentRepository@4634d911
+**** debug	Wed Jul 10 11:03:03 IST 2013	1373434383910	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    Adding rollback DeploymentData for: atg.adapter.secure.GenericSecuredMutableVersionContentRepository@4ed29682
+**** debug	Wed Jul 10 11:03:03 IST 2013	1373434383910	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Purging deployment data for deployment: 700007
+**** debug	Wed Jul 10 11:03:03 IST 2013	1373434383957	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Starting DAF deployment with ID: 700007-auto_rb
+**** debug	Wed Jul 10 11:03:03 IST 2013	1373434383966	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Polling Until Data Appplied
+**** debug	Wed Jul 10 11:03:08 IST 2013	1373434388969	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:found 1 failure messages
+**** debug	Wed Jul 10 11:03:08 IST 2013	1373434388972	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:adding failure message Deployment Failed with severity Error
+**** debug	Wed Jul 10 11:03:10 IST 2013	1373434390784	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:DeploymentListener.deploymentFailed called for deployment with ID: 700007-auto_rb
+**** debug	Wed Jul 10 11:03:10 IST 2013	1373434390785	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:DAFDeploymentID: 700007-auto_rb matches DeploymentID: 700007-auto_rb
+**** debug	Wed Jul 10 11:03:10 IST 2013	1373434390786	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:DeploymentListener.deploymentFailed
+**** debug	Wed Jul 10 14:06:26 IST 2013	1373445386883	/atg/epub/version/VersionManagerService	Uninitializing the VersionManagerService
+**** debug	Wed Jul 10 20:13:10 IST 2013	1373467390176	/atg/epub/DeploymentServer	Forward deploying following active workspaces: [workspace:11100]
+**** debug	Wed Jul 10 20:13:10 IST 2013	1373467390788	/atg/epub/DeploymentServer	Run first apply phase: true
+**** debug	Wed Jul 10 20:13:10 IST 2013	1373467390788	/atg/epub/DeploymentServer	Switch switchable CA datasources:
+**** debug	Wed Jul 10 20:13:10 IST 2013	1373467390789	/atg/epub/DeploymentServer	  isDeploymentRollback(): false
+**** debug	Wed Jul 10 20:13:10 IST 2013	1373467390791	/atg/epub/DeploymentServer	  Current Target live datasource name: DataSourceA
+**** debug	Wed Jul 10 20:13:10 IST 2013	1373467390791	/atg/epub/DeploymentServer	  CA switching datasource: /atg/dynamo/service/jdbc/SwitchingDataSource
+**** debug	Wed Jul 10 20:13:10 IST 2013	1373467390791	/atg/epub/DeploymentServer	    Current live datasource name: DataSourceB
+**** debug	Wed Jul 10 20:13:10 IST 2013	1373467390792	/atg/epub/DeploymentServer	    Current offline datasource name: DataSourceA
+**** debug	Wed Jul 10 20:13:10 IST 2013	1373467390792	/atg/epub/DeploymentServer	    The current CA live datasource is pointing at the Target offline datasource. No CA switch necessary.
+**** debug	Wed Jul 10 20:13:10 IST 2013	1373467390792	/atg/epub/DeploymentServer	Switchable CA datasources switched.
+**** debug	Wed Jul 10 20:13:10 IST 2013	1373467390802	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Creating standard DeploymentData
+**** debug	Wed Jul 10 20:13:10 IST 2013	1373467390867	/atg/epub/DeploymentServer	Forward deploying following active workspaces: [workspace:11100]
+**** debug	Wed Jul 10 20:13:10 IST 2013	1373467390868	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Deploy Data
+**** debug	Wed Jul 10 20:13:10 IST 2013	1373467390869	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Starting DAF deployment with ID: 800005
+**** debug	Wed Jul 10 20:13:11 IST 2013	1373467391073	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Polling Until Data Appplied
+**** debug	Wed Jul 10 20:13:16 IST 2013	1373467396081	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:found 1 failure messages
+**** debug	Wed Jul 10 20:13:16 IST 2013	1373467396088	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:adding failure message Deployment Failed with severity Error
+**** debug	Wed Jul 10 20:13:17 IST 2013	1373467397979	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:DeploymentListener.deploymentFailed called for deployment with ID: 800005
+**** debug	Wed Jul 10 20:13:17 IST 2013	1373467397993	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:DAFDeploymentID: 800005 matches DeploymentID: 800005
+**** debug	Wed Jul 10 20:13:17 IST 2013	1373467397993	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:DeploymentListener.deploymentFailed
+**** debug	Wed Jul 10 20:13:17 IST 2013	1373467397993	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:found 1 failure messages
+**** debug	Wed Jul 10 20:13:17 IST 2013	1373467397999	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:adding failure message Deployment Failed with severity Error
+**** debug	Wed Jul 10 20:13:18 IST 2013	1373467398009	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    deployment failed
+**** debug	Wed Jul 10 20:13:18 IST 2013	1373467398043	/atg/epub/DeploymentServer	Verify switchable CA datasources:
+**** debug	Wed Jul 10 20:13:18 IST 2013	1373467398044	/atg/epub/DeploymentServer	  Current Target live datasource name: DataSourceA
+**** debug	Wed Jul 10 20:13:18 IST 2013	1373467398045	/atg/epub/DeploymentServer	  CA switching datasource: /atg/dynamo/service/jdbc/SwitchingDataSource
+**** debug	Wed Jul 10 20:13:18 IST 2013	1373467398045	/atg/epub/DeploymentServer	    Current live datasource name: DataSourceB
+**** debug	Wed Jul 10 20:13:18 IST 2013	1373467398045	/atg/epub/DeploymentServer	    Current offline datasource name: DataSourceA
+**** debug	Wed Jul 10 20:13:18 IST 2013	1373467398045	/atg/epub/DeploymentServer	Switchable CA datasources verified.
+**** debug	Wed Jul 10 20:13:18 IST 2013	1373467398046	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Creating rollback DeploymentData:
+**** debug	Wed Jul 10 20:13:18 IST 2013	1373467398046	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:  Adding rollback DeploymentData for a deployment stoppage due to failure in the first apply phase.
+**** debug	Wed Jul 10 20:13:18 IST 2013	1373467398068	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    Adding rollback DeploymentData for: atg.adapter.secure.GenericSecuredMutableVersionContentRepository@5189b8b
+**** debug	Wed Jul 10 20:13:18 IST 2013	1373467398069	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    Adding rollback DeploymentData for: /atg/epub/file/WWWFileSystem, /127.0.0.1:8810
+**** debug	Wed Jul 10 20:13:18 IST 2013	1373467398070	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    Adding rollback DeploymentData for: /atg/epub/file/ConfigFileSystem, /127.0.0.1:8810
+**** debug	Wed Jul 10 20:13:18 IST 2013	1373467398071	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    Adding rollback DeploymentData for: atg.adapter.secure.GenericSecuredMutableVersionContentRepository@4299c84a
+**** debug	Wed Jul 10 20:13:18 IST 2013	1373467398072	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    Adding rollback DeploymentData for: atg.adapter.secure.GenericSecuredMutableVersionContentRepository@429302e2
+**** debug	Wed Jul 10 20:13:18 IST 2013	1373467398073	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    Adding rollback DeploymentData for: atg.adapter.secure.GenericSecuredMutableVersionContentRepository@2a54ce3a
+**** debug	Wed Jul 10 20:13:18 IST 2013	1373467398075	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    Adding rollback DeploymentData for: atg.adapter.secure.GenericSecuredMutableVersionContentRepository@fb7f788
+**** debug	Wed Jul 10 20:13:18 IST 2013	1373467398077	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Purging deployment data for deployment: 800005
+**** debug	Wed Jul 10 20:13:18 IST 2013	1373467398200	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Starting DAF deployment with ID: 800005-auto_rb
+**** debug	Wed Jul 10 20:13:18 IST 2013	1373467398224	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Polling Until Data Appplied
+**** debug	Wed Jul 10 20:13:23 IST 2013	1373467403228	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:found 1 failure messages
+**** debug	Wed Jul 10 20:13:24 IST 2013	1373467404901	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:DeploymentListener.deploymentFailed called for deployment with ID: 800005-auto_rb
+**** debug	Wed Jul 10 20:14:14 IST 2013	1373467454038	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:adding failure message Deployment Failed with severity Error
+**** debug	Wed Jul 10 20:14:14 IST 2013	1373467454039	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:DAFDeploymentID: 800005-auto_rb matches DeploymentID: 800005-auto_rb
+**** debug	Wed Jul 10 20:14:14 IST 2013	1373467454039	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:DeploymentListener.deploymentFailed
+**** debug	Wed Jul 10 20:24:04 IST 2013	1373468044632	/atg/epub/DeploymentServer	Forward deploying following active workspaces: [workspace:11100]
+**** debug	Wed Jul 10 20:24:04 IST 2013	1373468044771	/atg/epub/DeploymentServer	Run first apply phase: true
+**** debug	Wed Jul 10 20:24:04 IST 2013	1373468044772	/atg/epub/DeploymentServer	Switch switchable CA datasources:
+**** debug	Wed Jul 10 20:24:04 IST 2013	1373468044772	/atg/epub/DeploymentServer	  isDeploymentRollback(): false
+**** debug	Wed Jul 10 20:24:04 IST 2013	1373468044776	/atg/epub/DeploymentServer	  Current Target live datasource name: DataSourceA
+**** debug	Wed Jul 10 20:24:04 IST 2013	1373468044776	/atg/epub/DeploymentServer	  CA switching datasource: /atg/dynamo/service/jdbc/SwitchingDataSource
+**** debug	Wed Jul 10 20:24:04 IST 2013	1373468044777	/atg/epub/DeploymentServer	    Current live datasource name: DataSourceB
+**** debug	Wed Jul 10 20:24:04 IST 2013	1373468044778	/atg/epub/DeploymentServer	    Current offline datasource name: DataSourceA
+**** debug	Wed Jul 10 20:24:04 IST 2013	1373468044779	/atg/epub/DeploymentServer	    The current CA live datasource is pointing at the Target offline datasource. No CA switch necessary.
+**** debug	Wed Jul 10 20:24:04 IST 2013	1373468044780	/atg/epub/DeploymentServer	Switchable CA datasources switched.
+**** debug	Wed Jul 10 20:24:04 IST 2013	1373468044787	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Creating standard DeploymentData
+**** debug	Wed Jul 10 20:24:04 IST 2013	1373468044788	/atg/epub/DeploymentServer	Forward deploying following active workspaces: [workspace:11100]
+**** debug	Wed Jul 10 20:24:04 IST 2013	1373468044788	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Deploy Data
+**** debug	Wed Jul 10 20:24:04 IST 2013	1373468044793	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Starting DAF deployment with ID: 800007
+**** debug	Wed Jul 10 20:24:04 IST 2013	1373468044807	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Polling Until Data Appplied
+**** debug	Wed Jul 10 20:24:09 IST 2013	1373468049811	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:found 1 failure messages
+**** debug	Wed Jul 10 20:24:09 IST 2013	1373468049818	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:adding failure message Deployment Failed with severity Error
+**** debug	Wed Jul 10 20:24:11 IST 2013	1373468051523	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:DeploymentListener.deploymentFailed called for deployment with ID: 800007
+**** debug	Wed Jul 10 20:24:11 IST 2013	1373468051523	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:DAFDeploymentID: 800007 matches DeploymentID: 800007
+**** debug	Wed Jul 10 20:24:11 IST 2013	1373468051523	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:DeploymentListener.deploymentFailed
+**** debug	Wed Jul 10 20:24:11 IST 2013	1373468051524	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:found 1 failure messages
+**** debug	Wed Jul 10 20:24:11 IST 2013	1373468051529	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:adding failure message Deployment Failed with severity Error
+**** debug	Wed Jul 10 20:24:11 IST 2013	1373468051532	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    deployment failed
+**** debug	Wed Jul 10 20:24:11 IST 2013	1373468051563	/atg/epub/DeploymentServer	Verify switchable CA datasources:
+**** debug	Wed Jul 10 20:24:11 IST 2013	1373468051565	/atg/epub/DeploymentServer	  Current Target live datasource name: DataSourceA
+**** debug	Wed Jul 10 20:24:11 IST 2013	1373468051566	/atg/epub/DeploymentServer	  CA switching datasource: /atg/dynamo/service/jdbc/SwitchingDataSource
+**** debug	Wed Jul 10 20:24:11 IST 2013	1373468051567	/atg/epub/DeploymentServer	    Current live datasource name: DataSourceB
+**** debug	Wed Jul 10 20:24:11 IST 2013	1373468051568	/atg/epub/DeploymentServer	    Current offline datasource name: DataSourceA
+**** debug	Wed Jul 10 20:24:11 IST 2013	1373468051569	/atg/epub/DeploymentServer	Switchable CA datasources verified.
+**** debug	Wed Jul 10 20:24:11 IST 2013	1373468051570	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Creating rollback DeploymentData:
+**** debug	Wed Jul 10 20:24:11 IST 2013	1373468051585	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:  Adding rollback DeploymentData for a deployment stoppage due to failure in the first apply phase.
+**** debug	Wed Jul 10 20:24:11 IST 2013	1373468051611	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    Adding rollback DeploymentData for: atg.adapter.secure.GenericSecuredMutableVersionContentRepository@5189b8b
+**** debug	Wed Jul 10 20:24:11 IST 2013	1373468051611	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    Adding rollback DeploymentData for: /atg/epub/file/WWWFileSystem, /127.0.0.1:8810
+**** debug	Wed Jul 10 20:24:11 IST 2013	1373468051613	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    Adding rollback DeploymentData for: /atg/epub/file/ConfigFileSystem, /127.0.0.1:8810
+**** debug	Wed Jul 10 20:24:11 IST 2013	1373468051614	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    Adding rollback DeploymentData for: atg.adapter.secure.GenericSecuredMutableVersionContentRepository@4299c84a
+**** debug	Wed Jul 10 20:24:11 IST 2013	1373468051615	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    Adding rollback DeploymentData for: atg.adapter.secure.GenericSecuredMutableVersionContentRepository@429302e2
+**** debug	Wed Jul 10 20:24:11 IST 2013	1373468051616	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    Adding rollback DeploymentData for: atg.adapter.secure.GenericSecuredMutableVersionContentRepository@2a54ce3a
+**** debug	Wed Jul 10 20:24:11 IST 2013	1373468051617	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    Adding rollback DeploymentData for: atg.adapter.secure.GenericSecuredMutableVersionContentRepository@fb7f788
+**** debug	Wed Jul 10 20:24:11 IST 2013	1373468051618	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Purging deployment data for deployment: 800007
+**** debug	Wed Jul 10 20:24:11 IST 2013	1373468051689	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Starting DAF deployment with ID: 800007-auto_rb
+**** debug	Wed Jul 10 20:24:11 IST 2013	1373468051702	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Polling Until Data Appplied
+**** debug	Wed Jul 10 20:24:16 IST 2013	1373468056708	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:found 1 failure messages
+**** debug	Wed Jul 10 20:24:16 IST 2013	1373468056718	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:adding failure message Deployment Failed with severity Error
+**** debug	Wed Jul 10 20:24:18 IST 2013	1373468058276	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:DeploymentListener.deploymentFailed called for deployment with ID: 800007-auto_rb
+**** debug	Wed Jul 10 20:24:18 IST 2013	1373468058277	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:DAFDeploymentID: 800007-auto_rb matches DeploymentID: 800007-auto_rb
+**** debug	Wed Jul 10 20:24:18 IST 2013	1373468058278	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:DeploymentListener.deploymentFailed
+**** debug	Wed Jul 10 20:34:18 IST 2013	1373468658208	/atg/epub/DeploymentServer	Forward deploying following active workspaces: [workspace:11100]
+**** debug	Wed Jul 10 20:34:18 IST 2013	1373468658374	/atg/epub/DeploymentServer	Run first apply phase: true
+**** debug	Wed Jul 10 20:34:18 IST 2013	1373468658374	/atg/epub/DeploymentServer	Switch switchable CA datasources:
+**** debug	Wed Jul 10 20:34:18 IST 2013	1373468658374	/atg/epub/DeploymentServer	  isDeploymentRollback(): false
+**** debug	Wed Jul 10 20:34:18 IST 2013	1373468658376	/atg/epub/DeploymentServer	  Current Target live datasource name: DataSourceA
+**** debug	Wed Jul 10 20:34:18 IST 2013	1373468658376	/atg/epub/DeploymentServer	  CA switching datasource: /atg/dynamo/service/jdbc/SwitchingDataSource
+**** debug	Wed Jul 10 20:34:18 IST 2013	1373468658376	/atg/epub/DeploymentServer	    Current live datasource name: DataSourceB
+**** debug	Wed Jul 10 20:34:18 IST 2013	1373468658376	/atg/epub/DeploymentServer	    Current offline datasource name: DataSourceA
+**** debug	Wed Jul 10 20:34:18 IST 2013	1373468658387	/atg/epub/DeploymentServer	    The current CA live datasource is pointing at the Target offline datasource. No CA switch necessary.
+**** debug	Wed Jul 10 20:34:18 IST 2013	1373468658388	/atg/epub/DeploymentServer	Switchable CA datasources switched.
+**** debug	Wed Jul 10 20:34:18 IST 2013	1373468658395	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Creating standard DeploymentData
+**** debug	Wed Jul 10 20:34:18 IST 2013	1373468658405	/atg/epub/DeploymentServer	Forward deploying following active workspaces: [workspace:11100]
+**** debug	Wed Jul 10 20:34:18 IST 2013	1373468658405	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Deploy Data
+**** debug	Wed Jul 10 20:34:18 IST 2013	1373468658406	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Starting DAF deployment with ID: 900003
+**** debug	Wed Jul 10 20:34:18 IST 2013	1373468658461	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Polling Until Data Appplied
+**** debug	Wed Jul 10 20:34:31 IST 2013	1373468671657	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:DeploymentListener.deploymentCompleted called for deployment with ID: 900003
+**** debug	Wed Jul 10 20:34:31 IST 2013	1373468671658	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:DAFDeploymentID: 900003 matches DeploymentID: 900003
+**** debug	Wed Jul 10 20:34:31 IST 2013	1373468671658	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:DeploymentListener.deploymentCompleted
+**** debug	Wed Jul 10 20:35:13 IST 2013	1373468713118	/atg/epub/DeploymentServer	Run second apply phase: true
+**** debug	Wed Jul 10 20:35:13 IST 2013	1373468713118	/atg/epub/DeploymentServer	Switch switchable CA datasources:
+**** debug	Wed Jul 10 20:35:13 IST 2013	1373468713119	/atg/epub/DeploymentServer	  isDeploymentRollback(): false
+**** debug	Wed Jul 10 20:35:13 IST 2013	1373468713121	/atg/epub/DeploymentServer	  Current Target live datasource name: DataSourceB
+**** debug	Wed Jul 10 20:35:13 IST 2013	1373468713121	/atg/epub/DeploymentServer	  CA switching datasource: /atg/dynamo/service/jdbc/SwitchingDataSource
+**** debug	Wed Jul 10 20:35:13 IST 2013	1373468713121	/atg/epub/DeploymentServer	    Current live datasource name: DataSourceB
+**** debug	Wed Jul 10 20:35:13 IST 2013	1373468713121	/atg/epub/DeploymentServer	    Current offline datasource name: DataSourceA
+**** debug	Wed Jul 10 20:35:13 IST 2013	1373468713121	/atg/epub/DeploymentServer	    The current CA live datasource is not pointing at the Target offline datasource
+**** debug	Wed Jul 10 20:35:13 IST 2013	1373468713123	/atg/epub/DeploymentServer	    Switching CA datasource : /atg/dynamo/service/jdbc/SwitchingDataSource
+**** debug	Wed Jul 10 20:35:13 IST 2013	1373468713390	/atg/epub/DeploymentServer	    Pop! CA datasource switched.
+**** debug	Wed Jul 10 20:35:13 IST 2013	1373468713390	/atg/epub/DeploymentServer	  CA switching datasource: /atg/dynamo/service/jdbc/SwitchingDataSource
+**** debug	Wed Jul 10 20:35:13 IST 2013	1373468713391	/atg/epub/DeploymentServer	    Current live datasource name: DataSourceA
+**** debug	Wed Jul 10 20:35:13 IST 2013	1373468713392	/atg/epub/DeploymentServer	    Current offline datasource name: DataSourceB
+**** debug	Wed Jul 10 20:35:13 IST 2013	1373468713393	/atg/epub/DeploymentServer	Switchable CA datasources switched.
+**** debug	Wed Jul 10 20:35:13 IST 2013	1373468713394	/atg/epub/DeploymentServer	Verify switchable CA datasources:
+**** debug	Wed Jul 10 20:35:13 IST 2013	1373468713398	/atg/epub/DeploymentServer	  Current Target live datasource name: DataSourceB
+**** debug	Wed Jul 10 20:35:13 IST 2013	1373468713398	/atg/epub/DeploymentServer	  CA switching datasource: /atg/dynamo/service/jdbc/SwitchingDataSource
+**** debug	Wed Jul 10 20:35:13 IST 2013	1373468713399	/atg/epub/DeploymentServer	    Current live datasource name: DataSourceA
+**** debug	Wed Jul 10 20:35:13 IST 2013	1373468713400	/atg/epub/DeploymentServer	    Current offline datasource name: DataSourceB
+**** debug	Wed Jul 10 20:35:13 IST 2013	1373468713401	/atg/epub/DeploymentServer	Switchable CA datasources verified.
+**** debug	Wed Jul 10 20:35:13 IST 2013	1373468713407	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Deploy Data
+**** debug	Wed Jul 10 20:35:13 IST 2013	1373468713408	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:  This is the 2nd apply of a switch deployment with ID: 900003-switch
+**** debug	Wed Jul 10 20:35:13 IST 2013	1373468713408	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:    switchPreviouslyDeployed: false
+**** debug	Wed Jul 10 20:35:13 IST 2013	1373468713415	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Creating switch DeploymentData
+**** debug	Wed Jul 10 20:35:13 IST 2013	1373468713416	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Starting DAF deployment with ID: 900003-switch
+**** debug	Wed Jul 10 20:35:13 IST 2013	1373468713441	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:Polling Until Data Appplied
+**** debug	Wed Jul 10 20:35:22 IST 2013	1373468722841	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:DeploymentListener.deploymentCompleted called for deployment with ID: 900003-switch
+**** debug	Wed Jul 10 20:35:22 IST 2013	1373468722841	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:DAFDeploymentID: 900003-switch matches DeploymentID: 900003-switch
+**** debug	Wed Jul 10 20:35:22 IST 2013	1373468722864	/atg/epub/DeploymentServer	DistributedDeploymentAdapter:DeploymentListener.deploymentCompleted
+**** debug	Wed Jul 10 20:37:32 IST 2013	1373468852944	/atg/endeca/index/LocalSynchronizationInvoker	AllPaths: [/atg/commerce/search/ProductCatalogOutputConfig], pIndexingType = incremental, pAffectedItemTypes = {/atg/commerce/catalog/ProductCatalog=[product]},, IncrementalPaths: [/atg/commerce/search/ProductCatalogOutputConfig], pAncillaryIndexingOutputConfigPaths: []
+**** debug	Wed Jul 10 21:14:09 IST 2013	1373471049115	/atg/epub/version/VersionManagerService	Uninitializing the VersionManagerService
+**** debug	Sun Jul 14 14:06:03 IST 2013	1373790963442	/atg/epub/version/VersionManagerService	Uninitializing the VersionManagerService

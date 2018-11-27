@@ -1,0 +1,321 @@
+/* Base CSS File */
+h1 {letter-spacing: -2px;}
+h1, h2 {
+  font-family: "GothamBlack";
+  font-weight: normal;
+  text-transform: uppercase;
+  line-height: inherit;
+}
+sup, sub {font-size: 60%;}
+
+/* Bullet List within Tabs */
+ul.bullet-list {margin-left: 15px;}
+#tab-content ul.bullet-list { 
+  font-size: 13px;
+  font-family: Helvetica,Arial,sans-serif; 
+}
+
+/* No results content */
+.no-results {
+  padding:35px 0 25px 10px;
+  border-top:1px solid #ddd;
+  margin-top: 15px;
+}
+
+/* Overrides for default button */
+.button {
+  text-transform: uppercase;
+  font: normal 13px 'GothamMedium';
+}
+.no-padding {padding: 0 !important;}
+.no-margin {margin: 0 !important;}
+
+a.circle-arrow {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-arrow-orange-circle.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat left top;
+  color: $orange-2;
+  font-size: 12px;
+  margin-top: emCalc(20px);
+  padding: emCalc(2px) 0 emCalc(5px) emCalc(25px);
+  text-transform: uppercase;
+}
+
+a.circle-arrow.white {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-arrow-white-circle.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat left top;
+  color: #FFFFFF;
+  font-size: 19px;
+  margin-top: emCalc(8px);
+  padding: 0 0 0 emCalc(23px);
+  text-transform: uppercase;
+  float: right;
+}
+/* KM - to do - upload new image to LiquidPixel - this one is wrong */
+a.circle-arrow.green {
+  background: transparent url(../img/icon-arrow-green-circle.png) left top no-repeat;
+  color: #00ac79;
+  font-size: 12px;
+  margin-top: emCalc(20px);
+  padding: emCalc(1px) 0 emCalc(5px) emCalc(25px);
+  text-transform: uppercase;
+}
+
+a.pdf {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-pdf.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat left top;
+  color: $orange-2;
+  font-size: emCalc(15px);
+  padding: 0.1em 0 0 emCalc(28px);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.green-add-cart {
+  @include btn-cricket(#09be83);
+  display: block;
+  border: 1px solid #0b9a6a;
+  padding: 0.8em;
+  font-size: 15px;
+  width: 60%;
+}
+
+/* Grey Disabled Buttons */
+.grey-add-cart {
+  @include btn-cricket-disabled(#dbdbdc);
+  border: 1px solid #bbbdbf;
+  padding: 0.8em;
+  font-size: 15px;
+  cursor: default;
+}
+
+/* General Grey Button */
+.white-button {
+  @include btn-cricket(#fff);
+  color: #006d42;
+}
+
+.orange-button {
+  @include btn-cricket(#eb3e29);
+  color: #ffffff;
+}
+
+.grey-button {
+  @include btn-cricket(#dbdbdc);
+  color: #218f68;
+}
+
+.disabled-button {
+  background: grey !important;
+  border-color: grey  !important;
+  color: #ccc  !important;
+  pointer: auto  !important;
+}
+
+/* We use some form stuff on the Phones Landing Page */
+fieldset {
+  legend {
+    background: transparent;
+    color: #fff;
+  }
+  span {font-size: 0.8em;} 
+}
+
+/** Global Style **/
+.green-price {
+  font-family: "GothamBold";
+  font-size: 2.8em;
+  color: #008752;
+  letter-spacing: -0.03em;
+}
+
+.orbit-bullets li {
+  border: 0;
+  border-radius: 0;
+  height: 19px;
+  width: 19px;
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/orbit-dots.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) -26px 0 no-repeat !important;
+}
+
+.orbit-bullets li:hover, .orbit-bullets li.active {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/orbit-dots.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 0 0 no-repeat !important;
+}
+
+/* Global subnav styling (used on phone listing page)*/
+.sub-nav {
+  padding: 1em 0 0.5em 0;
+  margin: 0;
+  dd {
+    display: block;
+    margin: 0;
+    float: none;
+    &.active a {padding: 0; display: block;}
+  }
+  /* Desktop Version */
+  @include respond-min($small-screen) {
+    border-top: none;
+    margin: 1em 0 1em 0;
+    padding: 0;
+    background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/subnav-line.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) repeat-x bottom left;
+    dd {
+      margin-bottom: 0;
+      margin-right: 0.5625em;
+      height: 2.3em;
+      display: inline;
+      padding-top: 0.25em;
+      float: left;
+      margin-left: 0.5625em;
+      &.active a {display: inline; padding: 0.1875em 0.5625em;}
+    }
+    dd.active {
+      background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-active-subnav.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat bottom center;
+      display: block;
+      font-size: 1.13em;
+      text-align: inherit;
+      float: left;
+      text-transform: none;
+      font-family: inherit;
+      padding-top: 0;
+    }
+    
+  }
+}
+
+/* Global Alert Box Style - for when there isn't a ZipCode entered*/
+.alert-box {
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #333333;
+  margin: 0 0 1em 0;
+  line-height: 1.5em;
+  padding: 0.9375em 1.5625em 1em 0.9375em;
+  font-size: 12px;
+  a {color: $orange-2;}
+}
+
+/* LEGAL FOOTER (within pages)*/
+
+.section-legal {
+  margin: 0 auto;
+  padding-bottom: 2em;
+  h4 {
+    border-top: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+    color: #333;
+    font: bold 11px Arial;
+    padding: emCalc(15px) 0 emCalc(15px) emCalc(12px);
+    text-transform: uppercase;
+    @include respond-min($small-screen) {
+      padding: emCalc(15px) 0 emCalc(15px) emCalc(5px);
+    }
+  }
+}
+
+.section-legal #section-container-legal {
+    border-style: none;
+    #hidden {
+      display: none;
+      p.title, .content {display: none;}
+    }
+    /* Active State of Tabs */
+    section.active p.title {
+      background: #FFF url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-legal-accordion-minus.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 98% 15px no-repeat;
+      a {color: #008752;}
+      @include respond-min($small-screen) { 
+        background: none;
+      }
+    }
+    p.title {
+      background: #FFF url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-legal-accordion-plus.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 98% 15px no-repeat;
+      border: 0;
+      @include respond-min($small-screen) { 
+        background: none;
+        border: 0;
+      }
+    }
+    p.title a {
+      color: #333;
+      text-transform: uppercase;
+      padding-left: 0.9375em;
+      font: normal 11px Arial;
+      @include respond-min($small-screen) { 
+        padding: 0 emCalc(20px) emCalc(5px) emCalc(2px);
+      }
+    }
+    .content {
+      border-bottom: 1px solid #d9d9d9;
+      color: #333;
+      font: normal 11px/16px Arial;
+      a {color: #e63924;}
+      @include respond-min($small-screen) { 
+        border: 0;
+        margin-top: emCalc(10px);
+        margin-bottom: emCalc(35px);
+        padding: 0 0 0 emCalc(2px);
+      }
+    }
+}
+
+/*** Reveal Overlays - use same Close buttons as everywhere else ***/
+.reveal-modal .close-reveal-modal {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/close.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 0 0;
+  display: block;
+  height: 19px;
+  text-indent: -99999px;
+  width: 19px;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  cursor: pointer;
+}
+
+/* Reveal Notification Modals */
+.notification {
+  p.title { 
+    color:#333; 
+    font: normal 18px 'GothamBold';
+    margin-bottom: emCalc(10px); 
+    text-transform: none; 
+  }
+  p {
+    color:#333;
+    font: normal 13px/16px 'GothamBook';
+  }
+  form label { 
+    color: #333;
+    font: normal 16px 'GothamBook';
+    margin-bottom: emCalc(10px); 
+    span {
+      padding-top: 5px;
+    }
+  }
+  a {
+    color: $orange-2;
+    font-size: 12px;
+    padding: emCalc(2px) 0 emCalc(5px) 0;
+    text-transform: uppercase;  
+    &.button {color: #fff;}
+  }
+}
+
+/* Checkboxes on Windows don't look great so use an image */
+.lt-ie10 form.custom .custom.checkbox.checked:before {
+  content: url(//images.mycricket.com/cricket?set=imageURL[file:/img/ie-form-checkbox-x.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) !important;
+}
+.ie9 form.custom .custom.checkbox.checked:before {
+  margin-top: 12px !important;
+}
+  
+.lt-ie10 #section-checkout-form .details-content .form form.custom .checkbox.checked:before {
+  content: url(//images.mycricket.com/cricket?set=imageURL[file:/img/ie-form-checkbox-check.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) !important;
+  margin-left: 12px !important;
+  margin-top: 6px !important;
+}
+
+.lt-ie10 .step2 #section-checkout-form .details-content .form form.custom .checkbox.checked:before {
+  margin-left: -7px !important;
+}
+
+.orange-button.hover {
+  background-color: #CE2713;
+}
+
+.green-button.hover{
+    background-color: #005433;
+}

@@ -1,0 +1,113 @@
+**** info	Mon Dec 02 20:06:00 IST 2013	1385994960896	/atg/dynamo/service/logging/ScreenLog	Using external info logging for Nucleus debug and trace messages to prevent hidden Nucleus logging. Set the Nucleus /atg/dynamo/service/logging/ScreenLog.useInfoForDebug property to false to use external logging debug and trace instead.
+**** info	Mon Dec 02 20:06:01 IST 2013	1385994961680	/atg/epub/file/ConfigFileSystem	journaling file system started: vfs=file:/C:/ATG/ATG10.2/home/servers/atg_preview_lockserver/PublishingAgent/deploymentconfig/live/config/ journalDirectory=C:\ATG\ATG10.2\home\servers\atg_preview_lockserver\PublishingAgent\deploymentconfig\data\config
+**** info	Mon Dec 02 20:12:37 IST 2013	1385995357080	/atg/commerce/pricing/Promotions	Resolving reference to /atg/commerce/catalog/ProductCatalog
+**** info	Mon Dec 02 20:12:37 IST 2013	1385995357158	/atg/commerce/pricing/Promotions	Resolving reference to /atg/commerce/catalog/ProductCatalog
+**** info	Mon Dec 02 20:12:37 IST 2013	1385995357456	/atg/dynamo/server/SQLRepositoryEventServer	Service /atg/dynamo/server/SQLRepositoryEventServer listening at http://INCHCMPC05389:61707/
+**** info	Mon Dec 02 20:12:40 IST 2013	1385995360440	/atg/commerce/pricing/Promotions	Resolving reference to /atg/commerce/catalog/ProductCatalog
+**** info	Mon Dec 02 20:12:41 IST 2013	1385995361092	/atg/commerce/pricing/ShippingPricingEngine	Pricing Engine starting up
+**** info	Mon Dec 02 20:12:41 IST 2013	1385995361537	/atg/commerce/pricing/TaxPricingEngine	Pricing Engine starting up
+**** info	Mon Dec 02 20:12:41 IST 2013	1385995361970	/atg/commerce/pricing/OrderPricingEngine	Pricing Engine starting up
+**** info	Mon Dec 02 20:12:41 IST 2013	1385995361998	/atg/commerce/PipelineManager	Starting PipelineManager.
+**** info	Mon Dec 02 20:12:42 IST 2013	1385995362936	/atg/commerce/approval/ApprovalPipelineManager	Starting PipelineManager.
+**** info	Mon Dec 02 20:12:43 IST 2013	1385995363309	/atg/commerce/payment/PaymentPipelineManager	Starting PipelineManager.
+**** info	Mon Dec 02 20:12:43 IST 2013	1385995363445	/atg/commerce/invoice/pipeline/InvoicePipelineManager	Starting PipelineManager.
+**** info	Mon Dec 02 20:12:44 IST 2013	1385995364598	/atg/commerce/pricing/ItemPricingEngine	Pricing Engine starting up
+**** info	Mon Dec 02 20:12:47 IST 2013	1385995367076	/atg/scenario/XrefParserManager	XrefParserManager startup complete
+**** info	Mon Dec 02 20:12:48 IST 2013	1385995368753	/atg/scenario/ScenarioManager	The /atg/scenario/scenarioManager.xml file is not configured. Attempting to register INCHCMPC05389:8850 as the ProcessEditorServer by default.
+**** info	Mon Dec 02 20:12:50 IST 2013	1385995370045	/atg/commerce/catalog/CatalogMaintenanceService	Resolving reference to /atg/commerce/catalog/custom/CatalogMaintenanceService
+**** info	Mon Dec 02 20:12:50 IST 2013	1385995370887	/atg/dynamo/server/SQLRepositoryEventServer_production	Service /atg/dynamo/server/SQLRepositoryEventServer_production listening at http://INCHCMPC05389:61709/
+**** info	Mon Dec 02 20:12:51 IST 2013	1385995371778	/atg/dynamo/server/RmiServer	Service /atg/dynamo/server/RmiServer listening at rmi://INCHCMPC05389:8860/
+**** info	Mon Dec 02 20:12:53 IST 2013	1385995373197	/com/cricket/integration/geo/GeoRepository	SQL Repository startup complete
+**** info	Mon Dec 02 20:12:53 IST 2013	1385995373709	/atg/registry/PipelineRegistry	Starting Pipeline Registry.
+**** info	Mon Dec 02 20:12:54 IST 2013	1385995374391	/atg/commerce/catalog/CatalogChangesListener	Resolving reference to /atg/commerce/catalog/custom/CatalogChangesListener
+**** info	Mon Dec 02 20:12:56 IST 2013	1385995376942	/atg/commerce/endeca/index/CategoryTreeService	service started.
+**** info	Mon Dec 02 20:13:35 IST 2013	1385995415905	/atg/dynamo/service/logging/ScreenLog	Using external info logging for Nucleus debug and trace messages to prevent hidden Nucleus logging. Set the Nucleus /atg/dynamo/service/logging/ScreenLog.useInfoForDebug property to false to use external logging debug and trace instead.
+**** info	Mon Dec 02 20:13:36 IST 2013	1385995416667	/atg/epub/file/ConfigFileSystem	journaling file system started: vfs=file:/C:/ATG/ATG10.2/home/servers/atg_preview_lockserver/PublishingAgent/deploymentconfig/live/config/ journalDirectory=C:\ATG\ATG10.2\home\servers\atg_preview_lockserver\PublishingAgent\deploymentconfig\data\config
+**** info	Mon Dec 02 20:13:40 IST 2013	1385995420950	/atg/commerce/pricing/priceLists/PriceLists	SQL Repository startup complete
+**** info	Mon Dec 02 20:13:41 IST 2013	1385995421792	/atg/commerce/catalog/ProductCatalog	SQL Repository startup complete
+**** info	Mon Dec 02 20:13:42 IST 2013	1385995422424	/atg/multisite/SiteRepository	SQL Repository startup complete
+**** info	Mon Dec 02 20:13:42 IST 2013	1385995422747	/atg/commerce/pricing/Promotions	Resolving reference to /atg/commerce/catalog/ProductCatalog
+**** info	Mon Dec 02 20:13:42 IST 2013	1385995422930	/atg/commerce/gifts/Giftlists	SQL Repository startup complete
+**** info	Mon Dec 02 20:13:43 IST 2013	1385995423118	/atg/commerce/locations/LocationRepository	SQL Repository startup complete
+**** info	Mon Dec 02 20:13:43 IST 2013	1385995423319	/atg/commerce/contracts/Contracts	SQL Repository startup complete
+**** info	Mon Dec 02 20:13:44 IST 2013	1385995424677	/atg/commerce/claimable/ClaimableRepository	SQL Repository startup complete
+**** info	Mon Dec 02 20:13:44 IST 2013	1385995424878	/atg/dynamo/service/jdbc/SQLRepository	SQL Repository startup complete
+**** info	Mon Dec 02 20:13:44 IST 2013	1385995424940	/atg/dynamo/server/SQLRepositoryEventServer	Service /atg/dynamo/server/SQLRepositoryEventServer listening at http://INCHCMPC05389:61722/
+**** info	Mon Dec 02 20:13:47 IST 2013	1385995427494	/atg/userprofiling/ProfileAdapterRepository	SQL Repository startup complete
+**** info	Mon Dec 02 20:13:48 IST 2013	1385995428945	/atg/commerce/PipelineManager	Starting PipelineManager.
+**** info	Mon Dec 02 20:13:50 IST 2013	1385995430145	/atg/systemconfiguration/SystemConfigurationRepository	SQL Repository startup complete
+**** info	Mon Dec 02 20:13:50 IST 2013	1385995430866	/atg/dynamo/security/AdminSqlRepository	SQL Repository startup complete
+**** info	Mon Dec 02 20:13:50 IST 2013	1385995430876	/atg/dynamo/security/AdminAccountInitializer	Initializing account database /atg/dynamo/security/AdminAccountManager from /atg/dynamo/security/SimpleXmlUserAuthority
+**** info	Mon Dec 02 20:13:55 IST 2013	1385995435397	/atg/scenario/XrefParserManager	XrefParserManager startup complete
+**** info	Mon Dec 02 20:13:56 IST 2013	1385995436054	/atg/scenario/ScenarioManager	The /atg/scenario/scenarioManager.xml file is not configured. Attempting to register INCHCMPC05389:8852 as the ProcessEditorServer by default.
+**** info	Mon Dec 02 20:13:57 IST 2013	1385995437286	/atg/scenario/ScenarioManager	Initializing individual process server INCHCMPC05389:8852. Current configured Process Editor Server is set to BSD-PCS2964482:8850
+**** info	Mon Dec 02 20:14:03 IST 2013	1385995443960	/atg/commerce/order/OrderRepository	SQL Repository startup complete
+**** info	Mon Dec 02 20:14:25 IST 2013	1385995465499	/atg/scenario/CollectiveEmailSender	Resolving reference to /atg/userprofiling/email/TemplateEmailSender
+**** info	Mon Dec 02 20:14:25 IST 2013	1385995465685	/atg/reporting/DatasetRecorderManager	Validating all dataset mappers
+**** info	Mon Dec 02 20:14:27 IST 2013	1385995467196	/atg/commerce/order/abandoned/AbandonedOrderLogRepository	SQL Repository startup complete
+**** info	Mon Dec 02 20:14:37 IST 2013	1385995477325	/atg/commerce/inventory/InventoryRepository	SQL Repository startup complete
+**** info	Mon Dec 02 20:14:37 IST 2013	1385995477610	/atg/commerce/pricing/ItemPricingEngine	Pricing Engine starting up
+**** info	Mon Dec 02 20:14:38 IST 2013	1385995478227	/atg/commerce/pricing/OrderPricingEngine	Pricing Engine starting up
+**** info	Mon Dec 02 20:14:38 IST 2013	1385995478578	/atg/commerce/invoice/InvoiceRepository	SQL Repository startup complete
+**** info	Mon Dec 02 20:14:39 IST 2013	1385995479726	/atg/dynamo/server/SQLRepositoryEventServer_production	Service /atg/dynamo/server/SQLRepositoryEventServer_production listening at http://INCHCMPC05389:61744/
+**** info	Mon Dec 02 20:14:40 IST 2013	1385995480803	/atg/userprofiling/PersonalizationRepository	SQL Repository startup complete
+**** info	Mon Dec 02 20:14:40 IST 2013	1385995480884	/atg/commerce/approval/ApprovalPipelineManager	Starting PipelineManager.
+**** info	Mon Dec 02 20:14:45 IST 2013	1385995485806	/atg/commerce/payment/PaymentPipelineManager	Starting PipelineManager.
+**** info	Mon Dec 02 20:15:06 IST 2013	1385995506621	/atg/commerce/invoice/pipeline/InvoicePipelineManager	Starting PipelineManager.
+**** info	Mon Dec 02 20:15:08 IST 2013	1385995508006	/atg/commerce/pricing/TaxPricingEngine	Pricing Engine starting up
+**** info	Mon Dec 02 20:15:08 IST 2013	1385995508069	/atg/commerce/pricing/ShippingPricingEngine	Pricing Engine starting up
+**** info	Mon Dec 02 20:15:08 IST 2013	1385995508834	/atg/content/media/MediaRepository	SQL Repository startup complete
+**** info	Mon Dec 02 20:15:10 IST 2013	1385995510463	/atg/commerce/custsvc/CsrRepository	SQL Repository startup complete
+**** info	Mon Dec 02 20:15:10 IST 2013	1385995510664	/atg/store/stores/StoreTextRepository	SQL Repository startup complete
+**** info	Mon Dec 02 20:15:11 IST 2013	1385995511517	/atg/sitemap/SitemapRepository	SQL Repository startup complete
+**** info	Mon Dec 02 20:15:11 IST 2013	1385995511696	/atg/dynamo/server/RmiServer	Service /atg/dynamo/server/RmiServer listening at rmi://INCHCMPC05389:8862/
+**** info	Mon Dec 02 20:15:12 IST 2013	1385995512303	/atg/dynamo/service/jdbc/SDSRepository	SQL Repository startup complete
+**** info	Mon Dec 02 20:15:12 IST 2013	1385995512446	/com/cricket/integration/geo/GeoRepository	SQL Repository startup complete
+**** info	Mon Dec 02 20:15:12 IST 2013	1385995512823	/atg/registry/PipelineRegistry	Starting Pipeline Registry.
+**** info	Mon Dec 02 20:15:14 IST 2013	1385995514264	/atg/commerce/endeca/index/CategoryTreeService	service started.
+**** info	Mon Dec 02 20:15:14 IST 2013	1385995514503	/atg/commerce/catalog/CatalogChangesListener	Resolving reference to /atg/commerce/catalog/custom/CatalogChangesListener
+**** info	Mon Dec 02 20:15:16 IST 2013	1385995516555	/atg/seo/SEORepository	SQL Repository startup complete
+**** info	Tue Dec 03 01:00:00 IST 2013	1386012600044	/atg/devtools/ComponentIndex	Creating component index C:\ATG\ATG10.2\home\servers\atg_preview_lockserver\data\componentIndex.ser
+**** info	Tue Dec 03 01:00:10 IST 2013	1386012610175	/atg/devtools/ComponentIndex	Saving component index C:\ATG\ATG10.2\home\servers\atg_preview_lockserver\data\componentIndex.ser
+**** info	Tue Dec 03 01:00:10 IST 2013	1386012610224	/atg/devtools/ComponentIndex	Component indexing complete.
+**** info	Tue Dec 03 01:00:10 IST 2013	1386012610225	/atg/devtools/DocumentIndex	Building document index C:\ATG\ATG10.2\home\servers\atg_preview_lockserver\data\documentIndex.ser
+**** info	Tue Dec 03 01:00:10 IST 2013	1386012610331	/atg/devtools/DocumentIndex	Saving document index C:\ATG\ATG10.2\home\servers\atg_preview_lockserver\data\documentIndex.ser
+**** info	Tue Dec 03 01:00:10 IST 2013	1386012610338	/atg/devtools/DocumentIndex	Document indexing complete.
+**** info	Tue Dec 03 02:14:41 IST 2013	1386017081053	/atg/commerce/approval/ApprovalPipelineManager	Reinitializing PipelineManager from XML file.
+**** info	Tue Dec 03 02:15:06 IST 2013	1386017106641	/atg/commerce/invoice/pipeline/InvoicePipelineManager	Reinitializing PipelineManager from XML file.
+**** info	Tue Dec 03 02:15:06 IST 2013	1386017106661	/atg/commerce/payment/PaymentPipelineManager	Reinitializing PipelineManager from XML file.
+**** info	Tue Dec 03 02:15:07 IST 2013	1386017107962	/atg/commerce/PipelineManager	Reinitializing PipelineManager from XML file.
+**** info	Tue Dec 03 08:14:41 IST 2013	1386038681097	/atg/commerce/approval/ApprovalPipelineManager	Reinitializing PipelineManager from XML file.
+**** info	Tue Dec 03 08:15:06 IST 2013	1386038706681	/atg/commerce/invoice/pipeline/InvoicePipelineManager	Reinitializing PipelineManager from XML file.
+**** info	Tue Dec 03 08:15:06 IST 2013	1386038706681	/atg/commerce/payment/PaymentPipelineManager	Reinitializing PipelineManager from XML file.
+**** info	Tue Dec 03 08:15:07 IST 2013	1386038707962	/atg/commerce/PipelineManager	Reinitializing PipelineManager from XML file.
+**** info	Tue Dec 03 14:10:15 IST 2013	1386060015255	/atg/commerce/endeca/index/CategoryTreeService	service stopped.
+**** info	Tue Dec 03 14:10:15 IST 2013	1386060015258	/atg/commerce/approval/ApprovalPipelineManager	Stopping PipelineManager.
+**** info	Tue Dec 03 14:10:15 IST 2013	1386060015259	/atg/commerce/invoice/pipeline/InvoicePipelineManager	Stopping PipelineManager.
+**** info	Tue Dec 03 14:10:15 IST 2013	1386060015262	/atg/commerce/payment/PaymentPipelineManager	Stopping PipelineManager.
+**** info	Tue Dec 03 14:10:15 IST 2013	1386060015263	/atg/commerce/PipelineManager	Stopping PipelineManager.
+**** info	Tue Dec 03 14:10:15 IST 2013	1386060015267	/atg/dynamo/service/Scheduler	Scheduler shutting down.
+**** info	Tue Dec 03 14:10:15 IST 2013	1386060015267	/atg/dynamo/service/Scheduler	Scheduler stopped.
+**** info	Tue Dec 03 14:38:27 IST 2013	1386061707179	/atg/dynamo/service/logging/ScreenLog	Using external info logging for Nucleus debug and trace messages to prevent hidden Nucleus logging. Set the Nucleus /atg/dynamo/service/logging/ScreenLog.useInfoForDebug property to false to use external logging debug and trace instead.
+**** info	Tue Dec 03 14:38:28 IST 2013	1386061708050	/atg/epub/file/ConfigFileSystem	journaling file system started: vfs=file:/C:/ATG/ATG10.2/home/servers/atg_preview_lockserver/PublishingAgent/deploymentconfig/live/config/ journalDirectory=C:\ATG\ATG10.2\home\servers\atg_preview_lockserver\PublishingAgent\deploymentconfig\data\config
+**** info	Tue Dec 03 14:38:31 IST 2013	1386061711178	/atg/commerce/pricing/priceLists/PriceLists	SQL Repository startup complete
+**** info	Tue Dec 03 14:38:32 IST 2013	1386061712024	/atg/commerce/catalog/ProductCatalog	SQL Repository startup complete
+**** info	Tue Dec 03 14:38:32 IST 2013	1386061712698	/atg/multisite/SiteRepository	SQL Repository startup complete
+**** info	Tue Dec 03 14:38:33 IST 2013	1386061713291	/atg/commerce/pricing/Promotions	Resolving reference to /atg/commerce/catalog/ProductCatalog
+**** info	Tue Dec 03 14:38:33 IST 2013	1386061713477	/atg/commerce/gifts/Giftlists	SQL Repository startup complete
+**** info	Tue Dec 03 14:38:33 IST 2013	1386061713685	/atg/commerce/locations/LocationRepository	SQL Repository startup complete
+**** info	Tue Dec 03 14:38:33 IST 2013	1386061713887	/atg/commerce/contracts/Contracts	SQL Repository startup complete
+**** info	Tue Dec 03 14:38:35 IST 2013	1386061715278	/atg/commerce/claimable/ClaimableRepository	SQL Repository startup complete
+**** info	Tue Dec 03 14:38:35 IST 2013	1386061715503	/atg/userprofiling/ProfileAdapterRepository	SQL Repository startup complete
+**** info	Tue Dec 03 14:38:44 IST 2013	1386061724180	/atg/commerce/pricing/ShippingPricingEngine	Pricing Engine starting up
+**** info	Tue Dec 03 14:47:46 IST 2013	1386062266844	/atg/dynamo/service/logging/ScreenLog	Using external info logging for Nucleus debug and trace messages to prevent hidden Nucleus logging. Set the Nucleus /atg/dynamo/service/logging/ScreenLog.useInfoForDebug property to false to use external logging debug and trace instead.
+**** info	Tue Dec 03 14:47:47 IST 2013	1386062267713	/atg/epub/file/ConfigFileSystem	journaling file system started: vfs=file:/C:/ATG/ATG10.2/home/servers/atg_preview_lockserver/PublishingAgent/deploymentconfig/live/config/ journalDirectory=C:\ATG\ATG10.2\home\servers\atg_preview_lockserver\PublishingAgent\deploymentconfig\data\config
+**** info	Tue Dec 03 14:47:50 IST 2013	1386062270570	/atg/commerce/pricing/priceLists/PriceLists	SQL Repository startup complete
+**** info	Tue Dec 03 14:47:51 IST 2013	1386062271385	/atg/commerce/catalog/ProductCatalog	SQL Repository startup complete
+**** info	Tue Dec 03 14:47:52 IST 2013	1386062272216	/atg/multisite/SiteRepository	SQL Repository startup complete
+**** info	Tue Dec 03 14:47:52 IST 2013	1386062272735	/atg/commerce/pricing/Promotions	Resolving reference to /atg/commerce/catalog/ProductCatalog
+**** info	Tue Dec 03 14:47:52 IST 2013	1386062272995	/atg/commerce/gifts/Giftlists	SQL Repository startup complete
+**** info	Tue Dec 03 14:47:53 IST 2013	1386062273203	/atg/commerce/locations/LocationRepository	SQL Repository startup complete
+**** info	Tue Dec 03 14:47:53 IST 2013	1386062273429	/atg/commerce/contracts/Contracts	SQL Repository startup complete
+**** info	Tue Dec 03 14:47:54 IST 2013	1386062274840	/atg/commerce/claimable/ClaimableRepository	SQL Repository startup complete
+**** info	Tue Dec 03 14:47:55 IST 2013	1386062275389	/atg/userprofiling/ProfileAdapterRepository	SQL Repository startup complete

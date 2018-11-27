@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE PIPELINE SYSTEM "pipeline.dtd">
+
+<PIPELINE NAME="IFDI Baseline Pipeline">
+  <INDEXER_ADAPTER COMPRESSION_LEVEL="0" FILTER_UNKNOWN_PROPS="TRUE" FRC_PVAL_IDX="FALSE" MULTI_PROP_NAME="" NAME="IndexerAdapter" OUTPUT_DIMENSION_FORMAT="XML" OUTPUT_PREFIX="CRICKET" OUTPUT_RECORD_FORMAT="BINARY" OUTPUT_URL="../../data/forge_output/">
+    <RECORD_SOURCE>PropMapper</RECORD_SOURCE>
+    <DIMENSION_SOURCE>DimensionServer</DIMENSION_SOURCE>
+    <ROLLOVER CUTOFF="2000000000" NAME="RECORD" NUM_IDX="1" PROP_NAME="" PROP_TYPE="ALPHA" REMOVE_PROP="FALSE" ROLL_URL="" TYPE="SIZE" VALIDATE="FALSE" />
+  </INDEXER_ADAPTER>
+  <RECORD_ADAPTER COL_DELIMITER="" DIRECTION="INPUT" FILTER_EMPTY_PROPS="FALSE" FORMAT="JAVA_ADAPTER" FRC_PVAL_IDX="FALSE" JAVA_CLASSNAME="com.endeca.esource.springadapter.SpringDelegateAdapter" MULTI="FALSE" NAME="CASDataFeed" PREFIX="" REC_DELIMITER="" REQUIRE_DATA="FALSE" ROW_DELIMITER="" STATE="FALSE" URL="">
+    <COMMENT />
+    <PASS_THROUGH NAME="SPRING_CONTEXT">./config/script/forge.context.xml</PASS_THROUGH>
+    <PASS_THROUGH NAME="ADAPTER_BEAN">baselineRecordStoreAdapter</PASS_THROUGH>
+  </RECORD_ADAPTER>
+  <RECORD_ADAPTER COL_DELIMITER="|" DIRECTION="INPUT" FILTER_EMPTY_PROPS="TRUE" FORMAT="VERTICAL" FRC_PVAL_IDX="FALSE" MULTI="FALSE" NAME="FAQDataFeed" PREFIX="" REC_DELIMITER="REC" REQUIRE_DATA="FALSE" ROW_DELIMITER="\r\n" STATE="FALSE" URL="Faq_active.txt">
+    <COMMENT />
+  </RECORD_ADAPTER>
+  <RECORD_CACHE COMBINE_RECORDS="FALSE" DISK_BACKED="NONE" FRC_PVAL_IDX="FALSE" MAX_RECORDS="-1" NAME="FAQCache">
+    <COMMENT />
+    <RECORD_SOURCE>FAQDataFeed</RECORD_SOURCE>
+    <RECORD_INDEX UNIQUE="FALSE">
+      <KEY_DIMENSION ID="product.repositoryId" MIN_VALS="0" TYPE="PVAL" />
+    </RECORD_INDEX>
+  </RECORD_CACHE>
+  <RECORD_CACHE COMBINE_RECORDS="FALSE" DISK_BACKED="NONE" FRC_PVAL_IDX="FALSE" MAX_RECORDS="-1" NAME="CASCache">
+    <COMMENT />
+    <RECORD_SOURCE>CASDataFeed</RECORD_SOURCE>
+    <RECORD_INDEX UNIQUE="FALSE">
+      <KEY_DIMENSION ID="product.repositoryId" MIN_VALS="0" TYPE="PVAL" />
+    </RECORD_INDEX>
+  </RECORD_CACHE>
+  <RECORD_ASSEMBLER FRC_PVAL_IDX="TRUE" NAME="FAQCASRecordAssembler">
+    <RECORD_SOURCE>CASCache</RECORD_SOURCE>
+    <RECORD_SOURCE>FAQCache</RECORD_SOURCE>
+    <RECORD_INDEX UNIQUE="FALSE">
+      <KEY_DIMENSION ID="product.repositoryId" MIN_VALS="0" TYPE="PVAL" />
+    </RECORD_INDEX>
+    <RECORD_JOIN JOIN_TYPE="OUTER_JOIN">
+      <JOIN_ENTRY>
+        <RECORD_SOURCE>CASCache</RECORD_SOURCE>
+        <KEY_DIMENSION ID="product.repositoryId" MIN_VALS="0" TYPE="PVAL" />
+      </JOIN_ENTRY>
+      <JOIN_ENTRY>
+        <RECORD_SOURCE>FAQCache</RECORD_SOURCE>
+        <KEY_DIMENSION ID="product.repositoryId" MIN_VALS="0" TYPE="PVAL" />
+      </JOIN_ENTRY>
+    </RECORD_JOIN>
+  </RECORD_ASSEMBLER>
+  <DIMENSION_ADAPTER COL_DELIMITER="" DIRECTION="INPUT" FORMAT="INTERNAL_DIM_XML" NAME="Dimensions" REC_DELIMITER="" ROW_DELIMITER="" URL="dimensions.xml">
+    <COMMENT />
+  </DIMENSION_ADAPTER>
+  <DIMENSION_SERVER COMPRESSION_LEVEL="0" FORMAT="INTERNAL_DIM_XML" NAME="DimensionServer" PERSIST_URL="autogen_dimensions.xml">
+    <COMMENT />
+    <DIMENSION_SOURCE>Dimensions</DIMENSION_SOURCE>
+  </DIMENSION_SERVER>
+  <PROP_MAPPER DEFAULT_MAP_MODE="PROP" DEFAULT_MAX_LENGTH="" IMPLICIT_MAPPING="FALSE" NAME="PropMapper">
+    <RECORD_SOURCE>FAQCASRecordAssembler</RECORD_SOURCE>
+    <DIMENSION_SOURCE>DimensionServer</DIMENSION_SOURCE>
+    <RECORD_INDEX UNIQUE="FALSE">
+      <KEY_DIMENSION ID="product.repositoryId" MIN_VALS="0" TYPE="PVAL" />
+    </RECORD_INDEX>
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="record.spec" TARGET_NAME="common.id" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="common.id" TARGET_NAME="common.id" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="dummy_search_interface_member" TARGET_NAME="dummy_search_interface_member" />
+    <PROP_MAPPING_DIM MATCH_MODE="NORMAL" MAX_LENGTH="0" PROP_NAME="product.markets.zipCode" TARGET_NAME="product.markets.zipCode" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="faq.active" TARGET_NAME="faq.active" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="faq.alternative_words" TARGET_NAME="faq.alternate_words" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="faq.answer" TARGET_NAME="faq.answer" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="faq.deactivate" TARGET_NAME="faq.deactivate" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="faq.faq_sort" TARGET_NAME="faq.faq_sort" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="faq.is_active" TARGET_NAME="faq.is_active" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="faq.is_top_faq" TARGET_NAME="faq.is_top_faq" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="faq.published" TARGET_NAME="faq.published" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="faq.seo_name" TARGET_NAME="faq.seo_name" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="faq.sequence" TARGET_NAME="faq.sequence" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="faq.topic_id" TARGET_NAME="faq.topic_id" />
+    <PROP_MAPPING_DIM MATCH_MODE="AUTO_GEN" MAX_LENGTH="0" PROP_NAME="faq.category" TARGET_NAME="faq.category" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="faq.id" TARGET_NAME="faq.id" />
+    <PROP_MAPPING_DIM MATCH_MODE="AUTO_GEN" MAX_LENGTH="0" PROP_NAME="faq.SubCategory" TARGET_NAME="faq.SubCategory" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.fullImage.url" TARGET_NAME="product.fullImage.url" />
+    <PROP_MAPPING_DIM MATCH_MODE="AUTO_GEN" MAX_LENGTH="0" PROP_NAME="faq.question" TARGET_NAME="faq.question" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="allAncestors.repositoryId" TARGET_NAME="allAncestors.repositoryId" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="allAncestors.repositoryName" TARGET_NAME="allAncestors.repositoryName" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="clothing-sku.color" TARGET_NAME="clothing-sku.color" MATCH_MODE="AUTO_GEN" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="clothing-sku.size" TARGET_NAME="clothing-sku.size" MATCH_MODE="AUTO_GEN" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="furniture-sku.woodFinish" TARGET_NAME="furniture-sku.woodFinish" MATCH_MODE="AUTO_GEN" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="market.code" TARGET_NAME="market.code" MATCH_MODE="AUTO_GEN" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="parentCategory.displayName" TARGET_NAME="parentCategory.displayName" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="phone.compatiblePlan" TARGET_NAME="phone.compatiblePlan" MATCH_MODE="AUTO_GEN" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="phone.planDescription" TARGET_NAME="phone.planDescription" MATCH_MODE="AUTO_GEN" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="phone.planDisplayName" TARGET_NAME="phone.planDisplayName" MATCH_MODE="AUTO_GEN" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="plan.compatiblePhone" TARGET_NAME="plan.compatiblePhone" MATCH_MODE="AUTO_GEN" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="plan.phoneDescription" TARGET_NAME="plan.phoneDescription" MATCH_MODE="AUTO_GEN" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="plan.phoneDisplayName" TARGET_NAME="plan.phoneDisplayName" MATCH_MODE="AUTO_GEN" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="plan.type" TARGET_NAME="plan.type" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="product.accessoryType" TARGET_NAME="product.accessoryType" MATCH_MODE="AUTO_GEN" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.adminDisplayName" TARGET_NAME="product.adminDisplayName" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.averageCustomerRating" TARGET_NAME="product.averageCustomerRating" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.baseUrl" TARGET_NAME="product.baseUrl" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="product.brand" TARGET_NAME="product.brand" MATCH_MODE="AUTO_GEN" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.briefDescription" TARGET_NAME="product.briefDescription" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="product.calculatedFeatures" TARGET_NAME="product.calculatedFeatures" MATCH_MODE="AUTO_GEN" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="product.catalogId" TARGET_NAME="product.catalogId" MATCH_MODE="AUTO_GEN" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.compatiblePhones.repositoryId" TARGET_NAME="product.compatiblePhones.repositoryId" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.compatiblePhones.repositoryName" TARGET_NAME="product.compatiblePhones.repositoryName" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.compatiblePlans.repositoryId" TARGET_NAME="product.compatiblePlans.repositoryId" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.compatiblePlans.repositoryName" TARGET_NAME="product.compatiblePlans.repositoryName" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.creationDate" TARGET_NAME="product.creationDate" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.dateAvailable" TARGET_NAME="product.dateAvailable" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.daysAvailable" TARGET_NAME="product.daysAvailable" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.description" TARGET_NAME="product.description" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="product.disallowAsRecommendation" TARGET_NAME="product.disallowAsRecommendation" MATCH_MODE="AUTO_GEN" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="product.displayName" TARGET_NAME="product.displayName" MATCH_MODE="AUTO_GEN" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.endDate" TARGET_NAME="product.endDate" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="product.features.displayName" TARGET_NAME="product.features.displayName" MATCH_MODE="AUTO_GEN" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.features.repositoryId" TARGET_NAME="product.features.repositoryId" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.fullImage.repositoryId" TARGET_NAME="product.fullImage.repositoryId" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.fullImage.repositoryName" TARGET_NAME="product.fullImage.repositoryName" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.isOOFPhone" TARGET_NAME="product.isOOFPhone" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="product.keyFeatures" TARGET_NAME="product.keyFeatures" MATCH_MODE="AUTO_GEN" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.keywords" TARGET_NAME="product.keywords" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="product.language" TARGET_NAME="product.language" MATCH_MODE="AUTO_GEN" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.largeImage.url" TARGET_NAME="product.largeImage.url" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.longDescription" TARGET_NAME="product.longDescription" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.manufacturer.description" TARGET_NAME="product.manufacturer.description" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="product.manufacturer.displayName" TARGET_NAME="product.manufacturer.displayName" MATCH_MODE="AUTO_GEN" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.manufacturer.long_description" TARGET_NAME="product.manufacturer.long_description" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.manufacturer.repositoryId" TARGET_NAME="product.manufacturer.repositoryId" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.manufacturer.repositoryName" TARGET_NAME="product.manufacturer.repositoryName" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.markets.repositoryId" TARGET_NAME="product.markets.repositoryId" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.mediumImage.url" TARGET_NAME="product.mediumImage.url" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="product.nonreturnable" TARGET_NAME="product.nonreturnable" MATCH_MODE="AUTO_GEN" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="product.os" TARGET_NAME="product.os" MATCH_MODE="AUTO_GEN" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="product.phoneStyle" TARGET_NAME="product.phoneStyle" MATCH_MODE="AUTO_GEN" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.repositoryId" TARGET_NAME="product.repositoryId" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.repositoryName" TARGET_NAME="product.repositoryName" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="product.siteId" TARGET_NAME="product.siteId" MATCH_MODE="AUTO_GEN" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.startDate" TARGET_NAME="product.startDate" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="product.type" TARGET_NAME="product.type" MATCH_MODE="AUTO_GEN" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="product.url" TARGET_NAME="product.url" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="sku.bundleLinks.description" TARGET_NAME="sku.bundleLinks.description" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="sku.bundleLinks.displayName" TARGET_NAME="sku.bundleLinks.displayName" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="sku.bundleLinks.endDate" TARGET_NAME="sku.bundleLinks.endDate" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="sku.bundleLinks.item.repositoryId" TARGET_NAME="sku.bundleLinks.item.repositoryId" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="sku.bundleLinks.repositoryId" TARGET_NAME="sku.bundleLinks.repositoryId" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="sku.bundleLinks.startDate" TARGET_NAME="sku.bundleLinks.startDate" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="sku.configurableProperties.configurationOptions.description" TARGET_NAME="sku.configurableProperties.configurationOptions.description" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="sku.configurableProperties.configurationOptions.displayName" TARGET_NAME="sku.configurableProperties.configurationOptions.displayName" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="sku.configurableProperties.configurationOptions.price" TARGET_NAME="sku.configurableProperties.configurationOptions.price" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="sku.configurableProperties.configurationOptions.product.repositoryId" TARGET_NAME="sku.configurableProperties.configurationOptions.product.repositoryId" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="sku.configurableProperties.configurationOptions.sku.repositoryId" TARGET_NAME="sku.configurableProperties.configurationOptions.sku.repositoryId" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="sku.configurableProperties.description" TARGET_NAME="sku.configurableProperties.description" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="sku.configurableProperties.displayName" TARGET_NAME="sku.configurableProperties.displayName" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="sku.creationDate" TARGET_NAME="sku.creationDate" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="sku.description" TARGET_NAME="sku.description" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="sku.displayName" TARGET_NAME="sku.displayName" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="sku.endDate" TARGET_NAME="sku.endDate" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="sku.listPrice" TARGET_NAME="sku.listPrice" MATCH_MODE="AUTO_GEN" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="sku.manufacturer_part_number" TARGET_NAME="sku.manufacturer_part_number" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="sku.margin" TARGET_NAME="sku.margin" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="sku.onSaleText" TARGET_NAME="sku.onSaleText" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="sku.quantity" TARGET_NAME="sku.quantity" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="sku.repositoryId" TARGET_NAME="sku.repositoryId" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="sku.salePrice" TARGET_NAME="sku.salePrice" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="sku.startDate" TARGET_NAME="sku.startDate" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="sku.type" TARGET_NAME="sku.type" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="sku.unit_of_measure" TARGET_NAME="sku.unit_of_measure" />
+    <PROP_MAPPING_PROP MAX_LENGTH="0" PROP_NAME="sku.wholesalePrice" TARGET_NAME="sku.wholesalePrice" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="product.parentCategory.id" TARGET_NAME="product.category" MATCH_MODE="NORMAL" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="product.fullImage.type" TARGET_NAME="item.type" MATCH_MODE="NORMAL" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="product.type" TARGET_NAME="item.type" MATCH_MODE="NORMAL" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="allAncestors.type" TARGET_NAME="item.type" MATCH_MODE="NORMAL" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="product.mediumImage.type" TARGET_NAME="item.type" MATCH_MODE="NORMAL" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="product.compatiblePhones.type" TARGET_NAME="item.type" MATCH_MODE="NORMAL" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="product.largeImage.type" TARGET_NAME="item.type" MATCH_MODE="NORMAL" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="product.compatiblePlans.type" TARGET_NAME="item.type" MATCH_MODE="NORMAL" />
+    <PROP_MAPPING_DIM MAX_LENGTH="0" PROP_NAME="product.manufacturer.type" TARGET_NAME="item.type" MATCH_MODE="NORMAL" />
+  </PROP_MAPPER>
+</PIPELINE>
+

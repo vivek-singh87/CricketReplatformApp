@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<project name="cricket.publishing" basedir="."  xmlns:ac="antlib:net.sf.antcontrib">
+	<property environment="env"/>
+	<property name="global.build.dir" value="${basedir}/../build"/>
+	<property file="${global.build.dir}/build.properties" />		
+	<property file="build.properties"/>
+
+	<import file="${global.build.dir}/common.xml"/>
+
+	
+	
+</project>

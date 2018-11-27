@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UpdateWebProductRequestInfo xmlns="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateWebProductRequest.xsd" xmlns:pref="http://esp.cricket.com/ESP/Namespaces/Types/Public/CricketDataModel.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateWebProductRequest.xsd UpdateWebProductRequest.xsd ">
+  <Request>
+    <RealTime>
+      <Product>
+        <productSKU>productSKU</productSKU>
+        <productShortDescription>productShortDescription</productShortDescription>
+        <manufacturerName>manufacturerName</manufacturerName>
+        <productType>productType</productType>
+        <msrp>0.0</msrp>
+      </Product>
+    </RealTime>
+	<Batch>
+      <Inventory>
+        <productSKU>sku30091</productSKU>
+        <inventoryQuantity>10</inventoryQuantity>
+        <productType>phone-product</productType>
+      </Inventory>
+    </Batch>
+  </Request>
+</UpdateWebProductRequestInfo>

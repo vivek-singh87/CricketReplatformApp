@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE workflow-activities
+        PUBLIC "-//Art Technology Group, Inc.//DTD General SQL Adapter//EN"
+        "http://www.atg.com/dtds/activitymanager/activitymanager_workflows_1.0.dtd">
+
+<workflow-activities xml-combine="append">
+  <activity>
+    <id>cricketItems</id>
+    <workflow-name>/Common/commonWorkflow.wdl</workflow-name>
+    <acl>Profile$role$epubAdmin:read;Profile$role$epubSuperAdmin:read;Profile$role$epubManager:read;Profile$accessRight$sitecatalogread:read;Profile$accessRight$sitecatalogfull:read;Profile$accessRight$mediaread:read;Profile$accessRight$mediafull:read;Profile$accessRight$storecontentread:read;Profile$accessRight$storecontentfull:read;Profile$accessRight$pricelistsread:read;Profile$accessRight$pricelistsfull:read;Profile$accessRight$storesread:read;Profile$accessRight$storesfull:read;Profile$accessRight$seotagsread:read;Profile$accessRight$seotagsfull:read;Profile$accessRight$promotionsread:read;Profile$accessRight$promotionsuser:read;Profile$accessRight$promotionsfull:read;</acl>
+
+    <resource-bundle>com.cricket.catalog.CatalogResources</resource-bundle>
+    <display-name-resource>cricketItems.displayName</display-name-resource>
+    <description-resource>cricketItems.description</description-resource>
+    
+    <display-name-resource-2>browse.cricketItems.displayName</display-name-resource-2>
+    <description-resource-2>browse.cricketItems.description</description-resource-2>
+    <destination-page-2>
+      <url>/ControlCenter/index.jsp</url>
+      <activity-id>browse.cricketItems</activity-id> <!-- TODO -->
+      <clear-context>true</clear-context>
+    </destination-page-2>    
+  </activity>
+</workflow-activities>
+<!-- @version $Id: //product/DCS-UI/version/10.2/Versioned/src/config/atg/commerce/web/workflowActivities.xml#2 $$Change: 788278 $-->

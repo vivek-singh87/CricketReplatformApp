@@ -1,0 +1,161 @@
+/* Phones Compare Page */ 
+#change-phones {
+  a.button {
+    @include btn-cricket($orange-1);
+    margin: emCalc(27px) 0 emCalc(5px);
+  }
+}
+
+#section-compare-list .table-phone-compare-list {
+  background: transparent;
+  border: none;
+  margin: 0 auto 50px;
+  width: 100%;
+  @media #{$medium} { width: emCalc(960px); }
+}
+
+#section-compare-list {
+  background: #fff url(//images.mycricket.com/cricket?set=imageURL[file:/img/phone-compare/bg-section-phone-compare.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) center emCalc(34px) no-repeat;
+  min-height: emCalc(252px);
+  thead, tfoot, tr.even, tr.alt, tr:nth-of-type(2n) {background: transparent;}
+  thead {background: transparent;}
+  thead th {
+    color: #333;
+    font: normal 12px 'GothamMedium';
+    @media #{$medium} { font: normal 15px 'GothamMedium'; }
+    padding: 0;
+    text-transform: uppercase;
+    width: 20%;
+    text-align: center;
+  }
+  thead h1 {
+    color: #fff;
+    font-size: emCalc(22px);
+    text-align: left;
+  }
+  thead h1 strong {
+    color: #c1d72e;
+    display: block;
+    font-size: emCalc(28px);
+    font-weight: normal;
+    margin-bottom: -10px;
+  }
+  thead h1 span {
+    color: #00583d;
+    display: inline;
+    font-size: emCalc(22px);
+  }
+  thead h1 span em {
+    color: #fff;
+    font-style: normal;
+  }
+  thead img {
+    display: block;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+  thead p.price {
+    color: #157f4a;
+    font: normal 32px 'GothamBold';
+    margin-bottom: emCalc(10px);
+  }
+  thead a.button {
+    @include btn-cricket($green-button-1);
+    color: #fff;
+    display: block;
+    font: normal 14px 'GothamBook';
+    margin: 0 auto 15px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: 80%;
+    &.orange-shop-now{
+      @include btn-cricket($orange-2);
+    }
+    &.disabled {
+      background-color: #dbdbdc;
+      border: #dbdbdc;
+    }
+  }
+  thead a.circle-button {
+    font: normal 13px Arial;
+  }
+  thead tr.persist-header th {vertical-align: bottom;}
+  thead tr.persist-header th a {
+    color: #000;
+    &:hover {
+      color: #006E43;
+    }
+  }
+  thead tr.floatingHeader {
+    position: fixed;
+    top: 0;
+    visibility: hidden;
+    z-index: 99;
+  }
+  thead tr.floatingHeader th {
+    font: normal 15px 'GothamMedium';
+    background: #fff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+    width: 18%;
+    a {
+      color: #000;
+      &:hover {color: #006E43;}
+    }
+    &.first {
+      background: transparent;
+      border: 0;
+    }
+  }
+  tbody th {
+    background:url(../img/table-bottom-border.jpg) left bottom no-repeat;
+    &.row-heading { background: none; }
+    color: #717374;
+    font: normal 15px 'GothamBold';
+    text-align: left;
+  }
+  tbody h3 {
+    color: #008752;
+    font: normal 15px 'GothamBlack';
+    margin: emCalc(25px) 0 emCalc(8px);
+    text-transform: uppercase;
+    width: 17%;
+  }
+  tbody td {
+    background-color: #f1f1f1;
+    &:nth-of-type(2n) { 
+      background: #f8f8f8; 
+    }
+    border-right: 1px solid #fff;
+    border-bottom: 13px solid #fff;
+    color: #8dc63f;
+    font: normal 15px 'GothamBold'; 
+    height: 80px;
+    line-height: 24px;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+  }
+  tbody span {
+    &.yes {
+      background: transparent url(../img/icon-table-checkmark-green.png) center center no-repeat;
+      display: block;
+      text-indent: -99999px;
+    }
+    &.no {
+      display: block;
+      text-indent: -99999px;
+    }
+  }
+  tbody tr.row-last {
+    th {background: none;}
+    td {border-bottom: none;}
+  }
+}/* /#section-compare-list */
+  
+.section-phone-compare #section-lifestyle img {
+  display: block;
+  margin: 0 auto;
+  width: emCalc(1400px);
+} /* END #section-lifestyle */

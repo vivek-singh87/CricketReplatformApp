@@ -1,0 +1,11 @@
+$class=com.cricket.common.util.formhandler.ChangeUserLocationBasedOnZipCode
+$scope=request
+cityInfo=/com/cricket/integration/maxmind/CitySessionInfoObject
+cricketMarketToProfile=/com/cricket/util/CricketMarketToProfile
+profile=/atg/userprofiling/Profile
+sharedCookieExpiredVal=26280
+cricketOrderManager=/atg/commerce/order/OrderManager
+geoIpLocationManager=/com/cricket/integration/maxmind/GeoIpLocationManager
+defaultIpAddr^=/com/cricket/integration/maxmind/GeoIpLocationServlet.defaultIpAddr
+excludedZipcodes=00602,00603,00612,00617,00637
+sessionBeanPath=/com/cricket/user/session/UserSessionBean

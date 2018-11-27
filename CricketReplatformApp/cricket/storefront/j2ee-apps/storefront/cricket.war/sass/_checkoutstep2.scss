@@ -1,0 +1,165 @@
+/* Checkout Page */
+.has-tip {
+  border: none;
+  &:hover{border: none;}
+}
+
+/* Progress Header - adjustments for mobile (Dekstop is inside of checkout.scss)*/
+.section-checkout.step2 #section-progress {
+  ul {padding-left: emCalc(18px);}
+  li.step-2 {padding-left: emCalc(55px);}
+  li.step-3 {padding-left: emCalc(50px);}
+}
+
+/** Start of Form Fields on Second Step **/
+.section-checkout.step2 #section-checkout-form {
+
+  .details-content .form {
+    form.custom{
+      select {
+        padding: 4px 4px 5px 4px; 
+        margin-top: 0;
+      }
+    }
+  }
+
+  .custom.dropdown {margin-top: emCalc(24px);}
+  .month {
+    padding-right: emCalc(3px);
+    @include respond-min($small-screen) {padding-right: 0.625em; }}
+  .month .custom.dropdown {
+    margin-top: 0.5em;
+    margin-left: 99px;
+    @include respond-min($small-screen) {
+      margin-top: 0.5em;
+      margin-left: 0;
+    }
+  }
+  .month label {
+    float: left;
+    margin-top: emCalc(11px);
+    width: 9em;
+    padding-bottom: 14px;
+    @include respond-min($small-screen) {
+      float: none;
+      margin-top: 0;
+      width: 13.5em;
+      padding-bottom: 6px;
+    }
+  }
+  .year{
+    padding-top: 40px;
+    float: left;
+    @include respond-min($small-screen) {
+      padding-top: 23px;
+      float: right;
+    }
+  }
+  .year .custom.dropdown {
+    margin-top: .5em;
+    @include respond-min($small-screen) {margin-top: 1.5em;}
+  }
+  .cvcnumber label {
+    margin-top: emCalc(11px);
+    width: 5em;
+    @include respond-min($small-screen) {
+      margin-top: 0;
+      width: 13.5em;
+    }
+  }
+  .cvcnumber .qtip {
+    margin-top: emCalc(16px);
+    padding: 0;
+    @include respond-min($small-screen) {margin-top: 2.125em;}
+  }
+  span.has-tip {
+    color: #00a663;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: normal;
+    text-decoration: underline;
+    padding-top: 5px;
+    line-height: emCalc(20px);
+  }
+  .promo-code label {
+    font: emCalc(18px) 'GothamBold';
+    color: #222;
+    padding-bottom: emCalc(9px);
+    @include respond-min($small-screen) {padding-bottom: 0;}
+  }
+  .promo-code .qtip {
+    margin-top: emCalc(50px);
+    @include respond-min($small-screen){margin-top: 2.125em;}
+  }
+  .qtip {
+    margin-top: emCalc(34px);
+    font-family: 'GothamMedium';
+    font-size: emCalc(14px);
+  }
+  .qtip.has-tip {
+    @include respond-min($small-screen) {margin-top: emCalc(22px);}
+    @include respond-min($medium-screen) {margin-top: emCalc(34px);}
+  }
+  label.autopay-label {
+    display: block;
+    margin-left: 27px;
+  }
+  label.autopay-label .radio {
+    margin-top: emCalc(-4px);
+    margin-right: 11px;
+    margin-left: -27px;
+  }
+  label.first-label {
+    margin-top: emCalc(17px);
+    @include respond-min($medium-screen) {margin-top: emCalc(6px);}
+  }
+  .terms, #payment-terms .terms-accept, .row.autopay {
+    margin-bottom: emCalc(21px);
+    padding-right: 0 !important;
+    h3 {
+      font-family: 'GothamMedium';
+      padding-bottom: emCalc(10px);
+    }
+  }
+  #payment-terms .terms-accept {margin-bottom: 0;}
+  #payment-terms .terms-accept .show-for-small {
+    margin-top: emCalc(5px);
+    @include respond-min($small-screen) {margin-top: 0;}
+  }
+  #payment-terms.disabled { opacity: 0.5;}
+  .row.autopay {
+    margin-bottom: 0;
+    @include respond-min($small-screen) {margin-bottom: emCalc(3px);}
+  }
+  .pay-icons {
+    background: #fff url('../img/checkout/icon-payment.jpg') emCalc(11px) 0 no-repeat;
+    height: emCalc(27px);
+    margin-top: emCalc(15px);
+    margin-bottom: emCalc(16px);
+    @include respond-min($small-screen) {
+      width: emCalc(197px);
+      margin-bottom:  0;
+      background-position: 0 0;
+      margin-left: emCalc(12px);
+      float: left;
+    }
+    @include respond-min($large-screen) {
+      float: right;
+      margin-left: 0;
+    }
+  }
+  .custom.checkbox {margin-bottom: 0;}
+  .custom.checkbox.checked:before {margin-left: -5px !important;} 
+}
+
+/* Tooltips are automatically appended to Body, so need to add the styling outside of constructor wrapper*/
+.tooltip.tip-top {
+  &>.nub {
+    border-width: 0 !important;
+    border-color: transparent transparent transparent transparent !important;
+    background: transparent url(../img/icon-tooltip-down.png) no-repeat 100% 100%;
+    width: 20px;
+    height: 20px;
+    left: 25px;
+  }
+}

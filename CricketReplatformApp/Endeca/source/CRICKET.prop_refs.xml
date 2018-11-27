@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2001, 2012, Oracle and/or its affiliates. All rights reserved.
+  ~ Oracle and Java are registered trademarks of Oracle and/or its
+  ~ affiliates. Other names may be trademarks of their respective owners.
+  ~ UNIX is a registered trademark of The Open Group.
+  ~
+  ~ This software and related documentation are provided under a license
+  ~ agreement containing restrictions on use and disclosure and are
+  ~ protected by intellectual property laws. Except as expressly permitted
+  ~ in your license agreement or allowed by law, you may not use, copy,
+  ~ reproduce, translate, broadcast, modify, license, transmit, distribute,
+  ~ exhibit, perform, publish, or display any part, in any form, or by any
+  ~ means. Reverse engineering, disassembly, or decompilation of this
+  ~ software, unless required by law for interoperability, is prohibited.
+  ~ The information contained herein is subject to change without notice
+  ~ and is not warranted to be error-free. If you find any errors, please
+  ~ report them to us in writing.
+  ~ U.S. GOVERNMENT END USERS: Oracle programs, including any operating
+  ~ system, integrated software, any programs installed on the hardware,
+  ~ and/or documentation, delivered to U.S. Government end users are
+  ~ "commercial computer software" pursuant to the applicable Federal
+  ~ Acquisition Regulation and agency-specific supplemental regulations.
+  ~ As such, use, duplication, disclosure, modification, and adaptation
+  ~ of the programs, including any operating system, integrated software,
+  ~ any programs installed on the hardware, and/or documentation, shall be
+  ~ subject to license terms and license restrictions applicable to the
+  ~ programs. No other rights are granted to the U.S. Government.
+  ~ This software or hardware is developed for general use in a variety
+  ~ of information management applications. It is not developed or
+  ~ intended for use in any inherently dangerous applications, including
+  ~ applications that may create a risk of personal injury. If you use
+  ~ this software or hardware in dangerous applications, then you shall
+  ~ be responsible to take all appropriate fail-safe, backup, redundancy,
+  ~ and other measures to ensure its safe use. Oracle Corporation and its
+  ~ affiliates disclaim any liability for any damages caused by use of this
+  ~ software or hardware in dangerous applications.
+  ~ This software or hardware and documentation may provide access to or
+  ~ information on content, products, and services from third parties.
+  ~ Oracle Corporation and its affiliates are not responsible for and
+  ~ expressly disclaim all warranties of any kind with respect to
+  ~ third-party content, products, and services. Oracle Corporation and
+  ~ its affiliates will not be responsible for any loss, costs, or damages
+  ~ incurred due to your access to or use of third-party content, products,
+  ~ or services.
+  -->
+<!DOCTYPE PROP_REFS SYSTEM "prop_refs.dtd">
+
+<PROP_REFS>
+  <PROP_REF NAME="common.id" TYPE="ALPHA" />
+  <PROP_REF NAME="dummy_search_interface_member" TYPE="ALPHA" />
+  <PROP_REF NAME="faq.active" TYPE="ALPHA" />
+  <PROP_REF NAME="faq.alternate_words" TYPE="ALPHA" />
+  <PROP_REF NAME="faq.answer" TYPE="ALPHA" />
+  <PROP_REF NAME="faq.deactivate" TYPE="ALPHA" />
+  <PROP_REF NAME="faq.faq_sort" TYPE="ALPHA" />
+  <PROP_REF NAME="faq.is_active" TYPE="ALPHA" />
+  <PROP_REF NAME="faq.is_top_faq" TYPE="ALPHA" />
+  <PROP_REF NAME="faq.published" TYPE="ALPHA" />
+  <PROP_REF NAME="faq.seo_name" TYPE="ALPHA" />
+  <PROP_REF NAME="faq.sequence" TYPE="ALPHA" />
+  <PROP_REF NAME="faq.topic_id" TYPE="ALPHA" />
+  <PROP_REF NAME="faq.id" TYPE="ALPHA" />
+  <PROP_REF NAME="product.fullImage.url" TYPE="ALPHA" />
+  <PROP_REF TYPE="ALPHA" NAME="allAncestors.repositoryId" />
+  <PROP_REF TYPE="ALPHA" NAME="allAncestors.repositoryName" />
+  <PROP_REF TYPE="ALPHA" NAME="parentCategory.displayName" />
+  <PROP_REF TYPE="ALPHA" NAME="plan.type" />
+  <PROP_REF TYPE="ALPHA" NAME="product.adminDisplayName" />
+  <PROP_REF TYPE="INTEGER" NAME="product.averageCustomerRating" />
+  <PROP_REF TYPE="ALPHA" NAME="product.baseUrl" />
+  <PROP_REF TYPE="ALPHA" NAME="product.briefDescription" />
+  <PROP_REF TYPE="ALPHA" NAME="product.compatiblePhones.repositoryId" />
+  <PROP_REF TYPE="ALPHA" NAME="product.compatiblePhones.repositoryName" />
+  <PROP_REF TYPE="ALPHA" NAME="product.compatiblePlans.repositoryId" />
+  <PROP_REF TYPE="ALPHA" NAME="product.compatiblePlans.repositoryName" />
+  <PROP_REF TYPE="DATETIME" NAME="product.creationDate" />
+  <PROP_REF TYPE="DATETIME" NAME="product.dateAvailable" />
+  <PROP_REF TYPE="INTEGER" NAME="product.daysAvailable" />
+  <PROP_REF TYPE="ALPHA" NAME="product.description" />
+  <PROP_REF TYPE="DATETIME" NAME="product.endDate" />
+  <PROP_REF TYPE="ALPHA" NAME="product.features.repositoryId" />
+  <PROP_REF TYPE="ALPHA" NAME="product.fullImage.repositoryId" />
+  <PROP_REF TYPE="ALPHA" NAME="product.fullImage.repositoryName" />
+  <PROP_REF TYPE="INTEGER" NAME="product.isOOFPhone" />
+  <PROP_REF TYPE="ALPHA" NAME="product.keywords" />
+  <PROP_REF TYPE="ALPHA" NAME="product.largeImage.url" />
+  <PROP_REF TYPE="ALPHA" NAME="product.longDescription" />
+  <PROP_REF TYPE="ALPHA" NAME="product.manufacturer.description" />
+  <PROP_REF TYPE="ALPHA" NAME="product.manufacturer.long_description" />
+  <PROP_REF TYPE="ALPHA" NAME="product.manufacturer.repositoryId" />
+  <PROP_REF TYPE="ALPHA" NAME="product.manufacturer.repositoryName" />
+  <PROP_REF TYPE="ALPHA" NAME="product.markets.repositoryId" />
+  <PROP_REF TYPE="ALPHA" NAME="product.mediumImage.url" />
+  <PROP_REF TYPE="ALPHA" NAME="product.repositoryId" />
+  <PROP_REF TYPE="ALPHA" NAME="product.repositoryName" />
+  <PROP_REF TYPE="DATETIME" NAME="product.startDate" />
+  <PROP_REF TYPE="ALPHA" NAME="product.url" />
+  <PROP_REF TYPE="ALPHA" NAME="sku.bundleLinks.description" />
+  <PROP_REF TYPE="ALPHA" NAME="sku.bundleLinks.displayName" />
+  <PROP_REF TYPE="DATETIME" NAME="sku.bundleLinks.endDate" />
+  <PROP_REF TYPE="ALPHA" NAME="sku.bundleLinks.item.repositoryId" />
+  <PROP_REF TYPE="ALPHA" NAME="sku.bundleLinks.repositoryId" />
+  <PROP_REF TYPE="DATETIME" NAME="sku.bundleLinks.startDate" />
+  <PROP_REF TYPE="ALPHA" NAME="sku.configurableProperties.configurationOptions.description" />
+  <PROP_REF TYPE="ALPHA" NAME="sku.configurableProperties.configurationOptions.displayName" />
+  <PROP_REF TYPE="DOUBLE" NAME="sku.configurableProperties.configurationOptions.price" />
+  <PROP_REF TYPE="ALPHA" NAME="sku.configurableProperties.configurationOptions.product.repositoryId" />
+  <PROP_REF TYPE="ALPHA" NAME="sku.configurableProperties.configurationOptions.sku.repositoryId" />
+  <PROP_REF TYPE="ALPHA" NAME="sku.configurableProperties.description" />
+  <PROP_REF TYPE="ALPHA" NAME="sku.configurableProperties.displayName" />
+  <PROP_REF TYPE="DATETIME" NAME="sku.creationDate" />
+  <PROP_REF TYPE="ALPHA" NAME="sku.description" />
+  <PROP_REF TYPE="ALPHA" NAME="sku.displayName" />
+  <PROP_REF TYPE="DATETIME" NAME="sku.endDate" />
+  <PROP_REF TYPE="ALPHA" NAME="sku.manufacturer_part_number" />
+  <PROP_REF TYPE="DOUBLE" NAME="sku.margin" />
+  <PROP_REF TYPE="INTEGER" NAME="sku.onSaleText" />
+  <PROP_REF TYPE="INTEGER" NAME="sku.quantity" />
+  <PROP_REF TYPE="ALPHA" NAME="sku.repositoryId" />
+  <PROP_REF TYPE="DOUBLE" NAME="sku.salePrice" />
+  <PROP_REF TYPE="DATETIME" NAME="sku.startDate" />
+  <PROP_REF TYPE="ALPHA" NAME="sku.type" />
+  <PROP_REF TYPE="ALPHA" NAME="sku.unit_of_measure" />
+  <PROP_REF TYPE="DOUBLE" NAME="sku.wholesalePrice" />
+</PROP_REFS>
+

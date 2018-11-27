@@ -1,0 +1,533 @@
+/* Plans Listing Page */ 
+
+.section-plans-listing {
+
+	#section-banner {
+		background: #ededed;
+		min-height: emCalc(226px);
+		margin-bottom: 0;
+		position: relative;
+		width: 100%;
+		@include respond-min($small-screen) { 
+		  background: #ededed url(//images.mycricket.com/cricket?set=imageURL[file:/img/plans/bg-section-banner.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat top center;
+		}
+		.plans-power-pixels {
+		  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/plans/bg-power-pixels.png],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 0 0;
+			display: none;
+			height: emCalc(101px);
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: emCalc(375px);
+			z-index: 2;
+			@include respond-min($medium-screen) { display: block; }
+		}	
+	
+		.section-banner-content {
+			border-top: 1px solid #fff;
+			padding-top: emCalc(55px);
+
+			.large-7.columns{
+					/* iPad Overrides */	
+					@include respond-min($tablet-screen) { 
+						padding-left: 90px; 
+						padding-right: 16px;
+					} 
+					@include respond-min($tablet-landscape) { padding-left: 10%; }
+					@include respond-min($medium-screen) { padding-left: 0.625em; }
+			}
+			
+			h1 {
+				color: #8dc63f;
+				font: normal 40px/32px 'GothamBlack';
+				text-transform: uppercase;
+				@include respond-min($small-screen) { 
+					border-right: 1px solid #b7ddce;
+					font: normal 2.5em/0.8em 'GothamBlack'; 
+					padding-left: 50px;
+					padding-bottom: emCalc(10px);
+					width: 390px; 
+				}
+				span {
+					color: #00a663;
+					display: block;
+				}
+			}
+			
+			.subhead {
+				color: #008752;
+				font: normal 18px 'GothamBlack';
+				margin-top: 6px;
+				margin-bottom: 10px;
+				text-transform: uppercase;
+			}
+			
+			ul {
+				margin-left: emCalc(16px);
+			
+				li {				
+					color: #008752;
+					font: normal 12px/18px 'GothamMedium';
+					text-transform: uppercase;
+				
+					&.value-callout {
+						border-top: 1px solid #b7ddce;
+						padding-top: 10px;
+						margin-top: 10px;
+						list-style: none;
+						width: 180px;
+					}								
+				}
+			}			
+		} 
+	} /* END #section-banner  */
+
+
+	#section-plans-list {
+		@include respond-min($medium-screen) { 
+		  background: #fff url(//images.mycricket.com/cricket?set=imageURL[file:/img/plans/bg-section-plans-list.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat center 44px;
+		  background-size: 1400px 352px; 
+		}
+
+		h2 {
+			color: #fff;
+			font: normal emCalc(40px) 'GothamBlack';
+			margin: emCalc(10px) 0 emCalc(15px) emCalc(8px);
+		}
+		
+		.table-plans-list {
+			background: transparent;
+			border: none;
+			margin: 18px auto 50px;
+			padding-top: 200px;
+			width: 100%;
+		
+			@include respond-min($small-screen) { width: 100%; }
+			@include respond-min($medium-screen) { width: emCalc(960px); }
+			
+			thead, tfoot, tr.even, tr.alt, tr:nth-of-type(2n) {
+				background: transparent;
+			}
+			thead th {
+			  color: #fff;
+				font: normal 65px 'GothamBlack';
+				padding: 0;
+				text-transform: uppercase;
+				width: 20%;
+				@include respond-min($tablet-screen) { font: normal 55px 'GothamBlack'; } /* iPad Overrides */
+			}
+			thead sub {font-size: 13px;}
+			thead a.button {
+			  @include btn-cricket($green-button-1);
+				color: #fff;
+				display: block;
+				font: normal 15px 'GothamMedium';
+				margin: 0 auto 15px;
+				width: 80%;
+
+				&.disabled {
+					background-color: #fff;
+					border-color: #C1C1C3;
+					box-shadow: none;
+					color: #B1B1B1;				
+				}
+			}
+			thead tr.top-heading {
+				th {
+					color: #008752;
+					font: normal emCalc(20px) 'GothamBlack';
+					padding-bottom: 3px;
+				}
+			}
+			thead tr.features-heading {
+			  background: #109449;
+				@include respond-min($medium-screen) { background: none; }
+				th {
+					border-right: 1px solid #82bf74;
+					padding: 15px 15px 0px;
+					vertical-align: top;
+					text-align: center;
+					
+					&:last-child { border-right: 0; }
+					&.bg-smartplan {
+					  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/plans/bg-smartplans.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 0 0;
+						text-align: center;
+					}
+					.plan-content {
+						min-height: 155px;
+						opacity: 1;
+						@include respond-min($tablet-screen){ min-height: 170px; }
+						@include respond-min($medium-screen){ min-height: 155px; }
+					}
+					p {
+					  color: #fff;
+						font: normal 11px 'GothamMedium';
+						margin-top: 15px;
+						text-align: center;
+						text-transform: uppercase;
+						&.subhead {
+							color: #c1d72e;
+							opacity: 1;
+						}
+					}
+					a.button {
+						padding-left: 10px;
+						padding-right: 10px;
+						width: 100%;
+					}
+					
+					a.circle-arrow {
+						display: block;
+						font: normal 12px Arial;
+						float: none;
+						padding: 2px 0 10px 25px;
+						text-align: left;
+						margin: 0 0 0 20%;
+					}
+					.learn-more {
+						width: 40%;
+						margin: auto;
+						a.circle-arrow {margin-left: 0;}
+					}
+					.data-callout {
+						background-color: #fff;
+						border: 2px solid #fff;
+						color: #008752;
+						font: normal 20px 'GothamBlack';
+						margin: 15px 0 10px;
+						padding-top: 5px;
+						text-transform: uppercase;
+						text-align: center;								
+						sub {
+							font-size: 11px;
+							vertical-align: baseline;
+						}
+						p {
+							background-color: #008752;
+							color: #fff;		
+							font-size: 11px;
+							margin: 5px 0 0 0;
+							padding-top: 5px;
+							padding-bottom: 5px;
+						}
+					}
+				} /* /th */
+				#fixed-table-headings {
+					visibility: hidden;
+					width: emCalc(960px);
+					margin: 0 auto;
+					&.fixed {visibility: visible;}
+					th {
+						color: #000;
+						font: normal 14px 'GothamBlack';
+						text-transform: uppercase;
+					}
+				} /* /#fixed-table-headings */
+			} /* /thead tr.features-heading */
+      tbody tr:first-child th { padding-top: 36px; }
+      tbody th {text-align: left;}
+      tbody th h3 {
+        color: #008752;
+				font: normal 15px 'GothamBlack';
+				margin: emCalc(15px) 0 0;
+				text-transform: uppercase;
+      } 
+      tbody td {
+        background-color: #f1f1f1;
+				border-right: 1px solid #fff;
+				color: #8dc63f;
+				font: normal 18px 'GothamBlack';
+				height: 44px;
+				line-height: 44px;						
+				text-align: center;
+				text-transform: uppercase;
+				vertical-align: middle;
+				@include respond-min($small-screen) { font: normal 18px 'GothamBlack'; }
+				&.yes {
+				  background-image: url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-table-checkmark-green.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]);
+					background-position: center center;
+					background-repeat: no-repeat;
+					text-indent: -99999px;
+				}
+				&.no {
+					background-image: 0;
+					text-indent: -99999px;
+				}
+				span.has-tip {
+					background-color: #8dc63f;
+					border-bottom: 0;
+					@include border-radius(15px);
+					color: #fff;
+					cursor: pointer;
+					font: bold 12px Arial;
+					display: block;
+					height: 20px;
+					margin: auto;
+					padding: 3px;
+					text-transform: none;
+					width: 20px;
+				}
+      }
+      tbody td:nth-of-type(2n) {background-color: #f8f8f8;}
+		}
+	}/* /#section-plans-list */
+
+	/* Accordion Layout for Plans - used in Mobile View */
+	#accordion-content {
+	margin-bottom: emCalc(25px);
+	  .active {
+	    .title {
+	      background: #fff url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-accordion-active.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 95% 50%;
+	      a {border-bottom: 1px solid #d6d6d6;}
+	    }
+	    .content {
+	    background: #fff url(//images.mycricket.com/cricket?set=imageURL[file:/img/plans/bg-section-plans-list-mobile.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat center center;
+			text-align: center;
+			padding: 10px 20%;	
+				
+			&.feature-plan {
+			  background: #fff url(//images.mycricket.com/cricket?set=imageURL[file:/img/plans/bg-section-plans-list.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat center center;
+			}
+			
+			p {
+				color: #fff;
+				font: normal 11px 'GothamMedium';
+				margin-top: 15px;
+				text-align: center;
+				text-transform: uppercase;
+				
+				&.subhead {
+					color: #c1d72e;
+					opacity: 1;
+				}
+				
+				&.pricing {
+					color: #fff;
+					font: normal 65px 'GothamBlack';
+					padding: 0;
+					text-transform: uppercase;
+					margin-bottom: 0;
+					sub {font-size: 13px;}
+				}
+			}
+			
+			a.button {
+				padding-left: 10px;
+				padding-right: 10px;
+				width: 100%;
+				&.disabled {
+					background-color: #fff;
+					border-color: #C1C1C3;
+					box-shadow: none;
+					color: #B1B1B1;
+				}
+			}
+			
+			a.circle-arrow {
+				display: block;
+				font: normal 12px Arial;
+				float: none;
+				margin-left: 20%;
+				padding: 2px 0 10px 25px;
+				text-align: left;
+				@include respond-min($tablet-screen) {
+				  margin-left: 35%;
+				}
+			}
+			
+			.data-callout {
+				background-color: #fff;
+				border: 2px solid #fff;
+				color: #008752;
+				font: normal 20px 'GothamBlack';
+				margin: 15px 0 10px;
+				padding-top: 5px;
+				text-transform: uppercase;
+				text-align: center;
+				sub {
+					font-size: 11px;
+					vertical-align: baseline;
+				}
+				p {
+					background-color: #008752;
+					color: #fff;		
+					font-size: 11px;
+					margin: 5px 0 0 0;
+					padding-top: 5px;
+					padding-bottom: 5px;
+				}
+			}			
+	    }
+	  }
+	  .title {
+	    background: #fff url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-accordion-inactive.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 95% 50%;
+	    color: #8dc63f;
+	    font-family: "GothamBlack";
+	    font-size: 1em;
+		  text-transform: uppercase;
+	    a {color: #008752;}
+	  }
+
+	  /* iPad*/
+	  @include respond-min($tablet-screen) {
+	    .expand-all {display: none;}
+	  }
+	}
+
+	.swiper-container, .swiper-wrapper {height: 400px;}
+	
+	#accordion-content {
+
+		h2 {
+			color: #7dbd55;
+			font-size: 24px;
+			margin: 25px auto 20px;
+			text-align: center;
+		}
+	  .content {
+	    &:after {
+	      @include clearfix;
+	    }
+	  }
+	  .plan-item {
+	    float: left;
+	    width: 100%;
+	    margin: 1em 0 2em 0;
+	    text-align: center;
+		
+	    /* between 767px & 800px - 2 columns */
+	    @include respond-min($small-screen) {
+	      width: 50%;
+	      min-height: 240px;
+	    }
+    
+	    /* between 800px & 940px - 3 columns */
+	    @include respond-min($tablet-landscape) {
+	      width: 33%;
+	      min-height: 240px;
+	      h4 {min-height: 75px;}
+	    }
+
+	    /* > 940px - 4 columns */
+			@include respond-min($medium-screen) {
+	      width: 25%;
+	      min-height: 240px;
+			}
+	    sub {bottom: 0;}
+	    h3 {
+	      font-family: "GothamBlack";
+	      color: #008752;
+	      text-transform: uppercase;
+	      font-size: 1em;
+	      font-weight: normal;
+	    }
+	    h4 {
+	      font-family: "GothamBook";
+	      color: #333;
+	      width: 81%;
+	      margin: 0 auto;
+	      a {color: #333;}
+	    }
+	    .green-price {
+	      font-size: 2em;
+	      margin-bottom: 0.3em;
+	    }
+	    .green-add-cart {
+	      margin: 0 auto 1.25em auto;
+	    }
+	    .included {
+	      background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/plans-addons/icon-included.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 50% 50%;
+	      display: block;
+	      width: 83px;
+	      height: 81px;
+	      margin: 2em auto 0 auto;
+	    }
+	  }
+  
+	} /* END Accordion for Mobile View */
+		
+	#section-recommended-phones {
+		position: relative;
+		.row-container {
+			border-top: 1px solid #b7ddce;
+			margin-bottom: 10px;
+			padding-top: 20px; 			
+		}
+		
+		.row.hide-for-small [class*="column"] + [class*="column"]:last-child {float: left;}
+		h3 {
+			font: 20px/1 'GothamBlack';
+			color:#008752;
+			text-transform: uppercase;
+			text-align: center;
+			padding: 0 10%;
+			@include respond-min($small-screen) {
+				font: 30px/1 'GothamBlack';
+				text-align: left;
+				padding: 0;
+			}
+			span {color:#0da82c;}
+		}
+		.see-all {margin-top:15px;}
+		
+		.recommended-phone-container {
+			text-align: center;
+			margin:10px 0 40px 0;
+			.recommended-phone-name {
+				font: 15px/1 'GothamMedium';
+				color:#333;
+				margin:22px 0;
+				display:block;
+			}
+			
+			.button {
+				@include btn-cricket($green-button-1);
+				display: block;
+				width: 60%;
+				margin: 0 auto 15px;
+				&.disabled {
+					background-color: #DBDBDC;
+					border: 1px solid #BBBDBF;
+					box-shadow: none;
+					color: #333;
+					cursor: default;
+					display: block;
+					font: 13px 'GothamMedium';
+					opacity: 0.6;
+					text-align: center;
+					text-decoration: none;
+					text-transform: uppercase;		
+				}
+			}
+			a.circle-arrow {padding-top: 0;}
+		}
+		
+		.disclaimer {
+			color: #333;
+			font: normal 11px/14px Arial;
+			padding: 0 15px;
+			@include respond-min($small-screen) { padding: 0; }
+		}
+		
+		#foot-see-all .columns {
+			margin-bottom: 20px;
+			text-align: center;
+		}
+	}	
+	
+	#section-lifestyle {
+		img {
+			display: block;
+			margin: 0 auto;
+			width: emCalc(1400px);
+		}
+	} /* END #section-lifestyle */	
+}	
+
+.tooltip { 
+	border: 1px solid #ccc; 
+	&>.nub {
+		border: solid $tooltip-pip-size; 
+		border-color: transparent transparent #ccc transparent !important;
+	}
+}

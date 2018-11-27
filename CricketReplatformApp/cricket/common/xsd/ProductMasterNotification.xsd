@@ -1,0 +1,3092 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://esp.cricket.com/ESP/Namespaces/JMS/Public/ProductMasterNotification.xsd" xmlns:cc="http://www.cricketcommunications.com/schemas/Canonical/Common/v1_0" targetNamespace="http://esp.cricket.com/ESP/Namespaces/JMS/Public/ProductMasterNotification.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.03">
+	<!-- 01/23/2012 Elizabeta Memca  1.0.01
+		added excludeBom element to [BundleContentInfo, BillOfMaterialsListItemInfo]
+-->
+	<!-- 002/06/2012 Filip Atanasovski  1.0.02
+		added boolean type to [gamesApps, locationBasedService, myBackup, onDevicePortal]
+-->
+	<!-- 09/12/2013 Navjeet Suri  1.0.03
+		added orderableOnTheWebFlag as optional to [CatalogItemInfo]
+-->
+	<xs:complexType name="ProductDateIntervalInfo">
+		<xs:annotation>
+			<xs:documentation>Provides launch and discontinue date for a specified product</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="launchDate" type="xs:date"/>
+			<xs:element name="discontinueDate" type="xs:date" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ABCClassification">
+		<xs:annotation>
+			<xs:documentation>
+				Classification for Planning.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="A"/>
+				<xs:enumeration value="B"/>
+				<xs:enumeration value="C"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="accessoryID">
+		<xs:annotation>
+			<xs:documentation>Field used for conversion only to store the PK system generated model ID</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="150"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="adapterFixed">
+		<xs:annotation>
+			<xs:documentation>First segment of description for Item Catalog Category ADAPTER</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="ADAPTER"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="adapterManufacturer">
+		<xs:annotation>
+			<xs:documentation>Segment of several item descriptions identifying the orginal equipment manufacturer of the item</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="CAL COMP"/>
+				<xs:enumeration value="EVER WIN"/>
+				<xs:enumeration value="FONEGEAR"/>
+				<xs:enumeration value="IGO"/>
+				<xs:enumeration value="KYOCERA"/>
+				<xs:enumeration value="LG"/>
+				<xs:enumeration value="MOTOROLA"/>
+				<xs:enumeration value="NOKIA"/>
+				<xs:enumeration value="PCD"/>
+				<xs:enumeration value="PHOENIX WIRELESS"/>
+				<xs:enumeration value="SAMSUNG"/>
+				<xs:enumeration value="SUPERIOR"/>
+				<xs:enumeration value="USAWS"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="adapterMode">
+		<xs:annotation>
+			<xs:documentation>Segment of ADAPTER description.  VPA is only choice currently</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="DESKTOP"/>
+				<xs:enumeration value="VPA"/>
+				<xs:enumeration value="WALL"/>
+				<xs:enumeration value="IGO"/>
+				<xs:enumeration value="CAR"/>
+				<xs:enumeration value="TRAVEL"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="autoSerialAlphaPrefix">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="30"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="assetFixed">
+		<xs:annotation>
+			<xs:documentation>First segment of the SWITCH SITE and CELL SITE Item Catalog Category item description, designating the item as an ASSET</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="ASSET"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="assetName">
+		<xs:annotation>
+			<xs:documentation>Segment of NETWORK ELEMENT CELL SITE and SWITCH SITE item description.  Freeform field describing the asset</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="150"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="AWS" type="xs:string"/>
+	<xs:element name="batteryFixed">
+		<xs:annotation>
+			<xs:documentation>First segment of description for Item Catalog Category BATTERY</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="BATTERY"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="batteryManufacturer">
+		<xs:annotation>
+			<xs:documentation>Segment of several item descriptions identifying the orginal equipment manufacturer of the item</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="CAL COMP"/>
+				<xs:enumeration value="KYOCERA"/>
+				<xs:enumeration value="LG"/>
+				<xs:enumeration value="MOTOROLA"/>
+				<xs:enumeration value="NOKIA"/>
+				<xs:enumeration value="PCD"/>
+				<xs:enumeration value="SAMSUNG"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="batteryType">
+		<xs:annotation>
+			<xs:documentation>Designates whether the battery is RECHARGEABLE</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="STANDARD"/>
+				<xs:enumeration value="EXTENDED"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="batteryStandByTime" type="xs:decimal">
+		<xs:annotation>
+			<xs:documentation>The time in minutes that a BATTERY supports while the device is in standby mode.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="batteryTalkTime" type="xs:decimal">
+		<xs:annotation>
+			<xs:documentation>The time in minutes that a BATTERY supports while the device is being used</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="batteryCapacity" type="xs:decimal">
+		<xs:annotation>
+			<xs:documentation>Designation of the CAPACITY of a BATTERY</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="blueTooth" type="Capable">
+		<xs:annotation>
+			<xs:documentation>
+				A designation of whether the product is bluetooth capable and whether this feature included, mandatory, optional or not included at all.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="bluetoothFixed">
+		<xs:annotation>
+			<xs:documentation>First segment of BLUETOOTH Item Catalog Category item description.  Identifies the item as BLUETOOTH</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="BLUETOOTH"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="bluetoothManufacturer">
+		<xs:annotation>
+			<xs:documentation>Segment of several item descriptions identifying the orginal equipment manufacturer of the item</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="ALIPH"/>
+				<xs:enumeration value="BLUEANT"/>
+				<xs:enumeration value="JABRA"/>
+				<xs:enumeration value="JWIN"/>
+				<xs:enumeration value="KYOCERA"/>
+				<xs:enumeration value="LG"/>
+				<xs:enumeration value="MOTOROLA"/>
+				<xs:enumeration value="NOKIA"/>
+				<xs:enumeration value="PLANTRONICS"/>
+				<xs:enumeration value="SAMSUNG"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="bluetoothType">
+		<xs:annotation>
+			<xs:documentation>Second segment of BLUETOOTH Item Catalog Category item description.  Identifies the item as MONO or STEREO</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="MONO"/>
+				<xs:enumeration value="STEREO"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="bluetoothMode">
+		<xs:annotation>
+			<xs:documentation>Second segment of BLUETOOTH Item Catalog Category item description.  Identifies the item as REGULAR or CAR KIT</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="REGULAR"/>
+				<xs:enumeration value="CAR KIT"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="brew" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>
+				Checkbox identifying whether the device is capable of Games and Applications.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="broadband" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>
+				Checkbox identifying whether the device is capable of Broadband
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="a_b">
+		<xs:annotation>
+			<xs:documentation>
+				Checkbox indicating that the item is a A-Stock, B-STOCK, Replacement, Used, etc.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="A"/>
+				<xs:enumeration value="B"/>
+				<xs:enumeration value="R"/>
+				<xs:enumeration value="U"/>
+				<xs:enumeration value="D"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="bundleFixed">
+		<xs:annotation>
+			<xs:documentation>
+				First segment of the BUNDLE Item Catalog Category item description, identifying the item as a BUNDLE.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="BUNDLE"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="bundleName">
+		<xs:annotation>
+			<xs:documentation>
+				Second segment of BUNDLE Item Catalog Category item description.  Freeform field used to describe the BUNDLE further.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="150"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="caseColor">
+		<xs:annotation>
+			<xs:documentation>Indicates the color of the product.  Segment of description in CASE.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="150"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="cableFixed">
+		<xs:annotation>
+			<xs:documentation>First segment of CABLE Item Catalog Category item description, identifying the item as a CABLE</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="CABLE"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="cableManufacturer">
+		<xs:annotation>
+			<xs:documentation>Segment of several item descriptions identifying the orginal equipment manufacturer of the item</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="FONEGEAR"/>
+				<xs:enumeration value="KYOCERA"/>
+				<xs:enumeration value="LG"/>
+				<xs:enumeration value="MOTOROLA"/>
+				<xs:enumeration value="NOKIA"/>
+				<xs:enumeration value="PCG"/>
+				<xs:enumeration value="SAMSUNG"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="cableMode">
+		<xs:annotation>
+			<xs:documentation>Segment of CABLE Item Catalog Category item description.  Freeform field used to describe the CABLE further</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="2.5 MM"/>
+				<xs:enumeration value="3.5MM"/>
+				<xs:enumeration value="MICRO"/>
+				<xs:enumeration value="MINI"/>
+				<xs:enumeration value="UNIQUE"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="cableType">
+		<xs:annotation>
+			<xs:documentation>Segment of CABLE Item Catalog Category item description.  Freeform field used to describe the CABLE further</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="CHARGER"/>
+				<xs:enumeration value="Y-CABLE"/>
+				<xs:enumeration value="CONNECTOR"/>
+				<xs:enumeration value="AUDIO"/>
+				<xs:enumeration value="CONNECTOR"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="cameraResolution">
+		<xs:annotation>
+			<xs:documentation>
+				Field designating the camera resolution on the product.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:pattern value="[0-9]*"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="capital">
+		<xs:annotation>
+			<xs:documentation>Checkbox designating that the item is considered a CAPITAL item in FIXED ASSETS.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:boolean"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="caseFixed">
+		<xs:annotation>
+			<xs:documentation>First segment of the CASE Item Catalog Category item description, identifying the item as a CASE.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="CASE"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="caseType">
+		<xs:annotation>
+			<xs:documentation>Second segment of CASE Item Catalog Category item description.  Freeform field used to describe the CASE further</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="REGULAR"/>
+				<xs:enumeration value="COVER"/>
+				<xs:enumeration value="HOLSTER"/>
+				<xs:enumeration value="NCAA"/>
+				<xs:enumeration value="NFL"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="catalogGroup">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="40"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="catsID">
+		<xs:annotation>
+			<xs:documentation>Field used for conversion only to store the PK system generated model ID</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="150"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="cellSiteFixed">
+		<xs:annotation>
+			<xs:documentation>Second segment of the CELL SITE Item Catalog Category item description, designating the item as a CELL SITE item</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="CELL SITE"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="collateralName">
+		<xs:annotation>
+			<xs:documentation>
+				Segment of the COLLATERAL item catalog category item description.  Freeform text describing the title or name of the collateral material.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="150"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="costOfSalesAccount">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="22"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="createdBy">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="100"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="cricketClick" type="Capable">
+		<xs:annotation>
+			<xs:documentation>
+				A designation of whether the product is capable for Cricket Clicks and whether this feature is included, mandatory, optional or not included at all.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="chargerFixed">
+		<xs:annotation>
+			<xs:documentation>First segment of the CHARGER Item Catalog Category item description, identifying the item as a CHARGER</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="CHARGER"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="chargerManufacturer">
+		<xs:annotation>
+			<xs:documentation>Segment of several item descriptions identifying the orginal equipment manufacturer of the item</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="CAL COMP"/>
+				<xs:enumeration value="EVER WIN"/>
+				<xs:enumeration value="FONEGEAR"/>
+				<xs:enumeration value="IGO"/>
+				<xs:enumeration value="KYOCERA"/>
+				<xs:enumeration value="LG"/>
+				<xs:enumeration value="MOTOROLA"/>
+				<xs:enumeration value="NOKIA"/>
+				<xs:enumeration value="PCD"/>
+				<xs:enumeration value="PHOENIX WIRELESS"/>
+				<xs:enumeration value="SAMSUNG"/>
+				<xs:enumeration value="SUPERIOR"/>
+				<xs:enumeration value="USAWS"/>
+				<xs:enumeration value="UTSTARCOM"/>
+				<xs:enumeration value="AUDIOVOX"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="chargerMode">
+		<xs:annotation>
+			<xs:documentation>Segment of the CHARGER item description designating whether the charger is for desktop or travel</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="VARIOUS - KYOCERA"/>
+				<xs:enumeration value="VARIOUS - MOTOROLA"/>
+				<xs:enumeration value="VARIOUS - NOKIA"/>
+				<xs:enumeration value="J88B"/>
+				<xs:enumeration value="VARIOUS - PCD"/>
+				<xs:enumeration value="8910"/>
+				<xs:enumeration value="5170I"/>
+				<xs:enumeration value="VARIOUS - SAMSUNG"/>
+				<xs:enumeration value="A870"/>
+				<xs:enumeration value="6275"/>
+				<xs:enumeration value="7026"/>
+				<xs:enumeration value="R450"/>
+				<xs:enumeration value="8935"/>
+				<xs:enumeration value="R430"/>
+				<xs:enumeration value="2267"/>
+				<xs:enumeration value="7000"/>
+				<xs:enumeration value="VARIOUS - UTSTARCOM"/>
+				<xs:enumeration value="Super-Duper!"/>
+				<xs:enumeration value="2035"/>
+				<xs:enumeration value="S1300"/>
+				<xs:enumeration value="VE240"/>
+				<xs:enumeration value="7126"/>
+				<xs:enumeration value="V9M"/>
+				<xs:enumeration value="DESKTOP"/>
+				<xs:enumeration value="WALL"/>
+				<xs:enumeration value="IGO"/>
+				<xs:enumeration value="CAR"/>
+				<xs:enumeration value="TRAVEL"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="collateralType">
+		<xs:annotation>
+			<xs:documentation>
+				Segment of the COLLATERAL item catalog category item description.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="MARKETING"/>
+				<xs:enumeration value="TRAINING"/>
+				<xs:enumeration value="MANUAL"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="costInfo">
+		<xs:annotation>
+			<xs:documentation>
+				Indicates whether how the cost of an item is determined.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="TIERED"/>
+				<xs:enumeration value="BUNDLED"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="customerType">
+		<xs:annotation>
+			<xs:documentation>
+				Designation for FEE indicating what category/categories of customer a specific FEE is available for.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="01 - PAY ADVANCE"/>
+				<xs:enumeration value="03 - EMP/AGT/DEM"/>
+				<xs:enumeration value="21 - POST PAY"/>
+				<xs:enumeration value="50 - PREPAID"/>
+				<xs:enumeration value="60 - CRICKET BY WEEK"/>
+				<xs:enumeration value="70 - CRICKET PAYGO"/>
+				<xs:enumeration value="80 - WHOLESALE"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="CPFRFlag" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>
+				Checkbox indicating that the item will be picked up by CPFR for planning and forecasting.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="dataService" type="Capable">
+		<xs:annotation>
+			<xs:documentation>
+				A designation of whether the product is capable for Data Services and whether this feature is included, mandatory, optional or not included at all.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="deviceMode">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="150"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="description">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="240"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="displayOrder" type="xs:int">
+		<xs:annotation>
+			<xs:documentation>
+				Number indicating the display order of the product for reporting.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="differentMinMDN" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>
+				A checkbox indicating if the device supports MDN MIN separation.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="discountAmount" type="xs:decimal">
+		<xs:annotation>
+			<xs:documentation>
+				Dollar Value or % of reduction applied to discounted item.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="discountApplication">
+		<xs:annotation>
+			<xs:documentation>
+				Segment of the DISCOUNT item description indicating whether the discount is for a service or an account.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="ACCOUNT"/>
+				<xs:enumeration value="SERVICE"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="discountFixed">
+		<xs:annotation>
+			<xs:documentation>
+				First segment of the DISCOUNT Item Catalog Category item description, identifying the item as a DISCOUNT.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="DISCOUNT"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="discountType">
+		<xs:annotation>
+			<xs:documentation>
+				Segment of the DISCOUNT item description further describing the discount.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="ADJUSTMENT"/>
+				<xs:enumeration value="PROMOTION"/>
+				<xs:enumeration value="CREDIT"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="E911" type="Capable">
+		<xs:annotation>
+			<xs:documentation>
+				A designation of whether the product is capable for E911 and whether this feature is included, mandatory, optional or not included at all.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="EANNumber">
+		<xs:annotation>
+			<xs:documentation>
+				Freeform field for user to enter the item EAN number.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="150"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="ecoGreen" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>
+				Checkbox indicating whether an item has the environmental ECO-GREEN designation
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="EMail" type="Capable">
+		<xs:annotation>
+			<xs:documentation>
+				A designation of whether the product is capable for E-MAIL and whether this feature is included, mandatory, optional or not included at all.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="EVDO" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>
+				Checkbox designating that the item is capable of EVDO.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="estimatedScrapValue" type="xs:decimal">
+		<xs:annotation>
+			<xs:documentation>
+				A value entered by the user to designate the scrap value of an item.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="flipSwap" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>
+				Checkbox on a device indicating the item is permitted to as part of the FLIPSWAP device exchange program.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="gamesApps" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>
+				Checkbox on a device indicating the item is permitted access to games and other applications.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="manufacturer">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="AUDIOVOX"/>
+				<xs:enumeration value="CALCOMP"/>
+				<xs:enumeration value="AUDIOVOX 8910"/>
+				<xs:enumeration value="MOTOROLA"/>
+				<xs:enumeration value="NOKIA"/>
+				<xs:enumeration value="KYOCERA"/>
+				<xs:enumeration value="UNKNOWN"/>
+				<xs:enumeration value="STEVE"/>
+				<xs:enumeration value="MOTORLA"/>
+				<xs:enumeration value="LGP"/>
+				<xs:enumeration value="CRICKET"/>
+				<xs:enumeration value="CPE"/>
+				<xs:enumeration value="AMP"/>
+				<xs:enumeration value="AL-COMP"/>
+				<xs:enumeration value="SAMSUNG"/>
+				<xs:enumeration value="QUALCOMM"/>
+				<xs:enumeration value="UTSTARCOM"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="msrp" type="xs:decimal">
+		<xs:annotation>
+			<xs:documentation>Designation of the MSRP of a product</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="feeFixed">
+		<xs:annotation>
+			<xs:documentation>
+				First segment of the FEE Item Catalog Category item description, identifying the item as a FEE.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="FEE"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="formFactor">
+		<xs:annotation>
+			<xs:documentation>Physical characteristic describing the outward appearance and shape of the device</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="CLAMSHELL"/>
+				<xs:enumeration value="SLIDER"/>
+				<xs:enumeration value="TOUCH"/>
+				<xs:enumeration value="BAR"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="lastUpdatedBy">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="100"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="lastUpdateLogin">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="0"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="longDescription">
+		<xs:annotation>
+			<xs:documentation>An extended textual description of the item, typically containing more information than the description</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="4000"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="locationBasedService" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>
+				Checkbox indicating whether the servcie on the device is dependent on the location.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="HACRating" type="xs:decimal">
+		<xs:annotation>
+			<xs:documentation>
+				User entered value indication the HAC rating of the device.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="handset">
+		<xs:annotation>
+			<xs:documentation>Oracle Item Number of Associated Handset</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="150"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="handsetFixed">
+		<xs:annotation>
+			<xs:documentation>First segment of HANDSET Item Catalog Category item description, designating the item as a HANDSET</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="HANDSET"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="handsetManufacturer">
+		<xs:annotation>
+			<xs:documentation>Segment of several item descriptions identifying the orginal equipment manufacturer of the item</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="AUDIOVOX"/>
+				<xs:enumeration value="CALCOMP"/>
+				<xs:enumeration value="AUDIOVOX 8910"/>
+				<xs:enumeration value="MOTOROLA"/>
+				<xs:enumeration value="NOKIA"/>
+				<xs:enumeration value="KYOCERA"/>
+				<xs:enumeration value="UNKNOWN"/>
+				<xs:enumeration value="STEVE"/>
+				<xs:enumeration value="MOTORLA"/>
+				<xs:enumeration value="LGP"/>
+				<xs:enumeration value="CRICKET"/>
+				<xs:enumeration value="CPE"/>
+				<xs:enumeration value="AMP"/>
+				<xs:enumeration value="AL-COMP"/>
+				<xs:enumeration value="SAMSUNG"/>
+				<xs:enumeration value="QUALCOMM"/>
+				<xs:enumeration value="UTSTARCOM"/>
+				<xs:enumeration value="LG"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="handsetColor">
+		<xs:annotation>
+			<xs:documentation>Indicates the color of the product.  Segment of description in HANDSET</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="150"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="headsetCompatibility">
+		<xs:annotation>
+			<xs:documentation>Field on a HEADSET designating the type of port connector available.  Used to ensure compatibility between device and headset</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="SINGLE PORT"/>
+				<xs:enumeration value="AUDIO 2.5"/>
+				<xs:enumeration value="AUDIO 3.5"/>
+				<xs:enumeration value="MICRO"/>
+				<xs:enumeration value="MINI"/>
+				<xs:enumeration value="BLUETOOTH"/>
+				<xs:enumeration value="MONO"/>
+				<xs:enumeration value="STEREO"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="headsetFixed">
+		<xs:annotation>
+			<xs:documentation>
+				First segment of the HEADSET Item Catalog Category item description, identifying the item as a HEADSET.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="HEADSET"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="headsetManufacturer">
+		<xs:annotation>
+			<xs:documentation>
+				Segment of several item descriptions identifying the orginal equipment manufacturer of the item.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="CAL COMP"/>
+				<xs:enumeration value="FONEGEAR"/>
+				<xs:enumeration value="KYOCERA"/>
+				<xs:enumeration value="LG"/>
+				<xs:enumeration value="MOTOROLA"/>
+				<xs:enumeration value="NOKIA"/>
+				<xs:enumeration value="PCD"/>
+				<xs:enumeration value="PHOENIX WIRELESS"/>
+				<xs:enumeration value="SAMSUNG"/>
+				<xs:enumeration value="SUPERIOR"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="headsetType">
+		<xs:annotation>
+			<xs:documentation>
+				Segment of the HEADSET item description further describing the HEADSET.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="MONO"/>
+				<xs:enumeration value="STEREO"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="headsetMode">
+		<xs:annotation>
+			<xs:documentation>
+				Segment of the HEADSET item description further describing the HEADSET.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="2.5 MM"/>
+				<xs:enumeration value="3.5MM"/>
+				<xs:enumeration value="MICRO"/>
+				<xs:enumeration value="MINI"/>
+				<xs:enumeration value="UNIQUE"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="HTMLFeatureCode">
+		<xs:annotation>
+			<xs:documentation>
+				Checkbox on a DEVICE indicating the device has HTML FEATURE CODE capability.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="150"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="imageFileName">
+		<xs:annotation>
+			<xs:documentation>
+				Freeform field for user to enter the name of the image file attached to the item in PIM.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="CRTXCKT10023, CRRZ-3PIN"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="identifier">
+		<xs:annotation>
+			<xs:documentation>
+				Field on a DEVICE designation if the product is ESN or MEID.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="ESN"/>
+				<xs:enumeration value="MEID"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="insuranceExchange" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>
+				Checkbox on a device indicating the item is permitted participation in the INSURANCE EXCHANGE program.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="inventoryItem">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="40"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="inventoryItemStatusCode">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="10"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="inventoryItemCategory">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="inventoryItemCategorySet">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="itemInfo">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="30"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="memorySize">
+		<xs:annotation>
+			<xs:documentation>Segment of the MEMORY item description specifiying the gigabytes of memory.  Also included as field on phones.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="1G"/>
+				<xs:enumeration value="2G"/>
+				<xs:enumeration value="4G"/>
+				<xs:enumeration value="8G"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="memoryFixed">
+		<xs:annotation>
+			<xs:documentation>First segment of the MEMORY Item Catalog Category item description, identifying the item as a MEMORY.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="MEMORY"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="memoryType">
+		<xs:annotation>
+			<xs:documentation>Segment of the MEMORY item description further describing the MEMORY.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="MICRO SD"/>
+				<xs:enumeration value="USB READER"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="memoryManufacturer">
+		<xs:annotation>
+			<xs:documentation>Segment of several item descriptions identifying the orginal equipment manufacturer of the item.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="ATP"/>
+				<xs:enumeration value="KINGSTON"/>
+				<xs:enumeration value="SANDISK"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="MMS" type="Capable">
+		<xs:annotation>
+			<xs:documentation>
+				A designation of whether the product is capable for MMS and whether this feature is included, mandatory, optional or not included at all.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="mobileWeb" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>
+				Checkbox indicating whether the device supports MOBILE WEB.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="model">
+		<xs:annotation>
+			<xs:documentation>
+				Manufacturer model name.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="150"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="modelID">
+		<xs:annotation>
+			<xs:documentation>
+				Field used for conversion only to store the PK system generated model ID.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="150"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="modemFixed">
+		<xs:annotation>
+			<xs:documentation>First segment of the MODEM Item Catalog Category, designating the item as a MODEM</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="MODEM"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="modemColor">
+		<xs:annotation>
+			<xs:documentation>Color of the modem</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="hoModelNumber">
+		<xs:annotation>
+			<xs:documentation>HO MODEL NUMBER</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="itemPackaging">
+		<xs:annotation>
+			<xs:documentation>Packaging information for a product, column in view is "packaging"</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="stockType">
+		<xs:annotation>
+			<xs:documentation>all stock types will be stored in this element, i.e. a,b,u,r,d</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="serviceType">
+		<xs:annotation>
+			<xs:documentation>service type, no other information given</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="deviceCategory">
+		<xs:annotation>
+			<xs:documentation>device category, no other information given</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="modemManufacturer">
+		<xs:annotation>
+			<xs:documentation>Segment of several item descriptions identifying the orginal equipment manufacturer of the item</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="AUDIOVOX"/>
+				<xs:enumeration value="CALCOMP"/>
+				<xs:enumeration value="AUDIOVOX 8910"/>
+				<xs:enumeration value="MOTOROLA"/>
+				<xs:enumeration value="NOKIA"/>
+				<xs:enumeration value="KYOCERA"/>
+				<xs:enumeration value="UNKNOWN"/>
+				<xs:enumeration value="STEVE"/>
+				<xs:enumeration value="MOTORLA"/>
+				<xs:enumeration value="LGP"/>
+				<xs:enumeration value="CRICKET"/>
+				<xs:enumeration value="CPE"/>
+				<xs:enumeration value="AMP"/>
+				<xs:enumeration value="AL-COMP"/>
+				<xs:enumeration value="SAMSUNG"/>
+				<xs:enumeration value="QUALCOMM"/>
+				<xs:enumeration value="UTSTARCOM"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="modemSpeed" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Segment of MODEM item description specifying how fast the modem operates.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="mobileMusic" type="Capable">
+		<xs:annotation>
+			<xs:documentation>A designation of whether the product is capable for MOBILE MUSIC and whether this feature is included, mandatory, optional or not included at all</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="nationwideRoaming" type="Capable">
+		<xs:annotation>
+			<xs:documentation>
+				A designation of whether the product is capable for ROAMING and whether this feature is included, mandatory, optional or not included at all.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="newCustomer" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>
+				Checkbox indicating the CARD is for new customers only.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="myBackup" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>
+				Checkbox indicating whether the device supports MY BACKUP
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="newRevisionCode">
+		<xs:annotation>
+			<xs:documentation>Indicates how to notify customers of new revisions of the item</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="30"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="numberColors" type="xs:int">
+		<xs:annotation>
+			<xs:documentation>
+				Number indication the number of colors available in the screen of a device.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="otherName">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="150"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="otherType">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="150"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="OTASP" type="xs:boolean"/>
+	<xs:element name="onDevicePortal" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>
+				Checkbox indicating that the item is on the Cricket device portal.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<!-- Replaced with itemPackaging
+	<xs:element name="package">
+		<xs:annotation>
+			<xs:documentation>
+				Segment of KIT item catalog category item description specifying the packaging name.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	-->
+	<xs:element name="packageRevision">
+		<xs:annotation>
+			<xs:documentation>
+				Segment of KIT item catalog category item description specifying the packaging revision level.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="150"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="packagingFixed">
+		<xs:annotation>
+			<xs:documentation>First segment in the PACKAGING Item Catalog Category item description, indicating the item is a PACKAGING ITEM</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="PACKAGING"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="packagingName">
+		<xs:annotation>
+			<xs:documentation>Freeform field and segment of the PACKAGING Item Catalog Category item description, further describing the item	</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="150"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="prepaidCardValue" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>
+				Dollar Value of Prepaid Card.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="packagingType">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="ART CARD"/>
+				<xs:enumeration value="CLAMSHELL"/>
+				<xs:enumeration value="BOX"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="phoneGiftPackFixed">
+		<xs:annotation>
+			<xs:documentation>
+				First Segment of the PHONE GIFTPACK Item Catalog Category indicating the item is a PHONE GIFTPACK.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="PHONE GIFTPACK"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="phoneGiftPackManufacturer">
+		<xs:annotation>
+			<xs:documentation>
+				Segment of several item descriptions identifying the orginal equipment manufacturer of the item.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="AL-COMP"/>
+				<xs:enumeration value="AMP"/>
+				<xs:enumeration value="AUDIOVOX"/>
+				<xs:enumeration value="CAL COMP"/>
+				<xs:enumeration value="CPE"/>
+				<xs:enumeration value="CRICKET"/>
+				<xs:enumeration value="KYOCERA"/>
+				<xs:enumeration value="LG"/>
+				<xs:enumeration value="MOTOROLA"/>
+				<xs:enumeration value="NOKIA"/>
+				<xs:enumeration value="QUALCOMM"/>
+				<xs:enumeration value="SAMSUNG"/>
+				<xs:enumeration value="UTSTARCOM"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="phoneID">
+		<xs:annotation>
+			<xs:documentation>Field used for conversion only to store the PK system generated phone ID</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="150"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="phoneGiftPackColor">
+		<xs:annotation>
+			<xs:documentation>
+				Indicates the color of the product.  Segment of description in PHONE GIFTPACK.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="150"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="phoneGiftPackName">
+		<xs:annotation>
+			<xs:documentation>
+				Segment of the PHONE GIFTPACK item catalog category item description.  Freeform text describing the marketing name of the product.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="150"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="prepaidCardFixed">
+		<xs:annotation>
+			<xs:documentation>
+				First segment in the CARD Item Catalog Category item description, designating the item is a PREPAID CARD
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="PREPAID CARD"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="prepaidCardID">
+		<xs:annotation>
+			<xs:documentation>
+				Field used for conversion only to store the PK system generated model ID.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="150"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="processed">
+		<xs:annotation>
+			<xs:documentation>Field indicating that an item has been processed in the CATs system</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:boolean"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="protectionDeductable" type="xs:decimal">
+		<xs:annotation>
+			<xs:documentation>
+				Field indication the deductable for the protection offered on the product.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="receiveCloseTolerance">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="22"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="ringTone" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>
+				Checkbox indicating that the product supports ringtones
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="keyPad">
+		<xs:annotation>
+			<xs:documentation>
+				Field on DEVICE indicating the type of keypad included in the item.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="3 BY 4"/>
+				<xs:enumeration value="QWERTY"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="kitFixed">
+		<xs:annotation>
+			<xs:documentation>
+				First segment of the KIT Item Catalog Category item description, identifying the item as a KIT.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="KIT"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="kitManufacturer">
+		<xs:annotation>
+			<xs:documentation>
+				Segment of several item descriptions identifying the orginal equipment manufacturer of the item.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="CAL COMP"/>
+				<xs:enumeration value="EVER WIN"/>
+				<xs:enumeration value="FONEGEAR"/>
+				<xs:enumeration value="PHOENIX"/>
+				<xs:enumeration value="WIRELESS"/>
+				<xs:enumeration value="SUPERIOR"/>
+				<xs:enumeration value="USAWS"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="kitType">
+		<xs:annotation>
+			<xs:documentation>
+				Segment of the KIT item description further decribing the KIT.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="VALUE PACK DUAL"/>
+				<xs:enumeration value="VALUE PACK TRI"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="kitName">
+		<xs:annotation>
+			<xs:documentation>
+				Segment of the KIT item description further decribing the KIT.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="150"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="receiptDaysExceptionCode">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="25"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="retailPackaged" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>
+				Checkbox indicating the item is packaged for retail sale.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="salesRepInfo">
+		<xs:annotation>
+			<xs:documentation>
+				Field on item identifying which type of sales representative is responsible for the sale of this item.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="CSR"/>
+				<xs:enumeration value="RSR"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="revenueClassificationCode">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="E"/>
+				<xs:enumeration value="B"/>
+				<xs:enumeration value="D"/>
+				<xs:enumeration value="S"/>
+				<xs:enumeration value="O"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="salesTaxable" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>
+				Checkbox indicating whether a customer should be charged sales tax for the item.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="seedStockPercentage" type="xs:decimal">
+		<xs:annotation>
+			<xs:documentation>
+				Field indication the % for seed stock to be used in the analysis of average cost.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="sellable" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>
+				Checkbox indicating whether the item can be sold in retail stores.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="shortDescription">
+		<xs:annotation>
+			<xs:documentation>
+				Freeform field offering a short description for alternative purposes.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="150"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="SKUDescription">
+		<xs:annotation>
+			<xs:documentation>
+				Field used for conversion only to store the current item description for referral purposes only.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="150"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="SMS" type="Capable">
+		<xs:annotation>
+			<xs:documentation>A designation of whether the product is capable for text messaging and whether this feature is included, mandatory, optional or not included at all</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="storeItemName">
+		<xs:annotation>
+			<xs:documentation>Segment in the STORE Item Catalog Category item description, further describing the item</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="150"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="storeItemType">
+		<xs:annotation>
+			<xs:documentation>First segment in the STORE Item Catalog Category item description, indicating the item is a STORE ITEM</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="DUMMY"/>
+				<xs:enumeration value="DISPLAY"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="stockLevel">
+		<xs:annotation>
+			<xs:documentation>
+				Field indicating the category of level of inventory quantity for the item.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:enumeration value="A"/>
+				<xs:enumeration value="B"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="startAutoSerialNumber">
+		<xs:annotation>
+			<xs:documentation>Next auto assigned serial number</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="30"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="softwareVersion">
+		<xs:annotation>
+			<xs:documentation>Freeform field designating the software version that is loaded into the handset</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="150"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="streetName">
+		<xs:annotation>
+			<xs:documentation>Freeform field used to enter the Cricket/Street/Slang name for a product</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="150"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<!-- Removed, no longer a single element
+	<xs:element name="sublockModel">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			-->
+	<!--
+				<xs:maxLength value="150"/>
+			-->
+	<!--
+		</xs:simpleType>
+	</xs:element>
+	-->
+	<xs:element name="supportLinkText">
+		<xs:annotation>
+			<xs:documentation>
+				Freeform field with the name of the link to support documentation for a product.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="150"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="supportLinkURL">
+		<xs:annotation>
+			<xs:documentation>
+				Freeform field with the network link name of the support documentation for a product.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="150"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="siteFixed">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:maxLength value="150"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="TTYTTD" type="Capable">
+		<xs:annotation>
+			<xs:documentation>A designation of whether the product is capable for  the hearing disabled and whether this feature is included, mandatory, optional or not included at all</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="transferable" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>
+				Checkbox indicating whether the item can be transferred between stores.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="triband" type="Capable">
+		<xs:annotation>
+			<xs:documentation>A designation of whether the product has TRIBAND included, mandatory, optional or not included at all</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="video" type="Capable">
+		<xs:annotation>
+			<xs:documentation>A designation of whether the product is capable of video and whether this feature is included, mandatory, optional or not included at all</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="Capable">
+		<xs:restriction base="xs:string"/>
+		<!--
+			<xs:enumeration value="NOT INCLUDED"/>
+			<xs:enumeration value="INCLUDED"/>
+			<xs:enumeration value="MANDATORY"/>
+			<xs:enumeration value="OPTIONAL"/>
+		-->
+	</xs:simpleType>
+	<xs:element name="voltage" type="xs:decimal">
+		<xs:annotation>
+			<xs:documentation>
+				Field for use on BATTERY designating the voltage rating of the BATTERY
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="warrantyExchange" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>
+				Included for warranty Exchange.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="warrantyLength">
+		<xs:annotation>
+			<xs:documentation>
+				Time in months for which the warrnaty period is in effect for the item.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+			<!--
+				<xs:pattern value="[0-9]*"/>
+			-->
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="zeroCost" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>
+				Checkbox indicating the item is included in the ZERO COST FILE.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="adapter" type="AdapterInfo"/>
+	<xs:complexType name="InventoryAccessoryInfo">
+		<xs:complexContent>
+			<xs:extension base="RetailInventoryItemInfo">
+				<xs:sequence>
+					<xs:element ref="accessoryID" minOccurs="0"/>
+					<xs:element ref="a_b" minOccurs="0"/>
+					<xs:element name="brightpointSKU" type="xs:string" minOccurs="0"/>
+					<xs:element ref="displayOrder" minOccurs="0"/>
+					<xs:element ref="ecoGreen" minOccurs="0"/>
+					<xs:element ref="phoneID" minOccurs="0"/>
+					<xs:element name="purchasingCategory" type="xs:string" minOccurs="0"/>
+					<xs:element name="walmartSKU" type="xs:string" minOccurs="0"/>
+					<xs:element ref="warrantyExchange" minOccurs="0"/>
+					<xs:element ref="invAccessoryGenres" minOccurs="0"/>
+					<xs:element ref="invAccessoryLifestyles" minOccurs="0"/>
+					<xs:element ref="invAccessoryEthnicities" minOccurs="0"/>
+					<xs:element ref="invAccessoryCompatibleDeviceItems" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="AdapterInfo">
+		<xs:complexContent>
+			<xs:extension base="InventoryAccessoryInfo">
+				<xs:sequence>
+					<xs:element ref="adapterFixed" minOccurs="0"/>
+					<xs:element ref="adapterManufacturer" minOccurs="0"/>
+					<xs:element ref="adapterMode" minOccurs="0"/>
+					<xs:element ref="model" minOccurs="0"/>
+					<xs:element ref="serviceType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Moved to InventoryAccessoryInfo base object
+					<xs:element ref="accessoryCompatibilities" minOccurs="0"/>
+					-->
+	<xs:complexType name="BOMInfo"/>
+	<xs:element name="itemCrossReference"/>
+	<xs:element name="battery" type="BatteryInfo"/>
+	<xs:element name="bluetooth" type="BluetoothInfo">
+		<xs:annotation>
+			<xs:documentation>A designation of whether the product is bluetooth capable and whether this feature included, mandatory, optional or not included at all.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="BatteryInfo">
+		<xs:complexContent>
+			<xs:extension base="InventoryAccessoryInfo">
+				<xs:sequence>
+					<xs:element ref="batteryCapacity" minOccurs="0"/>
+					<xs:element ref="batteryFixed" minOccurs="0"/>
+					<xs:element ref="batteryManufacturer" minOccurs="0"/>
+					<xs:element ref="batteryTalkTime" minOccurs="0"/>
+					<xs:element ref="voltage" minOccurs="0"/>
+					<xs:element ref="batteryStandByTime" minOccurs="0"/>
+					<xs:element ref="handset" minOccurs="0"/>
+					<xs:element ref="batteryType" minOccurs="0"/>
+					<xs:element ref="serviceType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BluetoothInfo">
+		<xs:complexContent>
+			<xs:extension base="InventoryAccessoryInfo">
+				<xs:sequence>
+					<xs:element ref="bluetoothFixed" minOccurs="0"/>
+					<xs:element ref="bluetoothManufacturer" minOccurs="0"/>
+					<xs:element ref="bluetoothMode" minOccurs="0"/>
+					<xs:element ref="bluetoothType" minOccurs="0"/>
+					<xs:element ref="model" minOccurs="0"/>
+					<xs:element ref="serviceType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BaseObjectInfo">
+		<xs:sequence>
+			<xs:element ref="createdBy"/>
+			<xs:element name="creationDate" type="xs:dateTime"/>
+			<xs:element ref="lastUpdatedBy"/>
+			<xs:element name="lastUpdateDate" type="xs:dateTime"/>
+			<xs:element ref="lastUpdateLogin" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="WeightInfo">
+		<xs:sequence>
+			<xs:element name="unitOfMeasure" type="WeightUnitOfMeasureInfo" minOccurs="0"/>
+			<xs:element name="weight" type="xs:double" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DimensionInfo">
+		<xs:sequence>
+			<xs:element name="unitOfMeasure" type="DimensionUnitOfMeasureInfo" minOccurs="0"/>
+			<xs:element name="height" type="xs:double" minOccurs="0"/>
+			<xs:element name="width" type="xs:double" minOccurs="0"/>
+			<xs:element name="length" type="xs:double" minOccurs="0"/>
+			<xs:element name="volume" type="xs:double" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="DimensionUnitOfMeasureInfo">
+		<xs:restriction base="xs:string"/>
+		<!--
+			<xs:enumeration value="FT"/>
+			<xs:enumeration value="IN"/>
+			<xs:enumeration value="CM"/>
+			<xs:enumeration value="MT"/>
+			<xs:enumeration value="MM"/>
+		-->
+	</xs:simpleType>
+	<xs:simpleType name="WeightUnitOfMeasureInfo">
+		<xs:restriction base="xs:string"/>
+		<!--
+			<xs:enumeration value="LB"/>
+			<xs:enumeration value="OZ"/>
+			<xs:enumeration value="GM"/>
+			<xs:enumeration value="KG"/>
+		-->
+	</xs:simpleType>
+	<xs:complexType name="RetailInventoryItemInfo">
+		<xs:complexContent>
+			<xs:extension base="RetailInfo">
+				<xs:sequence>
+					<xs:element ref="ABCClassification" minOccurs="0"/>
+					<xs:element ref="CPFRFlag" minOccurs="0"/>
+					<xs:element ref="estimatedScrapValue" minOccurs="0"/>
+					<xs:element ref="imageFileName" minOccurs="0"/>
+					<xs:element name="innerPack" type="PackInfo" minOccurs="0"/>
+					<xs:element name="manufacturer" type="xs:string" minOccurs="0"/>
+					<xs:element name="masterPack" type="PackInfo" minOccurs="0"/>
+					<xs:element ref="retailPackaged" minOccurs="0"/>
+					<xs:element ref="stockLevel" minOccurs="0"/>
+					<xs:element ref="transferable" minOccurs="0"/>
+					<xs:element ref="retailInvItemPriceTiers" minOccurs="0"/>
+					<xs:element ref="retailInvItemReplenishmentTypes" minOccurs="0"/>
+					<xs:element ref="itemPackaging" minOccurs="0"/>
+					<xs:element ref="stockType" minOccurs="0"/>
+					<xs:element ref="hoModelNumber" minOccurs="0"/>
+					<xs:element name="ProductLifecycleDates" type="ProductDateIntervalInfo" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RetailInfo">
+		<xs:complexContent>
+			<xs:extension base="CatalogItemInfo">
+				<xs:sequence>
+					<xs:element ref="customerType" minOccurs="0"/>
+					<xs:element ref="costInfo" minOccurs="0"/>
+					<xs:element ref="salesRepInfo" minOccurs="0"/>
+					<xs:element ref="salesTaxable" minOccurs="0"/>
+					<xs:element ref="sellable" minOccurs="0"/>
+					<xs:element ref="retailDoorTypes" minOccurs="0"/>
+					<xs:element ref="retailDiscounts" minOccurs="0"/>
+					<xs:element ref="barcodes" minOccurs="0"/>
+					<xs:element ref="membershipList" minOccurs="0"/>
+					<xs:element ref="associatedItems" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="taxClass" type="xs:string"/>
+	<xs:element name="barcodes" type="BarcodeListInfo"/>
+	<xs:complexType name="BarcodeListInfo">
+		<xs:sequence>
+			<xs:element name="barcode" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BundleInfo">
+		<xs:complexContent>
+			<xs:extension base="RetailInventoryItemInfo">
+				<xs:sequence>
+					<xs:element ref="bundleFixed" minOccurs="0"/>
+					<xs:element ref="bundleName" minOccurs="0"/>
+					<xs:element ref="contents" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CableInfo">
+		<xs:complexContent>
+			<xs:extension base="InventoryAccessoryInfo">
+				<xs:sequence>
+					<xs:element ref="model" minOccurs="0"/>
+					<xs:element ref="cableFixed" minOccurs="0"/>
+					<xs:element ref="cableManufacturer" minOccurs="0"/>
+					<xs:element ref="cableMode" minOccurs="0"/>
+					<xs:element ref="cableType" minOccurs="0"/>
+					<xs:element ref="serviceType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Removed, element no longer needed
+					<xs:element ref="accessoryCompatibilities" minOccurs="0"/>
+					-->
+	<xs:element name="bundle" type="BundleInfo"/>
+	<xs:element name="cable" type="CableInfo"/>
+	<xs:complexType name="CaseInfo">
+		<xs:complexContent>
+			<xs:extension base="InventoryAccessoryInfo">
+				<xs:sequence>
+					<xs:element ref="caseColor" minOccurs="0"/>
+					<xs:element ref="caseFixed" minOccurs="0"/>
+					<xs:element ref="caseType" minOccurs="0"/>
+					<xs:element ref="formFactor" minOccurs="0"/>
+					<xs:element ref="handset" minOccurs="0"/>
+					<xs:element ref="serviceType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="case" type="CaseInfo"/>
+	<xs:complexType name="ChargerInfo">
+		<xs:complexContent>
+			<xs:extension base="InventoryAccessoryInfo">
+				<xs:sequence>
+					<xs:element ref="chargerFixed" minOccurs="0"/>
+					<xs:element ref="chargerManufacturer" minOccurs="0"/>
+					<xs:element ref="chargerMode" minOccurs="0"/>
+					<xs:element ref="handset" minOccurs="0"/>
+					<xs:element ref="model" minOccurs="0"/>
+					<xs:element ref="serviceType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="charger" type="ChargerInfo"/>
+	<xs:complexType name="CollateralInfo">
+		<xs:complexContent>
+			<xs:extension base="RetailInventoryItemInfo">
+				<xs:sequence>
+					<xs:element ref="collateralName" minOccurs="0"/>
+					<xs:element ref="collateralType" minOccurs="0"/>
+					<xs:element ref="serviceType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="collateral" type="CollateralInfo"/>
+	<xs:complexType name="DiscountInfo">
+		<xs:complexContent>
+			<xs:extension base="RetailInfo">
+				<xs:sequence>
+					<xs:element ref="discountAmount" minOccurs="0"/>
+					<xs:element ref="discountApplication" minOccurs="0"/>
+					<xs:element ref="discountFixed" minOccurs="0"/>
+					<xs:element ref="discountType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="FeeInfo">
+		<xs:complexContent>
+			<xs:extension base="RetailInfo">
+				<xs:sequence>
+					<xs:element ref="feeFixed" minOccurs="0"/>
+					<xs:element name="feeTypeID" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="fee" type="FeeInfo"/>
+	<xs:complexType name="HandsetInfo">
+		<xs:complexContent>
+			<xs:extension base="DeviceInfo">
+				<xs:sequence>
+					<xs:element ref="AWS" minOccurs="0"/>
+					<xs:element ref="deviceMode" minOccurs="0"/>
+					<xs:element ref="handsetColor" minOccurs="0"/>
+					<xs:element ref="handsetFixed" minOccurs="0"/>
+					<xs:element ref="handsetManufacturer" minOccurs="0"/>
+					<xs:element ref="memorySize" minOccurs="0"/>
+					<xs:element ref="model" minOccurs="0"/>
+					<xs:element ref="softwareVersion" minOccurs="0"/>
+					<xs:element ref="languages" minOccurs="0"/>
+					<xs:element ref="languageInclusions" minOccurs="0"/>
+					<xs:element ref="phoneTypes" minOccurs="0"/>
+					<xs:element ref="pictureFormats" minOccurs="0"/>
+					<xs:element ref="restrictions" minOccurs="0"/>
+					<xs:element ref="screenTypes" minOccurs="0"/>
+					<xs:element ref="cricketClick" minOccurs="0"/>
+					<xs:element ref="serviceType" minOccurs="0"/>
+					<xs:element ref="deviceCategory" minOccurs="0"/>
+					<xs:element name="headsetJack" type="xs:string" minOccurs="0"/>
+					<xs:element ref="networkProviderList" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="handsetDevice" type="HandsetInfo"/>
+	<xs:complexType name="HeadsetInfo">
+		<xs:complexContent>
+			<xs:extension base="InventoryAccessoryInfo">
+				<xs:sequence>
+					<xs:element ref="headsetFixed" minOccurs="0"/>
+					<xs:element ref="headsetManufacturer" minOccurs="0"/>
+					<xs:element ref="headsetType" minOccurs="0"/>
+					<xs:element ref="headsetMode" minOccurs="0"/>
+					<xs:element ref="model" minOccurs="0"/>
+					<xs:element ref="headsetCompatibility" minOccurs="0"/>
+					<xs:element ref="serviceType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="headset" type="HeadsetInfo"/>
+	<xs:complexType name="ItemMasterInfo">
+		<xs:sequence>
+			<xs:element name="unit" type="DimensionInfo"/>
+			<xs:element name="inventoryItemID" type="xs:string"/>
+			<xs:element name="inventoryAssetFlag" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="KitInfo">
+		<xs:complexContent>
+			<xs:extension base="RetailInventoryItemInfo">
+				<xs:sequence>
+					<xs:element ref="kitFixed" minOccurs="0"/>
+					<xs:element ref="kitManufacturer" minOccurs="0"/>
+					<xs:element ref="kitName" minOccurs="0"/>
+					<xs:element ref="kitType" minOccurs="0"/>
+					<xs:element ref="model" minOccurs="0"/>
+					<!-- removed  
+					<xs:element ref="package" minOccurs="0"/>
+					-->
+					<xs:element ref="packageRevision" minOccurs="0"/>
+					<xs:element ref="spectrumTypes" minOccurs="0"/>
+					<xs:element ref="contents" minOccurs="0"/>
+					<xs:element ref="serviceType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="kit" type="KitInfo"/>
+	<xs:complexType name="PrepaidCardInfo">
+		<xs:complexContent>
+			<xs:extension base="RetailInventoryItemInfo">
+				<xs:sequence>
+					<xs:element ref="newCustomer" minOccurs="0"/>
+					<xs:element ref="prepaidCardFixed" minOccurs="0"/>
+					<xs:element ref="prepaidCardID" minOccurs="0"/>
+					<xs:element ref="prepaidCardValue" minOccurs="0"/>
+					<xs:element ref="serviceType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="prepaidCard" type="PrepaidCardInfo"/>
+	<xs:element name="discount" type="DiscountInfo"/>
+	<xs:complexType name="MemoryInfo">
+		<xs:complexContent>
+			<xs:extension base="InventoryAccessoryInfo">
+				<xs:sequence>
+					<xs:element ref="memoryFixed" minOccurs="0"/>
+					<xs:element ref="memoryManufacturer" minOccurs="0"/>
+					<xs:element ref="memorySize" minOccurs="0"/>
+					<xs:element ref="memoryType" minOccurs="0"/>
+					<xs:element ref="mobileMusic" minOccurs="0"/>
+					<xs:element ref="video" minOccurs="0"/>
+					<xs:element ref="serviceType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="memory" type="MemoryInfo"/>
+	<xs:complexType name="ModemInfo">
+		<xs:complexContent>
+			<xs:extension base="DeviceInfo">
+				<xs:sequence>
+					<xs:element ref="deviceMode" minOccurs="0"/>
+					<xs:element ref="model" minOccurs="0"/>
+					<xs:element ref="modemFixed" minOccurs="0"/>
+					<xs:element ref="modemManufacturer" minOccurs="0"/>
+					<xs:element ref="modemSpeed" minOccurs="0"/>
+					<xs:element ref="modemColor" minOccurs="0"/>
+					<xs:element ref="serviceType" minOccurs="0"/>
+					<xs:element ref="deviceCategory" minOccurs="0"/>
+					<xs:element ref="networkProviderList" minOccurs="0"/>
+					<xs:element name="softwareVersion" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="modem" type="ModemInfo"/>
+	<xs:complexType name="OtherInfo">
+		<xs:complexContent>
+			<xs:extension base="InventoryAccessoryInfo">
+				<xs:sequence>
+					<xs:element ref="otherName" minOccurs="0"/>
+					<xs:element ref="otherType" minOccurs="0"/>
+					<xs:element ref="serviceType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="other" type="OtherInfo"/>
+	<xs:complexType name="DeviceInfo">
+		<xs:complexContent>
+			<xs:extension base="RetailInventoryItemInfo">
+				<xs:sequence>
+					<xs:element ref="a_b" minOccurs="0"/>
+					<xs:element ref="displayOrder" minOccurs="0"/>
+					<xs:element ref="warrantyExchange" minOccurs="0"/>
+					<xs:element ref="warrantyLength" minOccurs="0"/>
+					<xs:element ref="modelID" minOccurs="0"/>
+					<xs:element ref="supportLinkText" minOccurs="0"/>
+					<xs:element ref="supportLinkURL" minOccurs="0"/>
+					<xs:element ref="protectionDeductable" minOccurs="0"/>
+					<xs:element ref="mobileWeb" minOccurs="0"/>
+					<xs:element ref="insuranceExchange" minOccurs="0"/>
+					<xs:element ref="identifier" minOccurs="0"/>
+					<xs:element ref="dataService" minOccurs="0"/>
+					<xs:element ref="broadband" minOccurs="0"/>
+					<!-- Removed, element no longer needed
+					<xs:element ref="accessoryCompatibilities" minOccurs="0"/>
+					-->
+					<xs:element ref="invCompatibleDeviceItems" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PhoneGiftPackInfo">
+		<xs:complexContent>
+			<xs:extension base="DeviceInfo">
+				<xs:sequence>
+					<xs:element ref="AWS" minOccurs="0"/>
+					<xs:element ref="batteryStandByTime" minOccurs="0"/>
+					<xs:element ref="batteryTalkTime" minOccurs="0"/>
+					<xs:element ref="blueTooth" minOccurs="0"/>
+					<xs:element ref="brew" minOccurs="0"/>
+					<xs:element ref="cameraResolution" minOccurs="0"/>
+					<xs:element ref="cricketClick" minOccurs="0"/>
+					<xs:element ref="deviceMode" minOccurs="0"/>
+					<xs:element ref="differentMinMDN" minOccurs="0"/>
+					<xs:element ref="E911" minOccurs="0"/>
+					<xs:element ref="EANNumber" minOccurs="0"/>
+					<xs:element ref="EMail" minOccurs="0"/>
+					<xs:element ref="EVDO" minOccurs="0"/>
+					<xs:element ref="flipSwap" minOccurs="0"/>
+					<xs:element ref="formFactor" minOccurs="0"/>
+					<xs:element ref="gamesApps" minOccurs="0"/>
+					<xs:element ref="HACRating" minOccurs="0"/>
+					<xs:element ref="HTMLFeatureCode" minOccurs="0"/>
+					<xs:element ref="keyPad" minOccurs="0"/>
+					<xs:element ref="locationBasedService" minOccurs="0"/>
+					<xs:element ref="memorySize" minOccurs="0"/>
+					<xs:element ref="MMS" minOccurs="0"/>
+					<xs:element ref="mobileMusic" minOccurs="0"/>
+					<xs:element ref="model" minOccurs="0"/>
+					<xs:element ref="myBackup" minOccurs="0"/>
+					<xs:element ref="nationwideRoaming" minOccurs="0"/>
+					<xs:element ref="numberColors" minOccurs="0"/>
+					<xs:element ref="onDevicePortal" minOccurs="0"/>
+					<xs:element ref="OTASP" minOccurs="0"/>
+					<xs:element ref="phoneGiftPackColor" minOccurs="0"/>
+					<xs:element ref="phoneGiftPackFixed" minOccurs="0"/>
+					<xs:element ref="phoneGiftPackManufacturer" minOccurs="0"/>
+					<xs:element ref="phoneGiftPackName" minOccurs="0"/>
+					<xs:element ref="ringTone" minOccurs="0"/>
+					<xs:element ref="SMS" minOccurs="0"/>
+					<xs:element ref="streetName" minOccurs="0"/>
+					<xs:element ref="triband" minOccurs="0"/>
+					<xs:element ref="TTYTTD" minOccurs="0"/>
+					<xs:element ref="video" minOccurs="0"/>
+					<xs:element ref="languages" minOccurs="0"/>
+					<xs:element ref="languageInclusions" minOccurs="0"/>
+					<xs:element ref="phoneTypes" minOccurs="0"/>
+					<xs:element ref="pictureFormats" minOccurs="0"/>
+					<xs:element ref="restrictions" minOccurs="0"/>
+					<xs:element ref="screenTypes" minOccurs="0"/>
+					<xs:element ref="contents" minOccurs="0"/>
+					<xs:element ref="serviceType" minOccurs="0"/>
+					<xs:element ref="deviceCategory" minOccurs="0"/>
+					<xs:element name="headsetJack" type="xs:string" minOccurs="0"/>
+					<xs:element ref="networkProviderList" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="phoneGiftPack" type="PhoneGiftPackInfo"/>
+	<xs:complexType name="InventoryItemInfo">
+		<xs:complexContent>
+			<xs:extension base="CatalogItemInfo">
+				<xs:sequence>
+					<xs:element ref="ABCClassification" minOccurs="0"/>
+					<xs:element ref="CPFRFlag" minOccurs="0"/>
+					<xs:element ref="estimatedScrapValue" minOccurs="0"/>
+					<xs:element ref="imageFileName" minOccurs="0"/>
+					<xs:element name="innerPack" type="PackInfo" minOccurs="0"/>
+					<xs:element name="masterPack" type="PackInfo" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SpeakerInfo">
+		<xs:complexContent>
+			<xs:extension base="InventoryAccessoryInfo">
+				<xs:sequence>
+					<xs:element ref="serviceType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="speaker" type="SpeakerInfo"/>
+	<xs:complexType name="NetworkElementInfo">
+		<xs:complexContent>
+			<xs:extension base="CatalogItemInfo">
+				<xs:sequence>
+					<xs:element ref="catsID" minOccurs="0"/>
+					<xs:element ref="capital" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="assetInfo" type="NetworkElementInfo"/>
+	<xs:complexType name="NetworkElementServiceInfo">
+		<xs:complexContent>
+			<xs:extension base="NetworkElementInfo"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="networkElementService" type="NetworkElementServiceInfo"/>
+	<xs:complexType name="CellSiteInfo">
+		<xs:complexContent>
+			<xs:extension base="AssetInfo"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="AssetInfo">
+		<xs:complexContent>
+			<xs:extension base="NetworkElementInfo">
+				<xs:sequence>
+					<xs:element ref="assetFixed" minOccurs="0"/>
+					<xs:element ref="siteFixed" minOccurs="0"/>
+					<xs:element ref="manufacturer" minOccurs="0"/>
+					<xs:element ref="model" minOccurs="0"/>
+					<xs:element ref="assetName" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="cellSite" type="CellSiteInfo"/>
+	<xs:complexType name="SwitchSiteInfo">
+		<xs:complexContent>
+			<xs:extension base="AssetInfo"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="switchSite" type="SwitchSiteInfo"/>
+	<xs:complexType name="PackagingInfo">
+		<xs:complexContent>
+			<xs:extension base="InventoryItemInfo">
+				<xs:sequence>
+					<xs:element ref="packagingName" minOccurs="0"/>
+					<xs:element ref="packagingType" minOccurs="0"/>
+					<xs:element ref="packagingFixed" minOccurs="0"/>
+					<xs:element ref="serviceType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="packaging" type="PackagingInfo"/>
+	<xs:complexType name="StoreInfo">
+		<xs:complexContent>
+			<xs:extension base="InventoryItemInfo">
+				<xs:sequence>
+					<xs:element ref="storeItemName" minOccurs="0"/>
+					<xs:element ref="storeItemType" minOccurs="0"/>
+					<xs:element ref="serviceType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="store" type="StoreInfo"/>
+	<xs:complexType name="ItemCatalogInfo">
+		<xs:sequence>
+			<xs:element ref="costInfo" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CatalogItemInfo">
+		<xs:complexContent>
+			<xs:extension base="BaseObjectInfo">
+				<xs:sequence>
+					<xs:element ref="catalogGroup" minOccurs="0"/>
+					<xs:element name="categoryID" type="xs:long" minOccurs="0"/>
+					<xs:element ref="autoSerialAlphaPrefix" minOccurs="0"/>
+					<xs:element ref="costOfSalesAccount" minOccurs="0"/>
+					<xs:element ref="description" minOccurs="0"/>
+					<xs:element name="fixedLotMultiplier" type="xs:decimal" minOccurs="0"/>
+					<xs:element name="assetFlag" type="xs:boolean"/>
+					<xs:element ref="inventoryItem" minOccurs="0"/>
+					<xs:element name="inventoryItemFlag" type="xs:boolean"/>
+					<xs:element ref="inventoryItemStatusCode"/>
+					<xs:element ref="itemInfo" minOccurs="0"/>
+					<xs:element name="lifecycleID" type="xs:long" minOccurs="0"/>
+					<xs:element name="listPricePerUnit" type="xs:decimal" minOccurs="0"/>
+					<xs:element name="marketPrice" type="xs:decimal" minOccurs="0"/>
+					<xs:element name="materialTransactionsEnabledFlag" type="xs:boolean"/>
+					<xs:element ref="msrp" minOccurs="0"/>
+					<xs:element ref="newRevisionCode" minOccurs="0"/>
+					<xs:element name="organizationID" type="xs:long"/>
+					<xs:element name="inventoryItemID" type="xs:long"/>
+					<xs:element ref="inventoryItemCategory" minOccurs="0"/>
+					<xs:element ref="inventoryItemCategorySet" minOccurs="0"/>
+					<xs:element name="productFamilyItemID" type="xs:long" minOccurs="0"/>
+					<xs:element name="prorateServiceFlag" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="purchasingEnabledFlag" type="xs:boolean"/>
+					<xs:element ref="receiptDaysExceptionCode" minOccurs="0"/>
+					<xs:element name="receiptRequiredFlag" type="xs:boolean" minOccurs="0"/>
+					<xs:element ref="receiveCloseTolerance" minOccurs="0"/>
+					<xs:element name="requestID" type="xs:long" minOccurs="0"/>
+					<xs:element name="returnableFlag" type="xs:boolean" minOccurs="0"/>
+					<xs:element ref="revenueClassificationCode" minOccurs="0"/>
+					<xs:element name="salesAccount" type="xs:string" minOccurs="0"/>
+					<xs:element name="serialNumberControlCode" type="xs:int" minOccurs="0"/>
+					<xs:element name="serialStatusEnabled" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="serviceItemFlag" type="xs:boolean"/>
+					<xs:element name="serviceableItemClassID" type="xs:long" minOccurs="0"/>
+					<xs:element name="serviceableProductFlag" type="xs:boolean"/>
+					<xs:element ref="startAutoSerialNumber" minOccurs="0"/>
+					<xs:element name="stockEnabledFlag" type="xs:boolean"/>
+					<xs:element name="taxableFlag" type="xs:boolean" minOccurs="0"/>
+					<xs:element ref="longDescription" minOccurs="0"/>
+					<xs:element ref="processed" minOccurs="0"/>
+					<xs:element name="revision" type="xs:string" minOccurs="0"/>
+					<xs:element ref="seedStockPercentage" minOccurs="0"/>
+					<xs:element ref="shortDescription" minOccurs="0"/>
+					<xs:element ref="SKUDescription" minOccurs="0"/>
+					<xs:element ref="zeroCost" minOccurs="0"/>
+					<xs:element name="unit" type="PackInfo" minOccurs="0"/>
+					<xs:element ref="taxClass" minOccurs="0"/>
+					<xs:element ref="vendorCrossreferenceList" minOccurs="0"/>
+					<xs:element ref="otherCrossreferenceList" minOccurs="0"/>
+					<xs:element name="orderableOnTheWebFlag" type="xs:boolean" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="InventoryStatusCodeInfo">
+		<xs:restriction base="xs:string"/>
+		<!--
+			<xs:enumeration value="PLANNING"/>
+			<xs:enumeration value="LAUNCH"/>
+			<xs:enumeration value="Pending"/>
+			<xs:enumeration value="Active"/>
+			<xs:enumeration value="Inactive"/>
+			<xs:enumeration value="LAUNCH"/>
+			<xs:enumeration value="TEST"/>
+		-->
+	</xs:simpleType>
+	<xs:complexType name="PackInfo">
+		<xs:sequence>
+			<xs:element name="dimension" type="DimensionInfo" minOccurs="0"/>
+			<xs:element name="weight" type="WeightInfo" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="InventoryItemIDInfo">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:element name="crossReference" type="CrossReferenceInfo"/>
+	<xs:complexType name="CrossReferenceInfo">
+		<xs:complexContent>
+			<xs:extension base="BaseObjectInfo">
+				<xs:sequence>
+					<xs:element name="stockItem" type="CrossReferenceItemInfo" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CrossReferenceItemInfo">
+		<xs:sequence>
+			<xs:element name="inventoryItemID" type="xs:string"/>
+			<xs:element name="itemNumber" type="xs:string"/>
+			<xs:element name="itemType" type="xs:string"/>
+			<xs:element name="description" type="xs:string"/>
+			<xs:element ref="a_b" minOccurs="0"/>
+			<xs:element name="compositeIndicator" type="xs:boolean" default="false"/>
+			<xs:element name="listPricePerUnit" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="mapping" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="crossReference" type="xs:string"/>
+						<xs:element name="crossReferenceType" type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="otherMapping" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="crossReference" type="xs:string"/>
+						<xs:element name="crossReferenceType" type="xs:string"/>
+						<xs:element name="referenceTypeDescription" type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BridgeInfo">
+		<xs:sequence>
+			<xs:element name="inventoryItemID" type="xs:string"/>
+			<xs:element name="inventoryItemName" type="xs:string" minOccurs="0"/>
+			<xs:element name="organizationID" type="xs:long"/>
+			<xs:element name="valueID" type="xs:long" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AccessoryCompatibilityInfo">
+		<xs:complexContent>
+			<xs:extension base="BridgeInfo">
+				<xs:sequence>
+					<xs:element name="accessoryCompatibility" type="xs:string"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Removed, element no longer needed
+	<xs:element name="accessoryCompatibilities" type="AccessoryCompatibilityListInfo"/>
+	<xs:complexType name="AccessoryCompatibilityListInfo">
+		<xs:sequence>
+			<xs:element name="accessoryCompatibility" type="AccessoryCompatibilityInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	-->
+	<xs:complexType name="ApplicationIDInfo">
+		<xs:complexContent>
+			<xs:extension base="BridgeInfo">
+				<xs:sequence>
+					<xs:element name="applicationID" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="invAccessoryApplicationIDs" type="ApplicationIDListInfo"/>
+	<xs:complexType name="ApplicationIDListInfo">
+		<xs:sequence>
+			<xs:element name="applicationID" type="ApplicationIDInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BatteryModeInfo">
+		<xs:complexContent>
+			<xs:extension base="BridgeInfo">
+				<xs:sequence>
+					<xs:element name="batteryMode" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="batteryModes" type="BatteryModeListInfo"/>
+	<xs:complexType name="BatteryModeListInfo">
+		<xs:sequence>
+			<xs:element name="batteryMode" type="BatteryModeInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ChannelInfo">
+		<xs:complexContent>
+			<xs:extension base="BridgeInfo">
+				<xs:sequence>
+					<xs:element name="channel" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="retailChannels" type="ChannelListInfo"/>
+	<xs:complexType name="ChannelListInfo">
+		<xs:sequence>
+			<xs:element name="channel" type="ChannelInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CompatibleDeviceItemInfo">
+		<xs:complexContent>
+			<xs:extension base="BridgeInfo">
+				<xs:sequence>
+					<xs:element name="compatibleDevice" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="invCompatibleDeviceItems" type="CompatibleDeviceItemListInfo"/>
+	<xs:element name="invAccessoryCompatibleDeviceItems" type="CompatibleDeviceItemListInfo"/>
+	<xs:complexType name="CompatibleDeviceItemListInfo">
+		<xs:sequence>
+			<xs:element name="compatibleDeviceItem" type="CompatibleDeviceItemInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DiscountItemInfo">
+		<xs:complexContent>
+			<xs:extension base="BridgeInfo">
+				<xs:sequence>
+					<xs:element name="discount" type="xs:decimal" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="retailDiscounts" type="DiscountListInfo"/>
+	<xs:complexType name="DiscountListInfo">
+		<xs:sequence>
+			<xs:element name="discount" type="DiscountItemInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DoorTypeInfo">
+		<xs:complexContent>
+			<xs:extension base="BridgeInfo">
+				<xs:sequence>
+					<xs:element name="doorType" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="retailDoorTypes" type="DoorTypeListInfo"/>
+	<xs:complexType name="DoorTypeListInfo">
+		<xs:sequence>
+			<xs:element name="doorType" type="DoorTypeInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EthinicityInfo">
+		<xs:complexContent>
+			<xs:extension base="BridgeInfo">
+				<xs:sequence>
+					<xs:element name="ethinicity" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="invAccessoryEthnicities" type="EthinicityListInfo"/>
+	<xs:complexType name="EthinicityListInfo">
+		<xs:sequence>
+			<xs:element name="ethinicity" type="EthinicityInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GenreInfo">
+		<xs:complexContent>
+			<xs:extension base="BridgeInfo">
+				<xs:sequence>
+					<xs:element name="genre" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="invAccessoryGenres" type="GenreListInfo"/>
+	<xs:complexType name="GenreListInfo">
+		<xs:sequence>
+			<xs:element name="genre" type="GenreInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="LanguageInfo">
+		<xs:complexContent>
+			<xs:extension base="BridgeInfo">
+				<xs:sequence>
+					<xs:element name="language" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="languages" type="LanguageListInfo"/>
+	<xs:complexType name="LanguageListInfo">
+		<xs:sequence>
+			<xs:element name="language" type="LanguageInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="LanguageInclusionInfo">
+		<xs:complexContent>
+			<xs:extension base="BridgeInfo">
+				<xs:sequence>
+					<xs:element name="languageInclusion" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="languageInclusions" type="LanguageInclusionListInfo"/>
+	<xs:complexType name="LanguageInclusionListInfo">
+		<xs:sequence>
+			<xs:element name="languageInclusion" type="LanguageInclusionInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="LifestyleInfo">
+		<xs:complexContent>
+			<xs:extension base="BridgeInfo">
+				<xs:sequence>
+					<xs:element name="lifestyle" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="invAccessoryLifestyles" type="LifestyleListInfo"/>
+	<xs:complexType name="LifestyleListInfo">
+		<xs:sequence>
+			<xs:element name="lifestyle" type="LifestyleInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PhoneTypeInfo">
+		<xs:complexContent>
+			<xs:extension base="BridgeInfo">
+				<xs:sequence>
+					<xs:element name="phoneType" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="phoneTypes" type="PhoneTypeListInfo"/>
+	<xs:complexType name="PhoneTypeListInfo">
+		<xs:sequence>
+			<xs:element name="phoneType" type="PhoneTypeInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PhoneGiftPackComponentInfo">
+		<xs:complexContent>
+			<xs:extension base="BridgeInfo">
+				<xs:sequence>
+					<xs:element name="phoneGiftPackComponent" type="xs:string"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="phoneGiftPackComponents" type="PhoneGiftPackComponentListInfo"/>
+	<xs:complexType name="PhoneGiftPackComponentListInfo">
+		<xs:sequence>
+			<xs:element name="phoneGiftPackComponent" type="PhoneGiftPackComponentInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PictureFormatInfo">
+		<xs:complexContent>
+			<xs:extension base="BridgeInfo">
+				<xs:sequence>
+					<xs:element name="pictureFormat" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="pictureFormats" type="PictureFormatListInfo"/>
+	<xs:complexType name="PictureFormatListInfo">
+		<xs:sequence>
+			<xs:element name="pictureFormat" type="PictureFormatInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PriceTierInfo">
+		<xs:complexContent>
+			<xs:extension base="BridgeInfo">
+				<xs:sequence>
+					<xs:element name="priceTier" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="retailInvItemPriceTiers" type="PriceTierListInfo"/>
+	<xs:complexType name="PriceTierListInfo">
+		<xs:sequence>
+			<xs:element name="priceTier" type="PriceTierInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ReplenishTypeInfo">
+		<xs:complexContent>
+			<xs:extension base="BridgeInfo">
+				<xs:sequence>
+					<xs:element name="replenishType" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="retailInvItemReplenishmentTypes" type="ReplenishTypeListInfo"/>
+	<xs:complexType name="ReplenishTypeListInfo">
+		<xs:sequence>
+			<xs:element name="replenishType" type="ReplenishTypeInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RestrictionInfo">
+		<xs:complexContent>
+			<xs:extension base="BridgeInfo">
+				<xs:sequence>
+					<xs:element name="restriction" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="restrictions" type="RestrictionListInfo"/>
+	<xs:complexType name="RestrictionListInfo">
+		<xs:sequence>
+			<xs:element name="restriction" type="RestrictionInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ScreenTypeInfo">
+		<xs:complexContent>
+			<xs:extension base="BridgeInfo">
+				<xs:sequence>
+					<xs:element name="screenType" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="screenTypes" type="ScreenTypeListInfo"/>
+	<xs:complexType name="ScreenTypeListInfo">
+		<xs:sequence>
+			<xs:element name="screenType" type="ScreenTypeInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ServiceClassInfo">
+		<xs:complexContent>
+			<xs:extension base="BridgeInfo">
+				<xs:sequence>
+					<xs:element name="serviceClass" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="retailInvItemServiceClasses" type="ServiceClassListInfo"/>
+	<xs:complexType name="ServiceClassListInfo">
+		<xs:sequence>
+			<xs:element name="serviceClass" type="ServiceClassInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SpectrumTypeInfo">
+		<xs:complexContent>
+			<xs:extension base="BridgeInfo">
+				<xs:sequence>
+					<xs:element name="spectrumType" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="spectrumTypes" type="SpectrumTypeListInfo"/>
+	<xs:complexType name="SpectrumTypeListInfo">
+		<xs:sequence>
+			<xs:element name="spectrumType" type="SpectrumTypeInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SubchannelInfo">
+		<xs:complexContent>
+			<xs:extension base="BridgeInfo">
+				<xs:sequence>
+					<xs:element name="subchannel" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="retailSubChannels" type="SubchannelListInfo"/>
+	<xs:complexType name="SubchannelListInfo">
+		<xs:sequence>
+			<xs:element name="subchannel" type="SubchannelInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ItemBulkLoadRequestInfo">
+		<xs:sequence>
+			<xs:element name="temp" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="itemBulkLoadRequest" type="ItemBulkLoadRequestInfo"/>
+	<xs:complexType name="ProductListInfo">
+		<xs:sequence>
+			<xs:element name="sink" type="xs:string" maxOccurs="unbounded"/>
+			<xs:element ref="product" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="productList" type="ProductListInfo"/>
+	<xs:complexType name="CrossReferenceListInfo">
+		<xs:sequence>
+			<xs:element name="sink" type="xs:string" maxOccurs="unbounded"/>
+			<xs:element ref="crossReference" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="crossReferenceList" type="CrossReferenceListInfo"/>
+	<xs:complexType name="CrossReferenceRequestInfo">
+		<xs:sequence>
+			<xs:element name="inventoryItem" type="CrossReferenceItemInfo"/>
+			<xs:element ref="a_b" minOccurs="0"/>
+			<xs:element name="itemType" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="crossReferenceRequest" type="CrossReferenceRequestInfo"/>
+	<xs:element name="item" type="InventoryItemInfo"/>
+	<xs:element name="catalogItem" type="CatalogItemInfo"/>
+	<xs:element name="retailInventoryItem" type="RetailInventoryItemInfo"/>
+	<xs:complexType name="ItemChangeLog">
+		<xs:sequence>
+			<xs:element name="inventoryItem" type="xs:string"/>
+			<xs:element name="organizationID" type="xs:long"/>
+			<xs:element name="inventoryItemID" type="xs:long" minOccurs="0"/>
+			<xs:element name="catalogGroup" type="xs:string" minOccurs="0"/>
+			<xs:element name="lastUpdateDate" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="lastUpdatedBy" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="itemChangeLog" type="ItemChangeLog"/>
+	<xs:complexType name="MembershipListInfo">
+		<xs:sequence>
+			<xs:element name="billOfMaterial" type="BillOfMaterialsListItemInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="membershipList" type="MembershipListInfo"/>
+	<xs:complexType name="BillOfMaterialsListItemInfo">
+		<xs:sequence>
+			<xs:element name="billOfMaterialsID" type="xs:long"/>
+			<xs:element name="organizationID" type="xs:long"/>
+			<xs:element name="itemNumber" type="xs:string"/>
+			<xs:element name="billOfMaterialsType" type="xs:string"/>
+			<xs:element name="excludeBom" type="xs:boolean"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BundleContentInfo">
+		<xs:sequence>
+			<xs:element name="itemNumber" type="xs:string"/>
+			<xs:element name="sequence" type="xs:string"/>
+			<xs:element name="itemDiscount" type="xs:double"/>
+			<xs:element name="bomType" type="xs:string"/>
+			<xs:element name="excludeBom" type="xs:boolean"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ContentsInfo">
+		<xs:sequence>
+			<xs:element name="bundleContent" type="BundleContentInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="contents" type="ContentsInfo"/>
+	<xs:element name="product" type="ProductInfo"/>
+	<xs:complexType name="ProductInfo">
+		<xs:group ref="ProductGroup"/>
+	</xs:complexType>
+	<xs:group name="ProductGroup">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element ref="memory"/>
+				<xs:element ref="bluetooth"/>
+				<xs:element ref="other"/>
+				<xs:element ref="cable"/>
+				<xs:element ref="headset"/>
+				<xs:element ref="adapter"/>
+				<xs:element ref="charger"/>
+				<xs:element ref="battery"/>
+				<xs:element ref="case"/>
+				<xs:element ref="modem"/>
+				<xs:element ref="modemGiftPack"/>
+				<xs:element ref="handsetDevice"/>
+				<xs:element ref="phoneGiftPack"/>
+				<xs:element ref="prepaidCard"/>
+				<xs:element ref="collateral"/>
+				<xs:element ref="fee"/>
+				<xs:element ref="kit"/>
+				<xs:element ref="discount"/>
+				<xs:element ref="switchSite"/>
+				<xs:element ref="cellSite"/>
+				<xs:element ref="networkElementService"/>
+				<xs:element ref="packaging"/>
+				<xs:element ref="store"/>
+				<xs:element ref="speaker"/>
+				<xs:element ref="bundle"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType name="AssociatedItemInfo">
+		<xs:sequence>
+			<xs:element name="itemNumber" type="xs:string"/>
+			<xs:element name="associationType" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="associatedItem" type="AssociatedItemInfo"/>
+	<xs:complexType name="AssociatedItemsInfo">
+		<xs:sequence>
+			<xs:element ref="associatedItem" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="associatedItems" type="AssociatedItemsInfo"/>
+	<xs:complexType name="ModemGiftPackInfo">
+		<xs:complexContent>
+			<xs:extension base="DeviceInfo">
+				<xs:sequence>
+					<xs:element ref="modemColor" minOccurs="0"/>
+					<xs:element ref="serviceType" minOccurs="0"/>
+					<xs:element ref="deviceCategory" minOccurs="0"/>
+					<xs:element ref="contents" minOccurs="0"/>
+					<xs:element ref="networkProviderList" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="modemGiftPack" type="ModemGiftPackInfo"/>
+	<xs:complexType name="VendorCrossreferenceInfo">
+		<xs:sequence>
+			<xs:element name="vendorCode" type="xs:string"/>
+			<xs:element name="crossreference" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="VendorCrossreferenceListInfo">
+		<xs:sequence>
+			<xs:element ref="vendorCrossreference" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="vendorCrossreference" type="VendorCrossreferenceInfo"/>
+	<xs:element name="vendorCrossreferenceList" type="VendorCrossreferenceListInfo"/>
+	<xs:complexType name="OtherCrossreferenceInfo">
+		<xs:sequence>
+			<xs:element name="crossReference" type="xs:string"/>
+			<xs:element name="crossReferenceType" type="xs:string"/>
+			<xs:element name="ReferenceTypeDescription" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OtherCrossreferenceListInfo">
+		<xs:sequence>
+			<xs:element ref="otherCrossreference" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="otherCrossreference" type="OtherCrossreferenceInfo"/>
+	<xs:element name="otherCrossreferenceList" type="OtherCrossreferenceListInfo"/>
+	<xs:complexType name="NetworkProviderInfo">
+		<xs:sequence>
+			<xs:element name="networkProviderName" type="xs:string"/>
+			<xs:element name="networkProviderID" type="xs:integer"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="networkProvider" type="NetworkProviderInfo"/>
+	<xs:complexType name="NetworkProviderListInfo">
+		<xs:sequence>
+			<xs:element ref="networkProvider" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="networkProviderList" type="NetworkProviderListInfo"/>
+</xs:schema>

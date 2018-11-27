@@ -1,0 +1,6018 @@
+
+/* line 227, ../sass/foundation/components/_top-bar.scss */
+.top-bar-section .divider,
+.top-bar-section [role="separator"] {
+  border-bottom: solid 1px white;
+  border-top: solid 1px #e6e6e6;
+  clear: both;
+  height: 1px;
+  width: 100%;
+}
+/* line 236, ../sass/foundation/components/_top-bar.scss */
+.top-bar-section ul li > a {
+  display: block;
+  width: 100%;
+  color: black;
+  padding: 12px 0 12px 0;
+  padding-left: 21.66667px;
+  font-size: 1.125em;
+  font-weight: normal;
+  background: #333333;
+}
+/* line 246, ../sass/foundation/components/_top-bar.scss */
+.top-bar-section ul li > a.hover {
+  background: #f7f7f7;
+  color: #008752;
+}
+/* line 252, ../sass/foundation/components/_top-bar.scss */
+.top-bar-section ul li > a.button {
+  background: #008752;
+  font-size: 1.125em;
+}
+/* line 255, ../sass/foundation/components/_top-bar.scss */
+.top-bar-section ul li > a.button.hover {
+  background: #005433;
+}
+/* line 259, ../sass/foundation/components/_top-bar.scss */
+.top-bar-section ul li > a.button.secondary {
+  background: #dbdbdc;
+}
+/* line 261, ../sass/foundation/components/_top-bar.scss */
+.top-bar-section ul li > a.button.secondary.hover {
+  background: #c1c1c3;
+}
+/* line 265, ../sass/foundation/components/_top-bar.scss */
+.top-bar-section ul li > a.button.success {
+  background: #5da423;
+}
+/* line 267, ../sass/foundation/components/_top-bar.scss */
+.top-bar-section ul li > a.button.success.hover {
+  background: #457a1a;
+}
+/* line 271, ../sass/foundation/components/_top-bar.scss */
+.top-bar-section ul li > a.button.alert {
+  background: #c60f13;
+}
+/* line 273, ../sass/foundation/components/_top-bar.scss */
+.top-bar-section ul li > a.button.alert.hover {
+  background: #970b0e;
+}
+/* line 281, ../sass/foundation/components/_top-bar.scss */
+.top-bar-section ul li.active > a {
+  background: #f7f7f7;
+  color: #008752;
+}
+/* line 288, ../sass/foundation/components/_top-bar.scss */
+.top-bar-section .has-form {
+  padding: 21.66667px;
+}
+/* line 291, ../sass/foundation/components/_top-bar.scss */
+.top-bar-section .has-dropdown {
+  position: relative;
+}
+/* line 295, ../sass/foundation/components/_top-bar.scss */
+.top-bar-section .has-dropdown > a:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: inset 5px;
+  border-color: transparent transparent transparent rgba(255, 255, 255, 0.5);
+  border-left-style: solid;
+  margin-right: 21.66667px;
+  margin-top: -4.5px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+/* line 305, ../sass/foundation/components/_top-bar.scss */
+.top-bar-section .has-dropdown.moved {
+  position: static;
+}
+/* line 306, ../sass/foundation/components/_top-bar.scss */
+.top-bar-section .has-dropdown.moved > .dropdown {
+  visibility: visible;
+}
+/* line 313, ../sass/foundation/components/_top-bar.scss */
+.top-bar-section .dropdown {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  visibility: hidden;
+  z-index: 99;
+}
+/* line 320, ../sass/foundation/components/_top-bar.scss */
+.top-bar-section .dropdown li {
+  width: 100%;
+  height: auto;
+}
+/* line 324, ../sass/foundation/components/_top-bar.scss */
+.top-bar-section .dropdown li a {
+  font-weight: normal;
+  padding: 8px 21.66667px;
+}
+/* line 329, ../sass/foundation/components/_top-bar.scss */
+.top-bar-section .dropdown li.title h5 {
+  margin-bottom: 0;
+}
+/* line 330, ../sass/foundation/components/_top-bar.scss */
+.top-bar-section .dropdown li.title h5 a {
+  color: black;
+  line-height: 32.5px;
+  display: block;
+}
+/* line 338, ../sass/foundation/components/_top-bar.scss */
+.top-bar-section .dropdown label {
+  padding: 8px 21.66667px 2px;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  color: #555555;
+  font-weight: bold;
+  font-size: 0.625em;
+}
+
+/* line 350, ../sass/foundation/components/_top-bar.scss */
+.top-bar-js-breakpoint {
+  width: 769px !important;
+  visibility: hidden;
+}
+
+/* line 354, ../sass/foundation/components/_top-bar.scss */
+.js-generated {
+  display: block;
+}
+
+@media only screen and (min-width: 769px) {
+  /* line 359, ../sass/foundation/components/_top-bar.scss */
+  .top-bar {
+    background: white;
+    *zoom: 1;
+    overflow: visible;
+  }
+  /* line 121, ../sass/foundation/components/_global.scss */
+  .top-bar:before, .top-bar:after {
+    content: " ";
+    display: table;
+  }
+  /* line 122, ../sass/foundation/components/_global.scss */
+  .top-bar:after {
+    clear: both;
+  }
+  /* line 364, ../sass/foundation/components/_top-bar.scss */
+  .top-bar .toggle-topbar {
+    display: none;
+  }
+  /* line 366, ../sass/foundation/components/_top-bar.scss */
+  .top-bar .title-area {
+    float: left;
+  }
+  /* line 367, ../sass/foundation/components/_top-bar.scss */
+  .top-bar .name h1 a {
+    width: auto;
+  }
+  /* line 370, ../sass/foundation/components/_top-bar.scss */
+  .top-bar input,
+  .top-bar .button {
+    line-height: 2em;
+    font-size: 0.875em;
+    height: 2em;
+    padding: 0 10px;
+    position: relative;
+    top: 8px;
+  }
+  /* line 379, ../sass/foundation/components/_top-bar.scss */
+  .top-bar.expanded {
+    background: white;
+  }
+
+  /* line 382, ../sass/foundation/components/_top-bar.scss */
+  .contain-to-grid .top-bar {
+    max-width: 62.5em;
+    margin: 0 auto;
+  }
+
+  /* line 387, ../sass/foundation/components/_top-bar.scss */
+  .top-bar-section {
+    -webkit-transition: none 0 0;
+    -moz-transition: none 0 0;
+    transition: none 0 0;
+    left: 0 !important;
+  }
+  /* line 391, ../sass/foundation/components/_top-bar.scss */
+  .top-bar-section ul {
+    width: auto;
+    height: auto !important;
+    display: inline;
+  }
+  /* line 396, ../sass/foundation/components/_top-bar.scss */
+  .top-bar-section ul li {
+    float: left;
+  }
+  /* line 398, ../sass/foundation/components/_top-bar.scss */
+  .top-bar-section ul li .js-generated {
+    display: none;
+  }
+  /* line 403, ../sass/foundation/components/_top-bar.scss */
+  .top-bar-section li a:not(.button) {
+    padding: 0 21.66667px;
+    line-height: 65px;
+    background: white;
+  }
+  /* line 407, ../sass/foundation/components/_top-bar.scss */
+  .top-bar-section li a:not(.button).hover {
+    background: black;
+  }
+  /* line 412, ../sass/foundation/components/_top-bar.scss */
+  .top-bar-section .has-dropdown > a {
+    padding-right: 41.66667px !important;
+  }
+  /* line 415, ../sass/foundation/components/_top-bar.scss */
+  .top-bar-section .has-dropdown > a:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: inset 5px;
+    border-color: rgba(255, 255, 255, 0.5) transparent transparent transparent;
+    border-top-style: solid;
+    margin-top: -2.5px;
+    top: 32.5px;
+  }
+  /* line 422, ../sass/foundation/components/_top-bar.scss */
+  .top-bar-section .has-dropdown.moved {
+    position: relative;
+  }
+  /* line 423, ../sass/foundation/components/_top-bar.scss */
+  .top-bar-section .has-dropdown.moved > .dropdown {
+    visibility: hidden;
+  }
+  /* line 427, ../sass/foundation/components/_top-bar.scss */
+  .top-bar-section .has-dropdown.hover > .dropdown {
+    visibility: visible;
+  }
+  /* line 434, ../sass/foundation/components/_top-bar.scss */
+  .top-bar-section .has-dropdown .dropdown li.has-dropdown > a:after {
+    border: none;
+    content: "\00bb";
+    margin-top: -16px;
+    right: 5px;
+  }
+  /* line 445, ../sass/foundation/components/_top-bar.scss */
+  .top-bar-section .dropdown {
+    left: 0;
+    top: auto;
+    background: transparent;
+    min-width: 100%;
+  }
+  /* line 452, ../sass/foundation/components/_top-bar.scss */
+  .top-bar-section .dropdown li a {
+    color: #333333;
+    line-height: 1;
+    white-space: nowrap;
+    padding: 7px 21.66667px;
+    background: white;
+  }
+  /* line 460, ../sass/foundation/components/_top-bar.scss */
+  .top-bar-section .dropdown li label {
+    white-space: nowrap;
+    background: white;
+  }
+  /* line 466, ../sass/foundation/components/_top-bar.scss */
+  .top-bar-section .dropdown li .dropdown {
+    left: 100%;
+    top: 0;
+  }
+  /* line 474, ../sass/foundation/components/_top-bar.scss */
+  .top-bar-section > ul > .divider, .top-bar-section > ul > [role="separator"] {
+    border-bottom: none;
+    border-top: none;
+    border-right: solid 1px white;
+    border-left: solid 1px #e6e6e6;
+    clear: none;
+    height: 65px;
+    width: 0px;
+  }
+  /* line 484, ../sass/foundation/components/_top-bar.scss */
+  .top-bar-section .has-form {
+    background: white;
+    padding: 0 21.66667px;
+    height: 65px;
+  }
+  /* line 492, ../sass/foundation/components/_top-bar.scss */
+  .top-bar-section ul.right li .dropdown {
+    left: auto;
+    right: 0;
+  }
+  /* line 496, ../sass/foundation/components/_top-bar.scss */
+  .top-bar-section ul.right li .dropdown li .dropdown {
+    right: 100%;
+  }
+}
+@-webkit-keyframes rotate {
+  /* line 36, ../sass/foundation/components/_orbit.scss */
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  /* line 37, ../sass/foundation/components/_orbit.scss */
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes rotate {
+  /* line 40, ../sass/foundation/components/_orbit.scss */
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  /* line 41, ../sass/foundation/components/_orbit.scss */
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-o-keyframes rotate {
+  /* line 44, ../sass/foundation/components/_orbit.scss */
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  /* line 45, ../sass/foundation/components/_orbit.scss */
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  /* line 49, ../sass/foundation/components/_orbit.scss */
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  /* line 50, ../sass/foundation/components/_orbit.scss */
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+/* Orbit Graceful Loading */
+/* line 54, ../sass/foundation/components/_orbit.scss */
+.slideshow-wrapper {
+  position: relative;
+}
+/* line 57, ../sass/foundation/components/_orbit.scss */
+.slideshow-wrapper ul {
+  list-style-type: none;
+  margin: 0;
+}
+/* line 64, ../sass/foundation/components/_orbit.scss */
+.slideshow-wrapper ul li,
+.slideshow-wrapper ul li .orbit-caption {
+  display: none;
+}
+/* line 67, ../sass/foundation/components/_orbit.scss */
+.slideshow-wrapper ul li:first-child {
+  display: block;
+}
+/* line 70, ../sass/foundation/components/_orbit.scss */
+.slideshow-wrapper .orbit-container {
+  background-color: transparent;
+}
+/* line 73, ../sass/foundation/components/_orbit.scss */
+.slideshow-wrapper .orbit-container li {
+  display: block;
+}
+/* line 75, ../sass/foundation/components/_orbit.scss */
+.slideshow-wrapper .orbit-container li .orbit-caption {
+  display: block;
+}
+
+/* line 81, ../sass/foundation/components/_orbit.scss */
+.preloader {
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -20px;
+  margin-left: -20px;
+  border: solid 3px;
+  border-color: #555 #fff;
+  -webkit-border-radius: 1000px;
+  border-radius: 1000px;
+  -webkit-animation-name: rotate;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: rotate;
+  -moz-animation-duration: 1.5s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -o-animation-name: rotate;
+  -o-animation-duration: 1.5s;
+  -o-animation-iteration-count: infinite;
+  -o-animation-timing-function: linear;
+  animation-name: rotate;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+/* line 113, ../sass/foundation/components/_orbit.scss */
+.orbit-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  background: transparent;
+}
+/* line 119, ../sass/foundation/components/_orbit.scss */
+.orbit-container .orbit-slides-container {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+/* line 125, ../sass/foundation/components/_orbit.scss */
+.orbit-container .orbit-slides-container img {
+  display: block;
+}
+/* line 127, ../sass/foundation/components/_orbit.scss */
+.orbit-container .orbit-slides-container > * {
+  position: relative;
+  float: left;
+  height: auto;
+}
+/* line 132, ../sass/foundation/components/_orbit.scss */
+.orbit-container .orbit-slides-container > * .orbit-caption {
+  position: absolute;
+  bottom: 0;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: black;
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 0.875em;
+}
+/* line 145, ../sass/foundation/components/_orbit.scss */
+.orbit-container .orbit-slide-number {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 12px;
+  color: white;
+  background: rgba(0, 0, 0, 0);
+}
+/* line 150, ../sass/foundation/components/_orbit.scss */
+.orbit-container .orbit-slide-number span {
+  font-weight: 700;
+  padding: 0.3125em;
+}
+/* line 155, ../sass/foundation/components/_orbit.scss */
+.orbit-container .orbit-timer {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 6px;
+  width: 100px;
+}
+/* line 161, ../sass/foundation/components/_orbit.scss */
+.orbit-container .orbit-timer .orbit-progress {
+  height: 100%;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0);
+  display: block;
+  width: 0%;
+}
+/* line 169, ../sass/foundation/components/_orbit.scss */
+.orbit-container .orbit-timer > span {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  width: 11px;
+  height: 14px;
+  border: solid 4px #000;
+  border-top: none;
+  border-bottom: none;
+}
+/* line 182, ../sass/foundation/components/_orbit.scss */
+.orbit-container .orbit-timer.paused > span {
+  right: -6px;
+  top: 9px;
+  width: 11px;
+  height: 14px;
+  border: inset 8px;
+  border-right-style: solid;
+  border-color: transparent transparent transparent #000;
+}
+/* line 194, ../sass/foundation/components/_orbit.scss */
+.orbit-container:hover .orbit-timer > span {
+  display: block;
+}
+/* line 198, ../sass/foundation/components/_orbit.scss */
+.orbit-container .orbit-prev,
+.orbit-container .orbit-next {
+  position: absolute;
+  top: 50%;
+  margin-top: -25px;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 50px;
+  height: 60px;
+  line-height: 50px;
+  color: white;
+  text-indent: -9999px !important;
+}
+/* line 210, ../sass/foundation/components/_orbit.scss */
+.orbit-container .orbit-prev > span,
+.orbit-container .orbit-next > span {
+  position: absolute;
+  top: 50%;
+  margin-top: -16px;
+  display: block;
+  width: 0;
+  height: 0;
+  border: inset 16px;
+}
+/* line 220, ../sass/foundation/components/_orbit.scss */
+.orbit-container .orbit-prev {
+  left: 0;
+}
+/* line 221, ../sass/foundation/components/_orbit.scss */
+.orbit-container .orbit-prev > span {
+  border-right-style: solid;
+  border-color: transparent;
+  border-right-color: #fff;
+}
+/* line 226, ../sass/foundation/components/_orbit.scss */
+.orbit-container .orbit-prev:hover > span {
+  border-right-color: #ccc;
+}
+/* line 230, ../sass/foundation/components/_orbit.scss */
+.orbit-container .orbit-next {
+  right: 0;
+}
+/* line 231, ../sass/foundation/components/_orbit.scss */
+.orbit-container .orbit-next > span {
+  border-color: transparent;
+  border-left-style: solid;
+  border-left-color: #fff;
+  left: 50%;
+  margin-left: -8px;
+}
+/* line 238, ../sass/foundation/components/_orbit.scss */
+.orbit-container .orbit-next:hover > span {
+  border-left-color: #ccc;
+}
+
+/* line 244, ../sass/foundation/components/_orbit.scss */
+.orbit-bullets {
+  margin: 0 auto 30px auto;
+  overflow: hidden;
+  position: relative;
+  top: 10px;
+}
+/* line 250, ../sass/foundation/components/_orbit.scss */
+.orbit-bullets li {
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: white;
+  float: left;
+  margin-right: 6px;
+  border: solid 2px #61b752;
+  -webkit-border-radius: 1000px;
+  border-radius: 1000px;
+}
+/* line 260, ../sass/foundation/components/_orbit.scss */
+.orbit-bullets li.active {
+  background: #61b752;
+}
+/* line 264, ../sass/foundation/components/_orbit.scss */
+.orbit-bullets li:last-child {
+  margin-right: 0;
+}
+
+/* line 271, ../sass/foundation/components/_orbit.scss */
+.touch .orbit-container .orbit-prev,
+.touch .orbit-container .orbit-next {
+  display: none;
+}
+/* line 274, ../sass/foundation/components/_orbit.scss */
+.touch .orbit-bullets {
+  display: none;
+}
+
+@media only screen and (min-width: 769px) {
+  /* line 283, ../sass/foundation/components/_orbit.scss */
+  .touch .orbit-container .orbit-prev,
+  .touch .orbit-container .orbit-next {
+    display: inherit;
+  }
+  /* line 286, ../sass/foundation/components/_orbit.scss */
+  .touch .orbit-bullets {
+    display: block;
+  }
+}
+/* line 109, ../sass/foundation/components/_reveal.scss */
+.reveal-modal-bg {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: black;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 98;
+  display: none;
+  top: 0;
+  left: 0;
+}
+
+/* line 111, ../sass/foundation/components/_reveal.scss */
+.reveal-modal {
+  visibility: hidden;
+  display: none;
+  position: absolute;
+  left: 50%;
+  z-index: 99;
+  height: auto;
+  margin-left: -40%;
+  width: 80%;
+  background-color: white;
+  padding: 1.25em;
+  border: solid 1px #666666;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  top: 50px;
+}
+/* line 62, ../sass/foundation/components/_reveal.scss */
+.reveal-modal .column,
+.reveal-modal .columns {
+  min-width: 0;
+}
+/* line 65, ../sass/foundation/components/_reveal.scss */
+.reveal-modal > :first-child {
+  margin-top: 0;
+}
+/* line 66, ../sass/foundation/components/_reveal.scss */
+.reveal-modal > :last-child {
+  margin-bottom: 0;
+}
+/* line 115, ../sass/foundation/components/_reveal.scss */
+.reveal-modal .close-reveal-modal {
+  font-size: 1.875em;
+  line-height: 1;
+  position: absolute;
+  top: 0.5em;
+  right: 0.6875em;
+  color: #e63924;
+  font-weight: normal;
+  cursor: "pointer";
+}
+
+@media only screen and (min-width: 769px) {
+  /* line 121, ../sass/foundation/components/_reveal.scss */
+  .reveal-modal {
+    padding: 1.875em;
+    top: 6.25em;
+  }
+  /* line 124, ../sass/foundation/components/_reveal.scss */
+  .reveal-modal.tiny {
+    margin-left: -15%;
+    width: 30%;
+  }
+  /* line 125, ../sass/foundation/components/_reveal.scss */
+  .reveal-modal.small {
+    margin-left: -20%;
+    width: 40%;
+  }
+  /* line 126, ../sass/foundation/components/_reveal.scss */
+  .reveal-modal.medium {
+    margin-left: -30%;
+    width: 60%;
+  }
+  /* line 127, ../sass/foundation/components/_reveal.scss */
+  .reveal-modal.large {
+    margin-left: -35%;
+    width: 70%;
+  }
+  /* line 128, ../sass/foundation/components/_reveal.scss */
+  .reveal-modal.xlarge {
+    margin-left: -47.5%;
+    width: 95%;
+  }
+}
+@media print {
+  /* line 134, ../sass/foundation/components/_reveal.scss */
+  .reveal-modal {
+    background: #fff !important;
+  }
+}
+/* Foundation Alerts */
+/* line 94, ../sass/foundation/components/_alert-boxes.scss */
+.alert-box {
+  border-style: solid;
+  border-width: 0px;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 1.25em;
+  position: relative;
+  padding: 0.6875em 1.3125em 0.75em 0.6875em;
+  font-size: 0.875em;
+  background-color: #008752;
+  border-color: #005433;
+  color: white;
+}
+/* line 97, ../sass/foundation/components/_alert-boxes.scss */
+.alert-box .close {
+  font-size: 1.375em;
+  padding: 5px 4px 4px;
+  line-height: 0;
+  position: absolute;
+  top: 0.4375em;
+  right: 0.3125em;
+  color: #333333;
+  opacity: 0.3;
+}
+/* line 81, ../sass/foundation/components/_alert-boxes.scss */
+.alert-box .close:hover, .alert-box .close:focus {
+  opacity: 0.5;
+}
+/* line 99, ../sass/foundation/components/_alert-boxes.scss */
+.alert-box.radius {
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+/* line 100, ../sass/foundation/components/_alert-boxes.scss */
+.alert-box.round {
+  -webkit-border-radius: 1000px;
+  border-radius: 1000px;
+}
+/* line 102, ../sass/foundation/components/_alert-boxes.scss */
+.alert-box.success {
+  background-color: #5da423;
+  border-color: #457a1a;
+  color: white;
+}
+/* line 103, ../sass/foundation/components/_alert-boxes.scss */
+.alert-box.alert {
+  background-color: #c60f13;
+  border-color: #970b0e;
+  color: white;
+}
+/* line 104, ../sass/foundation/components/_alert-boxes.scss */
+.alert-box.secondary {
+  background-color: #dbdbdc;
+  border-color: #c1c1c3;
+  color: #424243;
+}
+
+/* Labels */
+/* line 71, ../sass/foundation/components/_labels.scss */
+.label {
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1;
+  white-space: nowrap;
+  display: inline-block;
+  position: relative;
+  padding: 0.1875em 0.625em 0.25em;
+  font-size: 0.875em;
+  background-color: #008752;
+  color: white;
+}
+/* line 77, ../sass/foundation/components/_labels.scss */
+.label.radius {
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+/* line 78, ../sass/foundation/components/_labels.scss */
+.label.round {
+  -webkit-border-radius: 1000px;
+  border-radius: 1000px;
+}
+/* line 80, ../sass/foundation/components/_labels.scss */
+.label.alert {
+  background-color: #c60f13;
+  color: white;
+}
+/* line 81, ../sass/foundation/components/_labels.scss */
+.label.success {
+  background-color: #5da423;
+  color: white;
+}
+/* line 82, ../sass/foundation/components/_labels.scss */
+.label.secondary {
+  background-color: #dbdbdc;
+  color: #333333;
+}
+
+/* Inline Lists */
+/* line 49, ../sass/foundation/components/_inline-lists.scss */
+.inline-list {
+  margin: 0 auto 1.0625em auto;
+  margin-left: -1.375em;
+  margin-right: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+/* line 36, ../sass/foundation/components/_inline-lists.scss */
+.inline-list > li {
+  list-style: none;
+  float: left;
+  margin-left: 1.375em;
+  display: block;
+}
+/* line 41, ../sass/foundation/components/_inline-lists.scss */
+.inline-list > li > * {
+  display: block;
+}
+
+/* Pagination */
+/* line 98, ../sass/foundation/components/_pagination.scss */
+.pagination {
+  display: block;
+  height: 1.5em;
+  margin-left: -0.3125em;
+}
+/* line 46, ../sass/foundation/components/_pagination.scss */
+.pagination li {
+  display: block;
+  float: left;
+  height: 1.5em;
+  color: #222222;
+  font-size: 0.875em;
+  margin-left: 0.3125em;
+}
+/* line 54, ../sass/foundation/components/_pagination.scss */
+.pagination li a {
+  display: block;
+  padding: 0.0625em 0.4375em 0.0625em;
+  color: #999999;
+}
+/* line 61, ../sass/foundation/components/_pagination.scss */
+.pagination li:hover a,
+.pagination li a:focus {
+  background: #e6e6e6;
+}
+/* line 63, ../sass/foundation/components/_pagination.scss */
+.pagination li.unavailable a {
+  cursor: default;
+  color: #999999;
+}
+/* line 68, ../sass/foundation/components/_pagination.scss */
+.pagination li.unavailable:hover a, .pagination li.unavailable a:focus {
+  background: transparent;
+}
+/* line 70, ../sass/foundation/components/_pagination.scss */
+.pagination li.current a {
+  background: #008752;
+  color: white;
+  font-weight: bold;
+  cursor: default;
+}
+/* line 77, ../sass/foundation/components/_pagination.scss */
+.pagination li.current a:hover, .pagination li.current a:focus {
+  background: #008752;
+}
+
+/* line 83, ../sass/foundation/components/_pagination.scss */
+.pagination-centered {
+  text-align: center;
+}
+/* line 84, ../sass/foundation/components/_pagination.scss */
+.pagination-centered ul > li {
+  float: none;
+  display: inline-block;
+}
+
+/* Panels */
+/* line 66, ../sass/foundation/components/_panels.scss */
+.panel {
+  border-style: solid;
+  border-width: 0;
+  border-color: #d9d9d9;
+  margin-bottom: 1.25em;
+  padding: 1.25em;
+  background: #f2f2f2;
+}
+/* line 44, ../sass/foundation/components/_panels.scss */
+.panel > :first-child {
+  margin-top: 0;
+}
+/* line 45, ../sass/foundation/components/_panels.scss */
+.panel > :last-child {
+  margin-bottom: 0;
+}
+/* line 50, ../sass/foundation/components/_panels.scss */
+.panel h1, .panel h2, .panel h3, .panel h4, .panel h5, .panel h6, .panel p {
+  color: #cccccc;
+}
+/* line 54, ../sass/foundation/components/_panels.scss */
+.panel h1, .panel h2, .panel h3, .panel h4, .panel h5, .panel h6 {
+  line-height: 1;
+  margin-bottom: 0.625em;
+}
+/* line 56, ../sass/foundation/components/_panels.scss */
+.panel h1.subheader, .panel h2.subheader, .panel h3.subheader, .panel h4.subheader, .panel h5.subheader, .panel h6.subheader {
+  line-height: 1.4;
+}
+/* line 68, ../sass/foundation/components/_panels.scss */
+.panel.callout {
+  border-style: solid;
+  border-width: 0;
+  border-color: #005433;
+  margin-bottom: 1.25em;
+  padding: 1.25em;
+  background: #008752;
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+}
+/* line 44, ../sass/foundation/components/_panels.scss */
+.panel.callout > :first-child {
+  margin-top: 0;
+}
+/* line 45, ../sass/foundation/components/_panels.scss */
+.panel.callout > :last-child {
+  margin-bottom: 0;
+}
+/* line 51, ../sass/foundation/components/_panels.scss */
+.panel.callout h1, .panel.callout h2, .panel.callout h3, .panel.callout h4, .panel.callout h5, .panel.callout h6, .panel.callout p {
+  color: white;
+}
+/* line 54, ../sass/foundation/components/_panels.scss */
+.panel.callout h1, .panel.callout h2, .panel.callout h3, .panel.callout h4, .panel.callout h5, .panel.callout h6 {
+  line-height: 1;
+  margin-bottom: 0.625em;
+}
+/* line 56, ../sass/foundation/components/_panels.scss */
+.panel.callout h1.subheader, .panel.callout h2.subheader, .panel.callout h3.subheader, .panel.callout h4.subheader, .panel.callout h5.subheader, .panel.callout h6.subheader {
+  line-height: 1.4;
+}
+/* line 73, ../sass/foundation/components/_panels.scss */
+.panel.radius {
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* Side Nav */
+/* line 66, ../sass/foundation/components/_sub-nav.scss */
+.sub-nav {
+  display: block;
+  width: auto;
+  overflow: hidden;
+  margin: -0.25em 0 0 0;
+  padding-top: 0.25em;
+  margin-right: 0;
+  margin-left: -0.5625em;
+}
+/* line 38, ../sass/foundation/components/_sub-nav.scss */
+.sub-nav dt,
+.sub-nav dd {
+  float: left;
+  display: inline;
+  margin-left: 0.5625em;
+  margin-bottom: 0.625em;
+  font-weight: normal;
+  font-size: 0.875em;
+}
+/* line 46, ../sass/foundation/components/_sub-nav.scss */
+.sub-nav dt a,
+.sub-nav dd a {
+  color: black;
+  text-decoration: none;
+}
+/* line 50, ../sass/foundation/components/_sub-nav.scss */
+.sub-nav dt.active a,
+.sub-nav dd.active a {
+  -webkit-border-radius: 1000px;
+  border-radius: 1000px;
+  font-weight: normal;
+  background: none;
+  padding: 0.1875em 0.5625em;
+  cursor: default;
+  color: #008752;
+}
+
+/* Foundation Switches */
+@media only screen {
+  /* line 229, ../sass/foundation/components/_switch.scss */
+  div.switch {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    display: block;
+    overflow: hidden;
+    border-style: solid;
+    border-width: 1px;
+    margin-bottom: 1.25em;
+    -webkit-animation: webkitSiblingBugfix infinite 1s;
+    height: 36px;
+    background: white;
+    border-color: #cccccc;
+  }
+  /* line 59, ../sass/foundation/components/_switch.scss */
+  div.switch label {
+    position: relative;
+    left: 0;
+    z-index: 2;
+    float: left;
+    width: 50%;
+    height: 100%;
+    margin: 0;
+    font-weight: bold;
+    text-align: left;
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
+  }
+  /* line 76, ../sass/foundation/components/_switch.scss */
+  div.switch input {
+    position: absolute;
+    z-index: 3;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    -moz-appearance: none;
+  }
+  /* line 86, ../sass/foundation/components/_switch.scss */
+  div.switch input:hover, div.switch input:focus {
+    cursor: "pointer";
+  }
+  /* line 92, ../sass/foundation/components/_switch.scss */
+  div.switch > span {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    z-index: 1;
+    display: block;
+    padding: 0;
+    border-width: 1px;
+    border-style: solid;
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
+  }
+  /* line 107, ../sass/foundation/components/_switch.scss */
+  div.switch input:not(:checked) + label {
+    opacity: 0;
+  }
+  /* line 110, ../sass/foundation/components/_switch.scss */
+  div.switch input:checked {
+    display: none !important;
+  }
+  /* line 111, ../sass/foundation/components/_switch.scss */
+  div.switch input {
+    left: 0;
+    display: block !important;
+  }
+  /* line 115, ../sass/foundation/components/_switch.scss */
+  div.switch input:first-of-type + label,
+  div.switch input:first-of-type + span + label {
+    left: -50%;
+  }
+  /* line 117, ../sass/foundation/components/_switch.scss */
+  div.switch input:first-of-type:checked + label,
+  div.switch input:first-of-type:checked + span + label {
+    left: 0%;
+  }
+  /* line 121, ../sass/foundation/components/_switch.scss */
+  div.switch input:last-of-type + label,
+  div.switch input:last-of-type + span + label {
+    right: -50%;
+    left: auto;
+    text-align: right;
+  }
+  /* line 123, ../sass/foundation/components/_switch.scss */
+  div.switch input:last-of-type:checked + label,
+  div.switch input:last-of-type:checked + span + label {
+    right: 0%;
+    left: auto;
+  }
+  /* line 126, ../sass/foundation/components/_switch.scss */
+  div.switch span.custom {
+    display: none !important;
+  }
+  /* line 139, ../sass/foundation/components/_switch.scss */
+  div.switch label {
+    padding: 0 0.375em;
+    line-height: 2.3em;
+    font-size: 0.875em;
+  }
+  /* line 147, ../sass/foundation/components/_switch.scss */
+  div.switch input:first-of-type:checked ~ span {
+    left: 100%;
+    margin-left: -2.1875em;
+  }
+  /* line 153, ../sass/foundation/components/_switch.scss */
+  div.switch > span {
+    width: 2.25em;
+    height: 2.25em;
+  }
+  /* line 167, ../sass/foundation/components/_switch.scss */
+  div.switch > span {
+    border-color: #b3b3b3;
+    background: white;
+    background: -moz-linear-gradient(top, white 0%, #f2f2f2 100%);
+    background: -webkit-linear-gradient(top, white 0%, #f2f2f2 100%);
+    background: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 100%);
+    -webkit-box-shadow: 2px 0 10px 0 rgba(0, 0, 0, 0.07), 1000px 0 0 1000px #e1f5d1, -2px 0 10px 0 rgba(0, 0, 0, 0.07), -1000px 0 0 1000px whitesmoke;
+    box-shadow: 2px 0 10px 0 rgba(0, 0, 0, 0.07), 1000px 0 0 980px #e1f5d1, -2px 0 10px 0 rgba(0, 0, 0, 0.07), -1000px 0 0 1000px whitesmoke;
+  }
+  /* line 191, ../sass/foundation/components/_switch.scss */
+  div.switch:hover > span, div.switch:focus > span {
+    background: white;
+    background: -moz-linear-gradient(top, white 0%, #e6e6e6 100%);
+    background: -webkit-linear-gradient(top, white 0%, #e6e6e6 100%);
+    background: linear-gradient(to bottom, #ffffff 0%, #e6e6e6 100%);
+  }
+  /* line 201, ../sass/foundation/components/_switch.scss */
+  div.switch:active {
+    background: transparent;
+  }
+  /* line 233, ../sass/foundation/components/_switch.scss */
+  div.switch.large {
+    height: 44px;
+  }
+  /* line 139, ../sass/foundation/components/_switch.scss */
+  div.switch.large label {
+    padding: 0 0.375em;
+    line-height: 2.3em;
+    font-size: 1.0625em;
+  }
+  /* line 147, ../sass/foundation/components/_switch.scss */
+  div.switch.large input:first-of-type:checked ~ span {
+    left: 100%;
+    margin-left: -2.6875em;
+  }
+  /* line 153, ../sass/foundation/components/_switch.scss */
+  div.switch.large > span {
+    width: 2.75em;
+    height: 2.75em;
+  }
+  /* line 236, ../sass/foundation/components/_switch.scss */
+  div.switch.small {
+    height: 28px;
+  }
+  /* line 139, ../sass/foundation/components/_switch.scss */
+  div.switch.small label {
+    padding: 0 0.375em;
+    line-height: 2.1em;
+    font-size: 0.75em;
+  }
+  /* line 147, ../sass/foundation/components/_switch.scss */
+  div.switch.small input:first-of-type:checked ~ span {
+    left: 100%;
+    margin-left: -1.6875em;
+  }
+  /* line 153, ../sass/foundation/components/_switch.scss */
+  div.switch.small > span {
+    width: 1.75em;
+    height: 1.75em;
+  }
+  /* line 239, ../sass/foundation/components/_switch.scss */
+  div.switch.tiny {
+    height: 22px;
+  }
+  /* line 139, ../sass/foundation/components/_switch.scss */
+  div.switch.tiny label {
+    padding: 0 0.375em;
+    line-height: 1.9em;
+    font-size: 0.6875em;
+  }
+  /* line 147, ../sass/foundation/components/_switch.scss */
+  div.switch.tiny input:first-of-type:checked ~ span {
+    left: 100%;
+    margin-left: -1.3125em;
+  }
+  /* line 153, ../sass/foundation/components/_switch.scss */
+  div.switch.tiny > span {
+    width: 1.375em;
+    height: 1.375em;
+  }
+  /* line 242, ../sass/foundation/components/_switch.scss */
+  div.switch.radius {
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+  }
+  /* line 243, ../sass/foundation/components/_switch.scss */
+  div.switch.radius > span {
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+  }
+  /* line 247, ../sass/foundation/components/_switch.scss */
+  div.switch.round {
+    -webkit-border-radius: 1000px;
+    border-radius: 1000px;
+  }
+  /* line 248, ../sass/foundation/components/_switch.scss */
+  div.switch.round > span {
+    -webkit-border-radius: 999px;
+    border-radius: 999px;
+  }
+  /* line 249, ../sass/foundation/components/_switch.scss */
+  div.switch.round label {
+    padding: 0 0.5625em;
+  }
+
+  @-webkit-keyframes webkitSiblingBugfix {
+    /* line 254, ../sass/foundation/components/_switch.scss */
+    from {
+      position: relative;
+    }
+
+    /* line 254, ../sass/foundation/components/_switch.scss */
+    to {
+      position: relative;
+    }
+}
+}
+/* line 11, ../sass/foundation/components/_magellan.scss */
+[data-magellan-expedition] {
+  background: white;
+  z-index: 50;
+  min-width: 100%;
+  padding: 10px;
+}
+/* line 17, ../sass/foundation/components/_magellan.scss */
+[data-magellan-expedition] .sub-nav {
+  margin-bottom: 0;
+}
+/* line 19, ../sass/foundation/components/_magellan.scss */
+[data-magellan-expedition] .sub-nav dd {
+  margin-bottom: 0;
+}
+
+/* Tables */
+/* line 80, ../sass/foundation/components/_tables.scss */
+table {
+  background: white;
+  margin-bottom: 1.25em;
+  border: solid 1px #dddddd;
+}
+/* line 42, ../sass/foundation/components/_tables.scss */
+table thead,
+table tfoot {
+  background: whitesmoke;
+  font-weight: bold;
+}
+/* line 48, ../sass/foundation/components/_tables.scss */
+table thead tr th,
+table thead tr td,
+table tfoot tr th,
+table tfoot tr td {
+  padding: 0.5em 0.625em 0.625em;
+  font-size: 0.875em;
+  color: #222222;
+  text-align: left;
+}
+/* line 59, ../sass/foundation/components/_tables.scss */
+table tr th,
+table tr td {
+  padding: 0.5625em 0.625em;
+  font-size: 0.875em;
+  color: #222222;
+}
+/* line 67, ../sass/foundation/components/_tables.scss */
+table tr.even, table tr.alt, table tr:nth-of-type(even) {
+  background: #f9f9f9;
+}
+/* line 74, ../sass/foundation/components/_tables.scss */
+table thead tr th,
+table tfoot tr th,
+table tbody tr td,
+table tr td,
+table tfoot tr td {
+  display: table-cell;
+  line-height: 1.125em;
+}
+
+/* Tooltips */
+/* line 29, ../sass/foundation/components/_tooltips.scss */
+.has-tip {
+  border-bottom: dotted 1px #cccccc;
+  cursor: cursor;
+  font-weight: bold;
+  color: #333333;
+}
+/* line 36, ../sass/foundation/components/_tooltips.scss */
+.has-tip:hover, .has-tip:focus {
+  border-bottom: dotted 1px #002114;
+  color: #008752;
+}
+/* line 42, ../sass/foundation/components/_tooltips.scss */
+.has-tip.tip-left, .has-tip.tip-right {
+  float: none !important;
+}
+
+/* line 45, ../sass/foundation/components/_tooltips.scss */
+.tooltip {
+  display: none;
+  position: absolute;
+  z-index: 999;
+  font-weight: normal;
+  font-size: 0.8125em;
+  line-height: 1.3;
+  padding: 0.9375em;
+  max-width: 85%;
+  left: 50%;
+  width: 100%;
+  color: #333333;
+  background: white;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+/* line 60, ../sass/foundation/components/_tooltips.scss */
+.tooltip > .nub {
+  display: block;
+  left: 5px;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: solid 5px;
+  border-color: transparent transparent white transparent;
+  top: -10px;
+}
+/* line 71, ../sass/foundation/components/_tooltips.scss */
+.tooltip.opened {
+  color: #008752 !important;
+  border-bottom: dotted 1px #002114 !important;
+}
+
+/* line 77, ../sass/foundation/components/_tooltips.scss */
+.tap-to-close {
+  display: block;
+  font-size: 0.625em;
+  color: #888888;
+  font-weight: normal;
+}
+
+@media only screen and (min-width: 769px) {
+  /* line 86, ../sass/foundation/components/_tooltips.scss */
+  .tooltip > .nub {
+    border-color: transparent transparent white transparent;
+    top: -10px;
+  }
+  /* line 90, ../sass/foundation/components/_tooltips.scss */
+  .tooltip.tip-top > .nub {
+    border-color: white transparent transparent transparent;
+    top: auto;
+    bottom: -10px;
+  }
+  /* line 97, ../sass/foundation/components/_tooltips.scss */
+  .tooltip.tip-left, .tooltip.tip-right {
+    float: none !important;
+  }
+  /* line 99, ../sass/foundation/components/_tooltips.scss */
+  .tooltip.tip-left > .nub {
+    border-color: transparent transparent transparent white;
+    right: -10px;
+    left: auto;
+    top: 50%;
+    margin-top: -5px;
+  }
+  /* line 106, ../sass/foundation/components/_tooltips.scss */
+  .tooltip.tip-right > .nub {
+    border-color: transparent white transparent transparent;
+    right: auto;
+    left: -10px;
+    top: 50%;
+    margin-top: -5px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  /* line 128, ../sass/foundation/components/_dropdown.scss */
+  .f-dropdown {
+    max-width: 100%;
+    left: 0;
+  }
+}
+/* Foundation Dropdowns */
+/* line 135, ../sass/foundation/components/_dropdown.scss */
+.f-dropdown {
+  position: absolute;
+  top: -9999px;
+  list-style: none;
+  margin-left: 0;
+  width: 100%;
+  max-height: none;
+  height: auto;
+  background: white;
+  border: solid 1px #cccccc;
+  font-size: 16px;
+  z-index: 99;
+  margin-top: 2px;
+  max-width: 200px;
+}
+/* line 50, ../sass/foundation/components/_dropdown.scss */
+.f-dropdown > *:first-child {
+  margin-top: 0;
+}
+/* line 51, ../sass/foundation/components/_dropdown.scss */
+.f-dropdown > *:last-child {
+  margin-bottom: 0;
+}
+/* line 76, ../sass/foundation/components/_dropdown.scss */
+.f-dropdown:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: inset 6px;
+  border-color: transparent transparent white transparent;
+  border-bottom-style: solid;
+  position: absolute;
+  top: -12px;
+  left: 10px;
+  z-index: 99;
+}
+/* line 83, ../sass/foundation/components/_dropdown.scss */
+.f-dropdown:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: inset 7px;
+  border-color: transparent transparent #cccccc transparent;
+  border-bottom-style: solid;
+  position: absolute;
+  top: -14px;
+  left: 9px;
+  z-index: 98;
+}
+/* line 91, ../sass/foundation/components/_dropdown.scss */
+.f-dropdown.right:before {
+  left: auto;
+  right: 10px;
+}
+/* line 95, ../sass/foundation/components/_dropdown.scss */
+.f-dropdown.right:after {
+  left: auto;
+  right: 9px;
+}
+/* line 139, ../sass/foundation/components/_dropdown.scss */
+.f-dropdown li {
+  font-size: 0.875em;
+  cursor: "pointer";
+  line-height: 1.125em;
+  margin: 0;
+}
+/* line 115, ../sass/foundation/components/_dropdown.scss */
+.f-dropdown li:hover, .f-dropdown li:focus {
+  background: #eeeeee;
+}
+/* line 117, ../sass/foundation/components/_dropdown.scss */
+.f-dropdown li a {
+  display: block;
+  padding: 0.3125em 0.625em;
+  color: #555555;
+}
+/* line 142, ../sass/foundation/components/_dropdown.scss */
+.f-dropdown.content {
+  position: absolute;
+  top: -9999px;
+  list-style: none;
+  margin-left: 0;
+  padding: 1.25em;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  background: white;
+  border: solid 1px #cccccc;
+  font-size: 16px;
+  z-index: 99;
+  max-width: 200px;
+}
+/* line 50, ../sass/foundation/components/_dropdown.scss */
+.f-dropdown.content > *:first-child {
+  margin-top: 0;
+}
+/* line 51, ../sass/foundation/components/_dropdown.scss */
+.f-dropdown.content > *:last-child {
+  margin-bottom: 0;
+}
+/* line 145, ../sass/foundation/components/_dropdown.scss */
+.f-dropdown.tiny {
+  max-width: 200px;
+}
+/* line 146, ../sass/foundation/components/_dropdown.scss */
+.f-dropdown.small {
+  max-width: 300px;
+}
+/* line 147, ../sass/foundation/components/_dropdown.scss */
+.f-dropdown.medium {
+  max-width: 500px;
+}
+/* line 148, ../sass/foundation/components/_dropdown.scss */
+.f-dropdown.large {
+  max-width: 800px;
+}
+
+/* Buttons */
+/* Misc reusable text styles*/
+/*
+	This is the main SCSS file for development of the Cricket redesign. 
+	The styles in Foundation components should remain as is, and use this file to override. 
+	Also, look into foundation/_settings.scss for base colours, fonts, etc. You can use that file for global type elements if need be.
+*/
+/** Import Fonts **/
+/* Fonts */
+@font-face {
+  font-family: 'GothamBlack';
+  src: url("fonts/g/gotham-black-webfont.eot?jcb=1346957874");
+  src: url("fonts/g/gotham-black-webfont.eot?jcb=1346957874?#iefix") format("embedded-opentype"), url("fonts/g/gotham-black-webfont.woff?jcb=1346957874") format("woff"), url("fonts/g/gotham-black-webfont.ttf?jcb=1346957874") format("truetype"), url("fonts/g/gotham-black-webfont.svg#wf") format("svg");
+}
+
+@font-face {
+  font-family: 'GothamBook';
+  src: url("fonts/g/gotham-book-webfont.eot?jcb=1346957874");
+  src: url("fonts/g/gotham-book-webfont.eot?jcb=1346957874?#iefix") format("embedded-opentype"), url("fonts/g/gotham-book-webfont.woff?jcb=1346957874") format("woff"), url("fonts/g/gotham-book-webfont.ttf?jcb=1346957874") format("truetype"), url("fonts/g/gotham-book-webfont.svg#wf") format("svg");
+}
+
+@font-face {
+  font-family: 'GothamBold';
+  src: url("fonts/g/gotham-bold-webfont.eot?jcb=1346957874");
+  src: url("fonts/g/gotham-bold-webfont.eot?jcb=1346957874?#iefix") format("embedded-opentype"), url("fonts/g/gotham-bold-webfont.woff?jcb=1346957874") format("woff"), url("fonts/g/gotham-bold-webfont.ttf?jcb=1346957874") format("truetype"), url("fonts/g/gotham-bold-webfont.svg#wf") format("svg");
+}
+
+@font-face {
+  font-family: 'GothamMedium';
+  src: url("fonts/g/gotham-medium-webfont.eot?jcb=1346957874");
+  src: url("fonts/g/gotham-medium-webfont.eot?jcb=1346957874?#iefix") format("embedded-opentype"), url("fonts/g/gotham-medium-webfont.woff?jcb=1346957874") format("woff"), url("fonts/g/gotham-medium-webfont.ttf?jcb=1346957874") format("truetype"), url("fonts/g/gotham-medium-webfont.svg#wf") format("svg");
+}
+
+@font-face {
+  font-family: 'GothamLight';
+  src: url("fonts/g/gotham-light-webfont.eot?jcb=1346957874");
+  src: url("fonts/g/gotham-light-webfont.eot?jcb=1346957874?#iefix") format("embedded-opentype"), url("fonts/g/gotham-light-webfont.woff?jcb=1346957874") format("woff"), url("fonts/g/gotham-light-webfont.ttf?jcb=1346957874") format("truetype"), url("fonts/g/gotham-light-webfont.svg#wf") format("svg");
+}
+
+/** GLOBAL **/
+/* Colours */
+/* Used for hover on orange buttons */
+/* Two selectors used for side drawer in mobile */
+/* line 20, ../sass/_app.scss */
+#outer-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* line 25, ../sass/_app.scss */
+#inner-wrap {
+  position: relative;
+  width: 100%;
+}
+
+/* Wrapper if needed for content area; everything in between header and footer */
+/* line 31, ../sass/_app.scss */
+#constructor {
+  border-top: 1px solid #ddd;
+  margin-top: 0;
+}
+
+/** HEADER and FOOTER **/
+/** HEADER **/
+/* line 2, ../sass/_head.scss */
+#header {
+  padding-bottom: 0;
+  padding-bottom: 10px;
+}
+
+/* line 7, ../sass/_head.scss */
+#header .mobile-location {
+  background: #333;
+  display: block;
+  height: 1.75em;
+  width: 100%;
+  display: block;
+  text-align: center;
+  display: none;
+}
+/* line 15, ../sass/_head.scss */
+#header .mobile-location p {
+  padding-top: 0;
+  margin-left: 40%;
+  margin-right: 0;
+}
+/* line 22, ../sass/_head.scss */
+#header .mobile-location p a {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-location.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) left -1px no-repeat;
+  color: #c8c8c8;
+  display: inline-block;
+  font: normal 0.75em Arial;
+  padding: 0.125em 0 0.3125em 1.375em;
+}
+/* line 29, ../sass/_head.scss */
+#header .mobile-location .location-center {
+  display: inline-block;
+  margin: 0 auto;
+  display: none;
+}
+
+/* line 38, ../sass/_head.scss */
+#nav-utility p.heading, #nav-utility h3, #nav-utility #mobileLoginForm, #nav-utility hr, #nav-utility .indicator-black-west {
+  display: none;
+}
+
+/* line 43, ../sass/_head.scss */
+#nav-utility.mobile-utility {
+  background: #333333 url(//images.mycricket.com/cricket?set=imageURL[file:/img/bg-nav-utility-mobile-border-top.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) 0 28px repeat-x;
+  display: block;
+  height: 100%;
+  position: absolute;
+  right: -90%;
+  width: 90%;
+  margin-top: -1.75em;
+  /* END /#mobileLoginForm */
+  /* / ul li */
+}
+/* line 51, ../sass/_head.scss */
+#nav-utility.mobile-utility .indicator-black-west {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/indicator-black-west.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) 0 0 no-repeat;
+  height: 15px;
+  position: absolute;
+  width: 6px;
+  left: -6px;
+  top: 61px;
+  z-index: 1;
+}
+/* line 60, ../sass/_head.scss */
+#nav-utility.mobile-utility p.heading {
+  color: #CCCCCC;
+  font: 18px 'GothamBook';
+  padding: 3em 0 0.625em 1.25em;
+  margin-bottom: 0.5em;
+  margin-top: 0.2em;
+}
+/* line 68, ../sass/_head.scss */
+#nav-utility.mobile-utility.logged-in p.heading {
+  padding: 3em 0 4.75em 1.25em;
+}
+/* line 72, ../sass/_head.scss */
+#nav-utility.mobile-utility form {
+  margin-bottom: 0;
+}
+/* line 73, ../sass/_head.scss */
+#nav-utility.mobile-utility hr {
+  margin: 0.625em 0;
+  border: 0;
+  width: 100%;
+  color: #3d3d3d;
+  background-color: #3d3d3d;
+  height: 1px;
+  margin: 0.3125em 1.25em 0;
+  width: 88%;
+}
+/* line 79, ../sass/_head.scss */
+#nav-utility.mobile-utility #mobileLoginForm {
+  padding-left: 1.25em;
+}
+/* line 81, ../sass/_head.scss */
+#nav-utility.mobile-utility #mobileLoginForm input {
+  width: 93%;
+}
+/* line 82, ../sass/_head.scss */
+#nav-utility.mobile-utility #mobileLoginForm label {
+  color: #c8c8c8;
+  font: normal 12px Arial;
+  margin: 0.625em 0 1.5625em;
+  text-transform: uppercase;
+}
+/* line 88, ../sass/_head.scss */
+#nav-utility.mobile-utility #mobileLoginForm p {
+  margin-bottom: 0.9375em;
+  padding-left: 0.3125em;
+}
+/* line 92, ../sass/_head.scss */
+#nav-utility.mobile-utility #mobileLoginForm a {
+  color: #c8c8c8;
+  font: normal 12px Arial;
+  text-transform: uppercase;
+}
+/* line 97, ../sass/_head.scss */
+#nav-utility.mobile-utility #mobileLoginForm a.button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #e63924;
+  border-color: #c12916;
+  color: white;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+  font: normal 0.9375em "GothamBook";
+  padding: 0.8125em 0;
+  width: 93%;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+#nav-utility.mobile-utility #mobileLoginForm a.button:hover, #nav-utility.mobile-utility #mobileLoginForm a.button:focus {
+  background-color: #c12916;
+}
+/* line 134, ../sass/foundation/components/_buttons.scss */
+#nav-utility.mobile-utility #mobileLoginForm a.button:hover, #nav-utility.mobile-utility #mobileLoginForm a.button:focus {
+  color: white;
+}
+/* line 55, ../sass/_mixins.scss */
+#nav-utility.mobile-utility #mobileLoginForm a.button:hover {
+  /*cursor: pointer;*/
+}
+/* line 103, ../sass/_head.scss */
+#nav-utility.mobile-utility #mobileLoginForm .errors-mobile-login {
+  display: none;
+  width: 93%;
+}
+/* line 106, ../sass/_head.scss */
+#nav-utility.mobile-utility #mobileLoginForm .errors-mobile-login p {
+  border-top: 1px solid #e63924;
+  color: #e63924;
+  padding: 0.625em 0 0;
+  font-size: 12px;
+}
+/* line 112, ../sass/_head.scss */
+#nav-utility.mobile-utility #mobileLoginForm .errors-mobile-login label {
+  text-transform: none;
+}
+/* line 116, ../sass/_head.scss */
+#nav-utility.mobile-utility ul li {
+  display: block;
+  height: 2.25em;
+  text-transform: uppercase;
+}
+/* line 120, ../sass/_head.scss */
+#nav-utility.mobile-utility ul li a {
+  border-right: 0;
+  font-size: 12px;
+  padding: 0 0 0 2.125em;
+}
+/* line 125, ../sass/_head.scss */
+#nav-utility.mobile-utility ul li#li-coverage-map a {
+  background-image: none;
+  padding-left: 2.125em;
+}
+/* line 130, ../sass/_head.scss */
+#nav-utility.mobile-utility ul li#li-location {
+  position: absolute;
+  top: -4px;
+  left: 27%;
+}
+/* line 135, ../sass/_head.scss */
+#nav-utility.mobile-utility ul li#li-location a {
+  cursor: default;
+}
+/* line 137, ../sass/_head.scss */
+#nav-utility.mobile-utility ul li#li-location a.open {
+  color: #c8c8c8;
+}
+/* line 140, ../sass/_head.scss */
+#nav-utility.mobile-utility ul li#li-log-in {
+  display: none;
+  position: absolute;
+  top: 14.0625em;
+  left: 1.25em;
+  width: 111%;
+}
+/* line 147, ../sass/_head.scss */
+#nav-utility.mobile-utility ul li#li-log-in a {
+  background-image: none;
+  font-size: 1.25em;
+  padding: 0.625em 0;
+  width: 80%;
+}
+/* line 153, ../sass/_head.scss */
+#nav-utility.mobile-utility ul li#li-username {
+  position: absolute;
+  top: 6.875em;
+  left: 1.5625em;
+}
+/* line 159, ../sass/_head.scss */
+#nav-utility.mobile-utility ul li#nav-utility-right {
+  display: block;
+  margin-top: 0.3125em;
+  padding-top: 0.3125em;
+}
+/* line 164, ../sass/_head.scss */
+#nav-utility.mobile-utility ul li#nav-utility-right #drawer-utility-indicator.dui-location {
+  display: none !important;
+}
+
+/* END .mobile-utility */
+/* line 170, ../sass/_head.scss */
+#nav-utility {
+  background-color: #333;
+  min-height: 2.6875em;
+  display: none;
+  display: block;
+  height: 38px;
+  min-height: 0;
+  /* /.side-menu-close */
+  /* /ul */
+}
+/* line 176, ../sass/_head.scss */
+#nav-utility .side-menu-close {
+  position: absolute;
+  top: 2.8125em;
+  right: 1.25em;
+  display: block;
+  display: none;
+}
+/* line 182, ../sass/_head.scss */
+#nav-utility .side-menu-close a {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/close.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 0 0 no-repeat;
+  display: block;
+  text-indent: -99999px;
+  height: 1.1875em;
+  width: 1.1875em;
+}
+/* line 191, ../sass/_head.scss */
+#nav-utility ul {
+  display: inline;
+  list-style: none;
+  float: left;
+  width: auto !important;
+  line-height: 1.25em;
+  margin-bottom: 0;
+  /* /li */
+}
+/* line 200, ../sass/_head.scss */
+#nav-utility ul#nav-utility-right {
+  float: right;
+  position: relative;
+  width: auto;
+}
+/* line 207, ../sass/_head.scss */
+#nav-utility ul li {
+  display: inline-block;
+  margin-top: 0.3125em;
+}
+/* line 210, ../sass/_head.scss */
+#nav-utility ul li a {
+  border-right: 1px solid #525252;
+  color: #c8c8c8;
+  font: normal 0.6875em Arial;
+  padding: 0 0.9375em 0.3125em 0.8125em;
+}
+/* line 215, ../sass/_head.scss */
+#nav-utility ul li a.no-pipe {
+  border-right: 0;
+}
+/* line 217, ../sass/_head.scss */
+#nav-utility ul li#li-coverage-map a {
+  background: none;
+  padding-left: 0.625em;
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-coverage-map.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) left 2px no-repeat;
+  padding-left: 3.125em;
+  padding-top: 0.1875em;
+}
+/* line 226, ../sass/_head.scss */
+#nav-utility ul li#li-location a {
+  background: none;
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-location.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) left -1px no-repeat;
+  margin-left: 0.5em;
+  padding-left: 1.5625em;
+  padding-top: 0.25em;
+}
+/* line 234, ../sass/_head.scss */
+#nav-utility ul li#li-location a.open {
+  color: green;
+}
+/* line 236, ../sass/_head.scss */
+#nav-utility ul li#li-log-in a {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #e63924;
+  border-color: #c12916;
+  color: white;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+  background-image: url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-my-account-small.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]);
+  background-position: 3px center;
+  background-repeat: no-repeat;
+  font: normal 11px 'GothamMedium';
+  padding: 0.3125em 0.8125em 0.3125em 1.6875em;
+  top: 0;
+  margin-bottom: 0;
+  width: 120px;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+#nav-utility ul li#li-log-in a:hover, #nav-utility ul li#li-log-in a:focus {
+  background-color: #c12916;
+}
+/* line 134, ../sass/foundation/components/_buttons.scss */
+#nav-utility ul li#li-log-in a:hover, #nav-utility ul li#li-log-in a:focus {
+  color: white;
+}
+/* line 55, ../sass/_mixins.scss */
+#nav-utility ul li#li-log-in a:hover {
+  /*cursor: pointer;*/
+}
+/* line 246, ../sass/_head.scss */
+#nav-utility ul li#li-log-in a.open {
+  background-color: #ccc;
+  border-color: #ddd;
+}
+/* line 248, ../sass/_head.scss */
+#nav-utility ul li#li-log-out {
+  display: none;
+}
+/* line 249, ../sass/_head.scss */
+#nav-utility ul li#li-log-out a {
+  border-left: 1px solid #525252;
+}
+/* line 251, ../sass/_head.scss */
+#nav-utility ul li#li-log-out a.open {
+  background-color: #ccc;
+  border-color: #ddd;
+}
+/* line 256, ../sass/_head.scss */
+#nav-utility ul li#li-username {
+  display: none;
+}
+/* line 257, ../sass/_head.scss */
+#nav-utility ul li#li-username a {
+  background-image: url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-my-account-small-orange.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]);
+  background-position: 3px center;
+  background-repeat: no-repeat;
+  color: #e83b26;
+  padding: 0.4375em 0.8125em 0.1875em 1.875em;
+}
+
+/* END #nav-utility */
+/* line 268, ../sass/_head.scss */
+#header .top-bar {
+  background: #333;
+  background: transparent;
+  padding: 0;
+  /* mobile nav icons; cart, nav, account drawer */
+  /* END ul#nav-main */
+}
+/* line 272, ../sass/_head.scss */
+#header .top-bar .name div {
+  background-color: #fff;
+}
+/* line 273, ../sass/_head.scss */
+#header .top-bar .name div a {
+  padding-left: 0;
+  margin-left: 0.1875em;
+  margin-left: 0.625em;
+}
+/* line 277, ../sass/_head.scss */
+#header .top-bar .name div a img {
+  max-width: none;
+}
+/* line 282, ../sass/_head.scss */
+#header .top-bar .cart-icon {
+  display: block;
+  top: 40%;
+  padding-right: 2%;
+  height: 30px;
+  position: absolute;
+  right: 28%;
+  display: none;
+}
+/* line 290, ../sass/_head.scss */
+#header .top-bar .cart-icon a {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/sprite.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 0 0 no-repeat;
+  display: block;
+  height: 1.6875em;
+  padding-left: 0.625em;
+  text-indent: -99999px;
+  width: 1.8125em;
+}
+/* line 297, ../sass/_head.scss */
+#header .top-bar .cart-icon a.open {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/sprite.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) -40px 0 no-repeat;
+}
+/* line 300, ../sass/_head.scss */
+#header .top-bar .cart-icon a.num-cart-items {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  position: absolute;
+  top: -10px;
+  right: 2px;
+  height: 20px;
+  width: 20px;
+  background-color: #e83b26;
+  border: 2px solid #fff;
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+  text-indent: 0;
+  font: normal 0.6875em "GothamBook";
+  padding: 2px 1px 0 2px;
+}
+/* line 319, ../sass/_head.scss */
+#header .top-bar .menu-icon {
+  right: 15%;
+  top: 60%;
+  padding-left: 0;
+  width: 34px;
+  height: 34px;
+  /* text-indent: -34px; was messing up hit spot for Android devices @ 700px */
+}
+/* line 325, ../sass/_head.scss */
+#header .top-bar .menu-icon a {
+  text-indent: 0;
+}
+/* line 326, ../sass/_head.scss */
+#header .top-bar .menu-icon a span {
+  right: 10px;
+}
+/* line 329, ../sass/_head.scss */
+#header .top-bar .account-icon {
+  display: block;
+  position: absolute;
+  right: 4%;
+  top: 40%;
+  padding-left: 0.625em;
+  height: 30px;
+}
+/* line 336, ../sass/_head.scss */
+#header .top-bar .account-icon a {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/sprite.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) -120px 0 no-repeat;
+  display: block;
+  height: 1.5625em;
+  padding: 0;
+  text-indent: -99999px;
+  width: 1.375em;
+}
+/* line 343, ../sass/_head.scss */
+#header .top-bar .account-icon a.open {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/sprite.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) -180px 0 no-repeat;
+}
+/* line 349, ../sass/_head.scss */
+#header .top-bar #open-side-menu {
+  display: block;
+  display: none;
+}
+/* line 354, ../sass/_head.scss */
+#header .top-bar section ul#nav-main {
+  background: #333;
+  padding-bottom: 4em;
+  position: relative;
+  background: transparent;
+  height: auto;
+  margin-top: 0.625em;
+  position: absolute;
+  top: 1.25em;
+  right: 1.0625em;
+  padding-bottom: 0;
+  /* END li */
+}
+/* line 368, ../sass/_head.scss */
+#header .top-bar section ul#nav-main li {
+  border-radius: 0;
+  padding: 0 1.75em 0 0;
+  /* ul.dropdown */
+}
+/* line 372, ../sass/_head.scss */
+#header .top-bar section ul#nav-main li a {
+  color: #ccc;
+  font: normal 18px 'GothamLight';
+  padding: 0.5em 0 0.5em 1.25em;
+  background: transparent;
+  color: #000;
+  padding: 0;
+}
+/* line 382, ../sass/_head.scss */
+#header .top-bar section ul#nav-main li a:hover {
+  color: #008752;
+}
+/* line 383, ../sass/_head.scss */
+#header .top-bar section ul#nav-main li a.active {
+  color: #008752;
+}
+/* line 386, ../sass/_head.scss */
+#header .top-bar section ul#nav-main li.active a {
+  background: transparent;
+}
+/* line 388, ../sass/_head.scss */
+#header .top-bar section ul#nav-main li.has-dropdown a {
+  background: #333333 url(//images.mycricket.com/cricket?set=imageURL[file:/img/arrow-mobile-nav.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 95% 10px no-repeat;
+  background: transparent;
+  padding-right: 0 !important;
+}
+/* line 390, ../sass/_head.scss */
+#header .top-bar section ul#nav-main li.has-dropdown a:after {
+  border-style: none;
+}
+/* line 391, ../sass/_head.scss */
+#header .top-bar section ul#nav-main li.has-dropdown a.hover a {
+  color: #008752;
+}
+/* line 400, ../sass/_head.scss */
+#header .top-bar section ul#nav-main li.has-dropdown ul.dropdown h5 a {
+  color: #e83b26;
+  background: none;
+}
+/* line 404, ../sass/_head.scss */
+#header .top-bar section ul#nav-main li#li-cart {
+  display: none;
+  padding-right: 0.875em;
+  display: block;
+  position: relative;
+}
+/* line 408, ../sass/_head.scss */
+#header .top-bar section ul#nav-main li#li-cart a {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/sprite.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 0 0 no-repeat;
+  display: block;
+  height: 1.625em;
+  text-indent: -99999px;
+  width: 1.6875em;
+}
+/* line 414, ../sass/_head.scss */
+#header .top-bar section ul#nav-main li#li-cart a.open {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/sprite.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) -40px 0 no-repeat;
+}
+/* line 417, ../sass/_head.scss */
+#header .top-bar section ul#nav-main li#li-cart a.num-cart-items {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  position: absolute;
+  top: -10px;
+  right: 2px;
+  height: 20px;
+  width: 20px;
+  background-color: #e83b26;
+  border: 2px solid #fff;
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+  text-indent: 0;
+  font: normal 0.6875em "GothamBook";
+  padding: 2px 2px 0 2px;
+}
+/* line 436, ../sass/_head.scss */
+#header .top-bar section ul#nav-main li#li-search {
+  border-left: 1px solid #d4d4d4;
+  padding-left: 0.875em;
+  padding-right: 0;
+  display: none;
+  display: block;
+}
+/* line 442, ../sass/_head.scss */
+#header .top-bar section ul#nav-main li#li-search a {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/sprite.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 0 -40px no-repeat;
+  display: block;
+  height: 1.625em;
+  text-indent: -99999px;
+  width: 1.5em;
+}
+/* line 448, ../sass/_head.scss */
+#header .top-bar section ul#nav-main li#li-search a.open {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/sprite.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) -40px -40px no-repeat;
+}
+/* line 454, ../sass/_head.scss */
+#header .top-bar section ul#nav-main li#li-mobile-search {
+  display: block;
+  margin-top: 1.25em;
+  margin-bottom: 0.625em;
+  display: none;
+}
+/* line 459, ../sass/_head.scss */
+#header .top-bar section ul#nav-main li#li-mobile-search .small-offset-1 {
+  margin-left: 4.33333%;
+}
+/* line 460, ../sass/_head.scss */
+#header .top-bar section ul#nav-main li#li-mobile-search #search-input {
+  position: relative;
+}
+/* line 461, ../sass/_head.scss */
+#header .top-bar section ul#nav-main li#li-mobile-search .prefix.button {
+  height: 2.4em;
+  font-size: 0.9em;
+  line-height: 1.4em;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  font-family: "GothamMedium";
+}
+/* line 471, ../sass/_head.scss */
+#header .top-bar section ul#nav-main li ul.dropdown {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/indicator-dropdown.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) 50px 19px no-repeat;
+  border-bottom: 1px solid #e9e9e9;
+  padding-top: 1.5em;
+  right: auto;
+  left: -30px;
+  -moz-box-shadow: 0 8px 6px -6px #ccc;
+  -webkit-box-shadow: 0 8px 6px -6px #ccc;
+  box-shadow: 0 8px 6px -6px #ccc;
+}
+/* line 481, ../sass/_head.scss */
+#header .top-bar section ul#nav-main li ul.dropdown li {
+  background-color: #fff;
+  border-top: 1px solid #e9e9e9;
+  border-left: 1px solid #e9e9e9;
+  border-right: 1px solid #e9e9e9;
+  min-width: 12.25em;
+}
+/* line 487, ../sass/_head.scss */
+#header .top-bar section ul#nav-main li ul.dropdown li a {
+  color: #333 !important;
+  font: normal 13px 'GothamBook';
+  padding: 1.25em 0 1.25em 1.75em;
+}
+/* line 493, ../sass/_head.scss */
+#header .top-bar section ul#nav-main li ul.dropdown li.hover a {
+  color: green !important;
+}
+
+/* END .top-bar */
+/* line 505, ../sass/_head.scss */
+.lt-ie9 #header .top-bar section ul#nav-main li#li-cart a.num-cart-items {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/bg-cart-number.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 0 0 no-repeat;
+  height: 24px;
+  width: 24px;
+  background-color: transparent;
+  border: 0;
+  padding: 6px 0 0 8px;
+}
+
+/* line 515, ../sass/_head.scss */
+.ie9 #header .top-bar section ul#nav-main li#li-cart a.num-cart-items,
+.ie10 #header .top-bar section ul#nav-main li#li-cart a.num-cart-items {
+  padding: 2px 4px 0;
+}
+
+/* Bottom of header 'drawers' for Cart, Login, Search */
+/* line 520, ../sass/_head.scss */
+#drawer-indicator {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/indicator-main-nav.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 0 0 no-repeat;
+  display: none;
+  height: 0.375em;
+  width: 0.9375em;
+  position: absolute;
+  bottom: -0.6875em;
+}
+
+/* line 529, ../sass/_head.scss */
+.di-cart {
+  display: block !important;
+  right: 4.8125em;
+}
+
+/* line 534, ../sass/_head.scss */
+.di-search {
+  display: block !important;
+  right: 1.5625em;
+}
+
+/* line 539, ../sass/_head.scss */
+.drawer-top-border {
+  border-top: 0.0625em solid #484848;
+}
+
+/* line 541, ../sass/_head.scss */
+.drawer-utility {
+  -moz-transition: height .2s;
+  -ms-transition: height .2s;
+  -o-transition: height .2s;
+  -webkit-transition: height .2s;
+  transition: height .2s;
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+}
+/* line 550, ../sass/_head.scss */
+.drawer-utility .drawer-wrapper {
+  background: #333;
+  margin-top: 0;
+  width: 100%;
+}
+/* line 554, ../sass/_head.scss */
+.drawer-utility .drawer-wrapper .form-container {
+  padding: 3.75em 0 5em;
+}
+/* line 556, ../sass/_head.scss */
+.drawer-utility p {
+  color: #c8c8c8;
+  font: normal 12px Arial;
+}
+/* line 559, ../sass/_head.scss */
+.drawer-utility p.heading {
+  color: #c8c8c8;
+  font: normal 18px 'GothamBook';
+  margin-bottom: 0.5em;
+  margin-top: 0.2em;
+}
+/* line 567, ../sass/_head.scss */
+.drawer-utility input, .drawer-utility a.button {
+  margin-top: 0.9375em;
+}
+/* line 568, ../sass/_head.scss */
+.drawer-utility a.button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #e63924;
+  border-color: #c12916;
+  color: white;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+  margin-top: 0.9375em;
+  padding-bottom: 0.625em;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+.drawer-utility a.button:hover, .drawer-utility a.button:focus {
+  background-color: #c12916;
+}
+/* line 134, ../sass/foundation/components/_buttons.scss */
+.drawer-utility a.button:hover, .drawer-utility a.button:focus {
+  color: white;
+}
+/* line 55, ../sass/_mixins.scss */
+.drawer-utility a.button:hover {
+  /*cursor: pointer;*/
+}
+/* line 573, ../sass/_head.scss */
+.drawer-utility a.button.prefix {
+  line-height: 2.125em;
+  margin-top: 1em;
+  height: 2.5em;
+}
+
+/* line 580, ../sass/_head.scss */
+.drawer {
+  background: #f7f7f7;
+}
+/* line 582, ../sass/_head.scss */
+.drawer .drawer-wrapper {
+  background: #f7f7f7 url(//images.mycricket.com/cricket?set=imageURL[file:/img/bg-gradient-drawer.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) center top repeat-x;
+  border-top: 0.0625em solid gainsboro;
+}
+
+/* line 588, ../sass/_head.scss */
+#drawer-utility-indicator {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/indicator-utility-nav.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 0 0 no-repeat;
+  display: none;
+  height: 0.4375em;
+  width: 1.25em;
+  position: absolute;
+  top: 2em;
+  z-index: 1;
+}
+
+/* line 598, ../sass/_head.scss */
+.dui-location {
+  display: block !important;
+  right: 9.25em;
+}
+
+/* line 603, ../sass/_head.scss */
+.dui-log-in {
+  display: block !important;
+  right: 3.5625em;
+}
+
+/* line 609, ../sass/_head.scss */
+#drawer-location .login-message {
+  padding-top: 0.9375em;
+  width: 20%;
+}
+/* line 612, ../sass/_head.scss */
+#drawer-location .login-message a {
+  color: #e63924;
+}
+/* line 615, ../sass/_head.scss */
+#drawer-location .errors-location {
+  display: none;
+}
+/* line 617, ../sass/_head.scss */
+#drawer-location .errors-location p {
+  border-top: 1px solid #e63924;
+  color: #e63924;
+  padding: 0.625em 0 0;
+}
+/* line 624, ../sass/_head.scss */
+#drawer-location .zip-results {
+  border-top: 1px solid #ccc;
+  padding-top: 1.25em;
+  display: none;
+}
+/* line 628, ../sass/_head.scss */
+#drawer-location .zip-results p.heading {
+  color: #fff;
+  font: bold 13px Arial;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+/* line 634, ../sass/_head.scss */
+#drawer-location .zip-results a {
+  margin: 0;
+}
+
+/* END #drawer-location */
+/* line 640, ../sass/_head.scss */
+#drawer-log-in p {
+  color: #c8c8c8;
+  font: normal 12px Arial;
+}
+/* line 643, ../sass/_head.scss */
+#drawer-log-in p.heading {
+  color: #c8c8c8;
+  font: normal 18px 'GothamBook';
+  margin-bottom: 0.5em;
+  margin-top: 0.2em;
+}
+/* line 650, ../sass/_head.scss */
+#drawer-log-in ul {
+  list-style: none;
+}
+/* line 651, ../sass/_head.scss */
+#drawer-log-in ul li {
+  border-right: 1px solid #484848;
+  color: #c8c8c8;
+  display: inline-block;
+  height: 1.125em;
+  font: normal 13px Arial;
+  margin-right: 0.75em;
+  padding-right: 1em;
+}
+/* line 659, ../sass/_head.scss */
+#drawer-log-in ul li.no-pipe {
+  border-right: 0;
+}
+/* line 660, ../sass/_head.scss */
+#drawer-log-in ul li.last {
+  margin-right: 0;
+  padding-right: 0;
+}
+/* line 664, ../sass/_head.scss */
+#drawer-log-in ul li label {
+  color: #c8c8c8;
+  font: normal 13px Arial;
+}
+/* line 668, ../sass/_head.scss */
+#drawer-log-in ul li a {
+  color: #e83b26;
+}
+/* line 669, ../sass/_head.scss */
+#drawer-log-in ul li a.button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #e63924;
+  border-color: #c12916;
+  color: white;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+#drawer-log-in ul li a.button:hover, #drawer-log-in ul li a.button:focus {
+  background-color: #c12916;
+}
+/* line 134, ../sass/foundation/components/_buttons.scss */
+#drawer-log-in ul li a.button:hover, #drawer-log-in ul li a.button:focus {
+  color: white;
+}
+/* line 55, ../sass/_mixins.scss */
+#drawer-log-in ul li a.button:hover {
+  /*cursor: pointer;*/
+}
+/* line 674, ../sass/_head.scss */
+#drawer-log-in label.password-label-ie {
+  display: none;
+  color: #C8C8C8;
+  font-size: 13px;
+}
+/* line 680, ../sass/_head.scss */
+#drawer-log-in .errors-login {
+  display: none;
+}
+/* line 682, ../sass/_head.scss */
+#drawer-log-in .errors-login p {
+  border-top: 1px solid #e63924;
+  color: #e63924;
+  padding: 0.625em 0 0;
+}
+
+/* Moved #drawer-cart styles to _cart.scss file */
+/* line 693, ../sass/_head.scss */
+#drawer-search .row.first {
+  padding: 1.25em 0;
+}
+/* line 694, ../sass/_head.scss */
+#drawer-search #search-input {
+  position: relative;
+}
+/* line 695, ../sass/_head.scss */
+#drawer-search .close-drawer {
+  margin: 1em auto;
+}
+/* line 696, ../sass/_head.scss */
+#drawer-search .close-drawer a {
+  background-position: 50% 50%;
+  width: 100%;
+}
+
+/* line 702, ../sass/_head.scss */
+.close-drawer {
+  padding-right: 1.375em;
+}
+/* line 704, ../sass/_head.scss */
+.close-drawer a {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/close.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 0 0 no-repeat;
+  display: block;
+  padding-top: 0.1875em;
+  text-indent: -99999px;
+  height: 1.1875em;
+  width: 1.1875em;
+}
+
+/* line 714, ../sass/_head.scss */
+#drawer-mobile-location {
+  -moz-transition: height .2s;
+  -ms-transition: height .2s;
+  -o-transition: height .2s;
+  -webkit-transition: height .2s;
+  transition: height .2s;
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+}
+/* line 723, ../sass/_head.scss */
+#drawer-mobile-location .drawer-wrapper {
+  background: #333;
+  margin-top: 0;
+  width: 100%;
+}
+/* line 727, ../sass/_head.scss */
+#drawer-mobile-location .drawer-wrapper .form-container {
+  padding: 1.25em 1.25em 9.375em;
+}
+/* line 729, ../sass/_head.scss */
+#drawer-mobile-location .drawer-wrapper .form-container input {
+  width: 95%;
+}
+/* line 730, ../sass/_head.scss */
+#drawer-mobile-location .drawer-wrapper .form-container p.heading {
+  color: #FFFFFF;
+  font: 18px 'GothamBook';
+  margin-top: 1.25em;
+  text-transform: uppercase;
+  margin-bottom: 0.5em;
+}
+/* line 737, ../sass/_head.scss */
+#drawer-mobile-location .drawer-wrapper .form-container .errors-mobile-location {
+  display: none;
+  width: 95%;
+}
+/* line 740, ../sass/_head.scss */
+#drawer-mobile-location .drawer-wrapper .form-container .errors-mobile-location p {
+  border-top: 1px solid #e63924;
+  color: #e63924;
+  padding: 0.625em 0 0;
+}
+/* line 747, ../sass/_head.scss */
+#drawer-mobile-location .drawer-wrapper .form-container .mobile-zip-results {
+  display: none;
+  border-top: 1px solid #ccc;
+  padding-top: 0.625em;
+  width: 95%;
+}
+/* line 752, ../sass/_head.scss */
+#drawer-mobile-location .drawer-wrapper .form-container .mobile-zip-results p.heading {
+  color: #fff;
+  font: bold 13px Arial;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+/* line 758, ../sass/_head.scss */
+#drawer-mobile-location .drawer-wrapper .form-container .mobile-zip-results ul li {
+  padding: 0.625em 0;
+}
+/* line 759, ../sass/_head.scss */
+#drawer-mobile-location .drawer-wrapper .form-container .mobile-zip-results a {
+  display: block;
+  width: 100%;
+}
+/* line 767, ../sass/_head.scss */
+#drawer-mobile-location h2 {
+  color: #fff;
+  font: normal 18px 'GothamBook';
+  margin-top: 1.25em;
+}
+/* line 772, ../sass/_head.scss */
+#drawer-mobile-location p {
+  color: #fff;
+  font: normal 13px Arial;
+}
+/* line 776, ../sass/_head.scss */
+#drawer-mobile-location hr {
+  margin: 0.3125em 0 0.9375em;
+  width: 95%;
+}
+/* line 781, ../sass/_head.scss */
+#drawer-mobile-location a.button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #e63924;
+  border-color: #c12916;
+  color: white;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+  margin-bottom: 0;
+  width: 95%;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+#drawer-mobile-location a.button:hover, #drawer-mobile-location a.button:focus {
+  background-color: #c12916;
+}
+/* line 134, ../sass/foundation/components/_buttons.scss */
+#drawer-mobile-location a.button:hover, #drawer-mobile-location a.button:focus {
+  color: white;
+}
+/* line 55, ../sass/_mixins.scss */
+#drawer-mobile-location a.button:hover {
+  /*cursor: pointer;*/
+}
+/* line 786, ../sass/_head.scss */
+#drawer-mobile-location a.btn-log-in-now {
+  color: #e83b26;
+  text-transform: uppercase;
+}
+
+/* END Drawers */
+/* All styles related to the HEAD block and global header are found in _head.scss file */
+/** FOOTER **/
+/* line 2, ../sass/_footer.scss */
+#footer {
+  color: #fff;
+  padding-top: 0;
+  background-color: #252525;
+  background-image: -webkit-linear-gradient(top, #171717 0%, #333333 100%);
+  background-image: -moz-linear-gradient(top, #171717 0%, #333333 100%);
+  background-image: -ms-linear-gradient(top, #171717 0%, #333333 100%);
+  background-image: -o-linear-gradient(top, #171717 0%, #333333 100%);
+  background-image: linear-gradient(to bottom, #171717 0%, #333333 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#171717', endColorstr='#333333');
+  /* This style applies to mobile phones like iphone and samsung so phone numbers look like links */
+}
+/* line 6, ../sass/_footer.scss */
+#footer a.circle-arrow {
+  color: #e63924;
+  margin-top: 0.3125em;
+  padding: 0.125em 0 0 1.5625em;
+}
+/* line 11, ../sass/_footer.scss */
+#footer h3 {
+  line-height: 12px;
+  margin-top: 0;
+  margin-bottom: 0.625em;
+  color: #fff;
+  font: normal 12px Arial;
+  text-transform: uppercase;
+}
+/* line 18, ../sass/_footer.scss */
+#footer h3.title {
+  font: normal 14px Arial;
+}
+/* line 19, ../sass/_footer.scss */
+#footer h3 a {
+  color: #fff;
+  font: normal 14px Arial;
+  text-transform: uppercase;
+  cursor: default;
+}
+/* line 26, ../sass/_footer.scss */
+#footer ul {
+  list-style-type: none;
+}
+/* line 27, ../sass/_footer.scss */
+#footer a {
+  color: #ccc;
+  font: normal 14px Arial;
+  font: normal 12px Arial;
+}
+/* line 32, ../sass/_footer.scss */
+#footer ul.inline-list li span a {
+  color: #e63924;
+}
+/* line 33, ../sass/_footer.scss */
+#footer a.button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #e63924;
+  border-color: #c12916;
+  color: white;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+  height: 2.5125em;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+#footer a.button:hover, #footer a.button:focus {
+  background-color: #c12916;
+}
+/* line 134, ../sass/foundation/components/_buttons.scss */
+#footer a.button:hover, #footer a.button:focus {
+  color: white;
+}
+/* line 55, ../sass/_mixins.scss */
+#footer a.button:hover {
+  /*cursor: pointer;*/
+}
+
+/* END footer */
+/* line 39, ../sass/_footer.scss */
+#footer-connect {
+  background-color: #212121;
+  padding-top: 1.75em;
+  /* /.social-links */
+}
+/* line 42, ../sass/_footer.scss */
+#footer-connect h3 {
+  text-align: left;
+  text-align: right;
+}
+/* line 45, ../sass/_footer.scss */
+#footer-connect h3 label {
+  color: #fff;
+  font: normal 12px Arial;
+  padding-top: 0.625em;
+  text-transform: uppercase;
+  cursor: default;
+  font: normal 14px Arial;
+  font: normal 15px Arial;
+}
+/* line 55, ../sass/_footer.scss */
+#footer-connect input {
+  color: #999;
+}
+/* line 56, ../sass/_footer.scss */
+#footer-connect fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  margin: 0 2.5em 0 0;
+}
+/* line 62, ../sass/_footer.scss */
+#footer-connect .social-links {
+  line-height: 0.75em;
+}
+/* line 64, ../sass/_footer.scss */
+#footer-connect .social-links li {
+  margin-right: 7%;
+  display: inline-block;
+  margin-right: 6%;
+  margin-right: 10%;
+  margin-right: 0.3125em;
+}
+/* line 70, ../sass/_footer.scss */
+#footer-connect .social-links li a {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/sprite.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 0 -101px no-repeat;
+  display: block;
+  height: 34px;
+  text-indent: -99999px;
+  width: 35px;
+}
+/* line 77, ../sass/_footer.scss */
+#footer-connect .social-links li.last {
+  margin-right: 0;
+}
+/* line 78, ../sass/_footer.scss */
+#footer-connect .social-links li#li-facebook a {
+  background-position: 0 -169px;
+}
+/* line 79, ../sass/_footer.scss */
+#footer-connect .social-links li#li-youtube a {
+  background-position: 0 -240px;
+}
+/* line 80, ../sass/_footer.scss */
+#footer-connect .social-links li#li-instagram a {
+  background-position: 0 -320px;
+}
+/* line 81, ../sass/_footer.scss */
+#footer-connect .social-links li#li-flickr a {
+  background-position: 0 -400px;
+}
+/* line 84, ../sass/_footer.scss */
+#footer-connect .errors-email-signup {
+  display: none;
+}
+/* line 86, ../sass/_footer.scss */
+#footer-connect .errors-email-signup p {
+  border-top: 1px solid #e63924;
+  color: #e63924;
+  font: normal 12px Arial;
+  padding: 0.625em 0 0;
+}
+
+/* END #footer-connect */
+/* line 95, ../sass/_footer.scss */
+#footer-callouts {
+  margin-top: 0;
+  margin-bottom: 0;
+  border-bottom: 1px solid #3d3d3d;
+  margin-top: 1.125em;
+  margin-bottom: 1.875em;
+}
+/* line 103, ../sass/_footer.scss */
+#footer-callouts .columns {
+  padding-left: 0;
+  padding-right: 0;
+  padding-left: 0.3125em;
+  padding-right: 0.3125em;
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+}
+/* line 115, ../sass/_footer.scss */
+#footer-callouts .panel {
+  background-color: #282828;
+  margin-bottom: 0;
+  margin-bottom: 1.25em;
+}
+/* line 119, ../sass/_footer.scss */
+#footer-callouts .panel.callout {
+  box-shadow: none;
+  border-width: 0;
+  border-bottom: 1px solid #333;
+  border-bottom: 0;
+}
+/* line 125, ../sass/_footer.scss */
+#footer-callouts .panel h3 {
+  color: #ccc;
+  font: normal 16px Arial;
+  text-transform: none;
+}
+/* line 130, ../sass/_footer.scss */
+#footer-callouts .panel p {
+  color: #ccc;
+  font: normal 12px Arial;
+}
+/* line 134, ../sass/_footer.scss */
+#footer-callouts .panel span {
+  color: #ccc;
+  font-size: 18px;
+  font-size: 14px;
+  font-size: 18px;
+}
+/* line 142, ../sass/_footer.scss */
+#footer-callouts .inline-list .find-store {
+  margin-top: 0.3125em;
+  margin-bottom: 0.1875em;
+}
+/* line 146, ../sass/_footer.scss */
+#footer-callouts .inline-list #click-chat {
+  margin-top: 1px !important;
+  padding-left: 8px !important;
+}
+/* line 151, ../sass/_footer.scss */
+#footer-callouts .border-link {
+  margin-top: 4px;
+  margin-left: 10px;
+  padding-left: 10px;
+  /* Do we need these border-left: none;? Don't seem to be set in our stuff? */
+  border-left: none;
+  border-left: none;
+}
+
+/* END #footer-callouts */
+/* line 162, ../sass/_footer.scss */
+#footer-sitemap {
+  /* Only Shown for Mobile/Tablet - Accordions */
+  /* /.section-container */
+  /* Shown for Desktop - no accordions */
+}
+/* line 164, ../sass/_footer.scss */
+#footer-sitemap.section-container {
+  border-style: none;
+}
+/* line 166, ../sass/_footer.scss */
+#footer-sitemap.section-container .columns {
+  padding-left: 0;
+  padding-right: 0;
+}
+/* line 170, ../sass/_footer.scss */
+#footer-sitemap.section-container .title {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-footer-nav-plus.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 95% 10px no-repeat;
+  border-top: 0;
+  margin-bottom: 0;
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+}
+/* line 177, ../sass/_footer.scss */
+#footer-sitemap.section-container .active .title {
+  background-image: url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-footer-nav-minus.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]);
+}
+/* line 180, ../sass/_footer.scss */
+#footer-sitemap.section-container .content {
+  background-color: #3d3d3d;
+  padding-left: 1.5625em;
+}
+/* line 188, ../sass/_footer.scss */
+#footer-sitemap .title {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  margin-bottom: 0.625em;
+}
+/* line 194, ../sass/_footer.scss */
+#footer-sitemap .active .title {
+  background-image: none;
+}
+/* line 195, ../sass/_footer.scss */
+#footer-sitemap .content {
+  background-color: transparent;
+  padding-left: 0;
+}
+
+/* END #footer-sitemap */
+/* line 202, ../sass/_footer.scss */
+#footer-text-message {
+  display: none;
+  display: block;
+  margin-top: 0.3125em;
+}
+/* line 206, ../sass/_footer.scss */
+#footer-text-message hr {
+  margin: 0.625em 0;
+  border: 0;
+  width: 100%;
+  color: #3d3d3d;
+  background-color: #3d3d3d;
+  height: 1px;
+  margin-bottom: 1.25em;
+}
+/* line 210, ../sass/_footer.scss */
+#footer-text-message h3 {
+  text-align: left;
+  text-align: right;
+}
+/* line 214, ../sass/_footer.scss */
+#footer-text-message p {
+  line-height: 0.75em;
+}
+
+/* END #footer-text-message */
+/* line 217, ../sass/_footer.scss */
+#footer-utility {
+  background: #242424;
+  color: #ccc;
+  padding: 0.5em 0;
+  text-transform: uppercase;
+}
+/* line 222, ../sass/_footer.scss */
+#footer-utility ul {
+  line-height: 12px;
+  margin-bottom: 25px;
+  margin-bottom: 0;
+}
+/* line 227, ../sass/_footer.scss */
+#footer-utility ul li {
+  border-right: 1px solid #525252;
+  display: inline-block;
+  margin-right: 0.75em;
+  padding-right: 0.875em;
+}
+/* line 233, ../sass/_footer.scss */
+#footer-utility ul li.last {
+  border-right: 0;
+  margin-right: 0;
+  padding-right: 0;
+}
+/* line 238, ../sass/_footer.scss */
+#footer-utility a {
+  color: #ccc;
+  font-size: 11px;
+}
+/* line 242, ../sass/_footer.scss */
+#footer-utility p {
+  font: normal 11px Arial;
+  margin-bottom: 0;
+}
+
+/* END #footer-utility */
+/* line 249, ../sass/_footer.scss */
+#disclaimer-container img {
+  display: block;
+  margin-top: 15px;
+  width: 65%;
+}
+/* line 254, ../sass/_footer.scss */
+#disclaimer-container #verisign-container img {
+  width: 100px;
+}
+
+/* All styles related to the global footer are found in _footer.scss file */
+/** BASE CSS Filter - Titles, links, global stuff **/
+/* Base CSS File */
+/* line 2, ../sass/_base.scss */
+h1 {
+  letter-spacing: -2px;
+}
+
+/* line 3, ../sass/_base.scss */
+h1, h2 {
+  font-family: "GothamBlack";
+  font-weight: normal;
+  text-transform: uppercase;
+  line-height: inherit;
+}
+
+/* line 9, ../sass/_base.scss */
+sup, sub {
+  font-size: 60%;
+}
+
+/* Bullet List within Tabs */
+/* line 12, ../sass/_base.scss */
+ul.bullet-list {
+  margin-left: 15px;
+}
+
+/* line 13, ../sass/_base.scss */
+#tab-content ul.bullet-list {
+  font-size: 13px;
+  font-family: Helvetica,Arial,sans-serif;
+}
+
+/* No results content */
+/* line 19, ../sass/_base.scss */
+.no-results {
+  padding: 35px 0 25px 10px;
+  border-top: 1px solid #ddd;
+  margin-top: 15px;
+}
+
+/* Overrides for default button */
+/* line 26, ../sass/_base.scss */
+.button {
+  text-transform: uppercase;
+  font: normal 13px 'GothamMedium';
+}
+
+/* line 30, ../sass/_base.scss */
+.no-padding {
+  padding: 0 !important;
+}
+
+/* line 31, ../sass/_base.scss */
+.no-margin {
+  margin: 0 !important;
+}
+
+/* line 33, ../sass/_base.scss */
+a.circle-arrow {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-arrow-orange-circle.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat left top;
+  color: #e63924;
+  font-size: 12px;
+  margin-top: 1.25em;
+  padding: 0.125em 0 0.3125em 1.5625em;
+  text-transform: uppercase;
+}
+
+/* line 42, ../sass/_base.scss */
+a.circle-arrow.white {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-arrow-white-circle.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat left top;
+  color: #FFFFFF;
+  font-size: 19px;
+  margin-top: 0.5em;
+  padding: 0 0 0 1.4375em;
+  text-transform: uppercase;
+  float: right;
+}
+
+/* KM - to do - upload new image to LiquidPixel - this one is wrong */
+/* line 52, ../sass/_base.scss */
+a.circle-arrow.green {
+  background: transparent url(../img/icon-arrow-green-circle.png) left top no-repeat;
+  color: #00ac79;
+  font-size: 12px;
+  margin-top: 1.25em;
+  padding: 0.0625em 0 0.3125em 1.5625em;
+  text-transform: uppercase;
+}
+
+/* line 61, ../sass/_base.scss */
+a.pdf {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-pdf.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat left top;
+  color: #e63924;
+  font-size: 0.9375em;
+  padding: 0.1em 0 0 1.75em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* line 70, ../sass/_base.scss */
+.green-add-cart {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #09be83;
+  border-color: #078d61;
+  color: white;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+  display: block;
+  border: 1px solid #0b9a6a;
+  padding: 0.8em;
+  font-size: 15px;
+  width: 60%;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+.green-add-cart:hover, .green-add-cart:focus {
+  background-color: #078d61;
+}
+/* line 134, ../sass/foundation/components/_buttons.scss */
+.green-add-cart:hover, .green-add-cart:focus {
+  color: white;
+}
+/* line 55, ../sass/_mixins.scss */
+.green-add-cart:hover {
+  /*cursor: pointer;*/
+}
+
+/* Grey Disabled Buttons */
+/* line 80, ../sass/_base.scss */
+.grey-add-cart {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #dbdbdc;
+  border-color: #c1c1c3;
+  color: #333333;
+  cursor: "default";
+  opacity: 0.6;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+  cursor: default;
+  border: 1px solid #bbbdbf;
+  padding: 0.8em;
+  font-size: 15px;
+  cursor: default;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+.grey-add-cart:hover, .grey-add-cart:focus {
+  background-color: #c1c1c3;
+}
+/* line 129, ../sass/foundation/components/_buttons.scss */
+.grey-add-cart:hover, .grey-add-cart:focus {
+  color: #333333;
+}
+/* line 147, ../sass/foundation/components/_buttons.scss */
+.grey-add-cart:hover, .grey-add-cart:focus {
+  background-color: #dbdbdc;
+}
+
+/* General Grey Button */
+/* line 89, ../sass/_base.scss */
+.white-button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: white;
+  border-color: #e6e6e6;
+  color: #333333;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+  color: #006d42;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+.white-button:hover, .white-button:focus {
+  background-color: #e6e6e6;
+}
+/* line 129, ../sass/foundation/components/_buttons.scss */
+.white-button:hover, .white-button:focus {
+  color: #333333;
+}
+/* line 55, ../sass/_mixins.scss */
+.white-button:hover {
+  /*cursor: pointer;*/
+}
+
+/* line 94, ../sass/_base.scss */
+.orange-button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #eb3e29;
+  border-color: #ce2713;
+  color: white;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+  color: #ffffff;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+.orange-button:hover, .orange-button:focus {
+  background-color: #ce2713;
+}
+/* line 134, ../sass/foundation/components/_buttons.scss */
+.orange-button:hover, .orange-button:focus {
+  color: white;
+}
+/* line 55, ../sass/_mixins.scss */
+.orange-button:hover {
+  /*cursor: pointer;*/
+}
+
+/* line 99, ../sass/_base.scss */
+.grey-button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #dbdbdc;
+  border-color: #c1c1c3;
+  color: #333333;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+  color: #218f68;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+.grey-button:hover, .grey-button:focus {
+  background-color: #c1c1c3;
+}
+/* line 129, ../sass/foundation/components/_buttons.scss */
+.grey-button:hover, .grey-button:focus {
+  color: #333333;
+}
+/* line 55, ../sass/_mixins.scss */
+.grey-button:hover {
+  /*cursor: pointer;*/
+}
+
+/* line 104, ../sass/_base.scss */
+.disabled-button {
+  background: grey !important;
+  border-color: grey !important;
+  color: #ccc !important;
+  pointer: auto !important;
+}
+
+/* We use some form stuff on the Phones Landing Page */
+/* line 113, ../sass/_base.scss */
+fieldset legend {
+  background: transparent;
+  color: #fff;
+}
+/* line 117, ../sass/_base.scss */
+fieldset span {
+  font-size: 0.8em;
+}
+
+/** Global Style **/
+/* line 121, ../sass/_base.scss */
+.green-price {
+  font-family: "GothamBold";
+  font-size: 2.8em;
+  color: #008752;
+  letter-spacing: -0.03em;
+}
+
+/* line 128, ../sass/_base.scss */
+.orbit-bullets li {
+  border: 0;
+  border-radius: 0;
+  height: 19px;
+  width: 19px;
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/orbit-dots.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) -26px 0 no-repeat !important;
+}
+
+/* line 136, ../sass/_base.scss */
+.orbit-bullets li:hover, .orbit-bullets li.active {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/orbit-dots.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 0 0 no-repeat !important;
+}
+
+/* Global subnav styling (used on phone listing page)*/
+/* line 141, ../sass/_base.scss */
+.sub-nav {
+  padding: 1em 0 0.5em 0;
+  margin: 0;
+  /* Desktop Version */
+  border-top: none;
+  margin: 1em 0 1em 0;
+  padding: 0;
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/subnav-line.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) repeat-x bottom left;
+}
+/* line 144, ../sass/_base.scss */
+.sub-nav dd {
+  display: block;
+  margin: 0;
+  float: none;
+}
+/* line 148, ../sass/_base.scss */
+.sub-nav dd.active a {
+  padding: 0;
+  display: block;
+}
+/* line 156, ../sass/_base.scss */
+.sub-nav dd {
+  margin-bottom: 0;
+  margin-right: 0.5625em;
+  height: 2.3em;
+  display: inline;
+  padding-top: 0.25em;
+  float: left;
+  margin-left: 0.5625em;
+}
+/* line 164, ../sass/_base.scss */
+.sub-nav dd.active a {
+  display: inline;
+  padding: 0.1875em 0.5625em;
+}
+/* line 166, ../sass/_base.scss */
+.sub-nav dd.active {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-active-subnav.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat bottom center;
+  display: block;
+  font-size: 1.13em;
+  text-align: inherit;
+  float: left;
+  text-transform: none;
+  font-family: inherit;
+  padding-top: 0;
+}
+
+/* Global Alert Box Style - for when there isn't a ZipCode entered*/
+/* line 181, ../sass/_base.scss */
+.alert-box {
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #333333;
+  margin: 0 0 1em 0;
+  line-height: 1.5em;
+  padding: 0.9375em 1.5625em 1em 0.9375em;
+  font-size: 12px;
+}
+/* line 189, ../sass/_base.scss */
+.alert-box a {
+  color: #e63924;
+}
+
+/* LEGAL FOOTER (within pages)*/
+/* line 194, ../sass/_base.scss */
+.section-legal {
+  margin: 0 auto;
+  padding-bottom: 2em;
+}
+/* line 197, ../sass/_base.scss */
+.section-legal h4 {
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  color: #333;
+  font: bold 11px Arial;
+  padding: 0.9375em 0 0.9375em 0.75em;
+  text-transform: uppercase;
+  padding: 0.9375em 0 0.9375em 0.3125em;
+}
+
+/* line 210, ../sass/_base.scss */
+.section-legal #section-container-legal {
+  border-style: none;
+  /* Active State of Tabs */
+}
+/* line 212, ../sass/_base.scss */
+.section-legal #section-container-legal #hidden {
+  display: none;
+}
+/* line 214, ../sass/_base.scss */
+.section-legal #section-container-legal #hidden p.title, .section-legal #section-container-legal #hidden .content {
+  display: none;
+}
+/* line 217, ../sass/_base.scss */
+.section-legal #section-container-legal section.active p.title {
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-legal-accordion-minus.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 98% 15px no-repeat;
+  background: none;
+}
+/* line 219, ../sass/_base.scss */
+.section-legal #section-container-legal section.active p.title a {
+  color: #008752;
+}
+/* line 224, ../sass/_base.scss */
+.section-legal #section-container-legal p.title {
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-legal-accordion-plus.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 98% 15px no-repeat;
+  border: 0;
+  background: none;
+  border: 0;
+}
+/* line 232, ../sass/_base.scss */
+.section-legal #section-container-legal p.title a {
+  color: #333;
+  text-transform: uppercase;
+  padding-left: 0.9375em;
+  font: normal 11px Arial;
+  padding: 0 1.25em 0.3125em 0.125em;
+}
+/* line 241, ../sass/_base.scss */
+.section-legal #section-container-legal .content {
+  border-bottom: 1px solid #d9d9d9;
+  color: #333;
+  font: normal 11px/16px Arial;
+  border: 0;
+  margin-top: 0.625em;
+  margin-bottom: 2.1875em;
+  padding: 0 0 0 0.125em;
+}
+/* line 245, ../sass/_base.scss */
+.section-legal #section-container-legal .content a {
+  color: #e63924;
+}
+
+/*** Reveal Overlays - use same Close buttons as everywhere else ***/
+/* line 256, ../sass/_base.scss */
+.reveal-modal .close-reveal-modal {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/close.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 0 0;
+  display: block;
+  height: 19px;
+  text-indent: -99999px;
+  width: 19px;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  cursor: pointer;
+}
+
+/* Reveal Notification Modals */
+/* line 270, ../sass/_base.scss */
+.notification p.title {
+  color: #333;
+  font: normal 18px 'GothamBold';
+  margin-bottom: 0.625em;
+  text-transform: none;
+}
+/* line 276, ../sass/_base.scss */
+.notification p {
+  color: #333;
+  font: normal 13px/16px 'GothamBook';
+}
+/* line 280, ../sass/_base.scss */
+.notification form label {
+  color: #333;
+  font: normal 16px 'GothamBook';
+  margin-bottom: 0.625em;
+}
+/* line 284, ../sass/_base.scss */
+.notification form label span {
+  padding-top: 5px;
+}
+/* line 288, ../sass/_base.scss */
+.notification a {
+  color: #e63924;
+  font-size: 12px;
+  padding: 0.125em 0 0.3125em 0;
+  text-transform: uppercase;
+}
+/* line 293, ../sass/_base.scss */
+.notification a.button {
+  color: #fff;
+}
+
+/* Checkboxes on Windows don't look great so use an image */
+/* line 298, ../sass/_base.scss */
+.lt-ie10 form.custom .custom.checkbox.checked:before {
+  content: url(//images.mycricket.com/cricket?set=imageURL[file:/img/ie-form-checkbox-x.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) !important;
+}
+
+/* line 301, ../sass/_base.scss */
+.ie9 form.custom .custom.checkbox.checked:before {
+  margin-top: 12px !important;
+}
+
+/* line 305, ../sass/_base.scss */
+.lt-ie10 #section-checkout-form .details-content .form form.custom .checkbox.checked:before {
+  content: url(//images.mycricket.com/cricket?set=imageURL[file:/img/ie-form-checkbox-check.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) !important;
+  margin-left: 12px !important;
+  margin-top: 6px !important;
+}
+
+/* line 311, ../sass/_base.scss */
+.lt-ie10 .step2 #section-checkout-form .details-content .form form.custom .checkbox.checked:before {
+  margin-left: -7px !important;
+}
+
+/* line 315, ../sass/_base.scss */
+.orange-button.hover {
+  background-color: #CE2713;
+}
+
+/* line 319, ../sass/_base.scss */
+.green-button.hover {
+  background-color: #005433;
+}
+
+/** TEMPLATES **/
+/* TEMPLATE: Homepage */
+/* line 2, ../sass/_home.scss */
+#section-banner {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/bg-gradient-banner.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) top center repeat-x;
+  height: auto;
+  position: relative;
+  margin-bottom: 1.5625em;
+}
+/* line 7, ../sass/_home.scss */
+#section-banner .announcement p {
+  text-transform: uppercase;
+  margin: 1em 0;
+  font-size: 12px;
+  font-family: 'GothamMedium';
+}
+/* line 12, ../sass/_home.scss */
+#section-banner .announcement p a {
+  margin-left: 0.5em;
+}
+
+/* line 16, ../sass/_home.scss */
+#section-banner > div {
+  position: relative;
+}
+
+/* line 19, ../sass/_home.scss */
+.orbit-container img {
+  margin: 0 auto;
+}
+/* line 20, ../sass/_home.scss */
+.orbit-container .orbit-prev {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/home/banner-prev.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 0 0 no-repeat;
+  height: 4em;
+  width: 3.9375em;
+  z-index: 2000;
+  left: 0;
+}
+/* line 26, ../sass/_home.scss */
+.orbit-container .orbit-prev span {
+  visibility: hidden;
+}
+/* line 28, ../sass/_home.scss */
+.orbit-container .orbit-next {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/home/banner-next.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 0 0 no-repeat;
+  height: 4em;
+  width: 3.9375em;
+  z-index: 2000;
+  right: 0;
+}
+/* line 34, ../sass/_home.scss */
+.orbit-container .orbit-next span {
+  visibility: hidden;
+}
+
+/* line 38, ../sass/_home.scss */
+.orbit-timer, .orbit-slide-number {
+  visibility: hidden;
+}
+
+/* line 40, ../sass/_home.scss */
+.orbit-bullets {
+  left: 50%;
+  right: auto;
+  position: absolute;
+  right: 25%;
+  top: 80%;
+  left: auto;
+}
+/* line 49, ../sass/_home.scss */
+.orbit-bullets li {
+  cursor: pointer;
+}
+
+/* SECTION: Phones and Plans areas*/
+/* line 53, ../sass/_home.scss */
+.three-callouts {
+  padding-bottom: 1.5625em;
+}
+/* line 55, ../sass/_home.scss */
+.three-callouts h2 {
+  color: #008752;
+  font: normal 25px 'GothamBlack';
+  text-align: center;
+  font-size: 30px;
+  text-align: left;
+}
+/* line 60, ../sass/_home.scss */
+.three-callouts h2 span {
+  color: #00a522;
+}
+/* line 62, ../sass/_home.scss */
+.three-callouts img {
+  display: block;
+  margin: 2.5em auto 0.625em;
+}
+/* line 66, ../sass/_home.scss */
+.three-callouts .cta p {
+  margin: 0 auto;
+  width: 12.5em;
+  text-align: center;
+}
+/* line 71, ../sass/_home.scss */
+.three-callouts .prev {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/btn-swiper-prev.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 0 0 no-repeat;
+  height: 1.3125em;
+  width: 0.75em;
+  position: absolute;
+  top: 40%;
+  text-indent: -99999px;
+  left: 2%;
+  z-index: 2;
+}
+/* line 80, ../sass/_home.scss */
+.three-callouts .prev.disabled {
+  background: none;
+  cursor: pointer;
+  visibility: hidden;
+}
+/* line 86, ../sass/_home.scss */
+.three-callouts .next {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/btn-swiper-next.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 0 0 no-repeat;
+  height: 1.3125em;
+  width: 0.75em;
+  position: absolute;
+  top: 40%;
+  text-indent: -99999px;
+  right: 3%;
+  z-index: 2;
+}
+/* line 95, ../sass/_home.scss */
+.three-callouts .next.disabled {
+  background: none;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+/* line 103, ../sass/_home.scss */
+#section-devices {
+  position: relative;
+}
+/* line 106, ../sass/_home.scss */
+#section-devices .device-container h3, #section-devices .swiper-slide h3 {
+  color: #333;
+  font: normal 25px 'GothamMedium';
+  text-align: center;
+}
+/* line 111, ../sass/_home.scss */
+#section-devices .device-container p, #section-devices .swiper-slide p {
+  text-align: center;
+}
+/* line 112, ../sass/_home.scss */
+#section-devices .device-container a.button, #section-devices .swiper-slide a.button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #e63924;
+  border-color: #c12916;
+  color: white;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+#section-devices .device-container a.button:hover, #section-devices .device-container a.button:focus, #section-devices .swiper-slide a.button:hover, #section-devices .swiper-slide a.button:focus {
+  background-color: #c12916;
+}
+/* line 134, ../sass/foundation/components/_buttons.scss */
+#section-devices .device-container a.button:hover, #section-devices .device-container a.button:focus, #section-devices .swiper-slide a.button:hover, #section-devices .swiper-slide a.button:focus {
+  color: white;
+}
+/* line 55, ../sass/_mixins.scss */
+#section-devices .device-container a.button:hover, #section-devices .swiper-slide a.button:hover {
+  /*cursor: pointer;*/
+}
+/* line 114, ../sass/_home.scss */
+#section-devices .device-container h3 {
+  min-height: 60px;
+}
+
+/* line 119, ../sass/_home.scss */
+#homepage-phones, #homepage-plans {
+  overflow: hidden;
+  height: 37.5em;
+  position: relative;
+}
+
+/* line 125, ../sass/_home.scss */
+#homepage-plans {
+  height: 23.125em;
+}
+
+/* line 127, ../sass/_home.scss */
+.three-callouts .carousel-prev, .three-callouts .plans-prev {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/home/banner-prev.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 0 0 no-repeat;
+  left: 0;
+  height: 4em;
+  width: 3.9375em;
+}
+
+/* line 133, ../sass/_home.scss */
+.three-callouts .carousel-next, .three-callouts .plans-next {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/home/banner-next.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 0 0 no-repeat;
+  right: 0;
+  height: 4em;
+  width: 3.9375em;
+}
+
+/* line 140, ../sass/_home.scss */
+.lt-ie9 .three-callouts .prev.carousel-prev, .lt-ie9 .three-callouts .next.carousel-next,
+.lt-ie9 .three-callouts .prev.plans-prev, .lt-ie9 .three-callouts .next.plans-next {
+  display: none !important;
+}
+
+/* line 141, ../sass/_home.scss */
+.lt-ie9 .three-callouts {
+  padding-bottom: 0 !important;
+}
+
+/* line 143, ../sass/_home.scss */
+#section-plans {
+  padding-top: 1.25em;
+  position: relative;
+}
+/* line 146, ../sass/_home.scss */
+#section-plans .prev, #section-plans .next {
+  top: 50%;
+}
+/* line 147, ../sass/_home.scss */
+#section-plans.three-callouts img {
+  margin-top: 1.3em;
+}
+
+/* line 150, ../sass/_home.scss */
+#section-plans .swiper-container, #section-plans .swiper-slide {
+  height: 350px;
+  height: 400px;
+}
+
+/* SECTION: Lifestyle Banner area */
+/* line 157, ../sass/_home.scss */
+#section-lifestyle {
+  position: relative;
+}
+/* line 159, ../sass/_home.scss */
+#section-lifestyle .orbit-bullets {
+  right: 45%;
+  top: 90%;
+}
+
+/* Callout Feature for Why-cricket */
+/* line 166, ../sass/_home.scss */
+#why-cricket-callout {
+  margin-bottom: 1em;
+}
+/* line 168, ../sass/_home.scss */
+#why-cricket-callout .wrapper {
+  padding: 2em 0em 2em 1.5em;
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/home/bg-why-cricket.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat top center;
+  background-size: cover;
+  font-family: "GothamMedium";
+}
+/* line 174, ../sass/_home.scss */
+#why-cricket-callout h1 {
+  color: #c1d72e;
+  font-size: 1.5em;
+  line-height: 0.9em;
+}
+/* line 178, ../sass/_home.scss */
+#why-cricket-callout h1 span {
+  display: block;
+  color: #fff;
+}
+/* line 183, ../sass/_home.scss */
+#why-cricket-callout .copy {
+  margin-top: 1em;
+}
+/* line 184, ../sass/_home.scss */
+#why-cricket-callout p {
+  color: #fff;
+  margin: 0;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  line-height: inherit;
+}
+/* line 191, ../sass/_home.scss */
+#why-cricket-callout ul {
+  list-style-position: inside;
+  margin-bottom: 0;
+}
+/* line 194, ../sass/_home.scss */
+#why-cricket-callout ul:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+/* line 198, ../sass/_home.scss */
+#why-cricket-callout ul li {
+  color: #fff;
+  margin: 0;
+  font-size: 0.8em;
+}
+/* line 203, ../sass/_home.scss */
+#why-cricket-callout .circle-arrow {
+  float: left;
+  margin-top: 1.5em;
+  display: block;
+}
+/* line 209, ../sass/_home.scss */
+#why-cricket-callout .copy {
+  margin-top: 0;
+  padding: 0;
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/home/bg-why-cricket-line.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 0 50%;
+}
+/* line 214, ../sass/_home.scss */
+#why-cricket-callout ul {
+  padding-left: 1em;
+  float: left;
+  padding-right: 1em;
+}
+/* line 219, ../sass/_home.scss */
+#why-cricket-callout .circle-arrow {
+  margin-left: 1em;
+  margin-top: 0.5em;
+}
+
+/* All styles related to the Home page */
+/** Phone Landing Page  - if you need an override class user .section-phones-listing **/
+/* Static Banner - hidden on mobile */
+/* line 3, ../sass/_phones.scss */
+.static-banner {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-position: 50% 50%;
+  background-size: auto auto;
+  background-repeat: no-repeat;
+  /* /.content */
+  /* iPad Overrides */
+  /* Desktop Overrides */
+}
+/* line 10, ../sass/_phones.scss */
+.static-banner .content {
+  position: absolute;
+  width: 25%;
+  top: 52%;
+  left: 23%;
+}
+/* line 15, ../sass/_phones.scss */
+.static-banner .content h1 {
+  color: #0a5641;
+  font-size: 2em;
+  margin-bottom: 0.2em;
+}
+/* line 19, ../sass/_phones.scss */
+.static-banner .content h1 span {
+  color: #008752;
+}
+/* line 21, ../sass/_phones.scss */
+.static-banner .content p {
+  text-transform: uppercase;
+  font-family: "GothamMedium";
+  font-size: 0.9em;
+  line-height: inherit;
+}
+/* line 31, ../sass/_phones.scss */
+.static-banner .content {
+  width: 35%;
+  top: 33%;
+  left: 15%;
+}
+/* line 40, ../sass/_phones.scss */
+.static-banner .content {
+  left: 23%;
+  width: 27%;
+  top: 40%;
+}
+/* line 44, ../sass/_phones.scss */
+.static-banner .content h1 {
+  font-size: 2.3em;
+}
+/* line 45, ../sass/_phones.scss */
+.static-banner .content p {
+  font-size: 0.9em;
+}
+
+/* /.static-banner */
+/* Bottom CTA - No HTML, all images  */
+/* line 52, ../sass/_phones.scss */
+.static-banner.footer {
+  max-width: 960px;
+  height: auto;
+  background-position: center top;
+  background-size: cover;
+  margin: 0 auto;
+  max-width: 1400px;
+}
+/* line 58, ../sass/_phones.scss */
+.static-banner.footer a {
+  height: 100%;
+}
+/* line 59, ../sass/_phones.scss */
+.static-banner.footer .spacer {
+  padding-bottom: 78.125%;
+}
+/* line 63, ../sass/_phones.scss */
+.static-banner.footer .spacer {
+  padding-bottom: 19.28571%;
+}
+
+/* /.static-banner.footer */
+/* KM - TO DO - this could use some additional cleanup */
+/* line 70, ../sass/_phones.scss */
+#section-filters {
+  /* Mobile version */
+  /* /.dropdown */
+  /* Desktop Version */
+  /* /.top-bar-section */
+  /* Green Filter Dropdown & Inside Contents */
+  /* /li.has-dropdown */
+  /* .left li.has-form */
+  /* Desktop Override  */
+}
+/* line 71, ../sass/_phones.scss */
+#section-filters .top-button {
+  margin-bottom: 20px;
+}
+/* line 73, ../sass/_phones.scss */
+#section-filters .top-bar {
+  border-bottom: 1px solid #d6d6d6;
+}
+/* line 75, ../sass/_phones.scss */
+#section-filters .top-bar .top-bar-section .left {
+  width: 100%;
+}
+/* line 76, ../sass/_phones.scss */
+#section-filters .top-bar .top-bar-section ul li > a {
+  color: #008752;
+  text-transform: uppercase;
+  font-weight: bold;
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-arrow-green-circle-right.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 95% 50%;
+}
+/* line 81, ../sass/_phones.scss */
+#section-filters .top-bar .top-bar-section ul li > a:after {
+  border-width: 0;
+  border-style: none;
+  border-color: transparent transparent transparent rgba(255, 255, 255, 0);
+}
+/* line 88, ../sass/_phones.scss */
+#section-filters .dropdown {
+  background: #008752;
+  padding-bottom: 2.5em;
+  /* Back link */
+  /* /fieldset */
+}
+/* line 92, ../sass/_phones.scss */
+#section-filters .dropdown li.title h5 a {
+  color: #c1d72e;
+  font-size: 1.125em;
+}
+/* line 96, ../sass/_phones.scss */
+#section-filters .dropdown form.custom .custom.checkbox.checked:before {
+  margin-top: 0;
+  color: green;
+}
+/* line 100, ../sass/_phones.scss */
+#section-filters .dropdown form {
+  height: 100%;
+}
+/* line 101, ../sass/_phones.scss */
+#section-filters .dropdown fieldset.current .label-wrapper {
+  display: block;
+  padding: 1em 0.8em;
+}
+/* line 105, ../sass/_phones.scss */
+#section-filters .dropdown fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+/* line 109, ../sass/_phones.scss */
+#section-filters .dropdown fieldset .label-wrapper {
+  display: none;
+}
+/* line 110, ../sass/_phones.scss */
+#section-filters .dropdown fieldset legend {
+  color: #c1d72e;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  border-bottom: 1px solid #48a983;
+  border-top: 1px solid #48a983;
+  width: 100%;
+  padding: 1em;
+}
+/* line 119, ../sass/_phones.scss */
+#section-filters .dropdown fieldset label {
+  color: #fff;
+  padding: 8px 0 2px 5px;
+  font-weight: normal;
+  font-size: 0.9em;
+}
+/* line 124, ../sass/_phones.scss */
+#section-filters .dropdown fieldset label span.checkbox {
+  margin-right: 5px;
+}
+/* line 129, ../sass/_phones.scss */
+#section-filters .dropdown input.white-button {
+  border: 1px solid #77a999;
+  margin-top: 2em;
+}
+/* line 135, ../sass/_phones.scss */
+#section-filters .top-bar.expanded {
+  max-height: auto !important;
+  height: auto !important;
+  overflow: visible;
+}
+/* line 141, ../sass/_phones.scss */
+#section-filters li.has-form {
+  display: none;
+}
+/* line 142, ../sass/_phones.scss */
+#section-filters .filters {
+  padding: 0;
+}
+/* line 146, ../sass/_phones.scss */
+#section-filters .top-bar {
+  border: 1px solid #b2b2b2;
+  height: 55px;
+  line-height: 55px;
+  margin: 0 0 1em 0;
+  background-color: #efefef;
+}
+/* line 154, ../sass/_phones.scss */
+#section-filters .top-bar-section ul {
+  background: transparent;
+}
+/* line 155, ../sass/_phones.scss */
+#section-filters .top-bar-section ul > .divider, #section-filters .top-bar-section ul > [role="separator"] {
+  height: 53px;
+  border-color: #b2b2b2;
+  border-width: thin 1px;
+  border-left: none;
+}
+/* line 161, ../sass/_phones.scss */
+#section-filters .top-bar-section li a:not(.button) {
+  line-height: 53px;
+}
+/* line 165, ../sass/_phones.scss */
+#section-filters nav.top-bar > section > ul > li.has-dropdown {
+  position: static;
+  /* Filter Hover Item */
+  /* Triangle on Hover*/
+  /* /.dropdown */
+}
+/* line 168, ../sass/_phones.scss */
+#section-filters nav.top-bar > section > ul > li.has-dropdown a {
+  color: #008752;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-arrow-green-circle.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 80% center;
+  padding: 0 21.6667px;
+  margin-right: 10px;
+}
+/* line 177, ../sass/_phones.scss */
+#section-filters nav.top-bar > section > ul > li.has-dropdown.hover a:after {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-green-arrow-up.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 50% 50%;
+  width: 17px;
+  height: 18px;
+  left: 55px;
+  top: 43px;
+}
+/* line 184, ../sass/_phones.scss */
+#section-filters nav.top-bar > section > ul > li.has-dropdown .dropdown {
+  -moz-box-shadow: inset 0 0 5px 5px #006d42;
+  -webkit-box-shadow: inset 0 0 5px 5px #006d42;
+  box-shadow: inset 0 0 5px 5px #006d42;
+  background: #008752;
+  top: 53px;
+  /* /.row */
+}
+/* line 190, ../sass/_phones.scss */
+#section-filters nav.top-bar > section > ul > li.has-dropdown .dropdown .row {
+  margin: 0;
+}
+/* line 192, ../sass/_phones.scss */
+#section-filters nav.top-bar > section > ul > li.has-dropdown .dropdown .row fieldset {
+  margin: 1.25em 0;
+}
+/* line 194, ../sass/_phones.scss */
+#section-filters nav.top-bar > section > ul > li.has-dropdown .dropdown .row fieldset .label-wrapper {
+  display: block;
+  padding: 0.5em 0;
+}
+/* line 196, ../sass/_phones.scss */
+#section-filters nav.top-bar > section > ul > li.has-dropdown .dropdown .row legend {
+  padding: 0 0.1875em;
+  border-top: none;
+  border-bottom: none;
+}
+/* line 204, ../sass/_phones.scss */
+#section-filters .left li.has-form {
+  display: block;
+  background-color: #efefef;
+  height: 53px;
+  padding: 1em;
+  width: 80%;
+  line-height: 1.3em;
+}
+/* line 211, ../sass/_phones.scss */
+#section-filters .left li.has-form label {
+  color: #008752;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+/* line 217, ../sass/_phones.scss */
+#section-filters .left li.has-form label, #section-filters .left li.has-form span.sort-label {
+  float: left;
+  margin: 0 0.5em;
+}
+/* line 221, ../sass/_phones.scss */
+#section-filters .left li.has-form .custom.radio.checked:before {
+  background-color: #008752;
+}
+
+/* /#section-filters */
+/* Mobile Accordion for Filters + & - for active/inactive states */
+/* line 229, ../sass/_phones.scss */
+#section-filters {
+  /*  /#phone-filters-dropdown.mobile-accordion */
+}
+/* line 231, ../sass/_phones.scss */
+#section-filters #phone-filters-dropdown.mobile-accordion .mobile-trigger {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-white-accordion-inactive.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 95% 50%;
+}
+/* line 235, ../sass/_phones.scss */
+#section-filters #phone-filters-dropdown.mobile-accordion .current .mobile-trigger {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-white-accordion-active.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 95% 50%;
+}
+
+/* /#section-filters */
+/* Filter Bar */
+/* line 243, ../sass/_phones.scss */
+#section-filters .filter-bar {
+  display: none;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+}
+/* line 248, ../sass/_phones.scss */
+#section-filters .filter-bar a {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-red-circle-x.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 1px 50%;
+  float: left;
+  color: #e53924;
+  padding: 0.6em 1em 0.6em 1.6em;
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+
+/* Phone Compare Bar */
+/* line 259, ../sass/_phones.scss */
+#compare-bar {
+  visibility: hidden;
+  padding: 0;
+  height: 0;
+}
+/* line 263, ../sass/_phones.scss */
+#compare-bar p {
+  text-transform: uppercase;
+  float: left;
+  margin-right: 1em;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  font-size: 0.9em;
+}
+/* line 271, ../sass/_phones.scss */
+#compare-bar img {
+  margin: 0 0.5em;
+}
+/* line 272, ../sass/_phones.scss */
+#compare-bar .button {
+  margin-bottom: 0;
+}
+/* line 273, ../sass/_phones.scss */
+#compare-bar .clear {
+  color: #ea3d28;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  border-right: 1px solid #ddd;
+  padding: 1em;
+  margin-right: 1em;
+}
+
+/* /#compare-bar */
+/* We add a class when they have clicked 2 items in JS */
+/* line 284, ../sass/_phones.scss */
+#compare-bar.shown {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 1em;
+  height: 4em;
+}
+
+/* h1 Title for Mobile */
+/* line 292, ../sass/_phones.scss */
+#section-filters .subnav {
+  border-bottom: 1px solid #dbdbdb;
+  padding: 1em;
+  border-bottom: none;
+  padding: 0;
+}
+/* line 295, ../sass/_phones.scss */
+#section-filters .subnav h2 {
+  display: block;
+  font-size: 1.3em;
+  margin-bottom: 0;
+  text-align: center;
+  font-family: "GothamBold";
+  color: #008752;
+  letter-spacing: -2px;
+}
+/* line 307, ../sass/_phones.scss */
+#section-filters .subnav h2 {
+  display: none;
+}
+
+/* line 312, ../sass/_phones.scss */
+#section-results {
+  /* /.results-item */
+  /* /.result-content */
+}
+/* line 313, ../sass/_phones.scss */
+#section-results .columns {
+  padding: 0;
+}
+/* line 314, ../sass/_phones.scss */
+#section-results .loading {
+  min-height: 400px;
+  padding: 3em 0;
+}
+/* line 315, ../sass/_phones.scss */
+#section-results .result-item {
+  text-align: center;
+  margin: 0 1%;
+  float: left;
+  width: 100%;
+  width: 31%;
+  width: 31%;
+}
+/* line 324, ../sass/_phones.scss */
+#section-results .result-item:first-child {
+  margin-top: 2em;
+  margin-top: 0;
+}
+/* line 328, ../sass/_phones.scss */
+#section-results .result-content {
+  display: block;
+  padding: 1.25em;
+  position: relative;
+  min-height: 460px;
+  padding-bottom: 0;
+  padding-top: 0;
+  /* iPad*/
+  padding: 1.00em;
+  /* Desktop */
+  padding: 1.25em;
+  /* /.green-add-cart, /.grey-add-cart */
+  /* /.discount */
+  /* /.compare */
+}
+/* line 335, ../sass/_phones.scss */
+#section-results .result-content:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+/* line 343, ../sass/_phones.scss */
+#section-results .result-content h4 {
+  font-size: 1.2em;
+  font-family: "GothamMedium";
+  font-weight: normal;
+  margin-bottom: 0;
+  min-height: 3em;
+  line-height: 1.1;
+}
+/* line 350, ../sass/_phones.scss */
+#section-results .result-content h4 a {
+  color: #222;
+}
+/* line 352, ../sass/_phones.scss */
+#section-results .result-content p {
+  margin-bottom: 0;
+}
+/* line 353, ../sass/_phones.scss */
+#section-results .result-content .green-add-cart, #section-results .result-content .grey-add-cart {
+  margin: 0 auto 1em auto;
+  width: 60%;
+  display: block;
+  /* iPad*/
+  width: 68%;
+  /* Desktop */
+  width: 52%;
+}
+/* line 365, ../sass/_phones.scss */
+#section-results .result-content .green-price {
+  font-size: 2em;
+  line-height: 1.4em;
+}
+/* line 369, ../sass/_phones.scss */
+#section-results .result-content a.button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #e63924;
+  border-color: #c12916;
+  color: white;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+#section-results .result-content a.button:hover, #section-results .result-content a.button:focus {
+  background-color: #c12916;
+}
+/* line 134, ../sass/foundation/components/_buttons.scss */
+#section-results .result-content a.button:hover, #section-results .result-content a.button:focus {
+  color: white;
+}
+/* line 55, ../sass/_mixins.scss */
+#section-results .result-content a.button:hover {
+  /*cursor: pointer;*/
+}
+/* line 370, ../sass/_phones.scss */
+#section-results .result-content .financing {
+  display: block;
+  font-size: 11px;
+  color: #e63924;
+  text-transform: uppercase;
+  font-family: Arial;
+  letter-spacing: 0;
+  line-height: 1em;
+}
+/* line 379, ../sass/_phones.scss */
+#section-results .result-content .discount {
+  position: absolute;
+  right: 24%;
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/phone-listing/icon-red-discount.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat top right;
+  width: 44px;
+  height: 47px;
+  color: #fff;
+  padding: 0.3em;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "GothamMedium";
+  /* iPad*/
+  right: 11%;
+  /* Desktop */
+  right: 20%;
+}
+/* line 398, ../sass/_phones.scss */
+#section-results .result-content .compare {
+  padding: 0 1em 0 1em;
+}
+/* line 400, ../sass/_phones.scss */
+#section-results .result-content .compare label {
+  text-transform: uppercase;
+  color: #333;
+  font-size: 11px;
+  display: inline;
+}
+/* line 405, ../sass/_phones.scss */
+#section-results .result-content .compare label.has-tip {
+  border-bottom: none;
+  font-weight: normal;
+}
+/* line 410, ../sass/_phones.scss */
+#section-results .result-content .compare form.custom .custom.checkbox.checked:before {
+  margin-top: 0;
+  margin-left: -7px;
+  font-size: 23px;
+}
+
+/* /#section-results */
+/* SEO Block on Phones & Homepage */
+/* line 420, ../sass/_phones.scss */
+#foot-note-copy {
+  margin-bottom: 1em;
+}
+/* line 422, ../sass/_phones.scss */
+#foot-note-copy .row {
+  padding: 1em 0.5em 0 0.5em;
+}
+/* line 425, ../sass/_phones.scss */
+#foot-note-copy p {
+  color: #999;
+  font-size: 0.7em;
+  line-height: 1.2em;
+  text-transform: none;
+  margin-bottom: 1.25em;
+}
+/* line 432, ../sass/_phones.scss */
+#foot-note-copy a {
+  color: #e63924;
+}
+
+/* Legal Notification on Phones Pages */
+/* line 436, ../sass/_phones.scss */
+.phones-legal {
+  margin-bottom: 0.8em;
+}
+/* line 438, ../sass/_phones.scss */
+.phones-legal .wrapper {
+  border-top: 1px solid #d9d9d9;
+  padding-top: 0.5em;
+}
+/* line 441, ../sass/_phones.scss */
+.phones-legal .wrapper .columns {
+  padding: 0.5em 1em;
+}
+/* line 443, ../sass/_phones.scss */
+.phones-legal h4 {
+  font-size: 0.7em;
+  text-transform: uppercase;
+  color: #666;
+}
+/* line 448, ../sass/_phones.scss */
+.phones-legal p {
+  color: #666;
+  font-size: 0.7em;
+  line-height: 1.2em;
+}
+/* line 454, ../sass/_phones.scss */
+.phones-legal .wrapper .columns {
+  padding: 0;
+}
+
+/* Phone Content is a bit shorter without the price being included */
+/* line 459, ../sass/_phones.scss */
+#section-results.no-zipcode {
+  /* /.result-content */
+}
+/* line 460, ../sass/_phones.scss */
+#section-results.no-zipcode .result-content {
+  min-height: 410px;
+  padding-bottom: 0;
+  padding-top: 0;
+  min-height: 500px;
+  padding: 1.25em;
+}
+/* line 464, ../sass/_phones.scss */
+#section-results.no-zipcode .result-content .button {
+  margin-top: 1.5em;
+}
+/* line 465, ../sass/_phones.scss */
+#section-results.no-zipcode .result-content .discount {
+  display: none;
+}
+/* line 466, ../sass/_phones.scss */
+#section-results.no-zipcode .result-content .green-price {
+  height: 0;
+}
+
+/* /#section-results.no-zipcode */
+/* Phones Listing Page has financing links */
+/* line 478, ../sass/_phones.scss */
+.section-phones-listing #section-results .green-price {
+  height: 2.1em;
+}
+
+/* Image Gallery on Mobile Only */
+/* line 3, ../sass/_phonedetails.scss */
+#product-image .swiper-container, #product-image .swiper-slide {
+  height: 400px;
+}
+/* line 4, ../sass/_phonedetails.scss */
+#product-image img {
+  margin: 0 auto 100px;
+  margin: 0 auto;
+}
+
+/* Product Information Header */
+/* line 11, ../sass/_phonedetails.scss */
+#product-details {
+  padding: 2em 0 1em 0;
+  /* Desktop Version */
+  padding: 5em 0 2em 0;
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/phone-detail/bg-pdetail-header.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat top right;
+}
+/* line 17, ../sass/_phonedetails.scss */
+#product-details a.button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #28ac75;
+  border-color: #1e8359;
+  color: white;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+  padding: 1em 4em;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+#product-details a.button:hover, #product-details a.button:focus {
+  background-color: #1e8359;
+}
+/* line 134, ../sass/foundation/components/_buttons.scss */
+#product-details a.button:hover, #product-details a.button:focus {
+  color: white;
+}
+/* line 55, ../sass/_mixins.scss */
+#product-details a.button:hover {
+  /*cursor: pointer;*/
+}
+/* line 21, ../sass/_phonedetails.scss */
+#product-details .mobile-center {
+  text-align: center;
+}
+/* line 22, ../sass/_phonedetails.scss */
+#product-details .desktop-right {
+  text-align: right;
+}
+/* line 25, ../sass/_phonedetails.scss */
+#product-details a.button.disabled {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #dbdbdc;
+  border-color: #c1c1c3;
+  color: #333333;
+  cursor: "default";
+  opacity: 0.6;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+  cursor: default;
+  padding: 1em 4em;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+#product-details a.button.disabled:hover, #product-details a.button.disabled:focus {
+  background-color: #c1c1c3;
+}
+/* line 129, ../sass/foundation/components/_buttons.scss */
+#product-details a.button.disabled:hover, #product-details a.button.disabled:focus {
+  color: #333333;
+}
+/* line 147, ../sass/foundation/components/_buttons.scss */
+#product-details a.button.disabled:hover, #product-details a.button.disabled:focus {
+  background-color: #dbdbdc;
+}
+/* line 29, ../sass/_phonedetails.scss */
+#product-details h1 {
+  font-size: 1.875em;
+  line-height: 32px;
+}
+/* line 33, ../sass/_phonedetails.scss */
+#product-details h2 {
+  font-size: 1.4375em;
+  line-height: 32px;
+}
+
+/* #product-details */
+/* line 39, ../sass/_phonedetails.scss */
+#product-thumbs {
+  position: absolute;
+  left: 0;
+  top: 25.625em;
+  z-index: 1;
+  position: static;
+}
+/* line 45, ../sass/_phonedetails.scss */
+#product-thumbs ul {
+  list-style-type: none;
+}
+/* line 46, ../sass/_phonedetails.scss */
+#product-thumbs ul li {
+  padding: 0.5em 0;
+  display: inline-block;
+  display: block;
+}
+/* line 51, ../sass/_phonedetails.scss */
+#product-thumbs ul li a {
+  display: block;
+  padding: 5px;
+  border: 1px solid #fff;
+}
+/* line 55, ../sass/_phonedetails.scss */
+#product-thumbs ul li a.active {
+  border: 1px solid #C8E099;
+}
+/* line 56, ../sass/_phonedetails.scss */
+#product-thumbs ul li a:hover {
+  border: 1px solid #C8E099;
+}
+
+/* /#product-thumbs */
+/* line 61, ../sass/_phonedetails.scss */
+#product-content {
+  margin-top: 20px;
+  font-family: "GothamMedium";
+  margin-top: 0;
+  /* /.final-price */
+}
+/* line 65, ../sass/_phonedetails.scss */
+#product-content .color-title {
+  margin-bottom: 0;
+  font-size: 0.8em;
+}
+/* line 69, ../sass/_phonedetails.scss */
+#product-content .prices {
+  border-top: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
+  margin: 10px 0;
+  padding: 10px 0;
+  font-size: 0.75em;
+  color: #000;
+  line-height: 1.6em;
+}
+/* line 78, ../sass/_phonedetails.scss */
+#product-content .sale-price {
+  color: #e63924;
+  font-size: 0.9em;
+  margin-bottom: 1em;
+}
+/* line 82, ../sass/_phonedetails.scss */
+#product-content .sale-price a.rebate {
+  /* NEW: added after original sprint */
+  color: #E63924;
+  text-decoration: underline;
+}
+/* line 87, ../sass/_phonedetails.scss */
+#product-content .financing {
+  color: #e63924;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-exclamation.png],imageHeight[15],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 0 50%;
+  padding: 0.5em 0 0.5em 1.5em;
+}
+/* line 94, ../sass/_phonedetails.scss */
+#product-content .final-price {
+  font-size: 0.875em;
+  border-bottom: 1px solid #dbdbdb;
+  margin-bottom: 1em;
+}
+/* line 98, ../sass/_phonedetails.scss */
+#product-content .final-price p {
+  line-height: inherit;
+}
+/* line 99, ../sass/_phonedetails.scss */
+#product-content .final-price .sale-price, #product-content .final-price .financing {
+  display: block;
+}
+/* line 100, ../sass/_phonedetails.scss */
+#product-content .final-price .financing {
+  margin: 0 0 1em 0;
+  float: right;
+}
+/* line 101, ../sass/_phonedetails.scss */
+#product-content .final-price:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+/* line 103, ../sass/_phonedetails.scss */
+#product-content .shipping-info {
+  color: #008752;
+  text-transform: uppercase;
+  font-size: 0.75em;
+}
+/* line 108, ../sass/_phonedetails.scss */
+#product-content .colors {
+  margin-bottom: 0.5em;
+}
+/* line 110, ../sass/_phonedetails.scss */
+#product-content .colors:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+/* line 112, ../sass/_phonedetails.scss */
+#product-content .colors a {
+  border: 1px solid #c4c4c4;
+  float: left;
+  margin: 0 10px 10px 0;
+}
+/* line 116, ../sass/_phonedetails.scss */
+#product-content .colors a.active {
+  border: 1px solid green;
+}
+/* line 118, ../sass/_phonedetails.scss */
+#product-content .colors span {
+  margin: 2px;
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+/* line 124, ../sass/_phonedetails.scss */
+#product-content img {
+  display: block;
+}
+
+/* /#product-content */
+/* Most of the Tabs styling is inside of _settings.scss */
+/* line 129, ../sass/_phonedetails.scss */
+#tab-content {
+  /* Desktop Version of Tabs */
+  /* /.section-container  */
+  /* /Desktop Overrides */
+}
+/* line 130, ../sass/_phonedetails.scss */
+#tab-content .large-12 {
+  padding: 0;
+}
+/* line 131, ../sass/_phonedetails.scss */
+#tab-content .section-container {
+  /* Inactive State for Tab */
+}
+/* line 132, ../sass/_phonedetails.scss */
+#tab-content .section-container .active .title {
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-accordion-active.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 95% 50%;
+}
+/* line 134, ../sass/_phonedetails.scss */
+#tab-content .section-container .active .title a {
+  color: #008752;
+}
+/* line 136, ../sass/_phonedetails.scss */
+#tab-content .section-container .active .content {
+  /* Crazy gradient - shadow at top and bottom, white in center for mobile */
+  background-image: -moz-linear-gradient(top, #eaeaea 0%, white 3%, white 96%, #eaeaea 100%);
+  /* FF3.6+ */
+  background-image: -webkit-linear-gradient(top, #eaeaea 0%, white 3%, white 96%, #eaeaea 100%);
+  /* Chrome10+,Safari5.1+ */
+  background-image: -o-linear-gradient(top, #eaeaea 0%, white 3%, white 96%, #eaeaea 100%);
+  /* Opera 11.10+ */
+  background-image: -ms-linear-gradient(top, #eaeaea 0%, white 3%, white 96%, #eaeaea 100%);
+  /* IE10+ */
+  background-image: linear-gradient(to bottom, #eaeaea 0%, #ffffff 3%, #ffffff 96%, #eaeaea 100%);
+  /* W3C */
+  border: 1px solid #c4c4c4;
+}
+/* line 144, ../sass/_phonedetails.scss */
+#tab-content .section-container .active .content .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+/* line 148, ../sass/_phonedetails.scss */
+#tab-content .section-container .active .content h3 {
+  font-family: "GothamBold";
+  text-transform: uppercase;
+  font-size: 1.55em;
+  line-height: 0.9em;
+  letter-spacing: -0.05em;
+}
+/* line 155, ../sass/_phonedetails.scss */
+#tab-content .section-container .active .content h4 {
+  font-family: "GothamBold";
+  text-transform: uppercase;
+  font-size: 0.9375em;
+  letter-spacing: -0.05em;
+  color: #8dc63f;
+  border-bottom: 1px solid #e5e5e5;
+  margin-top: 2em;
+}
+/* line 164, ../sass/_phonedetails.scss */
+#tab-content .section-container .active .content p {
+  font-size: 0.82em;
+  line-height: 1.5em;
+  color: #333333;
+  margin: 1.25em 0;
+}
+/* line 169, ../sass/_phonedetails.scss */
+#tab-content .section-container .active .content p a.red {
+  /* NEW: text link to be red */
+  color: #E63924;
+}
+/* line 175, ../sass/_phonedetails.scss */
+#tab-content .section-container .title {
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-accordion-inactive.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 95% 50%;
+}
+/* line 177, ../sass/_phonedetails.scss */
+#tab-content .section-container .title a {
+  text-transform: uppercase;
+  color: #008752;
+  font-family: "GothamBlack";
+  font-size: 1em;
+}
+/* line 189, ../sass/_phonedetails.scss */
+#tab-content .section-container .active .title {
+  background-color: #fff;
+  background-image: none;
+}
+/* line 192, ../sass/_phonedetails.scss */
+#tab-content .section-container .active .title a {
+  color: #75b100;
+}
+/* line 194, ../sass/_phonedetails.scss */
+#tab-content .section-container .active .content {
+  padding: 0;
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/phone-detail/bg-pdetail-tabs.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat top right;
+}
+/* line 197, ../sass/_phonedetails.scss */
+#tab-content .section-container .active .content .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+/* line 202, ../sass/_phonedetails.scss */
+#tab-content .section-container .title {
+  background-color: #75b100;
+  background-image: none;
+}
+/* line 205, ../sass/_phonedetails.scss */
+#tab-content .section-container .title a {
+  color: #fff;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-size: 0.90em;
+}
+/* line 211, ../sass/_phonedetails.scss */
+#tab-content .section-container .copy {
+  margin: 4em 0;
+  padding: 0 2em;
+}
+/* line 215, ../sass/_phonedetails.scss */
+#tab-content .section-container .image {
+  padding-left: 0;
+}
+
+/* /#tab-content */
+/* Specifications Tab on Phone Details has additional styling (checkboxes)*/
+/* line 221, ../sass/_phonedetails.scss */
+.section-container #specifications {
+  /* /ul */
+  /* Desktop Overrides */
+  /* End of Desktop overrides */
+}
+/* line 222, ../sass/_phonedetails.scss */
+.section-container #specifications .columns {
+  padding-left: 0;
+  padding-right: 0;
+}
+/* line 226, ../sass/_phonedetails.scss */
+.section-container #specifications ul {
+  list-style-type: none;
+}
+/* line 227, ../sass/_phonedetails.scss */
+.section-container #specifications ul li {
+  border-bottom: 1px dotted #e5e5e5;
+  text-transform: uppercase;
+  color: #666;
+  font-family: "GothamMedium";
+  font-size: 0.8125em;
+}
+/* line 233, ../sass/_phonedetails.scss */
+.section-container #specifications ul li:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+/* line 236, ../sass/_phonedetails.scss */
+.section-container #specifications ul li span {
+  padding: 1em 0;
+  display: block;
+  width: 55%;
+}
+/* line 240, ../sass/_phonedetails.scss */
+.section-container #specifications ul li span.yes {
+  background: 0;
+  text-indent: -99999px;
+  width: 45%;
+}
+/* line 245, ../sass/_phonedetails.scss */
+.section-container #specifications ul li span.no {
+  background: 0;
+  text-indent: -99999px;
+  width: 45%;
+}
+/* line 250, ../sass/_phonedetails.scss */
+.section-container #specifications ul li span.details {
+  color: #8dc63f;
+  width: 45%;
+}
+/* line 260, ../sass/_phonedetails.scss */
+.section-container #specifications .columns {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+/* line 266, ../sass/_phonedetails.scss */
+.section-container #specifications ul li span {
+  padding: 1em 0;
+  display: block;
+  width: 55%;
+}
+/* line 270, ../sass/_phonedetails.scss */
+.section-container #specifications ul li span.yes {
+  background: 0;
+  width: 45%;
+}
+/* line 274, ../sass/_phonedetails.scss */
+.section-container #specifications ul li span.no {
+  background: 0;
+  width: 45%;
+}
+
+/* /.section-container #specifications */
+/* line 285, ../sass/_phonedetails.scss */
+#tab-content .section-container #featured {
+  padding: 1em 0.5em;
+  /* Desktop Version */
+  padding: 2em;
+  background-image: -webkit-linear-gradient(top, #e8e8e8 5%, #f7f7f7 8%, #f7f7f7 30%);
+  background-image: -moz-linear-gradient(top, #e8e8e8 5%, #f7f7f7 8%, #f7f7f7 30%);
+  background-image: -ms-linear-gradient(top, #e8e8e8 5%, #f7f7f7 8%, #f7f7f7 30%);
+  background-image: -o-linear-gradient(top, #e8e8e8 5%, #f7f7f7 8%, #f7f7f7 30%);
+  background-image: linear-gradient(to bottom, #e8e8e8 0%, #f7f7f7 8%, #f7f7f7 30%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e8e8e8', endColorstr='#f7f7f7');
+}
+/* line 287, ../sass/_phonedetails.scss */
+#tab-content .section-container #featured h4 {
+  font-family: 'GothamBlack';
+  font-size: 1.125em;
+  color: #8dc63f;
+  text-transform: uppercase;
+  margin-top: 0;
+  border-bottom: none;
+}
+/* line 295, ../sass/_phonedetails.scss */
+#tab-content .section-container #featured ul {
+  list-style-position: inside;
+  list-style-type: none;
+  margin: 0;
+}
+/* line 299, ../sass/_phonedetails.scss */
+#tab-content .section-container #featured ul li {
+  color: #333;
+  font-size: 0.8125em;
+}
+/* line 308, ../sass/_phonedetails.scss */
+#tab-content .section-container #featured h4 {
+  color: #28ac75;
+  font-size: 1.5625em;
+}
+/* line 313, ../sass/_phonedetails.scss */
+#tab-content .section-container #featured ul li {
+  float: left;
+  color: #28ac75;
+  width: 33%;
+  text-transform: uppercase;
+  font-size: 0.9375em;
+}
+
+/* /#tab-content .section-container #featured */
+/* line 324, ../sass/_phonedetails.scss */
+#tab-content .section-container #included {
+  padding: 1em 0.5em;
+  /* Desktop Version */
+  padding: 2em 1em 2em 2em;
+  background-color: #008752;
+}
+/* line 326, ../sass/_phonedetails.scss */
+#tab-content .section-container #included h4 {
+  font-family: 'GothamBlack';
+  font-size: 1.125em;
+  color: #8dc63f;
+  text-transform: uppercase;
+  margin-top: 0;
+  border-bottom: none;
+}
+/* line 334, ../sass/_phonedetails.scss */
+#tab-content .section-container #included ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+/* line 338, ../sass/_phonedetails.scss */
+#tab-content .section-container #included ul li {
+  font-size: 0.8125em;
+  color: #333;
+}
+/* line 348, ../sass/_phonedetails.scss */
+#tab-content .section-container #included h4 {
+  font-family: 'GothamBlack';
+  font-size: 1.5625em;
+  color: #fff;
+  text-transform: uppercase;
+}
+/* line 355, ../sass/_phonedetails.scss */
+#tab-content .section-container #included ul li {
+  float: left;
+  font-size: 0.8125em;
+  color: #fff;
+  margin: 3px 10px 3px 0;
+  padding-right: 13px;
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-included-disc.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 100% 50%;
+  text-transform: uppercase;
+}
+/* line 363, ../sass/_phonedetails.scss */
+#tab-content .section-container #included ul li.last {
+  background: none;
+}
+
+/* /#tab-content .section-container #included */
+/* line 369, ../sass/_phonedetails.scss */
+#similar-phones, #phone-accessories {
+  padding-top: 1.25em;
+  position: relative;
+  border-top: 1px solid #b7ddce;
+  border-top: none;
+}
+/* line 373, ../sass/_phonedetails.scss */
+#similar-phones h2, #phone-accessories h2 {
+  padding: 0 30px;
+}
+/* line 374, ../sass/_phonedetails.scss */
+#similar-phones h4, #phone-accessories h4 {
+  font-family: "GothamMedium";
+  font-size: 1em;
+  color: #333;
+  letter-spacing: -1px;
+  margin-bottom: 1em;
+  font-weight: normal;
+}
+/* line 382, ../sass/_phonedetails.scss */
+#similar-phones p, #phone-accessories p {
+  margin-bottom: 0;
+}
+/* line 383, ../sass/_phonedetails.scss */
+#similar-phones .prev, #similar-phones .next, #phone-accessories .prev, #phone-accessories .next {
+  top: 45%;
+}
+/* line 384, ../sass/_phonedetails.scss */
+#similar-phones .green-price, #phone-accessories .green-price {
+  font-size: 1.6em;
+}
+/* line 385, ../sass/_phonedetails.scss */
+#similar-phones .swiper-container, #phone-accessories .swiper-container {
+  height: 350px;
+}
+/* line 386, ../sass/_phonedetails.scss */
+#similar-phones .button.disabled, #phone-accessories .button.disabled {
+  margin-top: 1em;
+}
+/* line 390, ../sass/_phonedetails.scss */
+#similar-phones h2, #phone-accessories h2 {
+  padding: 0;
+}
+/* line 391, ../sass/_phonedetails.scss */
+#similar-phones .swiper-container, #phone-accessories .swiper-container {
+  height: 320px;
+}
+
+/* line 397, ../sass/_phonedetails.scss */
+#phone-accessories .swiper-container {
+  height: 420px;
+}
+/* line 398, ../sass/_phonedetails.scss */
+#phone-accessories .button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #28ac75;
+  border-color: #1e8359;
+  color: white;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+#phone-accessories .button:hover, #phone-accessories .button:focus {
+  background-color: #1e8359;
+}
+/* line 134, ../sass/foundation/components/_buttons.scss */
+#phone-accessories .button:hover, #phone-accessories .button:focus {
+  color: white;
+}
+/* line 55, ../sass/_mixins.scss */
+#phone-accessories .button:hover {
+  /*cursor: pointer;*/
+}
+/* line 399, ../sass/_phonedetails.scss */
+#phone-accessories .button.disabled {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #dbdbdc;
+  border-color: #c1c1c3;
+  color: #333333;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+#phone-accessories .button.disabled:hover, #phone-accessories .button.disabled:focus {
+  background-color: #c1c1c3;
+}
+/* line 129, ../sass/foundation/components/_buttons.scss */
+#phone-accessories .button.disabled:hover, #phone-accessories .button.disabled:focus {
+  color: #333333;
+}
+/* line 55, ../sass/_mixins.scss */
+#phone-accessories .button.disabled:hover {
+  /*cursor: pointer;*/
+}
+/* line 400, ../sass/_phonedetails.scss */
+#phone-accessories h4 {
+  margin-bottom: 0;
+}
+/* line 401, ../sass/_phonedetails.scss */
+#phone-accessories .cta p {
+  margin-top: 1em;
+}
+/* line 403, ../sass/_phonedetails.scss */
+#phone-accessories h4 {
+  min-height: 44px;
+}
+/* line 404, ../sass/_phonedetails.scss */
+#phone-accessories img {
+  min-height: 205px;
+}
+
+/* line 409, ../sass/_phonedetails.scss */
+#similar-phones .button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #df3e1a;
+  border-color: #b13115;
+  color: white;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+#similar-phones .button:hover, #similar-phones .button:focus {
+  background-color: #b13115;
+}
+/* line 134, ../sass/foundation/components/_buttons.scss */
+#similar-phones .button:hover, #similar-phones .button:focus {
+  color: white;
+}
+/* line 55, ../sass/_mixins.scss */
+#similar-phones .button:hover {
+  /*cursor: pointer;*/
+}
+/* line 412, ../sass/_phonedetails.scss */
+#similar-phones .row:first-child {
+  border-top: 1px solid #b7ddce;
+}
+/* line 414, ../sass/_phonedetails.scss */
+#similar-phones h2, #similar-phones a.circle-arrow {
+  padding-top: 32px;
+}
+/* line 415, ../sass/_phonedetails.scss */
+#similar-phones a.circle-arrow {
+  background-position: 0 32px;
+}
+/* line 416, ../sass/_phonedetails.scss */
+#similar-phones img {
+  min-height: 212px;
+}
+
+/* line 420, ../sass/_phonedetails.scss */
+#phone-plans {
+  padding-top: 1.25em;
+  position: relative;
+  border-top: 1px solid #b7ddce;
+  border-top: none;
+  margin-bottom: 0;
+  padding-top: 2em;
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/plans-seperator-line.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 50% 0;
+}
+/* line 424, ../sass/_phonedetails.scss */
+#phone-plans .swiper-container {
+  height: 340px;
+}
+/* line 425, ../sass/_phonedetails.scss */
+#phone-plans .plan {
+  display: block;
+  width: 100%;
+  height: 250px;
+  min-height: 250px;
+  background-position: 50% 50%;
+  background-size: auto auto;
+  background-repeat: no-repeat;
+  font-family: "GothamBlack";
+  text-align: center;
+  padding: 1.3em 2em;
+  text-shadow: 1px 1px 2px #119347;
+  margin: 1em 0 1em 0;
+}
+/* line 438, ../sass/_phonedetails.scss */
+#phone-plans .plan .button {
+  margin: 1.9em auto 1.9em auto;
+  padding: 0.6em 0.8em;
+  width: 50%;
+  text-shadow: none;
+  font-family: "GothamMedium";
+  font-size: 13px;
+  font-weight: normal;
+}
+/* line 446, ../sass/_phonedetails.scss */
+#phone-plans .plan .button.disabled {
+  color: #fff;
+  opacity: 1;
+}
+/* line 453, ../sass/_phonedetails.scss */
+#phone-plans #swiper-plans {
+  overflow: hidden;
+  height: 23.75em;
+  position: relative;
+}
+/* line 458, ../sass/_phonedetails.scss */
+#phone-plans .swiper-plans-prev {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/home/banner-prev.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 0 0;
+  left: 0;
+  height: 4em;
+  width: 3.9375em;
+}
+/* line 464, ../sass/_phonedetails.scss */
+#phone-plans .swiper-plans-next {
+  right: 0;
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/home/banner-next.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 0 0;
+  height: 4em;
+  width: 3.9375em;
+}
+/* line 470, ../sass/_phonedetails.scss */
+#phone-plans .lt-ie9 .swiper-plans-prev, #phone-plans .lt-ie9 .swiper-plans-next {
+  display: none !important;
+}
+/* line 473, ../sass/_phonedetails.scss */
+#phone-plans .plan-item {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+}
+/* line 477, ../sass/_phonedetails.scss */
+#phone-plans .plan-item .button {
+  position: absolute;
+  bottom: 10px;
+  left: 80px;
+  margin-bottom: 0.625em;
+  width: 50%;
+  text-shadow: none;
+  font-family: "GothamMedium";
+  font-size: 13px;
+  font-weight: normal;
+}
+/* line 487, ../sass/_phonedetails.scss */
+#phone-plans .plan-item .button.disabled {
+  color: #fff;
+  opacity: 1;
+}
+/* line 494, ../sass/_phonedetails.scss */
+#phone-plans h4 {
+  color: #c1d72e;
+  font-weight: bold;
+  font-size: 4.75em;
+  font-family: "GothamBlack";
+  margin: 0.15em 0 0 0;
+  line-height: 1.1em;
+  letter-spacing: -2px;
+  text-shadow: 1px 1px 2px #018035;
+}
+/* line 503, ../sass/_phonedetails.scss */
+#phone-plans h4 sub {
+  font-size: 0.3em;
+  bottom: -0.05em;
+  letter-spacing: 0;
+}
+/* line 509, ../sass/_phonedetails.scss */
+#phone-plans p {
+  color: #fff;
+  font-size: 1.25em;
+  text-transform: uppercase;
+  line-height: 1em;
+  margin: 0;
+}
+/* line 515, ../sass/_phonedetails.scss */
+#phone-plans p .line1 {
+  font-size: 0.9em;
+}
+/* line 516, ../sass/_phonedetails.scss */
+#phone-plans p .line2 {
+  font-size: 0.9em;
+  display: block;
+}
+/* line 520, ../sass/_phonedetails.scss */
+#phone-plans p .line3 {
+  font-size: 1.35em;
+  display: block;
+}
+/* line 525, ../sass/_phonedetails.scss */
+#phone-plans .green-add-cart {
+  display: block;
+}
+/* line 527, ../sass/_phonedetails.scss */
+#phone-plans .cta {
+  margin-top: 1em;
+  padding-top: 1em;
+  border-top: 1px solid #b7ddce;
+}
+/* line 531, ../sass/_phonedetails.scss */
+#phone-plans .cta p {
+  margin: 0 auto;
+}
+
+/* /#phone-plans */
+/* Phones Compare Page */
+/* line 3, ../sass/_phonecompare.scss */
+#change-phones a.button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #e83b26;
+  border-color: #c62815;
+  color: white;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+  margin: 1.6875em 0 0.3125em;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+#change-phones a.button:hover, #change-phones a.button:focus {
+  background-color: #c62815;
+}
+/* line 134, ../sass/foundation/components/_buttons.scss */
+#change-phones a.button:hover, #change-phones a.button:focus {
+  color: white;
+}
+/* line 55, ../sass/_mixins.scss */
+#change-phones a.button:hover {
+  /*cursor: pointer;*/
+}
+
+/* line 9, ../sass/_phonecompare.scss */
+#section-compare-list .table-phone-compare-list {
+  background: transparent;
+  border: none;
+  margin: 0 auto 50px;
+  width: 100%;
+}
+@media only screen and (min-width: 940px) {
+  /* line 9, ../sass/_phonecompare.scss */
+  #section-compare-list .table-phone-compare-list {
+    width: 60em;
+  }
+}
+
+/* line 17, ../sass/_phonecompare.scss */
+#section-compare-list {
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/phone-compare/bg-section-phone-compare.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) center 2.125em no-repeat;
+  min-height: 15.75em;
+}
+/* line 20, ../sass/_phonecompare.scss */
+#section-compare-list thead, #section-compare-list tfoot, #section-compare-list tr.even, #section-compare-list tr.alt, #section-compare-list tr:nth-of-type(2n) {
+  background: transparent;
+}
+/* line 21, ../sass/_phonecompare.scss */
+#section-compare-list thead {
+  background: transparent;
+}
+/* line 22, ../sass/_phonecompare.scss */
+#section-compare-list thead th {
+  color: #333;
+  font: normal 12px 'GothamMedium';
+  padding: 0;
+  text-transform: uppercase;
+  width: 20%;
+  text-align: center;
+}
+@media only screen and (min-width: 940px) {
+  /* line 22, ../sass/_phonecompare.scss */
+  #section-compare-list thead th {
+    font: normal 15px 'GothamMedium';
+  }
+}
+/* line 31, ../sass/_phonecompare.scss */
+#section-compare-list thead h1 {
+  color: #fff;
+  font-size: 1.375em;
+  text-align: left;
+}
+/* line 36, ../sass/_phonecompare.scss */
+#section-compare-list thead h1 strong {
+  color: #c1d72e;
+  display: block;
+  font-size: 1.75em;
+  font-weight: normal;
+  margin-bottom: -10px;
+}
+/* line 43, ../sass/_phonecompare.scss */
+#section-compare-list thead h1 span {
+  color: #00583d;
+  display: inline;
+  font-size: 1.375em;
+}
+/* line 48, ../sass/_phonecompare.scss */
+#section-compare-list thead h1 span em {
+  color: #fff;
+  font-style: normal;
+}
+/* line 52, ../sass/_phonecompare.scss */
+#section-compare-list thead img {
+  display: block;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+/* line 57, ../sass/_phonecompare.scss */
+#section-compare-list thead p.price {
+  color: #157f4a;
+  font: normal 32px 'GothamBold';
+  margin-bottom: 0.625em;
+}
+/* line 62, ../sass/_phonecompare.scss */
+#section-compare-list thead a.button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #00ac79;
+  border-color: #007955;
+  color: white;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+  color: #fff;
+  display: block;
+  font: normal 14px 'GothamBook';
+  margin: 0 auto 15px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  width: 80%;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+#section-compare-list thead a.button:hover, #section-compare-list thead a.button:focus {
+  background-color: #007955;
+}
+/* line 134, ../sass/foundation/components/_buttons.scss */
+#section-compare-list thead a.button:hover, #section-compare-list thead a.button:focus {
+  color: white;
+}
+/* line 55, ../sass/_mixins.scss */
+#section-compare-list thead a.button:hover {
+  /*cursor: pointer;*/
+}
+/* line 71, ../sass/_phonecompare.scss */
+#section-compare-list thead a.button.orange-shop-now {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #e63924;
+  border-color: #c12916;
+  color: white;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+#section-compare-list thead a.button.orange-shop-now:hover, #section-compare-list thead a.button.orange-shop-now:focus {
+  background-color: #c12916;
+}
+/* line 134, ../sass/foundation/components/_buttons.scss */
+#section-compare-list thead a.button.orange-shop-now:hover, #section-compare-list thead a.button.orange-shop-now:focus {
+  color: white;
+}
+/* line 55, ../sass/_mixins.scss */
+#section-compare-list thead a.button.orange-shop-now:hover {
+  /*cursor: pointer;*/
+}
+/* line 74, ../sass/_phonecompare.scss */
+#section-compare-list thead a.button.disabled {
+  background-color: #dbdbdc;
+  border: #dbdbdc;
+}
+/* line 79, ../sass/_phonecompare.scss */
+#section-compare-list thead a.circle-button {
+  font: normal 13px Arial;
+}
+/* line 82, ../sass/_phonecompare.scss */
+#section-compare-list thead tr.persist-header th {
+  vertical-align: bottom;
+}
+/* line 83, ../sass/_phonecompare.scss */
+#section-compare-list thead tr.persist-header th a {
+  color: #000;
+}
+/* line 85, ../sass/_phonecompare.scss */
+#section-compare-list thead tr.persist-header th a:hover {
+  color: #006E43;
+}
+/* line 89, ../sass/_phonecompare.scss */
+#section-compare-list thead tr.floatingHeader {
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+  z-index: 99;
+}
+/* line 95, ../sass/_phonecompare.scss */
+#section-compare-list thead tr.floatingHeader th {
+  font: normal 15px 'GothamMedium';
+  background: #fff;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+  width: 18%;
+}
+/* line 102, ../sass/_phonecompare.scss */
+#section-compare-list thead tr.floatingHeader th a {
+  color: #000;
+}
+/* line 104, ../sass/_phonecompare.scss */
+#section-compare-list thead tr.floatingHeader th a:hover {
+  color: #006E43;
+}
+/* line 106, ../sass/_phonecompare.scss */
+#section-compare-list thead tr.floatingHeader th.first {
+  background: transparent;
+  border: 0;
+}
+/* line 111, ../sass/_phonecompare.scss */
+#section-compare-list tbody th {
+  background: url(../img/table-bottom-border.jpg) left bottom no-repeat;
+  color: #717374;
+  font: normal 15px 'GothamBold';
+  text-align: left;
+}
+/* line 113, ../sass/_phonecompare.scss */
+#section-compare-list tbody th.row-heading {
+  background: none;
+}
+/* line 118, ../sass/_phonecompare.scss */
+#section-compare-list tbody h3 {
+  color: #008752;
+  font: normal 15px 'GothamBlack';
+  margin: 1.5625em 0 0.5em;
+  text-transform: uppercase;
+  width: 17%;
+}
+/* line 125, ../sass/_phonecompare.scss */
+#section-compare-list tbody td {
+  background-color: #f1f1f1;
+  border-right: 1px solid #fff;
+  border-bottom: 13px solid #fff;
+  color: #8dc63f;
+  font: normal 15px 'GothamBold';
+  height: 80px;
+  line-height: 24px;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+}
+/* line 127, ../sass/_phonecompare.scss */
+#section-compare-list tbody td:nth-of-type(2n) {
+  background: #f8f8f8;
+}
+/* line 141, ../sass/_phonecompare.scss */
+#section-compare-list tbody span.yes {
+  background: transparent url(../img/icon-table-checkmark-green.png) center center no-repeat;
+  display: block;
+  text-indent: -99999px;
+}
+/* line 146, ../sass/_phonecompare.scss */
+#section-compare-list tbody span.no {
+  display: block;
+  text-indent: -99999px;
+}
+/* line 152, ../sass/_phonecompare.scss */
+#section-compare-list tbody tr.row-last th {
+  background: none;
+}
+/* line 153, ../sass/_phonecompare.scss */
+#section-compare-list tbody tr.row-last td {
+  border-bottom: none;
+}
+
+/* /#section-compare-list */
+/* line 157, ../sass/_phonecompare.scss */
+.section-phone-compare #section-lifestyle img {
+  display: block;
+  margin: 0 auto;
+  width: 87.5em;
+}
+
+/* END #section-lifestyle */
+/* Accessories Listing Page */
+/* line 3, ../sass/_accessories.scss */
+.section-accessories-listing #product-image .swiper-container {
+  min-height: 505px;
+}
+/* line 5, ../sass/_accessories.scss */
+.section-accessories-listing #product-image .swiper-container .swiper-slide {
+  min-height: 505px;
+}
+
+/* line 9, ../sass/_accessories.scss */
+.section-accessories-listing .swiper-container {
+  height: 500px;
+}
+/* line 11, ../sass/_accessories.scss */
+.section-accessories-listing .swiper-container .swiper-wrapper {
+  height: 500px !important;
+}
+
+/* line 14, ../sass/_accessories.scss */
+.section-accessories-listing .pagination {
+  margin: 0 auto 2em auto;
+  width: 80%;
+}
+
+/* Accessories section banner has right aligned content*/
+/* line 20, ../sass/_accessories.scss */
+.section-accessories-listing .static-banner .content {
+  /* iPad Overrides */
+  width: 30%;
+  left: 61%;
+  /* Desktop Overrides */
+  top: 14%;
+  width: 25%;
+  left: 58%;
+}
+/* line 21, ../sass/_accessories.scss */
+.section-accessories-listing .static-banner .content h1 {
+  color: #C1D72E;
+}
+/* line 22, ../sass/_accessories.scss */
+.section-accessories-listing .static-banner .content h1 span {
+  color: #008752;
+}
+
+/* Filter bar - accessories by device - dropdown menu */
+/* Also used on Search Result Page */
+/* line 39, ../sass/_accessories.scss */
+.section-accessories-listing #section-filters {
+  /* Green Filter Dropdown & Inside Contents */
+}
+/* line 41, ../sass/_accessories.scss */
+.section-accessories-listing #section-filters nav.top-bar > section > ul > li.has-dropdown {
+  position: relative;
+}
+/* line 44, ../sass/_accessories.scss */
+.section-accessories-listing #section-filters nav.top-bar > section > ul > li.has-dropdown ul.dropdown {
+  width: 280px;
+}
+/* line 47, ../sass/_accessories.scss */
+.section-accessories-listing #section-filters .bydevice {
+  border-bottom: 1px solid #DBDBDB;
+}
+/* line 48, ../sass/_accessories.scss */
+.section-accessories-listing #section-filters .dropdown-selectors {
+  margin-bottom: 0;
+  padding-top: 1em;
+  padding-top: 0;
+}
+/* line 55, ../sass/_accessories.scss */
+.section-accessories-listing #section-filters .dropdown-selectors dd {
+  font-family: "GothamBlack";
+  font-size: 0.813em;
+  display: inline-block;
+  padding: 0 0.625em 0 0;
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/arrow-dropdown-menu.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 93% 36%;
+  overflow: hidden;
+  padding: 0 0.625em 0 1.875em;
+}
+/* line 65, ../sass/_accessories.scss */
+.section-accessories-listing #section-filters .dropdown-selectors dd span {
+  padding-right: 0.875em;
+}
+/* line 66, ../sass/_accessories.scss */
+.section-accessories-listing #section-filters .dropdown-selectors dd select {
+  /* Fix for Both default arrow and custom arrow showing in dropdown*/
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+  display: inline-block;
+  color: #008752;
+  font-family: "GothamMedium";
+  font-size: 0.813em;
+  border: 1px solid #ccc;
+  padding: 0.75em 0 0 0.625em;
+  height: 3em;
+  width: 17.938em;
+  background: transparent;
+}
+
+/* /.section-accessories-listing */
+/* line 86, ../sass/_accessories.scss */
+.vertical-align {
+  position: relative;
+  height: 275px;
+}
+/* line 89, ../sass/_accessories.scss */
+.vertical-align img {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+/* line 101, ../sass/_accessories.scss */
+.section-accessories-listing #section-results {
+  padding-top: 2em;
+  /* Desktop Overrides */
+  padding-top: 0;
+}
+/* line 103, ../sass/_accessories.scss */
+.section-accessories-listing #section-results .result-content {
+  min-height: 508px;
+}
+/* line 104, ../sass/_accessories.scss */
+.section-accessories-listing #section-results h4 {
+  height: 2.250em;
+}
+/* line 105, ../sass/_accessories.scss */
+.section-accessories-listing #section-results .green-add-cart, .section-accessories-listing #section-results .grey-add-cart {
+  width: 52%;
+  width: 70%;
+  width: 52%;
+}
+/* line 113, ../sass/_accessories.scss */
+.section-accessories-listing #section-results .result-content h4 {
+  height: 36px;
+}
+
+/* /#section-results */
+/* line 2, ../sass/_accessoriesdetails.scss */
+.section-accessory-details #product-image img {
+  margin: 0 auto 100px;
+  margin: 0 auto;
+}
+
+/* line 8, ../sass/_accessoriesdetails.scss */
+.section-accessory-details #product-details .final-price {
+  border-top: 1px solid #dbdbdb;
+  padding-top: 0.9375em;
+}
+
+/* line 14, ../sass/_accessoriesdetails.scss */
+#accessory-img-gallery {
+  position: relative;
+  min-height: 500px;
+  min-height: 0;
+}
+
+/* line 20, ../sass/_accessoriesdetails.scss */
+.section-accessory-details #product-thumbs {
+  position: absolute;
+  left: 0;
+  top: 20em !important;
+  z-index: 1;
+  position: static;
+}
+/* line 27, ../sass/_accessoriesdetails.scss */
+.section-accessory-details #product-thumbs ul {
+  list-style-type: none;
+  margin-bottom: 0 !important;
+}
+/* line 30, ../sass/_accessoriesdetails.scss */
+.section-accessory-details #product-thumbs ul li {
+  padding: 0.5em 0;
+  display: inline-block;
+  display: block;
+}
+/* line 36, ../sass/_accessoriesdetails.scss */
+.section-accessory-details #product-thumbs ul a {
+  display: block;
+  padding: 5px;
+  border: 1px solid #ffffff;
+}
+/* line 40, ../sass/_accessoriesdetails.scss */
+.section-accessory-details #product-thumbs ul a.active {
+  border: 1px solid #C8E099;
+}
+/* line 41, ../sass/_accessoriesdetails.scss */
+.section-accessory-details #product-thumbs ul a:hover {
+  border: 1px solid #C8E099;
+}
+/* line 42, ../sass/_accessoriesdetails.scss */
+.section-accessory-details #product-thumbs ul a img {
+  width: 60%;
+  width: 25%;
+}
+
+/* line 51, ../sass/_accessoriesdetails.scss */
+#product-details.accessory-details-product #product-thumbs ul li a img {
+  width: 60%;
+}
+
+/* line 54, ../sass/_accessoriesdetails.scss */
+.section-accessory-details #tab-content {
+  margin-bottom: 4em;
+}
+/* line 55, ../sass/_accessoriesdetails.scss */
+.section-accessory-details #tab-content img {
+  padding-top: 1.4375em;
+}
+
+/* line 61, ../sass/_accessoriesdetails.scss */
+.section-accessory-details #tab-content .section-container #included ul li:before {
+  content: "- ";
+}
+/* line 62, ../sass/_accessoriesdetails.scss */
+.section-accessory-details #tab-content .section-container #included ul li {
+  float: none;
+}
+/* line 67, ../sass/_accessoriesdetails.scss */
+.section-accessory-details #tab-content .section-container #included ul li:before {
+  content: "";
+}
+/* line 68, ../sass/_accessoriesdetails.scss */
+.section-accessory-details #tab-content .section-container #included ul li {
+  float: left;
+  margin: 3px 10px 3px 0;
+  padding-right: 13px;
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-included-disc.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 100% 50%;
+}
+/* line 74, ../sass/_accessoriesdetails.scss */
+.section-accessory-details #tab-content .section-container #included ul li.last {
+  background: none;
+}
+
+/* Plans Listing Page */
+/* line 3, ../sass/_plans.scss */
+.section-plans-listing {
+  /* END #section-banner  */
+  /* /#section-plans-list */
+  /* Accordion Layout for Plans - used in Mobile View */
+  /* END Accordion for Mobile View */
+  /* END #section-lifestyle */
+}
+/* line 5, ../sass/_plans.scss */
+.section-plans-listing #section-banner {
+  background: #ededed;
+  min-height: 14.125em;
+  margin-bottom: 0;
+  position: relative;
+  width: 100%;
+  background: #ededed url(//images.mycricket.com/cricket?set=imageURL[file:/img/plans/bg-section-banner.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat top center;
+}
+/* line 14, ../sass/_plans.scss */
+.section-plans-listing #section-banner .plans-power-pixels {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/plans/bg-power-pixels.png],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 0 0;
+  display: none;
+  height: 6.3125em;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 23.4375em;
+  z-index: 2;
+  display: block;
+}

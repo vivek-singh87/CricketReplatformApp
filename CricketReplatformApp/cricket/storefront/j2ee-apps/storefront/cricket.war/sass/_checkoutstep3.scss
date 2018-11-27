@@ -1,0 +1,169 @@
+/* Checkout Page Step 3*/ 
+/* Progress Header - adjustments for mobile & tablet (Desktop is inside of checkout.scss)*/
+.section-checkout.step3 #section-progress {
+  ul {padding-left: emCalc(18px);}
+  li.step-2 {
+    padding-left: emCalc(48px);
+    @include respond-min($small-screen) {padding-left: emCalc(10px); }
+    @include respond-min($medium-screen) {padding-left: emCalc(54px); }
+  }
+  li.step-3 {
+    padding-left: emCalc(50px);
+    @include respond-min($small-screen) {padding-left: emCalc(20px);}
+    @include respond-min($medium-screen) {padding-left: emCalc(54px); }
+  }
+}
+
+/* Left Side of Form Step #3 */
+.section-checkout.step3 #section-checkout-form {
+  .details-content {
+    margin-bottom: 0;
+    h3{font-size: emCalc(18px);}
+    p{line-height: emCalc(20px);}
+    @include respond-min($small-screen) {
+      padding-top: emCalc(31px);
+      margin-bottom: emCalc(40px);
+    }
+  }
+  .details-content.columns {
+    padding-bottom: 0;
+    @include respond-min($small-screen) {padding-bottom: emCalc(28px);}
+  }
+  .divider-package.summary-drawer-content {padding-top: 0.5em;}
+  .form {
+    position: relative;
+    padding-right: emCalc(16px);
+    a.edit{
+      color: #00a663;
+      font: emCalc(14px) 'GothamMedium';
+      text-decoration: underline;
+    }
+  }
+  form#customer-info {
+    margin-bottom: 0;
+    .row {
+      padding-right: 0;
+      padding-bottom: 0;
+      @include respond-min($small-screen) {padding-bottom: 1.25em;}
+    }
+    .divider {width: 95%;}
+    .columns {
+      margin-bottom: emCalc(23px);
+      @include respond-min($small-screen) {margin-bottom: 0;}
+    }
+  }
+  form#customer-info.new-customer {
+    @include respond-min($medium-screen) {min-height: 38em;}
+  }
+  form#customer-info fieldset {
+    .icon.visa {
+      padding: emCalc(3px) 0 0 emCalc(51px);
+      margin-bottom: emCalc(10px);
+      height: 1.7em;
+      background: #fff url('../img/checkout/icon-payment-visa.jpg') 0 0 no-repeat;
+    }
+    p {padding-bottom: 5px;}
+    p.promo-code {font: emCalc(13px) 'GothamMedium';}
+    h2 {
+      padding-bottom: 6px;
+      @include respond-min($small-screen) {padding-bottom: 0;}
+    }
+    label.autopay-label {
+      padding-top: emCalc(13px);
+      width: 99%;
+      margin-left: 20px;
+      @include respond-min($small-screen) {padding-top: 0.4375em;}
+    }
+    label.autopay-label span {margin-left: -20px;}
+  }
+  
+  .customer-info-item {
+    p {word-wrap: break-word;}
+    #shipping-method-po-box1 .delivery-info {padding-left: 0;}
+    @include respond-min($small-screen) {
+      float: left;
+      width: 33%;
+      min-height: 180px;
+    }
+  }
+  
+  .delivery-info span.italic {padding-bottom: emCalc(12px);}
+  .delivery-info.warning {
+    padding-top: emCalc(13px);
+    line-height: 1.25em;
+  }
+} /* /end left side of form */
+
+/* Start Right side of Step #3 - toggle panel */
+.section-checkout.step3 #section-checkout-form .summary {
+  min-height: inherit;
+  padding: 0 0  emCalc(15px);
+  @include respond-min($small-screen) {
+    padding-left: 2.1875em;
+    padding-right: 2.0625em;  
+    min-height: inherit;
+  }
+  .row{margin: 0;}
+  .summary-drawer-content{
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+    @include respond-min($small-screen) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  .title {
+    background: #fff url(../img/icon-accordion-inactive.png) no-repeat 95% 50%;
+    display: inline-block;
+    width: 100%;
+  }
+  .title.no-shipping {background-position: 95% 15%;}
+  .title.active {
+    background: #fff url(../img/icon-accordion-active.png) no-repeat 95% 50%;
+    &.no-shipping{background-position: 95% 15%;}
+  }
+  .title a {
+    width: 100%;
+    display: block;
+    color: #333333;
+    font-family: "GothamBold";
+    font-weight: 400;
+  }
+  .title a span {
+    font-family: "GothamMedium";
+    font-size: 13px;
+  }
+  a.open-summary-drawer span {
+    text-transform: none;
+    font-size: 13px;
+    color: #333333;
+  }
+  a.open-summary-drawer .bold {font: 13px "GothamBold";}
+  table {margin-bottom: 0;}
+  tr.total th, tr.total td {padding-bottom: 1.1875em;}
+  tr.order-total th, tr.order-total td {padding-bottom: 13px;}
+}
+
+.section-checkout.step3 .telesales {
+  position: absolute;
+  bottom: 0;
+  left: emCalc(30px);
+  background-color: #f7f7f7;
+  padding-bottom: 0;
+  .row {padding: 0;}
+  #telesales-info p {
+    font-family: "GothamMedium";
+    font-size: 14px;
+  }
+  input {margin-bottom: 0;}
+  .italic {font-size: 14px;}
+  .edit {margin-top: 1em;}
+  form {margin-bottom: 0;}
+  form fieldset {
+    padding: 16px 10px 16px 0;
+    border: none;
+    margin: 0 2px;
+  }
+}
+
+.section-checkout.step3 .closed {display: none;}

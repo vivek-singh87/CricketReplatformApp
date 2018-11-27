@@ -1,0 +1,15 @@
+{
+    "jcr:primaryType": "endeca:unstructured",
+    "host": "512219-endeca.cricketcommunications.com",
+    "port": "15002",
+    "recordSpecName": "common.id",
+    "aggregationKey": "product.repositoryId",
+    "recordFilter": "",
+    "wildcardSearchEnabled": false,
+    "recordNameField": "",
+    "fields": {
+	"common.id": "",
+        "product.repositoryId": "",
+        "product.displayName": "plain",
+    }
+}

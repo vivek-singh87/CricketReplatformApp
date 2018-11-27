@@ -1,0 +1,168 @@
+#compare-bar-custom {
+	border-bottom: 1px solid #DDDDDD; height: 4em; margin-bottom: 1em; padding: 10px;
+}
+
+#compare-bar-custom .clear{
+	border-right: 1px solid #DDDDDD; color: #EA3D28; font-size: 0.9em; margin-right: 1em; padding: 1em; text-transform: uppercase;
+}
+
+#compare-bar-custom p { float: left; font-size: 0.9em; margin-bottom: 0.5em; margin-right: 1em; margin-top: 0.5em; text-transform: uppercase;
+}
+
+.customUnchecked {
+	color: #FFFFFF; 
+	content: ""; 
+	display: block; 
+	font-size: 16px; 
+	background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+    display: inline-block;
+    height: 16px;
+    position: relative;
+    vertical-align: middle;
+    width: 16px;}
+    
+.customChecked {
+	content: "x";
+	font-size: 16px;
+	border: 1px solid #CCCCCC;
+    display: inline-block;
+    height: 16px;
+    position: relative;
+    vertical-align: middle;
+    width: 16px;}
+	
+.customChecked:before {
+    color: #222222;
+    content: "x";
+    left: 50%;
+    margin-left: -5px;
+    margin-top: 7px;
+    position: absolute;
+    top: -50%;
+}
+.compareCustom{text-transform: uppercase; color: #333; font-size: 11px; display: inline; padding: 1em 1em 0}
+#section-results .result-content .compareCustom label.has-tip {
+	border-bottom: 0;
+	font-weight: 400
+}
+.has-tipCustom:hover{color: #333333}
+.has-tipCustom.tooltip{margin-left:10px}
+    
+.customDisabled {background: none repeat scroll 0 0 #DDDDDD;}
+
+/* Used to show credit card images on confirm order page */
+.icon.mastercard{
+ padding: 0.188em 0 2em 4.188em;
+  margin-bottom: 0.625em;
+  height: 1.7em;
+  background: white url("../../img/checkout/icon-payment-mastercard.jpg") 0 0 no-repeat;
+}
+/* Used to show credit card images on confirm order page */
+.icon.americanexpress{
+  padding: 0.188em 0 2em 4.188em;
+  margin-bottom: 0.625em;
+  height: 2.3em;
+  background: white url("../../img/checkout/icon-payment-amex.jpg") 0 0 no-repeat;
+  }
+  /* Used to show credit card images on confirm order page */
+.icon.discover{
+  padding: 0.188em 0 2em 4.188em;
+  margin-bottom: 0.625em;
+  height:2.3em;
+    background: white url("../../img/checkout/icon-payment-discover.jpg") 0 0 no-repeat;
+ }
+ /* Used to show credit card images on confirm order page */
+ .icon.visa{
+  padding: 0.188em 0 2em 4.188em;
+  margin-bottom: 0.625em;
+  height: 2.3em;
+   background: white url("../../img/checkout/icon-payment-visa.jpg") 0 0 no-repeat;
+  }
+.promoerror{
+  color:#C60F13;
+  font: normal 13px 'GothamMedium';
+ }
+  /*   placed for Defect fixed id  169 and 389 */
+.section-plan-details #section-recommended-phones h3 span {
+color: #0da82c;
+}
+
+/*   placed for Defect fixed id  169 and 389 */
+.section-plan-details #section-recommended-phones h3 span {
+	font: 30px/1 GothamBlack;
+}
+
+/*   placed for Defect fixed id  169 and 389 */
+.section-plan-details #section-recommended-phones h3 {	
+	font: 30px/1 GothamBlack;
+	text-transform: uppercase;
+	color: #008752;
+	margin-bottom: 30px;
+}
+/*   placed for Defect fixed id  169 and 389 */
+.section-plan-details #section-additional-features h3 {
+font: 30px/1 GothamBlack;
+}
+
+/*   placed for Defect fixed id  169 and 389 */
+.section-plan-details #section-additional-features h3 {
+text-transform: uppercase;
+color: #008752;
+margin-bottom: 30px;
+margin-top: 20px;
+}
+
+/*   placed for Defect fixed id  169 and 389 */
+.section-plan-details #section-additional-features h3 span {
+color: #0da82c;
+}
+.acLoadingCustom {
+	background-image: url("../../img/loading.gif");
+	background-size:75px 75px;
+	background-repeat: no-repeat;
+	position:fixed;
+	z-index: 100;  
+	top:50%;  
+	left:50%;  
+	margin:-100px 0 0 -100px;  
+	width:100px;  
+	height:100px;
+}
+
+.customUncheckedRadio {
+    border-radius: 1000px;
+    padding: 3px;
+}
+.customCheckedRadio {
+	border-radius: 1000px;
+    padding: 3px;
+    content: "";
+	font-size: 16px;
+	border: 1px solid #CCCCCC;
+    display: inline-block;
+    height: 16px;
+    position: relative;
+    vertical-align: middle;
+    width: 16px;
+}
+
+.customCheckedRadio:before {
+	background-color: #008752;
+    background: none repeat scroll 0 0 #008752;
+    border-radius: 1000px;
+    content: "";
+    display: block;
+    height: 8px;
+    position: relative;
+    width: 8px;
+}
+.dialog-content a.button.greenmobile {
+width: 156px;
+font-size: 10px;
+}
+
+.searchAgain {
+	left: 11px;
+	top: 200px;
+}

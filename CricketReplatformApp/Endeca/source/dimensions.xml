@@ -1,0 +1,1198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2001, 2012, Oracle and/or its affiliates. All rights reserved.
+  ~ Oracle and Java are registered trademarks of Oracle and/or its
+  ~ affiliates. Other names may be trademarks of their respective owners.
+  ~ UNIX is a registered trademark of The Open Group.
+  ~
+  ~ This software and related documentation are provided under a license
+  ~ agreement containing restrictions on use and disclosure and are
+  ~ protected by intellectual property laws. Except as expressly permitted
+  ~ in your license agreement or allowed by law, you may not use, copy,
+  ~ reproduce, translate, broadcast, modify, license, transmit, distribute,
+  ~ exhibit, perform, publish, or display any part, in any form, or by any
+  ~ means. Reverse engineering, disassembly, or decompilation of this
+  ~ software, unless required by law for interoperability, is prohibited.
+  ~ The information contained herein is subject to change without notice
+  ~ and is not warranted to be error-free. If you find any errors, please
+  ~ report them to us in writing.
+  ~ U.S. GOVERNMENT END USERS: Oracle programs, including any operating
+  ~ system, integrated software, any programs installed on the hardware,
+  ~ and/or documentation, delivered to U.S. Government end users are
+  ~ "commercial computer software" pursuant to the applicable Federal
+  ~ Acquisition Regulation and agency-specific supplemental regulations.
+  ~ As such, use, duplication, disclosure, modification, and adaptation
+  ~ of the programs, including any operating system, integrated software,
+  ~ any programs installed on the hardware, and/or documentation, shall be
+  ~ subject to license terms and license restrictions applicable to the
+  ~ programs. No other rights are granted to the U.S. Government.
+  ~ This software or hardware is developed for general use in a variety
+  ~ of information management applications. It is not developed or
+  ~ intended for use in any inherently dangerous applications, including
+  ~ applications that may create a risk of personal injury. If you use
+  ~ this software or hardware in dangerous applications, then you shall
+  ~ be responsible to take all appropriate fail-safe, backup, redundancy,
+  ~ and other measures to ensure its safe use. Oracle Corporation and its
+  ~ affiliates disclaim any liability for any damages caused by use of this
+  ~ software or hardware in dangerous applications.
+  ~ This software or hardware and documentation may provide access to or
+  ~ information on content, products, and services from third parties.
+  ~ Oracle Corporation and its affiliates are not responsible for and
+  ~ expressly disclaim all warranties of any kind with respect to
+  ~ third-party content, products, and services. Oracle Corporation and
+  ~ its affiliates will not be responsible for any loss, costs, or damages
+  ~ incurred due to your access to or use of third-party content, products,
+  ~ or services.
+  -->
+<!DOCTYPE DIMENSIONS SYSTEM "dimensions.dtd">
+
+<DIMENSIONS VERSION="1.0.0">
+  <DIMENSION NAME="product.markets.zipCode" SRC_TYPE="INTERNAL">
+    <DIMENSION_ID ID="1" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="1" />
+        <SYN CLASSIFY="FALSE" DISPLAY="TRUE" SEARCH="FALSE">product.markets.zipCode</SYN>
+      </DVAL>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="faq.category" SRC_TYPE="AUTOGEN">
+    <DIMENSION_ID ID="2" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="2" />
+        <SYN CLASSIFY="FALSE" DISPLAY="TRUE" SEARCH="FALSE">faq.category</SYN>
+      </DVAL>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="faq.SubCategory" SRC_TYPE="AUTOGEN">
+    <DIMENSION_ID ID="3" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="3" />
+        <SYN CLASSIFY="FALSE" DISPLAY="TRUE" SEARCH="FALSE">faq.SubCategory</SYN>
+      </DVAL>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="faq.question" SRC_TYPE="AUTOGEN">
+    <DIMENSION_ID ID="5" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="5" />
+        <SYN CLASSIFY="FALSE" DISPLAY="TRUE" SEARCH="FALSE">faq.question</SYN>
+      </DVAL>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="clothing-sku.color" SRC_TYPE="AUTOGEN">
+    <DIMENSION_ID ID="10001" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="10001" />
+        <SYN DISPLAY="TRUE" CLASSIFY="FALSE" SEARCH="FALSE">clothing-sku.color</SYN>
+      </DVAL>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="clothing-sku.size" SRC_TYPE="AUTOGEN">
+    <DIMENSION_ID ID="10002" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="10002" />
+        <SYN DISPLAY="TRUE" CLASSIFY="FALSE" SEARCH="FALSE">clothing-sku.size</SYN>
+      </DVAL>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="furniture-sku.woodFinish" SRC_TYPE="AUTOGEN">
+    <DIMENSION_ID ID="10003" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="10003" />
+        <SYN DISPLAY="TRUE" CLASSIFY="FALSE" SEARCH="FALSE">furniture-sku.woodFinish</SYN>
+      </DVAL>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="market.code" SRC_TYPE="AUTOGEN">
+    <DIMENSION_ID ID="10142" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="10142" />
+        <SYN DISPLAY="TRUE" CLASSIFY="FALSE" SEARCH="FALSE">market.code</SYN>
+      </DVAL>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="phone.compatiblePlan" SRC_TYPE="AUTOGEN">
+    <DIMENSION_ID ID="10135" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="10135" />
+        <SYN DISPLAY="TRUE" CLASSIFY="FALSE" SEARCH="FALSE">phone.compatiblePlan</SYN>
+      </DVAL>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="phone.planDescription" SRC_TYPE="AUTOGEN">
+    <DIMENSION_ID ID="10136" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="10136" />
+        <SYN DISPLAY="TRUE" CLASSIFY="FALSE" SEARCH="FALSE">phone.planDescription</SYN>
+      </DVAL>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="phone.planDisplayName" SRC_TYPE="AUTOGEN">
+    <DIMENSION_ID ID="10137" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="10137" />
+        <SYN DISPLAY="TRUE" CLASSIFY="FALSE" SEARCH="FALSE">phone.planDisplayName</SYN>
+      </DVAL>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="plan.compatiblePhone" SRC_TYPE="AUTOGEN">
+    <DIMENSION_ID ID="10138" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="10138" />
+        <SYN DISPLAY="TRUE" CLASSIFY="FALSE" SEARCH="FALSE">plan.compatiblePhone</SYN>
+      </DVAL>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="plan.phoneDescription" SRC_TYPE="AUTOGEN">
+    <DIMENSION_ID ID="10139" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="10139" />
+        <SYN DISPLAY="TRUE" CLASSIFY="FALSE" SEARCH="FALSE">plan.phoneDescription</SYN>
+      </DVAL>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="plan.phoneDisplayName" SRC_TYPE="AUTOGEN">
+    <DIMENSION_ID ID="10140" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="10140" />
+        <SYN DISPLAY="TRUE" CLASSIFY="FALSE" SEARCH="FALSE">plan.phoneDisplayName</SYN>
+      </DVAL>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="product.accessoryType" SRC_TYPE="AUTOGEN">
+    <DIMENSION_ID ID="10096" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="10096" />
+        <SYN DISPLAY="TRUE" CLASSIFY="FALSE" SEARCH="FALSE">product.accessoryType</SYN>
+      </DVAL>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="product.brand" SRC_TYPE="AUTOGEN">
+    <DIMENSION_ID ID="10093" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="10093" />
+        <SYN DISPLAY="TRUE" CLASSIFY="FALSE" SEARCH="FALSE">product.brand</SYN>
+      </DVAL>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="product.calculatedFeatures" SRC_TYPE="AUTOGEN">
+    <DIMENSION_ID ID="10146" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="10146" />
+        <SYN DISPLAY="TRUE" CLASSIFY="FALSE" SEARCH="FALSE">product.calculatedFeatures</SYN>
+      </DVAL>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="product.catalogId" SRC_TYPE="AUTOGEN">
+    <DIMENSION_ID ID="10097" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="10097" />
+        <SYN DISPLAY="TRUE" CLASSIFY="FALSE" SEARCH="FALSE">product.catalogId</SYN>
+      </DVAL>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="product.disallowAsRecommendation" SRC_TYPE="AUTOGEN">
+    <DIMENSION_ID ID="10006" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="10006" />
+        <SYN DISPLAY="TRUE" CLASSIFY="FALSE" SEARCH="FALSE">product.disallowAsRecommendation</SYN>
+      </DVAL>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="product.displayName" SRC_TYPE="AUTOGEN">
+    <DIMENSION_ID ID="10144" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="10144" />
+        <SYN DISPLAY="TRUE" CLASSIFY="FALSE" SEARCH="FALSE">product.displayName</SYN>
+      </DVAL>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="product.features.displayName" SRC_TYPE="AUTOGEN">
+    <DIMENSION_ID ID="10007" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="10007" />
+        <SYN DISPLAY="TRUE" CLASSIFY="FALSE" SEARCH="FALSE">product.features.displayName</SYN>
+      </DVAL>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="product.keyFeatures" SRC_TYPE="AUTOGEN">
+    <DIMENSION_ID ID="10098" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="10098" />
+        <SYN DISPLAY="TRUE" CLASSIFY="FALSE" SEARCH="FALSE">product.keyFeatures</SYN>
+      </DVAL>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="product.language" SRC_TYPE="AUTOGEN">
+    <DIMENSION_ID ID="10099" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="10099" />
+        <SYN DISPLAY="TRUE" CLASSIFY="FALSE" SEARCH="FALSE">product.language</SYN>
+      </DVAL>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="product.manufacturer.displayName" SRC_TYPE="AUTOGEN">
+    <DIMENSION_ID ID="10100" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="10100" />
+        <SYN DISPLAY="TRUE" CLASSIFY="FALSE" SEARCH="FALSE">product.manufacturer.displayName</SYN>
+      </DVAL>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="product.nonreturnable" SRC_TYPE="AUTOGEN">
+    <DIMENSION_ID ID="10008" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="10008" />
+        <SYN DISPLAY="TRUE" CLASSIFY="FALSE" SEARCH="FALSE">product.nonreturnable</SYN>
+      </DVAL>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="product.os" SRC_TYPE="AUTOGEN">
+    <DIMENSION_ID ID="10101" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="10101" />
+        <SYN DISPLAY="TRUE" CLASSIFY="FALSE" SEARCH="FALSE">product.os</SYN>
+      </DVAL>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="product.phoneStyle" SRC_TYPE="AUTOGEN">
+    <DIMENSION_ID ID="10102" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="10102" />
+        <SYN DISPLAY="TRUE" CLASSIFY="FALSE" SEARCH="FALSE">product.phoneStyle</SYN>
+      </DVAL>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="product.siteId" SRC_TYPE="AUTOGEN">
+    <DIMENSION_ID ID="10009" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="10009" />
+        <SYN DISPLAY="TRUE" CLASSIFY="FALSE" SEARCH="FALSE">product.siteId</SYN>
+      </DVAL>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="product.type" SRC_TYPE="AUTOGEN">
+    <DIMENSION_ID ID="10141" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="10141" />
+        <SYN DISPLAY="TRUE" CLASSIFY="FALSE" SEARCH="FALSE">product.type</SYN>
+      </DVAL>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="sku.listPrice" SRC_TYPE="AUTOGEN">
+    <DIMENSION_ID ID="10143" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="10143" />
+        <SYN DISPLAY="TRUE" CLASSIFY="FALSE" SEARCH="FALSE">sku.listPrice</SYN>
+      </DVAL>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="product.category" SRC_TYPE="INTERNAL">
+    <DIMENSION_ID ID="10011" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="10011" />
+        <SYN DISPLAY="TRUE" CLASSIFY="FALSE" SEARCH="FALSE">product.category</SYN>
+        <PROP NAME="display_name">
+          <PVAL>product.category</PVAL>
+        </PROP>
+      </DVAL>
+      <DIMENSION_NODE>
+        <DVAL TYPE="EXACT">
+          <DVAL_ID ID="10117" />
+          <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">Phones</SYN>
+          <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">cat410016</SYN>
+          <PROP NAME="category.siteId">
+            <PVAL>cricketStore</PVAL>
+          </PROP>
+          <PROP NAME="category.rootCatalogId">
+            <PVAL>catalog340003</PVAL>
+          </PROP>
+          <PROP NAME="category.ancestorCatalogIds">
+            <PVAL>catalog340003</PVAL>
+          </PROP>
+          <PROP NAME="category.repositoryId">
+            <PVAL>cat410016</PVAL>
+          </PROP>
+          <PROP NAME="category.catalogs.repositoryId">
+            <PVAL>catalog340003</PVAL>
+          </PROP>
+          <PROP NAME="DisplayOrder">
+            <PVAL>0</PVAL>
+          </PROP>
+          <PROP NAME="SourceId">
+            <PVAL>cat410016</PVAL>
+          </PROP>
+        </DVAL>
+        <DIMENSION_NODE>
+          <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10118" />
+            <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">All Phones</SYN>
+            <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">cat410016.cat410018</SYN>
+            <PROP NAME="category.siteId">
+              <PVAL>cricketStore</PVAL>
+            </PROP>
+            <PROP NAME="category.rootCatalogId">
+              <PVAL>catalog340003</PVAL>
+            </PROP>
+            <PROP NAME="category.ancestorCatalogIds">
+              <PVAL>catalog340003</PVAL>
+            </PROP>
+            <PROP NAME="category.repositoryId">
+              <PVAL>cat410018</PVAL>
+            </PROP>
+            <PROP NAME="category.catalogs.repositoryId">
+              <PVAL>catalog340003</PVAL>
+            </PROP>
+            <PROP NAME="DisplayOrder">
+              <PVAL>0</PVAL>
+            </PROP>
+            <PROP NAME="SourceId">
+              <PVAL>cat410016.cat410018</PVAL>
+            </PROP>
+          </DVAL>
+        </DIMENSION_NODE>
+        <DIMENSION_NODE>
+          <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10119" />
+            <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">Smart Phones</SYN>
+            <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">cat410016.cat410019</SYN>
+            <PROP NAME="category.siteId">
+              <PVAL>cricketStore</PVAL>
+            </PROP>
+            <PROP NAME="category.rootCatalogId">
+              <PVAL>catalog340003</PVAL>
+            </PROP>
+            <PROP NAME="category.ancestorCatalogIds">
+              <PVAL>catalog340003</PVAL>
+            </PROP>
+            <PROP NAME="category.repositoryId">
+              <PVAL>cat410019</PVAL>
+            </PROP>
+            <PROP NAME="category.catalogs.repositoryId">
+              <PVAL>catalog340003</PVAL>
+            </PROP>
+            <PROP NAME="DisplayOrder">
+              <PVAL>1</PVAL>
+            </PROP>
+            <PROP NAME="SourceId">
+              <PVAL>cat410016.cat410019</PVAL>
+            </PROP>
+          </DVAL>
+        </DIMENSION_NODE>
+        <DIMENSION_NODE>
+          <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10120" />
+            <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">Feature Phones</SYN>
+            <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">cat410016.cat410020</SYN>
+            <PROP NAME="category.siteId">
+              <PVAL>cricketStore</PVAL>
+            </PROP>
+            <PROP NAME="category.rootCatalogId">
+              <PVAL>catalog340003</PVAL>
+            </PROP>
+            <PROP NAME="category.ancestorCatalogIds">
+              <PVAL>catalog340003</PVAL>
+            </PROP>
+            <PROP NAME="category.repositoryId">
+              <PVAL>cat410020</PVAL>
+            </PROP>
+            <PROP NAME="category.catalogs.repositoryId">
+              <PVAL>catalog340003</PVAL>
+            </PROP>
+            <PROP NAME="DisplayOrder">
+              <PVAL>2</PVAL>
+            </PROP>
+            <PROP NAME="SourceId">
+              <PVAL>cat410016.cat410020</PVAL>
+            </PROP>
+          </DVAL>
+        </DIMENSION_NODE>
+        <DIMENSION_NODE>
+          <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10121" />
+            <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">Accessories</SYN>
+            <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">cat410016.cat410021</SYN>
+            <PROP NAME="category.siteId">
+              <PVAL>cricketStore</PVAL>
+            </PROP>
+            <PROP NAME="category.rootCatalogId">
+              <PVAL>catalog340003</PVAL>
+            </PROP>
+            <PROP NAME="category.ancestorCatalogIds">
+              <PVAL>catalog340003</PVAL>
+            </PROP>
+            <PROP NAME="category.repositoryId">
+              <PVAL>cat410021</PVAL>
+            </PROP>
+            <PROP NAME="category.catalogs.repositoryId">
+              <PVAL>catalog340003</PVAL>
+            </PROP>
+            <PROP NAME="DisplayOrder">
+              <PVAL>3</PVAL>
+            </PROP>
+            <PROP NAME="SourceId">
+              <PVAL>cat410016.cat410021</PVAL>
+            </PROP>
+          </DVAL>
+        </DIMENSION_NODE>
+      </DIMENSION_NODE>
+      <DIMENSION_NODE>
+        <DVAL TYPE="EXACT">
+          <DVAL_ID ID="10122" />
+          <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">Plans</SYN>
+          <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">cat410017</SYN>
+          <PROP NAME="category.siteId">
+            <PVAL>cricketStore</PVAL>
+          </PROP>
+          <PROP NAME="category.rootCatalogId">
+            <PVAL>catalog340003</PVAL>
+          </PROP>
+          <PROP NAME="category.ancestorCatalogIds">
+            <PVAL>catalog340003</PVAL>
+          </PROP>
+          <PROP NAME="category.repositoryId">
+            <PVAL>cat410017</PVAL>
+          </PROP>
+          <PROP NAME="category.catalogs.repositoryId">
+            <PVAL>catalog340003</PVAL>
+          </PROP>
+          <PROP NAME="DisplayOrder">
+            <PVAL>0</PVAL>
+          </PROP>
+          <PROP NAME="SourceId">
+            <PVAL>cat410017</PVAL>
+          </PROP>
+        </DVAL>
+        <DIMENSION_NODE>
+          <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10123" />
+            <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">All Plans</SYN>
+            <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">cat410017.cat410022</SYN>
+            <PROP NAME="category.siteId">
+              <PVAL>cricketStore</PVAL>
+            </PROP>
+            <PROP NAME="category.rootCatalogId">
+              <PVAL>catalog340003</PVAL>
+            </PROP>
+            <PROP NAME="category.ancestorCatalogIds">
+              <PVAL>catalog340003</PVAL>
+            </PROP>
+            <PROP NAME="category.repositoryId">
+              <PVAL>cat410022</PVAL>
+            </PROP>
+            <PROP NAME="category.catalogs.repositoryId">
+              <PVAL>catalog340003</PVAL>
+            </PROP>
+            <PROP NAME="DisplayOrder">
+              <PVAL>0</PVAL>
+            </PROP>
+            <PROP NAME="SourceId">
+              <PVAL>cat410017.cat410022</PVAL>
+            </PROP>
+          </DVAL>
+        </DIMENSION_NODE>
+        <DIMENSION_NODE>
+          <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10124" />
+            <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">Plan Add-ons</SYN>
+            <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">cat410017.cat250016</SYN>
+            <PROP NAME="category.siteId">
+              <PVAL>cricketStore</PVAL>
+            </PROP>
+            <PROP NAME="category.rootCatalogId">
+              <PVAL>catalog340003</PVAL>
+            </PROP>
+            <PROP NAME="category.ancestorCatalogIds">
+              <PVAL>catalog340003</PVAL>
+            </PROP>
+            <PROP NAME="category.repositoryId">
+              <PVAL>cat250016</PVAL>
+            </PROP>
+            <PROP NAME="category.catalogs.repositoryId">
+              <PVAL>catalog340003</PVAL>
+            </PROP>
+            <PROP NAME="DisplayOrder">
+              <PVAL>1</PVAL>
+            </PROP>
+            <PROP NAME="SourceId">
+              <PVAL>cat410017.cat250016</PVAL>
+            </PROP>
+          </DVAL>
+          <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+              <DVAL_ID ID="10129" />
+              <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">INTERNATIONAL CALLING &amp; ROAMING</SYN>
+              <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">cat410017.cat250016.cat70050</SYN>
+              <PROP NAME="category.siteId">
+                <PVAL>cricketStore</PVAL>
+              </PROP>
+              <PROP NAME="category.rootCatalogId">
+                <PVAL>catalog340003</PVAL>
+              </PROP>
+              <PROP NAME="category.ancestorCatalogIds">
+                <PVAL>catalog340003</PVAL>
+              </PROP>
+              <PROP NAME="category.repositoryId">
+                <PVAL>cat70050</PVAL>
+              </PROP>
+              <PROP NAME="category.catalogs.repositoryId">
+                <PVAL>catalog340003</PVAL>
+              </PROP>
+              <PROP NAME="DisplayOrder">
+                <PVAL>0</PVAL>
+              </PROP>
+              <PROP NAME="SourceId">
+                <PVAL>cat410017.cat250016.cat70050</PVAL>
+              </PROP>
+            </DVAL>
+          </DIMENSION_NODE>
+          <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+              <DVAL_ID ID="10130" />
+              <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">CALLING FEATURES</SYN>
+              <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">cat410017.cat250016.cat70051</SYN>
+              <PROP NAME="category.siteId">
+                <PVAL>cricketStore</PVAL>
+              </PROP>
+              <PROP NAME="category.rootCatalogId">
+                <PVAL>catalog340003</PVAL>
+              </PROP>
+              <PROP NAME="category.ancestorCatalogIds">
+                <PVAL>catalog340003</PVAL>
+              </PROP>
+              <PROP NAME="category.repositoryId">
+                <PVAL>cat70051</PVAL>
+              </PROP>
+              <PROP NAME="category.catalogs.repositoryId">
+                <PVAL>catalog340003</PVAL>
+              </PROP>
+              <PROP NAME="DisplayOrder">
+                <PVAL>1</PVAL>
+              </PROP>
+              <PROP NAME="SourceId">
+                <PVAL>cat410017.cat250016.cat70051</PVAL>
+              </PROP>
+            </DVAL>
+          </DIMENSION_NODE>
+          <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+              <DVAL_ID ID="10131" />
+              <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">MESSAGING</SYN>
+              <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">cat410017.cat250016.cat70052</SYN>
+              <PROP NAME="category.siteId">
+                <PVAL>cricketStore</PVAL>
+              </PROP>
+              <PROP NAME="category.rootCatalogId">
+                <PVAL>catalog340003</PVAL>
+              </PROP>
+              <PROP NAME="category.ancestorCatalogIds">
+                <PVAL>catalog340003</PVAL>
+              </PROP>
+              <PROP NAME="category.repositoryId">
+                <PVAL>cat70052</PVAL>
+              </PROP>
+              <PROP NAME="category.catalogs.repositoryId">
+                <PVAL>catalog340003</PVAL>
+              </PROP>
+              <PROP NAME="DisplayOrder">
+                <PVAL>2</PVAL>
+              </PROP>
+              <PROP NAME="SourceId">
+                <PVAL>cat410017.cat250016.cat70052</PVAL>
+              </PROP>
+            </DVAL>
+          </DIMENSION_NODE>
+          <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+              <DVAL_ID ID="10132" />
+              <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">MUSIC, GAMES AND APPS</SYN>
+              <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">cat410017.cat250016.cat70053</SYN>
+              <PROP NAME="category.siteId">
+                <PVAL>cricketStore</PVAL>
+              </PROP>
+              <PROP NAME="category.rootCatalogId">
+                <PVAL>catalog340003</PVAL>
+              </PROP>
+              <PROP NAME="category.ancestorCatalogIds">
+                <PVAL>catalog340003</PVAL>
+              </PROP>
+              <PROP NAME="category.repositoryId">
+                <PVAL>cat70053</PVAL>
+              </PROP>
+              <PROP NAME="category.catalogs.repositoryId">
+                <PVAL>catalog340003</PVAL>
+              </PROP>
+              <PROP NAME="DisplayOrder">
+                <PVAL>3</PVAL>
+              </PROP>
+              <PROP NAME="SourceId">
+                <PVAL>cat410017.cat250016.cat70053</PVAL>
+              </PROP>
+            </DVAL>
+          </DIMENSION_NODE>
+          <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+              <DVAL_ID ID="10133" />
+              <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">DATA</SYN>
+              <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">cat410017.cat250016.cat70054</SYN>
+              <PROP NAME="category.siteId">
+                <PVAL>cricketStore</PVAL>
+              </PROP>
+              <PROP NAME="category.rootCatalogId">
+                <PVAL>catalog340003</PVAL>
+              </PROP>
+              <PROP NAME="category.ancestorCatalogIds">
+                <PVAL>catalog340003</PVAL>
+              </PROP>
+              <PROP NAME="category.repositoryId">
+                <PVAL>cat70054</PVAL>
+              </PROP>
+              <PROP NAME="category.catalogs.repositoryId">
+                <PVAL>catalog340003</PVAL>
+              </PROP>
+              <PROP NAME="DisplayOrder">
+                <PVAL>4</PVAL>
+              </PROP>
+              <PROP NAME="SourceId">
+                <PVAL>cat410017.cat250016.cat70054</PVAL>
+              </PROP>
+            </DVAL>
+          </DIMENSION_NODE>
+          <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+              <DVAL_ID ID="10134" />
+              <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">OTHER</SYN>
+              <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">cat410017.cat250016.cat70055</SYN>
+              <PROP NAME="category.siteId">
+                <PVAL>cricketStore</PVAL>
+              </PROP>
+              <PROP NAME="category.rootCatalogId">
+                <PVAL>catalog340003</PVAL>
+              </PROP>
+              <PROP NAME="category.ancestorCatalogIds">
+                <PVAL>catalog340003</PVAL>
+              </PROP>
+              <PROP NAME="category.repositoryId">
+                <PVAL>cat70055</PVAL>
+              </PROP>
+              <PROP NAME="category.catalogs.repositoryId">
+                <PVAL>catalog340003</PVAL>
+              </PROP>
+              <PROP NAME="DisplayOrder">
+                <PVAL>5</PVAL>
+              </PROP>
+              <PROP NAME="SourceId">
+                <PVAL>cat410017.cat250016.cat70055</PVAL>
+              </PROP>
+            </DVAL>
+          </DIMENSION_NODE>
+        </DIMENSION_NODE>
+        <DIMENSION_NODE>
+          <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10125" />
+            <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">Cricket PAYGo</SYN>
+            <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">cat410017.cat250017</SYN>
+            <PROP NAME="category.siteId">
+              <PVAL>cricketStore</PVAL>
+            </PROP>
+            <PROP NAME="category.rootCatalogId">
+              <PVAL>catalog340003</PVAL>
+            </PROP>
+            <PROP NAME="category.ancestorCatalogIds">
+              <PVAL>catalog340003</PVAL>
+            </PROP>
+            <PROP NAME="category.repositoryId">
+              <PVAL>cat250017</PVAL>
+            </PROP>
+            <PROP NAME="category.catalogs.repositoryId">
+              <PVAL>catalog340003</PVAL>
+            </PROP>
+            <PROP NAME="DisplayOrder">
+              <PVAL>2</PVAL>
+            </PROP>
+            <PROP NAME="SourceId">
+              <PVAL>cat410017.cat250017</PVAL>
+            </PROP>
+          </DVAL>
+        </DIMENSION_NODE>
+      </DIMENSION_NODE>
+      <DIMENSION_NODE>
+        <DVAL TYPE="EXACT">
+          <DVAL_ID ID="10092" />
+          <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">Unindexed Category</SYN>
+          <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">unindexedCategory</SYN>
+          <PROP NAME="category.repositoryId">
+            <PVAL>unindexedCategory</PVAL>
+          </PROP>
+          <PROP NAME="DisplayOrder">
+            <PVAL>-1</PVAL>
+          </PROP>
+          <PROP NAME="SourceId">
+            <PVAL>unindexedCategory</PVAL>
+          </PROP>
+        </DVAL>
+      </DIMENSION_NODE>
+    </DIMENSION_NODE>
+  </DIMENSION>
+  <DIMENSION NAME="item.type" SRC_TYPE="INTERNAL">
+    <DIMENSION_ID ID="10079" />
+    <DIMENSION_NODE>
+      <DVAL TYPE="EXACT">
+        <DVAL_ID ID="10079" />
+        <SYN DISPLAY="TRUE" CLASSIFY="FALSE" SEARCH="FALSE">item.type</SYN>
+        <PROP NAME="display_name">
+          <PVAL>item.type</PVAL>
+        </PROP>
+      </DVAL>
+      <DIMENSION_NODE>
+        <DVAL TYPE="EXACT">
+          <DVAL_ID ID="10080" />
+          <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">Catalog</SYN>
+          <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">catalog</SYN>
+          <PROP NAME="displayName_en">
+            <PVAL>Catalog</PVAL>
+          </PROP>
+          <PROP NAME="DisplayOrder">
+            <PVAL>-1</PVAL>
+          </PROP>
+          <PROP NAME="SourceId">
+            <PVAL>catalog</PVAL>
+          </PROP>
+        </DVAL>
+      </DIMENSION_NODE>
+      <DIMENSION_NODE>
+        <DVAL TYPE="EXACT">
+          <DVAL_ID ID="10081" />
+          <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">Category</SYN>
+          <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">category</SYN>
+          <PROP NAME="displayName_en">
+            <PVAL>Category</PVAL>
+          </PROP>
+          <PROP NAME="DisplayOrder">
+            <PVAL>-1</PVAL>
+          </PROP>
+          <PROP NAME="SourceId">
+            <PVAL>category</PVAL>
+          </PROP>
+        </DVAL>
+      </DIMENSION_NODE>
+      <DIMENSION_NODE>
+        <DVAL TYPE="EXACT">
+          <DVAL_ID ID="10082" />
+          <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">Configurable Property</SYN>
+          <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">configurableProperty</SYN>
+          <PROP NAME="displayName_en">
+            <PVAL>Configurable Property</PVAL>
+          </PROP>
+          <PROP NAME="DisplayOrder">
+            <PVAL>-1</PVAL>
+          </PROP>
+          <PROP NAME="SourceId">
+            <PVAL>configurableProperty</PVAL>
+          </PROP>
+        </DVAL>
+      </DIMENSION_NODE>
+      <DIMENSION_NODE>
+        <DVAL TYPE="EXACT">
+          <DVAL_ID ID="10083" />
+          <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">Configuration Option</SYN>
+          <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">configurationOption</SYN>
+          <PROP NAME="displayName_en">
+            <PVAL>Configuration Option</PVAL>
+          </PROP>
+          <PROP NAME="DisplayOrder">
+            <PVAL>-1</PVAL>
+          </PROP>
+          <PROP NAME="SourceId">
+            <PVAL>configurationOption</PVAL>
+          </PROP>
+        </DVAL>
+      </DIMENSION_NODE>
+      <DIMENSION_NODE>
+        <DVAL TYPE="EXACT">
+          <DVAL_ID ID="10084" />
+          <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">Manufacturer</SYN>
+          <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">manufacturer</SYN>
+          <PROP NAME="displayName_en">
+            <PVAL>Manufacturer</PVAL>
+          </PROP>
+          <PROP NAME="DisplayOrder">
+            <PVAL>-1</PVAL>
+          </PROP>
+          <PROP NAME="SourceId">
+            <PVAL>manufacturer</PVAL>
+          </PROP>
+        </DVAL>
+      </DIMENSION_NODE>
+      <DIMENSION_NODE>
+        <DVAL TYPE="EXACT">
+          <DVAL_ID ID="10104" />
+          <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">MarketInfo</SYN>
+          <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">market-info</SYN>
+          <PROP NAME="displayName_en">
+            <PVAL>MarketInfo</PVAL>
+          </PROP>
+          <PROP NAME="DisplayOrder">
+            <PVAL>-1</PVAL>
+          </PROP>
+          <PROP NAME="SourceId">
+            <PVAL>market-info</PVAL>
+          </PROP>
+        </DVAL>
+      </DIMENSION_NODE>
+      <DIMENSION_NODE>
+        <DVAL TYPE="EXACT">
+          <DVAL_ID ID="10113" />
+          <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">Media</SYN>
+          <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">media</SYN>
+          <PROP NAME="displayName_en">
+            <PVAL>Media</PVAL>
+          </PROP>
+          <PROP NAME="DisplayOrder">
+            <PVAL>-1</PVAL>
+          </PROP>
+          <PROP NAME="SourceId">
+            <PVAL>media</PVAL>
+          </PROP>
+        </DVAL>
+        <DIMENSION_NODE>
+          <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10114" />
+            <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">Media - External</SYN>
+            <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">media-external</SYN>
+            <PROP NAME="displayName_en">
+              <PVAL>Media - External</PVAL>
+            </PROP>
+            <PROP NAME="DisplayOrder">
+              <PVAL>-1</PVAL>
+            </PROP>
+            <PROP NAME="SourceId">
+              <PVAL>media-external</PVAL>
+            </PROP>
+          </DVAL>
+        </DIMENSION_NODE>
+        <DIMENSION_NODE>
+          <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10115" />
+            <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">Media - Internal - Binary</SYN>
+            <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">media-internal-binary</SYN>
+            <PROP NAME="displayName_en">
+              <PVAL>Media - Internal - Binary</PVAL>
+            </PROP>
+            <PROP NAME="DisplayOrder">
+              <PVAL>-1</PVAL>
+            </PROP>
+            <PROP NAME="SourceId">
+              <PVAL>media-internal-binary</PVAL>
+            </PROP>
+          </DVAL>
+        </DIMENSION_NODE>
+        <DIMENSION_NODE>
+          <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10116" />
+            <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">Media - Internal - Text</SYN>
+            <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">media-internal-text</SYN>
+            <PROP NAME="displayName_en">
+              <PVAL>Media - Internal - Text</PVAL>
+            </PROP>
+            <PROP NAME="DisplayOrder">
+              <PVAL>-1</PVAL>
+            </PROP>
+            <PROP NAME="SourceId">
+              <PVAL>media-internal-text</PVAL>
+            </PROP>
+          </DVAL>
+        </DIMENSION_NODE>
+      </DIMENSION_NODE>
+      <DIMENSION_NODE>
+        <DVAL TYPE="EXACT">
+          <DVAL_ID ID="10085" />
+          <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">Product</SYN>
+          <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">product</SYN>
+          <PROP NAME="displayName_en">
+            <PVAL>Product</PVAL>
+          </PROP>
+          <PROP NAME="DisplayOrder">
+            <PVAL>-1</PVAL>
+          </PROP>
+          <PROP NAME="SourceId">
+            <PVAL>product</PVAL>
+          </PROP>
+        </DVAL>
+        <DIMENSION_NODE>
+          <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10105" />
+            <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">Accessory Product</SYN>
+            <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">accessory-product</SYN>
+            <PROP NAME="displayName_en">
+              <PVAL>Accessory Product</PVAL>
+            </PROP>
+            <PROP NAME="DisplayOrder">
+              <PVAL>-1</PVAL>
+            </PROP>
+            <PROP NAME="SourceId">
+              <PVAL>accessory-product</PVAL>
+            </PROP>
+          </DVAL>
+        </DIMENSION_NODE>
+        <DIMENSION_NODE>
+          <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10106" />
+            <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">AddOn Product</SYN>
+            <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">addOn-product</SYN>
+            <PROP NAME="displayName_en">
+              <PVAL>AddOn Product</PVAL>
+            </PROP>
+            <PROP NAME="DisplayOrder">
+              <PVAL>-1</PVAL>
+            </PROP>
+            <PROP NAME="SourceId">
+              <PVAL>addOn-product</PVAL>
+            </PROP>
+          </DVAL>
+        </DIMENSION_NODE>
+        <DIMENSION_NODE>
+          <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10107" />
+            <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">Phone Product</SYN>
+            <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">phone-product</SYN>
+            <PROP NAME="displayName_en">
+              <PVAL>Phone Product</PVAL>
+            </PROP>
+            <PROP NAME="DisplayOrder">
+              <PVAL>-1</PVAL>
+            </PROP>
+            <PROP NAME="SourceId">
+              <PVAL>phone-product</PVAL>
+            </PROP>
+          </DVAL>
+        </DIMENSION_NODE>
+        <DIMENSION_NODE>
+          <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10145" />
+            <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">Plan Group</SYN>
+            <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">plan-group</SYN>
+            <PROP NAME="displayName_en">
+              <PVAL>Plan Group</PVAL>
+            </PROP>
+            <PROP NAME="DisplayOrder">
+              <PVAL>-1</PVAL>
+            </PROP>
+            <PROP NAME="SourceId">
+              <PVAL>plan-group</PVAL>
+            </PROP>
+          </DVAL>
+        </DIMENSION_NODE>
+        <DIMENSION_NODE>
+          <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10108" />
+            <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">Plan Product</SYN>
+            <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">plan-product</SYN>
+            <PROP NAME="displayName_en">
+              <PVAL>Plan Product</PVAL>
+            </PROP>
+            <PROP NAME="DisplayOrder">
+              <PVAL>-1</PVAL>
+            </PROP>
+            <PROP NAME="SourceId">
+              <PVAL>plan-product</PVAL>
+            </PROP>
+          </DVAL>
+        </DIMENSION_NODE>
+      </DIMENSION_NODE>
+      <DIMENSION_NODE>
+        <DVAL TYPE="EXACT">
+          <DVAL_ID ID="10086" />
+          <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">Product Feature</SYN>
+          <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">feature</SYN>
+          <PROP NAME="displayName_en">
+            <PVAL>Product Feature</PVAL>
+          </PROP>
+          <PROP NAME="DisplayOrder">
+            <PVAL>-1</PVAL>
+          </PROP>
+          <PROP NAME="SourceId">
+            <PVAL>feature</PVAL>
+          </PROP>
+        </DVAL>
+      </DIMENSION_NODE>
+      <DIMENSION_NODE>
+        <DVAL TYPE="EXACT">
+          <DVAL_ID ID="10087" />
+          <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">SKU</SYN>
+          <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">sku</SYN>
+          <PROP NAME="displayName_en">
+            <PVAL>SKU</PVAL>
+          </PROP>
+          <PROP NAME="DisplayOrder">
+            <PVAL>-1</PVAL>
+          </PROP>
+          <PROP NAME="SourceId">
+            <PVAL>sku</PVAL>
+          </PROP>
+        </DVAL>
+        <DIMENSION_NODE>
+          <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10109" />
+            <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">Accessory SKU</SYN>
+            <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">accessory-sku</SYN>
+            <PROP NAME="displayName_en">
+              <PVAL>Accessory SKU</PVAL>
+            </PROP>
+            <PROP NAME="DisplayOrder">
+              <PVAL>-1</PVAL>
+            </PROP>
+            <PROP NAME="SourceId">
+              <PVAL>accessory-sku</PVAL>
+            </PROP>
+          </DVAL>
+        </DIMENSION_NODE>
+        <DIMENSION_NODE>
+          <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10110" />
+            <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">AddOn SKU</SYN>
+            <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">addOn-sku</SYN>
+            <PROP NAME="displayName_en">
+              <PVAL>AddOn SKU</PVAL>
+            </PROP>
+            <PROP NAME="DisplayOrder">
+              <PVAL>-1</PVAL>
+            </PROP>
+            <PROP NAME="SourceId">
+              <PVAL>addOn-sku</PVAL>
+            </PROP>
+          </DVAL>
+        </DIMENSION_NODE>
+        <DIMENSION_NODE>
+          <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10088" />
+            <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">Clothing SKU</SYN>
+            <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">clothing-sku</SYN>
+            <PROP NAME="displayName_en">
+              <PVAL>Clothing SKU</PVAL>
+            </PROP>
+            <PROP NAME="DisplayOrder">
+              <PVAL>-1</PVAL>
+            </PROP>
+            <PROP NAME="SourceId">
+              <PVAL>clothing-sku</PVAL>
+            </PROP>
+          </DVAL>
+        </DIMENSION_NODE>
+        <DIMENSION_NODE>
+          <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10089" />
+            <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">Configurable SKU</SYN>
+            <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">configurableSku</SYN>
+            <PROP NAME="displayName_en">
+              <PVAL>Configurable SKU</PVAL>
+            </PROP>
+            <PROP NAME="DisplayOrder">
+              <PVAL>-1</PVAL>
+            </PROP>
+            <PROP NAME="SourceId">
+              <PVAL>configurableSku</PVAL>
+            </PROP>
+          </DVAL>
+        </DIMENSION_NODE>
+        <DIMENSION_NODE>
+          <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10090" />
+            <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">Furniture SKU</SYN>
+            <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">furniture-sku</SYN>
+            <PROP NAME="displayName_en">
+              <PVAL>Furniture SKU</PVAL>
+            </PROP>
+            <PROP NAME="DisplayOrder">
+              <PVAL>-1</PVAL>
+            </PROP>
+            <PROP NAME="SourceId">
+              <PVAL>furniture-sku</PVAL>
+            </PROP>
+          </DVAL>
+        </DIMENSION_NODE>
+        <DIMENSION_NODE>
+          <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10111" />
+            <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">Phone SKU</SYN>
+            <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">phone-sku</SYN>
+            <PROP NAME="displayName_en">
+              <PVAL>Phone SKU</PVAL>
+            </PROP>
+            <PROP NAME="DisplayOrder">
+              <PVAL>-1</PVAL>
+            </PROP>
+            <PROP NAME="SourceId">
+              <PVAL>phone-sku</PVAL>
+            </PROP>
+          </DVAL>
+        </DIMENSION_NODE>
+        <DIMENSION_NODE>
+          <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10112" />
+            <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">Plan SKU</SYN>
+            <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">plan-sku</SYN>
+            <PROP NAME="displayName_en">
+              <PVAL>Plan SKU</PVAL>
+            </PROP>
+            <PROP NAME="DisplayOrder">
+              <PVAL>-1</PVAL>
+            </PROP>
+            <PROP NAME="SourceId">
+              <PVAL>plan-sku</PVAL>
+            </PROP>
+          </DVAL>
+        </DIMENSION_NODE>
+      </DIMENSION_NODE>
+      <DIMENSION_NODE>
+        <DVAL TYPE="EXACT">
+          <DVAL_ID ID="10091" />
+          <SYN DISPLAY="TRUE" CLASSIFY="TRUE" SEARCH="TRUE">SKU Link</SYN>
+          <SYN DISPLAY="FALSE" CLASSIFY="TRUE" SEARCH="FALSE">sku-link</SYN>
+          <PROP NAME="displayName_en">
+            <PVAL>SKU Link</PVAL>
+          </PROP>
+          <PROP NAME="DisplayOrder">
+            <PVAL>-1</PVAL>
+          </PROP>
+          <PROP NAME="SourceId">
+            <PVAL>sku-link</PVAL>
+          </PROP>
+        </DVAL>
+      </DIMENSION_NODE>
+    </DIMENSION_NODE>
+  </DIMENSION>
+</DIMENSIONS>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/deploy/pipeline/dimensions.xml#2 $$Change: 768606 $-->
+

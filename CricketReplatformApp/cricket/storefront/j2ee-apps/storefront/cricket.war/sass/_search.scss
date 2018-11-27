@@ -1,0 +1,430 @@
+/* Autocomplete Widget Styling Desktop */
+.acResults {
+  height: auto;
+	min-height: 100px;
+  position: static;
+  width: 100%;
+  padding-top: 7px;
+	margin-top: 10px;
+	ul {
+	  margin: 0px;
+  	padding-top: 0;
+  	list-style-position: outside;
+  	list-style: none;
+  	li {
+  	  color: #fff;
+  	  width: auto;
+  	  margin: 0px;
+    	cursor: pointer;
+    	display: block;
+    	overflow: hidden;
+    	font-family: "GothamBook";
+    	span {
+        display: block;
+    	  margin-bottom: 2px;
+    	  a {
+    	    display: block;
+    	    font-size: 0.9em;
+    	    background: #454545 url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-arrow-orange-circle.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 90% 50%;
+    	  }
+      }
+  	}
+	}
+
+  @include respond-min($tablet-screen) {
+    padding-top: 7px;
+  	margin-top: 10px;
+  	width: 320px;
+  	min-height: 200px;
+  	background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-white-arrow-up.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) repeat-x 0 0;
+  	ul {
+    	border-left: 1px solid #ccc;
+    	border-right: 1px solid #ccc;
+    	border-bottom: 1px solid #ccc;
+    	background-color: #fff;
+    	li {
+    	  width: auto;
+    	  margin: 0px;
+      	padding: 2px 5px;
+      	cursor: pointer;
+      	display: block;
+      	font-size: 12px;
+      	overflow: hidden;
+      	color: #999;
+    	}
+  	}
+  }
+  
+}
+
+
+@include respond-min($tablet-screen) {
+  .acLoading {
+    background-image: url(//images.mycricket.com/cricket?set=imageURL[file:/img/loading.gif],imageHeight[60],imageFormat[gif],imageQuality[90]&call=url[file:cricket/default.chain]);
+  	background-repeat: no-repeat;
+  	background-position: right center;
+  	background-size: contain;
+    width: 60px;
+    height: 60px;
+  	display: block;
+  	position: absolute;
+  	top: 50px;
+  	left: 50%;
+  }
+  .acSelect {
+  	background-color: #f2f2f2;
+  	color: #000;
+  }
+}
+
+/* Styling for Predicitive Search in Header and Search Results Page */
+#search-all-results,
+#search-phone-results,
+#search-accessories-results, 
+#search-plan-results,
+#search-support-results,
+#predictive-search-zip, 
+#predictive-search-nozip {
+  .columns {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  h3 {
+    color: #008752;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    font-family: "GothamBlack";
+    margin: 0;
+    .number {font-family: "GothamMedium";}
+  }
+  .text-right a.circle-arrow {
+    margin-top: 0;
+    line-height: 2.4em;
+  }
+  .result {
+    float: left;
+    width: 100%;
+    padding: 1em 0 1em 0;
+    @include respond-min($tablet-screen) {
+      width: 33.33%;
+      padding: 1em 0 1em 0;
+    }
+    img {max-width: none;}
+    .copy {
+      width: 63%;
+      padding-left: 1.2em;
+      
+      @include respond-min($tablet-screen) {
+        width: 72%;
+        padding-left: 0.8em;
+      }
+      
+      
+      @include respond-min($medium-screen) {
+        width: 78%;
+        padding-left: 1.7em;
+      }
+      
+    }
+    h3 {
+      color: #333;
+      font-size: 1em;
+      letter-spacing: -1px;
+      font-weight: normal;
+      margin: 0 0 0.2em 0;
+      line-height: inherit;
+    }
+    h4 {
+      color: #333;
+      font-size: 1em;
+      font-family: "GothamMedium";
+      font-weight: normal;
+      margin: 0 0 0.1em 0;
+      line-height: inherit;
+      a {color: #333;}
+    }
+    a.circle-arrow {
+      display: block;
+      font-size: 11px;
+    }
+  }
+
+  .green-price {
+    @include green-price;
+    font-size: 1.85em;
+    line-height: inherit;
+    margin-bottom: 0;
+  }
+  .green-add-cart {
+    @include btn-cricket(#28ac75);
+    width: auto;
+    font-size: 10px;
+    margin-bottom: 0;
+    margin-top: 0.3em;
+  }
+  
+  /* Plans Search Results are a bit wider */
+  .plans .result, .plan-addons .result {
+    .copy {
+      padding-left: 1em;
+      width: 57%;
+    }
+    
+    @include respond-min($tablet-screen) {
+      .copy {
+        padding-left: 1em;
+        width: 57%;
+      }
+    }
+    
+    
+    @include respond-min($medium-screen) {
+      .copy {
+        padding-left: 1.2em;
+        width: 58%;
+      }
+    }
+    
+  }
+  
+  /* Support Search results don't have images */
+  .support .result {
+    .copy {
+      padding-left: 1em;
+      padding-right: 1em;
+      width: 100%;
+      h4 {
+        line-height: inherit;
+        margin-bottom: 1em;
+      }
+    }
+    /* Desktop */
+    @include respond-min($medium-screen) {
+      .copy {
+        padding-right: 0;
+        width: 90%;
+      }
+    }
+    
+  }
+  
+  #search-support-links {
+    padding: 2em;
+    margin-top: 2em;
+    border-top: 1px solid #ccc;
+  }
+  
+} /* /predictive-search 1 & 2 */
+
+#predictive-search-1, 
+#predictive-search-2 {
+  .row {
+    padding: 0 2em 0 0;
+    margin: 0 auto;
+  }
+  .search-section.support .copy {padding: 0;}
+}
+
+/* Some results tabs have filters, so need less padding */
+#search-phone-results, #search-accessories-results {padding: 2em 0.5em 1em 0.5em;}
+
+#search-all-results {
+  padding: 1em 0.5em;
+  .search-section {
+    min-height: 115px;
+    max-height: 140px;
+    overflow: hidden;
+    &.support {
+      height: 100px;
+      .copy {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+    &.plans {max-height: 110px;}
+    &.plan-addons {max-height: 162px;}
+  }
+  
+  @include respond-min($medium-screen) {
+    padding: 3em 0 1em 0;
+    .search-section {
+      min-height: auto;
+      max-height: auto;
+      overflow: visible;
+      &.support {height: auto;}
+      &.plans {max-height: auto;}
+      &.plan-addons {max-height: auto;}
+    }
+  }
+}
+
+#search-plan-results {padding: 1em 0 1em 0;}
+
+#search-all-results,
+#search-phone-results,
+#search-accessories-results,
+#search-plan-results {
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* Sub Nav on Search Results Page */
+#constructor.section-search-results .subnav {
+  dl {
+    margin-left: 0.625em;
+    margin-right: 0.625em;
+    dd.active {
+      color: #008752;
+      font-size: 1.15em;
+    }
+    dd {
+      font-family: "GothamMedium";
+      font-size: 0.9em;
+      color: #333;
+      height: 2em;
+    }
+  }
+}
+
+/* Title Area for all Search Pages */
+#search-header {
+  font-family: "GothamMedium";
+  padding: 1em 0 0 0;
+  input {font-family: "GothamBook";}
+  h1 {
+    font-size: emCalc(20px);
+    color: #008752;
+    width: 70%;
+    line-height: 20px;
+    margin-bottom: 1em;
+    span {color: #00a663;}
+    span.number {font-family: "GothamMedium";}
+  }
+  p.sorry {
+    background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-exclamation.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 0 25%;
+  	margin: emCalc(20px) 0 emCalc(20px) 0;
+  	padding: 0 0 0 emCalc(30px);
+  	line-height: 1.3em;
+  }
+  h3 {
+    font-size: emCalc(25px);
+    margin-top: emCalc(20px);
+    color: #008752;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-family: "GothamBlack";
+  }
+  .grey-button {padding: 0.7em 0.8em 0.7em 0.8em;}
+  
+  /* Desktop */
+  @include respond-min($medium-screen) {
+    background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/search/results-power-pixel.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat top right;
+    padding: 2em 0 0 0;
+    h1 {
+      font-size: emCalc(30px);
+      width: auto;
+      line-height: inherit;
+    }
+  }
+}
+
+/* Add a border to the filters only for Search */
+#search-categories #section-filters .top-bar {
+  border-top: 1px solid #E6E6E6;
+  @include respond-min($medium-screen) {
+    border-top: 1px solid #B2B2B2;
+  }
+}
+
+ul.search-recommendations {
+  list-style-type: none;
+  list-style-position: inside;
+  li {
+    padding: 0.3em 0;
+    &:after {@include clearfix; }
+    a {
+      color: #333;
+      border-bottom: 1px solid #ccc;
+      width: auto;
+      float: left;
+      line-height: 1.2em;
+    }
+  }
+}
+
+.search-pager {
+  color: #008752;
+  font-family: "GothamBlack";
+  font-size: emCalc(13px);
+  margin: 2em 0 0 0;
+  a {
+    margin: 0;
+    padding: 0.25em 0.55em;
+  }
+  a.current {
+    background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/search/icon-pager-current.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 50% 50%;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    padding: 0.25em 0.55em;
+  }
+  .next, .previous{
+    @include btn-cricket(#dbdbdc);
+    font-size: 10px;
+    margin-bottom: 0;
+    font-weight: normal;
+    float: none;
+  }
+  .previous {margin-right: 2em;}
+  .next {margin-left: 2em;}
+}
+
+#search-support-links {
+  background-color: #fff;
+  padding: 0 0 1em 0;
+  a {
+    float: none;
+    display: block;
+    margin: 0.5em;
+  }
+  
+  @include respond-min($tablet-screen) {
+    padding: 1em 0 2em 0;
+    a {
+      float: left;
+      margin: 0 1.5em;
+    }
+     a:first-child {margin-left: 0;}
+  }
+  
+}
+
+/* phones can no longer be added to cart, adding styling for shop now button*/
+#search-all-results,
+#search-phone-results{
+  a.orange-shop-now{
+    @include btn-cricket($orange-2);
+    font-size: 10px;
+    width: auto;
+    padding: 0.8em;
+    margin: 0.4em;
+  }
+}
+
+/* Search Overrides for "Similar Phones, "Similar Plans" Blocks "*/
+#constructor.section-search-results #similar-phones {
+  border-top: none;
+  .row:first-child {border-top: none;}
+}
+
+#constructor.section-search-results #phone-plans {background: none;}
+
+.results-dropdown { position: absolute; top: 140px; left: 0; display: none; z-index:9999; padding-bottom: 10px; }
+.results-dropdown ul li:hover, .mobile .results-dropdown ul li:hover { background-color: #f2f2f2;}
+.results-dropdown ul li a, .mobile .results-dropdown ul li a { color: #999; }
+.results-dropdown ul li:hover a, .mobile .results-dropdown ul li:hover a { color: #000; }
+.mobile .results-dropdown { background: #fff; padding-bottom: 20px; top: 120px; }
+.mobile .results-dropdown ul li { padding-left: 20px; margin-bottom: 5px; margin-top: 5px; }

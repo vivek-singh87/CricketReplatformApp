@@ -1,0 +1,2 @@
+DROP TABLE "CKT_MARKET_PRICE_LIST";
+commit;

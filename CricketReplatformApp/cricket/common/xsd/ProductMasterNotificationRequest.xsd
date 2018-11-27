@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://techm.atg.cricket.com/ESP/Cricket/CricketReplatformApp/cricket/common/xsd/ProductMasterNotificationRequest.xsd"
+	xmlns="http://techm.atg.cricket.com/ESP/Cricket/CricketReplatformApp/cricket/common/xsd/ProductMasterNotificationRequest.xsd"
+	elementFormDefault="qualified" xmlns:pref="http://esp.cricket.com/ESP/Namespaces/JMS/Public/ProductMasterNotification.xsd">
+	<xs:import schemaLocation="ProductMasterNotification.xsd" namespace="http://esp.cricket.com/ESP/Namespaces/JMS/Public/ProductMasterNotification.xsd"></xs:import>
+	<xs:complexType name="ProductMasterNotificationRequestInfo">
+		<xs:sequence>
+			<xs:element name="productList" type="pref:ProductListInfo"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ProductMasterNotificationRequest"
+		type="ProductMasterNotificationRequestInfo">
+	</xs:element>
+</xs:schema>

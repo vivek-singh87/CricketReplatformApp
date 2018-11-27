@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:PARCNotificationRequest xmlns:tns="D:\Cricket\CricketReplatformApp\cricket\common\xsd\PARCNotificationRequest.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <tns:PARCNotification>
+  <tns:RatePan>
+	<tns:name>$70 LTE Android Muve Double Data (10GB)-1</tns:name>
+	<tns:code>LTEMVA11</tns:code>
+	<tns:price>70.00</tns:price>
+	<tns:category>PIA AIM</tns:category>
+	<tns:type>V</tns:type>
+	<tns:webGroupCode>LTEMVA10</tns:webGroupCode>
+	<tns:lifecyclePhase>1</tns:lifecyclePhase>
+	<tns:activateDtm>2013-12-31T12:00:00</tns:activateDtm>
+	<tns:deactivateDtm>2015-10-29T18:18:30.0</tns:deactivateDtm>
+	<tns:Markets>
+	  <tns:Market>
+		<tns:id>1000</tns:id>
+		<tns:name>Philadelphia</tns:name>
+		<tns:hoCode>830</tns:hoCode>
+	  </tns:Market>
+	</tns:Markets>
+	<tns:Devices>
+	  <tns:Device>
+		<tns:phoneId>1000</tns:phoneId>
+		<tns:phoneCode>code1000</tns:phoneCode>
+	  </tns:Device>
+	</tns:Devices>
+  </tns:RatePan>
+  <tns:RatePan>
+	<tns:name>$70 LTE Android Muve Double Data (10GB)-2</tns:name>
+	<tns:code>LTEMVA12</tns:code>
+	<tns:price>70.00</tns:price>
+	<tns:category>PIA AIM</tns:category>
+	<tns:type>V</tns:type>
+	<tns:webGroupCode>LTEMVA10</tns:webGroupCode>
+	<tns:lifecyclePhase>1</tns:lifecyclePhase>
+	<tns:activateDtm>2013-12-31T12:00:00</tns:activateDtm>
+	<tns:deactivateDtm>2015-10-29T18:18:30.0</tns:deactivateDtm>
+	<tns:Markets>
+	  <tns:Market>
+		<tns:id>1000</tns:id>
+		<tns:name>Philadelphia</tns:name>
+		<tns:hoCode>830</tns:hoCode>
+	  </tns:Market>
+	</tns:Markets>
+	<tns:Devices>
+	  <tns:Device>
+		<tns:phoneId>1000</tns:phoneId>
+		<tns:phoneCode>code1000</tns:phoneCode>
+	  </tns:Device>
+	</tns:Devices>
+  </tns:RatePan>
+  <tns:RatePan>
+	<tns:name>$70 LTE Android Muve Double Data (10GB)-3</tns:name>
+	<tns:code>LTEMVA13</tns:code>
+	<tns:price>70.00</tns:price>
+	<tns:category>PIA AIM</tns:category>
+	<tns:type>V</tns:type>
+	<tns:webGroupCode>LTEMVA10</tns:webGroupCode>
+	<tns:lifecyclePhase>1</tns:lifecyclePhase>
+	<tns:activateDtm>2013-12-31T12:00:00</tns:activateDtm>
+	<tns:deactivateDtm>2015-10-29T18:18:30.0</tns:deactivateDtm>
+	<tns:Markets>
+	  <tns:Market>
+		<tns:id>1000</tns:id>
+		<tns:name>Philadelphia</tns:name>
+		<tns:hoCode>830</tns:hoCode>
+	  </tns:Market>
+	</tns:Markets>
+	<tns:Devices>
+	  <tns:Device>
+		<tns:phoneId>1000</tns:phoneId>
+		<tns:phoneCode>code1000</tns:phoneCode>
+	  </tns:Device>
+	</tns:Devices>
+  </tns:RatePan>
+  <tns:RatePan>
+	<tns:name>$70 LTE Android Muve Double Data (10GB)-4</tns:name>
+	<tns:code>LTEMVA14</tns:code>
+	<tns:price>70.00</tns:price>
+	<tns:category>PIA AIM</tns:category>
+	<tns:type>V</tns:type>
+	<tns:webGroupCode>LTEMVA10</tns:webGroupCode>
+	<tns:lifecyclePhase>1</tns:lifecyclePhase>
+	<tns:activateDtm>2013-12-31T12:00:00</tns:activateDtm>
+	<tns:deactivateDtm>2015-10-29T18:18:30.0</tns:deactivateDtm>
+	<tns:Markets>
+	  <tns:Market>
+		<tns:id>1000</tns:id>
+		<tns:name>Philadelphia</tns:name>
+		<tns:hoCode>830</tns:hoCode>
+	  </tns:Market>
+	</tns:Markets>
+	<tns:Devices>
+	  <tns:Device>
+		<tns:phoneId>1000</tns:phoneId>
+		<tns:phoneCode>code1000</tns:phoneCode>
+	  </tns:Device>
+	</tns:Devices>
+  </tns:RatePan>
+  <tns:RatePan>
+	<tns:name>$70 LTE Android Muve Double Data (10GB)-5</tns:name>
+	<tns:code>LTEMVA15</tns:code>
+	<tns:price>70.00</tns:price>
+	<tns:category>PIA AIM</tns:category>
+	<tns:type>V</tns:type>
+	<tns:webGroupCode>LTEMVA10</tns:webGroupCode>
+	<tns:lifecyclePhase>1</tns:lifecyclePhase>
+	<tns:activateDtm>2013-12-31T12:00:00</tns:activateDtm>
+	<tns:deactivateDtm>2015-10-29T18:18:30.0</tns:deactivateDtm>
+	<tns:Markets>
+	  <tns:Market>
+		<tns:id>1000</tns:id>
+		<tns:name>Philadelphia</tns:name>
+		<tns:hoCode>830</tns:hoCode>
+	  </tns:Market>
+	</tns:Markets>
+	<tns:Devices>
+	  <tns:Device>
+		<tns:phoneId>1000</tns:phoneId>
+		<tns:phoneCode>code1000</tns:phoneCode>
+	  </tns:Device>
+	</tns:Devices>
+  </tns:RatePan>
+  <tns:RatePan>
+	<tns:name>$70 LTE Android Muve Double Data (10GB)-6</tns:name>
+	<tns:code>LTEMVA16</tns:code>
+	<tns:price>70.00</tns:price>
+	<tns:category>PIA AIM</tns:category>
+	<tns:type>V</tns:type>
+	<tns:webGroupCode>LTEMVA10</tns:webGroupCode>
+	<tns:lifecyclePhase>1</tns:lifecyclePhase>
+	<tns:activateDtm>2013-12-31T12:00:00</tns:activateDtm>
+	<tns:deactivateDtm>2015-10-29T18:18:30.0</tns:deactivateDtm>
+	<tns:Markets>
+	  <tns:Market>
+		<tns:id>1000</tns:id>
+		<tns:name>Philadelphia</tns:name>
+		<tns:hoCode>830</tns:hoCode>
+	  </tns:Market>
+	</tns:Markets>
+	<tns:Devices>
+	  <tns:Device>
+		<tns:phoneId>1000</tns:phoneId>
+		<tns:phoneCode>code1000</tns:phoneCode>
+	  </tns:Device>
+	</tns:Devices>
+  </tns:RatePan>
+  <tns:RatePan>
+	<tns:name>$70 LTE Android Muve Double Data (10GB)-7</tns:name>
+	<tns:code>LTEMVA17</tns:code>
+	<tns:price>70.00</tns:price>
+	<tns:category>PIA AIM</tns:category>
+	<tns:type>V</tns:type>
+	<tns:webGroupCode>LTEMVA10</tns:webGroupCode>
+	<tns:lifecyclePhase>1</tns:lifecyclePhase>
+	<tns:activateDtm>2013-12-31T12:00:00</tns:activateDtm>
+	<tns:deactivateDtm>2015-10-29T18:18:30.0</tns:deactivateDtm>
+	<tns:Markets>
+	  <tns:Market>
+		<tns:id>1000</tns:id>
+		<tns:name>Philadelphia</tns:name>
+		<tns:hoCode>830</tns:hoCode>
+	  </tns:Market>
+	</tns:Markets>
+	<tns:Devices>
+	  <tns:Device>
+		<tns:phoneId>1000</tns:phoneId>
+		<tns:phoneCode>code1000</tns:phoneCode>
+	  </tns:Device>
+	</tns:Devices>
+  </tns:RatePan>
+  <tns:RatePan>
+	<tns:name>$70 LTE Android Muve Double Data (10GB)-8</tns:name>
+	<tns:code>LTEMVA18</tns:code>
+	<tns:price>70.00</tns:price>
+	<tns:category>PIA AIM</tns:category>
+	<tns:type>V</tns:type>
+	<tns:webGroupCode>LTEMVA10</tns:webGroupCode>
+	<tns:lifecyclePhase>1</tns:lifecyclePhase>
+	<tns:activateDtm>2013-12-31T12:00:00</tns:activateDtm>
+	<tns:deactivateDtm>2015-10-29T18:18:30.0</tns:deactivateDtm>
+	<tns:Markets>
+	  <tns:Market>
+		<tns:id>1000</tns:id>
+		<tns:name>Philadelphia</tns:name>
+		<tns:hoCode>830</tns:hoCode>
+	  </tns:Market>
+	</tns:Markets>
+	<tns:Devices>
+	  <tns:Device>
+		<tns:phoneId>1000</tns:phoneId>
+		<tns:phoneCode>code1000</tns:phoneCode>
+	  </tns:Device>
+	</tns:Devices>
+  </tns:RatePan>
+  <tns:RatePan>
+	<tns:name>$70 LTE Android Muve Double Data (10GB)-9</tns:name>
+	<tns:code>LTEMVA19</tns:code>
+	<tns:price>70.00</tns:price>
+	<tns:category>PIA AIM</tns:category>
+	<tns:type>V</tns:type>
+	<tns:webGroupCode>LTEMVA10</tns:webGroupCode>
+	<tns:lifecyclePhase>1</tns:lifecyclePhase>
+	<tns:activateDtm>2013-12-31T12:00:00</tns:activateDtm>
+	<tns:deactivateDtm>2015-10-29T18:18:30.0</tns:deactivateDtm>
+	<tns:Markets>
+	  <tns:Market>
+		<tns:id>1000</tns:id>
+		<tns:name>Philadelphia</tns:name>
+		<tns:hoCode>830</tns:hoCode>
+	  </tns:Market>
+	</tns:Markets>
+	<tns:Devices>
+	  <tns:Device>
+		<tns:phoneId>1000</tns:phoneId>
+		<tns:phoneCode>code1000</tns:phoneCode>
+	  </tns:Device>
+	</tns:Devices>
+  </tns:RatePan>
+  <tns:RatePan>
+	<tns:name>$70 LTE Android Muve Double Data (10GB)-10</tns:name>
+	<tns:code>LTEMVA20</tns:code>
+	<tns:price>70.00</tns:price>
+	<tns:category>PIA AIM</tns:category>
+	<tns:type>V</tns:type>
+	<tns:webGroupCode>LTEMVA10</tns:webGroupCode>
+	<tns:lifecyclePhase>1</tns:lifecyclePhase>
+	<tns:activateDtm>2013-12-31T12:00:00</tns:activateDtm>
+	<tns:deactivateDtm>2015-10-29T18:18:30.0</tns:deactivateDtm>
+	<tns:Markets>
+	  <tns:Market>
+		<tns:id>1000</tns:id>
+		<tns:name>Philadelphia</tns:name>
+		<tns:hoCode>830</tns:hoCode>
+	  </tns:Market>
+	</tns:Markets>
+	<tns:Devices>
+	  <tns:Device>
+		<tns:phoneId>1000</tns:phoneId>
+		<tns:phoneCode>code1000</tns:phoneCode>
+	  </tns:Device>
+	</tns:Devices>
+  </tns:RatePan>
+</tns:PARCNotification>
+</tns:PARCNotificationRequest>

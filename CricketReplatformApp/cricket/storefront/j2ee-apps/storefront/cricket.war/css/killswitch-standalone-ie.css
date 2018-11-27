@@ -1,0 +1,175 @@
+/* Buttons */
+/* Misc reusable text styles*/
+/* Fonts */
+@font-face {
+  font-family: 'GothamBlack';
+  src: url("fonts/g/gotham-black-webfont.eot?jcb=1346957874");
+  src: url("fonts/g/gotham-black-webfont.eot?jcb=1346957874?#iefix") format("embedded-opentype"), url("fonts/g/gotham-black-webfont.woff?jcb=1346957874") format("woff"), url("fonts/g/gotham-black-webfont.ttf?jcb=1346957874") format("truetype"), url("fonts/g/gotham-black-webfont.svg#wf") format("svg");
+}
+
+@font-face {
+  font-family: 'GothamBook';
+  src: url("fonts/g/gotham-book-webfont.eot?jcb=1346957874");
+  src: url("fonts/g/gotham-book-webfont.eot?jcb=1346957874?#iefix") format("embedded-opentype"), url("fonts/g/gotham-book-webfont.woff?jcb=1346957874") format("woff"), url("fonts/g/gotham-book-webfont.ttf?jcb=1346957874") format("truetype"), url("fonts/g/gotham-book-webfont.svg#wf") format("svg");
+}
+
+@font-face {
+  font-family: 'GothamBold';
+  src: url("fonts/g/gotham-bold-webfont.eot?jcb=1346957874");
+  src: url("fonts/g/gotham-bold-webfont.eot?jcb=1346957874?#iefix") format("embedded-opentype"), url("fonts/g/gotham-bold-webfont.woff?jcb=1346957874") format("woff"), url("fonts/g/gotham-bold-webfont.ttf?jcb=1346957874") format("truetype"), url("fonts/g/gotham-bold-webfont.svg#wf") format("svg");
+}
+
+@font-face {
+  font-family: 'GothamMedium';
+  src: url("fonts/g/gotham-medium-webfont.eot?jcb=1346957874");
+  src: url("fonts/g/gotham-medium-webfont.eot?jcb=1346957874?#iefix") format("embedded-opentype"), url("fonts/g/gotham-medium-webfont.woff?jcb=1346957874") format("woff"), url("fonts/g/gotham-medium-webfont.ttf?jcb=1346957874") format("truetype"), url("fonts/g/gotham-medium-webfont.svg#wf") format("svg");
+}
+
+@font-face {
+  font-family: 'GothamLight';
+  src: url("fonts/g/gotham-light-webfont.eot?jcb=1346957874");
+  src: url("fonts/g/gotham-light-webfont.eot?jcb=1346957874?#iefix") format("embedded-opentype"), url("fonts/g/gotham-light-webfont.woff?jcb=1346957874") format("woff"), url("fonts/g/gotham-light-webfont.ttf?jcb=1346957874") format("truetype"), url("fonts/g/gotham-light-webfont.svg#wf") format("svg");
+}
+
+/* Buttons */
+/* Misc reusable text styles*/
+/* Fonts */
+@font-face {
+  font-family: 'GothamBlack';
+  src: url("fonts/g/gotham-black-webfont.eot?jcb=1346957874");
+  src: url("fonts/g/gotham-black-webfont.eot?jcb=1346957874?#iefix") format("embedded-opentype"), url("fonts/g/gotham-black-webfont.woff?jcb=1346957874") format("woff"), url("fonts/g/gotham-black-webfont.ttf?jcb=1346957874") format("truetype"), url("fonts/g/gotham-black-webfont.svg#wf") format("svg");
+}
+
+@font-face {
+  font-family: 'GothamBook';
+  src: url("fonts/g/gotham-book-webfont.eot?jcb=1346957874");
+  src: url("fonts/g/gotham-book-webfont.eot?jcb=1346957874?#iefix") format("embedded-opentype"), url("fonts/g/gotham-book-webfont.woff?jcb=1346957874") format("woff"), url("fonts/g/gotham-book-webfont.ttf?jcb=1346957874") format("truetype"), url("fonts/g/gotham-book-webfont.svg#wf") format("svg");
+}
+
+@font-face {
+  font-family: 'GothamBold';
+  src: url("fonts/g/gotham-bold-webfont.eot?jcb=1346957874");
+  src: url("fonts/g/gotham-bold-webfont.eot?jcb=1346957874?#iefix") format("embedded-opentype"), url("fonts/g/gotham-bold-webfont.woff?jcb=1346957874") format("woff"), url("fonts/g/gotham-bold-webfont.ttf?jcb=1346957874") format("truetype"), url("fonts/g/gotham-bold-webfont.svg#wf") format("svg");
+}
+
+@font-face {
+  font-family: 'GothamMedium';
+  src: url("fonts/g/gotham-medium-webfont.eot?jcb=1346957874");
+  src: url("fonts/g/gotham-medium-webfont.eot?jcb=1346957874?#iefix") format("embedded-opentype"), url("fonts/g/gotham-medium-webfont.woff?jcb=1346957874") format("woff"), url("fonts/g/gotham-medium-webfont.ttf?jcb=1346957874") format("truetype"), url("fonts/g/gotham-medium-webfont.svg#wf") format("svg");
+}
+
+@font-face {
+  font-family: 'GothamLight';
+  src: url("fonts/g/gotham-light-webfont.eot?jcb=1346957874");
+  src: url("fonts/g/gotham-light-webfont.eot?jcb=1346957874?#iefix") format("embedded-opentype"), url("fonts/g/gotham-light-webfont.woff?jcb=1346957874") format("woff"), url("fonts/g/gotham-light-webfont.ttf?jcb=1346957874") format("truetype"), url("fonts/g/gotham-light-webfont.svg#wf") format("svg");
+}
+
+/* Killswitch Page */
+/* line 6, ../sass/killswitch-standalone.scss */
+section.killswitch {
+  margin: 0;
+  position: relative;
+  width: 100%;
+}
+
+/* line 12, ../sass/killswitch-standalone.scss */
+#killswitch-container {
+  height: 100%;
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/killswitch/killswitch-mobile-bg.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat right 0;
+  min-height: 540px;
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/killswitch/killswitch-bg.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 50% 0;
+}
+
+/* line 21, ../sass/killswitch-standalone.scss */
+#killswitch-right-bg {
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/killswitch/killswitch-right-bg.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 0 0;
+  min-height: 164px;
+  position: absolute;
+  right: 0;
+  width: 491px;
+}
+
+/* line 29, ../sass/killswitch-standalone.scss */
+#killsiwtch-content-container {
+  margin: 0 20px;
+  padding-top: 93px;
+  width: 100%;
+  min-height: 175px;
+  position: relative;
+  margin: 0 auto;
+  padding-top: 230px;
+  width: 815px;
+}
+
+/* line 42, ../sass/killswitch-standalone.scss */
+#killswitch-logo {
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/killswitch/killswitch-mobile-logo.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 0 0;
+  width: 85%;
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/killswitch/killswitch-logo.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 0 0;
+  float: left;
+  height: auto;
+  margin-left: 10%;
+  width: 355px;
+}
+
+/* line 54, ../sass/killswitch-standalone.scss */
+#top-line {
+  display: inline-block;
+  font: 42px/1px 'GothamBlack';
+  line-height: 42px;
+  margin-top: 80px;
+  width: 200px;
+  color: #03ca10;
+  text-transform: uppercase;
+  letter-spacing: -3px;
+  font: 50px/1px 'GothamBlack';
+  margin-top: 80px;
+  width: auto;
+  line-height: 50px;
+}
+/* line 63, ../sass/killswitch-standalone.scss */
+#top-line span {
+  color: #008752;
+}
+
+/* line 72, ../sass/killswitch-standalone.scss */
+#bottom-line {
+  display: block;
+  font: 45px/1px 'GothamBlack';
+  line-height: 45px;
+  margin-top: -12px;
+  width: 300px;
+  color: #018111;
+  text-transform: uppercase;
+  letter-spacing: -3px;
+  font: 55px/1px 'GothamBlack';
+  margin-top: -15px;
+  width: auto;
+  line-height: 55px;
+}
+/* line 81, ../sass/killswitch-standalone.scss */
+#bottom-line span {
+  color: #00583d;
+}
+
+/* line 90, ../sass/killswitch-standalone.scss */
+#killswitch-text {
+  width: 85%;
+  margin-top: 40px;
+  float: left;
+  width: 370px;
+  margin-top: 70px;
+}
+/* line 98, ../sass/killswitch-standalone.scss */
+#killswitch-text span {
+  display: block;
+  font: 16px/24px 'GothamBold';
+  color: #333;
+  text-transform: uppercase;
+}
+/* line 104, ../sass/killswitch-standalone.scss */
+#killswitch-text p {
+  display: block;
+  font: 13px/22px 'GothamMedium';
+  color: #333;
+}

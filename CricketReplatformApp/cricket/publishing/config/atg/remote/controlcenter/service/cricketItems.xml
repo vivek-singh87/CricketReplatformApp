@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE applications
+        PUBLIC "-//Art Technology Group, Inc.//DTD BCC Application Configuration //EN"
+        "http://www.atg.com/dtds/application-configuration/application-configuration_1.0.dtd">
+
+<applications>
+  <application id="cricketItems">
+    <resource-bundle>
+      com.cricket.catalog.CatalogResources
+    </resource-bundle>
+    <display-name-resource>
+      cricketItems.displayName
+    </display-name-resource>
+    <destination-page>
+      <url>
+        /AssetManager/assetManager.jsp
+      </url>
+      <query-parameter key="activity" value="cricketItems"/>
+      <query-parameter key="taskConfiguration" value="/atg/web/assetmanager/configuration/ConfigurationManager"/>
+    </destination-page>
+    <acl>
+      Profile$role$epubAdmin:read;Profile$role$epubSuperAdmin:read;Profile$role$epubManager:read;Profile$accessRight$externaluserfull:read
+    </acl>
+    <initializer>
+    </initializer>
+    <sort-priority>
+      30
+    </sort-priority>
+    <category>
+      /Common/commonWorkflow.wdl
+    </category>
+  </application>
+  
+  <application id="browse.cricketItems">
+    <resource-bundle>
+      com.cricket.catalog.CatalogResources
+    </resource-bundle>
+    <display-name-resource>
+      cricketItems.displayName
+    </display-name-resource>
+    <destination-page>
+      <url>
+        /AssetManager/assetManager.jsp
+      </url>
+      <query-parameter key="browse" value="browse.cricketItems"/>
+      <query-parameter key="taskConfiguration" value="/atg/web/assetmanager/configuration/ConfigurationManager"/>
+    </destination-page>
+    <acl>
+      Profile$role$epubAdmin:read;Profile$role$epubSuperAdmin:read;Profile$role$epubManager:read;Profile$accessRight$externaluserfull:read
+    </acl>
+    <initializer>
+    </initializer>
+    <sort-priority>
+      30
+    </sort-priority>
+    <category>
+      /Common/commonWorkflow.browse.wdl
+    </category>
+  </application>
+</applications>
+<!-- @version $Id: //product/DPS-UI/version/10.2/src/config/atg/remote/controlcenter/service/externalUsers.xml#2 $$Change: 788278 $-->

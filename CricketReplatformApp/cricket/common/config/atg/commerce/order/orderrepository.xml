@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gsa-template SYSTEM "dynamosystemresource:/atg/dtds/gsa/gsa_1.0.dtd">
+<gsa-template>
+    <header>
+        <name>OrderRepository</name>
+        <author>TechM</author>
+    </header>
+<item-descriptor name="order" xml-combine="append">
+	<table name="ckt_order" type="auxiliary" id-column-name="order_id">
+
+	<property name="workOrderType" column-name="work_order_type" data-type="enumerated" display-name-resource="workOrderType" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false">
+        <attribute name="useCodeForValue" value="false"/>
+			<option value="RRC" code="0"/>
+			<option value="ACT" code="1"/>
+			<option value="ADD" code="2"/>
+			<option value="OUP" code="3"/>
+			<option value="OXC" code="4"/>	<!--  Accessories Only = OXC-->
+		</property>
+        
+        <property name="PackageType" column-name="package_type" data-type="enumerated" display-name-resource="package type" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false">
+        <attribute name="useCodeForValue" value="false"/>
+			<option value="New Activation" code="0"/>
+ 			<option value="Purchase Accessories" code="1"/>
+			<option value="Change Features" code="2"/>
+			<option value="Change Plan" code="3"/>
+			<option value="Add a Line" code="4"/>
+			<option value="Upgrade Phone" code="5"/>
+			<option value="Paygo Activation" code="6"/>
+			<option value="Paygo Purchase" code="7"/>
+		</property>
+		<property name="accountAddressId" display-name-resource="AccountAddressId" column-name="account_addressid" data-type="String" required="false" cache-mode="inherit" queryable="true" expert="false" readable="true" writable="true"/>
+    	<property name="isananymoususer" display-name-resource="isAnanymousUser" column-name="is_ananymous_User" data-type="boolean" required="false" cache-mode="inherit" queryable="true" expert="false" readable="true" writable="true"/>
+        <property name="refundAmount" column-name="refund_amount" data-type="double" default="0.0" display-name-resource="refundAmount"/>
+		<property name="marketCode" column-name="market_code"  data-type="string" display-name-resource="market code" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+        <property name="accountBalance" column-name="account_balance" data-type="double" display-name-resource="account balance" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+        <property name="e91desc" column-name="e91desc" data-type="String" display-name-resource="e91 description" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+        <property name="e911amount" column-name="e911_amount" data-type="double" display-name-resource="e911 amount" default="0.0" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" /> 
+        <property name="boamount" column-name="bo_amount" data-type="double" display-name-resource="bo amount" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+       	<property name="totalTax" column-name="total_tax" data-type="double" display-name-resource="tax summary" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" /> 
+       	<property name="billingSystemOrderId" column-name="billSys_order_id"  display-name-resource="billing system order id" data-type="string" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+	   	<property name="vestaSystemOrderId" column-name="vestaSys_Order_Id" display-name-resource="vesta system order id" data-type="string" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+     	<property name="billSysPaymentRefId" column-name="billSys_payment_refId" display-name-resource="billing system payment ref id" data-type="string" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+		<property name="billSysPaymentApprTransId" column-name="billSys_appr_transId" data-type="string" display-name-resource="vesta order Id" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+		<property name="teleSaleCode" column-name="tele_sale_code" data-type="string" display-name-resource="agent code" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+		<property name="estimatedDeliveryDate" column-name="estimated_delivery_date" data-type="timestamp" display-name-resource="estimate delivery date" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+		<property name="billingQuoteId" column-name="billing_Quote_Id" data-type="string" display-name-resource="billingQuoteId" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+		<property name="removedPhoneId" column-name="rem_phone_id" data-type="string" display-name-resource="removed phone id" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+		<property name="removedPhoneSkuId" column-name="rem_phone_sku_id" data-type="string" display-name-resource="removed phone sku id" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+		<property name="removedPlanId" column-name="rem_plan_id" data-type="string" display-name-resource="removed plan id" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+		<property name="removedPlanSkuId" column-name="rem_plan_sku_id" data-type="string" display-name-resource="removed plan sku id" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+		<property name="cricCustomerId" column-name="cric_customer_id" data-type="string" display-name-resource="cricket customer number" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+		<property name="cricCustmerBillingNumber" column-name="cric_customer_billing_no" data-type="string" display-name-resource="cricket customer billing account number" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+		<property name="vestaTransactionId" column-name="vesta_trans_id" data-type="string" display-name-resource="vestaTransactionId" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+ 		<property name="posSaleId" column-name="pos_sale_id" data-type="string" display-name-resource="point of sale id" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+ 		<property name="upgradeModelNumber" column-name="upg_model_no" data-type="string" display-name-resource="upgrade model number" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+		<property name="upgradeMdn" column-name="upg_mdn" data-type="string" display-name-resource="upgrade mdn" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+		<property name="shippingMethod" column-name="shipping_method" data-type="string" display-name-resource="shipping Method" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+		<property name="isDownGrade" display-name-resource="isDownGrade" column-name="is_down_grade" data-type="boolean" required="false" cache-mode="inherit" queryable="true" expert="false" readable="true" writable="true"/>
+		<!-- capturing the phone number from shipping and billing page and setting in order -->
+		<property name="phoneNumber" display-name-resource="phone Number" column-name="phone_number" data-type="string" required="false" cache-mode="inherit" queryable="true" expert="false" readable="true" writable="true"/>
+		<!-- capturing the email from shipping and billing page and setting in order -->
+		<property name="emailId" display-name-resource="email Id" column-name="email_id" data-type="string" required="false" cache-mode="inherit" queryable="true" expert="false" readable="true" writable="true"/>
+		<property name="languageIdentifier" display-name-resource="language Identifier" column-name="language_identifier" data-type="string" default="E" required="false" cache-mode="inherit" queryable="true" expert="false" readable="true" writable="true"/>
+		<property name="userIpAddress" display-name-resource="user ip address" column-name="user_ip_address" data-type="string"  required="false" cache-mode="inherit" queryable="true" expert="false" readable="true" writable="true"/>
+		
+		<property name="shippingAddressType" column-name="SHIPPING_ADDR_TYPE" data-type="enumerated" display-name-resource="Shipping Address type" queryable="true" required="false" cache-mode="inherit" readable="true"  writable="true" expert="false">
+        <attribute name="useCodeForValue" value="false"/>
+        	<option value="DifferentAddress" code="0"/>
+			<option value="AccountAddress" code="1"/>
+ 			
+		</property>
+		
+		<property name="billingAddressType" column-name="BILLING_ADDR_TYPE" data-type="enumerated" display-name-resource="Billing Address type" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false">
+        <attribute name="useCodeForValue" value="false"/>
+        	<option value="DifferentAddress" code="0"/>
+			<option value="AccountAddress" code="1"/>
+			<option value="ShippingAddress" code="2"/>
+		</property>
+		 
+ 	</table>  
+	
+	<table name="ckt_removed_addons" type="multi" id-column-name="order_id" multi-column-name="rem_addon_id">
+          <property  name="removedAddons" display-name-resource="removed addons" column-name="rem_addon_sku_id" data-type="map" component-data-type="string" queryable="true" required="false" writable="true" cache-mode="inherit"/>        
+    </table>
+    
+	<table name="ckt_telecom_Tax_Imposition" type="auxiliary" id-column-name="order_id" >
+	<property name="telecomTaxname" column-name="name" data-type="String" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+	<property name="telecomTaxvalue" column-name="value" data-type="double" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+	  </table>
+	<table name="ckt_bo_tax_Imposition" type="auxiliary" id-column-name="order_id" >
+	       <property name="boTaxname" column-name="name" data-type="string" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+	        <property name="boTaxvalue" column-name="value" data-type="double" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+	  </table> 
+	<table name="ckt_packages" id-column-name="order_id" type="multi" multi-column-name="seq_num">
+    	<property component-item-type="cktPackage" column-name="package_id" data-type="list" display-name-resource="packages" name="packages" required="false" cache-mode="inherit" queryable="true" expert="false" readable="true" writable="true"/>
+	</table>
+	<named-query>
+		<rql-query>
+			<query-name>getPackagesForOrder</query-name>
+				<rql>id = ?0</rql>
+		</rql-query>
+	</named-query>	
+</item-descriptor>
+	
+<item-descriptor name="cktPackage" >
+	<table name="ckt_package" type="primary" id-column-name="package_id" >
+		<property column-name="package_id" data-type="string" display-name-resource="id" name="id" required="false" cache-mode="inherit" queryable="true" expert="false" readable="true" writable="true"/>
+		<property column-name="package_number" data-type="int" display-name-resource="packageNumber" name="packageNumber" required="false" cache-mode="inherit" queryable="true" expert="false" readable="true" writable="true"/>
+		<property column-name="activation_fee" data-type="double" display-name-resource="activationFee" name="activationFee" required="false" cache-mode="inherit" queryable="true" expert="false" readable="true" writable="true"/> 
+	<!-- <property column-name="package_type" data-type="string" display-name-resource="packageType" name="packageType" required="false" cache-mode="inherit" queryable="true" expert="false" readable="true" writable="true"/>  -->	 
+		<property column-name="new_mdn" data-type="string" display-name-resource="newMdn" name="newMdn" required="false" cache-mode="inherit" queryable="true" expert="false" readable="true" writable="true"/>
+		<property column-name="mdn" data-type="string" display-name-resource="mdn" name="mdn" required="false" cache-mode="inherit" queryable="true" expert="false" readable="true" writable="true"/>
+		<property column-name="package_total" data-type="string" display-name-resource="Package Total" name="packageTotal" required="false" cache-mode="inherit" queryable="true" expert="false" readable="true" writable="true"/>
+		
+	</table>
+</item-descriptor>
+	
+<item-descriptor name="commerceItem" xml-combine="append">
+	<table name="ckt_commerce_item" type="auxiliary" id-column-name="commerce_item_id">
+	 	<property name="packageId" display-name-resource="packageId" column-name="package_id" data-type="string"  required="false" cache-mode="inherit" queryable="true" expert="false" readable="true" writable="true"/>
+	 	<property name="isLOS" display-name-resource="isLOS" column-name="is_los" data-type="boolean" required="false" cache-mode="inherit" queryable="true" expert="false" readable="true" writable="true"/>  
+	 	<property name="cricItemTypes" display-name-resource="cricItemTypes" column-name="citem_type" data-type="enumerated" required="false" cache-mode="inherit" queryable="true" expert="false" readable="true" writable="true">
+			<attribute name="useCodeForValue" value="false"/>
+			<option value="phone-product" code="0"/>
+			<option value="plan-product" code="1"/>
+			<option value="addOn-product" code="2"/>
+			<option value="upgradePhone" code="3"/>
+			<option value="changePlan" code="4"/>
+			<option value="changeAddOn" code="5"/>
+			<option value="accessory-product" code="6"/>
+			<option value="removedAddon" code="7"/>
+		</property>
+		<property name="marketCode" display-name-resource="marketCode" column-name="market_code" data-type="string" required="false" cache-mode="inherit" queryable="true" expert="false" readable="true" writable="true"/> 
+		<property name="eid"  display-name-resource="eid" column-name="eid" data-type="string" required="false" cache-mode="inherit" queryable="true" expert="false" readable="true" writable="true"/>  
+		<property name="isChangeFlow" display-name-resource="isChangeFlow" column-name="is_change_flow" data-type="boolean" required="false" cache-mode="inherit" queryable="true" expert="false" readable="true" writable="true"/>
+		<property name="isDownGrade" display-name-resource="isDownGrade" column-name="is_down_grade" data-type="boolean" required="false" cache-mode="inherit" queryable="true" expert="false" readable="true" writable="true"/>
+		<property name="isCompatibleAddon" display-name-resource="isCompatibleAddon" column-name="is_compatible_addon" data-type="boolean" required="false" cache-mode="inherit" queryable="true" expert="false" readable="true" writable="true"/>
+	</table>
+</item-descriptor>
+
+<!--  credit Card payment -->
+<item-descriptor name="creditCard" xml-combine="append">
+		<!-- <table name="dcspp_credit_card" id-column-name="payment_group_id">
+		      <property name="creditCardNumber" xml-combine="remove"></property>
+		</table> -->
+    	<table name="ckt_credit_card" id-column-name="payment_group_id" type="auxiliary">
+		   <property name="vestaToken" column-name="vesta_token" data-type="string" display-name-resource="Vesta token" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+      	     <property name="transactionId" column-name="transaction_Id" data-type="string" display-name-resource="transactionId" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+		     <property name="autoBillPayment" column-name="auto_bill_Payment" data-type="boolean" display-name-resource="autobillpayment" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+ 			<!-- <property name="ccFirstName" column-name="cc_first_name" data-type="string" display-name-resource="first name" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+ 			<property name="ccLastName" column-name="cc_last_name" data-type="string" display-name-resource="last name" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+ 	 		 --><!--  this property hold the true, if user selects different card for autobill pay -->
+ 	 		<property name="isDiffernetCard" column-name="is_Different_Card" data-type="boolean" display-name-resource="different card" queryable="true" required="false" cache-mode="inherit" readable="true" writable="true" expert="false" />
+ 	
+ 	</table>
+</item-descriptor>
+ 
+<!--  <item-descriptor name="creditCard">
+    <table name="dcspp_credit_card" id-column-name="payment_group_id">
+      <property name="creditCardNumber" xml-combine="remove"></property>
+</table>
+</item-descriptor> -->
+
+<item-descriptor name="itemPriceInfo" xml-combine="append">
+	<table name="ckt_item_price" id-column-name="amount_info_id" type="auxiliary">
+		<property column-name="administration_fee" data-type="double" display-name-resource="administrationFee" name="adminFee" required="false" cache-mode="inherit" queryable="true" expert="false" readable="true" writable="true"/>      	
+		<property column-name="activation_fee" data-type="double" display-name-resource="activationFee" name="activationFee" required="false" cache-mode="inherit" queryable="true" expert="false" readable="true" writable="true"/>
+		<property column-name="prorated_price" data-type="double" display-name-resource="proRatedPrice" name="proRatedPrice" required="false" cache-mode="inherit" queryable="true" expert="false" readable="true" writable="true"/>
+	</table>
+</item-descriptor>
+
+</gsa-template>

@@ -1,0 +1,5216 @@
+
+/* line 26, ../sass/_plans.scss */
+.section-plans-listing #section-banner .section-banner-content {
+  border-top: 1px solid #fff;
+  padding-top: 3.4375em;
+}
+/* line 30, ../sass/_plans.scss */
+.section-plans-listing #section-banner .section-banner-content .large-7.columns {
+  /* iPad Overrides */
+  padding-left: 90px;
+  padding-right: 16px;
+  padding-left: 10%;
+  padding-left: 0.625em;
+}
+/* line 40, ../sass/_plans.scss */
+.section-plans-listing #section-banner .section-banner-content h1 {
+  color: #8dc63f;
+  font: normal 40px/32px 'GothamBlack';
+  text-transform: uppercase;
+  border-right: 1px solid #b7ddce;
+  font: normal 2.5em/0.8em 'GothamBlack';
+  padding-left: 50px;
+  padding-bottom: 0.625em;
+  width: 390px;
+}
+/* line 51, ../sass/_plans.scss */
+.section-plans-listing #section-banner .section-banner-content h1 span {
+  color: #00a663;
+  display: block;
+}
+/* line 57, ../sass/_plans.scss */
+.section-plans-listing #section-banner .section-banner-content .subhead {
+  color: #008752;
+  font: normal 18px 'GothamBlack';
+  margin-top: 6px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+/* line 65, ../sass/_plans.scss */
+.section-plans-listing #section-banner .section-banner-content ul {
+  margin-left: 1em;
+}
+/* line 68, ../sass/_plans.scss */
+.section-plans-listing #section-banner .section-banner-content ul li {
+  color: #008752;
+  font: normal 12px/18px 'GothamMedium';
+  text-transform: uppercase;
+}
+/* line 73, ../sass/_plans.scss */
+.section-plans-listing #section-banner .section-banner-content ul li.value-callout {
+  border-top: 1px solid #b7ddce;
+  padding-top: 10px;
+  margin-top: 10px;
+  list-style: none;
+  width: 180px;
+}
+/* line 86, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list {
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/plans/bg-section-plans-list.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat center 44px;
+  background-size: 1400px 352px;
+}
+/* line 92, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list h2 {
+  color: #fff;
+  font: normal 2.5em "GothamBlack";
+  margin: 0.625em 0 0.9375em 0.5em;
+}
+/* line 98, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list {
+  background: transparent;
+  border: none;
+  margin: 18px auto 50px;
+  padding-top: 200px;
+  width: 100%;
+  width: 100%;
+  width: 60em;
+  /* /thead tr.features-heading */
+}
+/* line 108, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list thead, .section-plans-listing #section-plans-list .table-plans-list tfoot, .section-plans-listing #section-plans-list .table-plans-list tr.even, .section-plans-listing #section-plans-list .table-plans-list tr.alt, .section-plans-listing #section-plans-list .table-plans-list tr:nth-of-type(2n) {
+  background: transparent;
+}
+/* line 111, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list thead th {
+  color: #fff;
+  font: normal 65px 'GothamBlack';
+  padding: 0;
+  text-transform: uppercase;
+  width: 20%;
+  font: normal 55px 'GothamBlack';
+  /* iPad Overrides */
+}
+/* line 119, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list thead sub {
+  font-size: 13px;
+}
+/* line 120, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list thead a.button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #00ac79;
+  border-color: #007955;
+  color: white;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+  color: #fff;
+  display: block;
+  font: normal 15px 'GothamMedium';
+  margin: 0 auto 15px;
+  width: 80%;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+.section-plans-listing #section-plans-list .table-plans-list thead a.button:hover, .section-plans-listing #section-plans-list .table-plans-list thead a.button:focus {
+  background-color: #007955;
+}
+/* line 134, ../sass/foundation/components/_buttons.scss */
+.section-plans-listing #section-plans-list .table-plans-list thead a.button:hover, .section-plans-listing #section-plans-list .table-plans-list thead a.button:focus {
+  color: white;
+}
+/* line 55, ../sass/_mixins.scss */
+.section-plans-listing #section-plans-list .table-plans-list thead a.button:hover {
+  /*cursor: pointer;*/
+}
+/* line 128, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list thead a.button.disabled {
+  background-color: #fff;
+  border-color: #C1C1C3;
+  box-shadow: none;
+  color: #B1B1B1;
+}
+/* line 136, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list thead tr.top-heading th {
+  color: #008752;
+  font: normal 1.25em "GothamBlack";
+  padding-bottom: 3px;
+}
+/* line 142, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list thead tr.features-heading {
+  background: #109449;
+  background: none;
+  /* /th */
+  /* /#fixed-table-headings */
+}
+/* line 145, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list thead tr.features-heading th {
+  border-right: 1px solid #82bf74;
+  padding: 15px 15px 0px;
+  vertical-align: top;
+  text-align: center;
+}
+/* line 151, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list thead tr.features-heading th:last-child {
+  border-right: 0;
+}
+/* line 152, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list thead tr.features-heading th.bg-smartplan {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/plans/bg-smartplans.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 0 0;
+  text-align: center;
+}
+/* line 156, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list thead tr.features-heading th .plan-content {
+  min-height: 155px;
+  opacity: 1;
+  min-height: 170px;
+  min-height: 155px;
+}
+/* line 162, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list thead tr.features-heading th p {
+  color: #fff;
+  font: normal 11px 'GothamMedium';
+  margin-top: 15px;
+  text-align: center;
+  text-transform: uppercase;
+}
+/* line 168, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list thead tr.features-heading th p.subhead {
+  color: #c1d72e;
+  opacity: 1;
+}
+/* line 173, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list thead tr.features-heading th a.button {
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+}
+/* line 179, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list thead tr.features-heading th a.circle-arrow {
+  display: block;
+  font: normal 12px Arial;
+  float: none;
+  padding: 2px 0 10px 25px;
+  text-align: left;
+  margin: 0 0 0 20%;
+}
+/* line 187, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list thead tr.features-heading th .learn-more {
+  width: 40%;
+  margin: auto;
+}
+/* line 190, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list thead tr.features-heading th .learn-more a.circle-arrow {
+  margin-left: 0;
+}
+/* line 192, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list thead tr.features-heading th .data-callout {
+  background-color: #fff;
+  border: 2px solid #fff;
+  color: #008752;
+  font: normal 20px 'GothamBlack';
+  margin: 15px 0 10px;
+  padding-top: 5px;
+  text-transform: uppercase;
+  text-align: center;
+}
+/* line 201, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list thead tr.features-heading th .data-callout sub {
+  font-size: 11px;
+  vertical-align: baseline;
+}
+/* line 205, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list thead tr.features-heading th .data-callout p {
+  background-color: #008752;
+  color: #fff;
+  font-size: 11px;
+  margin: 5px 0 0 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+/* line 215, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list thead tr.features-heading #fixed-table-headings {
+  visibility: hidden;
+  width: 60em;
+  margin: 0 auto;
+}
+/* line 219, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list thead tr.features-heading #fixed-table-headings.fixed {
+  visibility: visible;
+}
+/* line 220, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list thead tr.features-heading #fixed-table-headings th {
+  color: #000;
+  font: normal 14px 'GothamBlack';
+  text-transform: uppercase;
+}
+/* line 227, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list tbody tr:first-child th {
+  padding-top: 36px;
+}
+/* line 228, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list tbody th {
+  text-align: left;
+}
+/* line 229, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list tbody th h3 {
+  color: #008752;
+  font: normal 15px 'GothamBlack';
+  margin: 0.9375em 0 0;
+  text-transform: uppercase;
+}
+/* line 235, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list tbody td {
+  background-color: #f1f1f1;
+  border-right: 1px solid #fff;
+  color: #8dc63f;
+  font: normal 18px 'GothamBlack';
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  font: normal 18px 'GothamBlack';
+}
+/* line 246, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list tbody td.yes {
+  background-image: url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-table-checkmark-green.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]);
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-indent: -99999px;
+}
+/* line 252, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list tbody td.no {
+  background-image: 0;
+  text-indent: -99999px;
+}
+/* line 256, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list tbody td span.has-tip {
+  background-color: #8dc63f;
+  border-bottom: 0;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  color: #fff;
+  cursor: pointer;
+  font: bold 12px Arial;
+  display: block;
+  height: 20px;
+  margin: auto;
+  padding: 3px;
+  text-transform: none;
+  width: 20px;
+}
+/* line 271, ../sass/_plans.scss */
+.section-plans-listing #section-plans-list .table-plans-list tbody td:nth-of-type(2n) {
+  background-color: #f8f8f8;
+}
+/* line 276, ../sass/_plans.scss */
+.section-plans-listing #accordion-content {
+  margin-bottom: 1.5625em;
+  /* iPad*/
+}
+/* line 279, ../sass/_plans.scss */
+.section-plans-listing #accordion-content .active .title {
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-accordion-active.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 95% 50%;
+}
+/* line 281, ../sass/_plans.scss */
+.section-plans-listing #accordion-content .active .title a {
+  border-bottom: 1px solid #d6d6d6;
+}
+/* line 283, ../sass/_plans.scss */
+.section-plans-listing #accordion-content .active .content {
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/plans/bg-section-plans-list-mobile.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat center center;
+  text-align: center;
+  padding: 10px 20%;
+}
+/* line 288, ../sass/_plans.scss */
+.section-plans-listing #accordion-content .active .content.feature-plan {
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/plans/bg-section-plans-list.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat center center;
+}
+/* line 292, ../sass/_plans.scss */
+.section-plans-listing #accordion-content .active .content p {
+  color: #fff;
+  font: normal 11px 'GothamMedium';
+  margin-top: 15px;
+  text-align: center;
+  text-transform: uppercase;
+}
+/* line 299, ../sass/_plans.scss */
+.section-plans-listing #accordion-content .active .content p.subhead {
+  color: #c1d72e;
+  opacity: 1;
+}
+/* line 304, ../sass/_plans.scss */
+.section-plans-listing #accordion-content .active .content p.pricing {
+  color: #fff;
+  font: normal 65px 'GothamBlack';
+  padding: 0;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+/* line 310, ../sass/_plans.scss */
+.section-plans-listing #accordion-content .active .content p.pricing sub {
+  font-size: 13px;
+}
+/* line 314, ../sass/_plans.scss */
+.section-plans-listing #accordion-content .active .content a.button {
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+}
+/* line 318, ../sass/_plans.scss */
+.section-plans-listing #accordion-content .active .content a.button.disabled {
+  background-color: #fff;
+  border-color: #C1C1C3;
+  box-shadow: none;
+  color: #B1B1B1;
+}
+/* line 326, ../sass/_plans.scss */
+.section-plans-listing #accordion-content .active .content a.circle-arrow {
+  display: block;
+  font: normal 12px Arial;
+  float: none;
+  margin-left: 20%;
+  padding: 2px 0 10px 25px;
+  text-align: left;
+  margin-left: 35%;
+}
+/* line 338, ../sass/_plans.scss */
+.section-plans-listing #accordion-content .active .content .data-callout {
+  background-color: #fff;
+  border: 2px solid #fff;
+  color: #008752;
+  font: normal 20px 'GothamBlack';
+  margin: 15px 0 10px;
+  padding-top: 5px;
+  text-transform: uppercase;
+  text-align: center;
+}
+/* line 347, ../sass/_plans.scss */
+.section-plans-listing #accordion-content .active .content .data-callout sub {
+  font-size: 11px;
+  vertical-align: baseline;
+}
+/* line 351, ../sass/_plans.scss */
+.section-plans-listing #accordion-content .active .content .data-callout p {
+  background-color: #008752;
+  color: #fff;
+  font-size: 11px;
+  margin: 5px 0 0 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+/* line 362, ../sass/_plans.scss */
+.section-plans-listing #accordion-content .title {
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-accordion-inactive.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 95% 50%;
+  color: #8dc63f;
+  font-family: "GothamBlack";
+  font-size: 1em;
+  text-transform: uppercase;
+}
+/* line 368, ../sass/_plans.scss */
+.section-plans-listing #accordion-content .title a {
+  color: #008752;
+}
+/* line 373, ../sass/_plans.scss */
+.section-plans-listing #accordion-content .expand-all {
+  display: none;
+}
+/* line 377, ../sass/_plans.scss */
+.section-plans-listing .swiper-container, .section-plans-listing .swiper-wrapper {
+  height: 400px;
+}
+/* line 381, ../sass/_plans.scss */
+.section-plans-listing #accordion-content h2 {
+  color: #7dbd55;
+  font-size: 24px;
+  margin: 25px auto 20px;
+  text-align: center;
+}
+/* line 388, ../sass/_plans.scss */
+.section-plans-listing #accordion-content .content:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+/* line 392, ../sass/_plans.scss */
+.section-plans-listing #accordion-content .plan-item {
+  float: left;
+  width: 100%;
+  margin: 1em 0 2em 0;
+  text-align: center;
+  /* between 767px & 800px - 2 columns */
+  width: 50%;
+  min-height: 240px;
+  /* between 800px & 940px - 3 columns */
+  width: 33%;
+  min-height: 240px;
+  /* > 940px - 4 columns */
+  width: 25%;
+  min-height: 240px;
+}
+/* line 408, ../sass/_plans.scss */
+.section-plans-listing #accordion-content .plan-item h4 {
+  min-height: 75px;
+}
+/* line 416, ../sass/_plans.scss */
+.section-plans-listing #accordion-content .plan-item sub {
+  bottom: 0;
+}
+/* line 417, ../sass/_plans.scss */
+.section-plans-listing #accordion-content .plan-item h3 {
+  font-family: "GothamBlack";
+  color: #008752;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: normal;
+}
+/* line 424, ../sass/_plans.scss */
+.section-plans-listing #accordion-content .plan-item h4 {
+  font-family: "GothamBook";
+  color: #333;
+  width: 81%;
+  margin: 0 auto;
+}
+/* line 429, ../sass/_plans.scss */
+.section-plans-listing #accordion-content .plan-item h4 a {
+  color: #333;
+}
+/* line 431, ../sass/_plans.scss */
+.section-plans-listing #accordion-content .plan-item .green-price {
+  font-size: 2em;
+  margin-bottom: 0.3em;
+}
+/* line 435, ../sass/_plans.scss */
+.section-plans-listing #accordion-content .plan-item .green-add-cart {
+  margin: 0 auto 1.25em auto;
+}
+/* line 438, ../sass/_plans.scss */
+.section-plans-listing #accordion-content .plan-item .included {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/plans-addons/icon-included.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 50% 50%;
+  display: block;
+  width: 83px;
+  height: 81px;
+  margin: 2em auto 0 auto;
+}
+/* line 449, ../sass/_plans.scss */
+.section-plans-listing #section-recommended-phones {
+  position: relative;
+}
+/* line 451, ../sass/_plans.scss */
+.section-plans-listing #section-recommended-phones .row-container {
+  border-top: 1px solid #b7ddce;
+  margin-bottom: 10px;
+  padding-top: 20px;
+}
+/* line 457, ../sass/_plans.scss */
+.section-plans-listing #section-recommended-phones .row.hide-for-small [class*="column"] + [class*="column"]:last-child {
+  float: left;
+}
+/* line 458, ../sass/_plans.scss */
+.section-plans-listing #section-recommended-phones h3 {
+  font: 20px/1 'GothamBlack';
+  color: #008752;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0 10%;
+  font: 30px/1 'GothamBlack';
+  text-align: left;
+  padding: 0;
+}
+/* line 469, ../sass/_plans.scss */
+.section-plans-listing #section-recommended-phones h3 span {
+  color: #0da82c;
+}
+/* line 471, ../sass/_plans.scss */
+.section-plans-listing #section-recommended-phones .see-all {
+  margin-top: 15px;
+}
+/* line 473, ../sass/_plans.scss */
+.section-plans-listing #section-recommended-phones .recommended-phone-container {
+  text-align: center;
+  margin: 10px 0 40px 0;
+}
+/* line 476, ../sass/_plans.scss */
+.section-plans-listing #section-recommended-phones .recommended-phone-container .recommended-phone-name {
+  font: 15px/1 'GothamMedium';
+  color: #333;
+  margin: 22px 0;
+  display: block;
+}
+/* line 483, ../sass/_plans.scss */
+.section-plans-listing #section-recommended-phones .recommended-phone-container .button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #00ac79;
+  border-color: #007955;
+  color: white;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+  display: block;
+  width: 60%;
+  margin: 0 auto 15px;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+.section-plans-listing #section-recommended-phones .recommended-phone-container .button:hover, .section-plans-listing #section-recommended-phones .recommended-phone-container .button:focus {
+  background-color: #007955;
+}
+/* line 134, ../sass/foundation/components/_buttons.scss */
+.section-plans-listing #section-recommended-phones .recommended-phone-container .button:hover, .section-plans-listing #section-recommended-phones .recommended-phone-container .button:focus {
+  color: white;
+}
+/* line 55, ../sass/_mixins.scss */
+.section-plans-listing #section-recommended-phones .recommended-phone-container .button:hover {
+  /*cursor: pointer;*/
+}
+/* line 488, ../sass/_plans.scss */
+.section-plans-listing #section-recommended-phones .recommended-phone-container .button.disabled {
+  background-color: #DBDBDC;
+  border: 1px solid #BBBDBF;
+  box-shadow: none;
+  color: #333;
+  cursor: default;
+  display: block;
+  font: 13px 'GothamMedium';
+  opacity: 0.6;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+/* line 502, ../sass/_plans.scss */
+.section-plans-listing #section-recommended-phones .recommended-phone-container a.circle-arrow {
+  padding-top: 0;
+}
+/* line 505, ../sass/_plans.scss */
+.section-plans-listing #section-recommended-phones .disclaimer {
+  color: #333;
+  font: normal 11px/14px Arial;
+  padding: 0 15px;
+  padding: 0;
+}
+/* line 512, ../sass/_plans.scss */
+.section-plans-listing #section-recommended-phones #foot-see-all .columns {
+  margin-bottom: 20px;
+  text-align: center;
+}
+/* line 519, ../sass/_plans.scss */
+.section-plans-listing #section-lifestyle img {
+  display: block;
+  margin: 0 auto;
+  width: 87.5em;
+}
+
+/* line 527, ../sass/_plans.scss */
+.tooltip {
+  border: 1px solid #ccc;
+}
+/* line 529, ../sass/_plans.scss */
+.tooltip > .nub {
+  border: solid 5px;
+  border-color: transparent transparent #ccc transparent !important;
+}
+
+/* Plan Details Page */
+/* Click to Chat Work is in this file as well*/
+/* Force lplightbox to display none so black blocker doesn't cover whole interface */
+/* line 5, ../sass/_plandetails.scss */
+#lplightbox {
+  display: none !important;
+}
+
+/* line 7, ../sass/_plandetails.scss */
+#chat-button {
+  bottom: 0;
+  position: fixed;
+  z-index: 150;
+  height: 138px;
+  width: 195px;
+  right: 0;
+  margin-right: 20px;
+  text-align: right;
+}
+/* line 18, ../sass/_plandetails.scss */
+#chat-button table {
+  margin-bottom: 0;
+}
+/* line 19, ../sass/_plandetails.scss */
+#chat-button .close-chat-button {
+  cursor: pointer;
+  display: block;
+  height: 21px;
+  left: 146px;
+  margin: 2px 2px 0 0;
+  position: absolute;
+  width: 26px;
+  z-index: 150;
+}
+
+/* line 31, ../sass/_plandetails.scss */
+#chat-close {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/click-to-chat/chat-x.gif],imageHeight[0],imageFormat[gif],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 0 0;
+  cursor: pointer;
+  height: 8px;
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  width: 9px;
+}
+
+/* line 41, ../sass/_plandetails.scss */
+#chat-button-image {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/click-to-chat/click-to-chat-step1-button.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 0 0;
+  height: 97px;
+  width: 176px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Chat Container */
+/* line 50, ../sass/_plandetails.scss */
+#chat-container {
+  display: none;
+  width: 311px;
+  height: 266px;
+  bottom: 0;
+  position: fixed;
+  z-index: 160;
+  right: 0;
+  margin-right: 20px;
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/click-to-chat/click-to-chat-window.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 0 0;
+  text-align: right;
+}
+
+/* line 63, ../sass/_plandetails.scss */
+#chat-container-header {
+  width: 311px;
+  height: 31px;
+  background-color: #333;
+}
+
+/* line 69, ../sass/_plandetails.scss */
+#chat-container-header-title {
+  color: #fff;
+  font: 14px/14px 'GothamBlack';
+  padding: 8px 0 0 16px;
+  text-align: left;
+  float: left;
+}
+
+/* line 77, ../sass/_plandetails.scss */
+#chat-container-header-close {
+  float: right;
+  width: 24px;
+  height: 18px;
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/click-to-chat/chat-window-close.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 0 0;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+/* line 86, ../sass/_plandetails.scss */
+#chat-container-header-minimize {
+  float: right;
+  width: 24px;
+  height: 18px;
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/click-to-chat/chat-window-minimize.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 0 0;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+/* line 95, ../sass/_plandetails.scss */
+.section-plan-details .feature-tab-container {
+  top: 1px;
+  z-index: 1000;
+  position: relative;
+  border-bottom: 1px solid #DBDBDB;
+  box-shadow: 5px 5px 10px #CCC;
+  border-bottom: none;
+  box-shadow: none;
+}
+
+/* line 107, ../sass/_plandetails.scss */
+.section-plan-details #features-tab {
+  width: 145px;
+  height: 60px;
+  background: none 0 0 no-repeat #fff;
+  font: 15px/15px 'GothamBlack';
+  text-align: left;
+  color: #008752;
+  margin-left: 20px;
+  padding-top: 22px;
+  text-transform: uppercase;
+  border: none;
+  width: 145px;
+  height: 60px;
+  background: none 0 0 no-repeat #fff;
+  font: 16px/1 'GothamMedium';
+  text-align: center;
+  color: #75b100;
+  padding-top: 22px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  border-left: 1px solid #c4c4c4;
+  border-right: 1px solid #c4c4c4;
+  border-top: 1px solid #c4c4c4;
+  margin-left: 0;
+}
+
+/* line 136, ../sass/_plandetails.scss */
+#section-plans-list .see-all-plans {
+  margin-top: 20px;
+  text-align: right;
+}
+
+/* line 144, ../sass/_plandetails.scss */
+.section-plan-details #feature-list-container {
+  width: 100%;
+  background: none 0 0 #fff;
+  height: auto;
+  padding: 30px 20px;
+  border: none;
+  margin-bottom: 30px;
+  width: 100%;
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/plan-details/bg-features.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat right top;
+  height: auto;
+  padding: 50px;
+  border: 1px solid #c4c4c4;
+  margin-bottom: 30px;
+}
+/* line 159, ../sass/_plandetails.scss */
+.section-plan-details #feature-list-container ul {
+  margin: 0;
+  padding: 0;
+  text-transform: none;
+  padding-left: 20px;
+  padding-left: inherit;
+}
+/* line 165, ../sass/_plandetails.scss */
+.section-plan-details #feature-list-container ul li:first-child {
+  padding-top: 15px;
+}
+/* line 166, ../sass/_plandetails.scss */
+.section-plan-details #feature-list-container ul li {
+  margin-bottom: 7px;
+  line-height: 1.4;
+  font: 13px/15px 'GothamMedium';
+}
+/* line 171, ../sass/_plandetails.scss */
+.section-plan-details #feature-list-container ul li span.has-tip {
+  background-color: #8dc63f;
+  border-bottom: 0;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  color: #fff;
+  cursor: pointer;
+  font: bold 12px Arial;
+  display: inline-block;
+  height: 20px;
+  margin: auto;
+  padding: 3px;
+  text-transform: none;
+  width: 20px;
+  text-align: center;
+}
+/* line 187, ../sass/_plandetails.scss */
+.section-plan-details #feature-list-container .feature {
+  font: 13px/15px 'GothamMedium';
+  min-height: 0;
+  color: #333;
+  font: 13px/15px 'GothamMedium';
+  min-height: 60px;
+  width: 21%;
+}
+/* line 197, ../sass/_plandetails.scss */
+.section-plan-details #feature-list-container .feature-name {
+  color: #007d4f;
+  font: 20px/1 'GothamBlack';
+  width: 160px;
+  margin-right: 10px;
+  position: absolute;
+  margin-left: 90px;
+  text-transform: uppercase;
+  padding-left: 0;
+  position: relative;
+  margin-left: 0;
+}
+/* line 210, ../sass/_plandetails.scss */
+.section-plan-details #feature-list-container .feature-name span {
+  display: block;
+  font: 12px/14px 'GothamMedium';
+  text-transform: none;
+}
+/* line 216, ../sass/_plandetails.scss */
+.section-plan-details #feature-list-container .row {
+  margin-bottom: 40px;
+}
+/* line 217, ../sass/_plandetails.scss */
+.section-plan-details #feature-list-container .row:last-child {
+  margin-bottom: 0;
+}
+
+/* line 221, ../sass/_plandetails.scss */
+.section-plan-details #section-plans-list {
+  border-top: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
+  border-top: none;
+  border-bottom: none;
+}
+
+/* line 230, ../sass/_plandetails.scss */
+.section-plan-details #section-additional-features {
+  text-align: center;
+  position: relative;
+  padding: 1em 0;
+  text-align: left;
+  padding: 0;
+}
+/* line 235, ../sass/_plandetails.scss */
+.section-plan-details #section-additional-features h2 {
+  font: 20px/1 'GothamBlack';
+  color: #008752;
+  font: 30px/1 'GothamBlack';
+}
+/* line 238, ../sass/_plandetails.scss */
+.section-plan-details #section-additional-features h2 span {
+  color: #0da82c;
+}
+/* line 241, ../sass/_plandetails.scss */
+.section-plan-details #section-additional-features .see-all {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  width: 100%;
+  border-top: 1px solid #B7DDCE;
+  padding-top: 1em;
+  padding-top: 0;
+  position: static;
+  width: auto;
+  border-top: none;
+}
+/* line 250, ../sass/_plandetails.scss */
+.section-plan-details #section-additional-features .see-all a {
+  float: none;
+  float: right;
+}
+/* line 256, ../sass/_plandetails.scss */
+.section-plan-details #section-additional-features .button.disabled {
+  background-color: #DBDBDC;
+  border: 1px solid #C1C1C3;
+  color: #333;
+  cursor: default;
+}
+/* line 262, ../sass/_plandetails.scss */
+.section-plan-details #section-additional-features .additional-feature-container {
+  text-align: center;
+  margin-top: 30px;
+}
+/* line 266, ../sass/_plandetails.scss */
+.section-plan-details #section-additional-features .additional-feature-title {
+  font: 15px/1 'GothamBlack';
+  color: #008752;
+  margin-bottom: 22px;
+  display: block;
+}
+/* line 272, ../sass/_plandetails.scss */
+.section-plan-details #section-additional-features .additional-feature-description {
+  font-family: 'GothamMedium';
+  font-size: 1.25em;
+  color: #333;
+  margin: 0 0 35px 0;
+  display: block;
+}
+/* line 278, ../sass/_plandetails.scss */
+.section-plan-details #section-additional-features .additional-feature-description.smaller {
+  font-size: 1em;
+  margin: 0 0 24px 0;
+}
+/* line 283, ../sass/_plandetails.scss */
+.section-plan-details #section-additional-features .additional-feature-price {
+  font: 32px/1 'GothamBold';
+  color: #008752;
+  margin-bottom: 18px;
+  display: block;
+}
+/* line 288, ../sass/_plandetails.scss */
+.section-plan-details #section-additional-features .additional-feature-price span {
+  font: 18px/1 'GothamBold';
+  color: #008752;
+  display: inline-block;
+}
+/* line 294, ../sass/_plandetails.scss */
+.section-plan-details #section-additional-features .swiper-container, .section-plan-details #section-additional-features .swiper-wrapper {
+  height: 300px;
+}
+
+/* line 297, ../sass/_plandetails.scss */
+.section-plan-details #additional-features-container-divider {
+  border-bottom: 1px solid #dbdbdb;
+  margin: 20px 0;
+  border-bottom: 1px solid #b7ddce;
+  margin: 50px 0;
+}
+
+/* line 306, ../sass/_plandetails.scss */
+.section-plan-details #section-banner {
+  margin-bottom: 0;
+  min-height: 340px;
+  position: relative;
+  width: 100%;
+}
+/* line 311, ../sass/_plandetails.scss */
+.section-plan-details #section-banner .section-banner-content {
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/plan-details/bg-hero-small-header.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 50% 0;
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/plan-details/bg-hero-full-header.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 50% 0;
+}
+/* line 313, ../sass/_plandetails.scss */
+.section-plan-details #section-banner .section-banner-content.smartplan {
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/plan-details/bg-hero-small-header-smartplan.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 50% 0;
+}
+/* line 318, ../sass/_plandetails.scss */
+.section-plan-details #section-banner .section-banner-content.smartplan {
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/plan-details/bg-hero-full-header-smartplan.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 50% 0;
+}
+/* line 323, ../sass/_plandetails.scss */
+.section-plan-details #section-banner .small-header {
+  position: absolute;
+  margin-top: 15px;
+}
+/* line 326, ../sass/_plandetails.scss */
+.section-plan-details #section-banner .small-header h2 {
+  font: 20px/20px 'GothamBlack';
+  color: #333;
+}
+/* line 329, ../sass/_plandetails.scss */
+.section-plan-details #section-banner .small-header h2 span {
+  font-size: 13px;
+  text-transform: none;
+  vertical-align: baseline;
+}
+
+/* line 338, ../sass/_plandetails.scss */
+.section-plan-details #section-plans-list {
+  min-height: 25.625em;
+}
+
+/* line 340, ../sass/_plandetails.scss */
+.section-plan-details #hero-price-container {
+  width: 100%;
+  height: 350px;
+  text-align: center;
+  color: #c1d72e;
+  letter-spacing: -1px;
+  padding-top: 91px;
+  margin-left: 0;
+  width: 250px;
+  margin-left: 100px;
+  padding-top: 96px;
+}
+/* line 353, ../sass/_plandetails.scss */
+.section-plan-details #hero-price-container .data-callout {
+  background-color: #fff;
+  border: 2px solid #fff;
+  color: #008752;
+  font: normal 20px 'GothamBlack';
+  margin: 0 auto 10px;
+  text-transform: uppercase;
+  text-align: center;
+  width: 140px;
+}
+/* line 362, ../sass/_plandetails.scss */
+.section-plan-details #hero-price-container .data-callout span {
+  font-size: 11px;
+  vertical-align: baseline;
+  text-transform: none;
+}
+/* line 367, ../sass/_plandetails.scss */
+.section-plan-details #hero-price-container .data-callout p {
+  background-color: #008752;
+  color: #fff;
+  font-size: 11px;
+  margin: 5px 0 0 0;
+  padding: 2px 0;
+}
+
+/* line 377, ../sass/_plandetails.scss */
+.section-plan-details #hero-price {
+  display: inline-block;
+  font: 96px/96px 'GothamBlack';
+  color: #ffffff;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+/* line 384, ../sass/_plandetails.scss */
+.section-plan-details #price-term {
+  display: inline-block;
+  font: 19px/19px 'GothamBlack';
+  color: #ffffff;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+/* line 391, ../sass/_plandetails.scss */
+.section-plan-details #hero-price-description {
+  display: block;
+  font: 13px/11px 'GothamMedium';
+  color: #ffffff;
+  text-transform: uppercase;
+}
+/* line 396, ../sass/_plandetails.scss */
+.section-plan-details #hero-price-description p {
+  font: 13px/15px 'GothamMedium';
+  margin-bottom: 10px;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+/* line 403, ../sass/_plandetails.scss */
+.section-plan-details #hero-plan-detail-container {
+  margin-top: 20px;
+  margin-top: 85px;
+}
+/* line 406, ../sass/_plandetails.scss */
+.section-plan-details #hero-plan-detail-container h1 {
+  font-size: 30px;
+}
+/* line 409, ../sass/_plandetails.scss */
+.section-plan-details #hero-plan-detail-container h1 sub {
+  font-size: 15px;
+  text-transform: none;
+}
+/* line 412, ../sass/_plandetails.scss */
+.section-plan-details #hero-plan-detail-container .hero-plan-detail-content-section {
+  border-top: none;
+  border-bottom: 1px solid #dbdbdb;
+  margin: -5px auto 10px;
+  text-align: center;
+  max-width: 300px;
+  min-height: 62px;
+  border-top: 1px solid #dbdbdb;
+  border-bottom: none;
+  margin: -5px 0;
+  text-align: left;
+  padding: 5px 0 0;
+  width: 100%;
+  min-height: 67px;
+}
+/* line 428, ../sass/_plandetails.scss */
+.section-plan-details #hero-plan-detail-container .hero-plan-detail-content-section .add-to-cart {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #28ac75;
+  border-color: #1e8359;
+  color: white;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+  float: right;
+  margin-top: 8px;
+  float: none;
+  width: 240px;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+.section-plan-details #hero-plan-detail-container .hero-plan-detail-content-section .add-to-cart:hover, .section-plan-details #hero-plan-detail-container .hero-plan-detail-content-section .add-to-cart:focus {
+  background-color: #1e8359;
+}
+/* line 134, ../sass/foundation/components/_buttons.scss */
+.section-plan-details #hero-plan-detail-container .hero-plan-detail-content-section .add-to-cart:hover, .section-plan-details #hero-plan-detail-container .hero-plan-detail-content-section .add-to-cart:focus {
+  color: white;
+}
+/* line 55, ../sass/_mixins.scss */
+.section-plan-details #hero-plan-detail-container .hero-plan-detail-content-section .add-to-cart:hover {
+  /*cursor: pointer;*/
+}
+/* line 437, ../sass/_plandetails.scss */
+.section-plan-details #hero-plan-detail-container .hero-plan-detail-content-section .button.disabled {
+  background-color: #DBDBDC;
+  border: 1px solid #C1C1C3;
+  color: #333;
+  cursor: default;
+}
+
+/* line 446, ../sass/_plandetails.scss */
+.section-plan-details #hero-plan-monthly-label {
+  font: 15px/15px 'GothamMedium';
+  float: left;
+  color: #333;
+  margin-top: 8px;
+}
+
+/* line 453, ../sass/_plandetails.scss */
+.section-plan-details #hero-plan-monthly-price {
+  margin-top: 8px;
+  font: 40px/40px 'GothamBold';
+  color: #008754;
+  float: right;
+}
+
+/* line 460, ../sass/_plandetails.scss */
+#hero-other-plan-container {
+  float: none;
+  width: auto;
+  font: 16px/16px 'GothamBold';
+  text-transform: uppercase;
+  margin: 10px 0;
+  color: #333;
+  text-align: center;
+  font: 15px/15px 'GothamMedium';
+  text-transform: none;
+  float: right;
+  text-align: right;
+}
+/* line 475, ../sass/_plandetails.scss */
+#hero-other-plan-container a.other-button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #dbdbdd;
+  border-color: #c1c1c4;
+  color: #333333;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+  color: #218f68;
+  margin-right: 5px;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+#hero-other-plan-container a.other-button:hover, #hero-other-plan-container a.other-button:focus {
+  background-color: #c1c1c4;
+}
+/* line 129, ../sass/foundation/components/_buttons.scss */
+#hero-other-plan-container a.other-button:hover, #hero-other-plan-container a.other-button:focus {
+  color: #333333;
+}
+/* line 55, ../sass/_mixins.scss */
+#hero-other-plan-container a.other-button:hover {
+  /*cursor: pointer;*/
+}
+/* line 480, ../sass/_plandetails.scss */
+#hero-other-plan-container a.other-button:last-child {
+  margin-right: 0;
+}
+/* line 481, ../sass/_plandetails.scss */
+#hero-other-plan-container a.circle-arrow {
+  display: inline-block !important;
+  margin: 10px 0;
+  margin: 0;
+}
+
+/* line 490, ../sass/_plandetails.scss */
+#other-plan-header {
+  display: block;
+  margin: 10px 0 25px 0;
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+
+/* line 497, ../sass/_plandetails.scss */
+.section-plan-details #section-recommended-phones {
+  text-align: center;
+  padding: 1em 0;
+  text-align: left;
+  padding: 0;
+}
+/* line 501, ../sass/_plandetails.scss */
+.section-plan-details #section-recommended-phones h2 {
+  font: 20px/1 'GothamBlack';
+  color: #008752;
+  font: 30px/1 'GothamBlack';
+}
+/* line 504, ../sass/_plandetails.scss */
+.section-plan-details #section-recommended-phones h2 span {
+  color: #0da82c;
+}
+/* line 507, ../sass/_plandetails.scss */
+.section-plan-details #section-recommended-phones .recommended-phone-container {
+  text-align: center;
+  margin: 10px 0 40px 0;
+}
+/* line 511, ../sass/_plandetails.scss */
+.section-plan-details #section-recommended-phones .button.disabled {
+  background-color: #DBDBDC;
+  border: 1px solid #C1C1C3;
+  color: #333;
+  cursor: default;
+}
+/* line 517, ../sass/_plandetails.scss */
+.section-plan-details #section-recommended-phones .recommended-phone-name {
+  font: 15px/1 'GothamMedium';
+  color: #333;
+  margin: 22px 0;
+  display: block;
+}
+/* line 523, ../sass/_plandetails.scss */
+.section-plan-details #section-recommended-phones .recommended-phone-shop-button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #29ac75;
+  border-color: #1f8359;
+  color: white;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+.section-plan-details #section-recommended-phones .recommended-phone-shop-button:hover, .section-plan-details #section-recommended-phones .recommended-phone-shop-button:focus {
+  background-color: #1f8359;
+}
+/* line 134, ../sass/foundation/components/_buttons.scss */
+.section-plan-details #section-recommended-phones .recommended-phone-shop-button:hover, .section-plan-details #section-recommended-phones .recommended-phone-shop-button:focus {
+  color: white;
+}
+/* line 55, ../sass/_mixins.scss */
+.section-plan-details #section-recommended-phones .recommended-phone-shop-button:hover {
+  /*cursor: pointer;*/
+}
+/* line 526, ../sass/_plandetails.scss */
+.section-plan-details #section-recommended-phones .swiper-container, .section-plan-details #section-recommended-phones .swiper-wrapper {
+  height: 400px;
+}
+/* line 527, ../sass/_plandetails.scss */
+.section-plan-details #section-recommended-phones #foot-see-all .columns {
+  margin-bottom: 20px;
+  padding-top: 1em;
+  border-top: 1px solid #B7DDCE;
+}
+/* line 532, ../sass/_plandetails.scss */
+.section-plan-details #section-recommended-phones .columns:last-child {
+  float: left;
+}
+
+/* line 1, ../sass/_planaddons.scss */
+.section-plans-addons-listing #your-plan.static-banner {
+  background-image: url(//images.mycricket.com/cricket?set=imageURL[file:/img/plans-addons/banner-customize-your-plan-mobile.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]);
+  background-position: 0 50%;
+  background-color: #f2f2f2;
+  height: 216px;
+  /* /.content */
+  /* iPad*/
+  background-image: url(//images.mycricket.com/cricket?set=imageURL[file:/img/plans-addons/banner-customize-your-plan.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]);
+  background-size: auto auto;
+  background-position: 20% 0;
+  background-color: transparent;
+  height: 300px;
+  border-bottom: none;
+  margin-bottom: 3em;
+  /* Placement needs to be slightly adjusted for inbetween sizes */
+  /* Desktop */
+}
+/* line 6, ../sass/_planaddons.scss */
+.section-plans-addons-listing #your-plan.static-banner .content {
+  width: 43%;
+  top: 22%;
+  left: 48%;
+}
+/* line 10, ../sass/_planaddons.scss */
+.section-plans-addons-listing #your-plan.static-banner .content h1 {
+  font-size: 1.5em;
+  margin-left: 8px;
+  line-height: 0.9em;
+  color: #008752;
+  font-size: 1.7em;
+  margin-left: 0;
+}
+/* line 15, ../sass/_planaddons.scss */
+.section-plans-addons-listing #your-plan.static-banner .content h1 span {
+  color: #00a663;
+}
+/* line 21, ../sass/_planaddons.scss */
+.section-plans-addons-listing #your-plan.static-banner .content p {
+  color: #008752;
+  text-transform: none;
+  margin-top: 1.5em;
+  line-height: 1.4em;
+}
+/* line 38, ../sass/_planaddons.scss */
+.section-plans-addons-listing #your-plan.static-banner .content {
+  left: 40%;
+  width: 55%;
+  top: 15%;
+}
+/* line 42, ../sass/_planaddons.scss */
+.section-plans-addons-listing #your-plan.static-banner .content h1 {
+  font-size: 3em;
+}
+/* line 43, ../sass/_planaddons.scss */
+.section-plans-addons-listing #your-plan.static-banner .content p {
+  font-size: 0.8em;
+}
+/* line 49, ../sass/_planaddons.scss */
+.section-plans-addons-listing #your-plan.static-banner .content {
+  left: 36%;
+}
+/* line 51, ../sass/_planaddons.scss */
+.section-plans-addons-listing #your-plan.static-banner .content h1 {
+  width: 100%;
+}
+
+/* line 76, ../sass/_planaddons.scss */
+#plan-callout {
+  /* iPad & Desktop */
+  margin-top: 2em;
+}
+/* line 77, ../sass/_planaddons.scss */
+#plan-callout .panel {
+  border-style: solid;
+  border-width: 0;
+  border-color: #e6e6e6;
+  margin-bottom: 1.25em;
+  padding: 1em;
+  background: white;
+  border-top: 1px solid #d6d6d6;
+  margin-bottom: 0;
+}
+/* line 44, ../sass/foundation/components/_panels.scss */
+#plan-callout .panel > :first-child {
+  margin-top: 0;
+}
+/* line 45, ../sass/foundation/components/_panels.scss */
+#plan-callout .panel > :last-child {
+  margin-bottom: 0;
+}
+/* line 50, ../sass/foundation/components/_panels.scss */
+#plan-callout .panel h1, #plan-callout .panel h2, #plan-callout .panel h3, #plan-callout .panel h4, #plan-callout .panel h5, #plan-callout .panel h6, #plan-callout .panel p {
+  color: #cccccc;
+}
+/* line 54, ../sass/foundation/components/_panels.scss */
+#plan-callout .panel h1, #plan-callout .panel h2, #plan-callout .panel h3, #plan-callout .panel h4, #plan-callout .panel h5, #plan-callout .panel h6 {
+  line-height: 1;
+  margin-bottom: 0.625em;
+}
+/* line 56, ../sass/foundation/components/_panels.scss */
+#plan-callout .panel h1.subheader, #plan-callout .panel h2.subheader, #plan-callout .panel h3.subheader, #plan-callout .panel h4.subheader, #plan-callout .panel h5.subheader, #plan-callout .panel h6.subheader {
+  line-height: 1.4;
+}
+/* line 81, ../sass/_planaddons.scss */
+#plan-callout .panel h2 {
+  color: #8dc63f;
+  font-size: 0.9375em;
+  letter-spacing: -1px;
+}
+/* line 85, ../sass/_planaddons.scss */
+#plan-callout .panel h2 span {
+  color: #008752;
+  display: block;
+}
+/* line 90, ../sass/_planaddons.scss */
+#plan-callout .panel h3 {
+  color: #008752;
+  font-family: "GothamBlack";
+  font-size: 0.85em;
+  font-weight: normal;
+}
+/* line 96, ../sass/_planaddons.scss */
+#plan-callout .panel h4 {
+  color: #8dc63f;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  font-weight: normal;
+  font-family: "GothamBlack";
+  margin-right: 0.5em;
+}
+/* line 104, ../sass/_planaddons.scss */
+#plan-callout .panel hr {
+  margin: 1em auto;
+  display: block;
+}
+/* line 108, ../sass/_planaddons.scss */
+#plan-callout .panel p.included-items {
+  font-size: 0.85em;
+}
+/* line 111, ../sass/_planaddons.scss */
+#plan-callout .panel p {
+  color: #333;
+  font-family: "GothamBook";
+  font-size: 0.8125em;
+  margin-bottom: 0;
+}
+/* line 117, ../sass/_planaddons.scss */
+#plan-callout .panel .plan-item {
+  margin: 2em 0 0 0;
+  text-align: center;
+  float: left;
+  width: 100%;
+  /* between 767px & 800px - 2 columns */
+  width: 30%;
+  /* > 940px - 4 columns */
+  width: 25%;
+}
+/* line 129, ../sass/_planaddons.scss */
+#plan-callout .panel .plan-item p {
+  font-family: "GothamMedium";
+  font-size: 1.2em;
+  line-height: 1.2em;
+  width: 70%;
+  margin: 0 auto 0.5em auto;
+}
+/* line 136, ../sass/_planaddons.scss */
+#plan-callout .panel .plan-item a {
+  color: #f14530;
+  font-size: 0.85em;
+  text-transform: uppercase;
+}
+/* line 142, ../sass/_planaddons.scss */
+#plan-callout .panel .swiper-container, #plan-callout .panel .swiper-wrapper {
+  height: 140px;
+}
+/* line 149, ../sass/_planaddons.scss */
+#plan-callout .panel {
+  border-style: solid;
+  border-width: 0;
+  border-color: #dddddd;
+  margin-bottom: 1.25em;
+  padding: 2em;
+  background: #f6f6f6;
+  border: 1px solid #d6d6d6;
+}
+/* line 44, ../sass/foundation/components/_panels.scss */
+#plan-callout .panel > :first-child {
+  margin-top: 0;
+}
+/* line 45, ../sass/foundation/components/_panels.scss */
+#plan-callout .panel > :last-child {
+  margin-bottom: 0;
+}
+/* line 50, ../sass/foundation/components/_panels.scss */
+#plan-callout .panel h1, #plan-callout .panel h2, #plan-callout .panel h3, #plan-callout .panel h4, #plan-callout .panel h5, #plan-callout .panel h6, #plan-callout .panel p {
+  color: #cccccc;
+}
+/* line 54, ../sass/foundation/components/_panels.scss */
+#plan-callout .panel h1, #plan-callout .panel h2, #plan-callout .panel h3, #plan-callout .panel h4, #plan-callout .panel h5, #plan-callout .panel h6 {
+  line-height: 1;
+  margin-bottom: 0.625em;
+}
+/* line 56, ../sass/foundation/components/_panels.scss */
+#plan-callout .panel h1.subheader, #plan-callout .panel h2.subheader, #plan-callout .panel h3.subheader, #plan-callout .panel h4.subheader, #plan-callout .panel h5.subheader, #plan-callout .panel h6.subheader {
+  line-height: 1.4;
+}
+/* line 152, ../sass/_planaddons.scss */
+#plan-callout .panel h2 {
+  color: #8dc63f;
+  font-size: 1.5em;
+  width: auto;
+}
+/* line 156, ../sass/_planaddons.scss */
+#plan-callout .panel h2 span {
+  display: inline;
+}
+/* line 158, ../sass/_planaddons.scss */
+#plan-callout .panel p {
+  color: #333;
+  font-size: 1em;
+}
+/* line 162, ../sass/_planaddons.scss */
+#plan-callout .panel hr {
+  margin: 2em auto;
+}
+/* line 163, ../sass/_planaddons.scss */
+#plan-callout .panel h3 {
+  color: #008752;
+}
+/* line 164, ../sass/_planaddons.scss */
+#plan-callout .panel h4 {
+  display: inline;
+  font-size: 1em;
+  color: #8dc63f;
+}
+/* line 169, ../sass/_planaddons.scss */
+#plan-callout .panel p.included-items {
+  display: inline;
+  font-size: 0.9em;
+}
+
+/* line 177, ../sass/_planaddons.scss */
+#accordion-content {
+  /* iPad*/
+  /* Desktop */
+  margin-top: 3em;
+  margin-bottom: 4em;
+}
+/* line 179, ../sass/_planaddons.scss */
+#accordion-content .active .title {
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-accordion-active.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 95% 50%;
+}
+/* line 181, ../sass/_planaddons.scss */
+#accordion-content .active .title a {
+  border-bottom: 1px solid #d6d6d6;
+}
+/* line 185, ../sass/_planaddons.scss */
+#accordion-content .active .content {
+  background-image: -moz-linear-gradient(top, #f2f2f2 0%, white 10%, white 90%, #f2f2f2 100%);
+  /* FF3.6+ */
+  background-image: -webkit-linear-gradient(top, #f2f2f2 0%, white 10%, white 90%, #f2f2f2 100%);
+  /* Chrome10+,Safari5.1+ */
+  background-image: -o-linear-gradient(top, #f2f2f2 0%, white 10%, white 90%, #f2f2f2 100%);
+  /* Opera 11.10+ */
+  background-image: -ms-linear-gradient(top, #f2f2f2 0%, white 10%, white 90%, #f2f2f2 100%);
+  /* IE10+ */
+  background-image: linear-gradient(to bottom, #f2f2f2 0%, #ffffff 10%, #ffffff 90%, #f2f2f2 100%);
+  /* W3C */
+}
+/* line 193, ../sass/_planaddons.scss */
+#accordion-content .title {
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-accordion-inactive.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 95% 50%;
+  color: #8dc63f;
+  font-family: "GothamBlack";
+  font-size: 1em;
+}
+/* line 198, ../sass/_planaddons.scss */
+#accordion-content .title a {
+  color: #008752;
+}
+/* line 200, ../sass/_planaddons.scss */
+#accordion-content .swiper-container, #accordion-content .swiper-wrapper {
+  height: 200px;
+}
+/* line 204, ../sass/_planaddons.scss */
+#accordion-content .expand-all {
+  display: none;
+}
+/* line 211, ../sass/_planaddons.scss */
+#accordion-content .active .content {
+  background-image: none;
+}
+/* line 212, ../sass/_planaddons.scss */
+#accordion-content .active .title a {
+  border-bottom: none;
+}
+/* line 213, ../sass/_planaddons.scss */
+#accordion-content .title a {
+  color: #8dc63f;
+}
+/* line 214, ../sass/_planaddons.scss */
+#accordion-content .expand-all {
+  margin-bottom: 1em;
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.85em;
+}
+/* line 220, ../sass/_planaddons.scss */
+#accordion-content .title {
+  font-size: 1.5em;
+}
+
+/* line 226, ../sass/_planaddons.scss */
+#accordion-content .content:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+/* line 228, ../sass/_planaddons.scss */
+#accordion-content .plan-item {
+  float: left;
+  width: 100%;
+  margin: 1em 0 2em 0;
+  text-align: center;
+  /* between 767px & 800px - 2 columns */
+  width: 50%;
+  min-height: 240px;
+  /* between 800px & 940px - 3 columns */
+  width: 33%;
+  min-height: 240px;
+  /* > 940px - 4 columns */
+  width: 25%;
+  min-height: 240px;
+}
+/* line 244, ../sass/_planaddons.scss */
+#accordion-content .plan-item h4 {
+  min-height: 65px;
+  font-size: 1.125em;
+  line-height: 1.2em;
+}
+/* line 257, ../sass/_planaddons.scss */
+#accordion-content .plan-item sub {
+  bottom: 0;
+}
+/* line 258, ../sass/_planaddons.scss */
+#accordion-content .plan-item h3 {
+  font-family: "GothamBlack";
+  color: #008752;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: normal;
+}
+/* line 265, ../sass/_planaddons.scss */
+#accordion-content .plan-item h4 {
+  font-family: "GothamBook";
+  color: #333;
+  width: 95%;
+  margin: 0 auto;
+}
+/* line 270, ../sass/_planaddons.scss */
+#accordion-content .plan-item h4 a {
+  color: #333;
+}
+/* line 272, ../sass/_planaddons.scss */
+#accordion-content .plan-item .green-price {
+  font-size: 2em;
+  margin-bottom: 0.3em;
+}
+/* line 276, ../sass/_planaddons.scss */
+#accordion-content .plan-item .green-add-cart, #accordion-content .plan-item .grey-add-cart {
+  margin: 0 auto 1.25em auto;
+  display: block;
+  width: 60%;
+}
+/* line 281, ../sass/_planaddons.scss */
+#accordion-content .plan-item .included {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/plans-addons/icon-included.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 50% 50%;
+  display: block;
+  width: 83px;
+  height: 81px;
+  margin: 2em auto 0 auto;
+}
+
+/* Bottom CTA */
+/* line 292, ../sass/_planaddons.scss */
+#flex-bucket {
+  background-color: #f2f2f2;
+  height: 100%;
+  /* Desktop Overrides */
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/plans-addons/power-pixels-flex-bucket.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 100% 0;
+  background-color: #f8f8f8;
+  height: 430px;
+}
+/* line 295, ../sass/_planaddons.scss */
+#flex-bucket h1 {
+  text-align: center;
+  margin: 1em auto 0 auto;
+  font-size: 1.3em;
+  color: #0A5641;
+  width: 70%;
+}
+/* line 301, ../sass/_planaddons.scss */
+#flex-bucket h1 span {
+  color: #008752;
+}
+/* line 303, ../sass/_planaddons.scss */
+#flex-bucket .content {
+  position: static;
+  left: auto;
+  right: auto;
+  top: auto;
+  width: auto;
+}
+/* line 310, ../sass/_planaddons.scss */
+#flex-bucket h3 {
+  text-transform: uppercase;
+  font-family: "GothamBlack";
+  font-size: 0.8em;
+  font-weight: normal;
+  margin-top: 0;
+  text-align: center;
+}
+/* line 318, ../sass/_planaddons.scss */
+#flex-bucket p {
+  text-transform: none;
+  font-size: 0.8125em;
+  line-height: 1.2em;
+  margin-bottom: 1em;
+  font-weight: lighter;
+}
+/* line 325, ../sass/_planaddons.scss */
+#flex-bucket ul {
+  list-style-position: inside;
+}
+/* line 326, ../sass/_planaddons.scss */
+#flex-bucket ul li {
+  padding: 0.1em 0;
+  font-size: 1em;
+  color: #29976b;
+  text-transform: uppercase;
+  font-family: "GothamBold";
+}
+/* line 334, ../sass/_planaddons.scss */
+#flex-bucket ol {
+  margin: 0 0 0 1em;
+  list-style-position: outside;
+  list-style-type: disc;
+}
+/* line 338, ../sass/_planaddons.scss */
+#flex-bucket ol li {
+  padding: 0.5em 0;
+  text-transform: none;
+  font-size: 0.8125em;
+  line-height: 1.2em;
+  font-family: "GothamMedium";
+}
+/* line 346, ../sass/_planaddons.scss */
+#flex-bucket #flex-left {
+  padding: 1em 0;
+  border-bottom: 1px solid #c2c2c2;
+  margin: 0 1em;
+}
+/* line 351, ../sass/_planaddons.scss */
+#flex-bucket #flex-right {
+  padding: 1em 1em;
+}
+/* line 352, ../sass/_planaddons.scss */
+#flex-bucket .button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #dd3a26;
+  border-color: #b42d1c;
+  color: white;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+  margin-bottom: 3em;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+#flex-bucket .button:hover, #flex-bucket .button:focus {
+  background-color: #b42d1c;
+}
+/* line 134, ../sass/foundation/components/_buttons.scss */
+#flex-bucket .button:hover, #flex-bucket .button:focus {
+  color: white;
+}
+/* line 55, ../sass/_mixins.scss */
+#flex-bucket .button:hover {
+  /*cursor: pointer;*/
+}
+/* line 362, ../sass/_planaddons.scss */
+#flex-bucket h1 {
+  font-size: 2.4em;
+  width: 100%;
+}
+/* line 366, ../sass/_planaddons.scss */
+#flex-bucket h3 {
+  text-align: left;
+}
+/* line 367, ../sass/_planaddons.scss */
+#flex-bucket .content {
+  width: 50%;
+}
+/* line 368, ../sass/_planaddons.scss */
+#flex-bucket p {
+  font-size: 0.9375em;
+}
+/* line 369, ../sass/_planaddons.scss */
+#flex-bucket .button {
+  margin-top: 2em;
+  margin-bottom: 0;
+  font-size: 15px;
+}
+/* line 374, ../sass/_planaddons.scss */
+#flex-bucket ol li {
+  font-size: 0.9375em;
+}
+/* line 375, ../sass/_planaddons.scss */
+#flex-bucket ul li {
+  font-size: 0.9em;
+}
+/* line 376, ../sass/_planaddons.scss */
+#flex-bucket #flex-left {
+  padding: 0 3em 0 2em;
+  margin: 2em 0 0 0;
+  border-bottom: none;
+}
+/* line 381, ../sass/_planaddons.scss */
+#flex-bucket #flex-right {
+  border-left: 1px solid #c2c2c2;
+  padding: 0 0 0 2em;
+  margin: 2em 0 0 0;
+}
+
+/* line 389, ../sass/_planaddons.scss */
+#small-mobile-cta {
+  height: 159px;
+}
+
+/* line 391, ../sass/_planaddons.scss */
+.lt-ie9 .expand-all {
+  display: none !important;
+}
+
+/* line 1, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #product-details {
+  padding: 0.7em 0.8em 1em 0.8em;
+  /* iPad */
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/plans-addons/power-pixels-addon-details.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 50% 0;
+  /* Desktop */
+  padding: 5em 0 1em;
+}
+/* line 3, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #product-details .final-price {
+  border-top: 1px solid #dbdbdb;
+  padding-top: 0.9375em;
+}
+/* line 6, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #product-details .final-price p.left {
+  font-size: 1.1em;
+}
+/* line 8, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #product-details h1 {
+  text-align: center;
+}
+/* line 9, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #product-details .full-width-btn {
+  width: 100%;
+}
+/* line 19, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #product-details h1 {
+  text-align: left;
+  font-size: 1.875em;
+}
+/* line 23, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #product-details .full-width-btn {
+  width: 55%;
+}
+
+/* line 28, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #product-image p {
+  margin: 2.35em 0;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.13em;
+  line-height: 1.3em;
+  padding: 0 1em;
+  font-family: "GothamMedium";
+}
+
+/* line 40, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #product-content {
+  float: right;
+}
+
+/* line 42, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #tab-content {
+  /* Desktop overrides for #tab-content */
+  margin-bottom: 4em;
+}
+/* line 44, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #tab-content .section-container {
+  border-top: 1px solid #deefe9;
+  /* Desktop */
+  border-top: none;
+  /* /Desktop .section-container */
+  /* /#available-phones */
+}
+/* line 46, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #tab-content .section-container .active .title {
+  background-image: none;
+}
+/* line 49, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #tab-content .section-container .circle-arrow {
+  margin: 2em auto;
+  display: block;
+  width: 50%;
+}
+/* line 54, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #tab-content .section-container .copy {
+  padding: 0 0.625em 0 0.625em;
+}
+/* line 59, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #tab-content .section-container .circle-arrow {
+  float: right;
+  width: auto;
+  margin: 1.25em 0 0 0;
+}
+/* line 64, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #tab-content .section-container .copy {
+  margin: 4.75em 0 3.5625em 0;
+  padding: 0 5.0625em 0 4.5em;
+}
+/* line 68, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #tab-content .section-container .title {
+  padding-left: 0.938em;
+  padding-right: 0.938em;
+}
+/* line 74, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #tab-content .section-container #available-phones {
+  /* Desktop overrides for #available-phones */
+  padding: 1.188em 1.875em 1em 4.5em;
+  /* /Desktop overrides for #availble-phones */
+}
+/* line 75, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #tab-content .section-container #available-phones h4 {
+  font-family: 'GothamBlack';
+  font-size: 1.25em;
+  color: #8dc63f;
+  border-bottom: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: normal;
+}
+/* line 84, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #tab-content .section-container #available-phones p {
+  font-size: 0.8125em;
+  color: #333;
+  font-family: 'GothamMedium';
+  margin-top: 8px;
+  margin-bottom: 40px;
+}
+/* line 95, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #tab-content .section-container #available-phones h4 {
+  color: #008752;
+  letter-spacing: 0.01563em;
+}
+/* line 99, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #tab-content .section-container #available-phones p {
+  color: #008752;
+  text-transform: uppercase;
+}
+
+/* /#tab-content */
+/* line 111, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #tab-content #included {
+  .asterisk: before;
+  .asterisk-list-style-type: none;
+  .asterisk-content: none;
+  /* Desktop */
+  padding: 1.188em 1.875em 1em 4.5em;
+  /* /Desktop overrides */
+}
+/* line 112, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #tab-content #included ul {
+  padding-left: 1em;
+  padding-bottom: 0.5625em;
+  display: inline-block;
+  width: 100%;
+}
+/* line 117, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #tab-content #included ul li:before {
+  display: inline-block;
+  content: "-";
+  width: 1em;
+  margin-left: -1em;
+}
+/* line 123, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #tab-content #included ul li {
+  margin: .25em 0;
+}
+/* line 129, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #tab-content #included p {
+  font-size: 0.75em;
+  color: #000;
+  font-family: 'GothamMedium';
+  margin-top: 5px;
+}
+/* line 135, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #tab-content #included h4 {
+  font-family: 'GothamBlack';
+  font-size: 1.125em;
+  font-weight: normal;
+}
+/* line 144, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #tab-content #included .title {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* line 148, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #tab-content #included h4 {
+  font-size: 1.25em;
+  letter-spacing: 0.01563em;
+}
+/* line 152, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #tab-content #included p {
+  color: #FFF;
+}
+/* line 154, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #tab-content #included ul {
+  padding-left: 0;
+  /* /li */
+}
+/* line 156, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #tab-content #included ul li.first:before, .section-plan-addons-details #tab-content #included ul li:before {
+  content: "";
+}
+/* line 159, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #tab-content #included ul li {
+  float: left;
+  font-size: 0.8125em;
+  margin: 0 10px 0 0;
+}
+/* line 163, ../sass/_planaddonsdetails.scss */
+.section-plan-addons-details #tab-content #included ul li.first {
+  list-style-type: none;
+  margin: 0;
+}
+
+/* /#included */
+/* line 173, ../sass/_planaddonsdetails.scss */
+.tabs-legal {
+  padding-top: 10px;
+  font-size: 11px;
+  font-style: italic;
+  border-top: 1px solid #ddd;
+  margin-top: 25px;
+}
+
+/* Autocomplete Widget Styling Desktop */
+/* line 2, ../sass/_search.scss */
+.acResults {
+  height: auto;
+  min-height: 100px;
+  position: static;
+  width: 100%;
+  padding-top: 7px;
+  margin-top: 10px;
+  padding-top: 7px;
+  margin-top: 10px;
+  width: 320px;
+  min-height: 200px;
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-white-arrow-up.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) repeat-x 0 0;
+}
+/* line 9, ../sass/_search.scss */
+.acResults ul {
+  margin: 0px;
+  padding-top: 0;
+  list-style-position: outside;
+  list-style: none;
+}
+/* line 14, ../sass/_search.scss */
+.acResults ul li {
+  color: #fff;
+  width: auto;
+  margin: 0px;
+  cursor: pointer;
+  display: block;
+  overflow: hidden;
+  font-family: "GothamBook";
+}
+/* line 22, ../sass/_search.scss */
+.acResults ul li span {
+  display: block;
+  margin-bottom: 2px;
+}
+/* line 25, ../sass/_search.scss */
+.acResults ul li span a {
+  display: block;
+  font-size: 0.9em;
+  background: #454545 url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-arrow-orange-circle.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 90% 50%;
+}
+/* line 40, ../sass/_search.scss */
+.acResults ul {
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
+}
+/* line 45, ../sass/_search.scss */
+.acResults ul li {
+  width: auto;
+  margin: 0px;
+  padding: 2px 5px;
+  cursor: pointer;
+  display: block;
+  font-size: 12px;
+  overflow: hidden;
+  color: #999;
+}
+
+/* line 62, ../sass/_search.scss */
+.acLoading {
+  background-image: url(//images.mycricket.com/cricket?set=imageURL[file:/img/loading.gif],imageHeight[60],imageFormat[gif],imageQuality[90]&call=url[file:cricket/default.chain]);
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: contain;
+  width: 60px;
+  height: 60px;
+  display: block;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+}
+
+/* line 74, ../sass/_search.scss */
+.acSelect {
+  background-color: #f2f2f2;
+  color: #000;
+}
+
+/* Styling for Predicitive Search in Header and Search Results Page */
+/* line 87, ../sass/_search.scss */
+#search-all-results,
+#search-phone-results,
+#search-accessories-results,
+#search-plan-results,
+#search-support-results,
+#predictive-search-zip,
+#predictive-search-nozip {
+  /* Plans Search Results are a bit wider */
+  /* Support Search results don't have images */
+}
+/* line 88, ../sass/_search.scss */
+#search-all-results .columns,
+#search-phone-results .columns,
+#search-accessories-results .columns,
+#search-plan-results .columns,
+#search-support-results .columns,
+#predictive-search-zip .columns,
+#predictive-search-nozip .columns {
+  padding-left: 0;
+  padding-right: 0;
+}
+/* line 92, ../sass/_search.scss */
+#search-all-results h3,
+#search-phone-results h3,
+#search-accessories-results h3,
+#search-plan-results h3,
+#search-support-results h3,
+#predictive-search-zip h3,
+#predictive-search-nozip h3 {
+  color: #008752;
+  text-transform: uppercase;
+  font-size: 1.3em;
+  font-family: "GothamBlack";
+  margin: 0;
+}
+/* line 98, ../sass/_search.scss */
+#search-all-results h3 .number,
+#search-phone-results h3 .number,
+#search-accessories-results h3 .number,
+#search-plan-results h3 .number,
+#search-support-results h3 .number,
+#predictive-search-zip h3 .number,
+#predictive-search-nozip h3 .number {
+  font-family: "GothamMedium";
+}
+/* line 100, ../sass/_search.scss */
+#search-all-results .text-right a.circle-arrow,
+#search-phone-results .text-right a.circle-arrow,
+#search-accessories-results .text-right a.circle-arrow,
+#search-plan-results .text-right a.circle-arrow,
+#search-support-results .text-right a.circle-arrow,
+#predictive-search-zip .text-right a.circle-arrow,
+#predictive-search-nozip .text-right a.circle-arrow {
+  margin-top: 0;
+  line-height: 2.4em;
+}
+/* line 104, ../sass/_search.scss */
+#search-all-results .result,
+#search-phone-results .result,
+#search-accessories-results .result,
+#search-plan-results .result,
+#search-support-results .result,
+#predictive-search-zip .result,
+#predictive-search-nozip .result {
+  float: left;
+  width: 100%;
+  padding: 1em 0 1em 0;
+  width: 33.33%;
+  padding: 1em 0 1em 0;
+}
+/* line 112, ../sass/_search.scss */
+#search-all-results .result img,
+#search-phone-results .result img,
+#search-accessories-results .result img,
+#search-plan-results .result img,
+#search-support-results .result img,
+#predictive-search-zip .result img,
+#predictive-search-nozip .result img {
+  max-width: none;
+}
+/* line 113, ../sass/_search.scss */
+#search-all-results .result .copy,
+#search-phone-results .result .copy,
+#search-accessories-results .result .copy,
+#search-plan-results .result .copy,
+#search-support-results .result .copy,
+#predictive-search-zip .result .copy,
+#predictive-search-nozip .result .copy {
+  width: 63%;
+  padding-left: 1.2em;
+  width: 72%;
+  padding-left: 0.8em;
+  width: 78%;
+  padding-left: 1.7em;
+}
+/* line 129, ../sass/_search.scss */
+#search-all-results .result h3,
+#search-phone-results .result h3,
+#search-accessories-results .result h3,
+#search-plan-results .result h3,
+#search-support-results .result h3,
+#predictive-search-zip .result h3,
+#predictive-search-nozip .result h3 {
+  color: #333;
+  font-size: 1em;
+  letter-spacing: -1px;
+  font-weight: normal;
+  margin: 0 0 0.2em 0;
+  line-height: inherit;
+}
+/* line 137, ../sass/_search.scss */
+#search-all-results .result h4,
+#search-phone-results .result h4,
+#search-accessories-results .result h4,
+#search-plan-results .result h4,
+#search-support-results .result h4,
+#predictive-search-zip .result h4,
+#predictive-search-nozip .result h4 {
+  color: #333;
+  font-size: 1em;
+  font-family: "GothamMedium";
+  font-weight: normal;
+  margin: 0 0 0.1em 0;
+  line-height: inherit;
+}
+/* line 144, ../sass/_search.scss */
+#search-all-results .result h4 a,
+#search-phone-results .result h4 a,
+#search-accessories-results .result h4 a,
+#search-plan-results .result h4 a,
+#search-support-results .result h4 a,
+#predictive-search-zip .result h4 a,
+#predictive-search-nozip .result h4 a {
+  color: #333;
+}
+/* line 146, ../sass/_search.scss */
+#search-all-results .result a.circle-arrow,
+#search-phone-results .result a.circle-arrow,
+#search-accessories-results .result a.circle-arrow,
+#search-plan-results .result a.circle-arrow,
+#search-support-results .result a.circle-arrow,
+#predictive-search-zip .result a.circle-arrow,
+#predictive-search-nozip .result a.circle-arrow {
+  display: block;
+  font-size: 11px;
+}
+/* line 152, ../sass/_search.scss */
+#search-all-results .green-price,
+#search-phone-results .green-price,
+#search-accessories-results .green-price,
+#search-plan-results .green-price,
+#search-support-results .green-price,
+#predictive-search-zip .green-price,
+#predictive-search-nozip .green-price {
+  font-family: "GothamBold";
+  font-size: 2.8em;
+  color: #008752;
+  letter-spacing: -0.03em;
+  font-size: 1.85em;
+  line-height: inherit;
+  margin-bottom: 0;
+}
+/* line 158, ../sass/_search.scss */
+#search-all-results .green-add-cart,
+#search-phone-results .green-add-cart,
+#search-accessories-results .green-add-cart,
+#search-plan-results .green-add-cart,
+#search-support-results .green-add-cart,
+#predictive-search-zip .green-add-cart,
+#predictive-search-nozip .green-add-cart {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #28ac75;
+  border-color: #1e8359;
+  color: white;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+  width: auto;
+  font-size: 10px;
+  margin-bottom: 0;
+  margin-top: 0.3em;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+#search-all-results .green-add-cart:hover, #search-all-results .green-add-cart:focus,
+#search-phone-results .green-add-cart:hover,
+#search-phone-results .green-add-cart:focus,
+#search-accessories-results .green-add-cart:hover,
+#search-accessories-results .green-add-cart:focus,
+#search-plan-results .green-add-cart:hover,
+#search-plan-results .green-add-cart:focus,
+#search-support-results .green-add-cart:hover,
+#search-support-results .green-add-cart:focus,
+#predictive-search-zip .green-add-cart:hover,
+#predictive-search-zip .green-add-cart:focus,
+#predictive-search-nozip .green-add-cart:hover,
+#predictive-search-nozip .green-add-cart:focus {
+  background-color: #1e8359;
+}
+/* line 134, ../sass/foundation/components/_buttons.scss */
+#search-all-results .green-add-cart:hover, #search-all-results .green-add-cart:focus,
+#search-phone-results .green-add-cart:hover,
+#search-phone-results .green-add-cart:focus,
+#search-accessories-results .green-add-cart:hover,
+#search-accessories-results .green-add-cart:focus,
+#search-plan-results .green-add-cart:hover,
+#search-plan-results .green-add-cart:focus,
+#search-support-results .green-add-cart:hover,
+#search-support-results .green-add-cart:focus,
+#predictive-search-zip .green-add-cart:hover,
+#predictive-search-zip .green-add-cart:focus,
+#predictive-search-nozip .green-add-cart:hover,
+#predictive-search-nozip .green-add-cart:focus {
+  color: white;
+}
+/* line 55, ../sass/_mixins.scss */
+#search-all-results .green-add-cart:hover,
+#search-phone-results .green-add-cart:hover,
+#search-accessories-results .green-add-cart:hover,
+#search-plan-results .green-add-cart:hover,
+#search-support-results .green-add-cart:hover,
+#predictive-search-zip .green-add-cart:hover,
+#predictive-search-nozip .green-add-cart:hover {
+  /*cursor: pointer;*/
+}
+/* line 168, ../sass/_search.scss */
+#search-all-results .plans .result .copy, #search-all-results .plan-addons .result .copy,
+#search-phone-results .plans .result .copy,
+#search-phone-results .plan-addons .result .copy,
+#search-accessories-results .plans .result .copy,
+#search-accessories-results .plan-addons .result .copy,
+#search-plan-results .plans .result .copy,
+#search-plan-results .plan-addons .result .copy,
+#search-support-results .plans .result .copy,
+#search-support-results .plan-addons .result .copy,
+#predictive-search-zip .plans .result .copy,
+#predictive-search-zip .plan-addons .result .copy,
+#predictive-search-nozip .plans .result .copy,
+#predictive-search-nozip .plan-addons .result .copy {
+  padding-left: 1em;
+  width: 57%;
+}
+/* line 174, ../sass/_search.scss */
+#search-all-results .plans .result .copy, #search-all-results .plan-addons .result .copy,
+#search-phone-results .plans .result .copy,
+#search-phone-results .plan-addons .result .copy,
+#search-accessories-results .plans .result .copy,
+#search-accessories-results .plan-addons .result .copy,
+#search-plan-results .plans .result .copy,
+#search-plan-results .plan-addons .result .copy,
+#search-support-results .plans .result .copy,
+#search-support-results .plan-addons .result .copy,
+#predictive-search-zip .plans .result .copy,
+#predictive-search-zip .plan-addons .result .copy,
+#predictive-search-nozip .plans .result .copy,
+#predictive-search-nozip .plan-addons .result .copy {
+  padding-left: 1em;
+  width: 57%;
+}
+/* line 182, ../sass/_search.scss */
+#search-all-results .plans .result .copy, #search-all-results .plan-addons .result .copy,
+#search-phone-results .plans .result .copy,
+#search-phone-results .plan-addons .result .copy,
+#search-accessories-results .plans .result .copy,
+#search-accessories-results .plan-addons .result .copy,
+#search-plan-results .plans .result .copy,
+#search-plan-results .plan-addons .result .copy,
+#search-support-results .plans .result .copy,
+#search-support-results .plan-addons .result .copy,
+#predictive-search-zip .plans .result .copy,
+#predictive-search-zip .plan-addons .result .copy,
+#predictive-search-nozip .plans .result .copy,
+#predictive-search-nozip .plan-addons .result .copy {
+  padding-left: 1.2em;
+  width: 58%;
+}
+/* line 191, ../sass/_search.scss */
+#search-all-results .support .result,
+#search-phone-results .support .result,
+#search-accessories-results .support .result,
+#search-plan-results .support .result,
+#search-support-results .support .result,
+#predictive-search-zip .support .result,
+#predictive-search-nozip .support .result {
+  /* Desktop */
+}
+/* line 192, ../sass/_search.scss */
+#search-all-results .support .result .copy,
+#search-phone-results .support .result .copy,
+#search-accessories-results .support .result .copy,
+#search-plan-results .support .result .copy,
+#search-support-results .support .result .copy,
+#predictive-search-zip .support .result .copy,
+#predictive-search-nozip .support .result .copy {
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+}
+/* line 196, ../sass/_search.scss */
+#search-all-results .support .result .copy h4,
+#search-phone-results .support .result .copy h4,
+#search-accessories-results .support .result .copy h4,
+#search-plan-results .support .result .copy h4,
+#search-support-results .support .result .copy h4,
+#predictive-search-zip .support .result .copy h4,
+#predictive-search-nozip .support .result .copy h4 {
+  line-height: inherit;
+  margin-bottom: 1em;
+}
+/* line 203, ../sass/_search.scss */
+#search-all-results .support .result .copy,
+#search-phone-results .support .result .copy,
+#search-accessories-results .support .result .copy,
+#search-plan-results .support .result .copy,
+#search-support-results .support .result .copy,
+#predictive-search-zip .support .result .copy,
+#predictive-search-nozip .support .result .copy {
+  padding-right: 0;
+  width: 90%;
+}
+/* line 211, ../sass/_search.scss */
+#search-all-results #search-support-links,
+#search-phone-results #search-support-links,
+#search-accessories-results #search-support-links,
+#search-plan-results #search-support-links,
+#search-support-results #search-support-links,
+#predictive-search-zip #search-support-links,
+#predictive-search-nozip #search-support-links {
+  padding: 2em;
+  margin-top: 2em;
+  border-top: 1px solid #ccc;
+}
+
+/* /predictive-search 1 & 2 */
+/* line 221, ../sass/_search.scss */
+#predictive-search-1 .row,
+#predictive-search-2 .row {
+  padding: 0 2em 0 0;
+  margin: 0 auto;
+}
+/* line 225, ../sass/_search.scss */
+#predictive-search-1 .search-section.support .copy,
+#predictive-search-2 .search-section.support .copy {
+  padding: 0;
+}
+
+/* Some results tabs have filters, so need less padding */
+/* line 229, ../sass/_search.scss */
+#search-phone-results, #search-accessories-results {
+  padding: 2em 0.5em 1em 0.5em;
+}
+
+/* line 231, ../sass/_search.scss */
+#search-all-results {
+  padding: 1em 0.5em;
+  padding: 3em 0 1em 0;
+}
+/* line 233, ../sass/_search.scss */
+#search-all-results .search-section {
+  min-height: 115px;
+  max-height: 140px;
+  overflow: hidden;
+}
+/* line 237, ../sass/_search.scss */
+#search-all-results .search-section.support {
+  height: 100px;
+}
+/* line 239, ../sass/_search.scss */
+#search-all-results .search-section.support .copy {
+  padding-left: 0;
+  padding-right: 0;
+}
+/* line 244, ../sass/_search.scss */
+#search-all-results .search-section.plans {
+  max-height: 110px;
+}
+/* line 245, ../sass/_search.scss */
+#search-all-results .search-section.plan-addons {
+  max-height: 162px;
+}
+/* line 250, ../sass/_search.scss */
+#search-all-results .search-section {
+  min-height: auto;
+  max-height: auto;
+  overflow: visible;
+}
+/* line 254, ../sass/_search.scss */
+#search-all-results .search-section.support {
+  height: auto;
+}
+/* line 255, ../sass/_search.scss */
+#search-all-results .search-section.plans {
+  max-height: auto;
+}
+/* line 256, ../sass/_search.scss */
+#search-all-results .search-section.plan-addons {
+  max-height: auto;
+}
+
+/* line 261, ../sass/_search.scss */
+#search-plan-results {
+  padding: 1em 0 1em 0;
+}
+
+/* line 267, ../sass/_search.scss */
+#search-all-results .row,
+#search-phone-results .row,
+#search-accessories-results .row,
+#search-plan-results .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Sub Nav on Search Results Page */
+/* line 275, ../sass/_search.scss */
+#constructor.section-search-results .subnav dl {
+  margin-left: 0.625em;
+  margin-right: 0.625em;
+}
+/* line 278, ../sass/_search.scss */
+#constructor.section-search-results .subnav dl dd.active {
+  color: #008752;
+  font-size: 1.15em;
+}
+/* line 282, ../sass/_search.scss */
+#constructor.section-search-results .subnav dl dd {
+  font-family: "GothamMedium";
+  font-size: 0.9em;
+  color: #333;
+  height: 2em;
+}
+
+/* Title Area for all Search Pages */
+/* line 292, ../sass/_search.scss */
+#search-header {
+  font-family: "GothamMedium";
+  padding: 1em 0 0 0;
+  /* Desktop */
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/search/results-power-pixel.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat top right;
+  padding: 2em 0 0 0;
+}
+/* line 295, ../sass/_search.scss */
+#search-header input {
+  font-family: "GothamBook";
+}
+/* line 296, ../sass/_search.scss */
+#search-header h1 {
+  font-size: 1.25em;
+  color: #008752;
+  width: 70%;
+  line-height: 20px;
+  margin-bottom: 1em;
+}
+/* line 302, ../sass/_search.scss */
+#search-header h1 span {
+  color: #00a663;
+}
+/* line 303, ../sass/_search.scss */
+#search-header h1 span.number {
+  font-family: "GothamMedium";
+}
+/* line 305, ../sass/_search.scss */
+#search-header p.sorry {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-exclamation.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 0 25%;
+  margin: 1.25em 0 1.25em 0;
+  padding: 0 0 0 1.875em;
+  line-height: 1.3em;
+}
+/* line 311, ../sass/_search.scss */
+#search-header h3 {
+  font-size: 1.5625em;
+  margin-top: 1.25em;
+  color: #008752;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-family: "GothamBlack";
+}
+/* line 319, ../sass/_search.scss */
+#search-header .grey-button {
+  padding: 0.7em 0.8em 0.7em 0.8em;
+}
+/* line 325, ../sass/_search.scss */
+#search-header h1 {
+  font-size: 1.875em;
+  width: auto;
+  line-height: inherit;
+}
+
+/* Add a border to the filters only for Search */
+/* line 334, ../sass/_search.scss */
+#search-categories #section-filters .top-bar {
+  border-top: 1px solid #E6E6E6;
+  border-top: 1px solid #B2B2B2;
+}
+
+/* line 341, ../sass/_search.scss */
+ul.search-recommendations {
+  list-style-type: none;
+  list-style-position: inside;
+}
+/* line 344, ../sass/_search.scss */
+ul.search-recommendations li {
+  padding: 0.3em 0;
+}
+/* line 346, ../sass/_search.scss */
+ul.search-recommendations li:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+/* line 347, ../sass/_search.scss */
+ul.search-recommendations li a {
+  color: #333;
+  border-bottom: 1px solid #ccc;
+  width: auto;
+  float: left;
+  line-height: 1.2em;
+}
+
+/* line 357, ../sass/_search.scss */
+.search-pager {
+  color: #008752;
+  font-family: "GothamBlack";
+  font-size: 0.8125em;
+  margin: 2em 0 0 0;
+}
+/* line 362, ../sass/_search.scss */
+.search-pager a {
+  margin: 0;
+  padding: 0.25em 0.55em;
+}
+/* line 366, ../sass/_search.scss */
+.search-pager a.current {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/search/icon-pager-current.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 50% 50%;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  padding: 0.25em 0.55em;
+}
+/* line 374, ../sass/_search.scss */
+.search-pager .next, .search-pager .previous {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #dbdbdc;
+  border-color: #c1c1c3;
+  color: #333333;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+  font-size: 10px;
+  margin-bottom: 0;
+  font-weight: normal;
+  float: none;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+.search-pager .next:hover, .search-pager .next:focus, .search-pager .previous:hover, .search-pager .previous:focus {
+  background-color: #c1c1c3;
+}
+/* line 129, ../sass/foundation/components/_buttons.scss */
+.search-pager .next:hover, .search-pager .next:focus, .search-pager .previous:hover, .search-pager .previous:focus {
+  color: #333333;
+}
+/* line 55, ../sass/_mixins.scss */
+.search-pager .next:hover, .search-pager .previous:hover {
+  /*cursor: pointer;*/
+}
+/* line 381, ../sass/_search.scss */
+.search-pager .previous {
+  margin-right: 2em;
+}
+/* line 382, ../sass/_search.scss */
+.search-pager .next {
+  margin-left: 2em;
+}
+
+/* line 385, ../sass/_search.scss */
+#search-support-links {
+  background-color: #fff;
+  padding: 0 0 1em 0;
+  padding: 1em 0 2em 0;
+}
+/* line 388, ../sass/_search.scss */
+#search-support-links a {
+  float: none;
+  display: block;
+  margin: 0.5em;
+}
+/* line 396, ../sass/_search.scss */
+#search-support-links a {
+  float: left;
+  margin: 0 1.5em;
+}
+/* line 400, ../sass/_search.scss */
+#search-support-links a:first-child {
+  margin-left: 0;
+}
+
+/* phones can no longer be added to cart, adding styling for shop now button*/
+/* line 408, ../sass/_search.scss */
+#search-all-results a.orange-shop-now,
+#search-phone-results a.orange-shop-now {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #e63924;
+  border-color: #c12916;
+  color: white;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+  font-size: 10px;
+  width: auto;
+  padding: 0.8em;
+  margin: 0.4em;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+#search-all-results a.orange-shop-now:hover, #search-all-results a.orange-shop-now:focus,
+#search-phone-results a.orange-shop-now:hover,
+#search-phone-results a.orange-shop-now:focus {
+  background-color: #c12916;
+}
+/* line 134, ../sass/foundation/components/_buttons.scss */
+#search-all-results a.orange-shop-now:hover, #search-all-results a.orange-shop-now:focus,
+#search-phone-results a.orange-shop-now:hover,
+#search-phone-results a.orange-shop-now:focus {
+  color: white;
+}
+/* line 55, ../sass/_mixins.scss */
+#search-all-results a.orange-shop-now:hover,
+#search-phone-results a.orange-shop-now:hover {
+  /*cursor: pointer;*/
+}
+
+/* Search Overrides for "Similar Phones, "Similar Plans" Blocks "*/
+/* line 418, ../sass/_search.scss */
+#constructor.section-search-results #similar-phones {
+  border-top: none;
+}
+/* line 420, ../sass/_search.scss */
+#constructor.section-search-results #similar-phones .row:first-child {
+  border-top: none;
+}
+
+/* line 423, ../sass/_search.scss */
+#constructor.section-search-results #phone-plans {
+  background: none;
+}
+
+/* line 425, ../sass/_search.scss */
+.results-dropdown {
+  position: absolute;
+  top: 140px;
+  left: 0;
+  display: none;
+  z-index: 9999;
+  padding-bottom: 10px;
+}
+
+/* line 426, ../sass/_search.scss */
+.results-dropdown ul li:hover, .mobile .results-dropdown ul li:hover {
+  background-color: #f2f2f2;
+}
+
+/* line 427, ../sass/_search.scss */
+.results-dropdown ul li a, .mobile .results-dropdown ul li a {
+  color: #999;
+}
+
+/* line 428, ../sass/_search.scss */
+.results-dropdown ul li:hover a, .mobile .results-dropdown ul li:hover a {
+  color: #000;
+}
+
+/* line 429, ../sass/_search.scss */
+.mobile .results-dropdown {
+  background: #fff;
+  padding-bottom: 20px;
+  top: 120px;
+}
+
+/* line 430, ../sass/_search.scss */
+.mobile .results-dropdown ul li {
+  padding-left: 20px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+/* Checkout Page */
+/* line 3, ../sass/_checkout.scss */
+label p.label-text {
+  float: left;
+  margin-left: 25px;
+  margin-top: -15px;
+}
+
+/* line 9, ../sass/_checkout.scss */
+.section-checkout {
+  min-height: 500px;
+  padding: 0;
+}
+/* line 12, ../sass/_checkout.scss */
+.section-checkout span.italic {
+  font-style: italic;
+}
+
+/* line 15, ../sass/_checkout.scss */
+.section-checkout #section-progress {
+  background-color: #fff;
+  background-color: #f7f7f7;
+}
+
+/* line 20, ../sass/_checkout.scss */
+#section-progress .section-progress-content {
+  padding: 0.875em 1.25em 1.25em;
+  padding-top: 2.5625em;
+  min-height: 9.3125em;
+  padding: 0.875em 0 0;
+}
+/* line 27, ../sass/_checkout.scss */
+#section-progress .section-progress-content .columns {
+  padding: 0;
+}
+/* line 28, ../sass/_checkout.scss */
+#section-progress .section-progress-content h1 {
+  color: #008752;
+  font-size: 1.875em;
+}
+/* line 32, ../sass/_checkout.scss */
+#section-progress .section-progress-content ul {
+  width: 100%;
+  padding-left: 0.6875em;
+  padding-left: 0.375em;
+  padding-left: 1.6875em;
+}
+/* line 38, ../sass/_checkout.scss */
+#section-progress .section-progress-content li {
+  list-style-type: none;
+  display: inline-block;
+  float: left;
+  color: #8f8f8f;
+  font-family: 'GothamBold';
+  font-size: 0.875em;
+  width: 33.333%;
+  font-size: 0.87em;
+  font-size: 1em;
+}
+/* line 53, ../sass/_checkout.scss */
+#section-progress .section-progress-content li.current {
+  color: #fff;
+}
+/* line 54, ../sass/_checkout.scss */
+#section-progress .section-progress-content li.step-2 {
+  padding-left: 2.625em;
+  padding-left: 3.375em;
+}
+/* line 58, ../sass/_checkout.scss */
+#section-progress .section-progress-content li.step-3 {
+  padding-left: 2.625em;
+  padding-left: 4.0625em;
+}
+
+/* line 64, ../sass/_checkout.scss */
+#section-progress .progress-bar {
+  padding: 0.625em 0 0 0 !important;
+  background: #f7f7f7 url("../img/checkout/progress-bar-steps.jpg") 0 0 no-repeat;
+  background-size: 100% 8.4375em;
+  height: 45px;
+  width: 100%;
+}
+/* line 70, ../sass/_checkout.scss */
+#section-progress .progress-bar.step2 {
+  background-position: 0 -2.8125em;
+}
+/* line 71, ../sass/_checkout.scss */
+#section-progress .progress-bar.step3 {
+  background-position: 0 -5.625em;
+}
+/* line 72, ../sass/_checkout.scss */
+#section-progress .progress-bar.mobile {
+  background: white url("../img/checkout/progress-bar-steps-mobile.jpg") 0 0 no-repeat;
+  background-size: 280px 8.4375em;
+  background-color: #f7f7f7;
+}
+/* line 75, ../sass/_checkout.scss */
+#section-progress .progress-bar.mobile.step2 {
+  background-position: 0 -2.8125em;
+}
+/* line 76, ../sass/_checkout.scss */
+#section-progress .progress-bar.mobile.step3 {
+  background-position: 0 -5.625em;
+}
+
+/* line 81, ../sass/_checkout.scss */
+#section-checkout-form {
+  background-color: #f7f7f7;
+}
+
+/* line 83, ../sass/_checkout.scss */
+#section-checkout-form .details-content {
+  background-color: #fff;
+  width: 100%;
+  padding-top: 0.4375em;
+  color: #333;
+  padding-top: 1.625em;
+  padding: 2.5625em 0 4.6875em 0;
+  border: 1px #ccc solid;
+  margin: 1.6875em 0 6.625em 0;
+}
+/* line 96, ../sass/_checkout.scss */
+#section-checkout-form .details-content.columns {
+  padding-left: 0;
+  padding-right: 0;
+}
+/* line 100, ../sass/_checkout.scss */
+#section-checkout-form .details-content p {
+  font-family: 'GothamBook';
+  font-size: 0.8125em;
+  line-height: 1;
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+/* line 109, ../sass/_checkout.scss */
+#section-checkout-form .details-content h2, #section-checkout-form .details-content h3 {
+  font-family: 'GothamBold';
+}
+/* line 110, ../sass/_checkout.scss */
+#section-checkout-form .details-content h2 {
+  font-size: 1.125em;
+  line-height: 13px;
+  font-weight: 400;
+}
+/* line 115, ../sass/_checkout.scss */
+#section-checkout-form .details-content h3 {
+  font-size: 0.8125em;
+  font-weight: 400;
+}
+/* line 119, ../sass/_checkout.scss */
+#section-checkout-form .details-content h4 {
+  font-family: 'GothamBook';
+  font-size: 0.875em;
+}
+/* line 123, ../sass/_checkout.scss */
+#section-checkout-form .details-content .divider {
+  border-top: 1px solid #CCC;
+  padding-bottom: 1.8125em;
+}
+/* line 127, ../sass/_checkout.scss */
+#section-checkout-form .details-content .divider.package {
+  padding-bottom: 0.9375em;
+}
+/* line 128, ../sass/_checkout.scss */
+#section-checkout-form .details-content .divider.last {
+  margin-top: 0.9375em;
+  padding-bottom: 0.9375em;
+}
+/* line 132, ../sass/_checkout.scss */
+#section-checkout-form .details-content a.button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #e83b26;
+  border-color: #c62815;
+  color: white;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+  width: 100%;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+#section-checkout-form .details-content a.button:hover, #section-checkout-form .details-content a.button:focus {
+  background-color: #c62815;
+}
+/* line 134, ../sass/foundation/components/_buttons.scss */
+#section-checkout-form .details-content a.button:hover, #section-checkout-form .details-content a.button:focus {
+  color: white;
+}
+/* line 55, ../sass/_mixins.scss */
+#section-checkout-form .details-content a.button:hover {
+  /*cursor: pointer;*/
+}
+/* line 136, ../sass/_checkout.scss */
+#section-checkout-form .details-content a.button span {
+  font-weight: 700;
+  font-size: 13px;
+}
+/* line 140, ../sass/_checkout.scss */
+#section-checkout-form .details-content a.processing {
+  display: block;
+  /* For IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+}
+/* line 144, ../sass/_checkout.scss */
+#section-checkout-form .details-content a.processing.disabled {
+  display: none;
+}
+/* line 146, ../sass/_checkout.scss */
+#section-checkout-form .details-content a.processing.disabled:hover {
+  cursor: default;
+  background-color: #E83B26;
+}
+
+/* Mobile Version of Summary */
+/* line 156, ../sass/_checkout.scss */
+.section-checkout #section-checkout-form #tab-content .section-container p {
+  padding: 0 1.25em;
+}
+/* line 157, ../sass/_checkout.scss */
+.section-checkout #section-checkout-form #tab-content .section-container .content {
+  padding: 1.9375em 1.8125em 0 1.8125em;
+}
+/* line 158, ../sass/_checkout.scss */
+.section-checkout #section-checkout-form #tab-content .section-container .active.no-icon .title {
+  background: none;
+  background-color: #FFF;
+}
+
+/* Mobile version of Overview */
+/* line 165, ../sass/_checkout.scss */
+#overview-total {
+  padding: 0 1.25em 1.25em 1.25em;
+}
+/* line 167, ../sass/_checkout.scss */
+#overview-total .summary .small-12 {
+  padding-top: 1.8125em;
+}
+/* line 168, ../sass/_checkout.scss */
+#overview-total .summary table tr.order-total {
+  padding-bottom: 1.1875em;
+}
+
+/* Left Side of Form Desktop */
+/* line 172, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form {
+  padding: 0 1.25em 1.25em;
+  padding-bottom: 0;
+  padding: 0 3.0625em 0 1.875em;
+  padding-bottom: 1.25em;
+  /* /fieldset */
+}
+/* line 181, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form .row {
+  padding-bottom: 0.75em;
+  padding-bottom: 1.25em;
+}
+/* line 185, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form .row.nopad {
+  padding-bottom: 0;
+}
+/* line 186, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form .row.nopad p {
+  margin-bottom: 0.3125em;
+}
+/* line 187, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form .row.birthdate {
+  padding-top: 0.5em;
+  padding-bottom: 0.9375em;
+}
+/* line 192, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form form.custom .row {
+  padding-right: 0.625em;
+  padding-right: .8em;
+  padding-right: 6.25em;
+}
+/* line 196, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form form.custom .row #different-shipping-address .row {
+  padding-right: 0;
+}
+/* line 200, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form form.custom .row:first-child {
+  padding-right: 0;
+}
+/* line 201, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form form.custom .row.no-right-padding {
+  padding-right: 0;
+}
+/* line 202, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form form.custom .radio {
+  margin-top: -0.25em;
+  margin-right: 0.4375em;
+}
+/* line 206, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form form.custom .dropdown .current {
+  color: #008752;
+}
+/* line 207, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form form.custom .dropdown {
+  margin-bottom: 1.25em;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+}
+/* line 214, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form form.custom .checkbox.checked:before {
+  content: "\2713";
+  margin-left: 12px;
+  margin-top: 50%;
+  cursor: default;
+}
+/* line 220, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form form.custom input[type="checkbox"] {
+  display: inline;
+  width: auto;
+  margin: 0;
+}
+/* line 225, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form form.custom select {
+  padding: 4px 4px 5px 4px;
+  margin-top: 4px;
+}
+/* line 230, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 234, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form fieldset .row.special-pad {
+  padding-bottom: 0.6875em;
+  padding-bottom: 1.875em;
+}
+/* line 238, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form fieldset .right input[type="text"], #section-checkout-form .details-content .form fieldset .single input[type="text"] {
+  margin-bottom: 0.625em;
+  margin-bottom: 0;
+}
+/* line 242, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form fieldset input[type="text"] {
+  margin-bottom: 1.25em;
+  margin-bottom: 0;
+}
+/* line 246, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form fieldset .scroll-area {
+  width: 100%;
+  height: 13.6875em;
+  border: 1px solid #CCC;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 1.4375em 1.0625em 1.4375em 1.1875em;
+}
+/* line 253, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form fieldset .scroll-area.disabled {
+  overflow-y: hidden;
+}
+/* line 255, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form fieldset .custom.dropdown, #section-checkout-form .details-content .form fieldset .qtip {
+  font-family: 0.875em "GothamMedium";
+}
+/* line 256, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form fieldset p.delivery-info {
+  padding-left: 2em;
+  line-height: 1.5em;
+  font-family: 'GothamMedium';
+  font-size: 0.75em;
+}
+/* line 261, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form fieldset p.delivery-info span.italic {
+  font-family: 'GothamBook';
+  font-style: italic;
+}
+/* line 266, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form fieldset label.opt-in {
+  display: block;
+  padding-left: 1.5625em;
+  text-indent: -1.25em;
+  font-family: 'GothamBold';
+  padding-top: 0.75em;
+  width: 100%;
+}
+/* line 273, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form fieldset label.opt-in p {
+  display: inline;
+  padding-left: 0.3125em;
+  font-family: 'GothamBold';
+  line-height: 13px;
+}
+/* line 280, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form fieldset label.terms {
+  width: 100%;
+  text-indent: 0;
+  padding-left: 0.5em;
+  font-family: 'GothamBold';
+  width: 100%;
+  padding-left: 0;
+}
+/* line 285, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form fieldset label.terms p {
+  font-size: 1.0em;
+}
+/* line 290, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form fieldset label.terms input#terms {
+  margin-top: 0.1em;
+  margin-left: 0.5em;
+  width: auto;
+  float: left;
+  margin-right: 0.5em;
+}
+/* line 291, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form fieldset label.terms span {
+  font-size: 0.8em;
+  display: inline;
+}
+/* line 292, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form fieldset label.terms span span {
+  font-size: inherit;
+  display: inline;
+}
+/* line 293, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form fieldset input {
+  width: 100%;
+  margin-top: 7px;
+}
+/* line 294, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form fieldset legend {
+  padding-bottom: 0.625em;
+}
+/* line 295, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form fieldset legend.shipping-method {
+  padding-top: 0.6875em;
+}
+/* line 296, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form fieldset label {
+  cursor: auto;
+  width: 13.5em;
+  font-weight: 400;
+  font-family: 'GothamBook';
+}
+/* line 302, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form fieldset label .span {
+  font-face: 'GothamBookItalic';
+}
+/* line 303, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form fieldset #opt-in {
+  width: 14px;
+}
+/* line 304, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form fieldset label.error {
+  width: 100%;
+}
+/* line 305, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form fieldset label.address-label, #section-checkout-form .details-content .form fieldset label.autopay-label, #section-checkout-form .details-content .form fieldset label.shipping-method-label {
+  font-family: 'GothamBook';
+  font-size: 0.875em;
+  width: 100%;
+  padding: 0.4375em 0 0.4375em 0;
+  font-size: 1em;
+}
+/* line 310, ../sass/_checkout.scss */
+#section-checkout-form .details-content .form fieldset label.address-label.method, #section-checkout-form .details-content .form fieldset label.autopay-label.method, #section-checkout-form .details-content .form fieldset label.shipping-method-label.method {
+  margin-bottom: 0;
+  padding: 0;
+}
+
+/* END Left side of Form */
+/* Different Shipping Address, hidden by default*/
+/* line 317, ../sass/_checkout.scss */
+#different-shipping-address {
+  padding-top: 1em;
+}
+/* line 319, ../sass/_checkout.scss */
+#different-shipping-address .row {
+  padding-right: 0;
+}
+
+/* line 321, ../sass/_checkout.scss */
+#email-text {
+  margin-bottom: 0.625em;
+}
+
+/* Start Right Column of Form*/
+/* line 324, ../sass/_checkout.scss */
+#section-checkout-form .details-content .summary {
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0.6875em;
+  border-left: 1px solid #CCCCCC;
+  padding-left: 2.1875em;
+  padding-right: 2.0625em;
+  min-height: 60.5625em;
+  /* /table /tbody */
+}
+/* line 335, ../sass/_checkout.scss */
+#section-checkout-form .details-content .summary table {
+  width: 100%;
+  border: none;
+  margin-bottom: 1.0625em;
+  background: transparent;
+}
+/* line 340, ../sass/_checkout.scss */
+#section-checkout-form .details-content .summary table thead, #section-checkout-form .details-content .summary table tfoot, #section-checkout-form .details-content .summary table tr.even, #section-checkout-form .details-content .summary table tr.alt, #section-checkout-form .details-content .summary table tr:nth-of-type(2n) {
+  background: transparent;
+}
+/* line 342, ../sass/_checkout.scss */
+#section-checkout-form .details-content .summary table thead {
+  background-color: #FFF;
+  font-family: 'GothamBold';
+  font-size: 1.125em;
+}
+/* line 346, ../sass/_checkout.scss */
+#section-checkout-form .details-content .summary table thead tr th {
+  padding: 0 0 1.1875em 0;
+  font-size: 1.125em;
+  font-weight: 400;
+}
+/* line 352, ../sass/_checkout.scss */
+#section-checkout-form .details-content .summary table tbody {
+  text-align: left;
+  color: #333;
+  font: normal 0.8125em "Arial";
+}
+/* line 356, ../sass/_checkout.scss */
+#section-checkout-form .details-content .summary table tbody tr th {
+  text-align: left;
+  font-weight: normal;
+  padding: 0;
+}
+/* line 361, ../sass/_checkout.scss */
+#section-checkout-form .details-content .summary table tbody tr th.title-spacer {
+  padding-top: 0.5625em;
+}
+/* line 362, ../sass/_checkout.scss */
+#section-checkout-form .details-content .summary table tbody tr th.package-item-title {
+  color: #000;
+  font-weight: 700;
+}
+/* line 363, ../sass/_checkout.scss */
+#section-checkout-form .details-content .summary table tbody tr th.package-title {
+  color: #24ae73;
+  font-family: 'GothamBold';
+  font-size: 16px;
+  padding-bottom: 1em;
+}
+/* line 369, ../sass/_checkout.scss */
+#section-checkout-form .details-content .summary table tbody tr th.text-center {
+  font-weight: 700;
+}
+/* line 370, ../sass/_checkout.scss */
+#section-checkout-form .details-content .summary table tbody td {
+  padding: 0;
+  text-align: center;
+}
+/* line 371, ../sass/_checkout.scss */
+#section-checkout-form .details-content .summary table tbody tr.discount th {
+  color: #24ae73;
+  font-weight: 700;
+}
+/* line 372, ../sass/_checkout.scss */
+#section-checkout-form .details-content .summary table tbody tr.icon-divider {
+  width: 100%;
+  border-bottom: 1px dotted #bfe1d4;
+  height: 0.625em;
+}
+/* line 378, ../sass/_checkout.scss */
+#section-checkout-form .details-content .summary table tbody tr.package-total th, #section-checkout-form .details-content .summary table tbody tr.package-total td, #section-checkout-form .details-content .summary table tbody tr.accessory-total th, #section-checkout-form .details-content .summary table tbody tr.accessory-total td, #section-checkout-form .details-content .summary table tbody tr.tax-total th, #section-checkout-form .details-content .summary table tbody tr.tax-total td, #section-checkout-form .details-content .summary table tbody tr.shipping-total th, #section-checkout-form .details-content .summary table tbody tr.shipping-total td, #section-checkout-form .details-content .summary table tbody tr.estimated-monthly-total th, #section-checkout-form .details-content .summary table tbody tr.estimated-monthly-total td, #section-checkout-form .details-content .summary table tbody tr.discount th, #section-checkout-form .details-content .summary table tbody tr.discount td {
+  font-family: 'GothamBold';
+  font-size: 0.875em;
+}
+/* line 383, ../sass/_checkout.scss */
+#section-checkout-form .details-content .summary table tbody tr.estimated-monthly-total {
+  height: 2.9em;
+  vertical-align: bottom;
+}
+/* line 385, ../sass/_checkout.scss */
+#section-checkout-form .details-content .summary table tbody tr.package-total th, #section-checkout-form .details-content .summary table tbody tr.package-total td, #section-checkout-form .details-content .summary table tbody tr.accessory-total th, #section-checkout-form .details-content .summary table tbody tr.accessory-total td {
+  padding-top: 1.1875em;
+}
+/* line 388, ../sass/_checkout.scss */
+#section-checkout-form .details-content .summary table tbody tr.order-total th, #section-checkout-form .details-content .summary table tbody tr.order-total td {
+  color: #00A663;
+  font-family: 'GothamBlack';
+  font-size: 22px;
+}
+/* line 396, ../sass/_checkout.scss */
+#section-checkout-form .details-content .summary .incentive p {
+  font-family: 'GothamMedium';
+  font-size: 0.75em;
+  margin-bottom: 25px;
+}
+
+/* /END Right Column of Form */
+/* Error styling is slightly different from header drawer area */
+/* line 406, ../sass/_checkout.scss */
+.section-checkout .error input, input.error, .error textarea, textarea.error, .dropdown.error, span.checkbox.error {
+  background-color: #ffffff;
+  border-width: 2px;
+  border-color: #C60F13;
+}
+
+/* line 412, ../sass/_checkout.scss */
+select.error {
+  outline: 2px solid #C60F13 !important;
+}
+
+/* line 413, ../sass/_checkout.scss */
+.error-border {
+  border: 2px solid #C60F13;
+  padding: 1em !important;
+}
+
+/* line 415, ../sass/_checkout.scss */
+.error-container, .promo-error {
+  color: #C60F13;
+  visibility: hidden;
+}
+/* line 418, ../sass/_checkout.scss */
+.error-container label.error:first-child, .promo-error label.error:first-child {
+  padding-top: 0.625em;
+}
+
+/* line 420, ../sass/_checkout.scss */
+.promo-error p {
+  color: #C60F13;
+}
+
+/* Modal Window */
+/* line 424, ../sass/_checkout.scss */
+.modal {
+  position: fixed;
+  top: 40%;
+  width: 360px;
+  height: 185px;
+  z-index: 2000;
+  background: #FFF;
+  -moz-box-shadow: 3px 3px 4px #333;
+  -webkit-box-shadow: 3px 3px 4px #333;
+  box-shadow: 3px 3px 4px #333;
+  /* For IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#333333')";
+  margin-left: -130px;
+  margin-top: -62px;
+  left: 40%;
+  margin-top: -185px;
+  margin-top: 0;
+}
+
+/* line 444, ../sass/_checkout.scss */
+.md-overlay {
+  z-index: 1000;
+  -moz-opacity: 0.70;
+  opacity: .70;
+  filter: alpha(opacity=70);
+  background: #000;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* line 457, ../sass/_checkout.scss */
+.dialog-content {
+  padding: 32px 31px 29px 40px;
+}
+/* line 458, ../sass/_checkout.scss */
+.dialog-content p {
+  font: 13px 'GothamBook';
+  color: #333;
+  padding-right: 0.625em;
+}
+/* line 463, ../sass/_checkout.scss */
+.dialog-content h2 {
+  font: 18px 'GothamBold';
+  color: #333;
+}
+/* line 464, ../sass/_checkout.scss */
+.dialog-content a.button {
+  width: 3.75em;
+  padding-left: 1.375em;
+  padding-right: 1.375em;
+}
+/* line 469, ../sass/_checkout.scss */
+.dialog-content a.button.green {
+  width: 152px;
+  font-size: 10px;
+}
+/* line 470, ../sass/_checkout.scss */
+.dialog-content a.button.orange {
+  border-style: solid;
+  border-width: 1px;
+  cursor: "pointer";
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: #e83b26;
+  border-color: #c62815;
+  color: white;
+  font: normal 13px 'GothamMedium';
+  text-transform: uppercase;
+  font-size: 10px;
+  width: 7.75em;
+  margin-right: 10px;
+}
+/* line 123, ../sass/foundation/components/_buttons.scss */
+.dialog-content a.button.orange:hover, .dialog-content a.button.orange:focus {
+  background-color: #c62815;
+}
+/* line 134, ../sass/foundation/components/_buttons.scss */
+.dialog-content a.button.orange:hover, .dialog-content a.button.orange:focus {
+  color: white;
+}
+/* line 55, ../sass/_mixins.scss */
+.dialog-content a.button.orange:hover {
+  /*cursor: pointer;*/
+}
+
+/* Checkout Page */
+/* line 2, ../sass/_checkoutstep2.scss */
+.has-tip {
+  border: none;
+}
+/* line 4, ../sass/_checkoutstep2.scss */
+.has-tip:hover {
+  border: none;
+}
+
+/* Progress Header - adjustments for mobile (Dekstop is inside of checkout.scss)*/
+/* line 9, ../sass/_checkoutstep2.scss */
+.section-checkout.step2 #section-progress ul {
+  padding-left: 1.125em;
+}
+/* line 10, ../sass/_checkoutstep2.scss */
+.section-checkout.step2 #section-progress li.step-2 {
+  padding-left: 3.4375em;
+}
+/* line 11, ../sass/_checkoutstep2.scss */
+.section-checkout.step2 #section-progress li.step-3 {
+  padding-left: 3.125em;
+}
+
+/** Start of Form Fields on Second Step **/
+/* line 19, ../sass/_checkoutstep2.scss */
+.section-checkout.step2 #section-checkout-form .details-content .form form.custom select {
+  padding: 4px 4px 5px 4px;
+  margin-top: 0;
+}
+/* line 26, ../sass/_checkoutstep2.scss */
+.section-checkout.step2 #section-checkout-form .custom.dropdown {
+  margin-top: 1.5em;
+}
+/* line 27, ../sass/_checkoutstep2.scss */
+.section-checkout.step2 #section-checkout-form .month {
+  padding-right: 0.1875em;
+  padding-right: 0.625em;
+}
+/* line 30, ../sass/_checkoutstep2.scss */
+.section-checkout.step2 #section-checkout-form .month .custom.dropdown {
+  margin-top: 0.5em;
+  margin-left: 99px;
+  margin-top: 0.5em;
+  margin-left: 0;
+}
+/* line 38, ../sass/_checkoutstep2.scss */
+.section-checkout.step2 #section-checkout-form .month label {
+  float: left;
+  margin-top: 0.6875em;
+  width: 9em;
+  padding-bottom: 14px;
+  float: none;
+  margin-top: 0;
+  width: 13.5em;
+  padding-bottom: 6px;
+}
+/* line 50, ../sass/_checkoutstep2.scss */
+.section-checkout.step2 #section-checkout-form .year {
+  padding-top: 40px;
+  float: left;
+  padding-top: 23px;
+  float: right;
+}
+/* line 58, ../sass/_checkoutstep2.scss */
+.section-checkout.step2 #section-checkout-form .year .custom.dropdown {
+  margin-top: .5em;
+  margin-top: 1.5em;
+}
+/* line 62, ../sass/_checkoutstep2.scss */
+.section-checkout.step2 #section-checkout-form .cvcnumber label {
+  margin-top: 0.6875em;
+  width: 5em;
+  margin-top: 0;
+  width: 13.5em;
+}
+/* line 70, ../sass/_checkoutstep2.scss */
+.section-checkout.step2 #section-checkout-form .cvcnumber .qtip {
+  margin-top: 1em;
+  padding: 0;
+  margin-top: 2.125em;
+}
+/* line 75, ../sass/_checkoutstep2.scss */
+.section-checkout.step2 #section-checkout-form span.has-tip {
+  color: #00a663;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: underline;
+  padding-top: 5px;
+  line-height: 1.25em;
+}
+/* line 84, ../sass/_checkoutstep2.scss */
+.section-checkout.step2 #section-checkout-form .promo-code label {
+  font: 1.125em "GothamBold";
+  color: #222;
+  padding-bottom: 0.5625em;
+  padding-bottom: 0;
+}
+/* line 90, ../sass/_checkoutstep2.scss */
+.section-checkout.step2 #section-checkout-form .promo-code .qtip {
+  margin-top: 3.125em;
+  margin-top: 2.125em;
+}
+/* line 94, ../sass/_checkoutstep2.scss */
+.section-checkout.step2 #section-checkout-form .qtip {
+  margin-top: 2.125em;
+  font-family: 'GothamMedium';
+  font-size: 0.875em;
+}
+/* line 99, ../sass/_checkoutstep2.scss */
+.section-checkout.step2 #section-checkout-form .qtip.has-tip {
+  margin-top: 1.375em;
+  margin-top: 2.125em;
+}
+/* line 103, ../sass/_checkoutstep2.scss */
+.section-checkout.step2 #section-checkout-form label.autopay-label {
+  display: block;
+  margin-left: 27px;
+}
+/* line 107, ../sass/_checkoutstep2.scss */
+.section-checkout.step2 #section-checkout-form label.autopay-label .radio {
+  margin-top: -0.25em;
+  margin-right: 11px;
+  margin-left: -27px;
+}
+/* line 112, ../sass/_checkoutstep2.scss */
+.section-checkout.step2 #section-checkout-form label.first-label {
+  margin-top: 1.0625em;
+  margin-top: 0.375em;
+}
+/* line 116, ../sass/_checkoutstep2.scss */
+.section-checkout.step2 #section-checkout-form .terms, .section-checkout.step2 #section-checkout-form #payment-terms .terms-accept, .section-checkout.step2 #section-checkout-form .row.autopay {
+  margin-bottom: 1.3125em;
+  padding-right: 0 !important;
+}
+/* line 119, ../sass/_checkoutstep2.scss */
+.section-checkout.step2 #section-checkout-form .terms h3, .section-checkout.step2 #section-checkout-form #payment-terms .terms-accept h3, .section-checkout.step2 #section-checkout-form .row.autopay h3 {
+  font-family: 'GothamMedium';
+  padding-bottom: 0.625em;
+}
+/* line 124, ../sass/_checkoutstep2.scss */
+.section-checkout.step2 #section-checkout-form #payment-terms .terms-accept {
+  margin-bottom: 0;
+}
+/* line 125, ../sass/_checkoutstep2.scss */
+.section-checkout.step2 #section-checkout-form #payment-terms .terms-accept .show-for-small {
+  margin-top: 0.3125em;
+  margin-top: 0;
+}
+/* line 129, ../sass/_checkoutstep2.scss */
+.section-checkout.step2 #section-checkout-form #payment-terms.disabled {
+  opacity: 0.5;
+}
+/* line 130, ../sass/_checkoutstep2.scss */
+.section-checkout.step2 #section-checkout-form .row.autopay {
+  margin-bottom: 0;
+  margin-bottom: 0.1875em;
+}
+/* line 134, ../sass/_checkoutstep2.scss */
+.section-checkout.step2 #section-checkout-form .pay-icons {
+  background: white url("../img/checkout/icon-payment.jpg") 0.6875em 0 no-repeat;
+  height: 1.6875em;
+  margin-top: 0.9375em;
+  margin-bottom: 1em;
+  width: 12.3125em;
+  margin-bottom: 0;
+  background-position: 0 0;
+  margin-left: 0.75em;
+  float: left;
+}
+/* line 151, ../sass/_checkoutstep2.scss */
+.section-checkout.step2 #section-checkout-form .custom.checkbox {
+  margin-bottom: 0;
+}
+/* line 152, ../sass/_checkoutstep2.scss */
+.section-checkout.step2 #section-checkout-form .custom.checkbox.checked:before {
+  margin-left: -5px !important;
+}
+
+/* Tooltips are automatically appended to Body, so need to add the styling outside of constructor wrapper*/
+/* line 157, ../sass/_checkoutstep2.scss */
+.tooltip.tip-top > .nub {
+  border-width: 0 !important;
+  border-color: transparent transparent transparent transparent !important;
+  background: transparent url(../img/icon-tooltip-down.png) no-repeat 100% 100%;
+  width: 20px;
+  height: 20px;
+  left: 25px;
+}
+
+/* Checkout Page Step 3*/
+/* Progress Header - adjustments for mobile & tablet (Desktop is inside of checkout.scss)*/
+/* line 4, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-progress ul {
+  padding-left: 1.125em;
+}
+/* line 5, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-progress li.step-2 {
+  padding-left: 3em;
+  padding-left: 0.625em;
+  padding-left: 3.375em;
+}
+/* line 10, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-progress li.step-3 {
+  padding-left: 3.125em;
+  padding-left: 1.25em;
+  padding-left: 3.375em;
+}
+
+/* Left Side of Form Step #3 */
+/* line 19, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form .details-content {
+  margin-bottom: 0;
+  padding-top: 1.9375em;
+  margin-bottom: 2.5em;
+}
+/* line 21, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form .details-content h3 {
+  font-size: 1.125em;
+}
+/* line 22, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form .details-content p {
+  line-height: 1.25em;
+}
+/* line 28, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form .details-content.columns {
+  padding-bottom: 0;
+  padding-bottom: 1.75em;
+}
+/* line 32, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form .divider-package.summary-drawer-content {
+  padding-top: 0.5em;
+}
+/* line 33, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form .form {
+  position: relative;
+  padding-right: 1em;
+}
+/* line 36, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form .form a.edit {
+  color: #00a663;
+  font: 0.875em "GothamMedium";
+  text-decoration: underline;
+}
+/* line 42, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form form#customer-info {
+  margin-bottom: 0;
+}
+/* line 44, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form form#customer-info .row {
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-bottom: 1.25em;
+}
+/* line 49, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form form#customer-info .divider {
+  width: 95%;
+}
+/* line 50, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form form#customer-info .columns {
+  margin-bottom: 1.4375em;
+  margin-bottom: 0;
+}
+/* line 55, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form form#customer-info.new-customer {
+  min-height: 38em;
+}
+/* line 59, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form form#customer-info fieldset .icon.visa {
+  padding: 0.1875em 0 0 3.1875em;
+  margin-bottom: 0.625em;
+  height: 1.7em;
+  background: white url("../img/checkout/icon-payment-visa.jpg") 0 0 no-repeat;
+}
+/* line 65, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form form#customer-info fieldset p {
+  padding-bottom: 5px;
+}
+/* line 66, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form form#customer-info fieldset p.promo-code {
+  font: 0.8125em "GothamMedium";
+}
+/* line 67, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form form#customer-info fieldset h2 {
+  padding-bottom: 6px;
+  padding-bottom: 0;
+}
+/* line 71, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form form#customer-info fieldset label.autopay-label {
+  padding-top: 0.8125em;
+  width: 99%;
+  margin-left: 20px;
+  padding-top: 0.4375em;
+}
+/* line 77, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form form#customer-info fieldset label.autopay-label span {
+  margin-left: -20px;
+}
+/* line 80, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form .customer-info-item {
+  float: left;
+  width: 33%;
+  min-height: 180px;
+}
+/* line 81, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form .customer-info-item p {
+  word-wrap: break-word;
+}
+/* line 82, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form .customer-info-item #shipping-method-po-box1 .delivery-info {
+  padding-left: 0;
+}
+/* line 90, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form .delivery-info span.italic {
+  padding-bottom: 0.75em;
+}
+/* line 91, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form .delivery-info.warning {
+  padding-top: 0.8125em;
+  line-height: 1.25em;
+}
+
+/* /end left side of form */
+/* Start Right side of Step #3 - toggle panel */
+/* line 98, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form .summary {
+  min-height: inherit;
+  padding: 0 0 0.9375em;
+  padding-left: 2.1875em;
+  padding-right: 2.0625em;
+  min-height: inherit;
+}
+/* line 106, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form .summary .row {
+  margin: 0;
+}
+/* line 107, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form .summary .summary-drawer-content {
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+  padding-left: 0;
+  padding-right: 0;
+}
+/* line 115, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form .summary .title {
+  background: white url(../img/icon-accordion-inactive.png) no-repeat 95% 50%;
+  display: inline-block;
+  width: 100%;
+}
+/* line 120, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form .summary .title.no-shipping {
+  background-position: 95% 15%;
+}
+/* line 121, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form .summary .title.active {
+  background: white url(../img/icon-accordion-active.png) no-repeat 95% 50%;
+}
+/* line 123, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form .summary .title.active.no-shipping {
+  background-position: 95% 15%;
+}
+/* line 125, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form .summary .title a {
+  width: 100%;
+  display: block;
+  color: #333333;
+  font-family: "GothamBold";
+  font-weight: 400;
+}
+/* line 132, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form .summary .title a span {
+  font-family: "GothamMedium";
+  font-size: 13px;
+}
+/* line 136, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form .summary a.open-summary-drawer span {
+  text-transform: none;
+  font-size: 13px;
+  color: #333333;
+}
+/* line 141, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form .summary a.open-summary-drawer .bold {
+  font: 13px "GothamBold";
+}
+/* line 142, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form .summary table {
+  margin-bottom: 0;
+}
+/* line 143, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form .summary tr.total th, .section-checkout.step3 #section-checkout-form .summary tr.total td {
+  padding-bottom: 1.1875em;
+}
+/* line 144, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 #section-checkout-form .summary tr.order-total th, .section-checkout.step3 #section-checkout-form .summary tr.order-total td {
+  padding-bottom: 13px;
+}
+
+/* line 147, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 .telesales {
+  position: absolute;
+  bottom: 0;
+  left: 1.875em;
+  background-color: #f7f7f7;
+  padding-bottom: 0;
+}
+/* line 153, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 .telesales .row {
+  padding: 0;
+}
+/* line 154, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 .telesales #telesales-info p {
+  font-family: "GothamMedium";
+  font-size: 14px;
+}
+/* line 158, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 .telesales input {
+  margin-bottom: 0;
+}
+/* line 159, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 .telesales .italic {
+  font-size: 14px;
+}
+/* line 160, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 .telesales .edit {
+  margin-top: 1em;
+}
+/* line 161, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 .telesales form {
+  margin-bottom: 0;
+}
+/* line 162, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 .telesales form fieldset {
+  padding: 16px 10px 16px 0;
+  border: none;
+  margin: 0 2px;
+}
+
+/* line 169, ../sass/_checkoutstep3.scss */
+.section-checkout.step3 .closed {
+  display: none;
+}
+
+/* Checkout Page */
+/* line 2, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou {
+  /* Overrides for Existing Customer Thank You Pages */
+}
+/* line 4, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #section-progress .section-progress-content {
+  min-height: 0;
+  padding-left: 21px;
+  padding-left: 0;
+}
+/* line 7, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #section-progress .section-progress-content h1 {
+  padding-top: 0.625em;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.5em;
+  line-height: .95em;
+  font-size: 1.875em;
+  margin-bottom: 0.5em;
+  line-height: 1.4em;
+}
+/* line 26, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #section-checkout-form .details-content {
+  padding-top: 0;
+  padding-top: 2.375em;
+}
+/* line 28, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #section-checkout-form .details-content .row {
+  margin: 0;
+  padding-bottom: 0;
+}
+/* line 31, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #section-checkout-form .details-content .row.divider-thankyou {
+  padding: 21px 21px 28px 21px;
+  padding: 21px 31px 28px 31px;
+}
+/* line 38, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #section-checkout-form .details-content h2 {
+  font-size: 1.4375em;
+  margin-bottom: 0.625em;
+  line-height: 23px;
+  line-height: 13px;
+  font-size: 1.5em;
+}
+/* line 47, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #section-checkout-form .details-content.columns {
+  margin-top: 0;
+  padding-bottom: 0;
+  margin-top: 16px;
+}
+/* line 54, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #section-checkout-form .details-content .divider-bottom {
+  border-bottom: 1px solid #CCCCCC;
+  padding-top: 6.125em;
+}
+/* line 58, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #section-checkout-form .details-content .receipt {
+  padding: 0 0.625em;
+  padding: 0 1.25em;
+}
+/* line 60, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #section-checkout-form .details-content .receipt a.button {
+  width: 147px;
+  float: left;
+  font: 0.875em "GothamBold";
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  float: right;
+  margin-top: 1.75em;
+  margin-bottom: 1.25em;
+}
+/* line 73, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #section-checkout-form .details-content .receipt .order-number p {
+  padding-right: 0.5em;
+}
+/* line 80, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #section-checkout-form .details-content .receipt .order-number p {
+  padding-right: 0;
+}
+/* line 87, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #section-checkout-form .details-content .divider.thankyou {
+  padding-bottom: 0;
+}
+/* line 91, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #section-checkout-form .details-content .form {
+  padding-left: 0;
+  padding-right: 0;
+  border-right: 1px solid #CCC;
+  padding-bottom: 0;
+}
+/* line 97, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #section-checkout-form .details-content .form form.custom {
+  padding-left: 21px;
+  padding-right: 21px;
+  padding-left: 31px;
+}
+/* line 101, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #section-checkout-form .details-content .form form.custom fieldset .columns {
+  padding-left: 0;
+  padding-right: 0;
+  padding-left: 0.625em;
+  padding-right: 0.625em;
+}
+/* line 109, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #section-checkout-form .details-content .form form.custom fieldset .divider {
+  width: 100%;
+  width: 95%;
+}
+/* line 121, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #section-checkout-form .details-content .summary {
+  border-left: none;
+}
+/* line 127, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #section-checkout-form .details-content .summary table thead tr th h3 {
+  margin: 0;
+  font-size: 19px;
+}
+/* line 131, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #section-checkout-form .details-content .summary table thead tr th span {
+  font: 0.8125em "GothamMedium";
+}
+/* line 144, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #section-checkout-form .details-content #tab-content .active .content {
+  min-height: inherit;
+  padding-left: 1.8125em;
+  padding-right: 1.8125em;
+}
+/* line 153, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #section-checkout-form .details-content #tab-content .section-container p.title {
+  padding-left: 0.75em;
+}
+/* line 158, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #section-checkout-form .details-content #overview-total {
+  padding: 0;
+  padding-bottom: 1.75em;
+}
+/* line 162, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #section-checkout-form .details-content #overview-total .summary .small-12 {
+  padding-top: 1.55em;
+  padding-top: 1.8125em;
+}
+/* line 176, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list {
+  padding: 0;
+}
+/* line 179, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list .row .columns {
+  padding: 0;
+}
+/* line 181, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list .row .columns.package-item, .section-checkout.thankyou #order-list .row .columns.accessory-item {
+  padding-top: 1.625em;
+  padding-bottom: 0;
+  padding-bottom: 0.8125em;
+}
+/* line 188, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list .row .columns.accessory-item {
+  padding-bottom: 0;
+  padding-bottom: 1.6875em;
+}
+/* line 195, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list .row.items {
+  padding: 0 2.5em 0.9375em 1.5em;
+}
+/* line 200, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list .row:last-child .title {
+  color: #00a663;
+}
+/* line 204, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list .title {
+  background: none;
+  border-top: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+  font-family: "GothamBold";
+  font-size: 1.2em;
+  letter-spacing: -0.05em;
+  padding-top: 1.0625em;
+  padding-bottom: 0.9375em;
+  padding-left: 1.275em;
+  padding: 1.0625em 0 0.9375em 1.275em;
+  color: #8DC63F;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+/* line 219, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list .content {
+  padding-left: 1.5em;
+  padding-right: 2.5em;
+}
+/* line 223, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list .section-container, .section-checkout.thankyou #order-list .section-container.auto {
+  border-right: none;
+  border-left: none;
+  border-bottom: 0;
+}
+/* line 229, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list section:last-child .content {
+  padding-top: 1.8125em;
+  padding-bottom: 2.6875em;
+  padding-left: 3.9375em;
+}
+/* line 235, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list h4 {
+  font: 18px 'GothamBold';
+}
+/* line 236, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list h5 {
+  font: 12px 'GothamMedium';
+  color: #e63924;
+}
+/* line 241, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list .package-item p, .section-checkout.thankyou #order-list .package-item h4 {
+  color: #333;
+}
+/* line 244, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list .package-item h4 {
+  margin-bottom: 1.4em;
+  margin-bottom: 1.6875em;
+}
+/* line 251, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list .package-item p {
+  font: 12px 'GothamMedium';
+  padding-right: 0;
+  padding-right: 35px;
+}
+/* line 254, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list .package-item p.green-price {
+  color: #8dc63f;
+  font: 54px 'GothamBlack';
+  text-transform: uppercase;
+  padding-bottom: .7em;
+  padding-top: 10px;
+  padding-right: 66px;
+  line-height: 19px;
+  padding-right: 30px;
+}
+/* line 262, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list .package-item p.green-price span {
+  font-size: 15px;
+  padding-left: 15px;
+}
+/* line 266, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list .package-item p.green-price sub {
+  font-size: 13px;
+}
+/* line 273, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list .package-item p.small {
+  font-size: 10px;
+  padding-top: 0.625em;
+}
+/* line 282, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list .package-item.phone img {
+  margin-left: 1.75em;
+  margin-bottom: 1.3125em;
+}
+/* line 286, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list .package-item.phone p {
+  padding-right: 4em;
+}
+/* line 289, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list .package-item.add-ons p {
+  padding-bottom: 23px;
+}
+/* line 293, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list .accessory-item table {
+  border: none;
+  float: left;
+  padding-right: 1.4375em;
+  float: right;
+}
+/* line 297, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list .accessory-item table th {
+  font: 10px 'Arial';
+}
+/* line 298, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list .accessory-item table td {
+  font: 14px 'GothamBold';
+  text-align: center;
+}
+/* line 302, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list .accessory-item table th, .section-checkout.thankyou #order-list .accessory-item table td {
+  padding-right: 2.4375em;
+}
+/* line 307, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list .accessory-item h4 {
+  font: 14px 'GothamBold';
+  margin-bottom: 0;
+}
+/* line 311, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list .accessory-item img {
+  float: left;
+  padding-right: 1.5em;
+}
+/* line 320, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list #phone-upgrade h4 {
+  padding: 1em 1.5em;
+}
+/* line 321, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list #phone-upgrade .bold {
+  font: 14px "GothamBold";
+}
+/* line 322, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list #phone-upgrade .package-item {
+  padding: 0;
+}
+/* line 324, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list #phone-upgrade .package-item img {
+  margin: 0;
+}
+/* line 328, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list #plan-upgrade h4 {
+  padding-top: 1em;
+}
+/* line 329, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list #plan-upgrade h4.grey {
+  color: #999999;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+/* line 334, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list #plan-upgrade p.title {
+  color: #8DC63F;
+}
+/* line 335, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list #plan-upgrade .red {
+  color: #e63924;
+}
+/* line 336, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list #plan-upgrade .green-price {
+  padding-bottom: 0;
+}
+/* line 337, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list #plan-upgrade .package-item {
+  padding-top: 0;
+}
+/* line 340, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list #addon-change p.title {
+  color: #8DC63F;
+}
+/* line 343, ../sass/_checkoutthankyou.scss */
+.section-checkout.thankyou #order-list #accessories img {
+  padding: 0;
+  float: none;
+}
+
+/* line 1, ../sass/_cart.scss */
+#drawer-cart {
+  /* END header */
+  /* END .accordion, .accordion-footer */
+  /* END .accordion-footer */
+}
+/* line 2, ../sass/_cart.scss */
+#drawer-cart .loading-cart {
+  background-image: url(//images.mycricket.com/cricket?set=imageURL[file:/img/loading.gif],imageHeight[60],imageFormat[gif],imageQuality[90]&call=url[file:cricket/default.chain]);
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: contain;
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin: 2.5em auto;
+}
+/* line 12, ../sass/_cart.scss */
+#drawer-cart .drawer-wrapper {
+  padding-bottom: 2.5em;
+}
+/* line 13, ../sass/_cart.scss */
+#drawer-cart .cart-container {
+  padding: 10px 20px;
+  background-color: transparent;
+  padding: 0;
+}
+/* line 20, ../sass/_cart.scss */
+#drawer-cart .alert-box {
+  text-align: left;
+  text-transform: none;
+}
+/* line 23, ../sass/_cart.scss */
+#drawer-cart .alert-box .alert-icon {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/icon-green-exclamation.png],imageHeight[22],imageFormat[jpg],imageQuality[100]&call=url[file:cricket/default.chain]) no-repeat 0 25%;
+  margin: 1.25em 0 1.25em 0;
+  padding: 0.3125em 0 0.3125em 2.5em;
+  font: 14px/1.5 'GothamBook';
+}
+/* line 29, ../sass/_cart.scss */
+#drawer-cart .alert-box strong {
+  text-transform: uppercase;
+  font: 16px/1.5 'GothamBlack';
+}
+/* line 34, ../sass/_cart.scss */
+#drawer-cart .section-container {
+  border-width: 1px !important;
+  height: auto !important;
+}
+/* line 38, ../sass/_cart.scss */
+#drawer-cart header {
+  margin-top: 1.25em;
+}
+/* line 39, ../sass/_cart.scss */
+#drawer-cart header h3 {
+  color: #028752;
+  font: normal 20px 'GothamBlack';
+  margin-bottom: 0.625em;
+  text-transform: uppercase;
+  color: #008752;
+  font: normal 30px 'GothamBlack';
+}
+/* line 49, ../sass/_cart.scss */
+#drawer-cart header h3 span {
+  color: #028752;
+  color: #02a522;
+}
+/* line 54, ../sass/_cart.scss */
+#drawer-cart header p {
+  color: #033333;
+  font: normal 14px 'GothamBook';
+  width: 100%;
+  width: 60%;
+}
+/* line 61, ../sass/_cart.scss */
+#drawer-cart header p.heading {
+  color: #028752;
+  font: normal 20px 'GothamBlack';
+  margin-bottom: 0.625em;
+  text-transform: uppercase;
+  color: #008752;
+  font: normal 30px 'GothamBlack';
+}
+/* line 70, ../sass/_cart.scss */
+#drawer-cart header p.heading span {
+  color: #028752;
+  color: #02a522;
+}
+/* line 76, ../sass/_cart.scss */
+#drawer-cart .accordion, #drawer-cart .accordion-footer {
+  border: 1px solid #bbbdbf;
+  border-top: 0;
+  /* END .content */
+}
+/* line 79, ../sass/_cart.scss */
+#drawer-cart .accordion p.title, #drawer-cart .accordion-footer p.title {
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/cart/accordion-closed-light-green-mobile.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 95% 50% no-repeat;
+  cursor: pointer;
+  text-transform: uppercase;
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/cart/accordion-closed-light-green.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 98% 60% no-repeat;
+}
+/* line 86, ../sass/_cart.scss */
+#drawer-cart .accordion p.title a, #drawer-cart .accordion-footer p.title a {
+  display: inline-block;
+  width: auto;
+  padding-bottom: 1.5625em;
+}
+/* line 91, ../sass/_cart.scss */
+#drawer-cart .accordion p.title a.package-title, #drawer-cart .accordion-footer p.title a.package-title {
+  color: #8dc63f;
+  font: normal 15px 'GothamBlack';
+  padding-top: 1.125em;
+  padding-bottom: 1.125em;
+  white-space: no-wrap;
+  font: normal 19px 'GothamBlack';
+  padding-top: 1.8125em;
+  padding-bottom: 1.4375em;
+}
+/* line 102, ../sass/_cart.scss */
+#drawer-cart .accordion p.title a.package-title .package-title-full, #drawer-cart .accordion-footer p.title a.package-title .package-title-full {
+  display: inline;
+  white-space: normal;
+  padding-right: 1.25em;
+}
+/* line 108, ../sass/_cart.scss */
+#drawer-cart .accordion p.title a.duplicate-label, #drawer-cart .accordion-footer p.title a.duplicate-label {
+  display: none;
+  text-decoration: underline;
+  text-transform: capitalize;
+}
+/* line 113, ../sass/_cart.scss */
+#drawer-cart .accordion p.title a.delete-label, #drawer-cart .accordion-footer p.title a.delete-label {
+  display: none;
+  text-decoration: underline;
+  text-transform: capitalize;
+}
+/* line 118, ../sass/_cart.scss */
+#drawer-cart .accordion p.title.accessory, #drawer-cart .accordion-footer p.title.accessory {
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/cart/accordion-closed-dark-green-mobile.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 95% 50% no-repeat;
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/cart/accordion-closed-dark-green.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 98% 60% no-repeat;
+}
+/* line 123, ../sass/_cart.scss */
+#drawer-cart .accordion p.title.accessory a.package-title, #drawer-cart .accordion-footer p.title.accessory a.package-title {
+  color: #00a663;
+}
+/* line 127, ../sass/_cart.scss */
+#drawer-cart .accordion .active p.title, #drawer-cart .accordion-footer .active p.title {
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/cart/accordion-open-light-green-mobile.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 95% 50% no-repeat;
+  text-transform: uppercase;
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/cart/accordion-open-light-green.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 98% 60% no-repeat;
+}
+/* line 133, ../sass/_cart.scss */
+#drawer-cart .accordion .active p.title a, #drawer-cart .accordion-footer .active p.title a {
+  display: inline-block;
+  width: auto;
+  padding-bottom: 0.9375em;
+  padding-bottom: 1.5625em;
+}
+/* line 139, ../sass/_cart.scss */
+#drawer-cart .accordion .active p.title a.package-title, #drawer-cart .accordion-footer .active p.title a.package-title {
+  color: #8dc63f;
+  font: normal 15px 'GothamBlack';
+  padding-right: 0.3125em;
+  font: normal 19px 'GothamBlack';
+}
+/* line 144, ../sass/_cart.scss */
+#drawer-cart .accordion .active p.title a.package-title .package-title-full, #drawer-cart .accordion-footer .active p.title a.package-title .package-title-full {
+  display: none;
+  white-space: normal;
+}
+/* line 149, ../sass/_cart.scss */
+#drawer-cart .accordion .active p.title a.duplicate-label, #drawer-cart .accordion-footer .active p.title a.duplicate-label {
+  color: #00a663;
+  font: normal 13px 'GothamMedium';
+  padding-top: 1.25em;
+  padding-right: 5px;
+  padding-left: 2%;
+  display: inline-block;
+  padding-top: 2.5625em;
+  font-size: 14px;
+}
+/* line 161, ../sass/_cart.scss */
+#drawer-cart .accordion .active p.title a.delete-label, #drawer-cart .accordion-footer .active p.title a.delete-label {
+  color: #00a663;
+  font: normal 13px 'GothamMedium';
+  padding-top: 1.25em;
+  padding-left: 2%;
+  display: inline-block;
+  padding-top: 2.5625em;
+  font-size: 14px;
+}
+/* line 172, ../sass/_cart.scss */
+#drawer-cart .accordion .active p.title.accessory, #drawer-cart .accordion-footer .active p.title.accessory {
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/cart/accordion-open-dark-green-mobile.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 95% 50% no-repeat;
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/cart/accordion-open-dark-green.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 98% 60% no-repeat;
+}
+/* line 177, ../sass/_cart.scss */
+#drawer-cart .accordion .active p.title.accessory a.package-title, #drawer-cart .accordion-footer .active p.title.accessory a.package-title {
+  color: #00a663;
+}
+/* line 181, ../sass/_cart.scss */
+#drawer-cart .accordion #auto-bill-payment, #drawer-cart .accordion-footer #auto-bill-payment {
+  padding: 0;
+  float: left;
+}
+/* line 184, ../sass/_cart.scss */
+#drawer-cart .accordion #auto-bill-payment input, #drawer-cart .accordion-footer #auto-bill-payment input {
+  border: 1px #d6d6d6 solid;
+  width: 16px;
+  height: 16px;
+  float: left;
+  margin-top: 0;
+}
+/* line 191, ../sass/_cart.scss */
+#drawer-cart .accordion #auto-bill-payment .auto-bill-payment-label, #drawer-cart .accordion-footer #auto-bill-payment .auto-bill-payment-label {
+  font: 12px 'GothamMedium';
+  color: #333;
+  display: inline-block;
+  margin-left: 10px;
+  float: left;
+}
+/* line 199, ../sass/_cart.scss */
+#drawer-cart .accordion .content, #drawer-cart .accordion-footer .content {
+  border-top: 1px solid #bbbdbf;
+  padding: 0;
+  /* END .details-container */
+  /* END .summary-container */
+}
+/* line 202, ../sass/_cart.scss */
+#drawer-cart .accordion .content .details-container, #drawer-cart .accordion-footer .content .details-container {
+  padding: 1.875em;
+}
+/* line 203, ../sass/_cart.scss */
+#drawer-cart .accordion .content .details-container .item-details, #drawer-cart .accordion-footer .content .details-container .item-details {
+  margin-bottom: 1.875em;
+  margin-bottom: 0;
+}
+/* line 206, ../sass/_cart.scss */
+#drawer-cart .accordion .content .details-container .item-details p, #drawer-cart .accordion-footer .content .details-container .item-details p {
+  color: #333;
+  font: normal 12px 'GothamMedium';
+  margin-bottom: 0;
+  width: 100%;
+}
+/* line 212, ../sass/_cart.scss */
+#drawer-cart .accordion .content .details-container .item-details img, #drawer-cart .accordion-footer .content .details-container .item-details img {
+  display: block;
+  margin: 0 0 0.9375em 10.625em;
+  width: 2.8125em;
+  position: absolute;
+  position: relative;
+  margin-top: inherit;
+  margin-left: 30px;
+}
+/* line 223, ../sass/_cart.scss */
+#drawer-cart .accordion .content .details-container .item-details .add-plan-box, #drawer-cart .accordion-footer .content .details-container .item-details .add-plan-box {
+  width: 70%;
+  height: 105px;
+  border: 2px dashed #cccccc;
+  border-radius: 15px;
+  text-align: center;
+  display: inline-flex;
+  color: #00a663;
+  font: 14px/18px 'GothamMedium';
+  width: 158px;
+}
+/* line 233, ../sass/_cart.scss */
+#drawer-cart .accordion .content .details-container .item-details .add-plan-box a, #drawer-cart .accordion-footer .content .details-container .item-details .add-plan-box a {
+  background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/cart/cart-add-item.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) center top no-repeat;
+  padding-top: 1.875em;
+  margin: 1.5625em auto 0;
+  display: block;
+  text-decoration: underline;
+}
+/* line 240, ../sass/_cart.scss */
+#drawer-cart .accordion .content .details-container .item-details .add-plan-box + p, #drawer-cart .accordion-footer .content .details-container .item-details .add-plan-box + p {
+  margin: 1.875em 0 0 1.125em;
+  margin: 1.25em 0 0 1.125em;
+}
+/* line 247, ../sass/_cart.scss */
+#drawer-cart .accordion .content .details-container .item-details .notes, #drawer-cart .accordion-footer .content .details-container .item-details .notes {
+  font-size: 10px;
+  padding: 0.625em 2.5em 0.625em 0;
+  margin-top: 0;
+  width: 170px;
+  width: 100%;
+}
+/* line 256, ../sass/_cart.scss */
+#drawer-cart .accordion .content .details-container .item-details a.edit, #drawer-cart .accordion .content .details-container .item-details a.remove, #drawer-cart .accordion-footer .content .details-container .item-details a.edit, #drawer-cart .accordion-footer .content .details-container .item-details a.remove {
+  color: #00a663;
+  font: normal 14px 'GothamMedium';
+  text-decoration: underline;
+}
+/* line 261, ../sass/_cart.scss */
+#drawer-cart .accordion .content .details-container .item-details .plan-price, #drawer-cart .accordion-footer .content .details-container .item-details .plan-price {
+  color: #8dc63f;
+  font: normal 50px 'GothamBlack';
+}
+/* line 264, ../sass/_cart.scss */
+#drawer-cart .accordion .content .details-container .item-details .plan-price span, #drawer-cart .accordion-footer .content .details-container .item-details .plan-price span {
+  font-size: 13px;
+}
+/* line 266, ../sass/_cart.scss */
+#drawer-cart .accordion .content .details-container .item-details .plan-title, #drawer-cart .accordion-footer .content .details-container .item-details .plan-title {
+  color: #8dc63f;
+  font: normal 15px 'GothamBlack';
+  padding-bottom: 0.9375em;
+  text-transform: uppercase;
+}
+/* line 272, ../sass/_cart.scss */
+#drawer-cart .accordion .content .details-container .item-details.addon, #drawer-cart .accordion-footer .content .details-container .item-details.addon {
+  margin-top: 0.9375em;
+}
+/* line 273, ../sass/_cart.scss */
+#drawer-cart .accordion .content .details-container .item-details.addon p, #drawer-cart .accordion-footer .content .details-container .item-details.addon p {
+  padding-bottom: 0.9375em;
+}
+/* line 274, ../sass/_cart.scss */
+#drawer-cart .accordion .content .details-container .item-details.addon p.disclaimer, #drawer-cart .accordion-footer .content .details-container .item-details.addon p.disclaimer {
+  padding-bottom: 1.5625em;
+}
+/* line 277, ../sass/_cart.scss */
+#drawer-cart .accordion .content .details-container .item-details hr, #drawer-cart .accordion-footer .content .details-container .item-details hr {
+  border-bottom: 1px dashed #ccc;
+  height: 1px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+/* line 283, ../sass/_cart.scss */
+#drawer-cart .accordion .content .details-container .item-details .disclaimer, #drawer-cart .accordion-footer .content .details-container .item-details .disclaimer {
+  color: #e63924;
+  font: normal 12px 'GothamMedium';
+  padding-bottom: 0.5em;
+  padding-right: 1.875em;
+  width: 12.5em;
+  width: 100%;
+}
+/* line 293, ../sass/_cart.scss */
+#drawer-cart .accordion .content .details-container.upgrade h3, #drawer-cart .accordion-footer .content .details-container.upgrade h3 {
+  color: #333;
+  font: normal 18px 'GothamBold';
+  margin-bottom: 1.25em;
+  margin-left: 0.625em;
+}
+/* line 299, ../sass/_cart.scss */
+#drawer-cart .accordion .content .details-container.upgrade p.heading, #drawer-cart .accordion-footer .content .details-container.upgrade p.heading {
+  color: #333;
+  font: normal 18px 'GothamBold';
+  margin-bottom: 1.25em;
+  margin-left: 0.625em;
+}
+/* line 305, ../sass/_cart.scss */
+#drawer-cart .accordion .content .details-container.upgrade img, #drawer-cart .accordion-footer .content .details-container.upgrade img {
+  margin: 0 1.25em;
+  width: 2.8125em;
+}
+/* line 309, ../sass/_cart.scss */
+#drawer-cart .accordion .content .details-container.upgrade .item-details h4, #drawer-cart .accordion-footer .content .details-container.upgrade .item-details h4 {
+  font: normal 14px 'GothamBold';
+}
+/* line 310, ../sass/_cart.scss */
+#drawer-cart .accordion .content .details-container.upgrade .item-details p.disclaimer, #drawer-cart .accordion-footer .content .details-container.upgrade .item-details p.disclaimer {
+  color: #e63924;
+  font: normal 12px 'GothamMedium';
+}
+/* line 314, ../sass/_cart.scss */
+#drawer-cart .accordion .content .details-container.upgrade .item-details p.notes, #drawer-cart .accordion-footer .content .details-container.upgrade .item-details p.notes {
+  padding-top: 0;
+}
+/* line 315, ../sass/_cart.scss */
+#drawer-cart .accordion .content .details-container.upgrade .item-details .item-title, #drawer-cart .accordion-footer .content .details-container.upgrade .item-details .item-title {
+  font-size: 10px;
+}
+/* line 316, ../sass/_cart.scss */
+#drawer-cart .accordion .content .details-container.upgrade .item-details.centered, #drawer-cart .accordion-footer .content .details-container.upgrade .item-details.centered {
+  text-align: center;
+}
+/* line 319, ../sass/_cart.scss */
+#drawer-cart .accordion .content .details-container.upgrade .item-details input, #drawer-cart .accordion-footer .content .details-container.upgrade .item-details input {
+  margin: 0.625em auto;
+  text-align: center;
+  width: 5em;
+  margin: 0 0 0 0.3125em;
+  width: 100%;
+}
+/* line 328, ../sass/_cart.scss */
+#drawer-cart .accordion .content .details-container.upgrade .item-details a, #drawer-cart .accordion-footer .content .details-container.upgrade .item-details a {
+  text-decoration: underline;
+}
+/* line 329, ../sass/_cart.scss */
+#drawer-cart .accordion .content .details-container.upgrade hr, #drawer-cart .accordion-footer .content .details-container.upgrade hr {
+  border: 1px dashed #bbbdbf;
+  border-style: none none dashed;
+  color: #fff;
+}
+/* line 336, ../sass/_cart.scss */
+#drawer-cart .accordion .content h3, #drawer-cart .accordion-footer .content h3 {
+  color: #333;
+  font: normal 18px 'GothamBold';
+  margin-bottom: 0.625em;
+  margin-bottom: 1.25em;
+}
+/* line 341, ../sass/_cart.scss */
+#drawer-cart .accordion .content h3.removed, #drawer-cart .accordion-footer .content h3.removed {
+  color: #999;
+  margin-top: 1.875em;
+  margin-bottom: 0.625em;
+  margin-top: 0;
+}
+/* line 348, ../sass/_cart.scss */
+#drawer-cart .accordion .content p.heading, #drawer-cart .accordion-footer .content p.heading {
+  color: #333;
+  font: normal 18px 'GothamBold';
+  margin-bottom: 0.625em;
+  margin-bottom: 1.25em;
+}
+/* line 353, ../sass/_cart.scss */
+#drawer-cart .accordion .content p.heading.removed, #drawer-cart .accordion-footer .content p.heading.removed {
+  color: #999;
+  margin-top: 1.875em;
+  margin-bottom: 0.625em;
+  margin-top: 0;
+}
+/* line 360, ../sass/_cart.scss */
+#drawer-cart .accordion .content .removed-items, #drawer-cart .accordion-footer .content .removed-items {
+  margin-top: 1.5625em;
+}
+/* line 361, ../sass/_cart.scss */
+#drawer-cart .accordion .content p, #drawer-cart .accordion .content ul, #drawer-cart .accordion-footer .content p, #drawer-cart .accordion-footer .content ul {
+  color: #333;
+  font: normal 12px 'GothamMedium';
+}
+/* line 365, ../sass/_cart.scss */
+#drawer-cart .accordion .content li, #drawer-cart .accordion-footer .content li {
+  padding: 0.2em 0;
+}
+/* line 366, ../sass/_cart.scss */
+#drawer-cart .accordion .content hr, #drawer-cart .accordion-footer .content hr {
+  border: none;
+  border-bottom: 1px dashed #d5d5d5;
+  height: 1px;
+  margin: 1.25em 0;
+}
+/* line 372, ../sass/_cart.scss */
+#drawer-cart .accordion .content .summary-container, #drawer-cart .accordion-footer .content .summary-container {
+  border-left: 0;
+  padding: 0 1.5625em;
+  border-left: 1px solid #bbbdbf;
+  padding: 1.875em 1.5625em;
+  /* END .table-summary */
+}
+/* line 379, ../sass/_cart.scss */
+#drawer-cart .accordion .content .summary-container table.summary, #drawer-cart .accordion-footer .content .summary-container table.summary {
+  border: 0;
+  width: 100%;
+}
+/* line 382, ../sass/_cart.scss */
+#drawer-cart .accordion .content .summary-container table.summary thead, #drawer-cart .accordion-footer .content .summary-container table.summary thead {
+  background-color: transparent;
+}
+/* line 383, ../sass/_cart.scss */
+#drawer-cart .accordion .content .summary-container table.summary thead th, #drawer-cart .accordion-footer .content .summary-container table.summary thead th {
+  color: #333;
+  font: bold 13px Arial;
+  text-align: center;
+  width: 20%;
+}
+/* line 389, ../sass/_cart.scss */
+#drawer-cart .accordion .content .summary-container table.summary thead th:first-child, #drawer-cart .accordion-footer .content .summary-container table.summary thead th:first-child {
+  width: 60%;
+}
+/* line 390, ../sass/_cart.scss */
+#drawer-cart .accordion .content .summary-container table.summary tbody, #drawer-cart .accordion-footer .content .summary-container table.summary tbody {
+  border-bottom: 1px dashed #bbbdbf;
+  color: #333;
+  font: normal 13px Arial;
+}
+/* line 395, ../sass/_cart.scss */
+#drawer-cart .accordion .content .summary-container table.summary tbody.subtotal, #drawer-cart .accordion-footer .content .summary-container table.summary tbody.subtotal {
+  border-bottom: 0;
+}
+/* line 396, ../sass/_cart.scss */
+#drawer-cart .accordion .content .summary-container table.summary tbody tr, #drawer-cart .accordion-footer .content .summary-container table.summary tbody tr {
+  padding-bottom: 0.3125em;
+}
+/* line 397, ../sass/_cart.scss */
+#drawer-cart .accordion .content .summary-container table.summary tbody tr:nth-of-type(2n), #drawer-cart .accordion-footer .content .summary-container table.summary tbody tr:nth-of-type(2n) {
+  background-color: transparent;
+}
+/* line 398, ../sass/_cart.scss */
+#drawer-cart .accordion .content .summary-container table.summary tbody th, #drawer-cart .accordion-footer .content .summary-container table.summary tbody th {
+  color: #333;
+  font: normal 13px Arial;
+  padding: 0.5em 0;
+  text-align: left;
+  vertical-align: middle;
+  width: 60%;
+}
+/* line 406, ../sass/_cart.scss */
+#drawer-cart .accordion .content .summary-container table.summary tbody th.heading, #drawer-cart .accordion-footer .content .summary-container table.summary tbody th.heading {
+  font-weight: bold;
+  padding-top: 0.625em;
+  padding-bottom: 0;
+}
+/* line 411, ../sass/_cart.scss */
+#drawer-cart .accordion .content .summary-container table.summary tbody td, #drawer-cart .accordion-footer .content .summary-container table.summary tbody td {
+  color: #333;
+  font: normal 13px Arial;
+  padding: 0.3125em 0;
+  text-align: center;
+  vertical-align: middle;
+  width: 20%;
+}
+/* line 419, ../sass/_cart.scss */
+#drawer-cart .accordion .content .summary-container table.summary tfoot, #drawer-cart .accordion-footer .content .summary-container table.summary tfoot {
+  background: transparent;
+}
+/* line 420, ../sass/_cart.scss */
+#drawer-cart .accordion .content .summary-container table.summary tfoot td, #drawer-cart .accordion-footer .content .summary-container table.summary tfoot td {
+  font-size: 11px;
+  padding-top: 25px;
+  padding-left: 0;
+}
+/* line 426, ../sass/_cart.scss */
+#drawer-cart .accordion .content .summary-container .button, #drawer-cart .accordion-footer .content .summary-container .button {
+  font: normal 18px 'GothamMedium';
+  width: 100%;
+}
+/* line 431, ../sass/_cart.scss */
+#drawer-cart .accordion .content .summary-container.check-out-container .promo-error p, #drawer-cart .accordion-footer .content .summary-container.check-out-container .promo-error p {
+  color: #C60F13;
+}
+/* line 432, ../sass/_cart.scss */
+#drawer-cart .accordion .content .summary-container.check-out-container p.amount, #drawer-cart .accordion-footer .content .summary-container.check-out-container p.amount {
+  text-align: right;
+}
+/* line 433, ../sass/_cart.scss */
+#drawer-cart .accordion .content .summary-container.check-out-container p, #drawer-cart .accordion-footer .content .summary-container.check-out-container p {
+  color: #333;
+  font: normal 13px 'GothamMedium';
+}
+/* line 438, ../sass/_cart.scss */
+#drawer-cart .accordion .content .summary-container.check-out-container .item-line-promo a, #drawer-cart .accordion-footer .content .summary-container.check-out-container .item-line-promo a {
+  color: #00a663;
+  display: block;
+  font: normal 14px 'GothamMedium';
+  margin-top: 1.25em;
+  text-align: right;
+  text-decoration: underline;
+}
+/* line 447, ../sass/_cart.scss */
+#drawer-cart .accordion .content .summary-container.check-out-container .item-line-shipping p, #drawer-cart .accordion-footer .content .summary-container.check-out-container .item-line-shipping p {
+  margin-bottom: 0.5em;
+}
+/* line 448, ../sass/_cart.scss */
+#drawer-cart .accordion .content .summary-container.check-out-container .item-line-total p, #drawer-cart .accordion-footer .content .summary-container.check-out-container .item-line-total p {
+  font: normal 18px 'GothamBold';
+  margin-bottom: 0.5em;
+}
+/* line 452, ../sass/_cart.scss */
+#drawer-cart .accordion .content .summary-container.check-out-container .footnote p, #drawer-cart .accordion-footer .content .summary-container.check-out-container .footnote p {
+  font-size: 12px;
+}
+/* line 453, ../sass/_cart.scss */
+#drawer-cart .accordion .content .summary-container.check-out-container .button, #drawer-cart .accordion-footer .content .summary-container.check-out-container .button {
+  font: normal 18px 'GothamMedium';
+}
+/* line 457, ../sass/_cart.scss */
+#drawer-cart .accordion a.add-item, #drawer-cart .accordion-footer a.add-item {
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/cart/accordion-closed-dark-green-mobile.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 95% 50% no-repeat;
+  border-top: 1px solid #bbbdbf;
+  color: #00a663 !important;
+  display: block;
+  font: normal 15px 'GothamBlack';
+  padding: 1.125em 0.9375em;
+  text-transform: uppercase;
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/cart/accordion-closed-dark-green.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) 98% 60% no-repeat;
+  font: normal 19px 'GothamBlack';
+  padding: 1.8125em 0.9375em 1.4375em;
+}
+/* line 472, ../sass/_cart.scss */
+#drawer-cart .accordion-footer {
+  background-color: #fff;
+  border-style: none;
+  border-top: 1px solid #bbbdbf;
+}
+/* line 476, ../sass/_cart.scss */
+#drawer-cart .accordion-footer .content {
+  border-top: 0;
+  display: block;
+}
+/* line 479, ../sass/_cart.scss */
+#drawer-cart .accordion-footer .content h3 {
+  font-size: 19px;
+}
+/* line 480, ../sass/_cart.scss */
+#drawer-cart .accordion-footer .content p {
+  font: normal 13px/18px 'GothamMedium';
+}
+/* line 481, ../sass/_cart.scss */
+#drawer-cart .accordion-footer .content p.heading {
+  font-size: 19px;
+  margin-bottom: 1.25em;
+  color: #333;
+  margin-top: 0.2em;
+}
+/* line 489, ../sass/_cart.scss */
+#drawer-cart .accordion-footer a.disabled {
+  background-color: #b7b7b7;
+  border-color: #b7b7b7;
+  font: normal 18px 'GothamMedium';
+}
+/* line 494, ../sass/_cart.scss */
+#drawer-cart .accordion-footer .content .details-container {
+  padding: 1.875em 1.5625em 0.9375em;
+  padding: 3.125em 3.75em 0 4.125em;
+}
+/* line 496, ../sass/_cart.scss */
+#drawer-cart .accordion-footer .content .details-container p {
+  border-bottom: 1px dashed #bbbdbf;
+  padding-bottom: 1.875em;
+}
+/* line 503, ../sass/_cart.scss */
+#drawer-cart .accordion-footer .content .details-container p {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+/* line 510, ../sass/_cart.scss */
+#drawer-cart .notes {
+  color: #333;
+  font: normal 19px 'GothamMedium';
+  margin: 1.5625em 0 0;
+}
+/* line 514, ../sass/_cart.scss */
+#drawer-cart .notes a {
+  color: #e63924;
+}
+/* line 516, ../sass/_cart.scss */
+#drawer-cart img.cart-banner {
+  width: 100%;
+}
+/* line 517, ../sass/_cart.scss */
+#drawer-cart a.circle-arrow.green {
+  display: block;
+}
+
+/* END #drawer-cart */
+/* line 519, ../sass/_cart.scss */
+.close-cart {
+  position: absolute;
+  right: 0;
+  top: 1.25em;
+  display: none;
+  display: block;
+}
+
+/* line 526, ../sass/_cart.scss */
+.customer-check {
+  position: absolute;
+  right: 4.375em;
+  text-align: right;
+  top: 1.25em;
+  display: none;
+  display: block;
+}
+/* line 533, ../sass/_cart.scss */
+.customer-check p {
+  color: #000;
+  font: normal 14px/20px 'GothamBook';
+  padding: 0;
+}
+/* line 538, ../sass/_cart.scss */
+.customer-check a {
+  color: #e63924;
+  text-decoration: underline;
+}
+
+/* Killswitch Page */
+/* line 2, ../sass/_killswitch.scss */
+section.killswitch {
+  margin: 0;
+  position: relative;
+  width: 100%;
+}
+
+/* line 8, ../sass/_killswitch.scss */
+#killswitch-container {
+  height: 100%;
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/killswitch/killswitch-mobile-bg.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat right 0;
+  min-height: 540px;
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/killswitch/killswitch-bg.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 50% 0;
+}
+
+/* line 17, ../sass/_killswitch.scss */
+#killswitch-right-bg {
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/killswitch/killswitch-right-bg.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 0 0;
+  min-height: 164px;
+  position: absolute;
+  right: 0;
+  width: 491px;
+}
+
+/* line 25, ../sass/_killswitch.scss */
+#killsiwtch-content-container {
+  margin: 0 20px;
+  padding-top: 93px;
+  width: 100%;
+  min-height: 175px;
+  position: relative;
+  margin: 0 auto;
+  padding-top: 230px;
+  width: 815px;
+}
+
+/* line 38, ../sass/_killswitch.scss */
+#killswitch-logo {
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/killswitch/killswitch-mobile-logo.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 0 0;
+  width: 85%;
+  background: white url(//images.mycricket.com/cricket?set=imageURL[file:/img/killswitch/killswitch-logo.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 0 0;
+  float: left;
+  height: auto;
+  margin-left: 10%;
+  width: 355px;
+}
+
+/* line 50, ../sass/_killswitch.scss */
+#top-line {
+  display: inline-block;
+  font: 42px/1px 'GothamBlack';
+  line-height: 42px;
+  margin-top: 80px;
+  width: 200px;
+  color: #03ca10;
+  text-transform: uppercase;
+  letter-spacing: -3px;
+  font: 50px/1px 'GothamBlack';
+  margin-top: 80px;
+  width: auto;
+  line-height: 50px;
+}
+/* line 59, ../sass/_killswitch.scss */
+#top-line span {
+  color: #008752;
+}
+
+/* line 68, ../sass/_killswitch.scss */
+#bottom-line {
+  display: block;
+  font: 45px/1px 'GothamBlack';
+  line-height: 45px;
+  margin-top: -12px;
+  width: 300px;
+  color: #018111;
+  text-transform: uppercase;
+  letter-spacing: -3px;
+  font: 55px/1px 'GothamBlack';
+  margin-top: -15px;
+  width: auto;
+  line-height: 55px;
+}
+/* line 77, ../sass/_killswitch.scss */
+#bottom-line span {
+  color: #00583d;
+}
+
+/* line 86, ../sass/_killswitch.scss */
+#killswitch-text {
+  width: 85%;
+  margin-top: 40px;
+  float: left;
+  width: 370px;
+  margin-top: 70px;
+}
+/* line 94, ../sass/_killswitch.scss */
+#killswitch-text span {
+  display: block;
+  font: 16px/24px 'GothamBold';
+  color: #333;
+  text-transform: uppercase;
+}
+/* line 100, ../sass/_killswitch.scss */
+#killswitch-text p {
+  display: block;
+  font: 13px/22px 'GothamMedium';
+  color: #333;
+}
+
+/* Namespace is .section-why-cricket{} */
+/* line 3, ../sass/_whycricket.scss */
+.section-why-cricket p {
+  font-family: "GothamBook";
+  font-size: 0.9em;
+  color: #000;
+  clear: both;
+}
+
+/* line 10, ../sass/_whycricket.scss */
+.section-why-cricket h1, .section-why-cricket h2, .section-why-cricket h3, .section-why-cricket h4 {
+  text-transform: uppercase;
+  font-family: "GothamBlack";
+  font-weight: normal;
+}
+
+/* line 15, ../sass/_whycricket.scss */
+.section-why-cricket h1, .section-why-cricket h2, .section-why-cricket h3 {
+  letter-spacing: -2px;
+}
+
+/* General Global Styles for this Section */
+/* line 19, ../sass/_whycricket.scss */
+.section-why-cricket .circle-arrow {
+  display: block;
+}

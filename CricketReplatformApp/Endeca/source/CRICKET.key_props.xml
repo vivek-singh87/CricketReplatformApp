@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2001, 2012, Oracle and/or its affiliates. All rights reserved.
+  ~ Oracle and Java are registered trademarks of Oracle and/or its
+  ~ affiliates. Other names may be trademarks of their respective owners.
+  ~ UNIX is a registered trademark of The Open Group.
+  ~
+  ~ This software and related documentation are provided under a license
+  ~ agreement containing restrictions on use and disclosure and are
+  ~ protected by intellectual property laws. Except as expressly permitted
+  ~ in your license agreement or allowed by law, you may not use, copy,
+  ~ reproduce, translate, broadcast, modify, license, transmit, distribute,
+  ~ exhibit, perform, publish, or display any part, in any form, or by any
+  ~ means. Reverse engineering, disassembly, or decompilation of this
+  ~ software, unless required by law for interoperability, is prohibited.
+  ~ The information contained herein is subject to change without notice
+  ~ and is not warranted to be error-free. If you find any errors, please
+  ~ report them to us in writing.
+  ~ U.S. GOVERNMENT END USERS: Oracle programs, including any operating
+  ~ system, integrated software, any programs installed on the hardware,
+  ~ and/or documentation, delivered to U.S. Government end users are
+  ~ "commercial computer software" pursuant to the applicable Federal
+  ~ Acquisition Regulation and agency-specific supplemental regulations.
+  ~ As such, use, duplication, disclosure, modification, and adaptation
+  ~ of the programs, including any operating system, integrated software,
+  ~ any programs installed on the hardware, and/or documentation, shall be
+  ~ subject to license terms and license restrictions applicable to the
+  ~ programs. No other rights are granted to the U.S. Government.
+  ~ This software or hardware is developed for general use in a variety
+  ~ of information management applications. It is not developed or
+  ~ intended for use in any inherently dangerous applications, including
+  ~ applications that may create a risk of personal injury. If you use
+  ~ this software or hardware in dangerous applications, then you shall
+  ~ be responsible to take all appropriate fail-safe, backup, redundancy,
+  ~ and other measures to ensure its safe use. Oracle Corporation and its
+  ~ affiliates disclaim any liability for any damages caused by use of this
+  ~ software or hardware in dangerous applications.
+  ~ This software or hardware and documentation may provide access to or
+  ~ information on content, products, and services from third parties.
+  ~ Oracle Corporation and its affiliates are not responsible for and
+  ~ expressly disclaim all warranties of any kind with respect to
+  ~ third-party content, products, and services. Oracle Corporation and
+  ~ its affiliates will not be responsible for any loss, costs, or damages
+  ~ incurred due to your access to or use of third-party content, products,
+  ~ or services.
+  -->
+<!DOCTYPE KEY_PROPS SYSTEM "key_props.dtd">
+
+<KEY_PROPS>
+  <KEY_PROP NAME="allAncestors.repositoryId">
+    <PROP NAME="DisplayName">
+      <PVAL>Ancestor categories -&gt; Id</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="allAncestors.repositoryName">
+    <PROP NAME="DisplayName">
+      <PVAL>allAncestors.repositoryName</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="clothing-sku.color">
+    <PROP NAME="DisplayName">
+      <PVAL>clothing-sku.color</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="clothing-sku.size">
+    <PROP NAME="DisplayName">
+      <PVAL>clothing-sku.size</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="furniture-sku.woodFinish">
+    <PROP NAME="DisplayName">
+      <PVAL>furniture-sku.woodFinish</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="market.code">
+    <PROP NAME="DisplayName">
+      <PVAL>Markets -&gt; Market Code</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="parentCategory.displayName">
+    <PROP NAME="DisplayName">
+      <PVAL>Parent categories -&gt; Display name</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="phone.compatiblePlan">
+    <PROP NAME="DisplayName">
+      <PVAL>Compatible Plans -&gt; id</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="phone.planDescription">
+    <PROP NAME="DisplayName">
+      <PVAL>Compatible Plans -&gt; description</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="phone.planDisplayName">
+    <PROP NAME="DisplayName">
+      <PVAL>Compatible Plans -&gt; displayName</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="plan.compatiblePhone">
+    <PROP NAME="DisplayName">
+      <PVAL>Compatible Phones -&gt; id</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="plan.phoneDescription">
+    <PROP NAME="DisplayName">
+      <PVAL>Compatible Phones -&gt; description</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="plan.phoneDisplayName">
+    <PROP NAME="DisplayName">
+      <PVAL>Compatible Phones -&gt; displayName</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="plan.type">
+    <PROP NAME="DisplayName">
+      <PVAL>Plan Type</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.accessoryType">
+    <PROP NAME="DisplayName">
+      <PVAL>product.accessoryType</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.adminDisplayName">
+    <PROP NAME="DisplayName">
+      <PVAL>Management Display Name</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.averageCustomerRating">
+    <PROP NAME="DisplayName">
+      <PVAL>Average Customer Rating</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.baseUrl">
+    <PROP NAME="DisplayName">
+      <PVAL>product.baseUrl</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.brand">
+    <PROP NAME="DisplayName">
+      <PVAL>Brand</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.briefDescription">
+    <PROP NAME="DisplayName">
+      <PVAL>Brief description</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.calculatedFeatures">
+    <PROP NAME="DisplayName">
+      <PVAL>calculatedFeatures</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.catalogId">
+    <PROP NAME="DisplayName">
+      <PVAL>Catalogs -&gt; Id</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.compatiblePhones.repositoryId">
+    <PROP NAME="DisplayName">
+      <PVAL>Compatible Phones -&gt; Id</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.compatiblePhones.repositoryName">
+    <PROP NAME="DisplayName">
+      <PVAL>product.compatiblePhones.repositoryName</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.compatiblePlans.repositoryId">
+    <PROP NAME="DisplayName">
+      <PVAL>Compatible Plans -&gt; Id</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.compatiblePlans.repositoryName">
+    <PROP NAME="DisplayName">
+      <PVAL>product.compatiblePlans.repositoryName</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.creationDate">
+    <PROP NAME="DisplayName">
+      <PVAL>Creation date</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.dateAvailable">
+    <PROP NAME="DisplayName">
+      <PVAL>Date available</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.daysAvailable">
+    <PROP NAME="DisplayName">
+      <PVAL>Days available</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.description">
+    <PROP NAME="DisplayName">
+      <PVAL>Description</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.disallowAsRecommendation">
+    <PROP NAME="DisplayName">
+      <PVAL>Disallow as automated recommendation</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.displayName">
+    <PROP NAME="DisplayName">
+      <PVAL>Display name</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.endDate">
+    <PROP NAME="DisplayName">
+      <PVAL>End date</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.features.displayName">
+    <PROP NAME="DisplayName">
+      <PVAL>product.features.displayName</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.features.repositoryId">
+    <PROP NAME="DisplayName">
+      <PVAL>Product features -&gt; Id</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.fullImage.repositoryId">
+    <PROP NAME="DisplayName">
+      <PVAL>Full image -&gt; Id</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.fullImage.repositoryName">
+    <PROP NAME="DisplayName">
+      <PVAL>product.fullImage.repositoryName</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.isOOFPhone">
+    <PROP NAME="DisplayName">
+      <PVAL>product.isOOFPhone</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.keyFeatures">
+    <PROP NAME="DisplayName">
+      <PVAL>Key Features</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.keywords">
+    <PROP NAME="DisplayName">
+      <PVAL>Keyword(s)</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.language">
+    <PROP NAME="DisplayName">
+      <PVAL>language</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.largeImage.url">
+    <PROP NAME="DisplayName">
+      <PVAL>product.largeImage.url</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.longDescription">
+    <PROP NAME="DisplayName">
+      <PVAL>Long description</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.manufacturer.description">
+    <PROP NAME="DisplayName">
+      <PVAL>Manufacturer -&gt; Description</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.manufacturer.displayName">
+    <PROP NAME="DisplayName">
+      <PVAL>Manufacturer -&gt; Manufacturer name</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.manufacturer.long_description">
+    <PROP NAME="DisplayName">
+      <PVAL>Manufacturer -&gt; Long description</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.manufacturer.repositoryId">
+    <PROP NAME="DisplayName">
+      <PVAL>Manufacturer -&gt; Id</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.manufacturer.repositoryName">
+    <PROP NAME="DisplayName">
+      <PVAL>product.manufacturer.repositoryName</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.markets.repositoryId">
+    <PROP NAME="DisplayName">
+      <PVAL>Markets -&gt; Id</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.mediumImage.url">
+    <PROP NAME="DisplayName">
+      <PVAL>product.mediumImage.url</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.nonreturnable">
+    <PROP NAME="DisplayName">
+      <PVAL>Nonreturnable</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.os">
+    <PROP NAME="DisplayName">
+      <PVAL>product.os</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.phoneStyle">
+    <PROP NAME="DisplayName">
+      <PVAL>product.phoneStyle</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.repositoryId">
+    <PROP NAME="DisplayName">
+      <PVAL>Id</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.repositoryName">
+    <PROP NAME="DisplayName">
+      <PVAL>product.repositoryName</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.siteId">
+    <PROP NAME="DisplayName">
+      <PVAL>product.siteId</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.startDate">
+    <PROP NAME="DisplayName">
+      <PVAL>Start date</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.type">
+    <PROP NAME="DisplayName">
+      <PVAL>type</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.url">
+    <PROP NAME="DisplayName">
+      <PVAL>product.url</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="sku.bundleLinks.description">
+    <PROP NAME="DisplayName">
+      <PVAL>SKUs -&gt; Bundle links -&gt; Description</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="sku.bundleLinks.displayName">
+    <PROP NAME="DisplayName">
+      <PVAL>SKUs -&gt; Bundle links -&gt; Display name</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="sku.bundleLinks.endDate">
+    <PROP NAME="DisplayName">
+      <PVAL>SKUs -&gt; Bundle links -&gt; End date</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="sku.bundleLinks.item.repositoryId">
+    <PROP NAME="DisplayName">
+      <PVAL>SKUs -&gt; Bundle links -&gt; Item -&gt; Id</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="sku.bundleLinks.repositoryId">
+    <PROP NAME="DisplayName">
+      <PVAL>SKUs -&gt; Bundle links -&gt; Id</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="sku.bundleLinks.startDate">
+    <PROP NAME="DisplayName">
+      <PVAL>SKUs -&gt; Bundle links -&gt; Start date</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="sku.configurableProperties.configurationOptions.description">
+    <PROP NAME="DisplayName">
+      <PVAL>SKUs -&gt; Configurable properties -&gt; Configuration options -&gt; Description</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="sku.configurableProperties.configurationOptions.displayName">
+    <PROP NAME="DisplayName">
+      <PVAL>SKUs -&gt; Configurable properties -&gt; Configuration options -&gt; Display name</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="sku.configurableProperties.configurationOptions.price">
+    <PROP NAME="DisplayName">
+      <PVAL>SKUs -&gt; Configurable properties -&gt; Configuration options -&gt; Price</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="sku.configurableProperties.configurationOptions.product.repositoryId">
+    <PROP NAME="DisplayName">
+      <PVAL>SKUs -&gt; Configurable properties -&gt; Configuration options -&gt; Product -&gt; Id</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="sku.configurableProperties.configurationOptions.sku.repositoryId">
+    <PROP NAME="DisplayName">
+      <PVAL>SKUs -&gt; Configurable properties -&gt; Configuration options -&gt; SKU -&gt; Id</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="sku.configurableProperties.description">
+    <PROP NAME="DisplayName">
+      <PVAL>SKUs -&gt; Configurable properties -&gt; Description</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="sku.configurableProperties.displayName">
+    <PROP NAME="DisplayName">
+      <PVAL>SKUs -&gt; Configurable properties -&gt; Display name</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="sku.creationDate">
+    <PROP NAME="DisplayName">
+      <PVAL>SKUs -&gt; Creation date</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="sku.description">
+    <PROP NAME="DisplayName">
+      <PVAL>SKUs -&gt; Description</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="sku.displayName">
+    <PROP NAME="DisplayName">
+      <PVAL>SKUs -&gt; Display name</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="sku.endDate">
+    <PROP NAME="DisplayName">
+      <PVAL>SKUs -&gt; End date</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="sku.listPrice">
+    <PROP NAME="DisplayName">
+      <PVAL>SKUs -&gt; List price</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="sku.manufacturer_part_number">
+    <PROP NAME="DisplayName">
+      <PVAL>SKUs -&gt; Manufacturers Part Number</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="sku.margin">
+    <PROP NAME="DisplayName">
+      <PVAL>SKUs -&gt; Margin</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="sku.onSaleText">
+    <PROP NAME="DisplayName">
+      <PVAL>SKUs -&gt; On sale</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="sku.quantity">
+    <PROP NAME="DisplayName">
+      <PVAL>SKUs -&gt; Quantity</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="sku.repositoryId">
+    <PROP NAME="DisplayName">
+      <PVAL>SKUs -&gt; Id</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="sku.salePrice">
+    <PROP NAME="DisplayName">
+      <PVAL>SKUs -&gt; Sale price</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="sku.startDate">
+    <PROP NAME="DisplayName">
+      <PVAL>SKUs -&gt; Start date</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="sku.type">
+    <PROP NAME="DisplayName">
+      <PVAL>SKUs -&gt; type</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="sku.unit_of_measure">
+    <PROP NAME="DisplayName">
+      <PVAL>SKUs -&gt; Unit of Measure</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="sku.wholesalePrice">
+    <PROP NAME="DisplayName">
+      <PVAL>SKUs -&gt; Wholesale price</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="product.category">
+    <PROP NAME="DisplayName">
+      <PVAL>product.category</PVAL>
+    </PROP>
+  </KEY_PROP>
+  <KEY_PROP NAME="item.type">
+    <PROP NAME="DisplayName">
+      <PVAL>item.type</PVAL>
+    </PROP>
+  </KEY_PROP>
+</KEY_PROPS>
+

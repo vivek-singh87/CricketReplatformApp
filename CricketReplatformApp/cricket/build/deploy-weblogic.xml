@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  This build.xml file contains the tasks common to most if not all of the
+  projects.  The basedir is not set here as it is meaningless in this context.
+-->
+<project name="deploy-weblogic" default="deploy" basedir=".">
+
+	<!-- Define an if and else task for use in this definition -->
+	<taskdef name="if" classname="ise.antelope.tasks.IfTask" classpath="${global.dir}/../lib/atg-ant.jar" />
+
+	<taskdef name="else" classname="ise.antelope.tasks.ElseTask" classpath="${global.dir}/../lib/atg-ant.jar" />
+
+	<taskdef name="foreach" classname="net.sf.antcontrib.logic.ForEach" classpath="${global.dir}/../lib/ant-contrib.jar" />
+	
+	<taskdef name="for" classname="net.sf.antcontrib.logic.For" classpath="${global.dir}/../lib/ant-contrib.jar" />
+
+	<taskdef name="propertycopy" classname="net.sf.antcontrib.property.PropertyCopy" classpath="${global.dir}/../lib/ant-contrib.jar" />
+
+	<taskdef name="switch" classname="net.sf.antcontrib.logic.Switch" classpath="${global.dir}/../lib/ant-contrib.jar" />
+
+	<!-- ================================================================= -->
+	<!--                    Some initialization tasks.                     -->
+	<target name="-deployinit">
+		<!-- Create the timestamp -->
+		<tstamp />
+		<echo message="" />
+		<echo message="" />
+		<echo message="#############################################################################" />
+		<echo message="" />
+		<echo message="${module.parent}.${module.name}: start date = ${DSTAMP}  start time = ${TSTAMP}" />
+		<echo message="JAVA_HOME       = ${env.JAVA_HOME}" />
+		<echo message="dynamo.home     = ${dynamo.home}" />
+		<echo message="deploy.definition.file = ${deploy.definition.file}" />
+		<echo message="global.dir      = ${global.dir}" />
+		<echo message="common.dir      = ${common.dir}" />
+		<echo message="" />
+		<echo message="#############################################################################" />
+		<echo message="" />
+		<echo message="" />
+		<!-- Sleep for a bit -->
+		<sleep seconds="2" />
+	</target>
+
+
+	<target name="-j2eedirsexist" description="verifies that the j2ee directories exist">
+		<available file="${j2ee.dir}" property="j2eedir.exists" />
+	</target>
+
+	<!-- ================================================================= -->
+	<!--              deploy: Deploys the application.                     -->
+	<target name="deploy" depends="-deployinit" description="Deploys J2EE application and any 3rd party ears or wars">
+
+		<antcall target="-deploy-application-wars" />
+
+		<!-- print out the run assembler flag so we know what we are doing -->
+		<echo>skip.run.assembler = ${skip.run.assembler}</echo>
+
+		<!-- see if we should run the assembler.  This was put here to ensure only a 
+	     single pass at generating an .ear file is made when the 'deploy' task 
+		 is invoked from the master build.xml -->
+		<if name="skip.run.assembler" value="true">
+			<echo message="Skip running application assembler" />
+			<else>
+				<antcall target="-assemble-ear" />
+			</else>
+		</if>
+
+	</target>
+	
+	<target name="expressDeploy" description="Deploys J2EE application and any 3rd party ears or wars">
+	
+		<antcall target="-deploy-application-wars" />
+	
+		<!-- print out the run assembler flag so we know what we are doing -->
+		<echo>skip.run.assembler = ${skip.run.assembler}</echo>
+
+		<!-- see if we should run the assembler.  This was put here to ensure only a 
+	     single pass at generating an .ear file is made when the 'deploy' task 
+		 is invoked from the master build.xml -->
+		<if name="skip.run.assembler" value="true">
+			<echo message="Skip running application assembler" />
+			<else>
+				<antcall target="-express-assemble-ear" />
+			</else>
+		</if>
+
+	</target>
+	
+	
+
+	
+	<target name="-deploy-application-wars" depends="-j2eedirsexist" if="j2eedir.exists" description="Deploys the J2EE application for the module">
+
+		
+		<antcall target="-create-exploded-dar" />
+
+	</target>
+
+	<target name="devdeploy" depends="-deployinit, -j2eedirsexist" description="Deploys J2EE application in dev mode by copying the JSPs.">
+		<antcall target="-dev-deploy-application-wars" />
+	</target>
+
+	<target name="-dev-deploy-application-wars" depends="-j2eedirsexist,-prepare-j2ee-dir" if="j2eedir.exists" description="Copies the J2EE application for the module">
+
+
+		<echo message="devdeploy assets for ear with prefix: ${ears.to.assemble.id}" />
+		<if name="ears.to.assemble.id" exists="true">
+
+			<property name="earprefix" value="${ears.to.assemble.id}" />
+
+			<!-- Use the passed prefix to copy the correct property value for our ear -->
+			<propertycopy name="ear.todeploy.filename" from="${earprefix}.filename" />
+			<propertycopy name="ear.todeploy.destination" from="${earprefix}.destination" />
+
+			<echo message="Install To:   = ${ear.todeploy.destination}/${ear.todeploy.filename}" />
+			<echo message="Install From: = ${build.j2ee.dir}" />
+
+			<copy description="Copying j2ee files to deployment" todir="${ear.todeploy.destination}/${ear.todeploy.filename}" verbose="${copy.verbose.bool}">
+				<fileset dir="${build.j2ee.dir}">
+					<exclude name="META-INF/*.*" />
+					<exclude name="WEB-INF/*.*" />
+				</fileset>
+			</copy>
+
+			<else>
+				<echo message="Skipping J2EE copying - no value for 'ears.to.assemble.id'" />
+			</else>
+		</if>
+
+	</target>
+
+	<!-- ================================================================= -->
+	<!--
+    create-ear-file: Creates an ear file by jarring the J2EE directory up.
+    -->
+	<target name="-create-ear-file" depends="-prepare-j2ee-dir" description="creates the ear file by jarring the ear (j2ee) directory">
+		<mkdir dir="${ear.dir}" />
+		<jar destfile="${ear.dir}/${module.name}.ear">
+			<fileset dir="${build.j2ee.dir}">
+				<include name="**/*" />
+			</fileset>
+		</jar>
+	</target>
+
+	<!-- START: Multi War -->
+	
+	<target name="-prepare-j2ee-dir" depends="-prepare-multi-war" description="prepare j2ee dir">
+		<echo message="Copy ${j2ee.dir} to ${build.j2ee.dir} folder with overwrite" />
+		<copy todir="${build.j2ee.dir}" overwrite="true">
+			<fileset dir="${j2ee.dir}" excludes="**/script.jspf"/>
+		</copy>
+        <copy todir="${build.j2ee.dir}" overwrite="true">
+            <fileset dir="${j2ee.dir}" includes="**/script.jspf" />
+            <filterset begintoken="@" endtoken="@">
+                <filter token="build.current.version" value="${build.current.version}"/>
+            </filterset>
+        </copy>
+	</target>
+
+	<target name="-parent-exist" description="verifies that parent directories exist">
+		<available file="${j2ee.dir}/${parent.war}" property="parent.war.exists" />
+	</target>
+
+	<target name="-prepare-multi-war" depends="-parent-exist" description="prepare multi j2ee dir" if="parent.war.exists">
+		<echo message="Copy parent dir ${parent.war} to children" />
+		<mkdir dir="${build.j2ee.dir}" />
+		
+		<for list="${children.war}" param="child.war" >
+		  <sequential>
+		    <echo>Copying parent ${parent.war} to @{child.war}</echo>
+		  	<copy todir="${build.j2ee.dir}/@{child.war}">
+		  		<fileset dir="${j2ee.dir}/${parent.war}" excludes="**/script.jspf"/>
+		  	</copy>
+            <copy todir="${build.j2ee.dir}/@{child.war}">
+                <fileset dir="${j2ee.dir}/${parent.war}" includes="**/script.jspf" />
+                <filterset begintoken="@" endtoken="@">
+                    <filter token="build.current.version" value="${build.current.version}"/>
+                </filterset>
+            </copy>
+		  	<propertycopy name="current.war" from="@{child.war}.children.war" />
+		  	<property name="param.child.war" value="@{child.war}" />
+			<foreach list="${current.war}" delimiter="," trim="true" param="grand.child.war" target="-prepare-grand-children-war" inheritall="yes" />
+		  </sequential>
+		</for>
+
+	</target>
+	<target name="-prepare-grand-children-war" depends="-soruce-exists" if="source.exists">
+	  <echo>Copying child ${param.child.war} to grand chlild ${grand.child.war}</echo>
+  	  <copy todir="${build.j2ee.dir}/${grand.child.war}">
+  	    <fileset dir="${j2ee.dir}/${parent.war}" excludes="**/script.jspf"/>
+  		<fileset dir="${j2ee.dir}/${param.child.war}" excludes="**/script.jspf"/>
+  	  </copy>
+      <copy todir="${build.j2ee.dir}/${grand.child.war}">
+      	<fileset dir="${j2ee.dir}/${parent.war}" includes="**/script.jspf" />
+        <fileset dir="${j2ee.dir}/${param.child.war}" includes="**/script.jspf" />
+        <filterset begintoken="@" endtoken="@">
+          <filter token="build.current.version" value="${build.current.version}"/>
+        </filterset>
+      </copy>		
+	</target>
+	
+	<target name="-soruce-exists">
+	  <available file="${j2ee.dir}/${grand.child.war}" property="source.exists" />
+	</target>
+    
+	<!-- END: Multi War -->
+	
+	<!-- ================================================================= -->
+	<!--
+    create-exploded-dar: Creates an exploded dar file, merging in all
+    the changed files.
+    -->
+	<target name="-create-exploded-dar" depends="-create-ear-file" >
+
+		<unjar src="${ear.dir}/${module.name}.ear" dest="${install.j2ee.dir}/${module.name}"/>
+
+		<antcall target="-strip-whitespace" />
+
+		<!--
+      We do not call ATG's Darina utility here because that would make 
+      the system dependent upon DAS.  We are a bit accustomed to the 
+      tasks that Darina would perform on the .war for us.  We will 
+      need to duplicate those tasks here.  The benefits of Darina were:
+      
+      1) compiles any source files in the .war
+      2) validates the web.xml definition
+      3) copies ATG taglibraries to the deployed .war
+    -->
+
+		<!-- For each web inf we find copy the taglibraries into it -->
+		<path id="web.inf.dirs">
+			<dirset dir="${install.j2ee.dir}/${module.name}">
+				<include name="**/WEB-INF" />
+			</dirset>
+		</path>
+
+		<foreach param="target.webinf.dir" target="-copy-taglibs">
+			<path refid="web.inf.dirs" />
+		</foreach>
+
+	</target>
+
+
+	<!--
+    Strips whitespace from the J2EE application as a preprocessing task
+  -->
+	<target name="-strip-whitespace">
+
+		<taskdef name="stripspaces" classname="com.atg.ant.taskdefs.StripWhitespaceFromJsp" classpath="${global.dir}/../lib/atg-ant.jar" />
+
+		<if name="strip.j2ee.whitespace" value="true">
+
+			<echo message="Stripping Whitespace" />
+			<stripspaces>
+				<fileset dir="${install.j2ee.dir}/${module.name}">
+					<include name="**/*.jsp" />
+					<include name="**/*.jspf" />
+				</fileset>
+			</stripspaces>
+
+			<else>
+				<echo message="strip.j2ee.whitespace set to false, skipping strip task" />
+			</else>
+		</if>
+
+	</target>
+
+
+	<target name="-copy-taglibs">
+		<echo message="Copying Tag Libraries to directory ${target.webinf.dir}" />
+
+		<!-- Taglib locations -->
+		<property name="das.taglib.tld.dir" value="${dynamo.root.dir}/DAS/taglib/dspjspTaglib/1.0/tld" />
+		<property name="das.taglib.lib.dir" value="${dynamo.root.dir}/DAS/taglib/dspjspTaglib/1.0/lib" />
+		<property name="core.taglib.tld.dir" value="${dynamo.root.dir}/DAS/taglib/coreTaglib/1.0/tld" />
+		<property name="core.taglib.lib.dir" value="${dynamo.root.dir}/DAS/taglib/coreTaglib/1.0/lib" />
+		<property name="jstl.taglib.tld.dir" value="${dynamo.root.dir}/DAS/taglib/jstl/1.0/tld" />
+		<property name="jstl.taglib.lib.dir" value="${dynamo.root.dir}/DAS/taglib/jstl/1.0/lib" />
+
+		<copy todir="${target.webinf.dir}/lib" verbose="true">
+			<fileset dir="${das.taglib.lib.dir}" />
+			<fileset dir="${core.taglib.lib.dir}" />
+			<fileset dir="${jstl.taglib.lib.dir}" />
+		</copy>
+
+		<copy todir="${target.webinf.dir}/taglib" verbose="true">
+			<fileset dir="${das.taglib.tld.dir}" />
+			<fileset dir="${core.taglib.tld.dir}" />
+		</copy>
+
+		<copy todir="${target.webinf.dir}" verbose="true">
+			<fileset dir="${jstl.taglib.tld.dir}" />
+		</copy>
+
+	</target>
+
+	<!-- ========================================================================== -->
+	<!--  Using the value for ears.to.assemble.id fetch all the globally registered -->
+	<!--  values required for ear deployment and use them to assemble the big-ear   -->
+	<target name="-assemble-ear" description="Loop to runs ATG's application assembler for all the registered ears">
+
+		<echo message="assembling ear: ${ears.to.assemble.id}" />
+
+		<if name="ears.to.assemble.id" exists="true">
+
+			<property name="earprefix" value="${ears.to.assemble.id}" />
+			<antcall target="-run-j2ee-assembler" />
+			<else>
+				<echo message="Skipping J2EE deployment - no value for 'ears.to.assemble.id'" />
+			</else>
+		</if>
+
+	</target>
+
+	<!-- ================================================================= -->
+	<!--                   runs the ATG J2EE assembler                     -->
+	<target name="-run-j2ee-assembler" description="runs ATG's application assembler to produce the ATG big ear for 3rd party app servers">
+
+		
+		<propertycopy name="ear.todeploy.filename" from="${earprefix}.filename" />
+		<propertycopy name="ear.todeploy.destination" from="${earprefix}.destination" />
+		<propertycopy name="ear.todeploy.modules" from="${earprefix}.modules" />
+		<propertycopy name="ear.todeploy.server" from="${earprefix}.server" />
+		<propertycopy name="ear.todeploy.liveconfig" from="${earprefix}.liveconfig" />
+		<propertycopy name="ear.todeploy.standalone" from="${earprefix}.standalone" />
+		<propertycopy name="ear.todeploy.pack" from="${earprefix}.pack" />
+
+		<echo message="" />
+		<echo message="earprefix = ${earprefix}" />
+		<echo message="ear.todeploy.filename    = ${ear.todeploy.filename}" />
+		<echo message="ear.todeploy.destination = ${ear.todeploy.destination}" />
+		<echo message="ear.todeploy.modules     = ${ear.todeploy.modules}" />
+		<echo message="ear.todeploy.server      = ${ear.todeploy.server}" />
+		<echo message="ear.todeploy.liveconfig  = ${ear.todeploy.liveconfig}" />
+		<echo message="ear.todeploy.standalone  = ${ear.todeploy.standalone}" />
+		<echo message="ear.todeploy.pack        = ${ear.todeploy.pack}" />
+		<echo message="" />
+
+		
+		<echo message="removing ear ${ear.todeploy.destination}/${ear.todeploy.filename}" />
+		<delete dir="${ear.todeploy.destination}/${ear.todeploy.filename}" failonerror="false" />
+
+		<echo message="-------------------------------------------------------------------" />
+		<echo message="removing ear ${ear.store.cadestination}/${ear.store.deployedname}" />
+		<delete dir="${ear.store.cadestination}/${ear.store.deployedname}" failonerror="false" />
+
+		
+		<delete verbose="true">
+			<fileset dir="${dynamo.home}" includes="**/startDynamo.jar" />
+		</delete>
+
+		<if name="execute.assembler.cmd" value="true">
+			<echo message="No Network Connection declared - running assember by command line" />
+			<antcall target="-execute-assembler-cmd" inheritall="true" />
+			<else>
+				<echo message="Using custom ATG ANT task to execute j2ee assembler" />
+				<antcall target="-execute-assembler-task" inheritall="true" />
+			</else>
+		</if>
+
+	</target>
+
+	<target name="-execute-assembler-task" description="Executes ATG's runAssembler via ant task">
+	
+		<taskdef name="assemble-jar" classname="atg.appassembly.ant.CreateUnpackedEarTask" classpath="${dynamo.home}/lib/assembler.jar" />
+
+
+		
+		<if name="ear.todeploy.server" value="">
+			<echo message="Assembling bigear with the following modules: ${ear.todeploy.modules}" />
+			<echo message="Assembling bigear with no server, this means you'll need to start JBoss with the -Datg.dynamo.server.name=&lt;atg-server&gt; argument" />
+			<echo message="Assembling to ${ear.todeploy.destination}/${ear.todeploy.filename}" />
+			<echo message="Assemble Standalone set to ${ear.todeploy.standalone}" />
+
+
+			<assemble-jar dynamoRoot="${dynamo.root.dir}" dynamoModules="${ear.todeploy.modules}" destinationFile="${ear.todeploy.destination}/${ear.todeploy.filename}" overwrite="true" omitLicenses="true" liveConfig="${ear.todeploy.liveconfig}" standalone="${ear.todeploy.standalone}"/>
+			
+
+			<else>
+				<echo message="Assembling bigear with the following modules: ${ear.todeploy.modules}" />
+				<echo message="Assembling bigear with the following server: ${ear.todeploy.server}" />
+				<echo message="Assembling to ${ear.todeploy.destination}/${ear.todeploy.filename}" />
+
+				<assemble-jar dynamoRoot="${dynamo.root.dir}" dynamoModules="${ear.todeploy.modules}" destinationFile="${ear.todeploy.destination}/${ear.todeploy.filename}" overwrite="true" omitLicenses="true" liveConfig="${ear.todeploy.liveconfig}" serverName="${ear.todeploy.server}" standalone="${ear.todeploy.standalone}"/>
+				
+			</else>
+		</if>
+	</target>
+
+	<target name="-execute-assembler-cmd" description="Executes ATG's runAssembler by command line call">
+
+		<taskdef name="propertyregex" classname="net.sf.antcontrib.property.RegexTask" classpath="${global.dir}/../lib/ant-contrib.jar" />
+
+		
+		<if name="ear.todeploy.liveconfig" value="true">
+			<property name="assemble.cmd.liveconfig" value="-liveconfig" />
+			<else>
+				<property name="assemble.cmd.liveconfig" value="" />
+			</else>
+		</if>
+		<if name="ear.todeploy.standalone" value="true">
+			<property name="assemble.cmd.standalone" value="-standalone" />
+			<else>
+				<property name="assemble.cmd.standalone" value="" />
+			</else>
+		</if>
+		<if name="ear.todeploy.pack" value="true">
+			<property name="assemble.cmd.pack" value="-pack" />
+			<else>
+				<property name="assemble.cmd.pack" value="" />
+			</else>
+		</if>
+		<if name="ear.todeploy.server" value="">
+			<property name="assemble.cmd.servername" value="" />
+			<else>
+				<property name="assemble.cmd.servername" value="-server ${ear.todeploy.server}" />
+			</else>
+		</if>
+		<if name="earprefix" value="ear.store-ca">
+      <if name="ear.todeploy.layer-staging" value="true">
+      	<property name="assemble.cmd.layerstaging" value="-layer staging" />
+        <else>
+          <property name="assemble.cmd.layerstaging" value="" />
+        </else>
+      </if>
+      <else>
+        <property name="assemble.cmd.layerstaging" value="" />
+      </else>
+    </if>
+
+		<propertyregex property="assemble.cmd.modules" input="${ear.todeploy.modules}" regexp="," replace=" " casesensitive="false" />
+
+		<echo message="Invoking RunAssembler Command ${dynamo.home}/bin/runAssembler" />
+		<echo message="-overwrite" />
+		<echo message="-omit-licenses" />
+		<echo message="assemble.cmd.liveconfig=${assemble.cmd.liveconfig}" />
+		<echo message="assemble.cmd.standalone=${assemble.cmd.standalone}" />
+		<echo message="assemble.cmd.pack=${assemble.cmd.pack}" />
+		<echo message="assemble.cmd.servername=${assemble.cmd.servername}" />
+		<echo message="to destination: ${ear.todeploy.destination}/${ear.todeploy.filename}" />
+		<echo message="assemble.cmd.layerstaging=${assemble.cmd.layerstaging}" />
+		<echo message="assemble.cmd.modules=${assemble.cmd.modules}" />
+		<echo message=" " />
+		
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="${dynamo.home}/bin/runAssembler" failonerror="yes" os="SunOS,Linux,Mac OS X">
+			<arg value="-overwrite" />
+			<arg value="-omit-licenses" />
+			<arg value="${assemble.cmd.liveconfig}" />
+			<arg value="${assemble.cmd.standalone}" />
+			<arg value="${assemble.cmd.pack}" />
+			<arg line="${assemble.cmd.servername}" />
+			<arg value="${ear.todeploy.destination}/${ear.todeploy.filename}" />
+			<arg line="${assemble.cmd.layerstaging}"/>
+			<arg line="-m ${ear.todeploy.modules}" />
+		</exec>
+
+	</target>
+
+</project>

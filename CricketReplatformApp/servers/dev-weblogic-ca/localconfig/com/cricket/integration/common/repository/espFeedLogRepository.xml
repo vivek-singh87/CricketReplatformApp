@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE gsa-template
+        PUBLIC "-//Art Technology Group, Inc.//DTD General SQL Adapter//EN"
+        "http://www.atg.com/dtds/gsa/gsa_1.0.dtd">
+
+<gsa-template>
+  <header>
+    <name>ESPFeedLogRepository</name>
+    <author>Cricket Communications</author>
+    <version>$Id: /cricket/integration/common/espFeedLogRepository.xml #2 $$Change: 1234 $</version>
+  </header>
+ 	<item-descriptor name="espFeed" > 	
+ 	  <table name="CKT_FEED_LOGGER" type="primary" id-column-name="feed_id"> 	
+	      <property category-resource="ESPFeedInfo" name="id" data-type="string" column-name="feed_id" display-name-resource="Feed Id"/>
+	      <property category-resource="ESPFeedInfo" name="feed" data-type="string"  column-name="feed" display-name-resource="Feed"/>  
+		  <property expert="false" readable="true" column-name="status" data-type="enumerated" display-name-resource="Feed Status" hidden="true" writable="true" name="status" required="false" cache-mode="inherit" queryable="true">
+			<attribute name="useCodeForValue" value="false"/>
+		       <option value="New" code="0"/>
+		       <option value="Processed" code="1"/>
+		       <option value="Failed" code="2"/>
+	       </property> 
+	      <property category-resource="ESPFeedInfo" name="sourceSystem" data-type="string"  column-name="source_system" display-name-resource="Source System"/>  
+	      <property category-resource="ESPFeedInfo" name="description" data-type="string"  column-name="description" display-name-resource="Description"/>    
+	      <property category-resource="ESPFeedInfo" name="updationDate" data-type="string"  column-name="updation_date" display-name-resource="Updation Date"/>  
+      </table>  
+ 	</item-descriptor> 	
+</gsa-template>

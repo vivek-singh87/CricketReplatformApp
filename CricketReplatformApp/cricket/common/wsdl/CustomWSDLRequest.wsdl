@@ -1,0 +1,920 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:definitions xmlns:ns="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns140="http://esp.cricket.com/ESP/Namespaces/Container/Public/InquireBillingOrderDetailsResponse.xsd" xmlns:ns09="http://esp.cricket.com/ESP/Namespaces/Container/Public/InquirePortEligibilityRequest.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns237="http://esp.cricket.com/ESP/Namespaces/Container/Public/ProcessPaymentRequest.xsd" xmlns:ns01="http://esp.cricket.com/ESP/Namespaces/Container/Public/EchoRequest.xsd" xmlns:ns238="http://esp.cricket.com/ESP/Namespaces/Container/Public/ProcessPaymentResponse.xsd" xmlns:ns02="http://esp.cricket.com/ESP/Namespaces/Container/Public/EchoResponse.xsd" xmlns:ns108="http://esp.cricket.com/ESP/Namespaces/Container/Public/ValidateAddressResponse.xsd" xmlns:genr="http://esp.cricket.com/ESP/Namespaces/Container/Public/GenericAsyncResponse.xsd" xmlns:ns107="http://esp.cricket.com/ESP/Namespaces/Container/Public/ValidateAddressRequest.xsd" xmlns:ns85="http://esp.cricket.com/ESP/Namespaces/Container/Public/ManageSaleRequest.xsd" xmlns:ns49="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateSubscriberRequest.xsd" xmlns:ns86="http://esp.cricket.com/ESP/Namespaces/Container/Public/ManageSaleResponse.xsd" xmlns:ns186="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateBillingQuoteResponse.xsd" xmlns:ns87="http://esp.cricket.com/ESP/Namespaces/Container/Public/ManageSaleItemRequest.xsd" xmlns:ns88="http://esp.cricket.com/ESP/Namespaces/Container/Public/ManageSaleItemResponse.xsd" xmlns:ns185="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateBillingQuoteRequest.xsd" xmlns:gen="http://esp.cricket.com/ESP/Namespaces/Container/Public/GenericAsyncRequest.xsd" xmlns:ns10="http://esp.cricket.com/ESP/Namespaces/Container/Public/InquirePortEligibilityResponse.xsd" xmlns:ns51="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateAccountRequest.xsd" xmlns:ns224="http://esp.cricket.com/ESP/Namespaces/Container/Public/InquireCoverageResponse.xsd" xmlns:ns50="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateSubscriberResponse.xsd" xmlns:ns223="http://esp.cricket.com/ESP/Namespaces/Container/Public/InquireCoverageRequest.xsd" xmlns:ns52="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateAccountResponse.xsd" xmlns:tns="http://esp.cricket.com/ESP/Namespaces/v1/wsdl/Cricket-ESP-HTTP.wsdl" xmlns:cdm="http://esp.cricket.com/ESP/Namespaces/Types/Public/CricketDataModel.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns71="http://esp.cricket.com/ESP/Namespaces/Container/Public/SendMessageRequest.xsd" xmlns:ns123="http://esp.cricket.com/ESP/Namespaces/Container/Public/CreateActivationQuoteRequest.xsd" xmlns:ns124="http://esp.cricket.com/ESP/Namespaces/Container/Public/CreateActivationQuoteResponse.xsd" xmlns:ns125="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateBillingQuoteStatusRequest.xsd" xmlns:ns126="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateBillingQuoteStatusResponse.xsd" xmlns:ns209="http://esp.cricket.com/ESP/Namespaces/Container/Public/CreateShippingQuoteRequest.xsd" xmlns:sfd="http://esp.cricket.com/ESP/Namespaces/Container/Public/SoapFaultDetails.xsd" xmlns:ns295="http://esp.cricket.com/ESP/Namespaces/Container/Public/InquireFeaturesRequest.xsd" xmlns:mh="http://esp.cricket.com/ESP/Namespaces/Container/Public/MessageHeader.xsd" xmlns:ns296="http://esp.cricket.com/ESP/Namespaces/Container/Public/InquireFeaturesResponse.xsd" xmlns:ns297="http://esp.cricket.com/ESP/Namespaces/Container/Public/InquireDeliveryEstimateRequest.xsd" xmlns:ns298="http://esp.cricket.com/ESP/Namespaces/Container/Public/InquireDeliveryEstimateResponse.xsd" xmlns:ack="http://esp.cricket.com/ESP/Namespaces/Container/Public/RequestAcknowledgement.xsd" xmlns:ns213="http://esp.cricket.com/ESP/Namespaces/Container/Public/ManagePaymentRequest.xsd" xmlns:ns210="http://esp.cricket.com/ESP/Namespaces/Container/Public/CreateShippingQuoteResponse.xsd" xmlns:ns76="http://esp.cricket.com/ESP/Namespaces/Container/Public/FinalizeSaleResponse.xsd" xmlns:ns139="http://esp.cricket.com/ESP/Namespaces/Container/Public/InquireBillingOrderDetailsRequest.xsd" xmlns:ns246="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateWebReportResponse.xsd" xmlns:ns73="http://esp.cricket.com/ESP/Namespaces/Container/Public/CompleteSaleRequest.xsd" xmlns:ns72="http://esp.cricket.com/ESP/Namespaces/Container/Public/SendMessageResponse.xsd" xmlns:ns216="http://esp.cricket.com/ESP/Namespaces/Container/Public/ManageABPResponse.xsd" xmlns:ns245="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateWebReportRequest.xsd" xmlns:ns0="http://schemas.xmlsoap.org/wsdl/" xmlns:ns75="http://esp.cricket.com/ESP/Namespaces/Container/Public/FinalizeSaleRequest.xsd" xmlns:ns215="http://esp.cricket.com/ESP/Namespaces/Container/Public/ManageABPRequest.xsd" xmlns:ns74="http://esp.cricket.com/ESP/Namespaces/Container/Public/CompleteSaleResponse.xsd" xmlns:ns214="http://esp.cricket.com/ESP/Namespaces/Container/Public/ManagePaymentResponse.xsd" name="Cricket-ESP-HTTP" targetNamespace="http://esp.cricket.com/ESP/Namespaces/v1/wsdl/Cricket-ESP-HTTP.wsdl">
+    <ns0:types>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/MessageHeader.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/MessageHeader.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/SoapFaultDetails.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/SoapFaultDetails.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Types/Public/CricketDataModel.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Types/Public/CricketDataModel.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/RequestAcknowledgement.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/RequestAcknowledgement.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/GenericAsyncRequest.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/GenericAsyncRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/GenericAsyncResponse.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/GenericAsyncResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/EchoRequest.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/EchoRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/EchoResponse.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/EchoResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/InquirePortEligibilityRequest.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/InquirePortEligibilityRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/InquirePortEligibilityResponse.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/InquirePortEligibilityResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateSubscriberRequest.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/UpdateSubscriberRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateSubscriberResponse.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/UpdateSubscriberResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateAccountRequest.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/UpdateAccountRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateAccountResponse.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/UpdateAccountResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/SendMessageRequest.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/SendMessageRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/SendMessageResponse.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/SendMessageResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/CompleteSaleRequest.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/CompleteSaleRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/CompleteSaleResponse.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/CompleteSaleResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/FinalizeSaleRequest.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/FinalizeSaleRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/FinalizeSaleResponse.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/FinalizeSaleResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/ManageSaleRequest.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/ManageSaleRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/ManageSaleResponse.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/ManageSaleResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/ManageSaleItemRequest.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/ManageSaleItemRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/ManageSaleItemResponse.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/ManageSaleItemResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/ValidateAddressRequest.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/ValidateAddressRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/ValidateAddressResponse.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/ValidateAddressResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/CreateActivationQuoteRequest.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/CreateActivationQuoteRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/CreateActivationQuoteResponse.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/CreateActivationQuoteResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateBillingQuoteStatusRequest.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/UpdateBillingQuoteStatusRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateBillingQuoteStatusResponse.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/UpdateBillingQuoteStatusResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/InquireBillingOrderDetailsRequest.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/InquireBillingOrderDetailsRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/InquireBillingOrderDetailsResponse.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/InquireBillingOrderDetailsResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateBillingQuoteRequest.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/UpdateBillingQuoteRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateBillingQuoteResponse.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/UpdateBillingQuoteResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/CreateShippingQuoteRequest.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/CreateShippingQuoteRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/CreateShippingQuoteResponse.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/CreateShippingQuoteResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/ManagePaymentRequest.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/ManagePaymentRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/ManagePaymentResponse.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/ManagePaymentResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/ManageABPRequest.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/ManageABPRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/ManageABPResponse.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/ManageABPResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/InquireCoverageRequest.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/InquireCoverageRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/InquireCoverageResponse.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/InquireCoverageResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/ProcessPaymentRequest.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/ProcessPaymentRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/ProcessPaymentResponse.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/ProcessPaymentResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateWebReportRequest.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/UpdateWebReportRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateWebReportResponse.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/UpdateWebReportResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/InquireFeaturesRequest.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/InquireFeaturesRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/InquireFeaturesResponse.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/InquireFeaturesResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/InquireDeliveryEstimateRequest.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/InquireDeliveryEstimateRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/InquireDeliveryEstimateResponse.xsd">
+            <xs:include schemaLocation="http://s4-gw.cricketcommunications.com:80/SharedResources/v1/Container/Public/InquireDeliveryEstimateResponse.xsd"/>
+        </xs:schema>
+    </ns0:types>
+    <ns0:message name="SoapFault">
+        <ns0:part name="fault" element="sfd:SoapFaultDetails"/>
+    </ns0:message>
+    <ns0:message name="Header">
+        <ns0:part name="head" element="mh:MessageHeader"/>
+    </ns0:message>
+    <ns0:message name="RequestAcknowledgement">
+        <ns0:part name="body" element="ack:RequestAcknowledgement"/>
+    </ns0:message>
+    <ns0:message name="GenericAsyncRequest">
+        <ns0:part name="body" element="gen:GenericAsyncRequest"/>
+    </ns0:message>
+    <ns0:message name="GenericAsyncResponse">
+        <ns0:part name="body" element="genr:GenericAsyncResponse"/>
+    </ns0:message>
+    <ns0:message name="EchoRequest">
+        <ns0:part name="body" element="ns01:EchoRequest"/>
+    </ns0:message>
+    <ns0:message name="EchoResponse">
+        <ns0:part name="body" element="ns02:EchoResponse"/>
+    </ns0:message>
+    <ns0:message name="InquirePortEligibilityRequest">
+        <ns0:part name="body" element="ns09:InquirePortEligibilityRequest"/>
+    </ns0:message>
+    <ns0:message name="InquirePortEligibilityResponse">
+        <ns0:part name="body" element="ns10:InquirePortEligibilityResponse"/>
+    </ns0:message>
+    <ns0:message name="UpdateSubscriberRequest">
+        <ns0:part name="body" element="ns49:UpdateSubscriberRequest"/>
+    </ns0:message>
+    <ns0:message name="UpdateSubscriberResponse">
+        <ns0:part name="body" element="ns50:UpdateSubscriberResponse"/>
+    </ns0:message>
+    <ns0:message name="UpdateAccountRequest">
+        <ns0:part name="body" element="ns51:UpdateAccountRequest"/>
+    </ns0:message>
+    <ns0:message name="UpdateAccountResponse">
+        <ns0:part name="body" element="ns52:UpdateAccountResponse"/>
+    </ns0:message>
+    <ns0:message name="SendMessageRequest">
+        <ns0:part name="body" element="ns71:SendMessageRequest"/>
+    </ns0:message>
+    <ns0:message name="SendMessageResponse">
+        <ns0:part name="body" element="ns72:SendMessageResponse"/>
+    </ns0:message>
+    <ns0:message name="CompleteSaleRequest">
+        <ns0:part name="body" element="ns73:CompleteSaleRequest"/>
+    </ns0:message>
+    <ns0:message name="CompleteSaleResponse">
+        <ns0:part name="body" element="ns74:CompleteSaleResponse"/>
+    </ns0:message>
+    <ns0:message name="FinalizeSaleRequest">
+        <ns0:part name="body" element="ns75:FinalizeSaleRequest"/>
+    </ns0:message>
+    <ns0:message name="FinalizeSaleResponse">
+        <ns0:part name="body" element="ns76:FinalizeSaleResponse"/>
+    </ns0:message>
+    <ns0:message name="ManageSaleRequest">
+        <ns0:part name="body" element="ns85:ManageSaleRequest"/>
+    </ns0:message>
+    <ns0:message name="ManageSaleResponse">
+        <ns0:part name="body" element="ns86:ManageSaleResponse"/>
+    </ns0:message>
+    <ns0:message name="ManageSaleItemRequest">
+        <ns0:part name="body" element="ns87:ManageSaleItemRequest"/>
+    </ns0:message>
+    <ns0:message name="ManageSaleItemResponse">
+        <ns0:part name="body" element="ns88:ManageSaleItemResponse"/>
+    </ns0:message>
+    <ns0:message name="ValidateAddressRequest">
+        <ns0:part name="body" element="ns107:ValidateAddressRequest"/>
+    </ns0:message>
+    <ns0:message name="ValidateAddressResponse">
+        <ns0:part name="body" element="ns108:ValidateAddressResponse"/>
+    </ns0:message>
+    <ns0:message name="CreateActivationQuoteRequest">
+        <ns0:part name="body" element="ns123:CreateActivationQuoteRequest"/>
+    </ns0:message>
+    <ns0:message name="CreateActivationQuoteResponse">
+        <ns0:part name="body" element="ns124:CreateActivationQuoteResponse"/>
+    </ns0:message>
+    <ns0:message name="UpdateBillingQuoteStatusRequest">
+        <ns0:part name="body" element="ns125:UpdateBillingQuoteStatusRequest"/>
+    </ns0:message>
+    <ns0:message name="UpdateBillingQuoteStatusResponse">
+        <ns0:part name="body" element="ns126:UpdateBillingQuoteStatusResponse"/>
+    </ns0:message>
+    <ns0:message name="InquireBillingOrderDetailsRequest">
+        <ns0:part name="body" element="ns139:InquireBillingOrderDetailsRequest"/>
+    </ns0:message>
+    <ns0:message name="InquireBillingOrderDetailsResponse">
+        <ns0:part name="body" element="ns140:InquireBillingOrderDetailsResponse"/>
+    </ns0:message>
+    <ns0:message name="UpdateBillingQuoteRequest">
+        <ns0:part name="body" element="ns185:UpdateBillingQuoteRequest"/>
+    </ns0:message>
+    <ns0:message name="UpdateBillingQuoteResponse">
+        <ns0:part name="body" element="ns186:UpdateBillingQuoteResponse"/>
+    </ns0:message>
+    <ns0:message name="CreateShippingQuoteRequest">
+        <ns0:part name="body" element="ns209:CreateShippingQuoteRequest"/>
+    </ns0:message>
+    <ns0:message name="CreateShippingQuoteResponse">
+        <ns0:part name="body" element="ns210:CreateShippingQuoteResponse"/>
+    </ns0:message>
+    <ns0:message name="ManagePaymentRequest">
+        <ns0:part name="body" element="ns213:ManagePaymentRequest"/>
+    </ns0:message>
+    <ns0:message name="ManagePaymentResponse">
+        <ns0:part name="body" element="ns214:ManagePaymentResponse"/>
+    </ns0:message>
+    <ns0:message name="ManageABPRequest">
+        <ns0:part name="body" element="ns215:ManageABPRequest"/>
+    </ns0:message>
+    <ns0:message name="ManageABPResponse">
+        <ns0:part name="body" element="ns216:ManageABPResponse"/>
+    </ns0:message>
+    <ns0:message name="InquireCoverageRequest">
+        <ns0:part name="body" element="ns223:InquireCoverageRequest"/>
+    </ns0:message>
+    <ns0:message name="InquireCoverageResponse">
+        <ns0:part name="body" element="ns224:InquireCoverageResponse"/>
+    </ns0:message>
+    <ns0:message name="ProcessPaymentRequest">
+        <ns0:part name="body" element="ns237:ProcessPaymentRequest"/>
+    </ns0:message>
+    <ns0:message name="ProcessPaymentResponse">
+        <ns0:part name="body" element="ns238:ProcessPaymentResponse"/>
+    </ns0:message>
+    <ns0:message name="UpdateWebReportRequest">
+        <ns0:part name="body" element="ns245:UpdateWebReportRequest"/>
+    </ns0:message>
+    <ns0:message name="UpdateWebReportResponse">
+        <ns0:part name="body" element="ns246:UpdateWebReportResponse"/>
+    </ns0:message>
+    <ns0:message name="InquireFeaturesRequest">
+        <ns0:part name="body" element="ns295:InquireFeaturesRequest"/>
+    </ns0:message>
+    <ns0:message name="InquireFeaturesResponse">
+        <ns0:part name="body" element="ns296:InquireFeaturesResponse"/>
+    </ns0:message>
+    <ns0:message name="InquireDeliveryEstimateRequest">
+        <ns0:part name="body" element="ns297:InquireDeliveryEstimateRequest"/>
+    </ns0:message>
+    <ns0:message name="InquireDeliveryEstimateResponse">
+        <ns0:part name="body" element="ns298:InquireDeliveryEstimateResponse"/>
+    </ns0:message>
+    <ns0:portType name="Echo">
+        <ns0:operation name="Echo">
+            <ns0:input message="tns:EchoRequest"/>
+            <ns0:output message="tns:EchoResponse"/>
+            <ns0:fault name="fault" message="tns:SoapFault"/>
+        </ns0:operation>
+    </ns0:portType>
+    <ns0:portType name="InquirePortEligibility">
+        <ns0:operation name="InquirePortEligibility">
+            <ns0:input message="tns:InquirePortEligibilityRequest"/>
+            <ns0:output message="tns:InquirePortEligibilityResponse"/>
+            <ns0:fault name="fault" message="tns:SoapFault"/>
+        </ns0:operation>
+    </ns0:portType>
+    <ns0:portType name="UpdateSubscriber">
+        <ns0:operation name="UpdateSubscriber">
+            <ns0:input message="tns:UpdateSubscriberRequest"/>
+            <ns0:output message="tns:UpdateSubscriberResponse"/>
+            <ns0:fault name="fault" message="tns:SoapFault"/>
+        </ns0:operation>
+    </ns0:portType>
+    <ns0:portType name="UpdateAccount">
+        <ns0:operation name="UpdateAccount">
+            <ns0:input message="tns:UpdateAccountRequest"/>
+            <ns0:output message="tns:UpdateAccountResponse"/>
+            <ns0:fault name="fault" message="tns:SoapFault"/>
+        </ns0:operation>
+    </ns0:portType>
+    <ns0:portType name="SendMessage">
+        <ns0:operation name="SendMessage">
+            <ns0:input message="tns:SendMessageRequest"/>
+            <ns0:output message="tns:SendMessageResponse"/>
+            <ns0:fault name="fault" message="tns:SoapFault"/>
+        </ns0:operation>
+    </ns0:portType>
+    <ns0:portType name="CompleteSale">
+        <ns0:operation name="CompleteSale">
+            <ns0:input message="tns:CompleteSaleRequest"/>
+            <ns0:output message="tns:CompleteSaleResponse"/>
+            <ns0:fault name="fault" message="tns:SoapFault"/>
+        </ns0:operation>
+    </ns0:portType>
+    <ns0:portType name="FinalizeSale">
+        <ns0:operation name="FinalizeSale">
+            <ns0:input message="tns:FinalizeSaleRequest"/>
+            <ns0:output message="tns:FinalizeSaleResponse"/>
+            <ns0:fault name="fault" message="tns:SoapFault"/>
+        </ns0:operation>
+    </ns0:portType>
+    <ns0:portType name="ManageSale">
+        <ns0:operation name="ManageSale">
+            <ns0:input message="tns:ManageSaleRequest"/>
+            <ns0:output message="tns:ManageSaleResponse"/>
+            <ns0:fault name="fault" message="tns:SoapFault"/>
+        </ns0:operation>
+    </ns0:portType>
+    <ns0:portType name="ManageSaleItem">
+        <ns0:operation name="ManageSaleItem">
+            <ns0:input message="tns:ManageSaleItemRequest"/>
+            <ns0:output message="tns:ManageSaleItemResponse"/>
+            <ns0:fault name="fault" message="tns:SoapFault"/>
+        </ns0:operation>
+    </ns0:portType>
+    <ns0:portType name="ValidateAddress">
+        <ns0:operation name="ValidateAddress">
+            <ns0:input message="tns:ValidateAddressRequest"/>
+            <ns0:output message="tns:ValidateAddressResponse"/>
+            <ns0:fault name="fault" message="tns:SoapFault"/>
+        </ns0:operation>
+    </ns0:portType>
+    <ns0:portType name="CreateActivationQuote">
+        <ns0:operation name="CreateActivationQuote">
+            <ns0:input message="tns:CreateActivationQuoteRequest"/>
+            <ns0:output message="tns:CreateActivationQuoteResponse"/>
+            <ns0:fault name="fault" message="tns:SoapFault"/>
+        </ns0:operation>
+    </ns0:portType>
+    <ns0:portType name="UpdateBillingQuoteStatus">
+        <ns0:operation name="UpdateBillingQuoteStatus">
+            <ns0:input message="tns:UpdateBillingQuoteStatusRequest"/>
+            <ns0:output message="tns:UpdateBillingQuoteStatusResponse"/>
+            <ns0:fault name="fault" message="tns:SoapFault"/>
+        </ns0:operation>
+    </ns0:portType>
+    <ns0:portType name="InquireBillingOrderDetails">
+        <ns0:operation name="InquireBillingOrderDetails">
+            <ns0:input message="tns:InquireBillingOrderDetailsRequest"/>
+            <ns0:output message="tns:InquireBillingOrderDetailsResponse"/>
+            <ns0:fault name="fault" message="tns:SoapFault"/>
+        </ns0:operation>
+    </ns0:portType>
+    <ns0:portType name="UpdateBillingQuote">
+        <ns0:operation name="UpdateBillingQuote">
+            <ns0:input message="tns:UpdateBillingQuoteRequest"/>
+            <ns0:output message="tns:UpdateBillingQuoteResponse"/>
+            <ns0:fault name="fault" message="tns:SoapFault"/>
+        </ns0:operation>
+    </ns0:portType>
+    <ns0:portType name="CreateShippingQuote">
+        <ns0:operation name="CreateShippingQuote">
+            <ns0:input message="tns:CreateShippingQuoteRequest"/>
+            <ns0:output message="tns:CreateShippingQuoteResponse"/>
+            <ns0:fault name="fault" message="tns:SoapFault"/>
+        </ns0:operation>
+    </ns0:portType>
+    <ns0:portType name="ManagePayment">
+        <ns0:operation name="ManagePayment">
+            <ns0:input message="tns:ManagePaymentRequest"/>
+            <ns0:output message="tns:ManagePaymentResponse"/>
+            <ns0:fault name="fault" message="tns:SoapFault"/>
+        </ns0:operation>
+    </ns0:portType>
+    <ns0:portType name="ManageABP">
+        <ns0:operation name="ManageABP">
+            <ns0:input message="tns:ManageABPRequest"/>
+            <ns0:output message="tns:ManageABPResponse"/>
+            <ns0:fault name="fault" message="tns:SoapFault"/>
+        </ns0:operation>
+    </ns0:portType>
+    <ns0:portType name="InquireCoverage">
+        <ns0:operation name="InquireCoverage">
+            <ns0:input message="tns:InquireCoverageRequest"/>
+            <ns0:output message="tns:InquireCoverageResponse"/>
+            <ns0:fault name="fault" message="tns:SoapFault"/>
+        </ns0:operation>
+    </ns0:portType>
+    <ns0:portType name="ProcessPayment">
+        <ns0:operation name="ProcessPayment">
+            <ns0:input message="tns:ProcessPaymentRequest"/>
+            <ns0:output message="tns:ProcessPaymentResponse"/>
+            <ns0:fault name="fault" message="tns:SoapFault"/>
+        </ns0:operation>
+    </ns0:portType>
+    <ns0:portType name="UpdateWebReport">
+        <ns0:operation name="UpdateWebReport">
+            <ns0:input message="tns:UpdateWebReportRequest"/>
+            <ns0:output message="tns:UpdateWebReportResponse"/>
+            <ns0:fault name="fault" message="tns:SoapFault"/>
+        </ns0:operation>
+    </ns0:portType>
+    <ns0:portType name="InquireFeatures">
+        <ns0:operation name="InquireFeatures">
+            <ns0:input message="tns:InquireFeaturesRequest"/>
+            <ns0:output message="tns:InquireFeaturesResponse"/>
+            <ns0:fault name="fault" message="tns:SoapFault"/>
+        </ns0:operation>
+    </ns0:portType>
+    <ns0:portType name="InquireDeliveryEstimate">
+        <ns0:operation name="InquireDeliveryEstimate">
+            <ns0:input message="tns:InquireDeliveryEstimateRequest"/>
+            <ns0:output message="tns:InquireDeliveryEstimateResponse"/>
+            <ns0:fault name="fault" message="tns:SoapFault"/>
+        </ns0:operation>
+    </ns0:portType>
+    <ns0:binding name="Echo" type="tns:Echo">
+        <ns0:documentation>ESP SOAP Binding for Echo</ns0:documentation>
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <ns0:operation name="Echo">
+            <soap:operation style="document"/>
+            <ns0:input>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/EchoRequest.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:input>
+            <ns0:output>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/EchoResponse.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:output>
+            <ns0:fault name="fault">
+                <soap:fault name="fault" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Types/Public/SoapFault.xsd"/>
+            </ns0:fault>
+        </ns0:operation>
+    </ns0:binding>
+    <ns0:binding name="InquirePortEligibility" type="tns:InquirePortEligibility">
+        <ns0:documentation>ESP SOAP Binding for InquirePortEligibility</ns0:documentation>
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <ns0:operation name="InquirePortEligibility">
+            <soap:operation style="document"/>
+            <ns0:input>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/InquirePortEligibilityRequest.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:input>
+            <ns0:output>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/InquirePortEligibilityResponse.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:output>
+            <ns0:fault name="fault">
+                <soap:fault name="fault" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Types/Public/SoapFault.xsd"/>
+            </ns0:fault>
+        </ns0:operation>
+    </ns0:binding>
+    <ns0:binding name="UpdateSubscriber" type="tns:UpdateSubscriber">
+        <ns0:documentation>ESP SOAP Binding for UpdateSubscriber</ns0:documentation>
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <ns0:operation name="UpdateSubscriber">
+            <soap:operation style="document"/>
+            <ns0:input>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateSubscriberRequest.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:input>
+            <ns0:output>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateSubscriberResponse.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:output>
+            <ns0:fault name="fault">
+                <soap:fault name="fault" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Types/Public/SoapFault.xsd"/>
+            </ns0:fault>
+        </ns0:operation>
+    </ns0:binding>
+    <ns0:binding name="UpdateAccount" type="tns:UpdateAccount">
+        <ns0:documentation>ESP SOAP Binding for UpdateAccount</ns0:documentation>
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <ns0:operation name="UpdateAccount">
+            <soap:operation style="document"/>
+            <ns0:input>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateAccountRequest.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:input>
+            <ns0:output>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateAccountResponse.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:output>
+            <ns0:fault name="fault">
+                <soap:fault name="fault" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Types/Public/SoapFault.xsd"/>
+            </ns0:fault>
+        </ns0:operation>
+    </ns0:binding>
+    <ns0:binding name="SendMessage" type="tns:SendMessage">
+        <ns0:documentation>ESP SOAP Binding for SendMessage</ns0:documentation>
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <ns0:operation name="SendMessage">
+            <soap:operation style="document"/>
+            <ns0:input>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/SendMessageRequest.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:input>
+            <ns0:output>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/SendMessageResponse.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:output>
+            <ns0:fault name="fault">
+                <soap:fault name="fault" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Types/Public/SoapFault.xsd"/>
+            </ns0:fault>
+        </ns0:operation>
+    </ns0:binding>
+    <ns0:binding name="CompleteSale" type="tns:CompleteSale">
+        <ns0:documentation>ESP SOAP Binding for CompleteSale</ns0:documentation>
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <ns0:operation name="CompleteSale">
+            <soap:operation style="document"/>
+            <ns0:input>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/CompleteSaleRequest.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:input>
+            <ns0:output>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/CompleteSaleResponse.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:output>
+            <ns0:fault name="fault">
+                <soap:fault name="fault" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Types/Public/SoapFault.xsd"/>
+            </ns0:fault>
+        </ns0:operation>
+    </ns0:binding>
+    <ns0:binding name="FinalizeSale" type="tns:FinalizeSale">
+        <ns0:documentation>ESP SOAP Binding for FinalizeSale</ns0:documentation>
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <ns0:operation name="FinalizeSale">
+            <soap:operation style="document"/>
+            <ns0:input>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/FinalizeSaleRequest.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:input>
+            <ns0:output>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/FinalizeSaleResponse.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:output>
+            <ns0:fault name="fault">
+                <soap:fault name="fault" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Types/Public/SoapFault.xsd"/>
+            </ns0:fault>
+        </ns0:operation>
+    </ns0:binding>
+    <ns0:binding name="ManageSale" type="tns:ManageSale">
+        <ns0:documentation>ESP SOAP Binding for ManageSale</ns0:documentation>
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <ns0:operation name="ManageSale">
+            <soap:operation style="document"/>
+            <ns0:input>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/ManageSaleRequest.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:input>
+            <ns0:output>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/ManageSaleResponse.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:output>
+            <ns0:fault name="fault">
+                <soap:fault name="fault" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Types/Public/SoapFault.xsd"/>
+            </ns0:fault>
+        </ns0:operation>
+    </ns0:binding>
+    <ns0:binding name="ManageSaleItem" type="tns:ManageSaleItem">
+        <ns0:documentation>ESP SOAP Binding for ManageSaleItem</ns0:documentation>
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <ns0:operation name="ManageSaleItem">
+            <soap:operation style="document"/>
+            <ns0:input>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/ManageSaleItemRequest.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:input>
+            <ns0:output>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/ManageSaleItemResponse.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:output>
+            <ns0:fault name="fault">
+                <soap:fault name="fault" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Types/Public/SoapFault.xsd"/>
+            </ns0:fault>
+        </ns0:operation>
+    </ns0:binding>
+    <ns0:binding name="ValidateAddress" type="tns:ValidateAddress">
+        <ns0:documentation>ESP SOAP Binding for ValidateAddress</ns0:documentation>
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <ns0:operation name="ValidateAddress">
+            <soap:operation style="document"/>
+            <ns0:input>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/ValidateAddressRequest.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:input>
+            <ns0:output>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/ValidateAddressResponse.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:output>
+            <ns0:fault name="fault">
+                <soap:fault name="fault" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Types/Public/SoapFault.xsd"/>
+            </ns0:fault>
+        </ns0:operation>
+    </ns0:binding>
+    <ns0:binding name="CreateActivationQuote" type="tns:CreateActivationQuote">
+        <ns0:documentation>ESP SOAP Binding for CreateActivationQuote</ns0:documentation>
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <ns0:operation name="CreateActivationQuote">
+            <soap:operation style="document"/>
+            <ns0:input>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/CreateActivationQuoteRequest.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:input>
+            <ns0:output>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/CreateActivationQuoteResponse.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:output>
+            <ns0:fault name="fault">
+                <soap:fault name="fault" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Types/Public/SoapFault.xsd"/>
+            </ns0:fault>
+        </ns0:operation>
+    </ns0:binding>
+    <ns0:binding name="UpdateBillingQuoteStatus" type="tns:UpdateBillingQuoteStatus">
+        <ns0:documentation>ESP SOAP Binding for UpdateBillingQuoteStatus</ns0:documentation>
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <ns0:operation name="UpdateBillingQuoteStatus">
+            <soap:operation style="document"/>
+            <ns0:input>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateBillingQuoteStatusRequest.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:input>
+            <ns0:output>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateBillingQuoteStatusResponse.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:output>
+            <ns0:fault name="fault">
+                <soap:fault name="fault" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Types/Public/SoapFault.xsd"/>
+            </ns0:fault>
+        </ns0:operation>
+    </ns0:binding>
+    <ns0:binding name="InquireBillingOrderDetails" type="tns:InquireBillingOrderDetails">
+        <ns0:documentation>ESP SOAP Binding for InquireBillingOrderDetails</ns0:documentation>
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <ns0:operation name="InquireBillingOrderDetails">
+            <soap:operation style="document"/>
+            <ns0:input>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/InquireBillingOrderDetailsRequest.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:input>
+            <ns0:output>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/InquireBillingOrderDetailsResponse.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:output>
+            <ns0:fault name="fault">
+                <soap:fault name="fault" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Types/Public/SoapFault.xsd"/>
+            </ns0:fault>
+        </ns0:operation>
+    </ns0:binding>
+    <ns0:binding name="UpdateBillingQuote" type="tns:UpdateBillingQuote">
+        <ns0:documentation>ESP SOAP Binding for UpdateBillingQuote</ns0:documentation>
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <ns0:operation name="UpdateBillingQuote">
+            <soap:operation style="document"/>
+            <ns0:input>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateBillingQuoteRequest.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:input>
+            <ns0:output>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateBillingQuoteResponse.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:output>
+            <ns0:fault name="fault">
+                <soap:fault name="fault" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Types/Public/SoapFault.xsd"/>
+            </ns0:fault>
+        </ns0:operation>
+    </ns0:binding>
+    <ns0:binding name="CreateShippingQuote" type="tns:CreateShippingQuote">
+        <ns0:documentation>ESP SOAP Binding for CreateShippingQuote</ns0:documentation>
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <ns0:operation name="CreateShippingQuote">
+            <soap:operation style="document"/>
+            <ns0:input>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/CreateShippingQuoteRequest.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:input>
+            <ns0:output>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/CreateShippingQuoteResponse.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:output>
+            <ns0:fault name="fault">
+                <soap:fault name="fault" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Types/Public/SoapFault.xsd"/>
+            </ns0:fault>
+        </ns0:operation>
+    </ns0:binding>
+    <ns0:binding name="ManagePayment" type="tns:ManagePayment">
+        <ns0:documentation>ESP SOAP Binding for ManagePayment</ns0:documentation>
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <ns0:operation name="ManagePayment">
+            <soap:operation style="document"/>
+            <ns0:input>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/ManagePaymentRequest.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:input>
+            <ns0:output>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/ManagePaymentResponse.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:output>
+            <ns0:fault name="fault">
+                <soap:fault name="fault" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Types/Public/SoapFault.xsd"/>
+            </ns0:fault>
+        </ns0:operation>
+    </ns0:binding>
+    <ns0:binding name="ManageABP" type="tns:ManageABP">
+        <ns0:documentation>ESP SOAP Binding for ManageABP</ns0:documentation>
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <ns0:operation name="ManageABP">
+            <soap:operation style="document"/>
+            <ns0:input>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/ManageABPRequest.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:input>
+            <ns0:output>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/ManageABPResponse.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:output>
+            <ns0:fault name="fault">
+                <soap:fault name="fault" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Types/Public/SoapFault.xsd"/>
+            </ns0:fault>
+        </ns0:operation>
+    </ns0:binding>
+    <ns0:binding name="InquireCoverage" type="tns:InquireCoverage">
+        <ns0:documentation>ESP SOAP Binding for InquireCoverage</ns0:documentation>
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <ns0:operation name="InquireCoverage">
+            <soap:operation style="document"/>
+            <ns0:input>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/InquireCoverageRequest.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:input>
+            <ns0:output>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/InquireCoverageResponse.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:output>
+            <ns0:fault name="fault">
+                <soap:fault name="fault" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Types/Public/SoapFault.xsd"/>
+            </ns0:fault>
+        </ns0:operation>
+    </ns0:binding>
+    <ns0:binding name="ProcessPayment" type="tns:ProcessPayment">
+        <ns0:documentation>ESP SOAP Binding for ProcessPayment</ns0:documentation>
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <ns0:operation name="ProcessPayment">
+            <soap:operation style="document"/>
+            <ns0:input>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/ProcessPaymentRequest.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:input>
+            <ns0:output>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/ProcessPaymentResponse.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:output>
+            <ns0:fault name="fault">
+                <soap:fault name="fault" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Types/Public/SoapFault.xsd"/>
+            </ns0:fault>
+        </ns0:operation>
+    </ns0:binding>
+    <ns0:binding name="UpdateWebReport" type="tns:UpdateWebReport">
+        <ns0:documentation>ESP SOAP Binding for UpdateWebReport</ns0:documentation>
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <ns0:operation name="UpdateWebReport">
+            <soap:operation style="document"/>
+            <ns0:input>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateWebReportRequest.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:input>
+            <ns0:output>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/UpdateWebReportResponse.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:output>
+            <ns0:fault name="fault">
+                <soap:fault name="fault" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Types/Public/SoapFault.xsd"/>
+            </ns0:fault>
+        </ns0:operation>
+    </ns0:binding>
+    <ns0:binding name="InquireFeatures" type="tns:InquireFeatures">
+        <ns0:documentation>ESP SOAP Binding for InquireFeatures service</ns0:documentation>
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <ns0:operation name="InquireFeatures">
+            <soap:operation style="document"/>
+            <ns0:input>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/InquireFeaturesRequest.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:input>
+            <ns0:output>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/InquireFeaturesResponse.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:output>
+            <ns0:fault name="fault">
+                <soap:fault name="fault" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Types/Public/SoapFault.xsd"/>
+            </ns0:fault>
+        </ns0:operation>
+    </ns0:binding>
+    <ns0:binding name="InquireDeliveryEstimate" type="tns:InquireDeliveryEstimate">
+        <ns0:documentation>ESP SOAP Binding for InquireDeliveryEstimate service</ns0:documentation>
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <ns0:operation name="InquireDeliveryEstimate">
+            <soap:operation style="document"/>
+            <ns0:input>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/InquireDeliveryEstimateRequest.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:input>
+            <ns0:output>
+                <soap:body parts="body" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Container/Public/InquireDeliveryEstimateResponse.xsd"/>
+                <soap:header message="tns:Header" part="head" use="literal"/>
+            </ns0:output>
+            <ns0:fault name="fault">
+                <soap:fault name="fault" use="literal" namespace="http://esp.cricket.com/ESP/Namespaces/Types/Public/SoapFault.xsd"/>
+            </ns0:fault>
+        </ns0:operation>
+    </ns0:binding>
+    <ns0:service name="Cricket-ESP-HTTP-Services">
+        <ns0:port name="Echo" binding="tns:Echo">
+            <soap:address location="http://s4-gw.cricketcommunications.com:80/Services/Echo"/>
+        </ns0:port>
+        <ns0:port name="InquirePortEligibility" binding="tns:InquirePortEligibility">
+            <soap:address location="http://s4-gw.cricketcommunications.com:80/Services/InquirePortEligibility"/>
+        </ns0:port>
+        <ns0:port name="UpdateSubscriber" binding="tns:UpdateSubscriber">
+            <soap:address location="http://s4-gw.cricketcommunications.com:80/Services/UpdateSubscriber"/>
+        </ns0:port>
+        <ns0:port name="UpdateAccount" binding="tns:UpdateAccount">
+            <soap:address location="http://s4-gw.cricketcommunications.com:80/Services/UpdateAccount"/>
+        </ns0:port>
+        <ns0:port name="SendMessage" binding="tns:SendMessage">
+            <soap:address location="http://s4-gw.cricketcommunications.com:80/Services/SendMessage"/>
+        </ns0:port>
+        <ns0:port name="CompleteSale" binding="tns:CompleteSale">
+            <soap:address location="http://s4-gw.cricketcommunications.com:80/Services/CompleteSale"/>
+        </ns0:port>
+        <ns0:port name="FinalizeSale" binding="tns:FinalizeSale">
+            <soap:address location="http://s4-gw.cricketcommunications.com:80/Services/FinalizeSale"/>
+        </ns0:port>
+        <ns0:port name="ManageSale" binding="tns:ManageSale">
+            <soap:address location="http://s4-gw.cricketcommunications.com:80/Services/ManageSale"/>
+        </ns0:port>
+        <ns0:port name="ManageSaleItem" binding="tns:ManageSaleItem">
+            <soap:address location="http://s4-gw.cricketcommunications.com:80/Services/ManageSaleItem"/>
+        </ns0:port>
+        <ns0:port name="ValidateAddress" binding="tns:ValidateAddress">
+            <soap:address location="http://s4-gw.cricketcommunications.com:80/Services/ValidateAddress"/>
+        </ns0:port>
+        <ns0:port name="CreateActivationQuote" binding="tns:CreateActivationQuote">
+            <soap:address location="http://s4-gw.cricketcommunications.com:80/Services/CreateActivationQuote"/>
+        </ns0:port>
+        <ns0:port name="UpdateBillingQuoteStatus" binding="tns:UpdateBillingQuoteStatus">
+            <soap:address location="http://s4-gw.cricketcommunications.com:80/Services/UpdateBillingQuoteStatus"/>
+        </ns0:port>
+        <ns0:port name="InquireBillingOrderDetails" binding="tns:InquireBillingOrderDetails">
+            <soap:address location="http://s4-gw.cricketcommunications.com:80/Services/InquireBillingOrderDetails"/>
+        </ns0:port>
+        <ns0:port name="UpdateBillingQuote" binding="tns:UpdateBillingQuote">
+            <soap:address location="http://s4-gw.cricketcommunications.com:80/Services/UpdateBillingQuote"/>
+        </ns0:port>
+        <ns0:port name="CreateShippingQuote" binding="tns:CreateShippingQuote">
+            <soap:address location="http://s4-gw.cricketcommunications.com:80/Services/CreateShippingQuote"/>
+        </ns0:port>
+        <ns0:port name="ManagePayment" binding="tns:ManagePayment">
+            <soap:address location="http://s4-gw.cricketcommunications.com:80/Services/ManagePayment"/>
+        </ns0:port>
+        <ns0:port name="ManageABP" binding="tns:ManageABP">
+            <soap:address location="http://s4-gw.cricketcommunications.com:80/Services/ManageABP"/>
+        </ns0:port>
+        <ns0:port name="InquireCoverage" binding="tns:InquireCoverage">
+            <soap:address location="http://s4-gw.cricketcommunications.com:80/Services/InquireCoverage"/>
+        </ns0:port>
+        <ns0:port name="ProcessPayment" binding="tns:ProcessPayment">
+            <soap:address location="http://s4-gw.cricketcommunications.com:80/Services/ProcessPayment"/>
+        </ns0:port>
+        <ns0:port name="UpdateWebReport" binding="tns:UpdateWebReport">
+            <soap:address location="http://s4-gw.cricketcommunications.com:80/Services/UpdateWebReport"/>
+        </ns0:port>
+        <ns0:port name="InquireFeatures" binding="tns:InquireFeatures">
+            <soap:address location="http://s4-gw.cricketcommunications.com:80/Services/InquireFeatures"/>
+        </ns0:port>
+        <ns0:port name="InquireDeliveryEstimate" binding="tns:InquireDeliveryEstimate">
+            <soap:address location="http://s4-gw.cricketcommunications.com:80/Services/InquireDeliveryEstimate"/>
+        </ns0:port>
+    </ns0:service>
+</ns0:definitions>

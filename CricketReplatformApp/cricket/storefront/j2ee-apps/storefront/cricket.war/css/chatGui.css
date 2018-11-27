@@ -1,0 +1,126 @@
+.chatboxDIV {
+    display:none;
+    border: 3px solid #CFE7FF;
+    background:#CFE7FF;
+}
+
+#chat-container-wrapper {
+	border: 1px solid #B5C3D0;
+}
+
+.chatboxtitle {
+    height: 20px;
+}
+
+.chatboxcontent {
+    overflow: auto;
+    padding: 25px;
+    font-family: Arial, Helvetica, 'sans-serif';
+    font-size: 14px;
+    height: 162px !important;
+    background:#FFFFFF;
+    text-align:left;
+}
+
+
+.chatboxtextareaDiv {
+    background:#FFFFFF;
+    overflow: auto;
+    padding:10px 15px;
+}
+.chatboxtextarea {
+    font-family: Arial, Helvetica, 'sans-serif';
+    font-size: 14px;
+    height:50px;
+    overflow:hidden;
+    width: 100%;
+}
+
+.chatboxhead {
+    padding: 2px;
+    font-family: Arial, Helvetica, 'sans-serif';
+    font-size: 12px;
+    background:#CFE7FF;
+    font-weight: bold;
+}
+.chatboxToolBox {
+    float: right;
+    margin-top: -20px;
+}
+
+
+.chatboxmessage {
+	padding-bottom:25px;
+}
+
+
+
+.chatboxmessagefromVisitor {
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+    color: #007d4f;
+}
+
+.chatboxmessageTranslated {
+    color: #FF820E;
+}
+
+.chatboxmessagefromAgent {
+    font-family: Arial, Helvetica, 'sans-serif';
+    font-size: 14px;
+    font-weight: bold;
+    color: red;
+}
+
+.chatboxmessagefromSystem {
+    font-family: Arial, Helvetica, 'sans-serif';
+    font-size: 14px;
+    font-weight: bold;
+    color: green;
+}
+
+.chatboxmessagefromError {
+    font-family: Arial, Helvetica, 'sans-serif';
+    font-size: 14px;
+    font-weight: bold;
+    color: red;    
+}
+
+.chatboxmessagefrom {
+    font-family: Arial, Helvetica, 'sans-serif';
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.chatboxmessagecontentError {
+    font-family: Arial, Helvetica, 'sans-serif';
+    font-size: 14px;
+    font-weight: bold;
+    color: red;     
+}
+
+.chatboxmessagecontentVisitor {
+    font-family: Arial, Helvetica, 'sans-serif';
+    font-size: 14px;
+    color:#333333;
+    overflow: auto;
+}
+.chatboxmessagecontentAgent {
+    font-family: Arial, Helvetica, 'sans-serif';
+    font-size: 14px;
+    overflow: auto;
+    color: #3574FF;
+    font-weight: bold;
+}
+.chatboxmessagecontentSystem {
+    font-family: Arial, Helvetica, 'sans-serif';
+    font-size: 14px;
+    overflow: auto;
+    color: green;
+}
+.chatboxmessagecontent {
+    font-family: Arial, Helvetica, 'sans-serif';
+    font-size: 14px;
+    overflow: auto;
+}

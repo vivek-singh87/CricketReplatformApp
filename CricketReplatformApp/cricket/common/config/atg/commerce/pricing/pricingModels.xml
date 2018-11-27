@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gsa-template SYSTEM "dynamosystemresource:/atg/dtds/gsa/gsa_1.0.dtd">
+<gsa-template>
+	<header>
+	   <name>Cricket Pricing Model</name>
+	   <author>Cricket Communications</author>
+	</header>
+
+  <item-descriptor name="Item Discount" xml-combine="append">   
+    <table name="ckt_promo_type" id-column-name="promotion_id" type="auxiliary" shared-table-sequence="1">
+      <property name="itemDiscountType" data-type="enumerated" column-name="item_Promo_type" hidden="false" category-resource="categoryBasics" display-name-resource="Item Discount Type" queryable="true" required="false" cache-mode="inherit"  readable="true"  writable="true" expert="false">
+        <option value="Web Instant Discount" code="0"/>
+        <option value="Instant Discount" code="1"/>
+        <option value="mail in Rebate" code="2"/>
+        <option value="Multi Line Discount" code="3"/>
+        <attribute name="uiwritable" value="true"/>
+        <attribute name="propertySortPriority" value="10"/>
+        <attribute name="useCodeForValue" value="false"/>
+      </property>     
+    </table>
+  </item-descriptor>
+</gsa-template>

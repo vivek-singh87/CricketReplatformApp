@@ -1,0 +1,217 @@
+<!--
+	This ant runs SQL on the database.
+-->
+<project name="sql" default="createtables" basedir=".">
+
+	<!-- Here we stub out the createtables and droptables tasks so other 
+		submodules don't have to. -->
+
+	<!-- Creates the modules tables. -->
+	<target name="createtables" description="Creates all tables"></target>
+
+	<!-- Drops the modules tables. -->
+	<target name="droptables" description="Drops all tables"></target>
+
+	<!-- Performs an sqlplus statement
+		Needs to be passed these variables
+		
+		sql.ddl.file   - The file name of the sql to run
+		jdbc.user      - The database user name
+		jdbc.password  - The password for the user
+		jdbc.hostname  - The hostname of the database server
+	-->
+	<target name="-performsql"
+		description="Runs a DDL against a sql schema and host">
+		<echo
+			message="about to execute ${sql.ddl.file} using ${jdbc.user}/${jdbc.password}@${jdbc.hostname}" />
+		<exec executable="${sqlplus.win.cmd}" failonerror="yes"
+			os="Windows 2000,Windows NT,Windows XP">
+			<arg value="${jdbc.user}/${jdbc.password}@${jdbc.hostname}" />
+			<arg value="@${sql.ddl.file}" />
+		</exec>
+		<exec executable="${sqlplus.unix.cmd}" failonerror="yes"
+			os="Mac OS X,Solaris,Linux">
+			<arg value="${jdbc.user}/${jdbc.password}@${jdbc.hostname}" />
+			<arg value="@${sql.ddl.file}" />
+		</exec>
+	</target>
+	
+	<!-- Export database schema task -->
+	<target name="-exportdb" description="Exports the database">
+		<echo message="about to export the database using ${jdbc.user}/${jdbc.password}@${jdbc.hostname} for schemas ${sql.owners}" />
+		<exec executable="${exp.win.cmd}" failonerror="yes" os="Windows 2000,Windows NT,Windows XP">
+			<arg value="${jdbc.user}/${jdbc.password}@${jdbc.hostname}" />
+			<arg value="file=${sql.bin.file}" />
+			<arg value="log=${sql.log.file}" />
+			<arg value="owner=${sql.owners}" />
+			<arg value="statistics=none" />
+		</exec>
+		<exec executable="${exp.unix.cmd}" failonerror="yes" os="Mac OS X,Solaris,Linux">
+			<arg value="${jdbc.user}/${jdbc.password}@${jdbc.hostname}" />
+			<arg value="file=${sql.bin.file}" />
+      <arg value="log=${sql.log.file}" />
+			<arg value="owner=${sql.owners}" />
+      <arg value="statistics=none" />
+		</exec>
+	</target>
+		
+    <!-- Perform an sqlplus statement against the core schema -->
+	<target name="-performsystemsql"
+		description="Performs an sqlplus statement against the system schema">
+		<input message="Please enter SYSTEM password: " addproperty="system.db.password"/>
+        <ant target="-performsql">
+			<property name="jdbc.user" value="SYSTEM" />
+			<property name="jdbc.password" value="${system.db.password}" />
+		</ant>
+	</target>
+    
+	<!-- Perform an sqlplus statement against the core schema -->
+	<target name="-performcoresql"
+		description="Performs an sqlplus statement against the core schema">
+		<ant target="-performsql">
+			<property name="jdbc.user" value="${jdbc.core.user}" />
+			<property name="jdbc.password"
+				value="${jdbc.core.password}" />
+		</ant>
+		<ant target="-stagecoresql" />
+	</target>
+
+	<!-- Perform an sqlplus statement against both catalog schemas -->
+	<target name="-performcatalogasql"
+		description="Performs an sqlplus statement against both catalog schemas">
+		<ant target="-performsql">
+			<property name="jdbc.user" value="${jdbc.cataloga.user}" />
+			<property name="jdbc.password"
+				value="${jdbc.cataloga.password}" />
+		</ant>
+		<ant target="-stagecatasql" />
+	</target>
+    
+    <target name="-performcatalogbsql"
+		description="Performs an sqlplus statement against both catalog schemas">
+		<ant target="-performsql">
+			<property name="jdbc.user" value="${jdbc.catalogb.user}" />
+			<property name="jdbc.password"
+				value="${jdbc.catalogb.password}" />
+		</ant>
+    <ant target="-stagecatbsql" />
+	</target>
+
+    <target name="-performpubsql" description="Performs a sqlplus statement against the pub schema">
+		<ant target="-performsql">
+			<property name="jdbc.user" value="${jdbc.pub.user}" />
+			<property name="jdbc.password" value="${jdbc.pub.password}" />
+		</ant>
+	</target>
+    
+	<!-- Perform an sqlplus statement against the svcagent schemas -->
+	<target name="-performsvcagentsql"
+		description="Performs an sqlplus statement against the Agent schema">
+		<ant target="-performsql">
+			<property name="jdbc.user" value="${jdbc.svcagent.user}" />
+			<property name="jdbc.password"
+				value="${jdbc.svcagent.password}" />
+		</ant>
+	</target>
+
+	<!-- Perform an sqlplus statement against the svcadmin schemas -->
+	<target name="-performsvcadminsql"
+		description="Performs an sqlplus statement against the Agent schema">
+		<ant target="-performsql">
+			<property name="jdbc.user" value="${jdbc.svcadmin.user}" />
+			<property name="jdbc.password"
+				value="${jdbc.svcadmin.password}" />
+		</ant>
+	</target>
+
+	<target name="exportallschemas" depends="-createbackupdir" 
+		description="backs up the core schema">
+		<ant target="-exportdb">
+			<property name="jdbc.user" value="${jdbc.core.user}" />
+			<property name="jdbc.password" value="${jdbc.core.password}" />
+			<property name="sql.bin.file" value="${global.dbbackup.dir}/${jdbc.hostname}_${jdbc.core.user}_all_schemas.dmp" />
+			<property name="sql.log.file" value="${global.dbbackup.dir}/${jdbc.hostname}_${jdbc.core.user}_all_schemas.log" />
+			<property name="sql.owners" value="${jdbc.core.user}" />
+		</ant>
+		<ant target="-exportdb">
+			<property name="jdbc.user" value="${jdbc.cataloga.user}" />
+			<property name="jdbc.password" value="${jdbc.cataloga.password}" />
+			<property name="sql.bin.file" value="${global.dbbackup.dir}/${jdbc.hostname}_${jdbc.cataloga.user}_all_schemas.dmp" />
+			<property name="sql.log.file" value="${global.dbbackup.dir}/${jdbc.hostname}_${jdbc.cataloga.user}_all_schemas.log" />
+			<property name="sql.owners" value="${jdbc.cataloga.user}" />
+		</ant>
+		<ant target="-exportdb">
+			<property name="jdbc.user" value="${jdbc.catalogb.user}" />
+			<property name="jdbc.password" value="${jdbc.catalogb.password}" />
+			<property name="sql.bin.file" value="${global.dbbackup.dir}/${jdbc.hostname}_${jdbc.catalogb.user}_all_schemas.dmp" />
+			<property name="sql.log.file" value="${global.dbbackup.dir}/${jdbc.hostname}_${jdbc.catalogb.user}_all_schemas.log" />
+			<property name="sql.owners" value="${jdbc.catalogb.user}" />
+		</ant>
+		<ant target="-exportdb">
+			<property name="jdbc.user" value="${jdbc.pub.user}" />
+			<property name="jdbc.password" value="${jdbc.pub.password}" />
+			<property name="sql.bin.file" value="${global.dbbackup.dir}/${jdbc.hostname}_${jdbc.pub.user}_all_schemas.dmp" />
+			<property name="sql.log.file" value="${global.dbbackup.dir}/${jdbc.hostname}_${jdbc.pub.user}_all_schemas.log" />
+			<property name="sql.owners" value="${jdbc.pub.user}" />
+		</ant>
+	</target>
+	
+	<target name="-createbackupdir">
+		<mkdir dir="${global.dbbackup.dir}" />
+	</target>
+	
+	<taskdef name="foreach" classname="net.sf.antcontrib.logic.ForEach" classpath="${global.dir}/../lib/ant-contrib.jar" />
+	<target name="-stagecoresql">
+		<foreach list="${global.stage.env}" delimiter="," trim="true" param="envprefix" target="-performstagecoresql" />
+	</target>
+	<target name="-performstagecoresql" description="calls core perform sql task with stage env core credential">
+		<propertycopy name="stage.hostname" from="${envprefix}.jdbc.hostname" />
+		<propertycopy name="stage.core.user" from="${envprefix}.jdbc.core.user" />
+		<propertycopy name="stage.core.password" from="${envprefix}.jdbc.core.password" />
+		<echo message="running task on core schema ${stage.core.user}/${stage.core.password}@${stage.hostname}" />
+    <ant target="-performsql">
+      <property name="jdbc.hostname" value="${stage.hostname}" />
+      <property name="jdbc.user" value="${stage.core.user}" />
+      <property name="jdbc.password" value="${stage.core.password}" />
+    </ant>
+	</target>
+  <target name="-stagecatasql">
+    <foreach list="${global.stage.env}" delimiter="," trim="true" param="envprefix" target="-performstagecatasql" />
+  </target>	
+	<target name="-performstagecatasql" description="calls core perform sql task with stage env cata credential">
+		<propertycopy name="stage.hostname" from="${envprefix}.jdbc.hostname" />
+		<propertycopy name="stage.cata.user" from="${envprefix}.jdbc.cata.user" />
+		<propertycopy name="stage.cata.password" from="${envprefix}.jdbc.cata.password" />
+		<echo message="running task on core schema ${stage.cata.user}/${stage.cata.password}@${stage.hostname}" />
+    <ant target="-performsql">
+      <property name="jdbc.hostname" value="${stage.hostname}" />
+      <property name="jdbc.user" value="${stage.cata.user}" />
+      <property name="jdbc.password" value="${stage.cata.password}" />
+    </ant>
+	</target>
+  <target name="-stagecatbsql">
+    <foreach list="${global.stage.env}" delimiter="," trim="true" param="envprefix" target="-performstagecatbsql" />
+  </target>	
+	<target name="-performstagecatbsql" description="calls core perform sql task with stage env catb credential">
+		<propertycopy name="stage.hostname" from="${envprefix}.jdbc.hostname" />
+		<propertycopy name="stage.catb.user" from="${envprefix}.jdbc.catb.user" />
+		<propertycopy name="stage.catb.password" from="${envprefix}.jdbc.catb.password" />
+		<echo message="running task on core schema ${stage.catb.user}/${stage.catb.password}@${stage.hostname}" />
+    <ant target="-performsql">
+      <property name="jdbc.hostname" value="${stage.hostname}" />
+      <property name="jdbc.user" value="${stage.catb.user}" />
+      <property name="jdbc.password" value="${stage.catb.password}" />
+    </ant>		
+	</target>
+	<target name="removeDevUsers" description="Remove the dev profile users">
+		<ant target="-performcoresql">
+			<property name="sql.ddl.file" value="${data.dev.profile-users.cleanup.file}" />
+		</ant>
+		<if name="install.ca.data" value="true">
+            <echo>CA Data is stored. so remove dev user in CA.</echo>
+			<ant target="-performpubsql">
+				<property name="sql.ddl.file" value="${data.dev.ca-users.cleanup.file}" />
+			</ant>
+        </if>
+  	</target>
+</project>

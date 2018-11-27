@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+ATG-Config-Path: config/
+ATG-Required: DAS DAF.Deployment RL DAS-UI DPS DPS.InternalUsers DSS DCS DSS.InternalUsers Publishing.base Store.EStore.Versioned DAS cricket.common
+ATG-J2EE: j2ee-apps/manage
+ATG-EAR-Module: j2ee-apps/manage
+ATG-Class-Path: lib/classes.jar lib/opencsv-2.3.jar lib/pimparc.jar classes
+
+Name: lib/classes.jar
+ATG-Client-Update-File: true
+ATG-Client-Update-Version: 4.0

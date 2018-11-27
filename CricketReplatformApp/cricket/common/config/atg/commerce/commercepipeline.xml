@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE pipelinemanager
+        PUBLIC "-//Art Technology Group, Inc.//DTD Dynamo Pipeline Manager//EN"
+        'http://www.atg.com/dtds/pipelinemanager/pipelinemanager_1.0.dtd'>
+<pipelinemanager>
+	<!--
+		Author : TechMahindra / Cricket of ATG Commerce
+		Pipeline Meant ONLY to add/change/remove any commerce pipeline
+		processors Use ONLY when absolutely needed
+	-->
+	 
+	
+	<!--  +++++++++++++++++++++++++++++    -->
+	<!--  Need to add a validator for Cricket custom Payment groups -->
+ <!-- 	<pipelinechain name="validatePaymentGroup" transaction="TX_REQUIRED"
+		headlink="dispatchOnPGType" xml-combine="append">
+		  <pipelinelink name="validateCreditCardPG" xml-combine="replace" transaction="TX_MANDATORY">
+ 			<processor class="atg.service.pipeline.processor.EmptyProcessor" />
+		</pipelinelink>  
+	</pipelinechain> -->
+	
+	<pipelinechain name="validatePaymentGroup" transaction="TX_REQUIRED"
+              headlink="dispatchOnPGType" xml-combine="append">
+                <pipelinelink name="validateCreditCardPG" transaction="TX_MANDATORY" xml-combine="replace">
+                     <processor class="atg.service.pipeline.processor.EmptyProcessor" />
+              </pipelinelink>  
+       </pipelinechain>
+	
+	 <pipelinechain name="validateForCheckout" transaction="TX_REQUIRED" headlink="validateOrderForCheckout">
+        <pipelinelink name="creditCardModCheck"  xml-combine="replace" transaction="TX_MANDATORY">
+            <processor class="atg.service.pipeline.processor.EmptyProcessor" />
+            <transition returnvalue="1" link="validatePaymentGroupsForCheckout"/>
+        </pipelinelink>
+        
+        <pipelinelink transaction="TX_MANDATORY"  xml-combine="replace"  name="validateOrderCostsForCheckout">
+            <processor class="atg.service.pipeline.processor.EmptyProcessor" />
+            <transition returnvalue="1" link="validateHandlingInstructionsForCheckout"/>
+        </pipelinelink>
+        
+		</pipelinechain> 
+ <!-- InquireBillCycleDates,UpdateWebReport,CompleteSale -->
+	<pipelinechain name="processOrder" transaction="TX_REQUIRED" xml-combine="append"> 
+			 
+			 <pipelinelink name="checkForExpiredPromotions" transaction="TX_MANDATORY">
+            	<processor jndi="/atg/commerce/order/processor/CheckForExpiredPromotions"/>
+            	<transition returnvalue="1" link="removeEmptyShippingGroups" xml-combine="remove"/>
+            	<transition returnvalue="1" link="inventoryCheck"/>
+        	</pipelinelink>
+        	
+        	 <pipelinelink name="inventoryCheck" transaction="TX_MANDATORY">
+            	<processor jndi="/com/cricket/commerce/order/processor/ProcessInventoryCheck"/>
+             	<transition returnvalue="1" link="updateBillingQuote"/>
+        	</pipelinelink>
+			 
+			<pipelinelink name="updateBillingQuote" transaction="TX_MANDATORY">
+				<processor jndi="/com/cricket/commerce/order/processor/ProcessUpdateBillingQuote"/>
+				<transition returnvalue="1" link="updateBillingQuoteStatus"/>
+			 </pipelinelink>
+			 
+			 <pipelinelink name="updateBillingQuoteStatus" transaction="TX_MANDATORY">
+				<processor jndi="/com/cricket/commerce/order/processor/ProcessUpdateBillingQuoteStatus"/>
+				<transition returnvalue="1" link="updateWebReport"/>
+				<transition returnvalue="2" link="managePaymentABP"/>
+			 </pipelinelink>
+			  <pipelinelink name="managePaymentABP" transaction="TX_MANDATORY">
+				<processor jndi="/com/cricket/commerce/payment/processor/ProcessManageABP"/>
+				<transition returnvalue="1" link="updateWebReport"/>
+	  		</pipelinelink> 
+	  	 
+			 <!-- <pipelinelink name="updateSubscriber" transaction="TX_MANDATORY">
+				<processor jndi="/com/cricket/commerce/order/processor/ProcessUpdateSubscriber"/>
+				<transition returnvalue="1" link="updateWebReport"/>
+			 </pipelinelink>
+			 -->
+			 <pipelinelink name="updateWebReport" transaction="TX_MANDATORY">
+				<processor jndi="/com/cricket/commerce/order/processor/ProcessUpdateWebReport"/>
+				<transition returnvalue="1" link="managePaymentforRRC"/>
+				<transition returnvalue="2" link="finalizeSale"/>
+			 </pipelinelink>
+			 
+			  <pipelinelink name="managePaymentforRRC" transaction="TX_MANDATORY">
+				<processor jndi="/com/cricket/commerce/order/processor/ProcessManagePaymentRRC"/>
+				<transition returnvalue="1" link="finalizeSale"/>
+			 </pipelinelink>
+			 
+			 <pipelinelink name="finalizeSale" transaction="TX_MANDATORY">
+				<processor jndi="/com/cricket/commerce/order/processor/ProcessFinalizeSalePostBillingOrder"/>
+				<transition returnvalue="1" link="completeSale"/>
+			 </pipelinelink>
+			 
+			 <pipelinelink name="completeSale" transaction="TX_MANDATORY">
+				<processor jndi="/com/cricket/commerce/order/processor/ProcessCompleteSale"/>
+			 <transition link="decreaseInventory" returnvalue="1"/>
+   			</pipelinelink>
+   			<pipelinelink name="decreaseInventory" transaction="TX_MANDATORY">
+			<processor jndi="/com/cricket/commerce/order/processor/esp/ProcessInventoryDecrease"/>
+			<transition returnvalue="1" link="clearSessionItemData"/>
+   			</pipelinelink>
+			 
+			 <pipelinelink name="clearSessionItemData" transaction="TX_MANDATORY">
+				<processor jndi="/com/cricket/commerce/order/processor/ClearSessionItemData"/>
+				<transition returnvalue="1" link="removeEmptyShippingGroups"/>
+			 </pipelinelink>
+			  
+        </pipelinechain>
+
+
+	<!-- This updateOrder chain is extended to add logic to save order objects to the repository-->
+    <pipelinechain name="updateOrder" transaction="TX_REQUIRED" headlink="updateOrderObject" xml-combine="append">
+    	<pipelinelink name="updateOrderObject" transaction="TX_MANDATORY" xml-combine="replace">
+            <processor jndi="/atg/commerce/order/processor/SaveOrderObject"/>
+            <transition returnvalue="1" link="updateCricketPackageObject"/>
+        </pipelinelink>
+		<pipelinelink name="updateCricketPackageObject" transaction="TX_MANDATORY">
+            <processor jndi="/atg/commerce/order/processor/SaveCricketPackageObject"/>
+            <transition returnvalue="1" link="updateCommerceItemObjects"/>
+        </pipelinelink>
+    </pipelinechain>
+    
+ <!-- This updateOrder chain is extended to add logic to save order objects to the repository-->
+    <pipelinechain name="refreshOrder" transaction="TX_REQUIRED" headlink="loadOrderObjectForRefresh" xml-combine="append">
+    	<pipelinelink name="removeExpiredCommerceItems" transaction="TX_MANDATORY" xml-combine="replace">
+            <processor jndi="/atg/commerce/order/processor/RemoveExpiredCommerceItems"/>
+            <transition returnvalue="1" link="loadCricketPackageObject"/>
+        </pipelinelink>
+		<pipelinelink name="loadCricketPackageObject" transaction="TX_MANDATORY">
+            <processor jndi="/atg/commerce/order/processor/LoadCricketPackageObject"/>
+        </pipelinelink>
+    </pipelinechain>
+	
+	<!--  ESP Services calling -->
+	
+	<pipelinechain name="cricketESPServicesChain" transaction="TX_REQUIRED" headlink="determineNextLink">
+		<!-- <pipelinelink name="validateAddress" transaction="TX_MANDATORY">
+			<processor jndi="/com/cricket/commerce/order/processor/esp/procValidateAccountHolderAddress"/>
+			<transition link="validateShippingAddress" returnvalue="1"/>
+		</pipelinelink> -->
+
+		<pipelinelink name="determineNextLink" transaction="TX_MANDATORY">
+			<processor jndi="/com/cricket/commerce/order/processor/esp/ProcDetermineNextLink"/>
+			<transition link="sendPromotionalMessage" returnvalue="1"/>
+			<transition link="updateSubscriber" returnvalue="2"/>
+			<transition link="inquireDeliveryEstimateDate" returnvalue="3"/>
+		</pipelinelink>  
+
+		<pipelinelink name="sendPromotionalMessage" transaction="TX_MANDATORY">
+			<processor jndi="/com/cricket/commerce/order/processor/esp/ProcessSendMessage"/>
+			<transition link="inquireDeliveryEstimateDate" returnvalue="1"/>
+			<transition link="updateSubscriber" returnvalue="2"/>
+ 		</pipelinelink>
+
+		<pipelinelink name="inquireDeliveryEstimateDate" transaction="TX_MANDATORY">
+			 <processor jndi="/com/cricket/commerce/order/processor/esp/ProcessInquireDeliveryEstimateDate"/>
+				<transition link="createActivationQuote" returnvalue="1"/>
+				<transition link="updateSubscriber" returnvalue="2"/>
+				 <transition link="createShippingQuote" returnvalue="3"/>
+ 		</pipelinelink>
+
+		<pipelinelink name="createActivationQuote" transaction="TX_MANDATORY">
+ 		  <processor jndi="/com/cricket/commerce/order/processor/esp/ProcessCreateActivationQuote"/>
+					<transition link="manageSale" returnvalue="1"/>  
+ 		</pipelinelink>
+
+ 		<pipelinelink name="updateSubscriber" transaction="TX_MANDATORY">
+					<processor jndi="/com/cricket/commerce/order/processor/esp/ProcessUpdateSubscriber"/>
+					<transition link="manageSale" returnvalue="1"/>
+ 		</pipelinelink>
+
+ 		<pipelinelink name="createShippingQuote" transaction="TX_MANDATORY">
+				<processor jndi="/com/cricket/commerce/order/processor/esp/ProcessCreateShippingQuote"/>
+				<transition link="manageSale" returnvalue="1"/>
+ 		</pipelinelink>
+
+ 		<pipelinelink name="manageSale" transaction="TX_MANDATORY">
+				<processor jndi="/com/cricket/commerce/order/processor/esp/ProcessManageSale"/>
+				<transition link="finalizeSaleInShippingPage" returnvalue="1"/>
+ 		</pipelinelink>
+ 		<pipelinelink name="finalizeSaleInShippingPage" transaction="TX_MANDATORY">
+			<processor jndi="/com/cricket/commerce/order/processor/esp/ProcessFinalizeSale"/>
+			<transition link="manageSaleItem" returnvalue="1"/>
+ 		</pipelinelink>
+ 		
+ 		<pipelinelink name="manageSaleItem" transaction="TX_MANDATORY">
+			<processor jndi="/com/cricket/commerce/order/processor/esp/ProcessManageSaleItem"/>
+			<transition link="assignSaleTax" returnvalue="1"/>
+  		</pipelinelink>
+  		
+  		<pipelinelink name="assignSaleTax" transaction="TX_MANDATORY">
+			<processor jndi="/com/cricket/commerce/order/processor/esp/ProcessAssignSaleTax"/>
+   		</pipelinelink>
+  </pipelinechain>
+  
+	<!--  vesta payment ESP calls -->
+	
+	<pipelinechain name="cricketESPVestaPaymentChain"  transaction="TX_REQUIRED" headlink="inventoryCheckInPayment">
+		<pipelinelink name="inventoryCheckInPayment" transaction="TX_MANDATORY">
+			<processor jndi="/com/cricket/commerce/order/processor/ProcessInventoryCheck"/>
+ 			<transition link="managePayment" returnvalue="1"/>
+ 		</pipelinelink>
+		<pipelinelink name="managePayment" transaction="TX_MANDATORY">
+			<processor jndi="/com/cricket/commerce/payment/processor/ProcessManagePayment"/>
+ 			 <transition link="emptyProcessor" returnvalue="1"/>
+ 		</pipelinelink>
+ 
+  		<pipelinelink name="emptyProcessor" transaction="TX_MANDATORY">
+ 			<processor class="atg.service.pipeline.processor.EmptyProcessor" />
+		</pipelinelink>  
+
+</pipelinechain>
+
+
+	
+</pipelinemanager>

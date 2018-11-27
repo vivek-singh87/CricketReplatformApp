@@ -1,0 +1,1196 @@
+/* ADD sitewide.css stuff first */
+/** content **/
+#content
+{
+	float: left;
+	display: inline; /* IE6 double margin hack */
+	width: 100%;
+	margin-left: 0;
+	margin-right: -100%; /* Negative value of #content's width + left margin. */
+	padding: 0; /* DO NOT CHANGE. Add padding or margin to #content-inner. */
+}
+
+#content-inner,
+.no-sidebars #content-inner
+{
+	margin: 0;
+	padding: 0;
+}
+
+.sidebar-left #content-inner
+{
+	padding-left: 212px; /* The width + left margin of #sidebar-left. */
+	padding-right: 0;
+}
+
+.sidebar-right #content-inner
+{
+	padding-left: 0;
+	padding-right: 252px; /* The width + right margin of #sidebar-right. */
+}
+
+.two-sidebars #content-inner
+{
+	padding-left: 212px; /* The width + left margin of #sidebar-left. */
+	padding-right: 252px; /* The width + right margin of #sidebar-right. */
+}
+
+/** sidebar-left **/
+#sidebar-left
+{
+	float: left;
+	display: inline; /* IE6 double margin hack */
+	width: 200px;
+	margin-left: 0;
+	margin-right: -200px; /* Negative value of #sidebar-left's width + left margin. */
+	padding: 0; /* DO NOT CHANGE. Add padding or margin to #sidebar-left-inner. */
+}
+
+#sidebar-left-inner
+{
+	padding: 0;
+}
+
+/** sidebar-right **/
+#sidebar-right
+{
+	float: right;
+	display: inline; /* IE6 double margin hack */
+	width: 240px;
+	margin-left: 0px; /* Negative value of #sidebar-right's width + right margin. */
+	margin-right: 0;
+	padding: 0; /* DO NOT CHANGE. Add padding or margin to #sidebar-right-inner. */
+}
+
+#sidebar-right-inner
+{
+	padding: 0;
+}
+
+.sidebar-banners {
+	margin: 0 0 5px 0;
+}
+
+
+/**
+ * Sidebar Elements
+ **/
+
+/* Support and Learning Navs */
+#nav-side-wide-wrapper
+{
+	margin-bottom: 10px;
+}
+
+#nav-side-wide-wrapper .rounded-box
+{
+	padding: 0;
+}
+
+#nav-side-wide-wrapper .rounded-box ul
+{
+	padding: 0 10px 10px 10px;
+}
+
+#nav-side-wide-wrapper .rounded-box ul li,
+#nav-side-wide-wrapper .rounded-box ul li.active
+{
+	padding: 0 5px 0 20px;
+	line-height: 2em;
+}
+
+#nav-side-wide-wrapper .rounded-box ul ul li,
+#nav-side-wide-wrapper .rounded-box ul ul ul li
+{
+	padding: 0 5px 0 10px;
+}
+
+#nav-side-wide-wrapper .rounded-box ul ul li.active,
+#nav-side-wide-wrapper .rounded-box ul ul ul li.active
+{
+	padding: 0 5px 0 10px;
+	background: url(/images/icons/icon-active-indicator.png) no-repeat 0 8px;
+}
+
+#nav-side-wide-wrapper .rounded-box ul li.active
+{
+	background: url(/images/icons/icon-active-indicator.png) no-repeat 10px 8px;
+}
+
+#nav-side-wide-wrapper .rounded-box-nav-category
+{
+	padding: 5px;
+	margin: 0 0 5px 0;
+	background-color: #e8e8e8;
+}
+
+#nav-side-wide-wrapper .rounded-box-nav-category-top
+{
+	margin-top: 0;
+}
+
+/* Generic sidebar nav */
+.nav-bar-wrapper
+{
+	background-image: url(/images/backgrounds/bkgd-shop-sidebar-top.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	padding-top: 4px;
+}
+
+.nav-bar
+{
+	background-image: url(/images/backgrounds/bkgd-shop-sidebar.png);
+	background-repeat: repeat-y;
+	background-position: left top;
+}
+
+.nav-bar-bottom
+{
+	background-image: url(/images/backgrounds/bkgd-shop-sidebar-bottom.png);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	padding-bottom: 4px;
+	font-size: 1px; /* for IE6 */
+}
+
+.nav-bar-header
+{
+	padding: 10px;
+}
+
+.nav-bar-content
+{
+	padding: 5px 0px 5px 20px;
+}
+
+.nav-bar-subheader
+{
+	padding: 15px 0px 0px 20px;
+}
+
+#checkout-sidebar
+{
+	background-image: url(/images/backgrounds/bkgd-checkout-sidebar-top.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	width: 200px;
+}
+
+#checkout-sidebar h3
+{
+	padding: 18px 10px 8px 38px;
+}
+
+#checkout-sidebar-inner
+{
+	background-image: url(/images/backgrounds/bkgd-checkout-sidebar-bottom.png);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	padding: 10px 14px 9px 14px;
+}
+
+#checkout-sidebar-inner .menu li
+{
+	background-image: url(/images/sprites/sprite_stars.png);
+	background-repeat: no-repeat;
+	background-position: left -65px;
+	padding-bottom: 10px;
+	padding-left: 18px;
+	float: left;
+	display: inline; /* IE6 double margin hack */
+}
+
+.sidebar-logos
+{
+	text-align: center;
+	padding: 5px 0;
+}
+
+.sidebar-logos img
+{
+	padding: 5px 0;
+}
+
+/**
+ * Sidebar promotions
+ */
+.sidebar-promo-one, .sidebar-promo-two, .sidebar-promo-three, .sidebar-promo-four
+{
+	height: 130px;
+	width: 100%;
+}
+
+.sidebar-promo-one
+{
+	background: url(/images/misc/learn-landing-side.png) no-repeat center top;
+}
+
+.sidebar-promo-two
+{
+	background: url(/images/misc/learn-landing-side2.png) no-repeat center top;
+}
+
+.sidebar-promo-three
+{
+	background: url(/images/misc/learn-cricket-side.png) no-repeat center top;
+}
+
+.sidebar-promo-four
+{
+	background: url(/images/misc/dont-have-cricket-side.png) no-repeat center top;
+}
+
+.side-ad-button
+{
+	padding:93px 10px 0 0;
+}
+
+/**
+ * Box Styles
+ * .rounded-header-light-left, .rounded-header-light-right, .rounded-box-left, and .rounded-box-right
+ * are adaptations for 2 column rounded header boxes. Note, they use a "fake" center border as in forms.css.
+ * The "fake" border (background-image) allows the columns' height to display evenly. More CSS magic.
+ **/
+.round-header-wrapper
+{
+}
+
+.rounded-header-light, .rounded-header-dark,
+.rounded-header-light-left, .rounded-header-light-right,
+.rounded-header-wrap-dark, .rounded-header-wrap-dark-short, .rounded-header-blue
+{
+	width: 100%;
+}
+
+.rounded-header-light, .rounded-header-light-left
+{
+	background: url(/images/sprites/sprite_formboxes.png) no-repeat left -100px;
+}
+
+.rounded-header-blue
+{
+	background: url(/images/sprites/sprite_formboxes.png) no-repeat left -300px;
+}
+
+.rounded-header-light-right
+{
+	border-left: 1px solid #d1d1d1;
+	background: url(/images/backgrounds/bkgd-rounded-head-light-fill.png) repeat-x;
+}
+
+.rounded-header-dark
+{
+	background: url(/images/sprites/sprite_formboxes.png) no-repeat left 0;
+}
+
+.rounded-header-wrap-dark
+{
+	background: url(/images/sprites/sprite_community_boxes.png) no-repeat left 0;
+}
+
+.rounded-header-wrap-dark-short
+{
+	background: url(/images/sprites/sprite_community_boxes_short.png) no-repeat left 0;
+}
+
+.rounded-header-light-inner, .rounded-header-dark-inner,
+.rounded-header-light-left-inner, .rounded-header-light-right-inner, .rounded-header-blue-inner
+{
+	line-height: 43px;
+	margin-left: 4px;
+	padding: 0 27px 0 23px;
+}
+
+.rounded-header-wrap-dark-inner
+{
+	height: 50px;
+	margin-left: 8px;
+	padding: 0 27px 0 23px;
+	background: url(/images/sprites/sprite_community_boxes.png) no-repeat right -50px;
+	position: relative;
+}
+
+.rounded-header-light-inner, .rounded-header-light-right-inner
+{
+	background: url(/images/sprites/sprite_formboxes.png) no-repeat right -150px;
+}
+
+.rounded-header-blue-inner
+{
+	background: url(/images/sprites/sprite_formboxes.png) no-repeat right -350px;
+}
+
+.rounded-header-light-left-inner
+{
+	background: url(/images/backgrounds/bkgd-rounded-head-light-fill.png) repeat-x;
+}
+
+.rounded-header-dark-inner
+{
+	background: url(/images/sprites/sprite_formboxes.png) no-repeat right -50px;
+}
+
+.rounded-header-light h2 span.rounded-header-asterisk
+{
+	padding-left: 65px;
+}
+
+.rounded-box, .rounded-box-wrap-dark
+{
+	margin: 0 2px;
+	padding: 12px;
+	border-left: 1px solid #d1d1d1;
+	border-right: 1px solid #d1d1d1;
+	border-bottom: 1px solid #d1d1d1;
+	background-color: #f1f1f1;
+}
+
+.rounded-box-wrap-dark
+{
+	margin: -7px 5px 0 8px;
+}
+
+.rounded-box-left, .rounded-box-right
+{
+	margin: 0;
+	border-style: none;
+	border-width: 0; /* for IE */
+	background-color: transparent;
+}
+
+.rounded-box-sub-white
+{
+	background: #fff;
+	border-top: 0px;
+}
+
+.rounded-box-light-grey
+{
+	background: #f8f8f8;
+}
+
+.rounded-box-row {
+	padding: 6px;
+}
+
+.rounded-box-row-alt {
+	background-color: #e6e6e6;
+}
+
+.rounded-box-grey-gradient {
+	background: url(/images/backgrounds/bkgd-gradient-vertical-grey.png) repeat-x top left;
+}
+
+/* Rounded box as a nav */
+
+.rounded-box-nav-wrapper {
+	padding: 0;
+}
+
+.rounded-box-nav-link {
+	padding: 3px 0 3px 10px;
+}
+.rounded-box-nav-link-top {
+	padding: 8px 0 3px 10px;
+}
+
+.rounded-box-nav-link-sub {
+	padding-left: 20px;
+}
+
+.rounded-box-nav-category {
+	background: #e5e5e5;
+}
+
+/**
+ * Utilities
+ **/
+/* Use this inline class for inline lists with divider bars.
+   There will be space inconsistancies with just a display: inline.
+   One caveat, the list will have to be centered with padding. */
+.inline li
+{
+	float: left;
+	display: inline; /* IE6 double margin hack */
+}
+
+/**
+ * Overrides
+ **/
+.float-left
+{
+	float: left;
+	display: inline; /* IE6 double margin hack */
+}
+
+.float-right
+{
+	float: right;
+	display: inline; /* IE6 double margin hack */
+}
+
+.float-none
+{
+	float: none !important;
+}
+
+.block-center
+{
+	display: block;
+	margin: 0 auto;
+}
+
+.no-padding
+{
+	padding: 0 !important;
+}
+
+.padding-5-0
+{
+	padding: 5px 0 !important;
+}
+
+.padding-0-5
+{
+	padding: 0 5px !important;
+}
+
+.padding-0-10
+{
+	padding: 0 10px !important;
+}
+
+.padding-10-0
+{
+	padding: 10px 0 !important;
+}
+
+.padding-5
+{
+	padding: 5px !important;
+}
+
+.padding-10
+{
+	padding: 10px !important;
+}
+
+.padding-top-5
+{
+	padding-top: 5px !important;
+}
+
+.padding-top-10
+{
+	padding-top: 10px !important;
+}
+
+.padding-bottom-10
+{
+	padding-bottom: 10px !important;
+}
+
+.padding-bottom-5
+{
+	padding-bottom: 5px !important;
+}
+
+.no-margin
+{
+	margin: 0 !important;
+}
+
+.margin-5-0
+{
+	margin: 5px 0 !important;
+}
+
+.margin-10-0
+{
+	margin: 10px 0 !important;
+}
+
+.margin-5
+{
+	margin: 5px !important;
+}
+
+.margin-10
+{
+	margin: 10px !important;
+}
+
+.margin-top-5
+{
+	margin-top: 5px !important;
+}
+
+.margin-top-10
+{
+	margin-top: 10px !important;
+}
+
+.margin-bottom-10
+{
+	margin-bottom: 10px !important;
+}
+
+.margin-bottom-5
+{
+	margin-bottom: 5px !important;
+}
+
+.margin-top-20
+{
+	margin-top: 20px !important;
+}
+
+.clear-left
+{
+	clear:left;
+}
+
+.no-border
+{
+	border: none !important;
+	border-style: none !important;
+	border-width: 0 !important; /* for IE */
+}
+
+.disclaimer {
+	margin: 0 0 1em 0;
+}
+
+.policy p {
+	margin-bottom: 10px;
+}
+
+p#assistanceNumber{width: 560px; text-align: center;}
+
+.info-link {
+ 	float: left;
+	display: inline; /* IE6 double margin hack */
+ 	padding: 0 10px;
+}
+
+.print-link {
+ 	float: left;
+	display: inline; /* IE6 double margin hack */
+ 	height: 20px;
+ 	padding: 2px 0 0 28px;
+ 	background: url(/images/icons/icon-print.png) no-repeat center left;
+}
+
+.tell-a-friend {
+ 	float: left;
+	display: inline; /* IE6 double margin hack */
+ 	height: 20px;
+ 	padding: 2px 0 0 31px;
+ 	background: url(/images/popup/tell-a-friend-icon.png) no-repeat center left;
+}
+
+.link-arrow {
+	padding-left: 10px;
+	background: url(/images/icons/link-arrow.png) no-repeat 0 3px;
+}
+
+.link-arrow-sm {
+	padding-left: 7px;
+	background: url(/images/icons/link-arrow-sm.png) no-repeat left center;
+}
+
+.new-win-icon {
+	padding-left: 13px;
+	background: url(/images/icons/icon-new-window.gif) no-repeat 0 3px;
+}
+
+#item-specifics-accessories #included-accessories {
+	float: left;
+	display: inline; /* IE6 double margin hack */
+}
+
+#item-specifics-accessories .accessory-list-details-container
+{
+	/*background: url(/images/backgrounds/bkgd-accessory-list-details-container.png) no-repeat top left;*/
+}
+
+/**************************************
+*				PROMOS
+/**************************************/
+
+/* URL: /learn/cricket-wireless/ */
+#promo-learn-cricket { background: url(/images/misc/learn-landing-side2.jpg) no-repeat 0 0; }
+
+/* URL: /cell-phones/mobile-phone-guide */
+#promo-mobile-phone-guide { background: url(/images/promo/crkt-banner1.png) no-repeat 0 0; }
+
+/* URL: /cell-phone-plans/mobile-phone-plan-guide */
+#promo-mobile-phone-plan-guide { background: url(/images/coverage/4g_sprite.png) no-repeat -750px -540px; }
+
+/* URL: /cell-phone-plans/promo-unlimited-smartphone-plan-guide */
+#promo-unlimited-smartphone-plan-guide { background: url(/images/coverage/4g_sprite.png) no-repeat -750px -540px; }
+
+/* URL: /cell-phone-plans/mobile-phone-plan-guide */
+#promo-mobile-broadband-guide { background: url(/images/promo/crkt-banner2.png) no-repeat 0 0; }
+
+/* URL: /paygo/prepaid-mobile-phone-guide */
+#promo-prepaid-mobile-phone-guide { background: url(/images/promo/crkt-banner6.png) no-repeat 0 0; }
+
+/* URL: /features-and-downloads/mobile-download-guide */
+#promo-mobile-download-guide { background: url(/images/promo/crkt-banner4.png) no-repeat 0 0; }
+
+/* URL: /cell-phone-accessories/mobile-phone-accessory-guide */
+#promo-mobile-phone-accessory-guide { background: url(/images/promo/crkt-banner5.png) no-repeat 0 0; }
+
+/* URL: /coverage/cell-phone-coverage */
+#promo-cell-phone-coverage { background: url("/images/coverage/4g_sprite.png") no-repeat scroll -750px -540px transparent; }
+
+/* URL: /coverage/cricket-4glte */
+#promo-cricket-4glte { background: url("/images/coverage/4g_sprite.png") no-repeat scroll -750px -540px transparent; }
+
+/* URL: /features-and-downloads */
+#promo-features-and-downloads { background: url(/images/promo/download-apps-more.png) no-repeat 0 0; }
+
+/* URL: /cart/checkoutsuccess */
+#promo-checkout-success { background: url(/images/promo/cricket-banner-trade-up.jpg) no-repeat 0 0; }
+#promo-checkout-success .learn-button {padding:89px 10px 0 75px;} 
+#promo-checkout-success2 { background: url(/images/promo/my-plan-side.png) no-repeat 0 0; }
+
+
+#pencil-banner{
+	width: 957px;
+	height: 42px;
+	margin:0 auto 0 auto;
+	padding-bottom: 20px;
+	text-align:center;
+	background: url(/images/misc/banner_cell_phones_freeshipping.png);
+	background-repeat: no-repeat;
+  	background-position: center top;
+
+}
+
+hr.dashed-line{
+	margin:5px 0px 5px 0px;
+	*margin:2px 0px 2px 0px;
+	padding:0px;
+	border:0px;
+	border-bottom:1px dotted #CCCCCC;
+}
+
+
+#smartphones-are-coming{
+	border-left: 3px solid #F0F0F0;
+	border-right: 3px solid #F0F0F0;
+	border-bottom: 3px solid #F0F0F0;
+	width: 325px;
+	height: 35px;
+	position:absolute;
+	top:-90px;
+	left: 300px;
+	z-index:5000;
+}
+#smartphones-are-coming-txt{
+	font-style:italic;
+	font-weight:bold;
+	font-size:0.88em;
+	color:#8F8F8F;
+	position:relative;
+	left:-5px;
+}
+.learn-more-smartphones{
+	font-size:0.825em;
+	line-height: 1.6em;
+	margin-top:-5px;
+}
+.smartphones-micro-icon{
+	position:relative;
+	top:8px;
+	left:5px;
+	margin-left:-2px;
+}
+
+#cell-phones-pencil-banner, #cell-phones-pencil-banner-btm {
+	height: 50px;
+	overflow: hidden;
+	margin: 15px auto;
+}
+.cell-phones-pencil-banner-popup {
+	display: block;
+}
+
+
+/* box rounded shadow all-expandable --- make this usable for IE7 only*/
+
+
+/*VERSION 1 --  */
+
+
+.box {
+	width: 35em;
+	margin: 50px auto;
+	
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #fff;
+	-webkit-box-shadow: #666 -1px 4px 10px;
+	-moz-box-shadow: #666 -1px 4px 10px; 
+	box-shadow: #666 -1px 4px 10px;	
+}
+
+
+.box div.topleft {
+	display: block;
+	/*background: url("/images/backgrounds/box-bg.png") top left no-repeat transparent;*/
+	padding: 2.0em 0em 0em 3.0em;
+}
+
+.box div.bottomleft {
+	display: block;
+	height: 45px;
+	/*background: url("/images/backgrounds/box-bg.png") bottom left no-repeat transparent;*/
+}
+
+.box.ie87{
+ background-color: transparent;
+}
+
+.box.ie87 div.topleft {
+background: url("/images/backgrounds/box-bg.png") top left no-repeat transparent;
+
+
+}
+.box.ie87 div.bottomleft {
+background: url("/images/backgrounds/box-bg.png") bottom left no-repeat transparent;
+}
+/*
+.box div {
+	margin: 0 -1em 0 -2.5em;
+}
+*/
+/*
+.box div.topleft {
+	display: block;
+	background: url("/images/backgrounds/box-bg.png") top left no-repeat transparent;
+	padding: 2.0em 0em 0em 2.0em;
+}
+
+.box div.topright {
+	display: block;
+	background: transparent url("/images/backgrounds/box-bg.png") no-repeat top right;
+	padding: 2em 0em 0;
+	margin: 0 -6em -2em 2em;
+	position: relative;
+	top: -2em;
+	min-width: 197px;
+	width: auto !important;
+	width: 197px;
+}
+
+.box div.bottomleft {
+	display: block;
+	height: 45px;
+	margin-top: 2.0em;
+	background: url("/images/backgrounds/box-bg.png") bottom left no-repeat transparent;
+}
+
+.box div.bottomright {
+	display: block;
+	background: url("/images/backgrounds/box-bg.png") bottom right no-repeat transparent;
+	height: 45px;
+	margin-left: 3.0em;
+
+	margin-right: -6em;
+}
+
+*/
+
+/**
+ * Page Title
+ **/
+h1.page-title
+{
+	font-weight: bold;
+	/* 	some characters in the title are not meant to be lowercase.
+		title must be handled by code, not style.
+	text-transform: lowercase;
+	*/
+}
+
+#page-title-wrapper .customer-location
+{
+	font-size: .825em; /* Equivalent for 11pt at 96 ppi - (11/12) * .9 = .825em */
+	text-transform: lowercase;
+	white-space: nowrap;
+}
+
+
+/**
+ * Box Styles
+ **/
+#order-summary .rounded-box
+{
+	line-height: 1.5em;
+}
+
+.rounded-header-light h2, .rounded-header-dark h2,
+.rounded-header-light-left h2, .rounded-header-light-right h2, .rounded-header-blue h2
+{
+	font-size: 1em;
+	font-weight: bold;
+	text-transform: lowercase;
+}
+
+.rounded-header-dark h2
+{
+	color: #fff;
+	text-align: center;
+}
+
+.rounded-header-blue h2
+{
+	color: #fff;
+}
+
+.rounded-header-light h2 span.rounded-header-asterisk, .rounded-header-blue h2 span.rounded-header-asterisk
+{
+	text-align: right;
+	font-weight: normal;
+	font-size: .825em; /* Equivalent for 11pt at 96 ppi - (11/12) * .9 = .825em */
+	color: #9d9d9d;
+}
+
+.rounded-box-nav-wrapper, #nav-side-wide-wrapper .rounded-box {
+	font-size: .825em; /* Equivalent for 11pt at 96 ppi - (11/12) * .9 = .825em */
+}
+
+.rounded-box-nav-link.active {
+	font-weight: bold;
+}
+
+#nav-side-wide-wrapper .rounded-box ul li.active ul li a
+{
+	font-weight: normal;
+}
+
+/* START community.css */
+h2.banner {
+    color: #FFFFFF;
+    font-size: 1.6em;
+    left: 30px;
+    position: absolute;
+    top: 7px;
+}
+.shadow {
+    margin: 10px 0;
+    text-align: center;
+}
+.rounded-box.small-font p, .rounded-box.small-font img.video {
+    line-height: 1.8em;
+    margin: 10px;
+}
+.community-row, .respekt-row {
+    margin-top: 20px;
+}
+.community-row .rounded-box-wrap-dark.fixed-height {
+    height: 125px;
+}
+.respekt-row .rounded-box-wrap-dark.fixed-height {
+    height: 325px;
+}
+.rounded-box-wrap-dark .row {
+    font-size: 0.825em;
+    margin-bottom: 12px;
+}
+.respekt-row .col-1, .respekt-row .col-2, .community-row .col-1, .community-row .col-2, .rounded-box-wrap-dark .row .left, .rounded-box-wrap-dark .row .right, .rounded-box-wrap-dark .row .icon, .rounded-box-wrap-dark .row .text {
+    display: inline;
+    float: left;
+}
+.rounded-box-wrap-dark .row .left {
+    margin-right: 12px;
+    width: 300px;
+}
+.rounded-box-wrap-dark .row .right {
+    width: 300px;
+}
+.rounded-box-wrap-dark .row .icon {
+    margin-right: 12px;
+    width: 35px;
+}
+.rounded-box-wrap-dark .row .text {
+    width: 253px;
+}
+.community-row .col-1 {
+    margin-right: 14px;
+    width: 660px;
+}
+.community-row .col-2 {
+    width: 286px;
+}
+.respekt-row .col-1, .respekt-row .col-2 {
+    width: 471px;
+}
+.respekt-row .col-1 {
+    margin-right: 18px;
+}
+.respekt-row .col-1 .rounded-box-wrap-dark p {
+    font-size: 0.825em;
+    line-height: 1.6em;
+    margin-bottom: 9px;
+}
+.respekt-row .col-1 .rounded-box-wrap-dark h2 {
+    font-weight: bold;
+    margin-bottom: 9px;
+}
+.small-feeds {
+    display: inline;
+    float: right;
+}
+.small-feeds a {
+    display: inline;
+    float: left;
+    padding-right: 12px;
+}
+#get-newsletter-form .inputs {
+    margin: 10px 0;
+}
+#get-newsletter-form #get-newsletter {
+    float: none !important;
+    width: 234px;
+}
+#get-newsletter-form .get-newsletter-form-controls a {
+    display: inline;
+    float: left;
+    font-size: 0.825em;
+    padding-right: 12px;
+    width: 120px;
+}
+.get-newsletter-form-controls button {
+    display: inline;
+    float: right;
+}
+#tweets ul {
+    margin-bottom: 12px;
+}
+#tweets ul li {
+    line-height: 1.6em;
+}
+#feeds {
+    border-bottom: 1px solid #D1D1D1;
+    border-left: 1px solid #D1D1D1;
+    border-right: 1px solid #D1D1D1;
+    padding: 20px;
+}
+#feeds .feed-header {
+    border-bottom: 1px solid #D1D1D1;
+    margin-bottom: 10px;
+}
+#feeds .feed-icons, #feeds .message, #feeds .message div {
+    display: inline;
+    float: left;
+}
+#feeds .feed {
+    padding: 10px;
+}
+#feeds .feed-icons {
+}
+#feeds .message {
+}
+#feeds .message div {
+    font-size: 0.825em !important;
+    padding: 0 9px;
+}
+#feeds .date {
+    color: #727272;
+}
+#feeds .alt {
+    background-color: #E1E2E2;
+}
+#community-cricket-nation-header .icon, #community-cricket-nation-header .text {
+    display: inline;
+    float: left;
+}
+#community-cricket-nation-header .icon {
+    margin-top: 6px;
+    width: 27px;
+}
+#community-cricket-nation-header .text {
+    margin-top: 12px;
+    width: 150px;
+}
+#our-feed {
+    color: #FFFFFF;
+    font-size: 0.825em;
+    position: absolute;
+    right: 30px;
+    text-align: right;
+    top: 11px;
+    width: 90px;
+}
+#our-feed img {
+    vertical-align: middle;
+}
+.UIIntentionalStory_Message, .UIIntentionalStory .location {
+    font-size: 1em !important;
+}
+.UIStoryAttachment_Copy {
+    font-size: 0.825em !important;
+    line-height: 1.6em !important;
+}
+#zipcode {
+    background: url("/images/misc/community-lookup-bar.png") no-repeat scroll 0 0 transparent;
+    height: 44px;
+    margin: 10px auto;
+    position: relative;
+    width: 944px;
+}
+#zipcode-mine {
+    background: url("/images/misc/community-my-community.jpg") no-repeat scroll 0 0 transparent;
+    height: 329px;
+    padding-bottom: 20px;
+    width: 953px;
+}
+#zipcode fieldset, #zipcode-mine fieldset {
+    position: absolute;
+    vertical-align: middle;
+}
+#zipcode fieldset {
+    left: 512px;
+    top: 10px;
+}
+#zipcode-mine fieldset {
+    left: 50px;
+    top: 280px;
+}
+#zipcode form input.text-input, #zipcode-mine form input.text-input {
+    margin-right: 10px;
+}
+.mine {
+    left: 50px;
+    position: absolute;
+    top: 195px;
+}
+.mine h2 {
+    font-size: 1.15em;
+    font-weight: bold;
+    line-height: 1.3em;
+    padding-bottom: 8px;
+}
+.nav-community-wrapper .round-header-wrapper {
+    margin-bottom: 10px;
+}
+#rebuild-left-col {
+    margin-left: 14px;
+    margin-right: 8px;
+    width: 370px;
+}
+#rebuild-right-col {
+    margin-left: 15px;
+    margin-right: 5px;
+    width: 547px;
+}
+#rebuild-right-col p {
+    line-height: 1.55em;
+    margin-bottom: 15px;
+}
+.rebuild-image {
+    padding: 5px 0 0 10px;
+}
+.rebuild-logo {
+    padding: 30px 0;
+}
+.rebuild h2 {
+    color: #999999;
+    font-size: 2em;
+    line-height: 1em;
+    padding: 10px 0 5px;
+}
+.rebuild h3 {
+    color: #999999;
+    font-size: 1.4em;
+    padding: 0 0 20px;
+}
+.rebuild h4 {
+    color: #D64D09;
+    font-size: 1.1em;
+    font-weight: lighter;
+    padding-bottom: 5px;
+}
+#rebuild-right-col, #rebuild-left-col {
+    display: inline;
+    float: left;
+}
+.special-offer {
+    padding: 5px 2px;
+}
+.special-offer-detail-image {
+    clear: none;
+    display: inline;
+    float: left;
+    padding: 0 25px 25px 0;
+}
+.special-offer-detail-file {
+    padding-bottom: 10px;
+}
+.special-offer-long-description {
+    clear: right;
+    float: left;
+    width: 550px;
+}
+.photo-gallery-wrapper {
+    float: left;
+    padding-bottom: 20px;
+    width: 33%;
+}
+.photo-gallery-wrapper .photo-album-image {
+    background-color: #F7F7F3;
+    height: 138px;
+    width: 184px;
+}
+.photo-gallery-wrapper .photo-gallery-image img {
+    border: 1px solid #CCCCCC;
+    height: 138px;
+    padding: 5px;
+    width: 184px;
+}
+.photo-gallery-wrapper .gallery-date {
+    padding-top: 12px;
+}
+.photo-album-wrapper {
+    background-color: #F7F7F3;
+    border: 1px solid #CCCCCC;
+}
+.photo-album-header {
+    font-size: 0.8em;
+    padding: 5px 0 0 20px;
+}
+.photo-album-wrapper .photo-album-image {
+    float: left;
+    padding: 14px;
+}
+.photo-album-wrapper .photo-album-image img {
+    border: 1px solid #CCCCCC;
+    float: left;
+    height: 138px;
+    padding: 5px;
+    width: 184px;
+}
+.photo-album-info {
+    padding-bottom: 10px;
+}
+#respekt-ad1 {
+    background: url("/images/misc/community-landing-banners-$45.png") no-repeat scroll 0 0 transparent;
+    height: 101px;
+    margin-bottom: 7px;
+    width: 430px;
+}
+#respekt-ad2 {
+    background: url("/images/promo/community-landing-banners_CAPTR-II.jpg") no-repeat scroll 0 0 transparent;
+    height: 101px;
+    margin-bottom: 7px;
+    width: 430px;
+}
+#respekt-ad1 .learn-button, #respekt-ad2 .learn-button {
+    padding: 70px 10px 0 0;
+}

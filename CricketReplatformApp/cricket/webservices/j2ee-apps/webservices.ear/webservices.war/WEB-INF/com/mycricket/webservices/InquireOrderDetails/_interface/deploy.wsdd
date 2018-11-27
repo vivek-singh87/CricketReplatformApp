@@ -1,0 +1,152 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from InquireOrderDetails WSDL service -->
+
+  <service name="InquireOrderDetailsSOAP" provider="java:RPC" style="document" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://mycricket.com/webservices/InquireOrderDetails/interface"/>
+      <parameter name="wsdlServiceElement" value="InquireOrderDetails"/>
+      <parameter name="schemaUnqualified" value="http://mycricket.com/webservices/InquireOrderDetails/types"/>
+      <parameter name="wsdlServicePort" value="InquireOrderDetailsSOAP"/>
+      <parameter name="className" value="com.mycricket.webservices.InquireOrderDetails._interface.InquireOrderDetailsSOAPSkeleton"/>
+      <parameter name="wsdlPortType" value="InquireOrderDetails"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <parameter name="allowedMethods" value="*"/>
+
+      <typeMapping
+        xmlns:ns="http://mycricket.com/webservices/InquireOrderDetails/types"
+        qname="ns:Items"
+        type="java:com.mycricket.webservices.InquireOrderDetails.types.Items"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://mycricket.com/webservices/InquireOrderDetails/types"
+        qname="ns:Packages"
+        type="java:com.mycricket.webservices.InquireOrderDetails.types.Packages"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://mycricket.com/webservices/InquireOrderDetails/types"
+        qname="ns:TaxSummary"
+        type="java:com.mycricket.webservices.InquireOrderDetails.types.TaxSummary"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://mycricket.com/webservices/InquireOrderDetails/types"
+        qname="ns:InquireOrderDetailsResponse"
+        type="java:com.mycricket.webservices.InquireOrderDetails.types.InquireOrderDetailsResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://mycricket.com/webservices/InquireOrderDetails/types"
+        qname="ns:TelecomTaxImposition"
+        type="java:com.mycricket.webservices.InquireOrderDetails.types.TelecomTaxImposition"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://mycricket.com/webservices/InquireOrderDetails/types"
+        qname="ns:ResponseInfo"
+        type="java:com.mycricket.webservices.InquireOrderDetails.types.ResponseInfo"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://mycricket.com/webservices/InquireOrderDetails/types"
+        qname="ns:Address"
+        type="java:com.mycricket.webservices.InquireOrderDetails.types.Address"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://mycricket.com/webservices/InquireOrderDetails/types"
+        qname="ns:>InquireOrderDetailsResponseInfo"
+        type="java:com.mycricket.webservices.InquireOrderDetails.types.InquireOrderDetailsResponseInfo"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://mycricket.com/webservices/InquireOrderDetails/types"
+        qname="ns:BOTaxImposition"
+        type="java:com.mycricket.webservices.InquireOrderDetails.types.BOTaxImposition"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://mycricket.com/webservices/InquireOrderDetails/types"
+        qname="ns:ShippingInfo"
+        type="java:com.mycricket.webservices.InquireOrderDetails.types.ShippingInfo"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://mycricket.com/webservices/InquireOrderDetails/types"
+        qname="ns:CricketPhoneNumbers"
+        type="java:java.lang.String[]"
+        innerType="cmp-ns:string" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://mycricket.com/webservices/InquireOrderDetails/types"
+        qname="ns:>InquireOrderDetailsRequest"
+        type="java:com.mycricket.webservices.InquireOrderDetails.types.InquireOrderDetailsRequest"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://mycricket.com/webservices/InquireOrderDetails/types"
+        qname="ns:PersonalInfo"
+        type="java:com.mycricket.webservices.InquireOrderDetails.types.PersonalInfo"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://mycricket.com/webservices/InquireOrderDetails/types"
+        qname="ns:Attribute"
+        type="java:com.mycricket.webservices.InquireOrderDetails.types.Attribute"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://mycricket.com/webservices/InquireOrderDetails/types"
+        qname="ns:Discount"
+        type="java:com.mycricket.webservices.InquireOrderDetails.types.Discount"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://mycricket.com/webservices/InquireOrderDetails/types"
+        qname="ns:OrderSummary"
+        type="java:com.mycricket.webservices.InquireOrderDetails.types.Packages[]"
+        innerType="cmp-ns:Packages" xmlns:cmp-ns="http://mycricket.com/webservices/InquireOrderDetails/types"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

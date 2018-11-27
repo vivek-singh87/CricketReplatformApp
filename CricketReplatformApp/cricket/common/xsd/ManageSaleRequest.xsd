@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://esp.cricket.com/ESP/Namespaces/Container/Public/ManageSaleRequest.xsd" xmlns:ns2="http://esp.cricket.com/ESP/Namespaces/Types/Public/CricketDataModel.xsd" xmlns:ns3="http://esp.cricket.com/ESP/Namespaces/Container/Public/MessageHeader.xsd"> 
+	<SOAP-ENV:Header> 
+	
+		<ns3:MessageHeader>
+			<ns3:TrackingMessageHeader> 
+				<ns2:version>v1</ns2:version>
+					<ns2:messageId>MYCRICKET-SANS1APWMC-01-mycricket07-31-2013 01:59:33.700530-CSP_SID=+drO42JIx+jBOTGtUqXB+lTlodI9AB6wpScqh2m5VZx8zbkx3EelO1tK6WOSBir8llGviA7TdOl0Dmj4yq1/GPRPolvBSPO6XwwvTsrx5k6K06dgjJ32rjMevyduLmPkUiJ3P7kCRaCn2UkNb4CCXFEu/QNqKdCiHIScOuezJKItEiOb0N2RKKC4hO6uLY2yDJx/BwD7D69ClltYc4P2Qq2PXq68MyEsRGonjWqjcQceYjDLgH3KMswtNyOPMWWuEkILxh8a221wfMZ8cuWoYLAIHE876stmwyOckdIEPgGLM92634tkdVLIqOZPZ4aQVCcGqPoTo9hRs8W99YA/qu6S2lmofWVZzSFNUct/NXeYueiXx9/hxU7rx0tdCd0pI7rFgbgzQ5n9kHN9wRs1vmn/GVGbc+hjVz0bJ9m2XGCKAxWgBSBpFqZyiZLtN4l/XwDvZvfONeGczwlFxZ2IZ8H2B6awcpWRycKIjn01/UU=</ns2:messageId>
+						<ns2:timeToLive>120</ns2:timeToLive>
+						<ns2:conversationId>myCricket-cbs~CRICKET-ESP~f746565ffbabccb2:-5dfb28ae:1400a25d820:-365f</ns2:conversationId> 
+						<ns2:dateTimeStamp>2013-07-31T01:59:33</ns2:dateTimeStamp> 
+			</ns3:TrackingMessageHeader>
+			<ns3:SecurityMessageHeader> 
+				 <ns2:userName>myCricket-cbs</ns2:userName> 
+				 <ns2:userPassword>myCricket-cbs(pas$)</ns2:userPassword> 
+			</ns3:SecurityMessageHeader> 
+			<ns3:SequenceMessageHeader> 
+				 <ns2:sequenceNumber>1</ns2:sequenceNumber> 
+				 <ns2:totalInSequence>1</ns2:totalInSequence> 
+			</ns3:SequenceMessageHeader> 
+		</ns3:MessageHeader>
+		
+ </SOAP-ENV:Header>
+		<SOAP-ENV:Body>
+			<ns1:ManageSaleRequest>
+				 <ns1:NewSaleInformation>
+					 <ns1:drawerId>1</ns1:drawerId>
+					 <ns1:salesTransactionType>S</ns1:salesTransactionType>
+				 </ns1:NewSaleInformation> 
+				<ns1:POSContext> 
+					 <ns2:locationId>63</ns2:locationId>
+					 <ns2:salesRepresentative>mycricket</ns2:salesRepresentative>
+				</ns1:POSContext> 
+			</ns1:ManageSaleRequest> 
+		</SOAP-ENV:Body>
+ </SOAP-ENV:Envelope> 
+--------------------------------------------------------------------------------

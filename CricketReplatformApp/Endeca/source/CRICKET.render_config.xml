@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2001, 2012, Oracle and/or its affiliates. All rights reserved.
+  ~ Oracle and Java are registered trademarks of Oracle and/or its
+  ~ affiliates. Other names may be trademarks of their respective owners.
+  ~ UNIX is a registered trademark of The Open Group.
+  ~
+  ~ This software and related documentation are provided under a license
+  ~ agreement containing restrictions on use and disclosure and are
+  ~ protected by intellectual property laws. Except as expressly permitted
+  ~ in your license agreement or allowed by law, you may not use, copy,
+  ~ reproduce, translate, broadcast, modify, license, transmit, distribute,
+  ~ exhibit, perform, publish, or display any part, in any form, or by any
+  ~ means. Reverse engineering, disassembly, or decompilation of this
+  ~ software, unless required by law for interoperability, is prohibited.
+  ~ The information contained herein is subject to change without notice
+  ~ and is not warranted to be error-free. If you find any errors, please
+  ~ report them to us in writing.
+  ~ U.S. GOVERNMENT END USERS: Oracle programs, including any operating
+  ~ system, integrated software, any programs installed on the hardware,
+  ~ and/or documentation, delivered to U.S. Government end users are
+  ~ "commercial computer software" pursuant to the applicable Federal
+  ~ Acquisition Regulation and agency-specific supplemental regulations.
+  ~ As such, use, duplication, disclosure, modification, and adaptation
+  ~ of the programs, including any operating system, integrated software,
+  ~ any programs installed on the hardware, and/or documentation, shall be
+  ~ subject to license terms and license restrictions applicable to the
+  ~ programs. No other rights are granted to the U.S. Government.
+  ~ This software or hardware is developed for general use in a variety
+  ~ of information management applications. It is not developed or
+  ~ intended for use in any inherently dangerous applications, including
+  ~ applications that may create a risk of personal injury. If you use
+  ~ this software or hardware in dangerous applications, then you shall
+  ~ be responsible to take all appropriate fail-safe, backup, redundancy,
+  ~ and other measures to ensure its safe use. Oracle Corporation and its
+  ~ affiliates disclaim any liability for any damages caused by use of this
+  ~ software or hardware in dangerous applications.
+  ~ This software or hardware and documentation may provide access to or
+  ~ information on content, products, and services from third parties.
+  ~ Oracle Corporation and its affiliates are not responsible for and
+  ~ expressly disclaim all warranties of any kind with respect to
+  ~ third-party content, products, and services. Oracle Corporation and
+  ~ its affiliates will not be responsible for any loss, costs, or damages
+  ~ incurred due to your access to or use of third-party content, products,
+  ~ or services.
+  -->
+<!DOCTYPE RENDER_CONFIG SYSTEM "render_config.dtd">
+
+<RENDER_CONFIG>
+  <RENDER NAME="record.spec" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="dummy_search_interface_member" RENDER_PROD_LIST="FALSE" RENDER_PROD_PAGE="FALSE" />
+  <RENDER NAME="common.id" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="faq.active" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="faq.alternate_words" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="faq.answer" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="faq.deactivate" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="faq.faq_sort" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="faq.is_active" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="faq.is_top_faq" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="faq.published" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="faq.question" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="faq.seo_name" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="faq.sequence" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="faq.topic_id" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="faq.id" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.fullImage.url" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.markets.zipCode" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="faq.category" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="faq.SubCategory" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="allAncestors.repositoryId" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="allAncestors.repositoryName" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="clothing-sku.color" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="clothing-sku.size" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="furniture-sku.woodFinish" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="market.code" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="parentCategory.displayName" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="phone.compatiblePlan" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="phone.planDescription" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="phone.planDisplayName" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="plan.compatiblePhone" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="plan.phoneDescription" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="plan.phoneDisplayName" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="plan.type" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.accessoryType" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.adminDisplayName" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.averageCustomerRating" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.baseUrl" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.brand" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.briefDescription" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.calculatedFeatures" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.catalogId" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.compatiblePhones.repositoryId" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.compatiblePhones.repositoryName" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.compatiblePlans.repositoryId" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.compatiblePlans.repositoryName" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.creationDate" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.dateAvailable" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.daysAvailable" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.description" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.disallowAsRecommendation" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.displayName" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.endDate" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.features.displayName" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.features.repositoryId" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.fullImage.repositoryId" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.fullImage.repositoryName" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.isOOFPhone" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.keyFeatures" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.keywords" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.language" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.largeImage.url" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.longDescription" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.manufacturer.description" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.manufacturer.displayName" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.manufacturer.long_description" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.manufacturer.repositoryId" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.manufacturer.repositoryName" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.markets.repositoryId" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.mediumImage.url" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.nonreturnable" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.os" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.phoneStyle" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.repositoryId" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.repositoryName" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.siteId" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.startDate" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.type" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.url" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="sku.bundleLinks.description" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="sku.bundleLinks.displayName" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="sku.bundleLinks.endDate" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="sku.bundleLinks.item.repositoryId" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="sku.bundleLinks.repositoryId" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="sku.bundleLinks.startDate" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="sku.configurableProperties.configurationOptions.description" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="sku.configurableProperties.configurationOptions.displayName" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="sku.configurableProperties.configurationOptions.price" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="sku.configurableProperties.configurationOptions.product.repositoryId" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="sku.configurableProperties.configurationOptions.sku.repositoryId" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="sku.configurableProperties.description" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="sku.configurableProperties.displayName" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="sku.creationDate" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="sku.description" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="sku.displayName" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="sku.endDate" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="sku.listPrice" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="sku.manufacturer_part_number" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="sku.margin" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="sku.onSaleText" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="sku.quantity" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="sku.repositoryId" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="sku.salePrice" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="sku.startDate" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="sku.type" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="sku.unit_of_measure" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="sku.wholesalePrice" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="product.category" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+  <RENDER NAME="item.type" RENDER_PROD_LIST="TRUE" RENDER_PROD_PAGE="TRUE" />
+</RENDER_CONFIG>
+

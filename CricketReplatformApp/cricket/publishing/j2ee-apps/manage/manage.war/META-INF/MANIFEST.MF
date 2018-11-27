@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+ATG-Module-Uri: manage.war
+ATG-Context-Root: manage
+ATG-Module-Version: manage.war
+

@@ -1,0 +1,148 @@
+/* line 5, ../sass/print.scss */
+* {
+  background-color: transparent;
+}
+
+/*CSS2 selector to add visible href after links */
+/*#constructor a:link:after, #constructor a:visited:after,  #constructor a{
+  content: " (" attr(href) ") ";
+  font-size: 0.8em;
+  font-weight: normal;
+  display: block;
+  clear: both;  
+}*/
+/* line 16, ../sass/print.scss */
+body {
+  width: 100%;
+}
+
+/* line 20, ../sass/print.scss */
+div, table, body {
+  margin: 0;
+  float: none;
+}
+
+/* line 22, ../sass/print.scss */
+.row {
+  width: 100%;
+  max-width: 768px;
+  min-width: 768px;
+  margin: 0 auto;
+}
+
+/* We need to hide a bunch of stuff */
+/* line 27, ../sass/print.scss */
+#drawer-mobile-location, #nav-utility, #drawer-location, #drawer-log-in,
+#nav-main, #header .mobile-location, #header .cart-icon, #section-lifestyle,
+#print-receipt, #footer, #footer-utility {
+  display: none !important;
+}
+
+/* Main Reason we have this print Stylesheet is for Order Printing, 
+lets add some floats to that page*/
+/* line 34, ../sass/print.scss */
+#constructor.section-checkout .section-progress-content {
+  padding-left: 0 !important;
+}
+/* line 37, ../sass/print.scss */
+#constructor.section-checkout #section-checkout-form .details-content {
+  border: none;
+  padding: 0;
+  margin: 0;
+  clear: both;
+  float: none;
+  width: 100%;
+}
+/* line 44, ../sass/print.scss */
+#constructor.section-checkout #section-checkout-form .details-content .divider-thankyou {
+  padding: 0;
+  display: none;
+}
+/* line 48, ../sass/print.scss */
+#constructor.section-checkout #section-checkout-form .details-content .order-number {
+  padding-left: 0;
+}
+/* line 51, ../sass/print.scss */
+#constructor.section-checkout #section-checkout-form .details-content .receipt {
+  border-bottom: 1px solid #CCCCCC;
+  padding-left: 0;
+  padding-right: 0;
+  clear: both;
+  float: none;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+/* line 61, ../sass/print.scss */
+#constructor.section-checkout .divider {
+  display: none !important;
+  width: 0%;
+  height: 0%;
+}
+/* line 67, ../sass/print.scss */
+#constructor.section-checkout .form {
+  width: 49%;
+  float: left;
+}
+/* line 70, ../sass/print.scss */
+#constructor.section-checkout .form #customer-info {
+  padding-left: 0;
+}
+/* line 73, ../sass/print.scss */
+#constructor.section-checkout .form .customer-info-item {
+  width: 100%;
+  float: none;
+}
+/* line 77, ../sass/print.scss */
+#constructor.section-checkout .form .large-12, #constructor.section-checkout .form .columns {
+  width: 45%;
+  float: none;
+}
+/* line 81, ../sass/print.scss */
+#constructor.section-checkout .form .autopay-label {
+  display: none;
+}
+/* line 85, ../sass/print.scss */
+#constructor.section-checkout .summary {
+  padding-left: 0;
+}
+/* line 87, ../sass/print.scss */
+#constructor.section-checkout .summary table {
+  width: 35% !important;
+}
+/* line 91, ../sass/print.scss */
+#constructor.section-checkout #order-list {
+  width: 100%;
+  float: none;
+}
+/* line 95, ../sass/print.scss */
+#constructor.section-checkout #tab-content {
+  width: 49%;
+  float: right;
+}
+/* line 99, ../sass/print.scss */
+#constructor.section-checkout #overview-total {
+  float: none;
+  clear: both;
+  width: 100%;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+}
+/* line 105, ../sass/print.scss */
+#constructor.section-checkout #overview-total table {
+  width: 90% !important;
+}
+/* line 109, ../sass/print.scss */
+#constructor.section-checkout .section-container {
+  width: 49%;
+  float: none;
+  border: none;
+}
+/* line 113, ../sass/print.scss */
+#constructor.section-checkout .section-container section.active .content {
+  border: none;
+  padding-top: 0 !important;
+}
+/* line 117, ../sass/print.scss */
+#constructor.section-checkout .section-container section.active .title, #constructor.section-checkout .section-container section.active .title a {
+  border: none;
+}

@@ -1,0 +1,212 @@
+/* Namespace is .section-why-cricket{} */
+
+.section-why-cricket p {
+  font-family: "GothamBook";
+  font-size: 0.9em;
+  color: #000;
+  clear: both;
+}
+
+.section-why-cricket h1, .section-why-cricket h2, .section-why-cricket h3, .section-why-cricket h4 {
+  text-transform: uppercase;
+  font-family: "GothamBlack";
+  font-weight: normal;
+}
+.section-why-cricket h1, .section-why-cricket h2, .section-why-cricket h3 {letter-spacing: -2px;}
+
+/* General Global Styles for this Section */
+.section-why-cricket {
+  .circle-arrow {display: block;}
+  ul {
+    list-style-position: outside;
+    line-height: 1.3em;
+    margin-left: 1em;
+    margin-bottom: 0;
+  }
+  ul.last {margin-bottom: 1em;}
+  ul li {
+    margin: 0;
+    font-family: "GothamMedium";
+    font-size: 0.9em;
+  }
+  @include respond-min($small-screen) {
+    .circle-arrow {display: inline; margin-left: 1em;}
+    ul {
+      padding-left: 0;
+      float: left;
+      padding-right: 1em;
+      &:after {@include clearfix; }
+    }
+  }
+}
+
+#section-banner.why-cricket {
+  position: relative;
+  .why-power-pixels {
+    background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/why-cricket/right-power-pixel.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 100% 0%;
+    height: 85px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 514px;
+    z-index: 2;
+  }
+  h1 {
+    color: #49da3f;
+    font-size: 3.8em;
+    line-height: 0.8em;
+    margin-top: 0.7em;
+    span {display: block; color: #008752;}
+  }
+  h4 {
+    color: #008752;
+    font-size: 1.2em;
+    line-height: 0.9em;
+    max-width: 70%;
+  }
+  p {font-size: 0.8em; line-height: inherit; margin-bottom: 2em;}
+  @include respond-min($small-screen) {
+    background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/why-cricket/left-power-pixel.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 0 0;
+    .row.wrapper {padding: 8em 0em 0 1em;}
+    h1 {font-size: 4.1em;}
+    .columns {padding: 0;}
+    .left-content {width: 45%;}
+    .right-content {
+      width: 55%;
+      padding-left: 1.5em;
+      background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/why-cricket/black-vertical-line.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 0 50%;
+    }
+  }
+
+  @include respond-min($large-screen) {
+    .row.wrapper {padding: 8em 0em 0 4em;}
+    .left-content {width: 37%;}
+    .right-content {width: 62%;}
+  }
+
+}
+
+#plans-callout.why-cricket {
+  background: #016d33 url(//images.mycricket.com/cricket?set=imageURL[file:/img/why-cricket/bg-plans-callout-mobile.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 50% 0;
+  .left-content {padding: 0.5em;}
+  h2 {
+    font-size: 42px;
+    color: #c1d72e;
+    margin-bottom: 0;
+  }
+  ul {margin-left: 0;}
+  ul li.first {margin-left: -8px;}
+  h2 span, h4, h3, p {color: #fff;}
+  h4 {font-size: 20px; margin-top: 0;}
+  a.circle-arrow { font-size: 12px; padding-left: 2em; padding-bottom: 0.4em;}
+  a.circle-arrow.white {background-size: 15px 15px;}
+  a img {
+    border: 1px solid #fff;
+    margin-right: 1em;
+  }
+  .video-thumb {display: block;}
+  .mixed-colors-title {
+    margin-top: 1.0em;
+    font-size: 1.5em;
+    letter-spacing: 0;
+  }
+  .yellow-green {color: #c1d72e;}
+  .dark-green {color: #00573c;}
+  .circle-arrow {float: none;}
+  @include respond-min($tablet-screen) {
+  .small-block-grid-1 > li { clear: none !important; width: 25%;}
+  }
+  @include respond-min($small-screen) {
+    background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/why-cricket/bg-plans-callout.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 50% 50%;
+    height: 550px;
+    margin-top: -2em;
+    .left-content {padding: 6em 0 0 0;}
+    .video-thumb {display: inline;}
+  }
+
+  @include respond-min($large-screen) {
+    .left-content {padding: 7em 0 0 0;}
+  }
+}
+
+/* IE9 & 10 adjustments, forcing to fixed width thumbnails */
+.ie9 #plans-callout.why-cricket ul li,
+.ie10 #plans-callout.why-cricket ul li {
+  width: 100px;
+  height: 55px;
+}
+
+
+#latest-smartphones {
+  padding: 1em 0;
+  h2 {
+    color: #008752;
+    font-size: 2.4em;
+    line-height: 0.8em;
+    margin-bottom: 0.4em;
+  }
+  h2 span {color: #0da82c;}
+
+  @include respond-min($small-screen) {
+    padding: 0;
+    background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/why-cricket/bg-latest-smartphones.png],imageHeight[0],imageFormat[png],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat top center;
+    margin-top: -2em;
+    height: 400px;
+    .right-content {padding-top: 4em; padding-right: 4em;}
+    h2 {font-size: 2.8em; }
+  }
+}
+
+#flexible-payment-plans {
+  padding: 1em 0;
+  @include gradient(#009c3f, #56b139);
+  h4, p {color: #fff; }
+  h4 {font-size: 20px; margin-top: 0.25em;}
+  p {margin-top: 0.5em;}
+  a {margin: 0;}
+  @include respond-min($small-screen) {
+    min-height: 50px;
+    background: #02a53e url(//images.mycricket.com/cricket?set=imageURL[file:/img/why-cricket/bg-flexible-payment-plans.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 50% 0;
+    .columns {padding: 0;}
+    h4, p {margin-bottom: 0; }
+  }
+}
+
+#coverage {
+  padding: 1em 0 0 0;
+  .left-content, .right-content {padding: 1em 2em;}
+  h2 {
+    color: #008752;
+    font-size: 45px;
+  }
+  .sub-title {
+    text-transform: uppercase;
+    font-family: "GothamMedium";
+    font-size: 1em;
+    margin-bottom: 2em;
+  }
+  p { max-width: 100%;}
+  img {margin-bottom: 0.3em;}
+  @include respond-min($small-screen) {
+    padding: 3em 0 1em 0;
+    .left-content, .right-content {padding: 0 4em;}
+    .right-content {
+      background: transparent url(//images.mycricket.com/cricket?set=imageURL[file:/img/why-cricket/black-vertical-line-small.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat 0 50%;
+    }
+    p {text-align: left;}
+  }
+}
+
+#song-downloads {
+  background: #01943C url(//images.mycricket.com/cricket?set=imageURL[file:/img/why-cricket/bg-song-downloads.jpg],imageHeight[0],imageFormat[jpg],imageQuality[90]&call=url[file:cricket/default.chain]) no-repeat top right;
+  .left-content {padding: 4em 1em 1em 1em;}
+  h2, h4, ul li {color: #fff; }
+  h2 {font-size: 45px; line-height: 0.8em;}
+  h4 {font-size: 20px; line-height: 0.9em; margin-bottom: 1em; padding-right: 2.5em;}
+  ul {margin-bottom: 2em;}
+  @include respond-min($small-screen) {
+    background-position: 50% 0;
+    height: 506px;
+    .left-content {padding: 6em 1em 0 0;}
+  }
+}

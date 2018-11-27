@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"> 
+	<SOAP-ENV:Header> 
+		<ns0:MessageHeader xmlns:ns0="http://esp.cricket.com/ESP/Namespaces/Container/Public/MessageHeader.xsd"> 
+			<ns0:TrackingMessageHeader>
+					<ns1:version xmlns:ns1="http://esp.cricket.com/ESP/Namespaces/Types/Public/CricketDataModel.xsd">v1</ns1:version> 
+					<ns1:originalVersion xmlns:ns1="http://esp.cricket.com/ESP/Namespaces/Types/Public/CricketDataModel.xsd"/> 
+					<ns1:messageId xmlns:ns1="http://esp.cricket.com/ESP/Namespaces/Types/Public/CricketDataModel.xsd">MYCRICKET-SANS1APWMC-01-mycricket07-31-2013 01:59:33.700530-CSP_SID=+drO42JIx+jBOTGtUqXB+lTlodI9AB6wpScqh2m5VZx8zbkx3EelO1tK6WOSBir8llGviA7TdOl0Dmj4yq1/GPRPolvBSPO6XwwvTsrx5k6K06dgjJ32rjMevyduLmPkUiJ3P7kCRaCn2UkNb4CCXFEu/QNqKdCiHIScOuezJKItEiOb0N2RKKC4hO6uLY2yDJx/BwD7D69ClltYc4P2Qq2PXq68MyEsRGonjWqjcQceYjDLgH3KMswtNyOPMWWuEkILxh8a221wfMZ8cuWoYLAIHE876stmwyOckdIEPgGLM92634tkdVLIqOZPZ4aQVCcGqPoTo9hRs8W99YA/qu6S2lmofWVZzSFNUct/NXeYueiXx9/hxU7rx0tdCd0pI7rFgbgzQ5n9kHN9wRs1vmn/GVGbc+hjVz0bJ9m2XGCKAxWgBSBpFqZyiZLtN4l/XwDvZvfONeGczwlFxZ2IZ8H2B6awcpWRycKIjn01/UU=</ns1:messageId> 
+					<ns1:responseTo xmlns:ns1="http://esp.cricket.com/ESP/Namespaces/Types/Public/CricketDataModel.xsd"/> 
+					<ns1:returnURL xmlns:ns1="http://esp.cricket.com/ESP/Namespaces/Types/Public/CricketDataModel.xsd"/>
+					<ns1:timeToLive xmlns:ns1="http://esp.cricket.com/ESP/Namespaces/Types/Public/CricketDataModel.xsd">120</ns1:timeToLive> 
+					<ns1:conversationId xmlns:ns1="http://esp.cricket.com/ESP/Namespaces/Types/Public/CricketDataModel.xsd">myCricket-cbs~CRICKET-ESP~f746565ffbabccb2:-5dfb28ae:1400a25d820:-365f</ns1:conversationId>
+					<ns1:dateTimeStamp xmlns:ns1="http://esp.cricket.com/ESP/Namespaces/Types/Public/CricketDataModel.xsd">2013-07-31T01:59:33</ns1:dateTimeStamp>
+			</ns0:TrackingMessageHeader>
+				<ns3:SecurityMessageHeader xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://esp.cricket.com/ESP/Namespaces/Container/Public/ManageSaleRequest.xsd" xmlns:ns2="http://esp.cricket.com/ESP/Namespaces/Types/Public/CricketDataModel.xsd" xmlns:ns3="http://esp.cricket.com/ESP/Namespaces/Container/Public/MessageHeader.xsd"> 
+					<ns2:userName>myCricket-cbs</ns2:userName>
+					<ns2:userPassword>myCricket-cbs(pas$)</ns2:userPassword> 
+				</ns3:SecurityMessageHeader> 
+				<ns3:SequenceMessageHeader xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://esp.cricket.com/ESP/Namespaces/Container/Public/ManageSaleRequest.xsd" xmlns:ns2="http://esp.cricket.com/ESP/Namespaces/Types/Public/CricketDataModel.xsd" xmlns:ns3="http://esp.cricket.com/ESP/Namespaces/Container/Public/MessageHeader.xsd"> 
+					<ns2:sequenceNumber>1</ns2:sequenceNumber>
+					<ns2:totalInSequence>1</ns2:totalInSequence> 
+				</ns3:SequenceMessageHeader> 
+		</ns0:MessageHeader>
+		</SOAP-ENV:Header> 
+			<SOAP-ENV:Body> 
+				<ns0:ManageSaleResponse xmlns:ns0="http://esp.cricket.com/ESP/Namespaces/Container/Public/ManageSaleResponse.xsd"> 
+					<ns0:ShoppingCartResponse>
+						<ns1:saleId xmlns:ns1="http://esp.cricket.com/ESP/Namespaces/Types/Public/CricketDataModel.xsd">89290522</ns1:saleId>
+						<ns1:note xmlns:ns1="http://esp.cricket.com/ESP/Namespaces/Types/Public/CricketDataModel.xsd"/> 
+						<ns1:salesTransactionType xmlns:ns1="http://esp.cricket.com/ESP/Namespaces/Types/Public/CricketDataModel.xsd">S</ns1:salesTransactionType>
+						<ns1:shippingAddress xmlns:ns1="http://esp.cricket.com/ESP/Namespaces/Types/Public/CricketDataModel.xsd"> 
+							<ns1:FirstName>RETAIL</ns1:FirstName> <ns1:LastName>CUSTOMER</ns1:LastName>
+							<ns1:AddressLine1>123 Default Street</ns1:AddressLine1>
+							<ns1:City>Default City</ns1:City>
+							<ns1:State>DEFAULT STATE</ns1:State>
+							<ns1:Country>US</ns1:Country> 
+							<ns1:PostalCode>00000</ns1:PostalCode>
+						</ns1:shippingAddress> 
+					</ns0:ShoppingCartResponse>
+					<ns0:Response> <ns1:code xmlns:ns1="http://esp.cricket.com/ESP/Namespaces/Types/Public/CricketDataModel.xsd">0</ns1:code>
+							<ns1:description xmlns:ns1="http://esp.cricket.com/ESP/Namespaces/Types/Public/CricketDataModel.xsd">Success</ns1:description> 
+					</ns0:Response> 
+				</ns0:ManageSaleResponse> 
+			</SOAP-ENV:Body> 
+</SOAP-ENV:Envelope>
